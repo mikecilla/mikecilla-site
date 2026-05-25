@@ -173,7 +173,8 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
 ═══════════════════════════ */
 #s-capabilities{background:var(--deep);padding:calc(64px + 2vw) 6vw 4vw;}
 .cap-layout{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
-.cap-intro-text{position:sticky;top:calc(64px + 2rem);}
+.cap-intro-text{position:static;}
+@media(min-width:901px){.cap-intro-text{position:sticky;top:calc(64px + 2rem);}}
 .cap-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;line-height:1.1;color:var(--bone);margin-bottom:1.25rem;}
 .cap-headline em{font-style:italic;font-weight:700;color:var(--gold-light);}
 .cap-sub{font-size:0.95rem;font-weight:300;color:var(--bone-dim);line-height:1.85;}
@@ -244,6 +245,7 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   .c-item.open .c-expand{max-height:600px;opacity:1;}
   .cap-layout{grid-template-columns:1fr;gap:2rem;}
   .cap-intro-text{position:static;}
+@media(min-width:901px){.cap-intro-text{position:sticky;top:calc(64px + 2rem);}}
   .cap-items{grid-template-columns:1fr 1fr;}
   .connect-grid{grid-template-columns:1fr;}
   #dot-nav{display:none;}
@@ -253,6 +255,9 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
 }
 @media(max-width:600px){
   html{scroll-snap-type:none;}
+  #s-career,#s-capabilities{overflow:visible;}
+  .cap-domains{gap:1.5rem;}
+  .cap-domain-label{font-size:0.6rem;}
   #s-hero,#s-highlights,#s-writing,#s-thesis,#s-career,#s-capabilities,#s-beyond,#s-connect{padding-left:1.25rem;padding-right:1.25rem;}
   .hero-right{grid-template-columns:1fr;}
   .hero-credential{padding:1rem;}
@@ -285,8 +290,8 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   <ul class="h-links">
     <li><a href="#s-highlights">Highlights</a></li>
     <li><a href="#s-writing">Writing</a></li>
-    <li><a href="#s-career">Work</a></li>
     <li><a href="#s-capabilities">Capabilities</a></li>
+    <li><a href="#s-career">Work</a></li>
     <li><a href="#s-connect">Connect</a></li>
   </ul>
   <a href="#s-connect" class="h-cta">Let's talk</a>
@@ -475,7 +480,63 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 5 — CAREER ═══ -->
+<!-- ═══ 5 — CAPABILITIES ═══ -->
+<section class="snap" id="s-capabilities" data-label="Capabilities">
+  <div>
+    <div class="s-label reveal">Capabilities</div>
+    <div class="cap-layout">
+      <div class="cap-intro-text reveal">
+        <h2 class="cap-headline">Deep<br>expertise.<br><em>Clear focus.</em></h2>
+        <p class="cap-sub">The domains, disciplines, and ways of working where experience runs deep — not surface familiarity.</p>
+        <div class="cap-values">
+          <div class="cap-value">Individuality</div>
+          <div class="cap-value">Openness</div>
+          <div class="cap-value">Efficacy</div>
+          <div class="cap-value">Winning</div>
+          <div class="cap-value">Humility</div>
+          <div class="cap-value">+ Sense of humor</div>
+        </div>
+      </div>
+      <div class="cap-domains">
+        <div class="cap-domain reveal" style="transition-delay:.1s">
+          <div class="cap-domain-label">Strategic Leadership</div>
+          <div class="cap-items">
+            <div class="cap-item"><div class="cap-item-name">Organizational Design</div><div class="cap-item-desc">Structure, role architecture, span of control, CoE models</div></div>
+            <div class="cap-item"><div class="cap-item-name">Workforce Strategy</div><div class="cap-item-desc">Planning, scenario modeling, capability frameworks</div></div>
+            <div class="cap-item"><div class="cap-item-name">Executive Advisory</div><div class="cap-item-desc">C-suite and senior leadership partnership on people decisions</div></div>
+            <div class="cap-item"><div class="cap-item-name">HR Operating Models</div><div class="cap-item-desc">CoE design, service delivery architecture, governance</div></div>
+            <div class="cap-item"><div class="cap-item-name">HR PMO</div><div class="cap-item-desc">Portfolio governance, business case development, prioritization</div></div>
+            <div class="cap-item"><div class="cap-item-name">People &amp; Org Strategy</div><div class="cap-item-desc">Transformation planning, structural change management</div></div>
+          </div>
+        </div>
+        <div class="cap-domain reveal" style="transition-delay:.2s">
+          <div class="cap-domain-label">Analytics &amp; Technology</div>
+          <div class="cap-items">
+            <div class="cap-item"><div class="cap-item-name">Workforce Analytics</div><div class="cap-item-desc">Retention, flight risk, pipeline, and workforce intelligence</div></div>
+            <div class="cap-item"><div class="cap-item-name">HR Technology Leadership</div><div class="cap-item-desc">HRIS strategy, implementation, optimization, portfolio management</div></div>
+            <div class="cap-item"><div class="cap-item-name">Data Architecture</div><div class="cap-item-desc">Data governance, quality standards, integration strategy</div></div>
+            <div class="cap-item"><div class="cap-item-name">Analytics Infrastructure</div><div class="cap-item-desc">Enabling self-service, building toward predictive capability</div></div>
+            <div class="cap-item"><div class="cap-item-name">Technology Strategy</div><div class="cap-item-desc">Build vs. buy, vendor evaluation, integration architecture</div></div>
+            <div class="cap-item"><div class="cap-item-name">AI &amp; Workforce</div><div class="cap-item-desc">Operating models, capability design, readiness frameworks</div></div>
+          </div>
+        </div>
+        <div class="cap-domain reveal" style="transition-delay:.3s">
+          <div class="cap-domain-label">Foundations</div>
+          <div class="cap-items">
+            <div class="cap-item"><div class="cap-item-name">I/O Psychology</div><div class="cap-item-desc">Behavioral science, assessment design, talent selection, engagement</div></div>
+            <div class="cap-item"><div class="cap-item-name">HR Operations</div><div class="cap-item-desc">Scalable service delivery, SLA frameworks, operational excellence</div></div>
+            <div class="cap-item"><div class="cap-item-name">Learning &amp; Development</div><div class="cap-item-desc">Program design, capability development, manager effectiveness</div></div>
+            <div class="cap-item"><div class="cap-item-name">Talent Acquisition</div><div class="cap-item-desc">TA strategy, ATS architecture, recruiting operations</div></div>
+            <div class="cap-item"><div class="cap-item-name">HRBP Leadership</div><div class="cap-item-desc">Executive partnership, org change, performance programs</div></div>
+            <div class="cap-item"><div class="cap-item-name">Data Storytelling</div><div class="cap-item-desc">Executive communication, visual standards, insight-driven narrative</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 — CAREER ═══ -->
 <section class="snap" id="s-career" data-label="Work">
   <div>
     <div class="s-label reveal">Career</div>
@@ -627,62 +688,6 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 6 — CAPABILITIES ═══ -->
-<section class="snap" id="s-capabilities" data-label="Capabilities">
-  <div>
-    <div class="s-label reveal">Capabilities</div>
-    <div class="cap-layout">
-      <div class="cap-intro-text reveal">
-        <h2 class="cap-headline">Deep<br>expertise.<br><em>Clear focus.</em></h2>
-        <p class="cap-sub">The domains, disciplines, and ways of working where experience runs deep — not surface familiarity.</p>
-        <div class="cap-values">
-          <div class="cap-value">Individuality</div>
-          <div class="cap-value">Openness</div>
-          <div class="cap-value">Efficacy</div>
-          <div class="cap-value">Winning</div>
-          <div class="cap-value">Humility</div>
-          <div class="cap-value">+ Sense of humor</div>
-        </div>
-      </div>
-      <div class="cap-domains">
-        <div class="cap-domain reveal" style="transition-delay:.1s">
-          <div class="cap-domain-label">Strategic Leadership</div>
-          <div class="cap-items">
-            <div class="cap-item"><div class="cap-item-name">Organizational Design</div><div class="cap-item-desc">Structure, role architecture, span of control, CoE models</div></div>
-            <div class="cap-item"><div class="cap-item-name">Workforce Strategy</div><div class="cap-item-desc">Planning, scenario modeling, capability frameworks</div></div>
-            <div class="cap-item"><div class="cap-item-name">Executive Advisory</div><div class="cap-item-desc">C-suite and senior leadership partnership on people decisions</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR Operating Models</div><div class="cap-item-desc">CoE design, service delivery architecture, governance</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR PMO</div><div class="cap-item-desc">Portfolio governance, business case development, prioritization</div></div>
-            <div class="cap-item"><div class="cap-item-name">People &amp; Org Strategy</div><div class="cap-item-desc">Transformation planning, structural change management</div></div>
-          </div>
-        </div>
-        <div class="cap-domain reveal" style="transition-delay:.2s">
-          <div class="cap-domain-label">Analytics &amp; Technology</div>
-          <div class="cap-items">
-            <div class="cap-item"><div class="cap-item-name">Workforce Analytics</div><div class="cap-item-desc">Retention, flight risk, pipeline, and workforce intelligence</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR Technology Leadership</div><div class="cap-item-desc">HRIS strategy, implementation, optimization, portfolio management</div></div>
-            <div class="cap-item"><div class="cap-item-name">Data Architecture</div><div class="cap-item-desc">Data governance, quality standards, integration strategy</div></div>
-            <div class="cap-item"><div class="cap-item-name">Analytics Infrastructure</div><div class="cap-item-desc">Enabling self-service, building toward predictive capability</div></div>
-            <div class="cap-item"><div class="cap-item-name">Technology Strategy</div><div class="cap-item-desc">Build vs. buy, vendor evaluation, integration architecture</div></div>
-            <div class="cap-item"><div class="cap-item-name">AI &amp; Workforce</div><div class="cap-item-desc">Operating models, capability design, readiness frameworks</div></div>
-          </div>
-        </div>
-        <div class="cap-domain reveal" style="transition-delay:.3s">
-          <div class="cap-domain-label">Foundations</div>
-          <div class="cap-items">
-            <div class="cap-item"><div class="cap-item-name">I/O Psychology</div><div class="cap-item-desc">Behavioral science, assessment design, talent selection, engagement</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR Operations</div><div class="cap-item-desc">Scalable service delivery, SLA frameworks, operational excellence</div></div>
-            <div class="cap-item"><div class="cap-item-name">Learning &amp; Development</div><div class="cap-item-desc">Program design, capability development, manager effectiveness</div></div>
-            <div class="cap-item"><div class="cap-item-name">Talent Acquisition</div><div class="cap-item-desc">TA strategy, ATS architecture, recruiting operations</div></div>
-            <div class="cap-item"><div class="cap-item-name">HRBP Leadership</div><div class="cap-item-desc">Executive partnership, org change, performance programs</div></div>
-            <div class="cap-item"><div class="cap-item-name">Data Storytelling</div><div class="cap-item-desc">Executive communication, visual standards, insight-driven narrative</div></div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
