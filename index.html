@@ -16,7 +16,7 @@
   --surface:#1a1917;
   --lift:#242220;
   --bone:#f0ece4;
-  --bone-dim:rgba(240,236,228,0.55);
+  --bone-dim:rgba(240,236,228,0.58);
   --bone-ghost:rgba(240,236,228,0.18);
   --gold:#c9843a;
   --gold-light:#e8b87a;
@@ -25,261 +25,339 @@
   --ff-body:'Outfit',system-ui,sans-serif;
   --ff-mono:'JetBrains Mono',monospace;
 }
-html{scroll-snap-type:y mandatory;overflow-y:scroll;height:100%;scroll-behavior:smooth;}
-body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-size:18px;line-height:1.7;font-weight:300;height:100%;}
 
-.snap{scroll-snap-align:start;scroll-snap-stop:always;min-height:100vh;width:100%;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+/* ── BASE ── */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--void);
+  color: var(--bone);
+  font-family: var(--ff-body);
+  font-size: 20px;
+  line-height: 1.75;
+  font-weight: 300;
+}
 
-/* DOT NAV */
-#dot-nav{position:fixed;right:1.75rem;top:50%;transform:translateY(-50%);z-index:300;display:flex;flex-direction:column;gap:0.55rem;}
-.dot{width:6px;height:6px;border-radius:50%;background:rgba(240,236,228,0.2);border:none;cursor:pointer;padding:0;transition:background 0.3s,transform 0.3s;}
-.dot.on{background:var(--gold);transform:scale(1.5);}
+/* ── DESKTOP: full-page snap ── */
+@media (min-width: 901px) {
+  html { scroll-snap-type: y mandatory; overflow-y: scroll; height: 100%; }
+  body { height: 100%; }
+  .snap {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #dot-nav { display: flex; }
+}
 
-/* HEADER */
-#site-header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 3vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(12,11,10,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
-.h-mark{font-family:var(--ff-display);font-size:1rem;font-weight:400;letter-spacing:0.06em;color:var(--bone);text-decoration:none;}
-.h-mark span{color:var(--gold);}
-.h-links{display:flex;gap:2rem;list-style:none;}
-.h-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;transition:color 0.2s;}
-.h-links a:hover{color:var(--gold);}
-.h-cta{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:0.45rem 1.1rem;text-decoration:none;transition:all 0.2s;}
-.h-cta:hover{background:var(--gold);color:var(--void);}
+/* ── MOBILE: normal scroll ── */
+@media (max-width: 900px) {
+  .snap {
+    width: 100%;
+    position: relative;
+    padding-top: calc(56px + 2.5rem);
+    padding-bottom: 3.5rem;
+  }
+  #dot-nav { display: none; }
+}
 
-/* LABELS */
-.s-label{font-family:var(--ff-mono);font-size:0.65rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
-.s-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
+/* ── DOT NAV (desktop only) ── */
+#dot-nav {
+  position: fixed;
+  right: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 300;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(240,236,228,0.2);
+  border: none; cursor: pointer; padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+.dot.on { background: var(--gold); transform: scale(1.5); }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1);}
-.reveal.up{opacity:1;transform:translateY(0);}
+/* ── HEADER ── */
+#site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 1.1rem 3vw;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--rule);
+  background: rgba(12,11,10,0.9);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.h-mark { font-family: var(--ff-display); font-size: 1.05rem; font-weight: 400; letter-spacing: 0.06em; color: var(--bone); text-decoration: none; }
+.h-mark span { color: var(--gold); }
+.h-links { display: flex; gap: 2rem; list-style: none; }
+.h-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone-dim); text-decoration: none; transition: color 0.2s; }
+.h-links a:hover { color: var(--gold); }
+.h-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--gold); color: var(--gold); padding: 0.45rem 1.1rem; text-decoration: none; transition: all 0.2s; }
+.h-cta:hover { background: var(--gold); color: var(--void); }
 
-/* BUTTONS */
-.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--void);padding:0.75rem 1.75rem;font-family:var(--ff-body);font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
-.btn-primary:hover{background:var(--gold-light);}
-.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid var(--bone-ghost);color:var(--bone-dim);padding:0.75rem 1.75rem;font-family:var(--ff-body);font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-.btn-row{display:flex;gap:0.75rem;flex-wrap:wrap;}
+/* ── SECTION LABEL ── */
+.s-label { font-family: var(--ff-mono); font-size: 0.7rem; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
+.s-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); opacity: 0.5; }
 
-/* ═══════════════════════════
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+.reveal.up { opacity: 1; transform: translateY(0); }
+
+/* ── BUTTONS ── */
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--void); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.btn-primary:hover { background: var(--gold-light); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--bone-ghost); color: var(--bone-dim); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* ════════════════════════
    1 — HERO
-═══════════════════════════ */
-#s-hero{background:var(--void);padding:calc(64px + 4vw) 6vw 4vw;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:5rem;flex-direction:unset;}
-#s-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(240,236,228,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(240,236,228,0.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
-.hero-kicker{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
-.hero-kicker::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);}
-.hero-name{font-family:var(--ff-display);font-size:clamp(4rem,7vw,7rem);font-weight:300;line-height:0.95;letter-spacing:-0.01em;color:var(--bone);}
-.hero-name .last{font-weight:700;font-style:italic;display:block;}
-.hero-name .dot{color:var(--gold);}
-.hero-title{font-family:var(--ff-display);font-size:clamp(1rem,1.6vw,1.3rem);font-weight:300;font-style:italic;color:var(--bone-dim);border-left:2px solid var(--gold);padding-left:1.1rem;margin:1.25rem 0 2rem;line-height:1.55;}
-.hero-statement{font-size:1.08rem;font-weight:300;color:var(--bone-dim);line-height:1.9;max-width:480px;margin-bottom:2.5rem;}
-.hero-right{display:flex;flex-direction:column;gap:1.5rem;}
-.hero-credential{border:1px solid var(--rule);padding:1.5rem;background:var(--surface);position:relative;}
-.hero-credential::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);}
-.cred-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
-.cred-value{font-family:var(--ff-display);font-size:1.55rem;font-weight:600;color:var(--bone);line-height:1.15;}
-.cred-sub{font-size:0.82rem;font-weight:300;color:var(--bone-dim);margin-top:0.2rem;}
-.hero-quote-block{border-top:1px solid var(--rule);padding-top:1.5rem;}
-.hero-quote-block blockquote{font-family:var(--ff-display);font-size:1.05rem;font-style:italic;font-weight:300;color:var(--bone-dim);line-height:1.6;margin-bottom:0.5rem;}
-.hero-quote-block cite{font-family:var(--ff-mono);font-size:0.62rem;font-style:normal;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);}
+════════════════════════ */
+#s-hero {
+  background: var(--void);
+  padding: calc(64px + 4vw) 6vw 4vw;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 5rem;
+}
+#s-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,236,228,0.02) 1px,transparent 1px), linear-gradient(90deg,rgba(240,236,228,0.02) 1px,transparent 1px); background-size: 60px 60px; pointer-events: none; }
+.hero-kicker { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-kicker::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+.hero-name { font-family: var(--ff-display); font-size: clamp(4rem,7vw,7rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.01em; color: var(--bone); }
+.hero-name .last { font-weight: 700; font-style: italic; display: block; }
+.hero-name .dot { color: var(--gold); }
+.hero-title { font-family: var(--ff-display); font-size: clamp(1.05rem,1.6vw,1.35rem); font-weight: 300; font-style: italic; color: var(--bone-dim); border-left: 2px solid var(--gold); padding-left: 1.1rem; margin: 1.25rem 0 2rem; line-height: 1.55; }
+.hero-statement { font-size: 1.1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; max-width: 480px; margin-bottom: 2.5rem; }
+.hero-right { display: flex; flex-direction: column; gap: 1.25rem; }
+.hero-credential { border: 1px solid var(--rule); padding: 1.4rem; background: var(--surface); position: relative; }
+.hero-credential::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); }
+.cred-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.cred-value { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--bone); line-height: 1.1; }
+.cred-sub { font-size: 0.85rem; font-weight: 300; color: var(--bone-dim); margin-top: 0.2rem; }
+.hero-quote-block { border-top: 1px solid var(--rule); padding-top: 1.4rem; }
+.hero-quote-block blockquote { font-family: var(--ff-display); font-size: 1.1rem; font-style: italic; font-weight: 300; color: var(--bone-dim); line-height: 1.6; margin-bottom: 0.5rem; }
+.hero-quote-block cite { font-family: var(--ff-mono); font-size: 0.62rem; font-style: normal; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
 
-/* ═══════════════════════════
+/* ════════════════════════
    2 — HIGHLIGHTS
-═══════════════════════════ */
-#s-highlights{background:var(--deep);padding:calc(64px + 2vw) 6vw 4vw;}
-.hl-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:6rem;align-items:start;}
-.hl-headline{font-family:var(--ff-display);font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;line-height:1.1;color:var(--bone);margin-bottom:1.25rem;}
-.hl-headline em{font-style:italic;font-weight:700;color:var(--gold-light);}
-.hl-intro{font-size:1rem;font-weight:300;color:var(--bone-dim);line-height:1.9;}
-.hl-items{display:flex;flex-direction:column;}
-.hl-item{border-top:1px solid var(--rule);padding:1.5rem 0;display:grid;grid-template-columns:2rem 1fr;gap:1.25rem;align-items:start;transition:border-color 0.3s;}
-.hl-item:hover{border-top-color:rgba(201,132,58,0.3);}
-.hl-num{font-family:var(--ff-mono);font-size:0.62rem;color:var(--gold);opacity:0.6;padding-top:0.2rem;}
-.hl-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:var(--bone);line-height:1.25;margin-bottom:0.4rem;}
-.hl-body{font-size:0.9rem;font-weight:300;color:var(--bone-dim);line-height:1.8;}
+════════════════════════ */
+#s-highlights { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
+.hl-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
+.hl-headline { font-family: var(--ff-display); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
+.hl-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
+.hl-intro { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; }
+.hl-items { display: flex; flex-direction: column; }
+.hl-item { border-top: 1px solid var(--rule); padding: 1.5rem 0; display: grid; grid-template-columns: 2.25rem 1fr; gap: 1.25rem; align-items: start; }
+.hl-num { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); opacity: 0.6; padding-top: 0.2rem; }
+.hl-title { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.4rem; }
+.hl-body { font-size: 0.95rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
 
-/* ═══════════════════════════
-   3 — THINKING / WRITING
-═══════════════════════════ */
-#s-writing{background:var(--void);padding:calc(64px + 2vw) 6vw 4vw;}
-.writing-layout{display:grid;grid-template-columns:1fr 1.8fr;gap:6rem;align-items:start;}
-.writing-intro-text{}
-.writing-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--bone);margin-bottom:1.25rem;}
-.writing-headline em{font-style:italic;font-weight:700;color:var(--gold-light);}
-.writing-sub{font-size:0.95rem;font-weight:300;color:var(--bone-dim);line-height:1.9;}
+/* ════════════════════════
+   3 — WRITING
+════════════════════════ */
+#s-writing { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
+.writing-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: 6rem; align-items: start; }
+.writing-headline { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
+.writing-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
+.writing-sub { font-size: 1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; }
+.writing-items { display: flex; flex-direction: column; }
+.writing-item { border-top: 1px solid var(--rule); padding: 1.75rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; transition: border-color 0.3s; }
+.writing-item:hover { border-top-color: rgba(201,132,58,0.35); }
+.writing-item:hover .wi-title { color: var(--gold-light); }
+.wi-tag { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; opacity: 0.8; }
+.wi-title { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.5rem; transition: color 0.2s; }
+.wi-body { font-size: 0.92rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
+.wi-arrow { font-size: 1.1rem; color: var(--gold); opacity: 0.5; padding-top: 0.3rem; align-self: center; transition: opacity 0.2s, transform 0.2s; }
+.writing-item:hover .wi-arrow { opacity: 1; transform: translateX(4px); }
 
-.writing-items{display:flex;flex-direction:column;}
-.writing-item{
-  border-top:1px solid var(--rule);
-  padding:1.75rem 0;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:2rem;
-  align-items:start;
-  text-decoration:none;
-  transition:border-color 0.3s;
-}
-.writing-item:hover{border-top-color:rgba(201,132,58,0.35);}
-.writing-item:hover .wi-title{color:var(--gold-light);}
-.wi-tag{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;opacity:0.75;}
-.wi-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:600;color:var(--bone);line-height:1.25;margin-bottom:0.5rem;transition:color 0.2s;}
-.wi-body{font-size:0.88rem;font-weight:300;color:var(--bone-dim);line-height:1.8;}
-.wi-arrow{font-size:1.1rem;color:var(--gold);opacity:0.5;padding-top:0.25rem;align-self:center;transition:opacity 0.2s,transform 0.2s;}
-.writing-item:hover .wi-arrow{opacity:1;transform:translateX(4px);}
-
-/* ═══════════════════════════
+/* ════════════════════════
    4 — THESIS
-═══════════════════════════ */
-#s-thesis{background:var(--deep);padding:calc(64px + 2vw) 6vw 4vw;}
-.thesis-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
-.thesis-pullquote{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;font-style:italic;line-height:1.2;color:var(--bone);position:relative;padding-top:1.5rem;}
-.thesis-pullquote::before{content:'';position:absolute;top:0;left:0;width:3rem;height:2px;background:var(--gold);}
-.thesis-pullquote strong{font-weight:700;font-style:normal;color:var(--gold-light);display:block;font-size:0.85em;}
-.thesis-points{display:flex;flex-direction:column;gap:1.75rem;}
-.thesis-point{padding-left:1.5rem;border-left:1px solid var(--rule);transition:border-color 0.3s;}
-.thesis-point:hover{border-left-color:var(--gold);}
-.tp-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem;}
-.tp-headline{font-family:var(--ff-display);font-size:1.25rem;font-weight:600;color:var(--bone);line-height:1.25;margin-bottom:0.4rem;}
-.tp-body{font-size:0.92rem;font-weight:300;color:var(--bone-dim);line-height:1.8;}
+════════════════════════ */
+#s-thesis { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
+.thesis-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.thesis-pullquote { font-family: var(--ff-display); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 300; font-style: italic; line-height: 1.2; color: var(--bone); position: relative; padding-top: 1.5rem; }
+.thesis-pullquote::before { content: ''; position: absolute; top: 0; left: 0; width: 3rem; height: 2px; background: var(--gold); }
+.thesis-pullquote strong { font-weight: 700; font-style: normal; color: var(--gold-light); display: block; font-size: 0.85em; }
+.thesis-points { display: flex; flex-direction: column; gap: 1.75rem; }
+.thesis-point { padding-left: 1.5rem; border-left: 1px solid var(--rule); transition: border-color 0.3s; }
+.thesis-point:hover { border-left-color: var(--gold); }
+.tp-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.tp-headline { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.45rem; }
+.tp-body { font-size: 0.95rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
 
-/* ═══════════════════════════
-   5 — CAREER
-═══════════════════════════ */
-#s-career{background:var(--void);padding:calc(64px + 2vw) 6vw 4vw;}
-.career-intro{display:grid;grid-template-columns:1fr 2fr;gap:5rem;margin-bottom:3.5rem;align-items:end;}
-.career-big{font-family:var(--ff-display);font-size:clamp(2.5rem,4.5vw,5rem);font-weight:700;line-height:0.95;color:var(--bone);}
-.career-big em{font-style:italic;color:var(--gold-light);display:block;}
-.career-desc{font-size:1.02rem;font-weight:300;color:var(--bone-dim);line-height:1.9;max-width:540px;}
-.career-items{display:flex;flex-direction:column;}
-.c-item{border-top:1px solid var(--rule);display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:2.25rem 0;}
-.c-item:hover .c-expand{max-height:280px;opacity:1;}
-.c-period{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;color:rgba(240,236,228,0.35);margin-bottom:0.4rem;}
-.c-org{font-size:0.8rem;font-weight:600;color:var(--gold);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.15rem;}
-.c-org-full{font-size:0.72rem;font-weight:300;color:rgba(240,236,228,0.3);margin-bottom:0.2rem;font-style:italic;}
-.c-type{font-size:0.72rem;font-weight:300;color:var(--bone-dim);}
-.c-role{font-family:var(--ff-display);font-size:1.5rem;font-weight:600;color:var(--bone);line-height:1.2;margin-bottom:0.65rem;}
-.c-lead{font-size:0.94rem;font-weight:300;color:var(--bone-dim);line-height:1.9;margin-bottom:0.75rem;}
-.c-chips{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.75rem;}
-.chip{font-family:var(--ff-mono);font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--bone-ghost);color:rgba(240,236,228,0.4);padding:0.25rem 0.6rem;}
-.chip.gold{border-color:rgba(201,132,58,0.35);color:var(--gold);}
-.c-expand{max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(.16,1,.3,1),opacity 0.4s ease;}
-.c-expand-inner{padding-top:0.85rem;border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-.c-outcomes-label{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
-.c-outcomes ul{list-style:none;}
-.c-outcomes li{font-size:0.86rem;font-weight:300;color:var(--bone-dim);line-height:1.7;padding-left:1rem;position:relative;margin-bottom:0.3rem;}
-.c-outcomes li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:0.7rem;}
+/* ════════════════════════
+   5 — CAPABILITIES
+════════════════════════ */
+#s-capabilities { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
+.cap-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+.cap-intro-text { position: static; }
+.cap-headline { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.5rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
+.cap-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
+.cap-sub { font-size: 1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
+.cap-values { display: flex; flex-direction: column; margin-top: 2rem; }
+.cap-value { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone-dim); padding: 0.5rem 0; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 0.5rem; }
+.cap-value::before { content: '▸'; color: var(--gold); font-size: 0.5rem; }
+.cap-domains { display: flex; flex-direction: column; gap: 2.5rem; }
+.cap-domain-label { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.cap-domain-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.cap-items { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); }
+.cap-item { background: var(--surface); padding: 1.35rem; transition: background 0.2s; }
+.cap-item:hover { background: var(--lift); }
+.cap-item-name { font-size: 0.95rem; font-weight: 500; color: var(--bone); margin-bottom: 0.3rem; }
+.cap-item-desc { font-size: 0.8rem; font-weight: 300; color: rgba(240,236,228,0.4); line-height: 1.65; }
 
-/* ═══════════════════════════
-   6 — CAPABILITIES
-═══════════════════════════ */
-#s-capabilities{background:var(--deep);padding:calc(64px + 2vw) 6vw 4vw;}
-.cap-layout{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
-.cap-intro-text{position:static;}
-@media(min-width:901px){.cap-intro-text{position:sticky;top:calc(64px + 2rem);}}
-.cap-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;line-height:1.1;color:var(--bone);margin-bottom:1.25rem;}
-.cap-headline em{font-style:italic;font-weight:700;color:var(--gold-light);}
-.cap-sub{font-size:0.95rem;font-weight:300;color:var(--bone-dim);line-height:1.85;}
-.cap-values{display:flex;flex-direction:column;gap:0;margin-top:2rem;}
-.cap-value{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--bone-dim);padding:0.45rem 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:0.5rem;}
-.cap-value::before{content:'▸';color:var(--gold);font-size:0.5rem;}
-.cap-domains{display:flex;flex-direction:column;gap:2.5rem;}
-.cap-domain-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;}
-.cap-domain-label::after{content:'';flex:1;height:1px;background:var(--rule);}
-.cap-items{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
-.cap-item{background:var(--surface);padding:1.25rem;transition:background 0.2s;}
-.cap-item:hover{background:var(--lift);}
-.cap-item-name{font-size:0.9rem;font-weight:500;color:var(--bone);margin-bottom:0.25rem;}
-.cap-item-desc{font-size:0.78rem;font-weight:300;color:rgba(240,236,228,0.38);line-height:1.6;}
+/* ════════════════════════
+   6 — CAREER
+════════════════════════ */
+#s-career { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
+.career-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; margin-bottom: 3rem; align-items: end; }
+.career-big { font-family: var(--ff-display); font-size: clamp(2.5rem,4.5vw,5rem); font-weight: 700; line-height: 0.95; color: var(--bone); }
+.career-big em { font-style: italic; color: var(--gold-light); display: block; }
+.career-desc { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; max-width: 540px; }
+.career-items { display: flex; flex-direction: column; }
+.c-item { border-top: 1px solid var(--rule); display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2.25rem 0; cursor: pointer; }
+.c-period { font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.12em; color: rgba(240,236,228,0.35); margin-bottom: 0.4rem; }
+.c-org { font-size: 0.85rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
+.c-org-full { font-size: 0.75rem; font-weight: 300; color: rgba(240,236,228,0.3); margin-bottom: 0.2rem; font-style: italic; }
+.c-type { font-size: 0.78rem; font-weight: 300; color: var(--bone-dim); }
+.c-role { font-family: var(--ff-display); font-size: 1.55rem; font-weight: 600; color: var(--bone); line-height: 1.2; margin-bottom: 0.65rem; }
+.c-lead { font-size: 0.97rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; margin-bottom: 0.75rem; }
+.c-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+.chip { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--bone-ghost); color: rgba(240,236,228,0.4); padding: 0.25rem 0.65rem; }
+.chip.gold { border-color: rgba(201,132,58,0.35); color: var(--gold); }
+.c-expand { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(.16,1,.3,1), opacity 0.4s ease; }
+.c-item.open .c-expand { max-height: 600px; opacity: 1; }
+.c-expand-inner { padding-top: 0.85rem; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.c-outcomes-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+.c-outcomes ul { list-style: none; }
+.c-outcomes li { font-size: 0.88rem; font-weight: 300; color: var(--bone-dim); line-height: 1.75; padding-left: 1rem; position: relative; margin-bottom: 0.35rem; }
+.c-outcomes li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.72rem; }
 
-/* ═══════════════════════════
+/* ════════════════════════
    7 — BEYOND WORK
-═══════════════════════════ */
-#s-beyond{background:var(--void);padding:calc(64px + 2vw) 6vw 4vw;}
-.beyond-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-.beyond-left{}
-.beyond-headline{font-family:var(--ff-display);font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;line-height:1.05;color:var(--bone);margin-bottom:1.5rem;}
-.beyond-headline em{font-style:italic;font-weight:700;color:var(--gold-light);}
-.beyond-intro{font-size:0.95rem;font-weight:300;color:var(--bone-dim);line-height:1.95;}
-.beyond-right{display:flex;flex-direction:column;gap:0;}
-.beyond-item{
-  border-top:1px solid var(--rule);
-  padding:1.5rem 0;
-  display:grid;
-  grid-template-columns:3rem 1fr;
-  gap:1.25rem;
-  align-items:start;
-}
-.beyond-icon{font-size:1.35rem;padding-top:0.1rem;line-height:1;}
-.beyond-item-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:600;color:var(--bone);margin-bottom:0.3rem;line-height:1.2;}
-.beyond-item-body{font-size:0.9rem;font-weight:300;color:var(--bone-dim);line-height:1.8;}
+════════════════════════ */
+#s-beyond { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
+.beyond-photo { margin-bottom: 2rem; }
+.beyond-photo img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--gold); opacity: 0.92; display: block; }
+.beyond-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.beyond-headline { font-family: var(--ff-display); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 300; line-height: 1.05; color: var(--bone); margin-bottom: 1.5rem; }
+.beyond-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
+.beyond-intro { font-size: 1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.95; }
+.beyond-right { display: flex; flex-direction: column; }
+.beyond-item { border-top: 1px solid var(--rule); padding: 1.4rem 0; display: grid; grid-template-columns: 3rem 1fr; gap: 1.25rem; align-items: start; }
+.beyond-icon { font-size: 1.4rem; padding-top: 0.1rem; line-height: 1; }
+.beyond-item-title { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 600; color: var(--bone); margin-bottom: 0.35rem; line-height: 1.2; }
+.beyond-item-body { font-size: 0.95rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
 
-/* ═══════════════════════════
+/* ════════════════════════
    8 — CONNECT
-═══════════════════════════ */
-#s-connect{background:var(--deep);padding:calc(64px + 2vw) 6vw 4vw;align-items:center;text-align:center;}
-.connect-eyebrow{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
-.connect-headline{font-family:var(--ff-display);font-size:clamp(3rem,5.5vw,5.5rem);font-weight:300;font-style:italic;line-height:1.0;color:var(--bone);margin-bottom:0.2em;}
-.connect-headline strong{font-weight:700;font-style:normal;color:var(--gold-light);}
-.connect-sub{font-size:1.08rem;font-weight:300;color:var(--bone-dim);max-width:500px;margin:1.5rem auto 3rem;line-height:1.9;}
-.connect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);max-width:680px;width:100%;margin-bottom:3rem;}
-.connect-cell{background:var(--surface);padding:1.75rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.4rem;text-decoration:none;transition:background 0.2s;}
-.connect-cell:hover{background:var(--lift);}
-.cc-label{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,236,228,0.3);}
-.cc-value{font-size:0.88rem;font-weight:400;color:var(--bone);transition:color 0.2s;}
-.connect-cell:hover .cc-value{color:var(--gold);}
-.disclaimer{font-size:0.65rem;color:rgba(240,236,228,0.2);max-width:520px;line-height:1.7;font-style:italic;margin-bottom:2rem;}
-.footer-line{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.1em;color:rgba(240,236,228,0.14);}
+════════════════════════ */
+#s-connect { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.connect-eyebrow { font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.connect-headline { font-family: var(--ff-display); font-size: clamp(3rem,5.5vw,5.5rem); font-weight: 300; font-style: italic; line-height: 1.0; color: var(--bone); margin-bottom: 0.2em; }
+.connect-headline strong { font-weight: 700; font-style: normal; color: var(--gold-light); }
+.connect-sub { font-size: 1.1rem; font-weight: 300; color: var(--bone-dim); max-width: 520px; margin: 1.5rem auto 3rem; line-height: 1.9; }
+.connect-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); max-width: 680px; width: 100%; margin-bottom: 3rem; }
+.connect-cell { background: var(--surface); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; transition: background 0.2s; }
+.connect-cell:hover { background: var(--lift); }
+.cc-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,236,228,0.3); }
+.cc-value { font-size: 0.95rem; font-weight: 400; color: var(--bone); transition: color 0.2s; }
+.connect-cell:hover .cc-value { color: var(--gold); }
+.disclaimer { font-size: 0.72rem; color: rgba(240,236,228,0.22); max-width: 520px; line-height: 1.7; font-style: italic; margin-bottom: 2rem; }
+.footer-line { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(240,236,228,0.15); }
 
-/* ── MOBILE ── */
-@media(max-width:900px){
-  /* Disable snap on mobile — sections of varying height break mandatory snap */
-  html{scroll-snap-type:none;}
-  .snap{scroll-snap-align:none;scroll-snap-stop:normal;min-height:0;height:auto;padding-top:calc(56px + 2rem);padding-bottom:3rem;overflow:visible;}
-  #site-header .h-links{display:none;}
-  #s-hero{grid-template-columns:1fr;gap:2rem;padding-top:calc(56px + 2rem);}
-  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-  .hl-layout,.writing-layout,.thesis-layout,.beyond-layout{grid-template-columns:1fr;gap:2.5rem;}
-  .career-intro{grid-template-columns:1fr;gap:1rem;margin-bottom:2rem;}
-  .c-item{grid-template-columns:1fr;gap:0.5rem;}
-  .c-meta{display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;margin-bottom:0.25rem;}
-  .c-expand-inner{grid-template-columns:1fr;}
-  .c-item.open .c-expand{max-height:600px;opacity:1;}
-  .cap-layout{grid-template-columns:1fr;gap:2rem;}
-  .cap-intro-text{position:static;}
-@media(min-width:901px){.cap-intro-text{position:sticky;top:calc(64px + 2rem);}}
-  .cap-items{grid-template-columns:1fr 1fr;}
-  .connect-grid{grid-template-columns:1fr;}
-  #dot-nav{display:none;}
-  #s-connect{align-items:flex-start;text-align:left;}
-  .connect-eyebrow,.connect-grid{margin-left:0;}
-  .connect-grid{max-width:100%;}
+
+/* ════════════════════════
+   FIELD NOTES
+════════════════════════ */
+#s-fieldnotes { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
+.fn-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: 6rem; align-items: start; }
+.fn-intro-head { position: static; }
+.fn-section-title { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1rem; }
+.fn-section-title em { font-style: italic; font-weight: 700; color: var(--gold-light); }
+.fn-section-sub { font-size: 1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; margin-bottom: 2rem; }
+.fn-github { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(201,132,58,0.3); padding: 0.5rem 0.9rem; transition: all 0.2s; }
+.fn-github:hover { background: rgba(201,132,58,0.08); border-color: var(--gold); }
+
+.fn-entry { border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.fn-meta { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.fn-number { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.fn-tag { font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(240,236,228,0.35); border: 1px solid var(--rule); padding: 0.2rem 0.55rem; }
+.fn-title { font-family: var(--ff-display); font-size: clamp(1.6rem,2.5vw,2.4rem); font-weight: 600; color: var(--bone); line-height: 1.15; margin-bottom: 0.75rem; }
+.fn-deck { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 300; font-style: italic; color: var(--bone-dim); line-height: 1.55; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1.1rem; }
+
+.fn-body { font-size: 1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.95; }
+.fn-body p { margin-bottom: 1.4rem; }
+.fn-body p:last-child { margin-bottom: 0; }
+.fn-h2 { font-family: var(--ff-display); font-size: 1.35rem; font-weight: 600; color: var(--bone); line-height: 1.2; margin: 2.25rem 0 0.75rem; }
+.fn-pullquote { font-family: var(--ff-display); font-size: 1.3rem; font-style: italic; font-weight: 300; color: var(--bone); line-height: 1.45; margin: 2.25rem 0; padding-left: 1.5rem; border-left: 2px solid var(--gold); }
+.fn-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+.fn-table th { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding: 0.6rem 1rem; border-bottom: 1px solid rgba(201,132,58,0.25); text-align: left; font-weight: 400; }
+.fn-table td { font-size: 0.9rem; font-weight: 300; color: var(--bone-dim); padding: 0.75rem 1rem; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.65; }
+.fn-table tr:last-child td { border-bottom: none; }
+.fn-table td:first-child { color: var(--bone); font-weight: 400; white-space: nowrap; }
+.fn-coda { margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); font-family: var(--ff-display); font-size: 1.05rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.45); line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .fn-layout { grid-template-columns: 1fr; gap: 2.5rem; }
 }
-@media(max-width:600px){
-  html{scroll-snap-type:none;}
-  #s-career,#s-capabilities{overflow:visible;}
-  .cap-domains{gap:1.5rem;}
-  .cap-domain-label{font-size:0.6rem;}
-  #s-hero,#s-highlights,#s-writing,#s-thesis,#s-career,#s-capabilities,#s-beyond,#s-connect{padding-left:1.25rem;padding-right:1.25rem;}
-  .hero-right{grid-template-columns:1fr;}
-  .hero-credential{padding:1rem;}
-  .h-cta{display:none;}
-  .cap-items{grid-template-columns:1fr;}
-  .connect-grid{grid-template-columns:1fr;}
-  .writing-item{grid-template-columns:1fr;}
-  .wi-arrow{display:none;}
-  .career-big{font-size:2.5rem;}
-  .hl-headline,.writing-headline,.cap-headline,.beyond-headline{font-size:2rem;}
-  .connect-headline{font-size:2.5rem;}
-  .c-role{font-size:1.1rem;}
-  .thesis-pullquote{font-size:1.5rem;}
-  .c-chips{display:none;}
-  .hero-name{font-size:3.5rem;}
-  .cap-values{display:none;}
-  .career-desc{font-size:0.85rem;}
-  .beyond-item{grid-template-columns:2rem 1fr;gap:1rem;}
-  .hl-layout{gap:2rem;}
-  .hero-quote-block{display:none;}
-  .hl-intro{font-size:0.95rem;}
-  .s-label{margin-bottom:1rem;}
+@media (max-width: 600px) {
+  #s-fieldnotes { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .fn-table { font-size: 0.85rem; }
+  .fn-table th, .fn-table td { padding: 0.5rem 0.6rem; }
+}
+
+/* ════════════════════════
+   MOBILE OVERRIDES
+════════════════════════ */
+@media (max-width: 900px) {
+  body { font-size: 18px; }
+  #site-header .h-links { display: none; }
+  #s-hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: calc(56px + 2rem); }
+  .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hl-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .writing-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .thesis-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .cap-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .cap-items { grid-template-columns: 1fr 1fr; }
+  .career-intro { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
+  .c-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .c-expand-inner { grid-template-columns: 1fr; }
+  .beyond-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .connect-grid { grid-template-columns: 1fr; max-width: 100%; }
+  #s-connect { align-items: flex-start; text-align: left; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  #s-hero, #s-highlights, #s-writing, #s-thesis, #s-capabilities, #s-career, #s-beyond, #s-connect { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .hero-right { grid-template-columns: 1fr; }
+  .hero-quote-block { display: none; }
+  .h-cta { display: none; }
+  .cap-items { grid-template-columns: 1fr; }
+  .cap-values { display: none; }
+  .writing-item { grid-template-columns: 1fr; }
+  .wi-arrow { display: none; }
+  .c-chips { display: none; }
+  .c-expand-inner { grid-template-columns: 1fr; }
+  .hero-name { font-size: 3.5rem; }
+  .connect-headline { font-size: 2.8rem; }
+  .career-big { font-size: 2.5rem; }
+}
+
+/* ── Desktop sticky sidebar for capabilities ── */
+@media (min-width: 901px) {
+  .cap-intro-text { position: sticky; top: calc(64px + 2rem); }
+  /* Desktop hover expand for career */
+  .c-item:hover .c-expand { max-height: 600px; opacity: 1; }
 }
 </style>
 </head>
@@ -290,8 +368,10 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   <ul class="h-links">
     <li><a href="#s-highlights">Highlights</a></li>
     <li><a href="#s-writing">Writing</a></li>
+    <li><a href="#s-thesis">Thinking</a></li>
     <li><a href="#s-capabilities">Capabilities</a></li>
     <li><a href="#s-career">Work</a></li>
+    <li><a href="#s-fieldnotes">Field Notes</a></li>
     <li><a href="#s-connect">Connect</a></li>
   </ul>
   <a href="#s-connect" class="h-cta">Let's talk</a>
@@ -299,21 +379,13 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
 
 <nav id="dot-nav" aria-label="Page sections"></nav>
 
-<!-- ═══ 1 — HERO ═══ -->
+<!-- 1 — HERO -->
 <section class="snap" id="s-hero" data-label="Home">
   <div>
     <p class="hero-kicker reveal" style="transition-delay:.1s">Austin, TX &nbsp;·&nbsp; People Operations &nbsp;·&nbsp; Organizational Transformation</p>
-    <h1 class="hero-name reveal" style="transition-delay:.2s">
-      Mike
-      <span class="last">Cilla<span class="dot">.</span></span>
-    </h1>
-    <p class="hero-title reveal" style="transition-delay:.35s">
-      Executive leader at the intersection of People Operations,<br>
-      Workforce Analytics, and Organizational Strategy
-    </p>
-    <p class="hero-statement reveal" style="transition-delay:.45s">
-      I build People functions that perform with the discipline of an operating system — grounded in behavioral science, enabled by data, and designed to outlast the leader who built them.
-    </p>
+    <h1 class="hero-name reveal" style="transition-delay:.2s">Mike<span class="last">Cilla<span class="dot">.</span></span></h1>
+    <p class="hero-title reveal" style="transition-delay:.35s">Executive leader at the intersection of People Operations,<br>Workforce Analytics, and Organizational Strategy</p>
+    <p class="hero-statement reveal" style="transition-delay:.45s">I build People functions that perform with the discipline of an operating system — grounded in behavioral science, enabled by data, and designed to outlast the leader who built them.</p>
     <div class="btn-row reveal" style="transition-delay:.55s">
       <a href="#s-connect" class="btn-primary">Start a conversation →</a>
       <a href="#s-career" class="btn-ghost">View work</a>
@@ -342,49 +414,47 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 2 — HIGHLIGHTS ═══ -->
+<!-- 2 — HIGHLIGHTS -->
 <section class="snap" id="s-highlights" data-label="Highlights">
   <div>
     <div class="s-label reveal">Selected Highlights</div>
     <div class="hl-layout">
       <div class="reveal" style="transition-delay:.1s">
         <h2 class="hl-headline">The work,<br><em>in brief.</em></h2>
-        <p class="hl-intro">
-          Fifteen years across startups, high-growth organizations, and complex enterprise environments. A practitioner first — with the academic foundation and executive judgment to operate at both the strategic and systems level.
-        </p>
+        <p class="hl-intro">Fifteen years across startups, high-growth organizations, and complex enterprise environments. A practitioner first — with the academic foundation and executive judgment to operate at both the strategic and systems level.</p>
       </div>
       <div class="hl-items reveal" style="transition-delay:.2s">
         <div class="hl-item">
           <div class="hl-num">01</div>
-          <div class="hl-content">
+          <div>
             <div class="hl-title">Built and scaled a People Operations function from the ground up</div>
             <div class="hl-body">Designed and led a multi-pillar Center of Excellence spanning operations, systems and data, analytics, and strategic planning — creating a People function built to run on systems, not individuals.</div>
           </div>
         </div>
         <div class="hl-item">
           <div class="hl-num">02</div>
-          <div class="hl-content">
+          <div>
             <div class="hl-title">Led enterprise HR technology transformation</div>
             <div class="hl-body">Directed a full-cycle HRIS implementation from architecture through go-live, stabilization, and governance. Built the data quality standards and operating model that make technology investments actually perform over time.</div>
           </div>
         </div>
         <div class="hl-item">
           <div class="hl-num">03</div>
-          <div class="hl-content">
+          <div>
             <div class="hl-title">Developed workforce analytics capabilities that inform decisions</div>
             <div class="hl-body">Built analytics programs — not reporting functions. Designed the infrastructure, governance, and stakeholder enablement that shift People analytics from answering requests to informing strategy.</div>
           </div>
         </div>
         <div class="hl-item">
           <div class="hl-num">04</div>
-          <div class="hl-content">
+          <div>
             <div class="hl-title">Partnered with executives on organizational design and workforce strategy</div>
             <div class="hl-body">Trusted advisor to senior leaders navigating restructuring, growth, and transformation — providing the people strategy, structural thinking, and data that consequential decisions require.</div>
           </div>
         </div>
         <div class="hl-item">
           <div class="hl-num">05</div>
-          <div class="hl-content">
+          <div>
             <div class="hl-title">Supported organizations from startup through enterprise scale</div>
             <div class="hl-body">Advised early-stage companies, scaled mid-market operations, and led functions within complex enterprise environments. The constant: building people systems that grow with the organization rather than constrain it.</div>
           </div>
@@ -394,48 +464,30 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 3 — WRITING ═══ -->
+<!-- 3 — WRITING -->
 <section class="snap" id="s-writing" data-label="Writing">
   <div>
     <div class="s-label reveal">Ideas &amp; Writing</div>
     <div class="writing-layout">
-      <div class="writing-intro-text reveal" style="transition-delay:.1s">
+      <div class="reveal" style="transition-delay:.1s">
         <h2 class="writing-headline">Thinking<br>made<br><em>visible.</em></h2>
-        <p class="writing-sub">
-          A selection of writing from over the years — on behavioral science, operational design, and the intersection of people and organizations. The questions haven't changed much. The answers keep getting more interesting.
-        </p>
+        <p class="writing-sub">A selection of writing from over the years — on behavioral science, operational design, and the intersection of people and organizations. The questions haven't changed much. The answers keep getting more interesting.</p>
       </div>
       <div class="reveal" style="transition-delay:.2s">
         <a class="writing-item" href="https://www.linkedin.com/pulse/virtuous-cycle-operational-excellence-action-cilla-m-s-shrm-cp-jioyc/" target="_blank" rel="noopener">
-          <div>
-            <div class="wi-tag">Operations · Systems Thinking</div>
-            <div class="wi-title">The Virtuous Cycle of Operational Excellence in Action</div>
-            <div class="wi-body">On how operational discipline compounds — and why organizations that invest in getting their fundamentals right unlock a kind of organizational momentum that reactive functions never reach.</div>
-          </div>
+          <div><div class="wi-tag">Operations · Systems Thinking</div><div class="wi-title">The Virtuous Cycle of Operational Excellence in Action</div><div class="wi-body">On how operational discipline compounds — and why organizations that invest in getting their fundamentals right unlock a kind of organizational momentum that reactive functions never reach.</div></div>
           <div class="wi-arrow">→</div>
         </a>
         <a class="writing-item" href="https://www.linkedin.com/pulse/20140824200347-49439155-the-behavioral-science-behind-the-alliance/" target="_blank" rel="noopener">
-          <div>
-            <div class="wi-tag">Behavioral Science · Talent</div>
-            <div class="wi-title">The Behavioral Science Behind The Alliance</div>
-            <div class="wi-body">An examination of the psychological principles that make modern employment relationships work — drawing on Reid Hoffman's framework and grounding it in what the science actually says about commitment, reciprocity, and trust at work.</div>
-          </div>
+          <div><div class="wi-tag">Behavioral Science · Talent</div><div class="wi-title">The Behavioral Science Behind The Alliance</div><div class="wi-body">An examination of the psychological principles that make modern employment relationships work — drawing on Reid Hoffman's framework and grounding it in what the science actually says about commitment, reciprocity, and trust at work.</div></div>
           <div class="wi-arrow">→</div>
         </a>
         <a class="writing-item" href="https://www.linkedin.com/pulse/20140501030057-49439155-use-empathy-when-hiring-your-next-employee/" target="_blank" rel="noopener">
-          <div>
-            <div class="wi-tag">Hiring · I/O Psychology</div>
-            <div class="wi-title">Use Empathy When Hiring Your Next Employee</div>
-            <div class="wi-body">A case for centering candidate experience in the hiring process — not as a branding exercise, but as a signal of organizational judgment and a predictor of the employment relationship that follows.</div>
-          </div>
+          <div><div class="wi-tag">Hiring · I/O Psychology</div><div class="wi-title">Use Empathy When Hiring Your Next Employee</div><div class="wi-body">A case for centering candidate experience in the hiring process — not as a branding exercise, but as a signal of organizational judgment and a predictor of the employment relationship that follows.</div></div>
           <div class="wi-arrow">→</div>
         </a>
         <a class="writing-item" href="https://www.linkedin.com/pulse/optimize-your-job-search-get-hired-asap-mike-cilla/" target="_blank" rel="noopener">
-          <div>
-            <div class="wi-tag">Careers · Applied Psychology</div>
-            <div class="wi-title">Optimize Your Job Search: Get Hired ASAP</div>
-            <div class="wi-body">Practical guidance on job search strategy, written from the perspective of someone who has sat on both sides of the hiring table — and who believes that most job search advice ignores how organizations actually make decisions.</div>
-          </div>
+          <div><div class="wi-tag">Careers · Applied Psychology</div><div class="wi-title">Optimize Your Job Search: Get Hired ASAP</div><div class="wi-body">Practical guidance on job search strategy, written from the perspective of someone who has sat on both sides of the hiring table — and who believes that most job search advice ignores how organizations actually make decisions.</div></div>
           <div class="wi-arrow">→</div>
         </a>
       </div>
@@ -443,16 +495,13 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 4 — THESIS ═══ -->
+<!-- 4 — THESIS -->
 <section class="snap" id="s-thesis" data-label="Thinking">
   <div>
     <div class="s-label reveal">Point of View</div>
     <div class="thesis-layout">
       <div class="reveal" style="transition-delay:.1s">
-        <p class="thesis-pullquote">
-          The organizations that navigate what comes next are the ones that already have their people systems, data, and operating models working.
-          <strong>Everything else is catch-up.</strong>
-        </p>
+        <p class="thesis-pullquote">The organizations that navigate what comes next are the ones that already have their people systems, data, and operating models working.<strong>Everything else is catch-up.</strong></p>
       </div>
       <div class="thesis-points">
         <div class="thesis-point reveal" style="transition-delay:.15s">
@@ -480,7 +529,7 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 5 — CAPABILITIES ═══ -->
+<!-- 5 — CAPABILITIES -->
 <section class="snap" id="s-capabilities" data-label="Capabilities">
   <div>
     <div class="s-label reveal">Capabilities</div>
@@ -536,7 +585,7 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 6 — CAREER ═══ -->
+<!-- 6 — CAREER -->
 <section class="snap" id="s-career" data-label="Work">
   <div>
     <div class="s-label reveal">Career</div>
@@ -544,9 +593,7 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
       <div class="reveal">
         <div class="career-big">Fifteen<br>years.<br><em>Four acts.</em></div>
       </div>
-      <p class="career-desc reveal" style="transition-delay:.1s">
-        From behavioral science and early-stage advisory to enterprise HR systems and executive transformation leadership. Each chapter built on the last — the science, the craft, the systems, the scale. Hover to expand.
-      </p>
+      <p class="career-desc reveal" style="transition-delay:.1s">From behavioral science and early-stage advisory to enterprise HR systems and executive transformation leadership. Each chapter built on the last — the science, the craft, the systems, the scale. Tap any role to expand.</p>
     </div>
     <div class="career-items">
 
@@ -560,36 +607,11 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
         <div class="c-content">
           <div class="c-role">VP, People Operations, Planning &amp; Systems</div>
           <div class="c-lead">Built and lead a multi-pillar People Operations function within a large People Department — spanning service delivery, systems and data, workforce analytics, and strategic planning. Responsible for the operating model, governance, technology architecture, and team that make the function perform with consistency and at scale.</div>
-          <div class="c-chips">
-            <span class="chip gold">CoE Leadership</span>
-            <span class="chip gold">HR Technology</span>
-            <span class="chip gold">Workforce Analytics</span>
-            <span class="chip">Org Design</span>
-            <span class="chip">Data Governance</span>
-            <span class="chip">Strategic Planning</span>
-          </div>
-          <div class="c-expand">
-            <div class="c-expand-inner">
-              <div class="c-outcomes">
-                <div class="c-outcomes-label">Leadership scope</div>
-                <ul>
-                  <li>Designed and built the CoE structure, team, and operating model</li>
-                  <li>Led full-cycle enterprise HRIS implementation through go-live and optimization</li>
-                  <li>Built workforce analytics capability from concept to operational program</li>
-                  <li>Drove strategic planning, business case development, and governance design</li>
-                </ul>
-              </div>
-              <div class="c-outcomes">
-                <div class="c-outcomes-label">Strategic focus</div>
-                <ul>
-                  <li>Workforce strategy in a complex, multi-entity public sector environment</li>
-                  <li>HR technology portfolio management and integration architecture</li>
-                  <li>Organizational design and executive advisory</li>
-                  <li>Building analytical infrastructure to enable leadership decision-making</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <div class="c-chips"><span class="chip gold">CoE Leadership</span><span class="chip gold">HR Technology</span><span class="chip gold">Workforce Analytics</span><span class="chip">Org Design</span><span class="chip">Data Governance</span><span class="chip">Strategic Planning</span></div>
+          <div class="c-expand"><div class="c-expand-inner">
+            <div class="c-outcomes"><div class="c-outcomes-label">Leadership scope</div><ul><li>Designed and built the CoE structure, team, and operating model</li><li>Led full-cycle enterprise HRIS implementation through go-live and optimization</li><li>Built workforce analytics capability from concept to operational program</li><li>Drove strategic planning, business case development, and governance design</li></ul></div>
+            <div class="c-outcomes"><div class="c-outcomes-label">Strategic focus</div><ul><li>Workforce strategy in a complex, multi-entity public sector environment</li><li>HR technology portfolio management and integration architecture</li><li>Organizational design and executive advisory</li><li>Building analytical infrastructure to enable leadership decision-making</li></ul></div>
+          </div></div>
         </div>
       </div>
 
@@ -602,33 +624,11 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
         <div class="c-content">
           <div class="c-role">Director, HR Strategy &amp; Insights</div>
           <div class="c-lead">Built the HR Strategy and Insights function at a high-growth, complex organization — owning people analytics, strategic planning, and HR PMO scope. Previously served as a senior HR Business Partner to executive and senior leadership teams across multiple business units during a period of significant growth, geographic expansion, and organizational change.</div>
-          <div class="c-chips">
-            <span class="chip gold">People Analytics</span>
-            <span class="chip gold">HR PMO</span>
-            <span class="chip gold">Executive HRBP</span>
-            <span class="chip">Org Restructure</span>
-            <span class="chip">Strategic Planning</span>
-          </div>
-          <div class="c-expand">
-            <div class="c-expand-inner">
-              <div class="c-outcomes">
-                <div class="c-outcomes-label">Leadership scope</div>
-                <ul>
-                  <li>Built HR Strategy &amp; Insights function from the ground up</li>
-                  <li>Owned people data programs across comp, performance, succession, and org design</li>
-                  <li>Supported geographic expansion and multiple major organizational restructures</li>
-                </ul>
-              </div>
-              <div class="c-outcomes">
-                <div class="c-outcomes-label">HRBP scope</div>
-                <ul>
-                  <li>Field Sales, Marketing, Strategy, Consumer Insights, and DTC</li>
-                  <li>Executive-level partnership on org design and talent decisions</li>
-                  <li>Delivered people analytics to senior and VP-level audiences</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <div class="c-chips"><span class="chip gold">People Analytics</span><span class="chip gold">HR PMO</span><span class="chip gold">Executive HRBP</span><span class="chip">Org Restructure</span><span class="chip">Strategic Planning</span></div>
+          <div class="c-expand"><div class="c-expand-inner">
+            <div class="c-outcomes"><div class="c-outcomes-label">Leadership scope</div><ul><li>Built HR Strategy &amp; Insights function from the ground up</li><li>Owned people data programs across comp, performance, succession, and org design</li><li>Supported geographic expansion and multiple major organizational restructures</li></ul></div>
+            <div class="c-outcomes"><div class="c-outcomes-label">HRBP scope</div><ul><li>Field Sales, Marketing, Strategy, Consumer Insights, and DTC</li><li>Executive-level partnership on org design and talent decisions</li><li>Delivered people analytics to senior and VP-level audiences</li></ul></div>
+          </div></div>
         </div>
       </div>
 
@@ -641,31 +641,11 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
         <div class="c-content">
           <div class="c-role">HR Consultant, Managed Services</div>
           <div class="c-lead">One of the first hires on a new B2B HR consulting practice — responsible for defining the service model, building the operational infrastructure, and managing a substantial client portfolio in close collaboration with HRIS, Benefits, and Payroll teams.</div>
-          <div class="c-chips">
-            <span class="chip gold">Practice Design</span>
-            <span class="chip gold">B2B Consulting</span>
-            <span class="chip">Service Delivery</span>
-            <span class="chip">Client Advisory</span>
-          </div>
-          <div class="c-expand">
-            <div class="c-expand-inner">
-              <div class="c-outcomes">
-                <div class="c-outcomes-label">Scope</div>
-                <ul>
-                  <li>Built practice infrastructure: case management, SLAs, SOPs, knowledge base</li>
-                  <li>Advised clients on compliance, policy, ER, performance, and leave administration</li>
-                  <li>Managed multi-million dollar client portfolio across HRIS, Benefits, and Payroll</li>
-                </ul>
-              </div>
-              <div class="c-outcomes">
-                <div class="c-outcomes-label">Context</div>
-                <ul>
-                  <li>Early-stage practice at a venture-backed HR technology company</li>
-                  <li>Operating at the intersection of technology platform and advisory service</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <div class="c-chips"><span class="chip gold">Practice Design</span><span class="chip gold">B2B Consulting</span><span class="chip">Service Delivery</span><span class="chip">Client Advisory</span></div>
+          <div class="c-expand"><div class="c-expand-inner">
+            <div class="c-outcomes"><div class="c-outcomes-label">Scope</div><ul><li>Built practice infrastructure: case management, SLAs, SOPs, knowledge base</li><li>Advised clients on compliance, policy, ER, performance, and leave administration</li><li>Managed multi-million dollar client portfolio across HRIS, Benefits, and Payroll</li></ul></div>
+            <div class="c-outcomes"><div class="c-outcomes-label">Context</div><ul><li>Early-stage practice at a venture-backed HR technology company</li><li>Operating at the intersection of technology platform and advisory service</li></ul></div>
+          </div></div>
         </div>
       </div>
 
@@ -678,13 +658,7 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
         <div class="c-content">
           <div class="c-role">Consultant, Advisor &amp; L&amp;D Professional</div>
           <div class="c-lead">Formative years working across early-stage startups, mid-market firms, and large enterprise — in roles spanning talent assessment, learning and development, HR advisory, and organizational consulting. Including L&amp;D work supporting a global corporate university, talent assessment program management at a growing HR technology firm, and HR advisory to multiple early-stage technology companies. Also taught psychology as an adjunct instructor — an experience that still shapes how I think about capability development and behavior change.</div>
-          <div class="c-chips">
-            <span class="chip">Enterprise L&amp;D</span>
-            <span class="chip">Talent Assessment</span>
-            <span class="chip">I/O Psychology</span>
-            <span class="chip">Startup Advisory</span>
-            <span class="chip">Adjunct Instructor</span>
-          </div>
+          <div class="c-chips"><span class="chip">Enterprise L&amp;D</span><span class="chip">Talent Assessment</span><span class="chip">I/O Psychology</span><span class="chip">Startup Advisory</span><span class="chip">Adjunct Instructor</span></div>
         </div>
       </div>
 
@@ -692,17 +666,15 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 7 — BEYOND WORK ═══ -->
+<!-- 7 — BEYOND WORK -->
 <section class="snap" id="s-beyond" data-label="Beyond">
   <div>
     <div class="s-label reveal">Beyond Work</div>
-    <div class="beyond-photo reveal" style="transition-delay:.05s;margin-bottom:2rem;"><img src="photo.jpg" alt="Mike Cilla" style="width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--gold);opacity:0.92;display:block;"></div>
+    <div class="beyond-photo reveal" style="transition-delay:.05s"><img src="photo.jpg" alt="Mike Cilla"></div>
     <div class="beyond-layout">
-      <div class="beyond-left reveal" style="transition-delay:.1s">
+      <div class="reveal" style="transition-delay:.1s">
         <h2 class="beyond-headline">The rest<br>of the<br><em>picture.</em></h2>
-        <p class="beyond-intro">
-          The person behind the work. I've always believed that how someone spends their time outside of professional life reveals something real about how they think inside it — the patience, the attention, the willingness to stay with something long enough to get good at it.
-        </p>
+        <p class="beyond-intro">The person behind the work. I've always believed that how someone spends their time outside of professional life reveals something real about how they think inside it — the patience, the attention, the willingness to stay with something long enough to get good at it.</p>
       </div>
       <div class="beyond-right reveal" style="transition-delay:.2s">
         <div class="beyond-item">
@@ -738,86 +710,172 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   </div>
 </section>
 
-<!-- ═══ 8 — CONNECT ═══ -->
+
+<!-- 8b — FIELD NOTES -->
+<section class="snap" id="s-fieldnotes" data-label="Field Notes">
+  <div>
+    <div class="s-label reveal">Field Notes</div>
+    <div class="fn-layout">
+
+      <div class="fn-intro-head reveal" style="transition-delay:.1s">
+        <h2 class="fn-section-title">Observations<br>from the<br><em>field.</em></h2>
+        <p class="fn-section-sub">Not a blog. Not thought leadership.<br>A practitioner's notebook — things noticed, tested, and learned in the work of building and running People functions.</p>
+        <a class="fn-github" href="https://github.com/mikecilla" target="_blank" rel="noopener">↗ github.com/mikecilla</a>
+      </div>
+
+      <div class="reveal" style="transition-delay:.2s">
+        <div class="fn-entry">
+          <div class="fn-meta">
+            <span class="fn-number">Field Notes #001</span>
+            <span class="fn-tag">AI · Leadership · I/O Psychology</span>
+            <span class="fn-tag">~1,000 words</span>
+          </div>
+
+          <h3 class="fn-title">I Didn't Adopt an AI Tool.<br>I Accidentally Built an AI Team.</h3>
+          <p class="fn-deck">A People Operations executive reflects on 2.5 years of building contextual history with one AI, onboarding a second, transferring organizational knowledge between them — and discovering that classic I/O psychology concepts applied to all of it.</p>
+
+          <div class="fn-body">
+
+            <p>It started the way most useful things do: without a plan.</p>
+
+            <p>About two and a half years into my role as VP of People Operations, I realized I had been having a running conversation with an AI — ChatGPT, at the time — about nearly every significant work challenge I was navigating. Workforce analytics. HRIS architecture. Org design. Business cases. Executive communications. Leadership decisions I wasn't ready to talk through with anyone inside the organization.</p>
+
+            <p>Somewhere in all of that, I had accumulated something I hadn't set out to build: a living record of how I think.</p>
+
+            <div class="fn-pullquote">It wasn't a database. It wasn't documentation. It was closer to what you'd get if you could read someone's professional subconscious.</div>
+
+            <p class="fn-h2">The Knowledge Transfer Problem</p>
+
+            <p>When I started working with Claude — which has genuinely different strengths — I hit the same wall every organization hits when a key employee leaves: the new person is capable, but they don't have the context. They don't know the history. They don't know how you think, what you've already tried, or what matters.</p>
+
+            <p>So I did what I would have done with a new director joining my team. I onboarded Claude.</p>
+
+            <p>Not by uploading files. By transferring knowledge the way knowledge actually transfers — with documentation, examples of quality work, communication preferences, recurring priorities, historical context, and calibration over time. I shared how I make decisions. What I care about. Where I've been burned. What kinds of outputs I find useful and what reads as generic to me.</p>
+
+            <p>It worked. But what happened in the process was more interesting than I expected.</p>
+
+            <p class="fn-h2">AI Job-Skill Fit: A Classic I/O Problem</p>
+
+            <p>One of the foundational concepts in Industrial-Organizational Psychology is person-job fit — the idea that performance improves when an individual's capabilities align well with what the role actually requires. Hire for the wrong fit and you get friction, underperformance, and frustration regardless of raw capability.</p>
+
+            <p>What I noticed, gradually, was that the same principle applied to AI systems.</p>
+
+            <table class="fn-table">
+              <thead>
+                <tr><th>Capability</th><th>ChatGPT</th><th>Claude</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Longitudinal memory &amp; context</td><td>Strong — 2.5 years of accumulated history</td><td>Limited at first; built over time</td></tr>
+                <tr><td>Strategic conversation</td><td>Strong — iterative, relationship-aware</td><td>Strong — rigorous, structurally precise</td></tr>
+                <tr><td>Large document synthesis</td><td>Adequate</td><td>Exceptional</td></tr>
+                <tr><td>Visual artifacts &amp; design</td><td>Limited</td><td>Strong — website, decks, structured outputs</td></tr>
+                <tr><td>Long-form writing &amp; editing</td><td>Good</td><td>Excellent — nuanced, voice-preserving</td></tr>
+                <tr><td>Org context &amp; leadership style</td><td>Deep — years of calibration</td><td>Developing — through deliberate onboarding</td></tr>
+              </tbody>
+            </table>
+
+            <p>Different tools. Different fit profiles. Different jobs. The right response wasn't to pick one — it was to understand what each was actually good at, assign accordingly, and manage the handoffs between them. Which is, again, exactly what you'd do with a team of people.</p>
+
+            <p class="fn-h2">The Unexpected Output: A Leadership User Manual</p>
+
+            <p>Here's the part I didn't anticipate.</p>
+
+            <p>To transfer context effectively, Claude had to do something unusual: it had to analyze and articulate how I think. Communication patterns. Decision preferences. Leadership tendencies. What I find motivating. Where I tend to overcomplicate. How I process ambiguity. What quality looks like to me versus what adequate looks like.</p>
+
+            <p>What emerged from that process was the most detailed and accurate leadership profile I have ever received. More nuanced than any 360 feedback I've been through. More honest than most coaching conversations. Grounded in actual behavioral evidence rather than survey responses.</p>
+
+            <div class="fn-pullquote">I was attempting to train an AI. The AI ended up training me.</div>
+
+            <p>Not in a mystical sense. In a very practical one: the act of making my thinking legible to a system that needed explicit context forced a level of self-reflection that implicit, accumulated organizational knowledge never demands.</p>
+
+            <p class="fn-h2">What I Took From It</p>
+
+            <p>The biggest surprise wasn't how much work AI could absorb. It was how much organizational psychology still mattered.</p>
+
+            <p>Onboarding. Role clarity. Capability development. Knowledge transfer. Performance enablement. Job-skill fit. Every concept that governs how humans integrate into organizations turned out to apply — with remarkable fidelity — to how AI systems integrate into a leadership operating model.</p>
+
+            <p>That probably shouldn't be surprising. The underlying challenge in both cases is the same: you have a capable system, and the question is whether the context, structure, and role definition around it are good enough for that capability to actually show up.</p>
+
+            <p>Most organizations that struggle with AI adoption aren't struggling because the technology is insufficient. They're struggling because they've skipped the organizational work that would make the technology useful. They've bought the hire before building the job.</p>
+
+            <p>I've spent fifteen years arguing that HR should function more like an engineering discipline. It turns out the inverse is also true: AI adoption, done well, looks a lot like good people management.</p>
+
+            <div class="fn-coda">The technology was new. The people science wasn't.</div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 9 — CONNECT -->
 <section class="snap" id="s-connect" data-label="Connect">
   <p class="connect-eyebrow reveal">Austin, TX · Open to conversation</p>
-  <h2 class="connect-headline reveal" style="transition-delay:.1s">
-    Let&rsquo;s talk about<br><strong>what&rsquo;s next.</strong>
-  </h2>
-  <p class="connect-sub reveal" style="transition-delay:.2s">
-    Whether you&rsquo;re building a People function, rethinking how HR operates in your organization, evaluating technology strategy, or simply looking to connect with someone who thinks seriously about this work — I&rsquo;m glad you made it this far.
-  </p>
+  <h2 class="connect-headline reveal" style="transition-delay:.1s">Let&rsquo;s talk about<br><strong>what&rsquo;s next.</strong></h2>
+  <p class="connect-sub reveal" style="transition-delay:.2s">Whether you&rsquo;re building a People function, rethinking how HR operates in your organization, evaluating technology strategy, or simply looking to connect with someone who thinks seriously about this work — I&rsquo;m glad you made it this far.</p>
   <div class="connect-grid reveal" style="transition-delay:.3s">
-    <a href="https://www.linkedin.com/in/michaelcilla" class="connect-cell" target="_blank" rel="noopener">
-      <div class="cc-label">LinkedIn</div>
-      <div class="cc-value">michaelcilla →</div>
-    </a>
-    <a href="mailto:mikejcilla@gmail.com" class="connect-cell">
-      <div class="cc-label">Email</div>
-      <div class="cc-value">mikejcilla@gmail.com</div>
-    </a>
-    <a href="https://drive.google.com/file/d/1sROJzU4gTLsrNhws7fEKGcoVte0BMAMs/view?usp=share_link" class="connect-cell" target="_blank" rel="noopener">
-      <div class="cc-label">Résumé</div>
-      <div class="cc-value">View full CV →</div>
-    </a>
+    <a href="https://www.linkedin.com/in/michaelcilla" class="connect-cell" target="_blank" rel="noopener"><div class="cc-label">LinkedIn</div><div class="cc-value">michaelcilla →</div></a>
+    <a href="mailto:mikejcilla@gmail.com" class="connect-cell"><div class="cc-label">Email</div><div class="cc-value">mikejcilla@gmail.com</div></a>
+    <a href="https://drive.google.com/file/d/1sROJzU4gTLsrNhws7fEKGcoVte0BMAMs/view?usp=share_link" class="connect-cell" target="_blank" rel="noopener"><div class="cc-label">Résumé</div><div class="cc-value">View full CV →</div></a>
   </div>
-  <p class="disclaimer reveal" style="transition-delay:.4s">
-    The views, opinions, and content expressed on this site are solely my own and do not represent the positions, strategies, or opinions of any current or former employer. All information is intended to represent my individual professional profile and perspectives.
-  </p>
-  <p class="footer-line reveal" style="transition-delay:.5s">
-    &copy; 2026 Mike Cilla &middot; Austin, TX &middot; M.S. Industrial-Organizational Psychology, San Jose State University
-  </p>
+  <p class="disclaimer reveal" style="transition-delay:.4s">The views, opinions, and content expressed on this site are solely my own and do not represent the positions, strategies, or opinions of any current or former employer. All information is intended to represent my individual professional profile and perspectives.</p>
+  <p class="footer-line reveal" style="transition-delay:.5s">&copy; 2026 Mike Cilla &middot; Austin, TX &middot; M.S. Industrial-Organizational Psychology, San Jose State University</p>
 </section>
 
 <script>
-(function(){
+(function() {
+  // ── Dot nav ──
   var sections = Array.from(document.querySelectorAll('.snap'));
   var nav = document.getElementById('dot-nav');
-  sections.forEach(function(s){
+  sections.forEach(function(s) {
     var b = document.createElement('button');
-    b.className='dot';
-    b.setAttribute('aria-label', s.dataset.label||s.id);
-    b.onclick=function(){ s.scrollIntoView({behavior:'smooth'}); };
+    b.className = 'dot';
+    b.setAttribute('aria-label', s.dataset.label || s.id);
+    b.onclick = function() { s.scrollIntoView({ behavior: 'smooth' }); };
     nav.appendChild(b);
   });
   var dots = Array.from(nav.querySelectorAll('.dot'));
 
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting) return;
+  // ── Reveal + dot tracking ──
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) return;
       var idx = sections.indexOf(e.target);
-      dots.forEach(function(d,i){ d.classList.toggle('on',i===idx); });
-      e.target.querySelectorAll('.reveal').forEach(function(el){
-        // Touch tap to expand career items on mobile
-  document.querySelectorAll('.c-item').forEach(function(item){
-    item.addEventListener('click', function(){
-      var isMobile = window.innerWidth <= 900;
-      if(!isMobile) return;
+      dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
+      e.target.querySelectorAll('.reveal').forEach(function(el) {
+        setTimeout(function() { el.classList.add('up'); }, 60);
+      });
+    });
+  }, { threshold: 0.25 });
+  sections.forEach(function(s) { io.observe(s); });
+
+  // ── Career tap/click to expand ──
+  document.querySelectorAll('.c-item').forEach(function(item) {
+    item.addEventListener('click', function() {
       item.classList.toggle('open');
     });
   });
 
-  setTimeout(function(){ el.classList.add('up'); },60);
-      });
+  // ── Keyboard nav (desktop) ──
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var best = -1, bestVis = 0;
+    sections.forEach(function(s, i) {
+      var r = s.getBoundingClientRect();
+      var vis = Math.min(r.bottom, window.innerHeight) - Math.max(r.top, 0);
+      if (vis > bestVis) { bestVis = vis; best = i; }
     });
-  },{threshold:0.45});
-  sections.forEach(function(s){ io.observe(s); });
-
-  document.addEventListener('keydown',function(e){
-    var best=-1,bestVis=0;
-    sections.forEach(function(s,i){
-      var r=s.getBoundingClientRect();
-      var vis=Math.min(r.bottom,window.innerHeight)-Math.max(r.top,0);
-      if(vis>bestVis){bestVis=vis;best=i;}
-    });
-    if(e.key==='ArrowDown'&&best<sections.length-1) sections[best+1].scrollIntoView({behavior:'smooth'});
-    if(e.key==='ArrowUp'&&best>0) sections[best-1].scrollIntoView({behavior:'smooth'});
+    if (e.key === 'ArrowDown' && best < sections.length - 1) sections[best + 1].scrollIntoView({ behavior: 'smooth' });
+    if (e.key === 'ArrowUp' && best > 0) sections[best - 1].scrollIntoView({ behavior: 'smooth' });
   });
 
-  setTimeout(function(){
-    sections[0].querySelectorAll('.reveal').forEach(function(el){ el.classList.add('up'); });
-    if(dots[0]) dots[0].classList.add('on');
-  },120);
+  // ── Initial reveal ──
+  setTimeout(function() {
+    sections[0].querySelectorAll('.reveal').forEach(function(el) { el.classList.add('up'); });
+    if (dots[0]) dots[0].classList.add('on');
+  }, 120);
 })();
 </script>
 </body>
