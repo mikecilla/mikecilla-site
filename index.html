@@ -871,7 +871,7 @@ body {
         setTimeout(function() { el.classList.add('up'); }, 60);
       });
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.05 });
   sections.forEach(function(s) { io.observe(s); });
 
   // ── Career tap/click to expand ──
@@ -899,6 +899,21 @@ body {
     sections[0].querySelectorAll('.reveal').forEach(function(el) { el.classList.add('up'); });
     if (dots[0]) dots[0].classList.add('on');
   }, 120);
+
+  // ── On mobile, reveal all elements as they scroll into view regardless of section height ──
+  if (window.innerWidth <= 900) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('up');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+  }
 })();
 </script>
 </body>
