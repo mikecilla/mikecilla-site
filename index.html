@@ -230,29 +230,29 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
 
 /* ── MOBILE ── */
 @media(max-width:900px){
+  /* Disable snap on mobile — sections of varying height break mandatory snap */
+  html{scroll-snap-type:none;}
+  .snap{scroll-snap-align:none;scroll-snap-stop:normal;min-height:0;height:auto;padding-top:calc(56px + 2rem);padding-bottom:3rem;overflow:visible;}
   #site-header .h-links{display:none;}
-  .snap{min-height:100vh;height:auto;}
-  #s-hero{grid-template-columns:1fr;gap:2rem;padding-top:calc(56px + 2rem);padding-bottom:2.5rem;flex-direction:column;justify-content:flex-start;padding-top:calc(56px + 2rem);}
+  #s-hero{grid-template-columns:1fr;gap:2rem;padding-top:calc(56px + 2rem);}
   .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
   .hl-layout,.writing-layout,.thesis-layout,.beyond-layout{grid-template-columns:1fr;gap:2.5rem;}
   .career-intro{grid-template-columns:1fr;gap:1rem;margin-bottom:2rem;}
   .c-item{grid-template-columns:1fr;gap:0.5rem;}
   .c-meta{display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;margin-bottom:0.25rem;}
   .c-expand-inner{grid-template-columns:1fr;}
-  .c-item:hover .c-expand,.c-item:focus .c-expand{max-height:600px;opacity:1;}
-  .c-item{cursor:pointer;}
   .c-item.open .c-expand{max-height:600px;opacity:1;}
   .cap-layout{grid-template-columns:1fr;gap:2rem;}
   .cap-intro-text{position:static;}
   .cap-items{grid-template-columns:1fr 1fr;}
   .connect-grid{grid-template-columns:1fr;}
   #dot-nav{display:none;}
-  .beyond-layout{gap:2rem;}
-  .thesis-layout{gap:2.5rem;}
-  .writing-layout{gap:2rem;}
-  #s-highlights,#s-writing,#s-thesis,#s-career,#s-capabilities,#s-beyond,#s-connect{padding-top:calc(56px + 2rem);padding-bottom:3rem;}
+  #s-connect{align-items:flex-start;text-align:left;}
+  .connect-eyebrow,.connect-grid{margin-left:0;}
+  .connect-grid{max-width:100%;}
 }
 @media(max-width:600px){
+  html{scroll-snap-type:none;}
   #s-hero,#s-highlights,#s-writing,#s-thesis,#s-career,#s-capabilities,#s-beyond,#s-connect{padding-left:1.25rem;padding-right:1.25rem;}
   .hero-right{grid-template-columns:1fr;}
   .hero-credential{padding:1rem;}
@@ -272,6 +272,9 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
   .career-desc{font-size:0.85rem;}
   .beyond-item{grid-template-columns:2rem 1fr;gap:1rem;}
   .hl-layout{gap:2rem;}
+  .hero-quote-block{display:none;}
+  .hl-intro{font-size:0.95rem;}
+  .s-label{margin-bottom:1rem;}
 }
 </style>
 </head>
