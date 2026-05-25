@@ -1,0 +1,571 @@
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0f0e0d;
+  --paper: #f7f4ef;
+  --paper-alt: #eeebe4;
+  --warm: #c8773a;
+  --warm-light: #e8c49a;
+  --warm-dark: #8a4f1e;
+  --muted: #6b6560;
+  --rule: rgba(15,14,13,0.12);
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body: 'DM Sans', system-ui, sans-serif;
+  --ff-mono: 'DM Mono', monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap');
+
+body, .mc-wrap {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.mc-wrap { width: 100%; }
+
+.mc-section { padding: 6rem 5vw; }
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 2.5rem;
+  background: var(--warm);
+  opacity: 0.5;
+}
+
+/* HERO */
+.mc-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 5rem 5vw;
+  background: var(--paper);
+}
+.hero-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.25rem;
+}
+.hero-name {
+  font-family: var(--ff-display);
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+.hero-name em { font-style: italic; color: var(--warm); }
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 420px;
+  margin-bottom: 2.5rem;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.75rem 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.hero-cta:hover { background: var(--warm); color: var(--paper); }
+.hero-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  padding: 0.75rem 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.hero-cta-ghost:hover { border-color: var(--warm); color: var(--warm); }
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+.hero-stat-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  width: 100%;
+  max-width: 380px;
+}
+.hero-stat { background: var(--paper); padding: 1.5rem; }
+.hero-stat-number {
+  font-family: var(--ff-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.hero-stat-label { font-size: 0.72rem; font-weight: 400; color: var(--muted); letter-spacing: 0.05em; }
+.hero-quote {
+  background: var(--paper-alt);
+  border-left: 3px solid var(--warm);
+  padding: 1.25rem 1.5rem;
+  max-width: 380px;
+  width: 100%;
+}
+.hero-quote p {
+  font-family: var(--ff-display);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.hero-quote cite {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* ABOUT */
+.mc-about { background: var(--ink); color: var(--paper); }
+.mc-about .section-label { color: var(--warm-light); }
+.mc-about .section-label::after { background: var(--warm-light); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+.about-headline {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--paper);
+}
+.about-headline em { font-style: italic; color: var(--warm-light); }
+.about-body { font-size: 1rem; font-weight: 300; line-height: 1.85; color: rgba(247,244,239,0.75); }
+.about-body p + p { margin-top: 1.25rem; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(247,244,239,0.2);
+  color: rgba(247,244,239,0.6);
+  padding: 0.35rem 0.75rem;
+}
+.tag.warm { border-color: var(--warm); color: var(--warm); }
+
+/* WHAT I DO */
+.mc-positioning { background: var(--paper-alt); }
+.positioning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 3rem;
+}
+.pos-card { background: var(--paper); padding: 2.5rem 2rem; transition: background 0.2s; }
+.pos-card:hover { background: var(--paper-alt); }
+.pos-number {
+  font-family: var(--ff-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: rgba(15,14,13,0.08);
+}
+.pos-title { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.3; }
+.pos-body { font-size: 0.88rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+.pos-accent { width: 2rem; height: 3px; background: var(--warm); margin-bottom: 1.5rem; }
+
+/* PHILOSOPHY */
+.mc-philosophy { background: var(--paper); }
+.philosophy-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
+.philosophy-lead {
+  font-family: var(--ff-display);
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink);
+  border-left: 3px solid var(--warm);
+  padding-left: 1.5rem;
+}
+.philosophy-body { font-size: 0.95rem; font-weight: 300; color: var(--muted); line-height: 1.9; }
+.philosophy-body p + p { margin-top: 1.25rem; }
+.values-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 3rem; }
+.value-pill {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+}
+
+/* EXPERTISE */
+.mc-expertise { background: var(--ink); color: var(--paper); }
+.mc-expertise .section-label { color: var(--warm-light); }
+.mc-expertise .section-label::after { background: var(--warm-light); }
+.expertise-intro {
+  font-family: var(--ff-display);
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--paper);
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+.expertise-intro em { font-style: italic; color: var(--warm-light); }
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(247,244,239,0.1);
+}
+.exp-card { background: var(--ink); border-top: 1px solid rgba(247,244,239,0.1); padding: 2rem 1.5rem; transition: background 0.2s; }
+.exp-card:hover { background: rgba(247,244,239,0.04); }
+.exp-icon { font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--warm); }
+.exp-title { font-size: 0.85rem; font-weight: 500; color: var(--paper); margin-bottom: 0.4rem; }
+.exp-desc { font-size: 0.78rem; font-weight: 300; color: rgba(247,244,239,0.5); line-height: 1.7; }
+
+/* CAREER */
+.mc-career { background: var(--paper-alt); }
+.timeline { margin-top: 3rem; position: relative; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--rule); }
+.tl-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 0 0 3rem 0; position: relative; }
+.tl-item::before { content: ''; position: absolute; left: -4px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--warm); }
+.tl-meta { padding-left: 1.75rem; padding-top: 2px; }
+.tl-period { font-family: var(--ff-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+.tl-org { font-size: 0.75rem; font-weight: 500; color: var(--warm); letter-spacing: 0.06em; text-transform: uppercase; }
+.tl-role { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 0.6rem; }
+.tl-desc { font-size: 0.85rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+
+/* CONNECT */
+.mc-connect { background: var(--ink); color: var(--paper); text-align: center; }
+.mc-connect .section-label { justify-content: center; }
+.mc-connect .section-label::after { display: none; }
+.mc-connect .section-label::before { content: ''; display: block; height: 1px; width: 2.5rem; background: var(--warm-light); opacity: 0.5; }
+.connect-headline {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--paper);
+  margin-bottom: 1.25rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.connect-headline em { font-style: italic; color: var(--warm-light); }
+.connect-sub { font-size: 1rem; font-weight: 300; color: rgba(247,244,239,0.6); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.8; }
+.connect-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.connect-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; transition: all 0.2s; }
+.connect-btn.primary { background: var(--warm); color: var(--paper); }
+.connect-btn.primary:hover { background: var(--warm-dark); }
+.connect-btn.ghost { border: 1px solid rgba(247,244,239,0.25); color: var(--paper); }
+.connect-btn.ghost:hover { border-color: var(--warm-light); color: var(--warm-light); }
+.disclaimer { font-size: 0.7rem; color: rgba(247,244,239,0.28); max-width: 500px; margin: 0 auto; line-height: 1.7; font-style: italic; }
+
+/* FOOTER */
+.mc-footer { background: #0a0908; color: rgba(247,244,239,0.35); padding: 2rem 5vw; display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; letter-spacing: 0.05em; font-family: var(--ff-body); }
+
+/* FADE ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+
+<div class="mc-wrap">
+
+  <!-- HERO -->
+  <div class="mc-hero">
+    <div class="hero-left fade-up">
+      <p class="hero-eyebrow">Austin, TX &middot; People Operations &amp; AI Workforce Transformation</p>
+      <h1 class="hero-name">Mike<br>Cilla<em>.</em></h1>
+      <p class="hero-sub">VP-level People Operations leader building HR functions that run on systems, not heroics. I translate behavioral science and data into organizations that actually perform.</p>
+      <div>
+        <a href="#mc-connect" class="hero-cta">Let's connect &rarr;</a>
+        <a href="#mc-career" class="hero-cta-ghost">View career</a>
+      </div>
+    </div>
+    <div class="hero-right fade-up" style="transition-delay:0.15s">
+      <div class="hero-stat-block">
+        <div class="hero-stat">
+          <div class="hero-stat-number">15+</div>
+          <div class="hero-stat-label">Years in People &amp; HR</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">M.S.</div>
+          <div class="hero-stat-label">Industrial-Org Psychology</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">CoE</div>
+          <div class="hero-stat-label">Built from scratch</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">AI-</div>
+          <div class="hero-stat-label">Ready workforce design</div>
+        </div>
+      </div>
+      <div class="hero-quote">
+        <p>&ldquo;Human resources are like natural resources; they&rsquo;re often buried deep. You have to go looking for them.&rdquo;</p>
+        <cite>&mdash; Sir Ken Robinson</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="mc-about" class="mc-section mc-about">
+    <div class="section-label">About me</div>
+    <div class="about-grid">
+      <div class="fade-up">
+        <h2 class="about-headline">I build People functions that <em>outlast</em> the person who built them.</h2>
+      </div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <div class="about-body">
+          <p>I&rsquo;m an M.S. Industrial-Organizational Psychologist turned People Operations executive. My work sits at the intersection of organizational design, workforce analytics, and HR technology &mdash; with a specific focus on making People functions system-driven rather than leader-dependent.</p>
+          <p>I&rsquo;ve built teams, led HRIS implementations, designed analytics programs, and built the operating models and governance structures that let organizations scale their people capabilities without constantly rebuilding. My CoE model across Operations, Systems &amp; Data, Analytics, and Planning reflects a belief that HR should function more like an engineering discipline than an administrative one.</p>
+          <p>Before going deep into enterprise HR operations, I consulted across startups and SMBs, taught psychology as an adjunct instructor, and worked inside companies like Juul Labs and Electronic Arts. That breadth matters: I&rsquo;ve seen what happens when HR is built right, and when it isn&rsquo;t.</p>
+          <p>Outside of work: I&rsquo;m a drummer and long-time musician, husband, and deeply committed to the idea that good systems and good judgment together produce outcomes that neither achieves alone.</p>
+        </div>
+        <div class="about-tags">
+          <span class="tag warm">I/O Psychology</span>
+          <span class="tag warm">AI Workforce Transformation</span>
+          <span class="tag warm">People Analytics</span>
+          <span class="tag">HRIS Architecture</span>
+          <span class="tag">Org Design</span>
+          <span class="tag">CoE Leadership</span>
+          <span class="tag">HR Tech Strategy</span>
+          <span class="tag">Talent Intelligence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT I DO -->
+  <div id="mc-positioning" class="mc-section mc-positioning">
+    <div class="section-label">What I do</div>
+    <div class="positioning-grid">
+      <div class="pos-card fade-up">
+        <div class="pos-number">01</div>
+        <div class="pos-accent"></div>
+        <div class="pos-title">AI Workforce &amp; People Transformation</div>
+        <div class="pos-body">Designing the operating models, role architectures, and capability frameworks organizations need to integrate AI into how work actually gets done &mdash; not just how it&rsquo;s discussed in leadership offsites.</div>
+      </div>
+      <div class="pos-card fade-up" style="transition-delay:0.1s">
+        <div class="pos-number">02</div>
+        <div class="pos-accent"></div>
+        <div class="pos-title">People Systems &amp; Data Strategy</div>
+        <div class="pos-body">Turning fragmented HRIS data into trustworthy, decision-ready intelligence. I&rsquo;ve led implementations, rebuilt data governance from scratch, and designed the analytics infrastructure that makes HR reporting actually mean something.</div>
+      </div>
+      <div class="pos-card fade-up" style="transition-delay:0.2s">
+        <div class="pos-number">03</div>
+        <div class="pos-accent"></div>
+        <div class="pos-title">HR Operations Transformation</div>
+        <div class="pos-body">Rebuilding People Operations as a Centers of Excellence model &mdash; where service delivery, technology, analytics, and strategic planning each have clear ownership, accountability, and performance standards that survive leadership transitions.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <div id="mc-philosophy" class="mc-section mc-philosophy">
+    <div class="section-label">Philosophy</div>
+    <div class="philosophy-two-col">
+      <div class="fade-up">
+        <p class="philosophy-lead">&ldquo;HR should function more like an engineering discipline than an administrative one.&rdquo;</p>
+        <div class="values-row">
+          <span class="value-pill">Individuality</span>
+          <span class="value-pill">Openness</span>
+          <span class="value-pill">Efficacy</span>
+          <span class="value-pill">Winning</span>
+          <span class="value-pill">Humility</span>
+          <span class="value-pill" style="background:var(--warm);">+ sense of humor</span>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <div class="philosophy-body">
+          <p>I came into HR through behavioral science, and that lens has never left. People are the most complex system any organization operates &mdash; and most HR functions treat them like a cost center to be managed, not a capability to be designed.</p>
+          <p>My operating premise is simple: the organizations that win are the ones that build people systems intentionally. That means clear governance. Reliable data. Analytics that drive decisions, not just decorate slide decks. And leadership models where the function doesn&rsquo;t rise and fall with whoever&rsquo;s in the seat.</p>
+          <p>I&rsquo;ve spent my career being somewhat of a renegade about this &mdash; pushing back on HR as reactive service delivery, advocating for People functions that hold themselves to the same rigor as Finance or Engineering. Not because it&rsquo;s trendy, but because it works.</p>
+          <p>The emergence of AI in workforce management doesn&rsquo;t change that premise &mdash; it accelerates it. The organizations that have their data, roles, and systems right will absorb AI with genuine leverage. The ones that don&rsquo;t will absorb it as another layer of complexity on top of a broken foundation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERTISE -->
+  <div id="mc-expertise" class="mc-section mc-expertise">
+    <div class="section-label">Areas of expertise</div>
+    <p class="expertise-intro">Fifteen years of work across the <em>full spectrum</em> of People &mdash; from behavioral science research to enterprise HR system architecture.</p>
+    <div class="expertise-grid">
+      <div class="exp-card fade-up">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">People Analytics</div>
+        <div class="exp-desc">Workforce intelligence, flight risk modeling, turnover analytics, HRBP self-service enablement, and building the data infrastructure that makes reporting trustworthy.</div>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:0.07s">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">HR Technology</div>
+        <div class="exp-desc">HRIS implementation and optimization, ATS architecture, talent intelligence platforms, and the integration strategy that ties them together without creating data debt.</div>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:0.14s">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">Org Design &amp; Workforce Planning</div>
+        <div class="exp-desc">Role architecture, span-of-control analysis, CoE model design, headcount planning, and the structural work that precedes any effective people strategy.</div>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:0.21s">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">AI Workforce Transformation</div>
+        <div class="exp-desc">Designing operating models, capability frameworks, and governance structures for organizations integrating AI &mdash; with particular focus on what changes in role design, skills, and performance when AI is part of the workflow.</div>
+      </div>
+      <div class="exp-card fade-up">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">HR Operations &amp; Service Delivery</div>
+        <div class="exp-desc">Building scalable shared services, SLA-driven case management, SOPs, and the operational backbone that lets strategic HR actually operate strategically.</div>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:0.07s">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">I/O Psychology &amp; Talent Science</div>
+        <div class="exp-desc">Pre-employment assessment design, behavioral interviewing frameworks, employee engagement analysis, and the evidence-based practices that make selection and development programs work.</div>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:0.14s">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">Learning &amp; Development</div>
+        <div class="exp-desc">Program design for high-potential leaders, manager effectiveness, and instructional design principles applied to real capability gaps &mdash; not just training catalogs.</div>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:0.21s">
+        <div class="exp-icon">&#9672;</div>
+        <div class="exp-title">PMO &amp; Strategic Planning</div>
+        <div class="exp-desc">HR PMO governance, business case development, portfolio prioritization, and the project discipline that turns strategic intent into operational execution.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREER -->
+  <div id="mc-career" class="mc-section mc-career">
+    <div class="section-label">Career</div>
+    <div class="timeline">
+      <div class="tl-item fade-up">
+        <div class="tl-meta">
+          <div class="tl-period">2023 &mdash; Present</div>
+          <div class="tl-org">Healthcare / Public Sector</div>
+        </div>
+        <div>
+          <div class="tl-role">VP, People Operations, Planning &amp; Systems</div>
+          <div class="tl-desc">Built and lead a 13-person People Operations Center of Excellence &mdash; spanning Operations, Systems &amp; Data, Analytics, and Planning &mdash; within a 77-person People Department. Designed the CoE structure from scratch, led a full HRIS go-live, built the analytics infrastructure, and architected the governance and workforce planning models that make the function run on systems rather than individuals. Currently leading FY27 strategic planning and a workforce transformation framework built around AI-readiness and acquisition scalability.</div>
+        </div>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-meta">
+          <div class="tl-period">2018 &mdash; 2023</div>
+          <div class="tl-org">Juul Labs</div>
+        </div>
+        <div>
+          <div class="tl-role">Director, HR Strategy &amp; Insights</div>
+          <div class="tl-desc">Built the HR Strategy &amp; Insights function from the ground up &mdash; owning global people analytics, HR PMO scope, and long-term strategic planning for the HR function. Previously served as Sr. HRBP supporting executives and senior leaders across Field Sales, Marketing, Strategy, and Consumer Insights. Supported the opening of Americas HQ in Austin, managed major organizational restructures, and led reporting, change management, and communications across all people data programs including comp, performance, and succession planning.</div>
+        </div>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-meta">
+          <div class="tl-period">2016 &mdash; 2018</div>
+          <div class="tl-org">Namely</div>
+        </div>
+        <div>
+          <div class="tl-role">HR Consultant, Managed Services</div>
+          <div class="tl-desc">One of the first hires on Namely&rsquo;s Managed Services team, with a mandate to define and build a new B2B HR consulting offering from the ground up. Developed case management workflows, SLAs, SOPs, and a knowledge base for the practice. Managed a ~$5M book of business in collaboration with HRIS, Benefits, and Payroll SMEs.</div>
+        </div>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-meta">
+          <div class="tl-period">Earlier</div>
+          <div class="tl-org">Various</div>
+        </div>
+        <div>
+          <div class="tl-role">Consultant, Advisor &amp; L&amp;D Professional</div>
+          <div class="tl-desc">Range of advisory, consulting, and L&amp;D roles across startups, SMBs, and enterprise &mdash; including Electronic Arts (Learning &amp; Development, Corporate University), Global HR Research (Talent Assessment Program Manager), and multiple early-stage startup advisory engagements. Also served as adjunct psychology instructor at both a private vocational college and a state university &mdash; work I valued deeply and that still shapes how I think about capability development and behavior change.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECT -->
+  <div id="mc-connect" class="mc-section mc-connect">
+    <div class="section-label">Connect</div>
+    <h2 class="connect-headline">Let&rsquo;s talk about <em>what&rsquo;s next.</em></h2>
+    <p class="connect-sub">Whether you&rsquo;re building a People function, navigating AI workforce transformation, or just want to think through a hard org problem &mdash; I&rsquo;m interested in the conversation.</p>
+    <div class="connect-links">
+      <a href="https://www.linkedin.com/in/michaelcilla" class="connect-btn primary" target="_blank">LinkedIn &rarr;</a>
+      <a href="mailto:mikejcilla@gmail.com" class="connect-btn ghost">mikejcilla@gmail.com</a>
+      <a href="https://drive.google.com/file/d/1sROJzU4gTLsrNhws7fEKGcoVte0BMAMs/view?usp=share_link" class="connect-btn ghost" target="_blank">View r&eacute;sum&eacute;</a>
+    </div>
+    <p class="disclaimer">The views, opinions, and content expressed on this site are my own and do not represent the positions, strategies, or opinions of any current or former employer. All information here is intended solely to represent my individual professional profile and perspectives.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="mc-footer">
+    <span>&copy; 2026 Mike Cilla &middot; Austin, TX</span>
+    <span>M.S. Industrial-Organizational Psychology &middot; San Jose State University</span>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  document.querySelectorAll('a[href^="#mc-"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+})();
+</script>
