@@ -269,6 +269,11 @@ body {
 .career-desc { font-size: 1.15rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; max-width: 540px; }
 .career-items { display: flex; flex-direction: column; }
 .c-item { border-top: 1px solid var(--rule); display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2.25rem 0; cursor: pointer; }
+
+/* ── CAREER LOGOS ── */
+.c-logo { width: 28px; height: 28px; object-fit: contain; opacity: 0.75; display: block; margin-top: 0.4rem; filter: grayscale(30%); transition: opacity 0.2s; }
+.c-item:hover .c-logo { opacity: 1; }
+.c-logo-wrap { display: flex; flex-direction: column; gap: 0.35rem; }
 .c-period { font-family: var(--ff-mono); font-size: 0.78rem; letter-spacing: 0.12em; color: rgba(240,236,228,0.35); margin-bottom: 0.4rem; }
 .c-org { font-size: 0.95rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
 .c-org-full { font-size: 0.85rem; font-weight: 300; color: rgba(240,236,228,0.3); margin-bottom: 0.2rem; font-style: italic; }
@@ -728,10 +733,13 @@ body {
 
       <div class="c-item reveal">
         <div class="c-meta">
-          <div class="c-period">2023 — Present</div>
-          <div class="c-org">Central Health</div>
-          <div class="c-org-full">Travis County Healthcare District</div>
-          <div class="c-type">VP · People Operations</div>
+          <div class="c-logo-wrap">
+            <div class="c-period">2023 — Present</div>
+            <div class="c-org">Central Health</div>
+            <div class="c-org-full">Travis County Healthcare District</div>
+            <div class="c-type">VP · People Operations</div>
+            <img src="https://logo.clearbit.com/centralhealth.net" alt="Central Health" class="c-logo" onerror="this.style.display='none'">
+          </div>
         </div>
         <div class="c-content">
           <div class="c-role">VP, People Operations, Planning &amp; Systems</div>
@@ -746,9 +754,12 @@ body {
 
       <div class="c-item reveal" style="transition-delay:.08s">
         <div class="c-meta">
-          <div class="c-period">2018 — 2023</div>
-          <div class="c-org">Juul Labs</div>
-          <div class="c-type">Director · HR Strategy</div>
+          <div class="c-logo-wrap">
+            <div class="c-period">2018 — 2023</div>
+            <div class="c-org">Juul Labs</div>
+            <div class="c-type">Director · HR Strategy</div>
+            <img src="https://logo.clearbit.com/juullabs.com" alt="Juul Labs" class="c-logo" onerror="this.style.display='none'">
+          </div>
         </div>
         <div class="c-content">
           <div class="c-role">Director, HR Strategy &amp; Insights</div>
@@ -763,9 +774,12 @@ body {
 
       <div class="c-item reveal" style="transition-delay:.12s">
         <div class="c-meta">
-          <div class="c-period">2016 — 2018</div>
-          <div class="c-org">Namely</div>
-          <div class="c-type">Consultant · Managed Services</div>
+          <div class="c-logo-wrap">
+            <div class="c-period">2016 — 2018</div>
+            <div class="c-org">Namely</div>
+            <div class="c-type">Consultant · Managed Services</div>
+            <img src="https://logo.clearbit.com/namely.com" alt="Namely" class="c-logo" onerror="this.style.display='none'">
+          </div>
         </div>
         <div class="c-content">
           <div class="c-role">HR Consultant, Managed Services</div>
@@ -780,9 +794,17 @@ body {
 
       <div class="c-item reveal" style="transition-delay:.16s">
         <div class="c-meta">
-          <div class="c-period">2010 — 2016</div>
-          <div class="c-org">Various</div>
-          <div class="c-type">Consulting · L&amp;D · Advisory</div>
+          <div class="c-logo-wrap">
+            <div class="c-period">2010 — 2016</div>
+            <div class="c-org">Various</div>
+            <div class="c-type">Consulting · L&amp;D · Advisory</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:0.4rem;">
+              <img src="https://logo.clearbit.com/ea.com" alt="Electronic Arts" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
+              <img src="https://logo.clearbit.com/victoryagency.com" alt="Victory Marketing Agency" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
+              <img src="https://logo.clearbit.com/globalhrresearch.com" alt="Global HR Research" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
+              <img src="https://logo.clearbit.com/gaspedal.com" alt="GasPedal" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
+            </div>
+          </div>
         </div>
         <div class="c-content">
           <div class="c-role">Consultant, Advisor &amp; L&amp;D Professional</div>
