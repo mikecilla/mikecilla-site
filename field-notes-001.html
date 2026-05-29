@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Notes #001: I Didn't Adopt an AI Tool. I Accidentally Built an AI Team. — Mike Cilla</title>
+<meta name="description" content="Field Notes by Mike Cilla — observations from the work of building and running People functions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q8B7D4VZ08');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--void:#faf8f4;--deep:#f2ede6;--surface:#ffffff;--lift:#ede8e1;--bone:#1a1612;--bone-dim:rgba(26,22,18,0.62);--bone-ghost:rgba(26,22,18,0.12);--gold:#b8671e;--gold-light:#c9843a;--rule:rgba(26,22,18,0.1);--ff-display:'Cormorant Garamond',Georgia,serif;--ff-body:'Outfit',system-ui,sans-serif;--ff-mono:'JetBrains Mono',monospace;}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-size:22px;line-height:1.85;font-weight:300;}
+#site-header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 3vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);}
+.h-mark{font-family:var(--ff-display);font-size:1.05rem;font-weight:400;letter-spacing:0.06em;color:var(--bone);text-decoration:none;}
+.h-mark span{color:var(--gold);}
+.h-back{font-family:var(--ff-mono);font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s;}
+.h-back:hover{color:var(--gold);}
+.fn-page{max-width:780px;margin:0 auto;padding:calc(64px + 4rem) 2rem 6rem;}
+.fn-back-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;display:flex;align-items:center;gap:0.75rem;}
+.fn-back-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
+.fn-meta{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.75rem;flex-wrap:wrap;}
+.fn-number{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);}
+.fn-tag{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--bone-dim);border:1px solid var(--rule);padding:0.25rem 0.65rem;}
+.fn-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--bone);line-height:1.1;margin-bottom:1rem;}
+.fn-deck{font-family:var(--ff-display);font-size:1.25rem;font-weight:300;font-style:italic;color:var(--bone-dim);line-height:1.6;margin-bottom:2.5rem;border-left:2px solid var(--gold);padding-left:1.25rem;}
+.fn-body{font-size:1.15rem;font-weight:300;color:var(--bone-dim);line-height:2.0;}
+.fn-body p{margin-bottom:1.6rem;}
+.fn-body p:last-child{margin-bottom:0;}
+.fn-h2{font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:var(--bone);line-height:1.2;margin:2.75rem 0 0.85rem;}
+.fn-pullquote{font-family:var(--ff-display);font-size:1.45rem;font-style:italic;font-weight:300;color:var(--bone);line-height:1.45;margin:2.5rem 0;padding-left:1.75rem;border-left:2px solid var(--gold);}
+.fn-coda{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--rule);font-family:var(--ff-display);font-size:1.15rem;font-style:italic;font-weight:300;color:var(--bone-dim);line-height:1.7;}
+.fn-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2.5rem 0;}
+.fn-table{width:100%;border-collapse:collapse;margin:0;min-width:480px;}
+.fn-table th{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);padding:0.75rem 1.1rem;border-bottom:2px solid var(--rule);text-align:left;font-weight:400;}
+.fn-table td{font-size:1rem;font-weight:300;color:var(--bone-dim);padding:0.85rem 1.1rem;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.7;}
+.fn-table tr:last-child td{border-bottom:none;}
+.fn-table td:first-child{color:var(--bone);font-weight:400;white-space:nowrap;}
+/* Inline governing question block used in #002 */
+body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
+/* Infographic */
+.fn-infographic{margin:2.5rem 0;background:#131211;border:1px solid rgba(240,236,228,0.1);padding:2.25rem 2rem;}
+.fni-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;}
+.fni-eyebrow::before{content:'';display:block;width:1.5rem;height:1px;background:#c9843a;opacity:0.6;}
+.fni-headline{font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;line-height:1.1;color:#f0ece4;margin-bottom:0.25rem;}
+.fni-headline em{font-style:italic;font-weight:600;color:#e8b87a;}
+.fni-sub{font-size:0.92rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.7;margin-bottom:1.5rem;}
+.fni-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(240,236,228,0.08);border:1px solid rgba(240,236,228,0.08);margin-bottom:1px;}
+.fni-card{background:#1a1917;padding:1.4rem;position:relative;overflow:hidden;}
+.fni-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+.fni-card.p1::before{background:#7F77DD;} .fni-card.p2::before{background:#1D9E75;} .fni-card.p3::before{background:#BA7517;} .fni-card.p4::before{background:#c9843a;}
+.fni-pass{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.6rem;display:block;}
+.fni-pass.p1{color:#7F77DD;} .fni-pass.p2{color:#1D9E75;} .fni-pass.p3{color:#BA7517;} .fni-pass.p4{color:#c9843a;}
+.fni-num{font-family:var(--ff-display);font-size:3.5rem;font-weight:700;line-height:0.9;color:rgba(240,236,228,0.04);position:absolute;top:0.6rem;right:1rem;pointer-events:none;}
+.fni-card-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:600;color:#f0ece4;line-height:1.2;margin-bottom:0.45rem;}
+.fni-card-desc{font-size:0.85rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.65;margin-bottom:0.85rem;}
+.fni-rule{width:1.5rem;height:1px;background:rgba(240,236,228,0.1);margin-bottom:0.75rem;}
+.fni-signals{display:flex;flex-direction:column;gap:5px;margin-bottom:0.85rem;}
+.fni-signal{display:flex;align-items:flex-start;gap:7px;font-size:0.8rem;color:rgba(240,236,228,0.6);line-height:1.55;}
+.fni-arr{font-size:0.65rem;margin-top:3px;flex-shrink:0;}
+.fni-arr.p1{color:#7F77DD;} .fni-arr.p2{color:#1D9E75;} .fni-arr.p3{color:#BA7517;} .fni-arr.p4{color:#c9843a;}
+.fni-bars{padding-top:0.75rem;border-top:1px solid rgba(240,236,228,0.07);}
+.fni-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.fni-bar-lbl{font-family:var(--ff-mono);font-size:0.65rem;color:rgba(240,236,228,0.45);width:96px;flex-shrink:0;letter-spacing:0.04em;white-space:nowrap;}
+.fni-bar-track{flex:1;height:3px;background:rgba(240,236,228,0.08);}
+.fni-bar-fill{height:100%;}
+.fni-bar-fill.p1{background:#7F77DD;} .fni-bar-fill.p2{background:#1D9E75;} .fni-bar-fill.p3{background:#BA7517;} .fni-bar-fill.p4{background:#c9843a;}
+.fni-governing{background:rgba(240,236,228,0.03);border:1px solid rgba(240,236,228,0.08);border-left:2px solid #c9843a;padding:1.25rem 1.5rem;margin-bottom:1px;}
+.fni-gov-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;}
+.fni-gov-q{font-family:var(--ff-display);font-size:1.05rem;font-style:italic;font-weight:300;color:rgba(240,236,228,0.75);line-height:1.65;}
+.fni-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(240,236,228,0.08);border:1px solid rgba(240,236,228,0.08);margin-bottom:1rem;}
+.fni-meta-cell{background:#1a1917;padding:1rem;text-align:center;}
+.fni-meta-num{font-family:var(--ff-display);font-size:1.8rem;font-weight:700;color:#f0ece4;line-height:1;margin-bottom:4px;}
+.fni-meta-lbl{font-family:var(--ff-mono);font-size:0.62rem;color:rgba(240,236,228,0.32);letter-spacing:0.06em;line-height:1.4;}
+.fni-note{font-family:var(--ff-display);font-size:0.88rem;font-style:italic;font-weight:300;color:rgba(240,236,228,0.25);text-align:center;}
+/* Page nav */
+.fn-page-nav{display:flex;justify-content:space-between;align-items:center;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--rule);}
+.fn-nav-link{font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;transition:color 0.2s;}
+.fn-nav-link:hover{color:var(--gold);}
+.fn-nav-all{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
+.fn-nav-all:hover{background:rgba(184,103,30,0.06);}
+.fn-footer{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;}
+.fn-footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:var(--bone-dim);text-decoration:none;}
+.fn-footer-mark span{color:var(--gold);}
+.fn-footer-note{font-family:var(--ff-mono);font-size:0.62rem;color:rgba(26,22,18,0.3);letter-spacing:0.06em;}
+@media(max-width:600px){
+  .fn-page{padding-left:1.25rem;padding-right:1.25rem;}
+  .fn-title{font-size:1.9rem;}
+  .fn-pullquote{font-size:1.2rem;}
+  .fni-grid{grid-template-columns:1fr;}
+  .fni-meta{grid-template-columns:repeat(2,1fr);}
+  .fni-bar-lbl{width:78px;font-size:0.6rem;}
+  .fn-page-nav{flex-direction:column;gap:1rem;text-align:center;}
+}
+</style>
+</head>
+<body>
+<header id="site-header">
+  <a href="/" class="h-mark">Mike Cilla<span>.</span></a>
+  <a href="/#s-fieldnotes" class="h-back">← Field Notes</a>
+</header>
+<main class="fn-page">
+  <div class="fn-back-label">Field Notes</div>
+  <div class="fn-entry">
+          <div class="fn-meta">
+            <span class="fn-number">Field Notes #001</span>
+            <span class="fn-tag">AI · Leadership · I/O Psychology</span>
+            <span class="fn-tag">~1,000 words</span>
+          </div>
+
+          <h3 class="fn-title">I Didn't Adopt an AI Tool.<br>I Accidentally Built an AI Team.</h3>
+          <p class="fn-deck">A People Operations executive reflects on 2.5 years of building contextual history with one AI, onboarding a second, transferring organizational knowledge between them — and discovering that classic I/O psychology concepts applied to all of it.</p>
+
+          <div class="fn-body">
+
+            <p>It started the way most useful things do: without a plan.</p>
+
+            <p>About two and a half years into my role as VP of People Operations, I realized I had been having a running conversation with an AI — ChatGPT, at the time — about nearly every significant work challenge I was navigating. Workforce analytics. HRIS architecture. Org design. Business cases. Executive communications. Leadership decisions I wasn't ready to talk through with anyone inside the organization.</p>
+
+            <p>Somewhere in all of that, I had accumulated something I hadn't set out to build: a living record of how I think.</p>
+
+            <div class="fn-pullquote">It wasn't a database. It wasn't documentation. It was closer to what you'd get if you could read someone's professional subconscious.</div>
+
+            <p class="fn-h2">The Knowledge Transfer Problem</p>
+
+            <p>When I started working with Claude — which has genuinely different strengths — I hit the same wall every organization hits when a key employee leaves: the new person is capable, but they don't have the context. They don't know the history. They don't know how you think, what you've already tried, or what matters.</p>
+
+            <p>So I did what I would have done with a new director joining my team. I onboarded Claude.</p>
+
+            <p>Not by uploading files. By transferring knowledge the way knowledge actually transfers — with documentation, examples of quality work, communication preferences, recurring priorities, historical context, and calibration over time. I shared how I make decisions. What I care about. Where I've been burned. What kinds of outputs I find useful and what reads as generic to me.</p>
+
+            <p>It worked. But what happened in the process was more interesting than I expected.</p>
+
+            <p class="fn-h2">AI Job-Skill Fit: A Classic I/O Problem</p>
+
+            <p>One of the foundational concepts in Industrial-Organizational Psychology is person-job fit — the idea that performance improves when an individual's capabilities align well with what the role actually requires. Hire for the wrong fit and you get friction, underperformance, and frustration regardless of raw capability.</p>
+
+            <p>What I noticed, gradually, was that the same principle applied to AI systems.</p>
+
+            <div class="fn-table-wrap"><table class="fn-table">
+              <thead>
+                <tr><th>Capability</th><th>ChatGPT</th><th>Claude</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Longitudinal memory &amp; context</td><td>Strong — 2.5 years of accumulated history</td><td>Limited at first; built over time</td></tr>
+                <tr><td>Strategic conversation</td><td>Strong — iterative, relationship-aware</td><td>Strong — rigorous, structurally precise</td></tr>
+                <tr><td>Large document synthesis</td><td>Adequate</td><td>Exceptional</td></tr>
+                <tr><td>Visual artifacts &amp; design</td><td>Limited</td><td>Strong — website, decks, structured outputs</td></tr>
+                <tr><td>Long-form writing &amp; editing</td><td>Good</td><td>Excellent — nuanced, voice-preserving</td></tr>
+                <tr><td>Org context &amp; leadership style</td><td>Deep — years of calibration</td><td>Developing — through deliberate onboarding</td></tr>
+              </tbody>
+            </table></div>
+
+            <p>Different tools. Different fit profiles. Different jobs. The right response wasn't to pick one — it was to understand what each was actually good at, assign accordingly, and manage the handoffs between them. Which is, again, exactly what you'd do with a team of people.</p>
+
+            <p class="fn-h2">The Unexpected Output: A Leadership User Manual</p>
+
+            <p>Here's the part I didn't anticipate.</p>
+
+            <p>To transfer context effectively, Claude had to do something unusual: it had to analyze and articulate how I think. Communication patterns. Decision preferences. Leadership tendencies. What I find motivating. Where I tend to overcomplicate. How I process ambiguity. What quality looks like to me versus what adequate looks like.</p>
+
+            <p>What emerged from that process was the most detailed and accurate leadership profile I have ever received. More nuanced than any 360 feedback I've been through. More honest than most coaching conversations. Grounded in actual behavioral evidence rather than survey responses.</p>
+
+            <div class="fn-pullquote">I was attempting to train an AI. The AI ended up training me.</div>
+
+            <p>Not in a mystical sense. In a very practical one: the act of making my thinking legible to a system that needed explicit context forced a level of self-reflection that implicit, accumulated organizational knowledge never demands.</p>
+
+            <p class="fn-h2">What I Took From It</p>
+
+            <p>The biggest surprise wasn't how much work AI could absorb. It was how much organizational psychology still mattered.</p>
+
+            <p>Onboarding. Role clarity. Capability development. Knowledge transfer. Performance enablement. Job-skill fit. Every concept that governs how humans integrate into organizations turned out to apply — with remarkable fidelity — to how AI systems integrate into a leadership operating model.</p>
+
+            <p>That probably shouldn't be surprising. The underlying challenge in both cases is the same: you have a capable system, and the question is whether the context, structure, and role definition around it are good enough for that capability to actually show up.</p>
+
+            <p>Most organizations that struggle with AI adoption aren't struggling because the technology is insufficient. They're struggling because they've skipped the organizational work that would make the technology useful. They've bought the hire before building the job.</p>
+
+            <p>I've spent fifteen years arguing that HR should function more like an engineering discipline. It turns out the inverse is also true: AI adoption, done well, looks a lot like good people management.</p>
+
+            <div class="fn-coda">The technology was new. The people science wasn't.</div>
+
+          </div>
+        </div>
+  <div class="fn-page-nav">
+    <span></span>
+    <a href="/#s-fieldnotes" class="fn-nav-all">All field notes</a>
+    <a href="field-notes-002.html" class="fn-nav-link">Next note →</a>
+  </div>
+  <footer class="fn-footer">
+    <a href="/" class="fn-footer-mark">Mike Cilla<span>.</span></a>
+    <span class="fn-footer-note">&copy; 2026 Mike Cilla &middot; Austin, TX</span>
+  </footer>
+</main>
+</body>
+</html>
