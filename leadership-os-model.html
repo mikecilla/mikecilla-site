@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership OS Model — Mike Cilla</title>
+<meta name="description" content="The underlying model behind Leadership OS — how evidence is gathered, how constructs are defined, and how the methodology connects to established research traditions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q8B7D4VZ08');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --void:#faf8f4;
+  --deep:#f2ede6;
+  --surface:#ffffff;
+  --lift:#ede8e1;
+  --ink:#1a1612;
+  --ink-dim:rgba(26,22,18,0.62);
+  --ink-ghost:rgba(26,22,18,0.12);
+  --gold:#b8671e;
+  --gold-light:#c9843a;
+  --gold-dim:rgba(184,103,30,0.1);
+  --rule:rgba(26,22,18,0.1);
+  --c1:#5B5BD6;
+  --c2:#b8671e;
+  --c3:#1D9E75;
+  --ff-display:'Cormorant Garamond',Georgia,serif;
+  --ff-body:'Outfit',system-ui,sans-serif;
+  --ff-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--ink);font-family:var(--ff-body);font-size:20px;line-height:1.9;font-weight:300;}
+
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);}
+.h-mark{font-family:var(--ff-display);font-size:1rem;font-weight:400;letter-spacing:0.06em;color:var(--ink);text-decoration:none;}
+.h-mark span{color:var(--gold);}
+.h-nav{display:flex;align-items:center;gap:2rem;}
+.h-nav a{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
+.h-nav a:hover{color:var(--gold);}
+
+/* HERO */
+#hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:calc(64px + 5vw) 4vw 5vw;background:var(--void);position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,22,18,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,18,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{max-width:860px;}
+.hero-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);}
+.hero-title{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;line-height:0.98;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.2em;}
+.hero-title em{font-style:italic;font-weight:600;color:var(--gold);}
+.hero-title .block{display:block;}
+.hero-sub{font-family:var(--ff-display);font-size:clamp(1.15rem,1.8vw,1.5rem);font-weight:300;font-style:italic;color:var(--ink-dim);border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0 2rem;line-height:1.55;max-width:640px;}
+.hero-desc{font-size:1.12rem;font-weight:300;color:var(--ink-dim);line-height:2.0;max-width:640px;margin-bottom:1.5rem;}
+.hero-caveat{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.1em;color:rgba(26,22,18,0.35);line-height:1.7;max-width:560px;padding:1rem 1.25rem;border:1px solid var(--rule);background:var(--deep);}
+
+/* SECTION COMMONS */
+section{padding:5.5rem 4vw;}
+.s-label{font-family:var(--ff-mono);font-size:0.72rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+.s-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
+.section-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.75rem;}
+.section-headline em{font-style:italic;font-weight:600;color:var(--gold);}
+.section-sub{font-size:1.1rem;font-weight:300;color:var(--ink-dim);line-height:2.0;max-width:660px;margin-bottom:3rem;}
+
+/* EVIDENCE MODEL */
+#evidence{background:var(--deep);}
+.evidence-model{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto;gap:0;align-items:stretch;margin-bottom:3.5rem;border:1px solid var(--rule);background:var(--rule);}
+.ev-source{background:var(--surface);padding:2rem 1.75rem;}
+.ev-source-icon{font-size:1.75rem;margin-bottom:0.75rem;display:block;}
+.ev-source-tag{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;}
+.ev-source-tag.s1{color:var(--c1);}
+.ev-source-tag.s2{color:var(--c2);}
+.ev-source-tag.s3{color:var(--c3);}
+.ev-source-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem;}
+.ev-source-subtitle{font-family:var(--ff-display);font-size:0.95rem;font-style:italic;color:var(--ink-dim);margin-bottom:0.85rem;}
+.ev-source-desc{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.ev-connector{background:var(--void);display:flex;align-items:center;justify-content:center;padding:0 1.25rem;font-size:1.5rem;color:var(--gold);opacity:0.4;font-family:var(--ff-display);}
+.ev-output{background:var(--ink);padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:center;}
+.ev-output-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:0.5rem;}
+.ev-output-title{font-family:var(--ff-display);font-size:1.5rem;font-weight:600;color:#f0ece4;line-height:1.2;margin-bottom:0.5rem;}
+.ev-output-desc{font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.85;}
+
+.evidence-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.ew-card{background:var(--surface);padding:1.75rem;}
+.ew-card-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.ew-card-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;line-height:1.25;}
+.ew-card-desc{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+
+/* CONSTRUCTS */
+#constructs{background:var(--void);}
+.constructs-intro{max-width:700px;margin-bottom:3.5rem;}
+.construct-grid{display:flex;flex-direction:column;gap:0;}
+.construct{border-top:1px solid var(--rule);padding:0;overflow:hidden;}
+.construct-header{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.75rem 0;cursor:pointer;transition:border-color 0.2s;}
+.construct-header:hover .construct-name{color:var(--gold);}
+.construct-meta{display:flex;align-items:center;gap:1.5rem;}
+.construct-num{font-family:var(--ff-mono);font-size:0.62rem;color:var(--gold);opacity:0.5;}
+.construct-name{font-family:var(--ff-display);font-size:1.35rem;font-weight:600;color:var(--ink);line-height:1.2;transition:color 0.2s;}
+.construct-tagline{font-family:var(--ff-display);font-size:0.95rem;font-style:italic;font-weight:300;color:var(--ink-dim);margin-top:0.2rem;}
+.construct-toggle{font-family:var(--ff-mono);font-size:0.72rem;color:var(--gold);opacity:0.5;transition:transform 0.3s;}
+.construct.open .construct-toggle{transform:rotate(180deg);}
+.construct-body{display:none;padding-bottom:2.25rem;}
+.construct.open .construct-body{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.cb-cell{background:var(--deep);padding:1.5rem;}
+.cb-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.65rem;}
+.cb-text{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.cb-text.limitation{color:rgba(26,22,18,0.45);font-style:italic;}
+
+/* RESEARCH STREAMS */
+#research{background:var(--deep);}
+.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3.5rem;}
+.research-body{font-size:1.08rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
+.research-body p+p{margin-top:1.1rem;}
+.research-streams{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.rs-item{background:var(--surface);padding:1.5rem 1.75rem;display:grid;grid-template-columns:3rem 1fr;gap:1.25rem;align-items:start;}
+.rs-icon{font-size:1.4rem;line-height:1;}
+.rs-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
+.rs-desc{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.rs-refs{font-family:var(--ff-mono);font-size:0.6rem;color:rgba(26,22,18,0.32);margin-top:0.35rem;line-height:1.5;}
+
+/* FUTURE ARCHITECTURE */
+#future{background:var(--void);}
+.future-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start;}
+.future-body{font-size:1.08rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
+.future-body p+p{margin-top:1.1rem;}
+.future-flow{display:flex;flex-direction:column;gap:0;}
+.ff-step{display:grid;grid-template-columns:2.5rem 1fr;gap:1.25rem;padding:1.25rem 0;border-top:1px solid var(--rule);align-items:start;}
+.ff-step:last-child{border-bottom:1px solid var(--rule);}
+.ff-icon{font-size:1.25rem;line-height:1;padding-top:0.1rem;}
+.ff-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
+.ff-desc{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.ff-arrow{text-align:center;font-family:var(--ff-mono);font-size:0.65rem;color:var(--gold);opacity:0.4;padding:0.25rem 0;letter-spacing:0.1em;}
+
+.future-hypotheses{margin-top:3.5rem;}
+.fh-headline{font-family:var(--ff-display);font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:0.5rem;}
+.fh-headline em{font-style:italic;font-weight:600;color:var(--gold);}
+.fh-sub{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.9;margin-bottom:2rem;max-width:600px;}
+.fh-items{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.fh-item{background:var(--deep);padding:1.5rem;}
+.fh-item-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.fh-item-q{font-family:var(--ff-display);font-size:1.05rem;font-style:italic;font-weight:300;color:var(--ink-dim);line-height:1.65;}
+
+/* HONESTY STATEMENT */
+#honesty{background:var(--ink);padding:4rem 4vw;text-align:center;}
+.honesty-inner{max-width:680px;margin:0 auto;}
+.honesty-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:1.25rem;}
+.honesty-quote{font-family:var(--ff-display);font-size:clamp(1.3rem,2.5vw,1.9rem);font-style:italic;font-weight:300;color:#f0ece4;line-height:1.45;margin-bottom:1.5rem;}
+.honesty-body{font-size:0.97rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.9;max-width:560px;margin:0 auto;}
+
+/* NAV LINKS */
+.page-nav{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem;}
+.nav-link{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
+.nav-link:hover{background:var(--gold-dim);}
+.nav-link.dark{color:rgba(240,236,228,0.5);border-color:rgba(240,236,228,0.15);}
+.nav-link.dark:hover{color:#c9843a;border-color:rgba(201,132,58,0.4);}
+
+/* FOOTER */
+footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justify-content:space-between;}
+.footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:rgba(240,236,228,0.3);text-decoration:none;}
+.footer-mark span{color:rgba(201,132,58,0.5);}
+.footer-note{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.08em;color:rgba(240,236,228,0.12);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1);}
+.reveal.up{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:768px){
+  section{padding:4rem 1.25rem;}
+  .evidence-model{grid-template-columns:1fr;grid-template-rows:auto;}
+  .ev-connector{padding:0.5rem;transform:rotate(90deg);}
+  .evidence-why,.fh-items{grid-template-columns:1fr;}
+  .construct.open .construct-body{grid-template-columns:1fr 1fr;}
+  .research-grid,.future-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .construct.open .construct-body{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <a href="https://mikecilla.com" class="h-mark">Mike Cilla<span>.</span></a>
+  <nav class="h-nav">
+    <a href="#evidence">The model</a>
+    <a href="#constructs">Constructs</a>
+    <a href="#future">Future state</a>
+    <a href="leadership-os.html">← Back to Leadership OS</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow reveal" style="transition-delay:.1s">Leadership OS · Model Architecture</div>
+    <h1 class="hero-title reveal" style="transition-delay:.2s">
+      <span class="block">The</span>
+      <span class="block"><em>underlying</em></span>
+      <span class="block">model.</span>
+    </h1>
+    <p class="hero-sub reveal" style="transition-delay:.3s">What Leadership OS is evaluating, how evidence is gathered, how conclusions are formed, and why the methodology uses multiple sources of input.</p>
+    <p class="hero-desc reveal" style="transition-delay:.4s">This page describes the conceptual architecture behind Leadership OS — the research traditions it draws from, the constructs it is designed to surface, and the honest boundaries of what it can and cannot claim. It is written for people who want to understand the model before they use it.</p>
+    <div class="hero-caveat reveal" style="transition-delay:.5s">IMPORTANT NOTE — Leadership OS is a multi-modal self-reflection and development methodology. It is not a validated psychometric assessment. It does not produce normative comparisons. It does not claim validity or reliability in a scientific sense. All constructs described on this page are developmental hypotheses currently under exploration — not empirically validated dimensions.</div>
+  </div>
+</section>
+
+<!-- THREE-SOURCE EVIDENCE MODEL -->
+<section id="evidence">
+  <div class="s-label reveal">The core model</div>
+  <h2 class="section-headline reveal" style="transition-delay:.05s">Three sources.<br><em>One profile.</em></h2>
+  <p class="section-sub reveal" style="transition-delay:.1s">Leadership OS combines three distinct types of evidence about how a leader operates. Each source captures something the others cannot. The synthesis across all three is where the most useful signal emerges.</p>
+
+  <div class="evidence-model reveal" style="transition-delay:.15s">
+    <div class="ev-source">
+      <span class="ev-source-icon">📋</span>
+      <div class="ev-source-tag s1">Source 1</div>
+      <div class="ev-source-title">Structured Assessments</div>
+      <div class="ev-source-subtitle">How you describe yourself</div>
+      <div class="ev-source-desc">Validated personality instruments — PrinciplesYou, Big Five, HEXACO — provide trait-level data grounded in decades of psychometric research. These establish the scientific anchor for the profile and surface tendencies that are difficult to observe through behavior alone.</div>
+    </div>
+    <div class="ev-connector">+</div>
+    <div class="ev-source">
+      <span class="ev-source-icon">🔍</span>
+      <div class="ev-source-tag s2">Source 2</div>
+      <div class="ev-source-title">Behavioral Evidence</div>
+      <div class="ev-source-subtitle">Patterns across your actual work</div>
+      <div class="ev-source-desc">The corpus audit extracts observed patterns from your AI conversation history — decisions made, problems framed, communications drafted, frustrations expressed. This is behavioral data, not self-description. It captures how you actually operate, not how you describe yourself operating.</div>
+    </div>
+    <div class="ev-connector">+</div>
+    <div class="ev-source">
+      <span class="ev-source-icon">🪞</span>
+      <div class="ev-source-tag s3">Source 3</div>
+      <div class="ev-source-title">Structured Reflection</div>
+      <div class="ev-source-subtitle">How you interpret experience</div>
+      <div class="ev-source-desc">The six reflection prompts surface specific behavioral examples — peak performance conditions, decision processes, recurring friction. Crucially, they also capture meaning-making: how you interpret your own experience, which is itself a leadership construct distinct from the behavior itself.</div>
+    </div>
+    <div class="ev-connector">=</div>
+    <div class="ev-output">
+      <div class="ev-output-label">Synthesis</div>
+      <div class="ev-output-title">Leadership Profile</div>
+      <div class="ev-output-desc">A cross-source synthesis that identifies convergent patterns, tension points, governing questions, flow conditions, and development edges — grounded in evidence from all three modalities simultaneously.</div>
+    </div>
+  </div>
+
+  <div class="evidence-why reveal" style="transition-delay:.2s">
+    <div class="ew-card">
+      <div class="ew-card-label">Why assessments alone aren't enough</div>
+      <div class="ew-card-title">Self-report has a ceiling</div>
+      <div class="ew-card-desc">Personality assessments are powerful scientific instruments. But they measure what you report about yourself — which is filtered through social desirability, self-concept bias, and the limits of introspection. Argyris's distinction between espoused theory and theory-in-use is relevant here: what you say you believe and what your behavior reveals you believe are often different things.</div>
+    </div>
+    <div class="ew-card">
+      <div class="ew-card-label">Why behavioral evidence changes the picture</div>
+      <div class="ew-card-title">Observed behavior is a different kind of data</div>
+      <div class="ew-card-desc">The corpus audit doesn't ask you to describe yourself — it asks the system that has watched you work to describe what it observed. This is structurally closer to 360-degree feedback than self-report, though with important differences. The AI has longitudinal context no rater can replicate, and no political incentive to soften what it observed.</div>
+    </div>
+    <div class="ew-card">
+      <div class="ew-card-label">Why reflection is the third source, not a supplement</div>
+      <div class="ew-card-title">Meaning-making is itself a construct</div>
+      <div class="ew-card-desc">How leaders interpret their experience — what they attribute success and failure to, what they notice and what they miss, how they construct the narrative of their own development — is as informative as the behavior itself. Reflective capacity is increasingly recognized as a core dimension of leadership effectiveness, not a soft add-on.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPMENTAL CONSTRUCTS -->
+<section id="constructs">
+  <div class="s-label reveal">Developmental constructs</div>
+  <h2 class="section-headline reveal" style="transition-delay:.05s">What Leadership OS<br><em>is designed to surface.</em></h2>
+  <div class="constructs-intro reveal" style="transition-delay:.1s">
+    <p class="section-sub" style="margin-bottom:0;">The following constructs represent the dimensions Leadership OS is currently designed to explore. They are presented as <strong>developmental hypotheses</strong> — not validated psychometric dimensions. Each is grounded in established research traditions but has not been formally validated as a Leadership OS construct. They are offered here to make the methodology transparent and to invite scrutiny. Click any construct to expand its definition and evidence sources.</p>
+  </div>
+
+  <div class="construct-grid reveal" style="transition-delay:.15s">
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">01</span></div>
+          <div class="construct-name">Reflection Orientation</div>
+          <div class="construct-tagline">The tendency to examine one's own experience deliberately and draw developmental insight from it</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">The degree to which a leader actively examines their own behavior, decisions, and patterns — and uses that examination to inform development. Distinct from rumination (repetitive negative focus) or self-criticism. Closer to Schön's "reflection-in-action" and "reflection-on-action" concepts.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Research consistently links reflective capacity to leadership effectiveness, adaptive performance, and long-term development. Leaders who examine experience deliberately learn from it faster. Kegan and Lahey's work on immunity to change suggests that reflective capacity is prerequisite to meaningful developmental growth.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">Depth and specificity of reflection prompt responses. Whether the leader surfaces tension and contradiction or resolves it prematurely. Consistency between espoused values and described behavior. Openness to the corpus audit findings.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">Reflection quality is difficult to assess without longitudinal observation. High articulateness about one's own patterns does not guarantee those patterns will change. The methodology currently has no reliable way to distinguish genuine reflective insight from sophisticated self-presentation.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">02</span></div>
+          <div class="construct-name">Systems Orientation</div>
+          <div class="construct-tagline">The tendency to reason about interconnections, second-order effects, and structural causes rather than isolated events</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">The degree to which a leader naturally frames problems in terms of systems, structures, and interdependencies rather than individual actors or isolated events. Related to Senge's systems thinking and Stacey's complexity theory applied to organizational leadership.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Leaders with high systems orientation tend to design solutions that address root causes rather than symptoms, build organizations that function without them, and recognize unintended consequences earlier. Particularly relevant in complex, multi-stakeholder environments.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">How the leader frames problems in the corpus audit. Whether solutions address structure or behavior. Use of infrastructure-before-intervention sequencing. How they describe organizational dysfunction — as individual failure or structural condition.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">High systems orientation can produce analysis paralysis or over-engineered solutions. The methodology cannot currently distinguish productive systems thinking from avoidance of direct action. Context matters significantly — some environments reward systems thinking, others require faster, more direct responses.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">03</span></div>
+          <div class="construct-name">Learning Orientation</div>
+          <div class="construct-tagline">The degree to which a leader seeks new information, tolerates not-knowing, and treats experience as developmental material</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">Related to Dweck's growth mindset concept and Edmondson's work on learning behavior in organizations. A leader's learning orientation shapes how they respond to failure, how they seek feedback, and how quickly they update their mental models in response to new evidence.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Learning orientation predicts adaptive performance across novel challenges and developmental trajectory over time. It is particularly relevant in environments of rapid change. Longitudinal Leadership OS data could theoretically track whether a leader's learning orientation evolves across career phases.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">How the leader describes decisions they'd make differently. Openness to the corpus audit's observations. Whether they seek out challenge or avoid it. PrinciplesYou Curious and Open-Minded facets as assessment anchors.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">Leaders completing Leadership OS are self-selecting for a reflective, learning-oriented activity — which creates a significant sample bias. The methodology is currently poorly suited to measuring low learning orientation, since people with low learning orientation are unlikely to complete the process.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">04</span></div>
+          <div class="construct-name">Decision Style</div>
+          <div class="construct-tagline">A leader's characteristic approach to making decisions under conditions of uncertainty, incomplete information, and competing priorities</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">Decision style captures how a leader characteristically gathers information, evaluates options, manages uncertainty, and commits to a direction. Distinct from decision quality — a leader can have a consistent decision style that produces high-quality outcomes in some contexts and poor outcomes in others.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Decision style is one of the highest-leverage leadership constructs because it is context-dependent in ways that personality traits are not. Understanding one's default decision style — and the conditions under which it serves or undermines effective decision-making — is directly actionable development work.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">The "decision you're proud of" and "decision you'd make differently" reflection prompts. Corpus audit patterns around how the leader approaches tradeoffs. Assessment anchors in Conscientiousness (deliberateness, prudence) and Extraversion (social boldness in decision contexts).</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">Decision style is highly situational. The methodology captures self-reported and observed patterns but cannot test how the leader actually decides in high-stakes, time-pressured conditions. Retrospective accounts of decisions are subject to hindsight bias and narrative construction.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">05</span></div>
+          <div class="construct-name">Leadership Identity</div>
+          <div class="construct-tagline">How a leader understands their role, their relationship to authority, and what kind of leader they are trying to become</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">Drawing on Ibarra's work on leadership identity transitions and Day's leadership development research. Leadership identity describes the internalized sense of self as a leader — which shapes motivation, behavior, and how the leader makes sense of their own development. It is more dynamic than personality traits and more specific than general self-concept.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Leadership identity is a strong predictor of proactive leadership behavior and developmental investment. Leaders with a strong, coherent leadership identity are more likely to seek out challenges, recover from setbacks, and invest in development. Ibarra's research shows that identity transitions are often the bottleneck in leadership development, not skill gaps.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">How the leader describes themselves in the reflection prompts — particularly "what do people get wrong about you." PrinciplesYou archetype as a starting vocabulary. Corpus audit observations about how the leader positions themselves in organizational narratives.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">Leadership identity is among the most difficult constructs to surface through self-report and AI observation. It is often most visible in transition — when old identities no longer fit and new ones haven't solidified. The current methodology likely captures only the more stable, articulated layer of identity.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">06</span></div>
+          <div class="construct-name">Communication Patterns</div>
+          <div class="construct-tagline">The characteristic ways a leader structures, delivers, and receives communication — including what they say, how they say it, and what they avoid</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">Communication patterns include both structural tendencies (how arguments are built, how feedback is framed, how disagreement is expressed) and relational tendencies (how the leader calibrates formality, warmth, directness, and humor across different audiences and contexts). Distinct from communication skills — patterns are defaults, not capabilities.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Communication patterns are among the most observable and consequential of all leadership constructs. They are also among the most difficult to see in oneself — we experience our communication from the inside while others receive it from the outside. The "misread" reflection prompt is specifically designed to surface the gap.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">The corpus audit's voice and style analysis — 89 outbound drafting conversations in the original methodology. The "misread" reflection prompt. PrinciplesYou facets around Directness, Engaging, and Humorous. Writing sample analysis if available.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">The corpus audit observes written professional communication — which may differ significantly from verbal communication, informal communication, and communication under pressure. The methodology currently has no mechanism for capturing how the leader communicates in conflict, under stress, or in informal settings.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">07</span></div>
+          <div class="construct-name">Adaptability</div>
+          <div class="construct-tagline">The capacity to adjust behavior, strategy, and approach in response to changing conditions — distinct from agreeableness or accommodation</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">Following Pulakos et al.'s taxonomy of adaptive performance. Adaptability in Leadership OS captures the leader's willingness and ability to adjust their approach when conditions change — specifically distinguishing between strategic adaptability (changing direction when the evidence warrants) and behavioral adaptability (adjusting style and method to context).</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Adaptability is increasingly identified as a core leadership competency in research on leadership effectiveness across volatile, uncertain, complex, and ambiguous environments. The distinction between strategic and behavioral adaptability is important — some leaders are highly adaptable in style but rigid in strategy, and vice versa.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">How the leader describes the decision they'd make differently — specifically whether they adjusted their plan or stayed with it. PrinciplesYou Adaptable and Agile facets as anchors. HEXACO Openness and Flexibility facets if available. Corpus audit patterns around how the leader responds to unexpected findings.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">Adaptability is notoriously context-dependent. High adaptability in one domain (strategy) and low in another (behavioral style) are common and produce very different leadership profiles. The current methodology cannot reliably separate these domains without additional structured scenarios.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">08</span></div>
+          <div class="construct-name">Self-Awareness</div>
+          <div class="construct-tagline">The accuracy of a leader's model of themselves — specifically the gap between self-perception and how they actually operate</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">Following Tasha Eurich's research distinguishing internal self-awareness (clarity about one's own values, patterns, and emotions) from external self-awareness (understanding how one is perceived by others). Leadership OS is primarily designed to surface internal self-awareness, with the "misread" prompt and corpus audit offering some access to the external dimension.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Eurich's research found that self-awareness is one of the strongest predictors of leadership effectiveness — yet most leaders overestimate their self-awareness significantly. The most useful function of Leadership OS may be surfacing the gap between how a leader describes themselves and what the behavioral evidence shows.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">Convergence and divergence between assessment results and corpus audit observations. The "misread" prompt response. Whether tension points identified in the pattern synthesis were anticipated by the leader or came as surprises. Calibration of the leader's confidence in their own self-knowledge.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">Self-awareness as a construct is paradoxically difficult to measure through self-report — leaders with low self-awareness often rate themselves as highly self-aware. The corpus audit provides some triangulation, but the methodology currently cannot replicate the multi-rater evidence that produces the most reliable self-awareness assessments.</div></div>
+      </div>
+    </div>
+
+    <div class="construct">
+      <div class="construct-header" onclick="toggleConstruct(this)">
+        <div>
+          <div class="construct-meta"><span class="construct-num">09</span></div>
+          <div class="construct-name">Development Readiness</div>
+          <div class="construct-tagline">A leader's current capacity and motivation to engage in deliberate development work</div>
+        </div>
+        <div class="construct-toggle">↓</div>
+      </div>
+      <div class="construct-body">
+        <div class="cb-cell"><div class="cb-label">Definition</div><div class="cb-text">Development readiness captures not what a leader needs to develop, but whether they are currently positioned to do the work. Drawing on readiness models from adult learning theory and Kegan's subject-object theory — the idea that development requires the capacity to "objectify" one's own patterns, holding them up for examination rather than being run by them.</div></div>
+        <div class="cb-cell"><div class="cb-label">Why it matters</div><div class="cb-text">Development readiness is the strongest predictor of whether leadership development interventions produce lasting change. High readiness amplifies every other developmental input. Low readiness renders even excellent development programs ineffective. Understanding a leader's current readiness level is arguably more important than identifying the right development content.</div></div>
+        <div class="cb-cell"><div class="cb-label">Evidence sources</div><div class="cb-text">How the leader engages with the Leadership OS process itself — specifically whether they are willing to sit with tension rather than resolve it prematurely. The quality and depth of reflection responses. Whether the corpus audit surfaces genuine surprises or only confirms existing self-concept. Investment of time and attention in the process.</div></div>
+        <div class="cb-cell"><div class="cb-label">Limitations</div><div class="cb-text cb-text limitation">Development readiness fluctuates significantly with life circumstances, role demands, and organizational context. A single Leadership OS session cannot reliably assess readiness in any stable sense. The methodology is best understood as a readiness-enhancing intervention rather than a readiness assessment.</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESEARCH STREAMS -->
+<section id="research">
+  <div class="s-label reveal">Research foundations</div>
+  <div class="research-grid">
+    <div class="reveal" style="transition-delay:.1s">
+      <h2 class="section-headline">Where the<br>methodology is<br><em>rooted.</em></h2>
+      <div class="research-body">
+        <p>Leadership OS draws from several established research traditions without claiming to have validated its own methodology within any of them. The connections described here are conceptual — they identify the intellectual lineage of the approach, not empirical validation of the constructs.</p>
+        <p>These research streams are cited to make the model's foundations transparent and to acknowledge the shoulders it stands on. Practitioners and researchers who want to evaluate the methodology rigorously are encouraged to explore these traditions directly.</p>
+      </div>
+      <div class="page-nav" style="margin-top:2rem;">
+        <a href="leadership-os.html" class="nav-link">← Full process</a>
+        <a href="https://mikecilla.com/#s-fieldnotes" class="nav-link">Field Notes</a>
+      </div>
+    </div>
+    <div class="research-streams reveal" style="transition-delay:.2s">
+      <div class="rs-item">
+        <div class="rs-icon">🧬</div>
+        <div>
+          <div class="rs-name">Personality Assessment Science</div>
+          <div class="rs-desc">The Big Five / HEXACO framework provides the validated trait-level anchor for Leadership OS. These instruments represent decades of cross-cultural psychometric research and provide the most scientifically grounded layer of the profile.</div>
+          <div class="rs-refs">Costa & McCrae (1992) · Lee & Ashton (2004) · Goldberg (1993) · Roberts et al. (2007)</div>
+        </div>
+      </div>
+      <div class="rs-item">
+        <div class="rs-icon">🪞</div>
+        <div>
+          <div class="rs-name">Reflective Practice & Adult Development</div>
+          <div class="rs-desc">Schön's reflective practitioner model, Kegan's constructive-developmental theory, and Mezirow's transformative learning theory all inform how Leadership OS frames the reflection component — specifically the distinction between surface-level reflection and deeper examination of meaning-making.</div>
+          <div class="rs-refs">Schön (1983) · Kegan (1982) · Mezirow (1991) · Argyris & Schön (1978)</div>
+        </div>
+      </div>
+      <div class="rs-item">
+        <div class="rs-icon">🌊</div>
+        <div>
+          <div class="rs-name">Flow Theory & Optimal Experience</div>
+          <div class="rs-desc">Csíkszentmihályi's flow model informs the Leadership OS construct of Flow Conditions — the specific challenge-skill-context configurations that produce peak engagement and performance for individual leaders. The flow profile is one of the most practically actionable outputs of the process.</div>
+          <div class="rs-refs">Csíkszentmihályi (1990) · Nakamura & Csíkszentmihályi (2002)</div>
+        </div>
+      </div>
+      <div class="rs-item">
+        <div class="rs-icon">🔬</div>
+        <div>
+          <div class="rs-name">Leadership Development Research</div>
+          <div class="rs-desc">Day's leader development versus leadership development distinction, Ibarra's work on leadership identity, and Avolio's research on developmental readiness all inform how Leadership OS frames the development roadmap component and what it is actually trying to change.</div>
+          <div class="rs-refs">Day (2000) · Ibarra (2015) · Avolio & Hannah (2008) · Eurich (2018)</div>
+        </div>
+      </div>
+      <div class="rs-item">
+        <div class="rs-icon">🤖</div>
+        <div>
+          <div class="rs-name">AI-Assisted Learning & Reflection</div>
+          <div class="rs-desc">An emerging research stream examining how AI can support reflective learning, metacognition, and self-regulated development. The corpus audit methodology is a novel contribution to this stream — using longitudinal AI interaction history as behavioral evidence rather than as a generative content tool.</div>
+          <div class="rs-refs">Luckin et al. (2016) · Hmelo-Silver (2004) · Emerging literature on AI reflection partners (2022–present)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE STATE ARCHITECTURE -->
+<section id="future">
+  <div class="s-label reveal">Future state</div>
+  <h2 class="section-headline reveal" style="transition-delay:.05s">Where this<br><em>could go.</em></h2>
+  <p class="section-sub reveal" style="transition-delay:.1s">The current Leadership OS is a single-session methodology. The longer-term vision is a longitudinal development model — one that gets more accurate, more useful, and more differentiated as evidence accumulates over time. This section describes the conceptual architecture for that future state.</p>
+
+  <div class="future-grid reveal" style="transition-delay:.15s">
+    <div>
+      <div class="future-body">
+        <p>The most significant limitation of current leadership assessments — and of Leadership OS in its current form — is that they are episodic. They capture a point in time. They cannot show how a leader is changing, what development is actually occurring, or whether an intervention produced lasting change.</p>
+        <p>A longitudinal Leadership OS model would treat each session as a data point in a developmental trajectory — tracking not just what the profile shows at any given moment, but how it evolves across time, roles, and organizational contexts.</p>
+        <p>At sufficient scale, anonymized longitudinal data could generate research hypotheses about leadership development trajectories that current episodic assessment methods cannot reach: What changes in a leader's profile across major role transitions? How does reflective capacity evolve with experience? What predicts whether development edges become genuine strengths versus persistent friction points?</p>
+        <p>These are currently hypotheses, not findings. The architecture below describes how the data infrastructure would need to be built to eventually test them.</p>
+      </div>
+    </div>
+    <div>
+      <div class="future-flow">
+        <div class="ff-step">
+          <div class="ff-icon">👤</div>
+          <div>
+            <div class="ff-title">User Inputs</div>
+            <div class="ff-desc">Assessment results, corpus audit, structured reflection — gathered at each Leadership OS session</div>
+          </div>
+        </div>
+        <div class="ff-arrow">↓</div>
+        <div class="ff-step">
+          <div class="ff-icon">🧠</div>
+          <div>
+            <div class="ff-title">Leadership OS Analysis</div>
+            <div class="ff-desc">Cross-source pattern synthesis, construct extraction, profile generation — producing the three working documents</div>
+          </div>
+        </div>
+        <div class="ff-arrow">↓</div>
+        <div class="ff-step">
+          <div class="ff-icon">🏗️</div>
+          <div>
+            <div class="ff-title">Construct Extraction</div>
+            <div class="ff-desc">Structured coding of each session across the nine developmental constructs — producing a standardized profile snapshot</div>
+          </div>
+        </div>
+        <div class="ff-arrow">↓</div>
+        <div class="ff-step">
+          <div class="ff-icon">🔒</div>
+          <div>
+            <div class="ff-title">Anonymized Dataset</div>
+            <div class="ff-desc">Opt-in contribution of anonymized construct profiles to a longitudinal research dataset — no identifying information, no raw content</div>
+          </div>
+        </div>
+        <div class="ff-arrow">↓</div>
+        <div class="ff-step">
+          <div class="ff-icon">📊</div>
+          <div>
+            <div class="ff-title">Pattern Research</div>
+            <div class="ff-desc">Analysis of longitudinal construct trajectories across the dataset — identifying development patterns, transition signatures, and hypothesis generation</div>
+          </div>
+        </div>
+        <div class="ff-arrow">↓</div>
+        <div class="ff-step">
+          <div class="ff-icon">🌱</div>
+          <div>
+            <div class="ff-title">Model Improvement</div>
+            <div class="ff-desc">Research findings inform construct refinement, new reflection prompts, and improved synthesis methodology — feeding back to improve the user experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="future-hypotheses reveal" style="transition-delay:.2s">
+    <h3 class="fh-headline">Research hypotheses<br><em>worth exploring.</em></h3>
+    <p class="fh-sub">These are not claims. They are the questions that a longitudinal Leadership OS dataset could eventually help answer — if the data infrastructure were built and the research designed rigorously.</p>
+    <div class="fh-items">
+      <div class="fh-item">
+        <div class="fh-item-label">Development trajectories</div>
+        <div class="fh-item-q">"Do leaders with high Reflection Orientation at baseline show different development trajectories than those with low Reflection Orientation — independent of starting-point trait levels?"</div>
+      </div>
+      <div class="fh-item">
+        <div class="fh-item-label">Assessment-behavior gap</div>
+        <div class="fh-item-q">"How frequently do corpus audit observations diverge from assessment self-report — and what constructs show the largest systematic gaps?"</div>
+      </div>
+      <div class="fh-item">
+        <div class="fh-item-label">Reflection quality over time</div>
+        <div class="fh-item-q">"Does the depth and accuracy of reflection responses improve with repeated Leadership OS sessions — and what conditions predict improvement versus stagnation?"</div>
+      </div>
+      <div class="fh-item">
+        <div class="fh-item-label">Role transition signatures</div>
+        <div class="fh-item-q">"Are there identifiable patterns in how Leadership OS profiles shift across major role transitions — and can those patterns predict transition success or difficulty?"</div>
+      </div>
+      <div class="fh-item">
+        <div class="fh-item-label">Governing question stability</div>
+        <div class="fh-item-q">"How stable are governing questions across time — and what triggers them to shift? Are they more like values (stable) or more like strategies (context-dependent)?"</div>
+      </div>
+      <div class="fh-item">
+        <div class="fh-item-label">Development edge resolution</div>
+        <div class="fh-item-q">"What distinguishes leaders who successfully reduce the friction created by their development edges from those who do not — and does Leadership OS methodology itself play a role?"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONESTY STATEMENT -->
+<section id="honesty">
+  <div class="honesty-inner">
+    <div class="honesty-label reveal">An honest statement about this work</div>
+    <div class="honesty-quote reveal" style="transition-delay:.1s">"The most important thing to understand about Leadership OS is what it is not."</div>
+    <div class="honesty-body reveal" style="transition-delay:.2s">
+      <p style="margin-bottom:1rem;">It is not a validated assessment. It does not produce normative scores. It cannot predict performance, potential, or outcomes. It has not been tested for reliability or validity in any scientific sense. The constructs defined on this page are hypotheses, not empirically established dimensions.</p>
+      <p style="margin-bottom:2rem;">What it is: a structured methodology for making implicit leadership patterns explicit — using the best available inputs, grounded in established research traditions, and designed to produce documents that are useful regardless of whether the underlying model is ever formally validated.</p>
+      <div class="page-nav" style="justify-content:center;">
+        <a href="leadership-os.html" class="nav-link dark">Start the process →</a>
+        <a href="https://mikecilla.com/#s-fieldnotes" class="nav-link dark">Read the Field Notes</a>
+        <a href="https://mikecilla.com" class="nav-link dark">mikecilla.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="https://mikecilla.com" class="footer-mark">Mike Cilla<span>.</span></a>
+  <span class="footer-note">Leadership OS Model · © 2026</span>
+</footer>
+
+<script>
+// Reveal
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting && e.target.classList.contains('reveal')){
+      setTimeout(function(){ e.target.classList.add('up'); }, 60);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+setTimeout(function(){
+  document.querySelectorAll('#hero .reveal').forEach(function(el,i){
+    setTimeout(function(){ el.classList.add('up'); },100+i*90);
+  });
+},100);
+
+// Construct accordion
+function toggleConstruct(header){
+  var construct = header.parentElement;
+  var isOpen = construct.classList.contains('open');
+  // close all
+  document.querySelectorAll('.construct').forEach(function(c){
+    c.classList.remove('open');
+    c.querySelector('.construct-toggle').textContent = '↓';
+  });
+  if(!isOpen){
+    construct.classList.add('open');
+    header.querySelector('.construct-toggle').textContent = '↑';
+  }
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
