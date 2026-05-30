@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q8B7D4VZ08');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -20,181 +22,197 @@
   --ink-ghost:rgba(26,22,18,0.12);
   --gold:#b8671e;
   --gold-light:#c9843a;
-  --gold-dim:rgba(184,103,30,0.12);
+  --gold-dim:rgba(184,103,30,0.1);
   --rule:rgba(26,22,18,0.1);
   --ff-display:'Cormorant Garamond',Georgia,serif;
   --ff-body:'Outfit',system-ui,sans-serif;
   --ff-mono:'JetBrains Mono',monospace;
 }
-
 html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--ink);font-family:var(--ff-body);font-size:18px;line-height:1.8;font-weight:300;}
+body{background:var(--void);color:var(--ink);font-family:var(--ff-body);font-size:20px;line-height:1.9;font-weight:300;}
 
-/* ── HEADER ── */
-#header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.92);backdrop-filter:blur(16px);}
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);}
 .h-mark{font-family:var(--ff-display);font-size:1rem;font-weight:400;letter-spacing:0.06em;color:var(--ink);text-decoration:none;}
 .h-mark span{color:var(--gold);}
-.h-back{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
-.h-back:hover{color:var(--gold);}
+.h-nav{display:flex;align-items:center;gap:2rem;}
+.h-nav a{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
+.h-nav a:hover{color:var(--gold);}
+@media(max-width:600px){.h-nav .hide-mobile{display:none;}}
 
-/* ── HERO ── */
+/* HERO */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:calc(64px + 5vw) 4vw 5vw;background:var(--void);position:relative;overflow:hidden;}
 #hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,22,18,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,18,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
-.hero-inner{max-width:900px;}
-.hero-eyebrow{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-inner{max-width:920px;}
+.hero-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
 .hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);}
 .hero-title{font-family:var(--ff-display);font-size:clamp(3rem,7vw,6.5rem);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.15em;}
 .hero-title em{font-style:italic;font-weight:600;color:var(--gold);}
 .hero-title .block{display:block;}
-.hero-sub{font-family:var(--ff-display);font-size:clamp(1.1rem,1.8vw,1.5rem);font-weight:300;font-style:italic;color:var(--ink-dim);border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0 2.5rem;line-height:1.5;max-width:600px;}
-.hero-desc{font-size:1.05rem;font-weight:300;color:var(--ink-dim);line-height:1.95;max-width:580px;margin-bottom:3rem;}
-.hero-cta-row{display:flex;gap:1rem;flex-wrap:wrap;}
-.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--ink);color:var(--void);padding:0.85rem 2rem;font-family:var(--ff-body);font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;position:relative;overflow:hidden;}
-.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,0.1);transform:skewX(-20deg);transition:left 0.4s ease;}
+.hero-sub{font-family:var(--ff-display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:300;font-style:italic;color:var(--ink-dim);border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0 2.5rem;line-height:1.55;max-width:600px;}
+.hero-desc{font-size:1.15rem;font-weight:300;color:var(--ink-dim);line-height:2.0;max-width:600px;margin-bottom:3rem;}
+.hero-cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem;}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--ink);color:var(--void);padding:0.9rem 2rem;font-family:var(--ff-body);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;position:relative;overflow:hidden;}
+.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:rgba(255,255,255,0.1);transform:skewX(-20deg);transition:left 0.4s;}
 .btn-primary:hover{background:var(--gold);}
 .btn-primary:hover::after{left:150%;}
-.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid var(--ink-ghost);color:var(--ink-dim);padding:0.85rem 2rem;font-family:var(--ff-body);font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid var(--ink-ghost);color:var(--ink-dim);padding:0.9rem 2rem;font-family:var(--ff-body);font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-.hero-scroll{position:absolute;bottom:2.5rem;left:4vw;font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:0.75rem;}
-.hero-scroll::after{content:'';display:block;width:2rem;height:1px;background:var(--ink-dim);}
 
-/* ── SECTION COMMONS ── */
-section{padding:6rem 4vw;}
-.s-label{font-family:var(--ff-mono);font-size:0.7rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+/* QUICK EXPLAINER — 60 second read */
+#explainer{background:var(--deep);padding:5rem 4vw;}
+.explainer-headline{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.5rem;}
+.explainer-headline em{font-style:italic;font-weight:600;color:var(--gold);}
+.explainer-sub{font-size:1.12rem;font-weight:300;color:var(--ink-dim);margin-bottom:3.5rem;max-width:560px;line-height:1.9;}
+.explainer-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:3.5rem;}
+.ef-card{background:var(--surface);padding:2rem 1.75rem;position:relative;}
+.ef-icon{font-size:2rem;line-height:1;margin-bottom:1rem;display:block;}
+.ef-title{font-family:var(--ff-display);font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;}
+.ef-desc{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.ef-arrow{display:flex;align-items:center;justify-content:center;background:transparent;padding:0.5rem;font-size:1.5rem;color:var(--gold);opacity:0.4;grid-column:1/-1;}
+.explainer-distinction{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.ed-cell{background:var(--surface);padding:1.75rem;}
+.ed-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1rem;}
+.ed-label.old{color:rgba(26,22,18,0.35);}
+.ed-label.new{color:var(--gold);}
+.ed-items{display:flex;flex-direction:column;gap:0.5rem;}
+.ed-item{font-size:1.0rem;font-weight:300;color:var(--ink-dim);display:flex;align-items:flex-start;gap:0.6rem;line-height:1.6;}
+.ed-item .ed-icon{flex-shrink:0;font-size:0.85rem;margin-top:0.1rem;}
+
+/* SECTION COMMONS */
+section{padding:5.5rem 4vw;}
+.s-label{font-family:var(--ff-mono);font-size:0.72rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
 .s-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
+.section-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.75rem;}
+.section-headline em{font-style:italic;font-weight:600;color:var(--gold);}
+.section-sub{font-size:1.12rem;font-weight:300;color:var(--ink-dim);line-height:2.0;max-width:640px;margin-bottom:3rem;}
 
-/* ── WHY ── */
-#why{background:var(--deep);}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
-.why-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:1.5rem;}
-.why-headline em{font-style:italic;font-weight:600;color:var(--gold);}
-.why-body{font-size:1.05rem;font-weight:300;color:var(--ink-dim);line-height:1.95;}
-.why-body p+p{margin-top:1.25rem;}
-.compare-table{width:100%;border-collapse:collapse;margin-top:2rem;}
-.compare-table th{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);padding:0.6rem 1rem;border-bottom:2px solid var(--rule);text-align:left;font-weight:400;}
-.compare-table td{font-size:0.92rem;font-weight:300;color:var(--ink-dim);padding:0.75rem 1rem;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.65;}
-.compare-table tr:last-child td{border-bottom:none;}
-.compare-table td:first-child{color:var(--ink);font-weight:400;}
-.compare-table td.good{color:var(--gold);}
-
-/* ── STEPS ── */
-#steps{background:var(--void);}
-.steps-intro{max-width:640px;margin-bottom:4rem;}
-.steps-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:1rem;}
-.steps-headline em{font-style:italic;font-weight:600;color:var(--gold);}
-.steps-sub{font-size:1.05rem;font-weight:300;color:var(--ink-dim);line-height:1.9;}
-.step{border-top:1px solid var(--rule);padding:3rem 0;display:grid;grid-template-columns:80px 1fr;gap:3rem;align-items:start;transition:border-color 0.3s;}
-.step:hover{border-top-color:rgba(184,103,30,0.4);}
-.step-num{font-family:var(--ff-display);font-size:4rem;font-weight:700;line-height:0.9;color:rgba(26,22,18,0.07);}
-.step-content{}
-.step-tag{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
-.step-title{font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:var(--ink);line-height:1.2;margin-bottom:0.75rem;}
-.step-desc{font-size:1rem;font-weight:300;color:var(--ink-dim);line-height:1.9;margin-bottom:1.5rem;}
-.step-detail{background:var(--deep);border-left:3px solid var(--gold);padding:1.5rem;margin-bottom:1.5rem;}
-.step-detail-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
-.step-detail-body{font-size:0.92rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
-.step-time{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:0.5rem;}
-.step-time::before{content:'';display:block;width:1rem;height:1px;background:var(--ink-dim);}
-
-/* ── PROMPT SECTION ── */
-#prompts{background:var(--deep);}
-.prompts-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.75rem;}
-.prompts-headline em{font-style:italic;font-weight:600;color:var(--gold);}
-.prompts-sub{font-size:1.05rem;font-weight:300;color:var(--ink-dim);line-height:1.9;max-width:620px;margin-bottom:3rem;}
-.prompt-tabs{display:flex;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:2rem;flex-wrap:wrap;}
-.prompt-tab{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.65rem 1.25rem;background:var(--surface);color:var(--ink-dim);cursor:pointer;border:none;transition:all 0.2s;font-family:var(--ff-mono);}
-.prompt-tab.active{background:var(--ink);color:var(--void);}
-.prompt-tab:hover:not(.active){background:var(--lift);color:var(--ink);}
-.prompt-panel{display:none;}
-.prompt-panel.active{display:block;}
-.prompt-card{background:var(--surface);border:1px solid var(--rule);padding:2rem;}
-.prompt-card-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-.prompt-card-q{font-family:var(--ff-display);font-size:1.25rem;font-style:italic;font-weight:300;color:var(--ink);line-height:1.5;margin-bottom:1.25rem;border-left:2px solid var(--gold);padding-left:1.1rem;}
-.prompt-card-why{font-size:0.88rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
-.copy-btn{margin-top:1.5rem;display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;cursor:pointer;transition:all 0.2s;}
+/* WORKFLOW — THE COMPLETE JOURNEY */
+#workflow{background:var(--void);}
+.workflow-steps{display:flex;flex-direction:column;}
+.wf-step{border-top:1px solid var(--rule);display:grid;grid-template-columns:72px 1fr;gap:2.5rem;padding:3rem 0;transition:border-color 0.3s;align-items:start;}
+.wf-step:hover{border-top-color:rgba(184,103,30,0.35);}
+.wf-num{font-family:var(--ff-display);font-size:3.5rem;font-weight:700;line-height:1;color:rgba(26,22,18,0.07);padding-top:0.2rem;}
+.wf-body{}
+.wf-tag{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.wf-title{font-family:var(--ff-display);font-size:1.65rem;font-weight:600;color:var(--ink);line-height:1.2;margin-bottom:0.75rem;}
+.wf-desc{font-size:1.08rem;font-weight:300;color:var(--ink-dim);line-height:2.0;margin-bottom:1.5rem;max-width:700px;}
+.wf-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1rem;}
+.wf-col-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:0.6rem;opacity:0.6;}
+.wf-col-items{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.wf-col-items li{font-size:0.97rem;font-weight:300;color:var(--ink-dim);padding-left:1rem;position:relative;line-height:1.6;}
+.wf-col-items li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:0.7rem;top:0.25rem;}
+.wf-time{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem;}
+.wf-time::before{content:'';display:block;width:1rem;height:1px;background:var(--ink-dim);}
+.wf-prompt-toggle{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;cursor:pointer;margin-top:1rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
+.wf-prompt-toggle:hover{background:var(--gold-dim);}
+.wf-prompt-box{display:none;margin-top:1.25rem;background:var(--deep);border-left:3px solid var(--gold);padding:1.5rem 1.75rem;}
+.wf-prompt-box.open{display:block;}
+.wf-prompt-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.wf-prompt-text{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.9;white-space:pre-wrap;}
+.wf-prompt-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--rule);}
+.wf-prompt-note{font-family:var(--ff-mono);font-size:0.6rem;color:rgba(26,22,18,0.3);line-height:1.5;max-width:400px;}
+.copy-btn{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:none;border:1px solid rgba(184,103,30,0.3);padding:0.4rem 0.9rem;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 .copy-btn:hover{background:var(--gold-dim);}
 .copy-btn.copied{color:var(--ink);border-color:var(--rule);}
 
-/* ── CORPUS SECTION ── */
-#corpus{background:var(--void);}
-.corpus-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
-.corpus-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;}
-.corpus-headline em{font-style:italic;font-weight:600;color:var(--gold);}
-.corpus-body{font-size:1rem;font-weight:300;color:var(--ink-dim);line-height:1.95;}
-.corpus-body p+p{margin-top:1.1rem;}
-.corpus-prompt-box{background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:2rem;}
-.cpb-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-.cpb-body{font-size:0.9rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
-.cpb-body p+p{margin-top:0.85rem;}
-.cpb-note{font-family:var(--ff-mono);font-size:0.62rem;color:rgba(26,22,18,0.35);margin-top:1.25rem;line-height:1.6;}
+/* REFLECTION METHODOLOGY */
+#reflection{background:var(--deep);}
+.refl-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.refl-intro{}
+.refl-modes{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.refl-mode{background:var(--surface);padding:1.75rem;}
+.refl-mode-icon{font-size:1.5rem;margin-bottom:0.75rem;display:block;}
+.refl-mode-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.35rem;}
+.refl-mode-desc{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.refl-principles{display:flex;flex-direction:column;gap:0;}
+.refl-principle{border-top:1px solid var(--rule);padding:1.1rem 0;display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;align-items:start;}
+.rp-num{font-family:var(--ff-mono);font-size:0.62rem;color:var(--gold);opacity:0.6;padding-top:0.15rem;}
+.rp-text{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.rp-text strong{font-weight:500;color:var(--ink);}
 
-/* ── OUTPUT SECTION ── */
-#output{background:var(--deep);}
-.output-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.75rem;}
-.output-headline em{font-style:italic;font-weight:600;color:var(--gold);}
-.output-sub{font-size:1.05rem;font-weight:300;color:var(--ink-dim);line-height:1.9;max-width:560px;margin-bottom:3rem;}
-.output-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
-.output-card{background:var(--surface);padding:2rem;position:relative;}
-.output-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
-.output-card.oc1::before{background:#7F77DD;}
-.output-card.oc2::before{background:var(--gold);}
-.output-card.oc3::before{background:#1D9E75;}
-.output-card-num{font-family:var(--ff-display);font-size:3rem;font-weight:700;color:rgba(26,22,18,0.05);line-height:1;margin-bottom:0.75rem;}
-.output-card-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;}
-.output-card-desc{font-size:0.88rem;font-weight:300;color:var(--ink-dim);line-height:1.75;margin-bottom:1rem;}
-.output-card-items{list-style:none;display:flex;flex-direction:column;gap:4px;}
-.output-card-items li{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.06em;color:var(--ink-dim);padding-left:0.75rem;position:relative;}
-.output-card-items li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:0.6rem;}
+/* GOVERNANCE */
+#governance{background:var(--void);}
+.gov-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.gov-card{background:var(--deep);border:1px solid var(--rule);padding:2rem;position:relative;}
+.gov-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+.gov-card.allowed::before{background:#1D9E75;}
+.gov-card.avoid::before{background:#c0392b;}
+.gov-card-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1rem;}
+.gov-card-label.allowed{color:#1D9E75;}
+.gov-card-label.avoid{color:#c0392b;}
+.gov-items{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.gov-items li{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.7;padding-left:1.1rem;position:relative;}
+.gov-items li::before{content:'→';position:absolute;left:0;font-size:0.7rem;top:0.28rem;}
+.gov-items.allowed li::before{color:#1D9E75;}
+.gov-items.avoid li::before{color:#c0392b;}
+.gov-statement{background:var(--deep);border-left:3px solid var(--gold);padding:1.5rem 1.75rem;margin-top:3rem;}
+.gov-statement-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.gov-statement-text{font-family:var(--ff-display);font-size:1.15rem;font-style:italic;font-weight:300;color:var(--ink-dim);line-height:1.7;}
 
-/* ── ABOUT ── */
+/* PERSISTENCE */
+#persistence{background:var(--deep);}
+.persist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:3rem;}
+.persist-card{background:var(--surface);padding:2rem;position:relative;}
+.persist-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+.persist-card.keep::before{background:#1D9E75;}
+.persist-card.update::before{background:var(--gold);}
+.persist-card.discard::before{background:rgba(26,22,18,0.2);}
+.persist-card-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1rem;}
+.persist-card-label.keep{color:#1D9E75;}
+.persist-card-label.update{color:var(--gold);}
+.persist-card-label.discard{color:rgba(26,22,18,0.35);}
+.persist-items{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.persist-items li{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.65;padding-left:1rem;position:relative;}
+.persist-items li::before{content:'→';position:absolute;left:0;font-size:0.65rem;top:0.28rem;color:var(--gold);}
+
+/* ABOUT */
 #about{background:var(--void);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-.about-headline{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;}
-.about-headline em{font-style:italic;font-weight:600;color:var(--gold);}
-.about-body{font-size:1rem;font-weight:300;color:var(--ink-dim);line-height:1.95;}
-.about-body p+p{margin-top:1.1rem;}
-.about-creds{display:flex;flex-direction:column;gap:0;margin-top:2rem;}
-.about-cred{border-top:1px solid var(--rule);padding:0.85rem 0;display:flex;gap:1rem;align-items:start;}
-.about-cred-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);width:80px;flex-shrink:0;padding-top:0.15rem;}
-.about-cred-value{font-size:0.9rem;font-weight:300;color:var(--ink-dim);}
-.about-right{display:flex;flex-direction:column;gap:1.5rem;}
-.about-card{background:var(--deep);border:1px solid var(--rule);padding:1.75rem;position:relative;}
-.about-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);}
-.about-card-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
-.about-card-quote{font-family:var(--ff-display);font-size:1.05rem;font-style:italic;font-weight:300;color:var(--ink-dim);line-height:1.6;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.about-body{font-size:1.1rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
+.about-body p+p{margin-top:1.25rem;}
+.about-creds{margin-top:2rem;display:flex;flex-direction:column;}
+.about-cred{border-top:1px solid var(--rule);padding:0.85rem 0;display:grid;grid-template-columns:90px 1fr;gap:1rem;align-items:start;}
+.about-cred-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);padding-top:0.15rem;}
+.about-cred-value{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.7;}
+.about-cards{display:flex;flex-direction:column;gap:1.25rem;}
+.about-card{background:var(--deep);border:1px solid var(--rule);padding:1.75rem;border-left:3px solid var(--gold);}
+.about-card-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.about-card-quote{font-family:var(--ff-display);font-size:1.1rem;font-style:italic;font-weight:300;color:var(--ink-dim);line-height:1.7;}
 
-/* ── CTA ── */
-#cta{background:var(--ink);color:var(--void);text-align:center;padding:6rem 4vw;}
-.cta-eyebrow{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.8);margin-bottom:1.5rem;}
+/* CTA */
+#cta{background:var(--ink);color:var(--void);text-align:center;padding:5.5rem 4vw;}
+.cta-eyebrow{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:1.5rem;}
 .cta-headline{font-family:var(--ff-display);font-size:clamp(2.5rem,5vw,5rem);font-weight:300;font-style:italic;line-height:1.0;color:#f0ece4;margin-bottom:0.2em;}
-.cta-headline strong{font-weight:700;font-style:normal;color:var(--gold-light);}
-.cta-sub{font-size:1rem;font-weight:300;color:rgba(240,236,228,0.6);max-width:500px;margin:1.5rem auto 3rem;line-height:1.9;}
+.cta-headline strong{font-weight:700;font-style:normal;color:#c9843a;}
+.cta-sub{font-size:1.1rem;font-weight:300;color:rgba(240,236,228,0.6);max-width:500px;margin:1.5rem auto 3rem;line-height:2.0;}
 .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;}
-.cta-btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold-light);color:#0c0b0a;padding:0.85rem 2rem;font-family:var(--ff-body);font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
-.cta-btn-primary:hover{background:#e8b87a;}
-.cta-btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(240,236,228,0.2);color:rgba(240,236,228,0.7);padding:0.85rem 2rem;font-family:var(--ff-body);font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
-.cta-btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light);}
-.cta-disclaimer{font-size:0.72rem;color:rgba(240,236,228,0.2);font-style:italic;max-width:480px;margin:0 auto;}
+.cta-btn-p{display:inline-flex;align-items:center;gap:0.5rem;background:#c9843a;color:#0c0b0a;padding:0.9rem 2rem;font-family:var(--ff-body);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
+.cta-btn-p:hover{background:#e8b87a;}
+.cta-btn-g{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(240,236,228,0.2);color:rgba(240,236,228,0.7);padding:0.9rem 2rem;font-family:var(--ff-body);font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
+.cta-btn-g:hover{border-color:#c9843a;color:#c9843a;}
+.cta-note{font-size:0.8rem;color:rgba(240,236,228,0.22);font-style:italic;max-width:480px;margin:0 auto;}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justify-content:space-between;}
-.footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:rgba(240,236,228,0.35);text-decoration:none;}
-.footer-mark span{color:rgba(201,132,58,0.6);}
-.footer-note{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.08em;color:rgba(240,236,228,0.15);}
+.footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:rgba(240,236,228,0.3);text-decoration:none;}
+.footer-mark span{color:rgba(201,132,58,0.5);}
+.footer-note{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.08em;color:rgba(240,236,228,0.12);}
 
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1);}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1);}
 .reveal.up{opacity:1;transform:translateY(0);}
 
-/* ── MOBILE ── */
+/* MOBILE */
 @media(max-width:768px){
-  #header .h-back span{display:none;}
-  .why-grid,.corpus-grid,.about-grid{grid-template-columns:1fr;}
-  .output-grid{grid-template-columns:1fr;}
-  .step{grid-template-columns:1fr;}
-  .step-num{font-size:2.5rem;}
   section{padding:4rem 1.25rem;}
-  .prompt-tabs{overflow-x:auto;}
+  #explainer{padding:4rem 1.25rem;}
+  .explainer-flow{grid-template-columns:1fr;}
+  .explainer-distinction,.refl-grid,.about-grid,.gov-grid{grid-template-columns:1fr;}
+  .persist-grid{grid-template-columns:1fr;}
+  .wf-step{grid-template-columns:1fr;}
+  .wf-num{font-size:2.5rem;}
+  .wf-cols{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -202,7 +220,12 @@ footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justi
 
 <header id="header">
   <a href="https://mikecilla.com" class="h-mark">Mike Cilla<span>.</span></a>
-  <a href="https://mikecilla.com/#s-exploration" class="h-back">← <span>Areas of Exploration</span></a>
+  <nav class="h-nav">
+    <a href="#explainer" class="hide-mobile">What it is</a>
+    <a href="#workflow">The process</a>
+    <a href="#reflection" class="hide-mobile">Reflection</a>
+    <a href="https://mikecilla.com/#s-fieldnotes" class="hide-mobile">← Field Notes</a>
+  </nav>
 </header>
 
 <!-- HERO -->
@@ -214,245 +237,582 @@ footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justi
       <span class="block"><em>Operating</em></span>
       <span class="block">System.</span>
     </h1>
-    <p class="hero-sub reveal" style="transition-delay:.35s">Most leadership assessments tell you what you're like. This one tells you how you actually work.</p>
-    <p class="hero-desc reveal" style="transition-delay:.45s">The Leadership OS is a structured methodology for making your leadership patterns explicit — using personality science, behavioral evidence from your AI conversation history, and guided reflection. The output is a set of working documents you'll actually use.</p>
+    <p class="hero-sub reveal" style="transition-delay:.35s">Most leadership assessments tell you what you're like. This one tells you how you actually work — and gives you a living document to keep proving it.</p>
+    <p class="hero-desc reveal" style="transition-delay:.45s">The Leadership OS combines validated personality science, behavioral evidence from your existing AI conversations, and structured reflection to produce a set of working documents you'll actually return to.</p>
     <div class="hero-cta-row reveal" style="transition-delay:.55s">
-      <a href="#steps" class="btn-primary">Start the process →</a>
-      <a href="#why" class="btn-ghost">Why this is different</a>
-    </div>
-  </div>
-  <div class="hero-scroll">Scroll to explore</div>
-</section>
-
-<!-- WHY -->
-<section id="why">
-  <div class="s-label reveal">Why this exists</div>
-  <div class="why-grid">
-    <div class="reveal" style="transition-delay:.1s">
-      <h2 class="why-headline">The assessment<br>isn't the<br><em>problem.</em></h2>
-      <div class="why-body">
-        <p>Most leaders have taken a personality assessment at some point. Probably more than one. And most of them remember the results as accurate, interesting, and largely unused six months later.</p>
-        <p>The report becomes a document. The insight fades. The development doesn't happen.</p>
-        <p>The Leadership OS is built on a different premise: that what matters isn't the assessment itself, but whether the insights get integrated into how you actually work. That requires something assessments don't provide — a living document you return to, behavioral evidence grounded in your real patterns, and a system for ongoing reflection rather than a one-time report.</p>
-        <p>This methodology combines validated personality science with a genuinely novel input: the behavioral evidence already embedded in your AI conversation history. The result is a profile derived from how you actually think and decide — not just how you describe yourself.</p>
-      </div>
-    </div>
-    <div class="reveal" style="transition-delay:.2s">
-      <table class="compare-table">
-        <thead>
-          <tr><th>Dimension</th><th>Traditional assessment</th><th>Leadership OS</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Data source</td><td>Self-report only</td><td class="good">Self-report + observed behavior</td></tr>
-          <tr><td>Scientific grounding</td><td>Sometimes</td><td class="good">Big Five / HEXACO anchored</td></tr>
-          <tr><td>Behavioral evidence</td><td>None</td><td class="good">AI corpus analysis</td></tr>
-          <tr><td>Output format</td><td>Report you read once</td><td class="good">Documents you use and update</td></tr>
-          <tr><td>AI integration</td><td>None</td><td class="good">Core to the methodology</td></tr>
-          <tr><td>Shelf life</td><td>Static</td><td class="good">Living document</td></tr>
-          <tr><td>Cost</td><td>$50–$500+</td><td class="good">Free</td></tr>
-          <tr><td>Time investment</td><td>45–90 min</td><td class="good">~75 min across 3 steps</td></tr>
-        </tbody>
-      </table>
+      <a href="#workflow" class="btn-primary">See the full process →</a>
+      <a href="#explainer" class="btn-ghost">What is this?</a>
     </div>
   </div>
 </section>
 
-<!-- STEPS -->
-<section id="steps">
-  <div class="steps-intro reveal">
-    <div class="s-label">The three steps</div>
-    <h2 class="steps-headline">Everything you need.<br><em>Nothing you don't.</em></h2>
-    <p class="steps-sub">Three inputs. One synthesis. Three working documents. The whole process takes about 75 minutes — less if you've already taken PrinciplesYou.</p>
-  </div>
+<!-- 60-SECOND EXPLAINER -->
+<section id="explainer">
+  <div class="s-label reveal">Understand it in 60 seconds</div>
+  <h2 class="explainer-headline reveal" style="transition-delay:.05s">What it is.<br><em>Why it's different.</em></h2>
+  <p class="explainer-sub reveal" style="transition-delay:.1s">Four ideas. No jargon. Read this first.</p>
 
-  <div class="step reveal">
-    <div class="step-num">01</div>
-    <div class="step-content">
-      <div class="step-tag">Personality Science · 20 minutes</div>
-      <div class="step-title">Take the PrinciplesYou Assessment</div>
-      <div class="step-desc">PrinciplesYou is a free personality assessment grounded in Big Five personality science — the same empirical foundation used in decades of leadership research. It produces an archetype profile and detailed facet-level data that provides the scientific anchor for everything that follows.</div>
-      <div class="step-detail">
-        <div class="step-detail-label">Why PrinciplesYou specifically</div>
-        <div class="step-detail-body">Most free personality assessments produce output that's either too abstract to be actionable (Big Five alone) or too interpretation-dependent to be credible (MBTI-adjacent instruments). PrinciplesYou sits at the useful intersection: validated trait science presented in language leaders can actually use. It's also genuinely free and takes 20 minutes rather than 90. If you've already taken it, skip ahead to Step 2.</div>
-      </div>
-      <div class="step-time">Take it at principlesyou.com · free · 20 min</div>
+  <div class="explainer-flow reveal" style="transition-delay:.15s">
+    <div class="ef-card">
+      <span class="ef-icon">📥</span>
+      <div class="ef-title">You bring three inputs</div>
+      <div class="ef-desc">A personality assessment. A structured reflection on how you work. And a behavioral audit from your existing AI conversation history — evidence of how you actually think, not how you describe yourself thinking.</div>
+    </div>
+    <div class="ef-card">
+      <span class="ef-icon">🧠</span>
+      <div class="ef-title">Your AI finds the patterns</div>
+      <div class="ef-desc">A synthesis prompt guides your AI to identify your decision tendencies, communication patterns, energy sources, friction points, and governing questions — across all three inputs simultaneously.</div>
+    </div>
+    <div class="ef-card">
+      <span class="ef-icon">📘</span>
+      <div class="ef-title">You get three working documents</div>
+      <div class="ef-desc">A Leadership User Manual. A Working-With-Me Guide. An AI Calibration Document. Not a report. Documents you share, update, and return to as your leadership evolves.</div>
     </div>
   </div>
 
-  <div class="step reveal">
-    <div class="step-num">02</div>
-    <div class="step-content">
-      <div class="step-tag">Behavioral Evidence · 15 minutes</div>
-      <div class="step-title">Run the Corpus Audit Prompt</div>
-      <div class="step-desc">If you use ChatGPT, Claude, Gemini, or any AI tool regularly, you've accumulated a behavioral dataset without knowing it. Thousands of decisions, questions, communications, and challenges — a record of how you actually think, not how you describe yourself thinking.</div>
-      <div class="step-desc">The Corpus Audit Prompt asks your AI to reflect on patterns it has observed across your conversations. Copy it. Paste it. Read what comes back. This is the piece that makes the Leadership OS genuinely different from any assessment that came before it.</div>
-      <div class="step-detail">
-        <div class="step-detail-label">What if I don't use AI much yet?</div>
-        <div class="step-detail-body">The corpus audit works best with six months or more of regular AI use. If you're earlier in that journey, the output will be thinner — but still useful, and it will get richer over time. The Corpus Audit section below has the exact prompt ready to copy.</div>
+  <div class="explainer-distinction reveal" style="transition-delay:.2s">
+    <div class="ed-cell">
+      <div class="ed-label old">Traditional assessments</div>
+      <div class="ed-items">
+        <div class="ed-item"><span class="ed-icon">○</span>Based on self-report only</div>
+        <div class="ed-item"><span class="ed-icon">○</span>Produces a report you read once</div>
+        <div class="ed-item"><span class="ed-icon">○</span>Static — a snapshot at one point in time</div>
+        <div class="ed-item"><span class="ed-icon">○</span>No connection to how you actually work</div>
+        <div class="ed-item"><span class="ed-icon">○</span>Insight fades within weeks</div>
       </div>
-      <div class="step-time">Takes 15 min · works with any AI tool · see prompt below</div>
     </div>
-  </div>
-
-  <div class="step reveal">
-    <div class="step-num">03</div>
-    <div class="step-content">
-      <div class="step-tag">Behavioral Anchors · 30–40 minutes</div>
-      <div class="step-title">Answer the Six Reflection Prompts</div>
-      <div class="step-desc">These aren't personality questions. They're structured behavioral prompts — the same methodology as a structured behavioral interview, applied as a self-reflection instrument. They surface the specific stories, decisions, and patterns that no assessment instrument can reach.</div>
-      <div class="step-desc">Answer them in writing, dictate them as a voice memo, or respond directly in your AI tool. The prompts are below — and once you've answered them, you have everything you need to run the synthesis.</div>
-      <div class="step-time">30–40 min · writing or voice · all six prompts below</div>
+    <div class="ed-cell">
+      <div class="ed-label new">Leadership OS</div>
+      <div class="ed-items">
+        <div class="ed-item"><span class="ed-icon">→</span>Combines self-report with behavioral evidence</div>
+        <div class="ed-item"><span class="ed-icon">→</span>Produces documents you use and update</div>
+        <div class="ed-item"><span class="ed-icon">→</span>Living — gets more accurate over time</div>
+        <div class="ed-item"><span class="ed-icon">→</span>Grounded in how you've actually been working</div>
+        <div class="ed-item"><span class="ed-icon">→</span>Built to persist and compound</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PROMPTS -->
-<section id="prompts">
-  <div class="s-label reveal">Step 3 in detail</div>
-  <div class="reveal" style="transition-delay:.1s">
-    <h2 class="prompts-headline">The six<br><em>reflection prompts.</em></h2>
-    <p class="prompts-sub">Answer these as specifically as you can. Real situations, actual decisions, honest observations. The more concrete the input, the more useful the output. Avoid generalities — the interesting material is always in the specific story.</p>
-  </div>
+<!-- COMPLETE WORKFLOW -->
+<section id="workflow">
+  <div class="s-label reveal">The complete process</div>
+  <h2 class="section-headline reveal" style="transition-delay:.05s">Seven steps.<br><em>One living system.</em></h2>
+  <p class="section-sub reveal" style="transition-delay:.1s">Every step has a clear objective, specific inputs, and a prompt you can copy directly into your AI tool. The whole process takes about 90 minutes the first time.</p>
 
-  <div class="prompt-tabs reveal" style="transition-delay:.2s">
-    <button class="prompt-tab active" onclick="showPrompt(0)">01 — Peak</button>
-    <button class="prompt-tab" onclick="showPrompt(1)">02 — Decision</button>
-    <button class="prompt-tab" onclick="showPrompt(2)">03 — Regret</button>
-    <button class="prompt-tab" onclick="showPrompt(3)">04 — Frustration</button>
-    <button class="prompt-tab" onclick="showPrompt(4)">05 — Energy</button>
-    <button class="prompt-tab" onclick="showPrompt(5)">06 — Misread</button>
-  </div>
+  <div class="workflow-steps">
 
-  <div id="prompt-0" class="prompt-panel active reveal">
-    <div class="prompt-card">
-      <div class="prompt-card-label">Prompt 01 · Peak Performance</div>
-      <div class="prompt-card-q">"Describe a specific situation where you were operating at your best as a leader. What were you doing, who were you with, what were the conditions — and what made it different from ordinary work?"</div>
-      <div class="prompt-card-why">This surfaces your Flow conditions — the specific combination of challenge, context, and collaboration that produces your best work. The details matter more than the summary. What was the challenge level? Who was involved? What kind of problem were you solving?</div>
-      <button class="copy-btn" onclick="copyPrompt(this, 'Describe a specific situation where you were operating at your best as a leader. What were you doing, who were you with, what were the conditions — and what made it different from ordinary work?')">Copy prompt</button>
-    </div>
-  </div>
-
-  <div id="prompt-1" class="prompt-panel reveal">
-    <div class="prompt-card">
-      <div class="prompt-card-label">Prompt 02 · Decision Process</div>
-      <div class="prompt-card-q">"Describe a decision you made in the past year that you're genuinely proud of. Not the outcome — the process. How did you get there?"</div>
-      <div class="prompt-card-why">Most people default to describing outcomes rather than process. This prompt forces attention to the actual decision mechanics: how you gathered information, stress-tested assumptions, managed uncertainty, and committed to a direction. The process reveals far more about how you operate than the outcome does.</div>
-      <button class="copy-btn" onclick="copyPrompt(this, 'Describe a decision you made in the past year that you\'re genuinely proud of. Not the outcome — the process. How did you get there?')">Copy prompt</button>
-    </div>
-  </div>
-
-  <div id="prompt-2" class="prompt-panel reveal">
-    <div class="prompt-card">
-      <div class="prompt-card-label">Prompt 03 · A Decision You'd Make Differently</div>
-      <div class="prompt-card-q">"Describe a decision or situation you'd handle differently if you could do it again. What happened, what did you do, and what does that tell you about how you operate under pressure or uncertainty?"</div>
-      <div class="prompt-card-why">This is where the most useful development material lives. Not failure — just honest reflection on the gap between how you wanted to operate and how you actually did. The pattern across multiple examples like this reveals the specific conditions under which your defaults work against you.</div>
-      <button class="copy-btn" onclick="copyPrompt(this, 'Describe a decision or situation you\'d handle differently if you could do it again. What happened, what did you do, and what does that tell you about how you operate under pressure or uncertainty?')">Copy prompt</button>
-    </div>
-  </div>
-
-  <div id="prompt-3" class="prompt-panel reveal">
-    <div class="prompt-card">
-      <div class="prompt-card-label">Prompt 04 · Recurring Frustration</div>
-      <div class="prompt-card-q">"What's a recurring frustration in how you work — something that comes up repeatedly with other people, with organizations, or with yourself? Be specific about what triggers it and how it tends to show up."</div>
-      <div class="prompt-card-why">Recurring frustrations are diagnostic. They reveal the gap between how you expect things to work and how they actually do — which tells you something important about your standards, your defaults, and the environments where you're most and least effective. The specificity of the trigger matters as much as the frustration itself.</div>
-      <button class="copy-btn" onclick="copyPrompt(this, 'What\'s a recurring frustration in how you work — something that comes up repeatedly with other people, with organizations, or with yourself? Be specific about what triggers it and how it tends to show up.')">Copy prompt</button>
-    </div>
-  </div>
-
-  <div id="prompt-4" class="prompt-panel reveal">
-    <div class="prompt-card">
-      <div class="prompt-card-label">Prompt 05 · Energy Sources</div>
-      <div class="prompt-card-q">"When do you find the work genuinely energizing? Not 'meaningful work' in the abstract — specific contexts, activities, types of people, kinds of problems. What's happening when you lose track of time?"</div>
-      <div class="prompt-card-why">Generic answers here (I love building things, I care about people) are interesting but not diagnostic. The useful version names specific conditions: the type of problem, the stage of the work, who else is in the room, what the stakes are. This is the input for your Flow profile — the conditions that produce your highest-quality engagement.</div>
-      <button class="copy-btn" onclick="copyPrompt(this, 'When do you find the work genuinely energizing? Not meaningful work in the abstract — specific contexts, activities, types of people, kinds of problems. What\'s happening when you lose track of time?')">Copy prompt</button>
-    </div>
-  </div>
-
-  <div id="prompt-5" class="prompt-panel reveal">
-    <div class="prompt-card">
-      <div class="prompt-card-label">Prompt 06 · The Misread</div>
-      <div class="prompt-card-q">"What do people consistently get wrong about you — as a leader, as a colleague, as a person? What does that misread tell you about the gap between how you operate and how you come across?"</div>
-      <div class="prompt-card-why">This is the most revealing prompt in the set. The gap between intent and impact is where most leadership development work actually happens. People who can articulate this clearly have usually done real self-reflection. People who say "I don't think people misread me" are telling you something too.</div>
-      <button class="copy-btn" onclick="copyPrompt(this, 'What do people consistently get wrong about you — as a leader, as a colleague, as a person? What does that misread tell you about the gap between how you operate and how you come across?')">Copy prompt</button>
-    </div>
-  </div>
-</section>
-
-<!-- CORPUS -->
-<section id="corpus">
-  <div class="s-label reveal">Step 2 in detail</div>
-  <div class="corpus-grid">
-    <div class="reveal" style="transition-delay:.1s">
-      <h2 class="corpus-headline">Your AI has been<br>watching you<br><em>work.</em></h2>
-      <div class="corpus-body">
-        <p>If you've used ChatGPT, Claude, Gemini, or any AI tool with any regularity, you've accumulated something you probably haven't thought about: a behavioral record. Thousands of questions, decisions, communications, and challenges — documented in a way that no other medium captures.</p>
-        <p>Every time you worked through a hard decision with your AI, you left evidence of how you actually think. Every communication you drafted, every problem you brought, every frustration you expressed — behavioral data, accumulated over time.</p>
-        <p>The Corpus Audit Prompt asks your AI to reflect on that record and identify patterns. It's not asking it to summarize conversations. It's asking it to describe what it has observed about how you operate — the same thing a thoughtful colleague might say after working with you closely for a year.</p>
-        <p>Copy the prompt below and paste it directly into your AI tool. Read what comes back with an open mind. Then copy that output into your synthesis prompt alongside your PrinciplesYou results and your reflection prompt answers.</p>
-      </div>
-    </div>
-    <div class="reveal" style="transition-delay:.2s">
-      <div class="corpus-prompt-box">
-        <div class="cpb-label">The Corpus Audit Prompt — copy and paste into your AI tool</div>
-        <div class="cpb-body" id="corpus-prompt-text">
-          <p>I'd like you to reflect on our conversation history together. Don't summarize specific conversations. Instead, identify behavioral patterns — things you've observed repeatedly about how I think, work, and communicate.</p>
-          <p>Please reflect on the following and share what you've noticed:</p>
-          <p>1. How do I tend to frame problems? What patterns do you see in how I approach complex situations?</p>
-          <p>2. What topics or domains come up most frequently? Where does my thinking seem deepest?</p>
-          <p>3. How would you describe my communication style — how I ask questions, express disagreement, and respond to your outputs?</p>
-          <p>4. What seems to energize me? What do I gravitate toward?</p>
-          <p>5. What frustrates me? Where do you see friction or impatience in how I engage?</p>
-          <p>6. What recurring questions or challenges keep coming up?</p>
-          <p>7. What are my decision-making tendencies — how I evaluate tradeoffs, what I prioritize, what I avoid?</p>
-          <p>8. What do you notice about my relationship to structure, ambiguity, detail, and systems?</p>
-          <p>Be specific and honest. I'm not looking for flattery. I'm looking for an accurate behavioral profile based on what you've actually observed.</p>
+    <!-- STEP 1 -->
+    <div class="wf-step reveal">
+      <div class="wf-num">01</div>
+      <div class="wf-body">
+        <div class="wf-tag">Assessment Inputs · 20 min</div>
+        <div class="wf-title">Take PrinciplesYou</div>
+        <div class="wf-desc">The scientific anchor for everything that follows. PrinciplesYou is grounded in Big Five personality science — the same empirical foundation used in decades of leadership research. It produces an archetype profile and facet-level data that your AI will use to calibrate its pattern analysis.</div>
+        <div class="wf-cols">
+          <div>
+            <div class="wf-col-label">What you need</div>
+            <ul class="wf-col-items">
+              <li>20 minutes of uninterrupted focus</li>
+              <li>Free account at principlesyou.com</li>
+              <li>Your full results — screenshot or PDF</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wf-col-label">What you get</div>
+            <ul class="wf-col-items">
+              <li>Primary archetype + secondary attributes</li>
+              <li>Facet-level scores across 4 dimensions</li>
+              <li>Behavioral context for each dimension</li>
+            </ul>
+          </div>
         </div>
-        <div class="cpb-note">Works with ChatGPT, Claude, Gemini, or any AI tool with conversation memory. Best results with 3+ months of regular use. If you're new to AI tools, skip this step and return to it in a few months — the profile will only get richer.</div>
-        <button class="copy-btn" style="margin-top:1.25rem;" onclick="copyCorpusPrompt(this)">Copy full prompt</button>
+        <div class="wf-time">Free · principlesyou.com · 20 min</div>
+        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View ingestion prompt</button>
+        <div class="wf-prompt-box">
+          <div class="wf-prompt-label">Assessment Ingestion Prompt — paste into your AI after sharing your results</div>
+          <div class="wf-prompt-text">I'm going to share my PrinciplesYou personality assessment results with you. I'd like you to ingest this as foundational context — not as a definitive description of who I am, but as a set of validated hypotheses about my tendencies that we'll test against behavioral evidence in the next steps.
+
+As you read the results, please note:
+1. My primary archetype and what it suggests about how I organize, communicate, and lead
+2. My secondary attributes and where they complement or create tension with the primary
+3. Any facet-level scores that seem unusually high or low
+4. The archetypes I'm least like — these are often as informative as the primary
+
+Please don't interpret these results yet. Just acknowledge that you've ingested them and summarize the 3-4 most notable patterns you observed. We'll use these as anchors throughout the rest of the Leadership OS process.
+
+[Paste your PrinciplesYou results here]</div>
+          <div class="wf-prompt-footer">
+            <span class="wf-prompt-note">Works with ChatGPT, Claude, Gemini, or any frontier model. Keep this conversation open — all subsequent prompts build on this context.</span>
+            <button class="copy-btn" onclick="copyText(this, `I'm going to share my PrinciplesYou personality assessment results with you. I'd like you to ingest this as foundational context — not as a definitive description of who I am, but as a set of validated hypotheses about my tendencies that we'll test against behavioral evidence in the next steps.\n\nAs you read the results, please note:\n1. My primary archetype and what it suggests about how I organize, communicate, and lead\n2. My secondary attributes and where they complement or create tension with the primary\n3. Any facet-level scores that seem unusually high or low\n4. The archetypes I'm least like — these are often as informative as the primary\n\nPlease don't interpret these results yet. Just acknowledge that you've ingested them and summarize the 3-4 most notable patterns you observed. We'll use these as anchors throughout the rest of the Leadership OS process.\n\n[Paste your PrinciplesYou results here]`)">Copy prompt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="wf-step reveal">
+      <div class="wf-num">02</div>
+      <div class="wf-body">
+        <div class="wf-tag">Behavioral Evidence · 15 min</div>
+        <div class="wf-title">Run the Corpus Audit</div>
+        <div class="wf-desc">This is the piece that makes Leadership OS genuinely different. If you use ChatGPT, Claude, Gemini, or any AI tool regularly, you've accumulated a behavioral record — thousands of decisions, communications, and challenges documented in a way no other medium captures. The Corpus Audit Prompt asks your AI to reflect on patterns it has observed across your conversations.</div>
+        <div class="wf-cols">
+          <div>
+            <div class="wf-col-label">Works best with</div>
+            <ul class="wf-col-items">
+              <li>3+ months of regular AI use</li>
+              <li>Strategic or professional conversations</li>
+              <li>Decision-making, writing, analysis work</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wf-col-label">What you get</div>
+            <ul class="wf-col-items">
+              <li>Observed behavioral patterns</li>
+              <li>Recurring themes and priorities</li>
+              <li>Communication and decision tendencies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wf-time">15 min · any AI tool with conversation history</div>
+        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View corpus audit prompt</button>
+        <div class="wf-prompt-box">
+          <div class="wf-prompt-label">Corpus Audit Prompt — paste into the AI tool you use most</div>
+          <div class="wf-prompt-text">I'd like you to reflect on our conversation history together. Don't summarize specific conversations. Instead, identify behavioral patterns — things you've observed repeatedly about how I think, work, and communicate.
+
+Please reflect on each of the following:
+
+1. How do I tend to frame problems? What patterns do you see in how I approach complex or ambiguous situations?
+
+2. What topics or domains come up most frequently? Where does my thinking seem deepest and most developed?
+
+3. How would you describe my communication style — the way I ask questions, express disagreement, give feedback on your outputs, and make requests?
+
+4. What seems to energize me in our conversations? What do I gravitate toward?
+
+5. What frustrates me? Where do you see friction, impatience, or repeated difficulty?
+
+6. What recurring questions or challenges keep coming up across our conversations?
+
+7. What are my decision-making tendencies — how I evaluate tradeoffs, what I seem to prioritize, what I consistently avoid?
+
+8. What do you notice about my relationship to structure, ambiguity, detail, and systems?
+
+Be specific and honest. I'm not looking for flattery — I'm looking for an accurate behavioral profile based on what you've actually observed. If you're uncertain about something, say so rather than speculating.</div>
+          <div class="wf-prompt-footer">
+            <span class="wf-prompt-note">Paste this into the AI tool that holds most of your professional conversations. Copy the output and bring it into your main Leadership OS session.</span>
+            <button class="copy-btn" onclick="copyText(this, `I'd like you to reflect on our conversation history together. Don't summarize specific conversations. Instead, identify behavioral patterns — things you've observed repeatedly about how I think, work, and communicate.\n\nPlease reflect on each of the following:\n\n1. How do I tend to frame problems? What patterns do you see in how I approach complex or ambiguous situations?\n\n2. What topics or domains come up most frequently? Where does my thinking seem deepest and most developed?\n\n3. How would you describe my communication style — the way I ask questions, express disagreement, give feedback on your outputs, and make requests?\n\n4. What seems to energize me in our conversations? What do I gravitate toward?\n\n5. What frustrates me? Where do you see friction, impatience, or repeated difficulty?\n\n6. What recurring questions or challenges keep coming up across our conversations?\n\n7. What are my decision-making tendencies — how I evaluate tradeoffs, what I seem to prioritize, what I consistently avoid?\n\n8. What do you notice about my relationship to structure, ambiguity, detail, and systems?\n\nBe specific and honest. I'm not looking for flattery — I'm looking for an accurate behavioral profile based on what you've actually observed. If you're uncertain about something, say so rather than speculating.`)">Copy prompt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="wf-step reveal">
+      <div class="wf-num">03</div>
+      <div class="wf-body">
+        <div class="wf-tag">Structured Reflection · 30–40 min</div>
+        <div class="wf-title">Answer the Six Reflection Prompts</div>
+        <div class="wf-desc">Structured behavioral prompts — the same methodology as a behavioral interview, applied as a self-reflection instrument. These surface the specific stories and patterns that no assessment can reach. Answer them in writing, as a voice memo, or directly in conversation with your AI. Be specific. Real situations. Actual decisions. The more concrete, the more useful.</div>
+        <div class="wf-cols">
+          <div>
+            <div class="wf-col-label">The six prompts</div>
+            <ul class="wf-col-items">
+              <li>Peak performance — when were you at your best?</li>
+              <li>Decision process — how did you get there?</li>
+              <li>A decision you'd make differently</li>
+              <li>Recurring frustration — what keeps coming up?</li>
+              <li>Energy sources — what makes you lose track of time?</li>
+              <li>The misread — what do people get wrong about you?</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wf-col-label">Three ways to complete</div>
+            <ul class="wf-col-items">
+              <li>Write responses directly in your AI tool</li>
+              <li>Dictate via voice memo, paste transcript</li>
+              <li>Have your AI interview you — use the guided interview prompt below</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wf-time">30–40 min · any format works</div>
+        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View guided interview prompt</button>
+        <div class="wf-prompt-box">
+          <div class="wf-prompt-label">Guided Interview Prompt — let your AI conduct the reflection</div>
+          <div class="wf-prompt-text">I'd like you to conduct a structured reflection interview with me. This is part of building my Leadership Operating System.
+
+Your role in this conversation is interviewer and pattern identifier — not coach, advisor, or therapist. Ask one question at a time. Wait for my response. Ask one follow-up if something is vague or general. Then move to the next question.
+
+The six questions you'll cover, in order:
+
+1. Describe a specific situation where you were operating at your best as a leader. What were you doing, who were you with, what were the conditions — and what made it different from ordinary work?
+
+2. Describe a decision you made in the past year that you're genuinely proud of — not the outcome, the process. How did you get there?
+
+3. Describe a decision or situation you'd handle differently if you could. What happened, what did you do, and what does that tell you about how you operate under pressure or uncertainty?
+
+4. What's a recurring frustration in how you work — something that comes up repeatedly with people, organizations, or yourself? Be specific about what triggers it.
+
+5. When do you find work genuinely energizing? Not meaningful work in the abstract — specific contexts, activities, types of problems, kinds of people.
+
+6. What do people consistently get wrong about you as a leader or colleague? What does that misread tell you about the gap between how you operate and how you come across?
+
+After I've answered all six, summarize the key behavioral patterns you observed — organized by: decision style, energy and flow conditions, friction points, and how I come across versus how I intend to come across.
+
+Begin with question one whenever I'm ready.</div>
+          <div class="wf-prompt-footer">
+            <span class="wf-prompt-note">This is the preferred method for most people. Conversational reflection surfaces more than writing alone. The AI will ask natural follow-ups.</span>
+            <button class="copy-btn" onclick="copyText(this, `I'd like you to conduct a structured reflection interview with me. This is part of building my Leadership Operating System.\n\nYour role in this conversation is interviewer and pattern identifier — not coach, advisor, or therapist. Ask one question at a time. Wait for my response. Ask one follow-up if something is vague or general. Then move to the next question.\n\nThe six questions you'll cover, in order:\n\n1. Describe a specific situation where you were operating at your best as a leader. What were you doing, who were you with, what were the conditions — and what made it different from ordinary work?\n\n2. Describe a decision you made in the past year that you're genuinely proud of — not the outcome, the process. How did you get there?\n\n3. Describe a decision or situation you'd handle differently if you could. What happened, what did you do, and what does that tell you about how you operate under pressure or uncertainty?\n\n4. What's a recurring frustration in how you work — something that comes up repeatedly with people, organizations, or yourself? Be specific about what triggers it.\n\n5. When do you find work genuinely energizing? Not meaningful work in the abstract — specific contexts, activities, types of problems, kinds of people.\n\n6. What do people consistently get wrong about you as a leader or colleague? What does that misread tell you about the gap between how you operate and how you come across?\n\nAfter I've answered all six, summarize the key behavioral patterns you observed — organized by: decision style, energy and flow conditions, friction points, and how I come across versus how I intend to come across.\n\nBegin with question one whenever I'm ready.`)">Copy prompt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="wf-step reveal">
+      <div class="wf-num">04</div>
+      <div class="wf-body">
+        <div class="wf-tag">Pattern Analysis · 10 min</div>
+        <div class="wf-title">Run the Leadership Pattern Synthesis</div>
+        <div class="wf-desc">With all three inputs gathered — assessment results, corpus audit output, and reflection responses — you run a single synthesis prompt. Your AI analyzes across all three simultaneously, identifying where the sources converge, where they diverge, and what patterns are strong enough to anchor your Leadership OS.</div>
+        <div class="wf-cols">
+          <div>
+            <div class="wf-col-label">What goes in</div>
+            <ul class="wf-col-items">
+              <li>PrinciplesYou results (Step 1)</li>
+              <li>Corpus audit output (Step 2)</li>
+              <li>Reflection responses (Step 3)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wf-col-label">What comes out</div>
+            <ul class="wf-col-items">
+              <li>Convergent patterns — consistent across all sources</li>
+              <li>Tension points — where sources diverge</li>
+              <li>Governing questions extracted from evidence</li>
+              <li>Development edges identified</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wf-time">10 min · run in same session as Steps 1–3</div>
+        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View synthesis prompt</button>
+        <div class="wf-prompt-box">
+          <div class="wf-prompt-label">Leadership Pattern Synthesis Prompt</div>
+          <div class="wf-prompt-text">You now have three sources of data about how I operate:
+1. My PrinciplesYou personality assessment (ingested in Step 1)
+2. Your behavioral observations from my AI conversation history (Step 2 corpus audit)
+3. My structured reflection responses (Step 3)
+
+Please conduct a cross-source pattern analysis. I want you to identify:
+
+CONVERGENT PATTERNS — things that show up consistently across all three sources. These are the most reliable signals about how I actually operate.
+
+TENSION POINTS — places where the sources diverge. For example, where my self-description in the reflection doesn't match what the corpus audit observed, or where my assessment results predict a tendency that my behavioral evidence contradicts. Don't resolve these tensions — name them as questions worth exploring.
+
+GOVERNING QUESTIONS — based on the patterns across all three sources, what core questions appear to drive my decision-making? Not questions I asked, but questions that seem to sit beneath my choices. State these as hypotheses.
+
+FLOW CONDITIONS — based on what I described as energizing and the conditions in my peak performance examples, what specific combination of challenge, context, and collaboration produces my best work?
+
+DEVELOPMENT EDGES — not weaknesses, but the places where my natural tendencies, under specific conditions, reliably create friction. Be specific about the mechanism, not just the label.
+
+Frame all conclusions as hypotheses, not facts. Note your confidence level where relevant. Flag anything that seems contradicted by evidence.</div>
+          <div class="wf-prompt-footer">
+            <span class="wf-prompt-note">Run this in the same AI session where you completed Steps 1–3. The AI needs all three inputs in its context window to synthesize effectively.</span>
+            <button class="copy-btn" onclick="copyText(this, `You now have three sources of data about how I operate:\n1. My PrinciplesYou personality assessment (ingested in Step 1)\n2. Your behavioral observations from my AI conversation history (Step 2 corpus audit)\n3. My structured reflection responses (Step 3)\n\nPlease conduct a cross-source pattern analysis. I want you to identify:\n\nCONVERGENT PATTERNS — things that show up consistently across all three sources. These are the most reliable signals about how I actually operate.\n\nTENSION POINTS — places where the sources diverge. For example, where my self-description in the reflection doesn't match what the corpus audit observed, or where my assessment results predict a tendency that my behavioral evidence contradicts. Don't resolve these tensions — name them as questions worth exploring.\n\nGOVERNING QUESTIONS — based on the patterns across all three sources, what core questions appear to drive my decision-making? Not questions I asked, but questions that seem to sit beneath my choices. State these as hypotheses.\n\nFLOW CONDITIONS — based on what I described as energizing and the conditions in my peak performance examples, what specific combination of challenge, context, and collaboration produces my best work?\n\nDEVELOPMENT EDGES — not weaknesses, but the places where my natural tendencies, under specific conditions, reliably create friction. Be specific about the mechanism, not just the label.\n\nFrame all conclusions as hypotheses, not facts. Note your confidence level where relevant. Flag anything that seems contradicted by evidence.`)">Copy prompt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="wf-step reveal">
+      <div class="wf-num">05</div>
+      <div class="wf-body">
+        <div class="wf-tag">Document Generation · 15 min</div>
+        <div class="wf-title">Generate Your Three Documents</div>
+        <div class="wf-desc">Three separate prompts — one per document. Run them sequentially in the same session. Review each output carefully. Correct anything that doesn't ring true. The AI is producing a first draft, not a finished profile — your job is to recognize what's accurate and push back on what isn't.</div>
+        <div class="wf-cols">
+          <div>
+            <div class="wf-col-label">Document 1</div>
+            <ul class="wf-col-items">
+              <li>Leadership User Manual (3–4 pages)</li>
+              <li>How you think, decide, and lead</li>
+              <li>Written in first person</li>
+              <li>Designed to be shared</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wf-col-label">Documents 2 + 3</div>
+            <ul class="wf-col-items">
+              <li>Working-With-Me Guide (1 page)</li>
+              <li>Practical, shareable, under 3-min read</li>
+              <li>AI Calibration Document (1 page)</li>
+              <li>Onboards your AI to how you work</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wf-time">15 min · three separate prompts in sequence</div>
+        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View document generation prompts</button>
+        <div class="wf-prompt-box">
+          <div class="wf-prompt-label">Document Generation Prompts — run these in sequence</div>
+          <div class="wf-prompt-text">PROMPT A — Leadership User Manual
+
+Based on everything we've developed in this session — the assessment, the corpus audit, the reflection responses, and the pattern synthesis — please write my Leadership User Manual.
+
+Format: 3–4 pages. First person ("I"). Structured with clear sections.
+
+Include:
+— How I think: cognitive patterns, problem framing, decision approach
+— How I engage: with people, under pressure, in conflict, as a leader
+— What produces my best work: flow conditions, challenge level, context
+— Where I create friction: the specific conditions under which my defaults work against me
+— My governing questions: the questions that appear to drive my decisions
+— How to work with me: what I need, what I give, what to watch for
+
+Write this as a document I could share with a new manager, a new team member, or a key collaborator. Not a psychological report. A practical guide to how I operate.
+
+---
+
+PROMPT B — Working-With-Me Guide
+
+Now write a one-page Working-With-Me Guide. This is the portable, shareable version — readable in under 3 minutes.
+
+Structure it as five short sections:
+1. To bring me a problem
+2. To challenge me effectively  
+3. What I need from you
+4. What you can expect from me
+5. When I'm struggling — what to watch for
+
+Keep it concrete and specific. No abstractions. Someone who has never met me should understand exactly how to work with me after reading this.
+
+---
+
+PROMPT C — AI Calibration Document
+
+Finally, write a one-page AI Calibration Document — the document I'll use to onboard any AI assistant to how I work.
+
+Include:
+— My communication style and voice (how I write, what I find generic, what I find useful)
+— My operating principles (the non-negotiables in how I work)
+— How to give me feedback (what lands, what doesn't)
+— What good output looks like to me vs. what reads as generic
+— My governing question — and what it means for the work we do together
+
+This document gets pasted at the start of any new AI conversation to accelerate calibration.</div>
+          <div class="wf-prompt-footer">
+            <span class="wf-prompt-note">Review each output before moving to the next. Correct anything that doesn't feel accurate — this improves the subsequent documents.</span>
+            <button class="copy-btn" onclick="copyText(this, `PROMPT A — Leadership User Manual\n\nBased on everything we've developed in this session — the assessment, the corpus audit, the reflection responses, and the pattern synthesis — please write my Leadership User Manual.\n\nFormat: 3–4 pages. First person. Structured with clear sections.\n\nInclude:\n— How I think: cognitive patterns, problem framing, decision approach\n— How I engage: with people, under pressure, in conflict, as a leader\n— What produces my best work: flow conditions, challenge level, context\n— Where I create friction: the specific conditions under which my defaults work against me\n— My governing questions: the questions that appear to drive my decisions\n— How to work with me: what I need, what I give, what to watch for\n\nWrite this as a document I could share with a new manager, a new team member, or a key collaborator. Not a psychological report. A practical guide to how I operate.`)">Copy Prompt A</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="wf-step reveal">
+      <div class="wf-num">06</div>
+      <div class="wf-body">
+        <div class="wf-tag">Development Planning · 10 min</div>
+        <div class="wf-title">Build Your Development Roadmap</div>
+        <div class="wf-desc">Not a list of things to fix. A structured view of where intentional practice would produce the highest return — given who you already are and what you're working toward. This document is private. It's for you, not for sharing.</div>
+        <div class="wf-cols">
+          <div>
+            <div class="wf-col-label">What goes in</div>
+            <ul class="wf-col-items">
+              <li>Development edges from Step 4</li>
+              <li>Your stated goals and context</li>
+              <li>Your flow conditions</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wf-col-label">What comes out</div>
+            <ul class="wf-col-items">
+              <li>3–5 development priorities</li>
+              <li>Specific practices for each</li>
+              <li>Triggers to watch for</li>
+              <li>A 90-day focus</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wf-time">10 min · private document</div>
+        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View development roadmap prompt</button>
+        <div class="wf-prompt-box">
+          <div class="wf-prompt-label">Development Roadmap Prompt</div>
+          <div class="wf-prompt-text">Based on the Leadership OS we've built in this session — specifically the development edges, flow conditions, and governing questions — please build a Development Roadmap.
+
+This is a private document. It's not for sharing. Be honest.
+
+Structure it as follows:
+
+DEVELOPMENT PRIORITIES (3–5)
+For each: name the edge, describe the specific mechanism that creates friction, identify the conditions that trigger it, and suggest one concrete practice to work on it. Avoid generic advice — the practice should be specific to the pattern we identified.
+
+90-DAY FOCUS
+Given everything we've covered, what's the single most important thing to work on in the next 90 days? Not the easiest, the most important. Explain why.
+
+MONITORING QUESTIONS
+3–5 questions I should ask myself regularly to stay honest about whether I'm operating at my best or sliding into my defaults. These should be specific to my patterns — not generic self-reflection prompts.
+
+WHEN TO UPDATE THIS
+Based on what we know about how I work, when and under what conditions should I revisit and update this roadmap?</div>
+          <div class="wf-prompt-footer">
+            <span class="wf-prompt-note">This document is for you, not for sharing. Be as honest as possible in the reflection steps — the quality of this output depends entirely on the quality of the inputs.</span>
+            <button class="copy-btn" onclick="copyText(this, `Based on the Leadership OS we've built in this session — specifically the development edges, flow conditions, and governing questions — please build a Development Roadmap.\n\nThis is a private document. It's not for sharing. Be honest.\n\nDEVELOPMENT PRIORITIES (3–5)\nFor each: name the edge, describe the specific mechanism that creates friction, identify the conditions that trigger it, and suggest one concrete practice to work on it. Avoid generic advice — the practice should be specific to the pattern we identified.\n\n90-DAY FOCUS\nGiven everything we've covered, what's the single most important thing to work on in the next 90 days? Not the easiest, the most important. Explain why.\n\nMONITORING QUESTIONS\n3–5 questions I should ask myself regularly to stay honest about whether I'm operating at my best or sliding into my defaults.\n\nWHEN TO UPDATE THIS\nBased on what we know about how I work, when and under what conditions should I revisit and update this roadmap?`)">Copy prompt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="wf-step reveal">
+      <div class="wf-num">07</div>
+      <div class="wf-body">
+        <div class="wf-tag">Ongoing · Your AI Companion</div>
+        <div class="wf-title">Keep It Alive</div>
+        <div class="wf-desc">The Leadership OS is only as good as the evidence it's built on. The AI Calibration Document from Step 5 is the starting point — paste it at the beginning of any new AI conversation to establish context. Beyond that, the system gets better the more you use it. Return to it when something significant happens. Update the documents when something no longer rings true. Add new examples when they're fresh.</div>
+        <div class="wf-cols">
+          <div>
+            <div class="wf-col-label">What persists long-term</div>
+            <ul class="wf-col-items">
+              <li>Leadership User Manual — update annually</li>
+              <li>Working-With-Me Guide — update when role changes</li>
+              <li>Development Roadmap — update every 90 days</li>
+              <li>AI Calibration Document — update as you evolve</li>
+              <li>Governing questions — rarely change; worth noting when they do</li>
+            </ul>
+          </div>
+          <div>
+            <div class="wf-col-label">What to discard</div>
+            <ul class="wf-col-items">
+              <li>Raw reflection transcripts after synthesis</li>
+              <li>Corpus audit output once integrated</li>
+              <li>Earlier versions once superseded</li>
+              <li>Anything that no longer rings true</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wf-time">Ongoing · 30 min every 90 days to review and update</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- REFLECTION METHODOLOGY -->
+<section id="reflection">
+  <div class="s-label reveal">How reflection works</div>
+  <div class="refl-grid">
+    <div class="reveal" style="transition-delay:.1s">
+      <h2 class="section-headline">Three ways to<br><em>reflect.</em></h2>
+      <p class="section-sub" style="margin-bottom:2rem;">The reflection step is the most underrated part of the process. Most people rush it. The people who get the most out of Leadership OS are the ones who slow down here — the quality of the synthesis in Steps 4 and 5 is almost entirely determined by the quality of the reflection in Step 3.</p>
+      <div class="refl-principles">
+        <div class="refl-principle">
+          <div class="rp-num">01</div>
+          <div class="rp-text"><strong>Be specific, not general.</strong> "I'm good under pressure" is not useful. "In the Q4 board presentation when the CFO challenged the numbers, I did X" is what produces a real profile.</div>
+        </div>
+        <div class="refl-principle">
+          <div class="rp-num">02</div>
+          <div class="rp-text"><strong>The AI is an interviewer, not a coach.</strong> It should ask questions and identify patterns. It should not advise, evaluate, or tell you what to do.</div>
+        </div>
+        <div class="refl-principle">
+          <div class="rp-num">03</div>
+          <div class="rp-text"><strong>Tension is data.</strong> When a reflection answer contradicts your assessment results, don't resolve the tension. Name it. That gap is often where the most interesting development work lives.</div>
+        </div>
+        <div class="refl-principle">
+          <div class="rp-num">04</div>
+          <div class="rp-text"><strong>Return to it.  </strong> The reflection prompts work better the second time. Come back six months later with new examples. The delta between versions is itself informative.</div>
+        </div>
+      </div>
+    </div>
+    <div class="refl-modes reveal" style="transition-delay:.2s">
+      <div class="refl-mode">
+        <span class="refl-mode-icon">✍️</span>
+        <div class="refl-mode-title">Written reflection</div>
+        <div class="refl-mode-desc">Type your answers directly into your AI tool, one prompt at a time. Works well for people who think clearly in writing. The AI can ask follow-up questions after each response. Best for detailed, precise thinkers.</div>
+      </div>
+      <div class="refl-mode">
+        <span class="refl-mode-icon">🎙️</span>
+        <div class="refl-mode-title">Voice-to-text</div>
+        <div class="refl-mode-desc">Record a voice memo answering each prompt, use your phone's transcription, then paste into your AI session. Works well for people who think better out loud. Often produces richer, less edited responses than writing.</div>
+      </div>
+      <div class="refl-mode">
+        <span class="refl-mode-icon">💬</span>
+        <div class="refl-mode-title">Guided AI interview</div>
+        <div class="refl-mode-desc">Use the guided interview prompt from Step 3 to let your AI conduct the reflection as a conversation. Ask one question, wait for your answer, ask a follow-up, move on. The preferred method for most people — conversational reflection surfaces more than writing alone.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OUTPUT -->
-<section id="output">
-  <div class="s-label reveal">What you get</div>
-  <div class="reveal" style="transition-delay:.1s">
-    <h2 class="output-headline">Three documents.<br><em>All of them useful.</em></h2>
-    <p class="output-sub">Once you've completed all three inputs, you'll run a synthesis prompt in your AI tool that produces three working documents — not a report, not a summary, but documents you'll actually return to.</p>
+<!-- GOVERNANCE -->
+<section id="governance">
+  <div class="s-label reveal">Quality control</div>
+  <h2 class="section-headline reveal" style="transition-delay:.05s">What this is.<br><em>What it isn't.</em></h2>
+  <p class="section-sub reveal" style="transition-delay:.1s">The Leadership OS is a self-knowledge methodology, not a psychological assessment. Understanding the boundaries keeps the outputs honest and useful.</p>
+  <div class="gov-grid reveal" style="transition-delay:.15s">
+    <div class="gov-card allowed">
+      <div class="gov-card-label allowed">Leadership OS can honestly claim</div>
+      <ul class="gov-items allowed">
+        <li>Synthesizing patterns across multiple data sources</li>
+        <li>Surfacing hypotheses about how you operate</li>
+        <li>Grounding insights in validated personality science as one input</li>
+        <li>Producing documents that reflect your own stated experience</li>
+        <li>Getting more accurate as evidence accumulates</li>
+        <li>Being a structured way to make implicit patterns explicit</li>
+      </ul>
+    </div>
+    <div class="gov-card avoid">
+      <div class="gov-card-label avoid">Leadership OS does not claim</div>
+      <ul class="gov-items avoid">
+        <li>Validity or reliability in a psychometric sense</li>
+        <li>Normative comparison to any population</li>
+        <li>Predictive power for job performance or outcomes</li>
+        <li>Clinical or therapeutic conclusions</li>
+        <li>That AI observations are objective or unbiased</li>
+        <li>That the outputs are final or definitive</li>
+      </ul>
+    </div>
   </div>
-  <div class="output-grid reveal" style="transition-delay:.2s">
-    <div class="output-card oc1">
-      <div class="output-card-num">01</div>
-      <div class="output-card-title">Leadership User Manual</div>
-      <div class="output-card-desc">3–4 pages. How you think, how you decide, what you need to do your best work. Written in first person. Designed to be shared — with a new manager, a new team, or a key collaborator.</div>
-      <ul class="output-card-items">
-        <li>Cognitive signature and decision patterns</li>
-        <li>Flow conditions — what produces your best work</li>
-        <li>Development edges — where your defaults create friction</li>
-        <li>Governing questions extracted from behavioral evidence</li>
+  <div class="gov-statement reveal" style="transition-delay:.2s">
+    <div class="gov-statement-label">The honest framing</div>
+    <div class="gov-statement-text">"This is a structured way to make your own patterns visible — using the best available inputs. The outputs are hypotheses, not facts. They're only as good as the evidence you bring. And they're most useful when you treat them as a starting point for reflection, not a finished description of who you are."</div>
+  </div>
+</section>
+
+<!-- PERSISTENCE -->
+<section id="persistence">
+  <div class="s-label reveal">What stays, what changes</div>
+  <h2 class="section-headline reveal" style="transition-delay:.05s">A living system<br><em>needs tending.</em></h2>
+  <p class="section-sub reveal" style="transition-delay:.1s">The Leadership OS gets better over time — but only if you maintain it. Here's what to keep, what to update, and what to let go.</p>
+  <div class="persist-grid reveal" style="transition-delay:.15s">
+    <div class="persist-card keep">
+      <div class="persist-card-label keep">Keep — long-term artifacts</div>
+      <ul class="persist-items">
+        <li>Leadership User Manual — your primary reference</li>
+        <li>Governing questions — rarely change; note when they do</li>
+        <li>Working-With-Me Guide — stable unless your role changes significantly</li>
+        <li>AI Calibration Document — your onboarding doc for any new AI session</li>
+        <li>Previous versions — the evolution is itself informative</li>
       </ul>
     </div>
-    <div class="output-card oc2">
-      <div class="output-card-num">02</div>
-      <div class="output-card-title">Working-With-Me Guide</div>
-      <div class="output-card-desc">1 page. The practical version of the above. What to bring me, how to challenge me effectively, what I need, what I'll give you, and what to watch for when I'm struggling.</div>
-      <ul class="output-card-items">
-        <li>How to bring me a problem</li>
-        <li>How to challenge me effectively</li>
-        <li>What I need from collaborators</li>
-        <li>The signals that I'm struggling</li>
+    <div class="persist-card update">
+      <div class="persist-card-label update">Update — regularly revisited</div>
+      <ul class="persist-items">
+        <li>Development Roadmap — every 90 days</li>
+        <li>Flow conditions — as your role and context evolve</li>
+        <li>Development edges — as you work on them</li>
+        <li>Monitoring questions — when old ones stop being useful</li>
+        <li>Behavioral examples — add fresh ones while they're recent</li>
       </ul>
     </div>
-    <div class="output-card oc3">
-      <div class="output-card-num">03</div>
-      <div class="output-card-title">AI Calibration Document</div>
-      <div class="output-card-desc">1 page. The document you give your AI assistant so it can work with you effectively — voice, preferences, operating principles, what good output looks like to you.</div>
-      <ul class="output-card-items">
-        <li>Communication style and voice guide</li>
-        <li>What you find valuable vs. generic</li>
-        <li>Operating principles and non-negotiables</li>
-        <li>How to calibrate responses over time</li>
+    <div class="persist-card discard">
+      <div class="persist-card-label discard">Discard — don't carry forward</div>
+      <ul class="persist-items">
+        <li>Raw reflection transcripts once synthesized</li>
+        <li>Corpus audit output once integrated into the profile</li>
+        <li>Anything that no longer rings true — outdated framing clutters the system</li>
+        <li>Superseded document versions after 2+ iterations</li>
       </ul>
     </div>
   </div>
@@ -463,12 +823,12 @@ footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justi
   <div class="s-label reveal">About this framework</div>
   <div class="about-grid">
     <div class="reveal" style="transition-delay:.1s">
-      <h2 class="about-headline">Built from<br>an experiment<br><em>I ran on myself.</em></h2>
+      <h2 class="section-headline">Built from an<br>experiment I ran<br><em>on myself.</em></h2>
       <div class="about-body">
         <p>I didn't set out to build a leadership methodology. I was trying to make my AI tools more useful at work.</p>
-        <p>Over 2.5 years as a VP of People Operations, I accumulated hundreds of working conversations with AI — workforce analytics, HR system design, org design, business cases, leadership decisions. At some point I realized I'd accidentally built something: a detailed record of how I actually think.</p>
-        <p>When I transferred that context to a new AI tool, I had to make my thinking explicit in ways it had never been before. What came out of that process was the most accurate leadership profile I'd ever received — more specific than any 360, more honest than most coaching engagements, grounded in actual behavioral evidence rather than survey responses.</p>
-        <p>The Leadership OS is an attempt to make that process replicable — for anyone, using whatever AI tools they already have, in about 75 minutes.</p>
+        <p>Over 2.5 years as a VP of People Operations, I accumulated hundreds of working conversations with AI — workforce analytics, HR system design, organizational design, business cases, leadership decisions. At some point I realized I'd accidentally built something: a detailed record of how I actually think.</p>
+        <p>When I transferred that context to a new AI tool, I had to make my thinking explicit in ways it had never been before. What came out of that process was the most accurate leadership profile I'd ever received — more specific than any 360, more honest than most coaching engagements, and grounded in actual behavioral evidence rather than survey responses.</p>
+        <p>The Leadership OS is an attempt to make that process replicable for anyone, using whatever AI tools they already have, in about 90 minutes.</p>
       </div>
       <div class="about-creds">
         <div class="about-cred">
@@ -481,22 +841,22 @@ footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justi
         </div>
         <div class="about-cred">
           <span class="about-cred-label">Grounding</span>
-          <span class="about-cred-value">Big Five / HEXACO personality science, I/O Psychology, Flow theory</span>
+          <span class="about-cred-value">Big Five / HEXACO science, I/O Psychology, Csíkszentmihályi's Flow model</span>
         </div>
       </div>
     </div>
-    <div class="about-right reveal" style="transition-delay:.2s">
+    <div class="about-cards reveal" style="transition-delay:.2s">
       <div class="about-card">
-        <div class="about-card-label">What I learned</div>
-        <div class="about-card-quote">"I was attempting to train an AI. The AI ended up training me. Not in a mystical sense — in a very practical one. Making my thinking legible to a system that needed explicit context forced a level of self-reflection that accumulated organizational knowledge never demands."</div>
+        <div class="about-card-label">The unexpected finding</div>
+        <div class="about-card-quote">"I was attempting to train an AI. The AI ended up training me — in a very practical sense. Making my thinking legible to a system that needed explicit context forced a level of self-reflection that accumulated organizational knowledge never demands."</div>
       </div>
       <div class="about-card">
-        <div class="about-card-label">The I/O Psychology observation</div>
-        <div class="about-card-quote">"Every existing leadership assessment asks people to describe themselves. The corpus audit asks the system that has watched them work to describe what it saw. That's a different kind of evidence."</div>
+        <div class="about-card-label">The methodological difference</div>
+        <div class="about-card-quote">"Every existing leadership assessment asks you to describe yourself. The corpus audit asks the system that has watched you work to describe what it saw. That's a different kind of evidence — and a different kind of profile."</div>
       </div>
       <div class="about-card">
-        <div class="about-card-label">On validation</div>
-        <div class="about-card-quote">"This is not a validated assessment methodology — there's no normative sample, no inter-rater reliability. I want to be honest about what it isn't. But as a way of generating self-knowledge, it produced something I haven't gotten from any formal process."</div>
+        <div class="about-card-label">On what this is and isn't</div>
+        <div class="about-card-quote">"This is not a validated assessment. There's no normative sample, no inter-rater reliability. I want to be honest about what it isn't. But as a methodology for generating self-knowledge, it produced something I haven't gotten from any formal process."</div>
       </div>
     </div>
   </div>
@@ -505,13 +865,13 @@ footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justi
 <!-- CTA -->
 <section id="cta">
   <div class="cta-eyebrow reveal">Ready to begin</div>
-  <h2 class="cta-headline reveal" style="transition-delay:.1s">About<br><strong>75 minutes.</strong></h2>
-  <p class="cta-sub reveal" style="transition-delay:.2s">Three steps. One synthesis. A set of documents about yourself that you'll actually use — and that will get more accurate over time.</p>
+  <h2 class="cta-headline reveal" style="transition-delay:.1s">About<br><strong>90 minutes.</strong></h2>
+  <p class="cta-sub reveal" style="transition-delay:.2s">Seven steps. Every prompt included. Works with whatever AI tool you already use.</p>
   <div class="cta-buttons reveal" style="transition-delay:.3s">
-    <a href="https://www.principlesyou.com" class="cta-btn-primary" target="_blank" rel="noopener">Step 1 — Take PrinciplesYou →</a>
-    <a href="#corpus" class="cta-btn-ghost">Step 2 — Corpus Audit Prompt</a>
+    <a href="https://www.principlesyou.com" class="cta-btn-p" target="_blank" rel="noopener">Step 1 — Take PrinciplesYou →</a>
+    <a href="#workflow" class="cta-btn-g">Review the full process</a>
   </div>
-  <p class="cta-disclaimer reveal" style="transition-delay:.4s">This framework is currently in beta. If you complete the process and have feedback, Mike would genuinely like to hear it — <a href="mailto:mikejcilla@gmail.com" style="color:rgba(201,132,58,0.7);text-decoration:none;">mikejcilla@gmail.com</a></p>
+  <p class="cta-note reveal" style="transition-delay:.4s">This framework is in beta. Feedback is genuinely welcome — <a href="mailto:mikejcilla@gmail.com" style="color:rgba(201,132,58,0.6);text-decoration:none;">mikejcilla@gmail.com</a></p>
 </section>
 
 <footer>
@@ -520,60 +880,57 @@ footer{background:#131211;padding:2rem 4vw;display:flex;align-items:center;justi
 </footer>
 
 <script>
-// Reveal on scroll
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) {
-      var els = Array.from(e.target.querySelectorAll ? [e.target] : []);
-      if (e.target.classList.contains('reveal')) {
-        setTimeout(function() { e.target.classList.add('up'); }, 60);
-        observer.unobserve(e.target);
-      }
+// Reveal
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting && e.target.classList.contains('reveal')){
+      setTimeout(function(){ e.target.classList.add('up'); }, 60);
+      obs.unobserve(e.target);
     }
   });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
 
-// Initial reveal for hero
-setTimeout(function() {
-  var els = document.querySelectorAll('#hero .reveal');
-  els.forEach(function(el, i) { setTimeout(function(){ el.classList.add('up'); }, 100 + i * 100); });
-}, 100);
+// Hero
+setTimeout(function(){
+  document.querySelectorAll('#hero .reveal').forEach(function(el,i){
+    setTimeout(function(){ el.classList.add('up'); }, 100 + i*100);
+  });
+},100);
 
-// Prompt tabs
-function showPrompt(idx) {
-  document.querySelectorAll('.prompt-panel').forEach(function(p, i) {
-    p.classList.toggle('active', i === idx);
-  });
-  document.querySelectorAll('.prompt-tab').forEach(function(t, i) {
-    t.classList.toggle('active', i === idx);
-  });
+// Toggle prompt boxes
+function togglePrompt(btn){
+  var box = btn.nextElementSibling;
+  var isOpen = box.classList.contains('open');
+  box.classList.toggle('open', !isOpen);
+  btn.textContent = isOpen ? '↓ View prompt' : '↑ Hide prompt';
+  // update all toggle buttons to reflect current state
+    allToggles.forEach(function(t){
+      if(t !== btn){
+        var b = t.nextElementSibling;
+        if(b && b.classList.contains('open')){
+          b.classList.remove('open');
+          t.textContent = t.textContent.replace('↑ Hide','↓ View');
+        }
+      }
+    });
 }
 
-// Copy prompt
-function copyPrompt(btn, text) {
-  navigator.clipboard.writeText(text).then(function() {
+// Copy text
+function copyText(btn, text){
+  navigator.clipboard.writeText(text).then(function(){
+    var orig = btn.textContent;
     btn.textContent = 'Copied ✓';
     btn.classList.add('copied');
-    setTimeout(function() { btn.textContent = 'Copy prompt'; btn.classList.remove('copied'); }, 2000);
+    setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
   });
 }
 
-// Copy corpus prompt
-function copyCorpusPrompt(btn) {
-  var text = "I'd like you to reflect on our conversation history together. Don't summarize specific conversations. Instead, identify behavioral patterns — things you've observed repeatedly about how I think, work, and communicate.\n\nPlease reflect on the following and share what you've noticed:\n\n1. How do I tend to frame problems? What patterns do you see in how I approach complex situations?\n\n2. What topics or domains come up most frequently? Where does my thinking seem deepest?\n\n3. How would you describe my communication style — how I ask questions, express disagreement, and respond to your outputs?\n\n4. What seems to energize me? What do I gravitate toward?\n\n5. What frustrates me? Where do you see friction or impatience in how I engage?\n\n6. What recurring questions or challenges keep coming up?\n\n7. What are my decision-making tendencies — how I evaluate tradeoffs, what I prioritize, what I avoid?\n\n8. What do you notice about my relationship to structure, ambiguity, detail, and systems?\n\nBe specific and honest. I'm not looking for flattery. I'm looking for an accurate behavioral profile based on what you've actually observed.";
-  navigator.clipboard.writeText(text).then(function() {
-    btn.textContent = 'Copied ✓';
-    btn.classList.add('copied');
-    setTimeout(function() { btn.textContent = 'Copy full prompt'; btn.classList.remove('copied'); }, 2000);
-  });
-}
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    var target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
   });
 });
 </script>
