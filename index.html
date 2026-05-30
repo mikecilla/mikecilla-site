@@ -475,6 +475,26 @@ body {
   .fni-meta { grid-template-columns: repeat(2,1fr); }
 }
 
+
+/* ════════════════════════
+   EXPLORATION SECTION
+════════════════════════ */
+#s-exploration { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
+.exp-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: 6rem; align-items: start; }
+.exp-intro-head { }
+.exp-section-title { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1rem; }
+.exp-section-title em { font-style: italic; font-weight: 600; color: var(--gold-light); }
+.exp-section-sub { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; }
+.exp-topics { display: flex; flex-direction: column; gap: 0; }
+.exp-topic { border-top: 1px solid var(--rule); padding: 1.1rem 0; display: grid; grid-template-columns: 1.5rem 1fr; gap: 1rem; align-items: start; transition: border-color 0.25s; }
+.exp-topic:hover { border-top-color: rgba(184,103,30,0.3); }
+.exp-topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0.5; margin-top: 0.55rem; flex-shrink: 0; transition: opacity 0.25s; }
+.exp-topic:hover .exp-topic-dot { opacity: 1; }
+.exp-topic-name { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; color: var(--bone); margin-bottom: 0.2rem; line-height: 1.2; }
+.exp-topic-desc { font-size: 0.9rem; font-weight: 300; color: var(--bone-dim); line-height: 1.7; }
+@media (max-width: 900px) { .exp-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+@media (max-width: 600px) { #s-exploration { padding-left: 1.25rem; padding-right: 1.25rem; } }
+
 /* Field Notes: never clip on any screen size */
 #s-fieldnotes { overflow: visible !important; height: auto !important; }
 
@@ -505,6 +525,7 @@ body {
     <li><a href="#s-thesis">Thinking</a></li>
     <li><a href="#s-capabilities">Capabilities</a></li>
     <li><a href="#s-career">Work</a></li>
+    <li><a href="#s-exploration">Exploration</a></li>
     <li><a href="#s-fieldnotes">Field Notes</a></li>
     <li><a href="#s-connect">Connect</a></li>
   </ul>
@@ -537,9 +558,9 @@ body {
       <div class="cred-sub">People Operations, analytics, and HR technology leadership</div>
     </div>
     <div class="hero-credential">
-      <div class="cred-label">Current focus</div>
-      <div class="cred-value">Workforce &amp; AI Strategy</div>
-      <div class="cred-sub">Workforce strategy, organizational design, and AI readiness</div>
+      <div class="cred-label">Current exploration</div>
+      <div class="cred-value">Leadership &amp; AI</div>
+      <div class="cred-sub">Leadership reflection, AI-augmented development, and organizational design</div>
     </div>
     <div class="hero-quote-block reveal" style="transition-delay:.5s">
       <blockquote>&ldquo;Human resources are like natural resources; they&rsquo;re often buried deep. You have to go looking for them.&rdquo;</blockquote>
@@ -861,6 +882,81 @@ body {
   </div>
 </section>
 
+
+
+<!-- EXPLORATION -->
+<section class="snap" id="s-exploration" data-label="Exploration">
+  <div>
+    <div class="s-label reveal">Areas of Exploration</div>
+    <div class="exp-layout">
+
+      <div class="reveal" style="transition-delay:.1s">
+        <h2 class="exp-section-title">Questions I keep<br>returning<br><em>to.</em></h2>
+        <p class="exp-section-sub">These aren't frameworks or offerings. They're the areas where I find myself doing the most thinking right now — some well-developed, some barely formed. The Field Notes section is where these ideas get worked out in public.</p>
+      </div>
+
+      <div class="exp-topics reveal" style="transition-delay:.2s">
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">Leadership Reflection</div>
+            <div class="exp-topic-desc">How do leaders actually develop self-awareness over time — not from assessments, but from sustained attention to their own patterns? And what conditions make that kind of reflection possible?</div>
+          </div>
+        </div>
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">Leadership Operating Systems</div>
+            <div class="exp-topic-desc">The idea that each leader has a kind of operating model — a set of principles, tendencies, defaults, and blind spots that govern how they function. Most people have one. Very few have ever made it explicit.</div>
+          </div>
+        </div>
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">AI-Augmented Development</div>
+            <div class="exp-topic-desc">What happens when an AI system accumulates longitudinal context about how someone thinks and decides — not as a surveillance tool, but as a reflection partner? I've been running this experiment on myself for three years.</div>
+          </div>
+        </div>
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">Knowledge Management &amp; Self-Knowledge</div>
+            <div class="exp-topic-desc">The gap between what leaders know about themselves formally (assessments, 360s) and what they actually know experientially (decisions under pressure, patterns over time) seems significant and underexplored.</div>
+          </div>
+        </div>
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">Organizational Design</div>
+            <div class="exp-topic-desc">How organizations structure themselves for decision-making, accountability, and execution. The intersection of individual leadership patterns and organizational systems — how each shapes the other.</div>
+          </div>
+        </div>
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">Human-Centered Technology</div>
+            <div class="exp-topic-desc">As AI becomes more embedded in how work gets done, the organizational and human questions become more important — not less. What does it mean to design for the person, not just the workflow?</div>
+          </div>
+        </div>
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">Static vs. Dynamic Development</div>
+            <div class="exp-topic-desc">Most leadership development is episodic — a workshop, an assessment, a coaching engagement. The interesting question is what continuous development looks like, and whether AI changes the answer.</div>
+          </div>
+        </div>
+        <div class="exp-topic">
+          <div class="exp-topic-dot"></div>
+          <div>
+            <div class="exp-topic-name">Decision Making Under Ambiguity</div>
+            <div class="exp-topic-desc">Not decision frameworks — those are everywhere. The actual experience of making consequential decisions without enough information, and what separates people who do it well from people who don't.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- 8b — FIELD NOTES -->
 <section class="snap" id="s-fieldnotes" data-label="Field Notes">
