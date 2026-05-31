@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leadership OS — Sample Outputs</title>
-<meta name="description" content="See what Leadership OS produces. Sample outputs from a fictional executive — demonstrating format, depth, and quality.">
+<meta name="description" content="Illustrative sample outputs from Leadership OS. All content is synthetic and generated to demonstrate format and depth — not based on any real person.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -23,89 +23,69 @@
   --ff-m:'JetBrains Mono',monospace;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:17px;line-height:1.8;font-weight:300;}
+body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:17px;line-height:1.82;font-weight:300;}
 
-/* HEADER */
 #hdr{position:fixed;top:0;left:0;right:0;z-index:200;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(250,248,244,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);}
-.hm{font-family:var(--ff-d);font-size:1.04rem;font-weight:400;letter-spacing:0.05em;color:var(--ink);text-decoration:none;}
+.hm{font-family:var(--ff-d);font-size:0.95rem;font-weight:400;letter-spacing:0.05em;color:var(--ink);text-decoration:none;}
 .hm span{color:var(--gold);}
 .hnav{display:flex;gap:0.6rem;}
-.hbtn{font-family:var(--ff-m);font-size:1.00rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;padding:0.32rem 0.75rem;border:1px solid var(--rule);transition:all 0.2s;}
+.hbtn{font-family:var(--ff-m);font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;padding:0.32rem 0.75rem;border:1px solid var(--rule);transition:all 0.2s;}
 .hbtn:hover{border-color:var(--gold);color:var(--gold);}
 .hbtn.p{background:var(--ink);color:var(--void);border-color:var(--ink);}
 .hbtn.p:hover{background:var(--gold);border-color:var(--gold);}
 
-/* PAGE LAYOUT */
-#page{padding-top:48px;display:grid;grid-template-columns:280px 1fr;min-height:100vh;}
+/* SYNTHETIC BANNER */
+.synthetic-banner{background:#1a1612;color:rgba(240,236,228,0.75);font-family:var(--ff-m);font-size:0.74rem;letter-spacing:0.06em;text-align:center;padding:0.6rem 2rem;line-height:1.55;border-bottom:1px solid rgba(255,255,255,0.06);}
+.synthetic-banner strong{color:#c9843a;}
 
-/* SIDEBAR */
-#sidebar{position:sticky;top:48px;height:calc(100vh - 48px);overflow-y:auto;border-right:1px solid var(--rule);padding:1.5rem 0;background:var(--void);}
+#page{padding-top:calc(48px + 37px);display:grid;grid-template-columns:280px 1fr;min-height:100vh;}
+
+#sidebar{position:sticky;top:85px;height:calc(100vh - 85px);overflow-y:auto;border-right:1px solid var(--rule);padding:1.5rem 0;background:var(--void);}
 .sb-head{padding:0.75rem 1.25rem 0.5rem;}
 .sb-persona{background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:0.85rem 1rem;margin:0 0.75rem 1rem;}
 .sb-avatar{width:38px;height:38px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:1rem;font-weight:600;color:var(--void);margin-bottom:0.5rem;}
-.sb-name{font-family:var(--ff-d);font-size:1.04rem;font-weight:600;color:var(--ink);margin-bottom:0.1rem;}
-.sb-role{font-size:1.06rem;color:var(--ink-dim);line-height:1.45;}
-.sb-fictional{font-family:var(--ff-m);font-size:1.01rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-top:0.4rem;opacity:0.7;}
+.sb-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:0.1rem;}
+.sb-role{font-size:0.82rem;color:var(--ink-dim);line-height:1.5;}
+.sb-fictional{font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--gold);margin-top:0.4rem;opacity:0.75;}
 .sb-divider{height:1px;background:var(--rule);margin:0.5rem 0.75rem;}
-.sb-label{font-family:var(--ff-m);font-size:0.71rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding:0.3rem 1.25rem;opacity:0.7;}
-.sb-link{display:flex;align-items:center;gap:0.6rem;padding:0.5rem 1.25rem;font-size:1.07rem;color:var(--ink-dim);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;cursor:pointer;}
+.sb-label{font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);padding:0.3rem 1.25rem;opacity:0.8;}
+.sb-link{display:flex;align-items:center;gap:0.6rem;padding:0.55rem 1.25rem;font-size:0.96rem;color:var(--ink-dim);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;cursor:pointer;}
 .sb-link:hover{color:var(--ink);border-left-color:rgba(184,103,30,0.3);}
 .sb-link.active{color:var(--gold);border-left-color:var(--gold);font-weight:400;}
 .sb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .d1{background:var(--c5);}.d2{background:var(--c1);}.d3{background:var(--gold);}.d4{background:var(--c3);}.d5{background:var(--c4);}
 .sb-quality-note{margin:1rem 0.75rem 0;padding:0.75rem;background:var(--deep);border:1px solid var(--rule);border-left:2px solid var(--gold);}
-.sqn-label{font-family:var(--ff-m);font-size:0.81rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
-.sqn-text{font-size:1.00rem;color:var(--ink-dim);line-height:1.6;}
+.sqn-label{font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+.sqn-text{font-size:0.85rem;color:var(--ink-dim);line-height:1.65;}
 
-/* MAIN CONTENT */
 #main-content{overflow-y:auto;min-width:0;}
 .panel{display:none;padding:1.25rem 1.75rem;width:100%;}
 .panel.active{display:block;width:100%;box-sizing:border-box;}
 
-/* DOC HEADER */
 .dh{display:grid;grid-template-columns:1fr auto;align-items:start;gap:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--rule);margin-bottom:1.5rem;}
-.dbadge{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.25rem 0.65rem;border:1px solid;margin-bottom:0.5rem;display:inline-block;}
+.dbadge{font-family:var(--ff-m);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.75rem;border:1px solid;margin-bottom:0.5rem;display:inline-block;}
 .dbadge.d1{color:var(--c5);border-color:rgba(127,119,221,0.3);background:rgba(127,119,221,0.06);}
 .dbadge.d2{color:var(--c1);border-color:rgba(91,91,214,0.3);background:rgba(91,91,214,0.06);}
 .dbadge.d3{color:var(--gold);border-color:var(--gd);background:var(--gd);}
 .dbadge.d4{color:var(--c3);border-color:rgba(29,158,117,0.3);background:rgba(29,158,117,0.06);}
 .dbadge.d5{color:var(--ink-dim);border-color:var(--rule);background:var(--deep);}
 .dtitle{font-family:var(--ff-d);font-size:clamp(1.7rem,2.5vw,2.3rem);font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:0.4rem;}
-.dsub{font-size:1.04rem;color:var(--ink-dim);line-height:1.7;}
-.dmeta{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem;}
-.dmi{font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:0.3rem;}
+.dsub{font-size:1.0rem;color:var(--ink-dim);line-height:1.72;}
+.dmeta{display:flex;gap:0.85rem;flex-wrap:wrap;margin-top:0.5rem;}
+.dmi{font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:0.3rem;}
 .dmi::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--gold);}
 .dh-aside{text-align:right;}
-.dh-time{font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);}
+.dh-time{font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-dim);}
 
-/* TWO-COLUMN CONTENT */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;box-sizing:border-box;}
-.col-card{background:var(--surface);padding:1.5rem 1.75rem;position:relative;overflow:hidden;min-width:0;}
-.col-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
-.col-card.b1::before{background:var(--c5);}
-.col-card.b2::before{background:var(--c1);}
-.col-card.b3::before{background:var(--gold);}
-.col-card.b4::before{background:var(--c3);}
-.col-card.b5::before{background:var(--c4);}
-.col-label{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-.col-text{font-size:1.06rem;color:var(--ink-dim);line-height:1.88;}
-.col-text p{margin-bottom:0.9rem;}
-.col-text p:last-child{margin-bottom:0;}
-.col-text strong{font-weight:500;color:var(--ink);}
-.col-text em{font-style:italic;}
-
-/* THREE-COLUMN */
-.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;box-sizing:border-box;}
-
-/* CONSTRUCT ROWS — landscape */
+/* TABLE */
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:1.25rem;}
 .cr-table{width:100%;border-collapse:collapse;font-size:1.0rem;min-width:600px;table-layout:fixed;}
-.cr-table th{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:0.5rem 0.85rem;border-bottom:2px solid var(--rule);text-align:left;font-weight:400;}
+.cr-table th{font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);padding:0.6rem 1rem;border-bottom:2px solid var(--rule);text-align:left;font-weight:400;}
 .cr-table td{padding:0.9rem 1rem;border-bottom:1px solid var(--rule);vertical-align:top;}
 .cr-table tr:last-child td{border-bottom:none;}
-.cr-table tr:hover td{background:rgba(26,22,18,0.02);}
+.cr-table tr:hover td{background:rgba(26,22,18,0.015);}
 .cr-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:var(--ink);white-space:normal;}
-.cr-conf{font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.5rem;white-space:nowrap;}
+.cr-conf{font-family:var(--ff-m);font-size:0.76rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.22rem 0.55rem;white-space:nowrap;display:inline-block;}
 .cr-conf.hi{color:var(--c3);background:rgba(29,158,117,0.09);border:1px solid rgba(29,158,117,0.2);}
 .cr-conf.mo{color:var(--gold);background:var(--gd);border:1px solid rgba(184,103,30,0.2);}
 .cr-conf.em{color:var(--c1);background:rgba(91,91,214,0.07);border:1px solid rgba(91,91,214,0.18);}
@@ -113,21 +93,30 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .cr-summary{font-size:0.97rem;color:var(--ink-dim);line-height:1.78;}
 .cr-implication{font-size:1.0rem;font-weight:300;color:var(--ink-dim);font-style:italic;margin-top:0.4rem;line-height:1.7;}
 
-/* SUMMARY BLOCK */
+/* TWO/THREE COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;box-sizing:border-box;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;box-sizing:border-box;}
+.col-card{background:var(--surface);padding:1.5rem 1.75rem;position:relative;overflow:hidden;min-width:0;}
+.col-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+.col-card.b1::before{background:var(--c5);}
+.col-card.b2::before{background:var(--c1);}
+.col-card.b3::before{background:var(--gold);}
+.col-card.b4::before{background:var(--c3);}
+.col-card.b5::before{background:var(--c4);}
+.col-label{font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.55rem;}
+.col-text{font-size:1.05rem;color:var(--ink-dim);line-height:1.92;word-break:break-word;overflow-wrap:break-word;}
+.col-text p{margin-bottom:0.9rem;}
+.col-text p:last-child{margin-bottom:0;}
+.col-text strong{font-weight:500;color:var(--ink);}
+.col-text em{font-style:italic;}
+
 .summary-block{background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:1.4rem 1.6rem;margin-bottom:1.25rem;}
-.sb-slabel{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-.sb-stext{font-size:1.07rem;color:var(--ink-dim);line-height:1.9;}
+.sb-slabel{font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.sb-stext{font-size:1.05rem;color:var(--ink-dim);line-height:1.95;}
 .sb-stext p{margin-bottom:0.95rem;}
 .sb-stext p:last-child{margin-bottom:0;}
 .sb-stext strong{font-weight:500;color:var(--ink);}
 
-/* QUALITY NOTE */
-.qn{background:var(--deep);border:1px solid var(--rule);border-left:2px solid var(--gold);padding:0.85rem 1.1rem;display:flex;gap:0.6rem;margin-top:1.25rem;}
-.qni{color:var(--gold);flex-shrink:0;font-size:1.05rem;margin-top:0.1rem;}
-.qnt{font-size:1.07rem;color:var(--ink-dim);line-height:1.75;}
-.qnt strong{font-weight:500;color:var(--ink);}
-
-/* FULL-WIDTH CARD */
 .fw-card{background:var(--surface);border:1px solid var(--rule);padding:1.6rem 1.85rem;margin-bottom:1.25rem;position:relative;min-width:0;}
 .fw-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
 .fw-card.b1::before{background:var(--c5);}
@@ -135,26 +124,48 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .fw-card.b3::before{background:var(--gold);}
 .fw-card.b4::before{background:var(--c3);}
 .fw-card.b5::before{background:var(--c4);}
-.fw-label{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
-.fw-text{font-size:1.06rem;color:var(--ink-dim);line-height:1.9;}
-.fw-text p{margin-bottom:0.85rem;}
+.fw-label{font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.fw-text{font-size:1.05rem;color:var(--ink-dim);line-height:1.95;}
+.fw-text p{margin-bottom:0.95rem;}
 .fw-text p:last-child{margin-bottom:0;}
 .fw-text strong{font-weight:500;color:var(--ink);}
 
-/* FOOTER */
+.qn{background:var(--deep);border:1px solid var(--rule);border-left:2px solid var(--gold);padding:0.85rem 1.1rem;display:flex;gap:0.6rem;margin-top:1.25rem;}
+.qni{color:var(--gold);flex-shrink:0;font-size:0.9rem;margin-top:0.1rem;}
+.qnt{font-size:1.0rem;color:var(--ink-dim);line-height:1.85;}
+.qnt strong{font-weight:500;color:var(--ink);}
+
+/* GOVERNANCE NOTE */
+.governance-note{background:var(--deep);border:1px solid var(--rule);border-top:3px solid var(--gold);padding:1.1rem 1.4rem;margin-bottom:1.5rem;}
+.gn-label{font-family:var(--ff-m);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+.gn-text{font-size:0.97rem;color:var(--ink-dim);line-height:1.82;}
+
 footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;margin-left:280px;}
 .fm{font-family:var(--ff-d);font-size:0.9rem;color:rgba(240,236,228,0.28);text-decoration:none;}
 .fm span{color:rgba(201,132,58,0.45);}
-.fd{font-family:var(--ff-m);font-size:0.6rem;color:rgba(240,236,228,0.15);max-width:440px;text-align:right;line-height:1.55;}
+.fd{font-family:var(--ff-m);font-size:0.68rem;color:rgba(240,236,228,0.18);max-width:500px;text-align:right;line-height:1.55;}
 
 @media(max-width:900px){
   #page{grid-template-columns:1fr;}
   #sidebar{display:none;}
-  .panel{padding:1.5rem 1.25rem;}
+  .panel{padding:1.5rem 1.25rem;width:100%;}
   .two-col,.three-col{grid-template-columns:1fr;}
-  .cr-table{font-size:1.05rem;}
+  .cr-name{white-space:normal;}
   footer{margin-left:0;flex-direction:column;gap:0.75rem;}
   .fd{text-align:center;}
+  .dh{grid-template-columns:1fr;}
+  .dh-aside{display:none;}
+  .synthetic-banner{font-size:0.7rem;padding:0.5rem 1.25rem;}
+  #page{padding-top:calc(48px + 30px);}
+  #sidebar{top:78px;height:calc(100vh - 78px);}
+}
+@media(max-width:600px){
+  .panel{padding:1rem;}
+  .dtitle{font-size:1.5rem;}
+  .col-card{padding:1.1rem 1.25rem;}
+  .col-text{font-size:0.97rem;}
+  .fw-card{padding:1.1rem 1.25rem;}
+  .fw-text{font-size:0.97rem;}
 }
 </style>
 </head>
@@ -168,22 +179,26 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
   </nav>
 </header>
 
+<!-- SYNTHETIC BANNER — always visible -->
+<div class="synthetic-banner">
+  <strong>Illustrative samples only.</strong> All outputs on this page are synthetic and generated to demonstrate format and depth. Jordan Reyes is a fictional persona. No real person's data, assessments, or reflections appear here.
+</div>
+
 <div id="page">
-<!-- SIDEBAR -->
 <nav id="sidebar">
   <div class="sb-head">
-    <div style="font-family:var(--ff-m);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.85rem;">Sample Outputs</div>
+    <div style="font-family:var(--ff-m);font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.85rem;">Sample Outputs</div>
   </div>
   <div class="sb-persona">
     <div class="sb-avatar">JR</div>
     <div class="sb-name">Jordan Reyes</div>
     <div class="sb-role">VP of Product · Series C SaaS<br>12 yrs experience · 6 direct reports</div>
-    <div class="sb-fictional">Fictional persona</div>
+    <div class="sb-fictional">Fictional persona · Synthetic outputs</div>
   </div>
   <div style="padding:0 0.75rem 0.5rem;display:flex;flex-wrap:wrap;gap:0.35rem;">
-    <span style="font-family:var(--ff-m);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--rule);color:var(--ink-dim);">PrinciplesYou</span>
-    <span style="font-family:var(--ff-m);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--rule);color:var(--ink-dim);">8mo corpus</span>
-    <span style="font-family:var(--ff-m);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--rule);color:var(--ink-dim);">Written reflection</span>
+    <span style="font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--rule);color:var(--ink-dim);">PrinciplesYou</span>
+    <span style="font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--rule);color:var(--ink-dim);">Synthetic corpus</span>
+    <span style="font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--rule);color:var(--ink-dim);">Written reflection</span>
   </div>
   <div class="sb-divider"></div>
   <div class="sb-label">Output documents</div>
@@ -194,31 +209,35 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
   <div class="sb-link" onclick="showPanel('roadmap',this)"><span class="sb-dot d5"></span>Dev Roadmap</div>
   <div class="sb-divider"></div>
   <div class="sb-quality-note">
-    <div class="sqn-label">About quality</div>
-    <div class="sqn-text">Output quality scales with input quality. More specific reflection and richer corpus history produce more specific documents. These samples represent strong — not average — output.</div>
+    <div class="sqn-label">About these samples</div>
+    <div class="sqn-text">Output quality scales with input specificity. These illustrative examples represent strong — not average — output generated from a complete synthetic evidence set.</div>
   </div>
 </nav>
 
-<!-- MAIN -->
 <main id="main-content">
+
+<!-- GOVERNANCE NOTE shown on all panels via JS -->
 
 <!-- LEADERSHIP PROFILE -->
 <div class="panel active" id="panel-profile">
+  <div class="governance-note">
+    <div class="gn-label">Methodology note</div>
+    <div class="gn-text">Leadership OS is a reflection and development methodology, not a validated assessment, diagnostic tool, or prediction instrument. All construct ratings are evidence-informed hypotheses for reflection and refinement — not psychological findings. This is a synthetic illustrative example generated to demonstrate the format. Jordan Reyes is a fictional persona.</div>
+  </div>
   <div class="dh">
     <div>
       <div class="dbadge d1">Leadership Profile · Private intermediate artifact</div>
       <h2 class="dtitle">Leadership Profile — Jordan Reyes</h2>
-      <p class="dsub">The construct analysis output. Private — not shared externally. The working model the AI builds before generating output documents.</p>
+      <p class="dsub">Synthetic illustrative example. The Leadership Profile is a private construct synthesis — not shared externally. It is the working model the AI organizes before generating output documents.</p>
       <div class="dmeta">
-        <span class="dmi">3 evidence sources synthesized</span>
+        <span class="dmi">3 synthetic evidence sources</span>
         <span class="dmi">9 constructs evaluated</span>
-        <span class="dmi">Private — not for sharing</span>
+        <span class="dmi">Private · not for sharing</span>
       </div>
     </div>
     <div class="dh-aside"><div class="dh-time">Step 4b output</div></div>
   </div>
 
-  <!-- Construct table — landscape format -->
   <div class="table-scroll">
   <table class="cr-table">
     <thead>
@@ -233,135 +252,145 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
       <tr>
         <td><div class="cr-name">Reflection Orientation</div></td>
         <td><span class="cr-conf hi">High</span></td>
-        <td><div class="cr-summary">All three sources converge. Assessment: Curious 91st, high Growth-Seeking. Corpus: 14 of 47 conversations involve Jordan reasoning through their own decisions — unusually high ratio. Reflection responses are specific, include genuine tension, and name mechanisms rather than outcomes.</div></td>
-        <td><div class="cr-implication">Strongest readiness signal in the profile. Development work will compound here.</div></td>
+        <td><div class="cr-summary">All three synthetic sources suggest convergence. Assessment: elevated Curious and Growth-Seeking indicators. Corpus pattern: a high proportion of Jordan's product strategy conversations involve examining their own reasoning rather than seeking external information — questions like "why did I anchor to this framing?" appear repeatedly. Reflection responses are specific, include acknowledged tension, and name mechanisms rather than outcomes.</div></td>
+        <td><div class="cr-implication">Reflective capacity appears available. Development work in other constructs is likely to compound here — this leader tends to examine rather than avoid what reflection surfaces.</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Systems Orientation</div></td>
         <td><span class="cr-conf hi">High</span></td>
-        <td><div class="cr-summary">Corpus: problems framed structurally in 71% of strategic conversations. Assessment: Systematic 88th. Reflection: peak performance example explicitly credits structural diagnosis. No contradictions across sources.</div></td>
-        <td><div class="cr-implication">Foundation on which most other strengths build. Not a development edge — a foundation to be protected.</div></td>
+        <td><div class="cr-summary">Assessment: elevated conceptual structure-seeking indicators. Corpus pattern: in product strategy conversations, Jordan consistently frames problems in terms of upstream dependencies, decision rights, and operating model constraints before addressing feature-level questions. Reflection: the peak-performance example describes a successful product turnaround by diagnosing the cross-functional operating model before changing the roadmap. No meaningful contradictions across sources.</div></td>
+        <td><div class="cr-implication">Systems framing appears to be a reliable cognitive default, not a situational strategy. The development question is whether Jordan can translate structural analysis into simpler operating guidance for cross-functional partners who don't share this frame.</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Learning Orientation</div></td>
         <td><span class="cr-conf mo">Moderate</span></td>
-        <td><div class="cr-summary">Assessment high (Curious 91%). Tension: corpus shows 3 instances of extended commitment to a product hypothesis after contradictory evidence. Self-report diverges from behavioral evidence at the commitment phase.</div></td>
-        <td><div class="cr-implication">Open before commitment. The development edge is not learning — it's what happens when a hypothesis gets socialized.</div></td>
+        <td><div class="cr-summary">Assessment: elevated Curious and Openness indicators suggest strong dispositional learning orientation. Tension in corpus evidence: three instances where Jordan maintained a product hypothesis after contradictory customer feedback emerged — commitment held past the point where the evidence had shifted. Self-report in reflection diverges from behavioral patterns specifically at the post-commitment phase.</div></td>
+        <td><div class="cr-implication">Learning orientation appears strong in the information-gathering phase. A hypothesis worth exploring: once a product direction has been socialized with stakeholders, revision costs may suppress the learning orientation that was present earlier in the cycle.</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Decision Style</div></td>
         <td><span class="cr-conf hi">High</span></td>
-        <td><div class="cr-summary">Assessment: Deliberative 72%, Persistent 89%. Corpus: broad information-gathering before commitment, resistance to revision after. Reflection: "decision I'd make differently" directly confirms hypothesis-anchoring mechanism — names sunk cost reasoning, not external factors.</div></td>
-        <td><div class="cr-implication">The mechanism is the development edge: socializing a hypothesis converts it into a commitment before it's earned that status.</div></td>
+        <td><div class="cr-summary">Assessment: elevated Deliberative and Persistent indicators — a combination that may support both thorough information-gathering and resistance to revision after commitment. Corpus pattern: Jordan's decision conversations show a clear two-phase structure — broad input-gathering, then a hard commitment with limited subsequent revision. Reflection: the "decision I'd make differently" response names the mechanism directly (holding a product roadmap prioritization after two engineers flagged structural risks), attributing it to sunk-cost reasoning rather than new evidence.</div></td>
+        <td><div class="cr-implication">The mechanism — not just the tendency — is the development edge. Socializing a product direction before the evidence is fully in may convert a working hypothesis into a social commitment. Labeling the hypothesis explicitly before sharing it could interrupt this pattern.</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Communication Patterns</div></td>
         <td><span class="cr-conf mo">Moderate</span></td>
-        <td><div class="cr-summary">Corpus: precise, argument-driven, low small talk. Reflection "misread": colleagues experience this as impatience. Jordan experiences it as respect for their time. Gap between intent and impact is consistent and real. Corpus captures written communication only.</div></td>
-        <td><div class="cr-implication">The intent is right. The impact varies. Creating space for thinking-in-progress is the adjustment.</div></td>
+        <td><div class="cr-summary">Corpus pattern: Jordan's written communications are structured, argument-driven, and concise — low small talk, high information density. Reflection "misread" response: cross-functional partners (especially in Sales and Customer Success) have interpreted Jordan's directness as impatience or dismissiveness. Jordan describes the intent as efficiency and respect for others' time. The gap between intent and impact is consistent across multiple described situations. Limitation: corpus reflects written communication only — verbal and informal patterns unobservable.</div></td>
+        <td><div class="cr-implication">The communication intent and the communication impact are misaligned in cross-functional contexts. The adjustment is likely not "communicate less directly" but rather "signal more explicitly that ambiguity and partial thinking are welcome before the argument is formed."</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Leadership Identity</div></td>
         <td><span class="cr-conf em">Emerging</span></td>
-        <td><div class="cr-summary">States wanting to develop independent decision-makers. Corpus shows high analytical investment but thin relational/developmental investment. Gap between stated identity and observed behavior is worth surfacing — not as a judgment, but as a question.</div></td>
-        <td><div class="cr-implication">The identity Jordan describes and the leader the evidence shows are not yet fully aligned. This is the most important development territory.</div></td>
+        <td><div class="cr-summary">Reflection states a clear aspiration: develop independent decision-makers, reduce leader-dependency in the product organization. Corpus evidence is mixed — analytical and structural investment is high; relational and coaching investment (checking in on direct reports' development, having explicit career conversations) is observed infrequently. The gap between the stated leadership identity and the observed behavioral pattern is the central emerging hypothesis, not a judgment. Insufficient behavioral data to evaluate this construct confidently.</div></td>
+        <td><div class="cr-implication">This construct requires more relational behavioral evidence to evaluate well. Worth holding as a question rather than a conclusion: are the behaviors that would reflect the stated identity actually present in Jordan's day-to-day leadership practice?</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Adaptability</div></td>
         <td><span class="cr-conf mo">Moderate</span></td>
-        <td><div class="cr-summary">Assessment: Adaptable 85%, Agile 44%. Corpus: two significant product pivots in 8 months — macro-level openness — but tactical plan anchoring mid-execution. Strategic adaptability high; tactical adaptability moderate.</div></td>
-        <td><div class="cr-implication">Comfortable with strategic change. Less comfortable revising an execution plan after commitment.</div></td>
+        <td><div class="cr-summary">Assessment: high Adaptable indicator, lower Agile indicator — a combination that may reflect macro-level openness to change with micro-level anchoring during execution. Corpus pattern: two significant product pivots in the observed period were both Jordan-initiated, suggesting genuine strategic adaptability. Tactical pattern: mid-execution plan revisions are rarer and harder — Jordan tends to stay with an execution approach after the team has been aligned to it.</div></td>
+        <td><div class="cr-implication">Strategic adaptability appears present. Tactical adaptability — revising a specific execution path after commitment — appears more constrained. This is consistent with the Decision Style pattern and may reflect the same underlying mechanism.</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Self-Awareness</div></td>
         <td><span class="cr-conf mo">Moderate</span></td>
-        <td><div class="cr-summary">Assessment and reflection largely aligned. One gap: corpus shows gradual normalization of peer dysfunction — Jordan accepts lower standards over time — that goes unmentioned in reflection. Real self-awareness; stops at the edge of current attention.</div></td>
-        <td><div class="cr-implication">Genuine and specific. The monitoring question: "Am I adjusting to this environment or improving it?"</div></td>
+        <td><div class="cr-summary">Assessment and reflection are broadly aligned on most dimensions. One hypothesis from corpus: Jordan's written interactions show a gradual pattern of reduced pushback on a recurring cross-functional friction point over time — a possible accommodation dynamic that Jordan does not name in the reflection responses. Self-awareness appears genuine and specific where Jordan's attention has been directed. It may be limited at the edges of that attention — particularly around interpersonal accommodation over time.</div></td>
+        <td><div class="cr-implication">A monitoring question worth building in: "Am I adjusting to this environment or improving it?" — applied specifically to recurring cross-functional friction that has gone quiet rather than been resolved.</div></td>
       </tr>
       <tr>
         <td><div class="cr-name">Development Readiness</div></td>
-        <td><span class="cr-conf hi">High</span></td>
-        <td><div class="cr-summary">Completing three evidence sources fully, with specific reflection examples that include named tensions and honest self-criticism. The "decision I'd make differently" identifies the mechanism — not external factors. Readiness is demonstrated, not claimed.</div></td>
-        <td><div class="cr-implication">The readiness is there. The question is what gets prioritized in the next 90 days.</div></td>
+        <td><span class="cr-conf mo">Moderate</span></td>
+        <td><div class="cr-summary">Development Readiness is inferred from behavioral signals in the reflection, not from participation in this process alone. Supporting evidence: Jordan's reflection responses are specific and name mechanisms rather than outcomes; the "decision I'd make differently" account does not attribute difficulty to external factors; there is explicit acknowledgment that a prior feedback experience changed how Jordan operates in one-on-one conversations. Limiting evidence: no direct observation of Jordan's response to developmental feedback in a real-time context.</div></td>
+        <td><div class="cr-implication">Readiness appears present based on reflection specificity and evidence of prior behavioral change. Moderate rather than High because readiness is context-dependent — it may vary significantly between cognitive development work (strong signals) and relational or identity development work (less evidence).</div></td>
       </tr>
     </tbody>
   </table>
-  </div><!-- /table-scroll -->
+  </div>
 
   <div class="summary-block">
-    <div class="sb-slabel">Profile Summary</div>
+    <div class="sb-slabel">Profile Summary — evidence-informed hypotheses</div>
     <div class="sb-stext">
-      <p>Jordan operates through systems thinking, precise communication, and a governing question focused on whether evidence actually supports conclusions. The highest-confidence patterns: structural framing of problems, a decision style that gathers broadly then anchors hard, and a communication gap between the precision Jordan intends and the impatience others experience.</p>
-      <p>The most productive development territory sits at the intersection of two findings: the hypothesis-anchoring after commitment, and the Leadership Identity gap between stated intention (developing independent decision-makers) and observed behavior (high analytical investment, lower relational and developmental investment). These are related — a leader who anchors to hypotheses in product decisions may also be anchoring to a model of leadership that doesn't yet match how they actually show up.</p>
-      <p><strong>Constructs with insufficient evidence:</strong> Leadership Identity requires more relational behavioral data. Communication patterns under verbal/conflict conditions unobservable from written corpus alone.</p>
+      <p>Across the synthetic evidence sources, Jordan's profile suggests a leader who operates primarily through systems framing, structured communication, and a strong analytical investment in product decisions. The highest-confidence patterns — Systems Orientation and Decision Style — are well-evidenced across all three modalities and point to a coherent cognitive signature: Jordan diagnoses structure before intervening, gathers broadly before committing, and holds hard to a direction once it has been socialized.</p>
+      <p>The most generative development territory appears at the intersection of two moderate-confidence patterns: the post-commitment anchoring in product decisions, and the Leadership Identity gap between the stated aspiration (developing independent decision-makers) and the observed behavioral emphasis (analytical over relational investment). These may be related — a leader who anchors to product hypotheses may similarly anchor to a model of effective leadership that does not yet include the relational and developmental behaviors the identity aspires to.</p>
+      <p>Self-Awareness appears genuine and specific within the domains Jordan monitors. The hypothesis worth examining is whether there are adjacent domains — particularly interpersonal accommodation over time — where the self-model is less accurate than Jordan currently believes.</p>
+      <p><strong>Constructs with insufficient evidence for confident hypothesis generation:</strong> Leadership Identity (requires more relational behavioral observation). Communication patterns under verbal, informal, or high-stakes conflict conditions (written corpus cannot speak to this).</p>
     </div>
   </div>
 
   <div class="qn">
     <div class="qni">→</div>
-    <div class="qnt"><strong>Strong profile signal:</strong> Named tensions between sources rather than forced coherence. Confidence levels that vary — a profile where everything is "High" is not more accurate, it is less honest. At least one "Emerging" rating. A summary that synthesizes rather than lists.</div>
+    <div class="qnt"><strong>What distinguishes a strong illustrative profile:</strong> Confidence levels that vary — uniform "High" ratings signal insufficient scrutiny. Named contradictions between sources rather than forced coherence. At least one "Emerging" or "Insufficient" rating. A summary that synthesizes patterns rather than listing them. Developmental implications framed as hypotheses and questions, not conclusions.</div>
   </div>
 </div>
 
 <!-- USER MANUAL -->
 <div class="panel" id="panel-manual">
+  <div class="governance-note">
+    <div class="gn-label">Methodology note</div>
+    <div class="gn-text">Leadership OS is a reflection and development methodology, not a validated assessment or diagnostic tool. This is a synthetic illustrative example. The Leadership User Manual is a shareable narrative document derived from the Leadership Profile — it represents the leader's own interpretation of the evidence, reviewed and corrected before use.</div>
+  </div>
   <div class="dh">
     <div>
       <div class="dbadge d2">Document 01 · Shareable</div>
       <h2 class="dtitle">Leadership User Manual — Jordan Reyes</h2>
-      <p class="dsub">Excerpt — three of six sections. Full document is 3–4 pages first-person, structured for sharing with a new manager or key collaborator.</p>
+      <p class="dsub">Synthetic illustrative example. Excerpt — three of six sections. Full document is 3–4 pages, written in first person, designed to be shared with a manager, team member, or key collaborator.</p>
       <div class="dmeta">
         <span class="dmi">First person</span>
         <span class="dmi">Shareable</span>
-        <span class="dmi">Excerpt shown</span>
+        <span class="dmi">Excerpt · illustrative only</span>
       </div>
     </div>
   </div>
 
   <div class="two-col">
     <div class="col-card b2">
-      <div class="col-label">How I Think</div>
+      <div class="col-label">How I think</div>
       <div class="col-text">
-        <p>I think in structures. When I encounter a problem, my instinct is to ask what system is producing it before I ask who is responsible or what solution would fix it. A feature request is usually a symptom of a workflow problem. A workflow problem is usually a symptom of an incentive misalignment or a feedback loop that isn't closing. I work backward from the structural root before I consider surface interventions.</p>
-        <p>I form hypotheses quickly and defend them with high energy. This is often a strength — I move faster to a reasoned position than most people around me. It is a liability when the hypothesis is wrong and I've already invested in it. The challenge is that the energy I bring to defending a good hypothesis looks identical, from the outside, to the energy I bring to defending a wrong one.</p>
+        <p>I think in structures. My first instinct when encountering a product problem is to look for the operating model failure before I look at the feature gap. A roadmap that keeps churning usually isn't a prioritization problem — it's a signal that the decision rights between Product, Engineering, and the business aren't clear enough to hold. I work upstream before I work on the surface.</p>
+        <p>I form hypotheses quickly and commit to them with energy. This helps me move a team toward a direction when ambiguity is high. It creates friction when the hypothesis is wrong and I've already aligned people to it — the social cost of reversing makes me hold on longer than the evidence warrants. I know this about myself and I'm working on naming hypotheses explicitly before socializing them.</p>
       </div>
     </div>
     <div class="col-card b2">
-      <div class="col-label">Where I Create Friction</div>
+      <div class="col-label">Where I create friction</div>
       <div class="col-text">
-        <p><strong>Hypothesis anchoring.</strong> I gather information broadly before committing to a position. Once I've committed, I update reluctantly — especially when I've already socialized the position. The cost of revising feels higher than it actually is. I've learned to name hypotheses explicitly before socializing them. I don't always remember.</p>
-        <p><strong>The communication gap.</strong> I write and speak in complete, structured arguments. Some people experience this as intensity or impatience. I've been told I can make people feel they need a fully formed argument before coming to me. That's not my intention. I'm working on creating more space for thinking-in-progress, especially in 1:1s.</p>
-        <p><strong>Relational investment.</strong> I care about the people on my team. I am not always good at showing it in the ways that matter to them — I default to engaging with people's work rather than with them as people. This is a pattern I notice more in retrospect than in the moment.</p>
+        <p><strong>Post-commitment anchoring.</strong> Once I've socialized a product direction, I revise reluctantly. The problem isn't that I ignore contradictory evidence — it's that I weight the social cost of reversal too heavily relative to the cost of staying wrong. The practice I'm building: label a direction as a hypothesis with an explicit confidence level before sharing it, so revision later reads as learning rather than failure.</p>
+        <p><strong>Cross-functional communication gap.</strong> I write and present in complete, structured arguments. Partners in Sales and Customer Success have told me this reads as impatience. I experience it as efficiency. I'm working on making space for partial thinking earlier in a conversation — signaling that ambiguity is welcome before the argument is formed, not just after it.</p>
+        <p><strong>Relational investment.</strong> I invest heavily in the analytical work of product leadership. I invest less consistently in the relational and developmental work — checking in on how my direct reports are doing, having explicit career conversations, noticing what's happening under the surface. This is a pattern I see more clearly in retrospect than in the moment.</div>
       </div>
     </div>
   </div>
 
   <div class="fw-card b2">
-    <div class="fw-label">My Governing Questions</div>
+    <div class="fw-label">My governing questions</div>
     <div class="fw-text">
-      <p><em>"What is this metric actually measuring — and is that the thing we want to change?"</em> I apply this to almost every data-informed decision. The metric is usually fine. The interpretation is where errors live.</p>
-      <p><em>"What would have to be true for this to be wrong?"</em> This is what I try to ask before committing to a product direction. I am better at asking it in theory than in practice — but asking it at all has caught more mistakes than I can count.</p>
-      <p><em>"Is this the right problem, or just the problem that showed up?"</em> The problems that show up in product are usually symptoms. This is a forcing function to look one level up before I start solving.</p>
+      <p>These appear to drive how I evaluate decisions — extracted from patterns in how I actually reason, not from how I'd describe my decision-making in the abstract:</p>
+      <p><em>"Does this roadmap reflect what customers actually need, or what we find technically interesting?"</em> I use this to interrupt the pull toward elegant architecture over useful product.</p>
+      <p><em>"Who needs to make this decision, and am I helping them make it or making it for them?"</em> I apply this when I notice I've been the decision-maker on something that should have been someone else's call to build.</p>
+      <p><em>"What would have to be true for this hypothesis to be wrong — and have I actually checked?"</em> This is the question I'm trying to ask before committing to a direction, not after.</p>
     </div>
   </div>
 
   <div class="qn">
     <div class="qni">→</div>
-    <div class="qnt"><strong>Strong User Manual signal:</strong> Friction section that is honest rather than performatively humble — <em>"I stay wrong longer than I should"</em> is more useful than <em>"I have high standards."</em> Governing questions that feel extracted from behavioral evidence, not assembled from self-image.</div>
+    <div class="qnt"><strong>What distinguishes a strong illustrative User Manual:</strong> Friction sections that name mechanisms, not just tendencies. Governing questions that feel extracted from behavioral evidence, not assembled from self-image. First person throughout. A document specific enough that someone who read it would know something genuinely useful about how to work with this person.</div>
   </div>
 </div>
 
 <!-- WORKING WITH ME -->
 <div class="panel" id="panel-wwm">
+  <div class="governance-note">
+    <div class="gn-label">Methodology note</div>
+    <div class="gn-text">Leadership OS is a reflection and development methodology, not a validated assessment or diagnostic tool. This is a synthetic illustrative example of a Working-With-Me Guide — a short, shareable collaboration document derived from the Leadership Profile.</div>
+  </div>
   <div class="dh">
     <div>
       <div class="dbadge d3">Document 02 · Shareable</div>
       <h2 class="dtitle">Working-With-Me Guide — Jordan Reyes</h2>
-      <p class="dsub">Full document. Five sections. Readable in under 3 minutes. Designed to be shared with any collaborator.</p>
+      <p class="dsub">Synthetic illustrative example. Full document. Readable in under 3 minutes. Designed to be shared with any collaborator.</p>
       <div class="dmeta">
         <span class="dmi">One page</span>
         <span class="dmi">Shareable</span>
-        <span class="dmi">Full document</span>
+        <span class="dmi">Full illustrative example</span>
       </div>
     </div>
   </div>
@@ -369,46 +398,50 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
   <div class="three-col">
     <div class="col-card b3">
       <div class="col-label">To bring me a problem</div>
-      <div class="col-text">Frame it as a question, not a solution pitch. Tell me what you've ruled out and why — that's the most useful context. If you don't know what you want from me (a decision, a thought partner, a resource), say that upfront. You don't need a fully formed position. But bring real data or a specific example, not a general concern.</div>
+      <div class="col-text">Frame it as a question rather than a recommendation. Tell me what you've already ruled out and why — that context is more useful than a polished pitch. If you don't know what you need from me (a decision, a thought partner, a resource connection), say that upfront. You don't need a complete argument — but anchor it in a specific example or data point, not a general pattern.</div>
     </div>
     <div class="col-card b3">
       <div class="col-label">To challenge me effectively</div>
-      <div class="col-text">Show me what I missed, not just that you disagree. I will update my position when the evidence warrants it — I'm genuinely open to being wrong, even on things I've committed to publicly. The most effective challenges are specific: "You assumed X, but here's data that suggests Y." Repeated general pushback without new information is the least effective approach.</div>
+      <div class="col-text">Show me what I missed, not just that you disagree. Specific contradictory evidence is far more effective than persistent general pushback. I am genuinely open to revising a direction — but I need to see what the evidence actually shows, not just that you feel differently. If I seem to have stopped engaging with your argument, ask me directly: "What's not landing for you here?"</div>
     </div>
     <div class="col-card b3">
       <div class="col-label">What I need from you</div>
-      <div class="col-text">Specificity — in problems, in feedback, in status updates. I work better with a precise question than a broad topic. Follow-through: if you commit to something, I'm tracking it even if I don't say so. And patience when I'm in diagnostic mode — sometimes the framework-building is the work, not a detour from it.</div>
+      <div class="col-text">Specificity in problems, feedback, and status. I work better with a precise question than a general topic. Follow-through: if you commit to something in our conversation, I'm tracking it. And some patience when I'm in diagnostic mode — the upstream analysis is often the actual work, not a delay before the work starts.</div>
     </div>
   </div>
 
   <div class="two-col">
     <div class="col-card b3">
       <div class="col-label">What you can expect from me</div>
-      <div class="col-text">A structured, reasoned position on almost any question you bring me. Direct feedback that names the specific thing, not a softened version of it. Investment in your thinking — I genuinely want to understand how you got to your conclusion, not just what it is. High expectations, applied to myself as much as to you. I will tell you when I think you're wrong, and I expect the same.</div>
+      <div class="col-text">A structured position on almost any question you bring. Direct feedback that names the specific thing — not a softened version of it. Genuine investment in understanding how you got to your conclusion, not just what it is. High expectations applied to my own work as much as to yours. I will tell you when I think you're wrong, and I expect the same.</div>
     </div>
     <div class="col-card b3">
       <div class="col-label">When I'm struggling — what to watch for</div>
-      <div class="col-text">I get quieter and more precise. If I start responding to broad questions with very narrow, technical answers, I've probably retreated into a comfort zone. I also tend to over-prepare when I'm anxious — if I'm sending very long pre-reads before routine meetings, something is off. The best way to check in is directly: "You seem like you're in your head about something — are you?"</div>
+      <div class="col-text">I get more precise and narrower when something is off — responding to broad questions with very specific, technical answers is usually a sign I've retreated somewhere comfortable. I also tend to over-prepare for routine conversations when I'm anxious about them — unusually detailed pre-reads before a standard sync is a signal. The most direct check-in works best: "You seem like you're in your head about something."</div>
     </div>
   </div>
 
   <div class="qn">
     <div class="qni">→</div>
-    <div class="qnt"><strong>Strong Working-With-Me signal:</strong> Every sentence specific enough that it could not apply to any other leader. Struggling signals name actual behavioral patterns (<em>"very long pre-reads before routine meetings"</em>), not emotional states. The "to challenge me" section acknowledges the specific blocking mechanism — then explains how to get around it.</div>
+    <div class="qnt"><strong>What distinguishes a strong illustrative Working-With-Me Guide:</strong> Every sentence specific enough that it could not apply to any other leader. Struggling signals that name behavioral patterns — not emotional states. The "to challenge me" section names the specific mechanism that makes challenge land or not.</div>
   </div>
 </div>
 
 <!-- AI CALIBRATION -->
 <div class="panel" id="panel-acd">
+  <div class="governance-note">
+    <div class="gn-label">Methodology note</div>
+    <div class="gn-text">Leadership OS is a reflection and development methodology, not a validated assessment or diagnostic tool. This is a synthetic illustrative example of an AI Calibration Document — a functional context-setting artifact the leader pastes at the start of AI conversations to accelerate calibration.</div>
+  </div>
   <div class="dh">
     <div>
       <div class="dbadge d4">Document 03 · Operational</div>
       <h2 class="dtitle">AI Calibration Document — Jordan Reyes</h2>
-      <p class="dsub">Full document. Paste at the start of any new AI conversation to accelerate calibration.</p>
+      <p class="dsub">Synthetic illustrative example. Full document. Paste at the start of any new AI conversation to accelerate calibration to how this leader works.</p>
       <div class="dmeta">
         <span class="dmi">One page</span>
         <span class="dmi">Paste into AI tools</span>
-        <span class="dmi">Full document</span>
+        <span class="dmi">Full illustrative example</span>
       </div>
     </div>
   </div>
@@ -416,83 +449,87 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
   <div class="two-col">
     <div class="col-card b4">
       <div class="col-label">My communication style</div>
-      <div class="col-text">Structured and argument-driven. I think in frameworks and write in complete sentences with traceable logic. Bullet-point summaries that skip the connective reasoning frustrate me — I want to see why each point follows. Generic outputs are immediately obvious; the fastest way to produce something I'll use is to be more specific than you think necessary. If you're uncertain about something, name the uncertainty rather than smoothing over it.</div>
+      <div class="col-text">Structured and argument-driven. I think in product systems and write with traceable logic — show me why each conclusion follows from what preceded it. Bullet-point summaries that skip the connective reasoning frustrate me; I want to see the argument, not just its conclusions. Generic outputs are immediately obvious. The fastest way to produce something useful is to be more specific than you think necessary. If you're uncertain, name the uncertainty rather than smoothing it.</div>
     </div>
     <div class="col-card b4">
       <div class="col-label">My operating principles</div>
-      <div class="col-text">Structural diagnosis before surface solution — I want to understand what system produces a problem before considering how to fix it. Hypothesis integrity — surface a weak hypothesis early rather than commit to one that won't hold. Evidence before advocacy — I'll give you my position, but I want it grounded in something more than confidence. Specificity as respect — vague feedback or vague questions are inefficiency I'd rather avoid on both sides.</div>
+      <div class="col-text">Operating model before roadmap — I want to understand the structural constraint before I consider the feature-level fix. Hypothesis integrity — label working hypotheses explicitly so they can be revised without social cost. Customer evidence before product intuition — I want to see what the data actually shows before I advocate for a direction. Specificity as respect — vague problems and vague feedback are inefficiency I'd rather avoid on both sides.</div>
     </div>
   </div>
 
   <div class="two-col">
     <div class="col-card b4">
       <div class="col-label">How to give me feedback</div>
-      <div class="col-text">Direct and specific. "This section doesn't follow from the previous one because X" is useful. "This feels a bit off" is not. I'm not fragile — name the problem precisely and I'll fix it or explain why I disagree. If I've made an assumption you think is wrong, cite the specific assumption and what I missed.</div>
+      <div class="col-text">Direct and specific. "This section doesn't follow from the previous one because X" is useful. "This feels off" is not. I'm not fragile about being wrong — name the specific problem and I'll engage with it directly. If I've made an assumption you think is wrong, name the assumption and what I missed. Don't soften critical feedback into ambiguity.</div>
     </div>
     <div class="col-card b4">
       <div class="col-label">What good output looks like</div>
-      <div class="col-text">The argument is traceable — I can follow the reasoning from premise to conclusion without inferring missing steps. Format matches complexity: simple question, concise answer; complex problem, developed framework. Draft means a real draft — not a template with placeholders or hedged generalities I'll have to rewrite entirely.</div>
+      <div class="col-text">The logic is traceable — I can follow reasoning from premise to conclusion without inferring missing steps. Format matches complexity: concise for simple questions, developed framework for complex ones. Draft means a real draft — not a template or placeholder I have to substantially rewrite. If the question is about a product decision, start with what the evidence shows, not with what sounds reasonable.</div>
     </div>
   </div>
 
   <div class="fw-card b4">
     <div class="fw-label">My governing question</div>
     <div class="fw-text">
-      <p><em>"What is this metric actually measuring — and is that the thing we want to change?"</em> Apply this when we're working from data, when evaluating options, or when I ask you to assess a situation. I am more interested in what the evidence actually shows than in confirmation of a position I've already taken.</p>
+      <p><em>"Does this roadmap reflect what customers actually need, or what we find technically interesting?"</em> Apply this when we're evaluating product options, framing tradeoffs, or assessing whether a direction is evidence-led or hypothesis-led. I'm more interested in what the customer data actually shows than in confirming a direction I've already taken.</p>
     </div>
   </div>
 
   <div class="qn">
     <div class="qni">→</div>
-    <div class="qnt"><strong>Strong AI Calibration signal:</strong> The governing question section is the highest-leverage element — it shapes how the AI frames tradeoffs in every subsequent output. Test: paste this at the start of a conversation. Does the first response feel different than it would have otherwise?</div>
+    <div class="qnt"><strong>What distinguishes a strong illustrative AI Calibration Document:</strong> The governing question section is the highest-leverage element — it shapes how the AI frames tradeoffs in every output. The test: does pasting this document change how the AI responds in a measurable way? If every section could apply to any thoughtful professional, it's not specific enough.</div>
   </div>
 </div>
 
 <!-- DEV ROADMAP -->
 <div class="panel" id="panel-roadmap">
+  <div class="governance-note">
+    <div class="gn-label">Methodology note</div>
+    <div class="gn-text">Leadership OS is a reflection and development methodology, not a validated assessment or diagnostic tool. This is a synthetic illustrative example of a Development Roadmap — a private document not designed for sharing. Development priorities are framed as hypotheses, not conclusions, and should be treated as starting points for reflection.</div>
+  </div>
   <div class="dh">
     <div>
       <div class="dbadge d5">Document 04 · Private</div>
       <h2 class="dtitle">Development Roadmap — Jordan Reyes</h2>
-      <p class="dsub">Private. Not for sharing. Excerpt — two of five priorities, plus 90-day focus.</p>
+      <p class="dsub">Synthetic illustrative example. Private — not for sharing. Excerpt showing two of five development priorities and the 90-day focus.</p>
       <div class="dmeta">
-        <span class="dmi">Private — do not share</span>
+        <span class="dmi">Private · do not share</span>
         <span class="dmi">Update every 90 days</span>
-        <span class="dmi">Excerpt shown</span>
+        <span class="dmi">Excerpt · illustrative only</span>
       </div>
     </div>
   </div>
 
   <div class="two-col">
     <div class="col-card b5">
-      <div class="col-label">Priority 1 — Hypothesis anchoring</div>
+      <div class="col-label">Priority 1 — Post-commitment anchoring</div>
       <div class="col-text">
-        <p><strong>The mechanism:</strong> Jordan gathers evidence broadly before forming a position — genuinely open. But once a hypothesis is formed and socialized, updating it becomes costly. The cost isn't the evidence review — it's the social cost of being seen to reverse. Corrections happen late, after the wrong direction has been traveled some distance.</p>
-        <p><strong>The trigger:</strong> Socializing a position with stakeholders before the evidence is fully in. This converts a hypothesis into a commitment before it's earned that status.</p>
-        <p><strong>The practice:</strong> Before socializing any direction, designate it explicitly as a hypothesis with a stated confidence level and a named condition for updating. "I think X is right — I'm at 70%, and I'd update if we saw Y." This externalizes the uncertainty in a way that makes later revision feel like scientific process rather than failure.</p>
+        <p><strong>The mechanism:</strong> Jordan's information-gathering phase is genuinely open. Once a product direction has been socialized with stakeholders, however, revision becomes socially costly — and the cost appears to suppress updating even when new evidence would warrant it. The issue is not analytical rigidity; it is the premature conversion of a working hypothesis into a social commitment.</p>
+        <p><strong>The trigger:</strong> Any product direction that has been shared with the broader team or leadership before the supporting evidence is complete. Socialization is the trigger — it closes the hypothesis before it has been tested.</p>
+        <p><strong>The practice:</strong> Before socializing any product direction, designate it explicitly as a hypothesis with a stated confidence level and a named condition for updating it. "I think X is the right prioritization — I'm at 65% confidence, and I'd revise if we saw Y from the customer data." This makes later revision feel like scientific process rather than leadership failure.</p>
       </div>
     </div>
     <div class="col-card b5">
-      <div class="col-label">Priority 2 — Relational investment</div>
+      <div class="col-label">Priority 2 — Relational investment with direct reports</div>
       <div class="col-text">
-        <p><strong>The mechanism:</strong> Jordan's default engagement mode is work-first: asking what someone is building before asking how they are. Efficient and often appropriate. Becomes a friction point when a direct report needs to be seen as a person before they can engage productively — which is more often than Jordan currently accounts for.</p>
-        <p><strong>The trigger:</strong> 1:1 meetings, especially when a direct report has signaled (or should have signaled) something personal or difficult. Jordan often misses these signals because the work frame is already active by the time the meeting starts.</p>
-        <p><strong>The practice:</strong> First 2 minutes of every 1:1: no agenda. The only question is some version of "how are you?" and the only rule is not responding to the answer with a segue to work. This sounds small. It changes the relational texture of the entire conversation.</p>
+        <p><strong>The mechanism:</strong> Jordan's default engagement mode is work-first: asking what someone is building before asking how they are. This is often appropriate and efficient. It becomes a development edge in situations where a direct report needs to be seen as a person — particularly when something difficult is happening outside the immediate work — before they can engage fully on the work itself.</p>
+        <p><strong>The trigger:</strong> 1:1 meetings, especially when a direct report has given a quiet signal that something is off. Jordan tends to miss these signals because the work frame is already active before the conversation starts.</p>
+        <p><strong>The practice:</strong> In the first two minutes of every 1:1, there is no agenda. The only question is some version of "how are you?" and the only constraint is not immediately redirecting the answer toward the work. This adjustment is smaller than it sounds and larger in effect than expected.</p>
       </div>
     </div>
   </div>
 
   <div class="fw-card b5">
-    <div class="fw-label">90-Day Focus</div>
+    <div class="fw-label">90-day focus</div>
     <div class="fw-text">
-      <p><strong>The leadership identity gap.</strong> Not the hypothesis anchoring — Jordan already understands that intellectually. The more important 90-day work is closing the gap between the leader Jordan describes wanting to be (someone who develops independent decision-makers) and the leader the evidence shows Jordan currently is (high analytical investment, lower relational and developmental investment).</p>
-      <p>The specific practice: identify one direct report who is operating below their ceiling and have an explicit development conversation — not about their current project, but about where they want to be in 18 months and what Jordan can do to support that trajectory. Do this before the end of the 90-day period. The point is not the outcome of that conversation. The point is building the muscle of having it.</p>
+      <p><strong>The leadership identity gap.</strong> The post-commitment anchoring pattern is well understood intellectually and has a named practice attached to it. The more important 90-day work is beginning to close the gap between the leader Jordan describes wanting to be — someone who develops independent decision-makers — and the leader the evidence suggests Jordan currently is, with high analytical investment and lower developmental investment in direct reports.</p>
+      <p>The specific practice: identify one direct report who appears to be operating below their potential ceiling and initiate an explicit development conversation — not about their current sprint or project, but about where they want to be in 18 months and what Jordan could do to support that trajectory. Complete this before the end of the 90-day period. The goal is not a particular outcome from that conversation. The goal is building the cognitive and relational habit of having it.</p>
     </div>
   </div>
 
   <div class="qn">
     <div class="qni">→</div>
-    <div class="qnt"><strong>Strong Development Roadmap signal:</strong> Priorities that name the mechanism specifically. Practices concrete enough to do on a specific day. A 90-day focus that chooses the most important thing, not the most comfortable one. This document should be harder to read than the User Manual. If it isn't, the synthesis was too gentle.</div>
+    <div class="qnt"><strong>What distinguishes a strong illustrative Development Roadmap:</strong> Priorities that name the mechanism specifically — not "delegate more" but "the social cost of revision after socialization suppresses updating." Practices concrete enough to perform on a specific day. A 90-day focus that names the most important development territory, not the most comfortable one. This document should read as harder and more specific than the User Manual.</div>
   </div>
 </div>
 
@@ -501,7 +538,7 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
 
 <footer>
   <a href="https://mikecilla.com" class="fm">Mike Cilla<span>.</span></a>
-  <div class="fd">Jordan Reyes is a fictional persona. All outputs synthetic. Leadership OS is a reflection and development methodology — not an assessment, diagnosis, or prediction instrument. © 2026 Mike Cilla</div>
+  <div class="fd">Jordan Reyes is a fictional persona. All outputs are synthetic illustrative examples generated to demonstrate Leadership OS output format and quality. Leadership OS is a reflection and development methodology — not an assessment, diagnosis, or prediction instrument. © 2026 Mike Cilla</div>
 </footer>
 
 <script>
