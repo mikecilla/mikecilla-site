@@ -84,7 +84,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-body);font-siz
 
 /* SECTION COMMONS */
 section{padding:3.25rem 4vw;}
-.s-label{font-family:var(--ff-mono);font-size:0.84rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+.s-label{font-family:var(--ff-mono);font-size:0.78rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
 .s-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
 .section-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.75rem;}
 .section-headline em{font-style:italic;font-weight:600;color:var(--gold);}
@@ -97,11 +97,11 @@ section{padding:3.25rem 4vw;}
 .wf-step:hover{border-top-color:rgba(184,103,30,0.35);}
 .wf-num{font-family:var(--ff-display);font-size:3.5rem;font-weight:700;line-height:1;color:rgba(26,22,18,0.07);padding-top:0.2rem;}
 .wf-body{}
-.wf-tag{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.wf-tag{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
 .wf-title{font-family:var(--ff-display);font-size:1.65rem;font-weight:600;color:var(--ink);line-height:1.2;margin-bottom:0.75rem;}
 .wf-desc{font-size:1.08rem;font-weight:300;color:var(--ink-dim);line-height:2.0;margin-bottom:1.5rem;max-width:700px;}
 .wf-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1rem;}
-.wf-col-label{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:0.6rem;opacity:0.6;}
+.wf-col-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:0.6rem;opacity:0.6;}
 .wf-col-items{list-style:none;display:flex;flex-direction:column;gap:4px;}
 .wf-col-items li{font-size:1.06rem;font-weight:300;color:var(--ink-dim);padding-left:1rem;position:relative;line-height:1.6;}
 .wf-col-items li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:0.7rem;top:0.25rem;}
@@ -111,7 +111,7 @@ section{padding:3.25rem 4vw;}
 .wf-prompt-toggle:hover{background:var(--gold-dim);}
 .wf-prompt-box{display:none;margin-top:1.25rem;background:var(--deep);border-left:3px solid var(--gold);padding:1.5rem 1.75rem;}
 .wf-prompt-box.open{display:block;}
-.wf-prompt-label{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.wf-prompt-label{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
 .wf-prompt-text{font-size:1.06rem;font-weight:300;color:var(--ink-dim);line-height:1.9;white-space:pre-wrap;}
 .wf-prompt-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--rule);}
 .wf-prompt-note{font-family:var(--ff-mono);font-size:0.6rem;color:rgba(26,22,18,0.3);line-height:1.5;max-width:400px;}
@@ -175,9 +175,9 @@ section{padding:3.25rem 4vw;}
 .about-body{font-size:1.1rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
 .about-body p+p{margin-top:1.25rem;}
 .about-creds{margin-top:2rem;display:flex;flex-direction:column;}
-.about-cred{border-top:1px solid var(--rule);padding:0.85rem 0;display:grid;grid-template-columns:90px 1fr;gap:1rem;align-items:start;}
-.about-cred-label{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);padding-top:0.15rem;}
-.about-cred-value{font-size:1.06rem;font-weight:300;color:var(--ink-dim);line-height:1.7;}
+.about-cred{border-top:1px solid var(--rule);padding:0.85rem 0;display:flex;gap:1rem;align-items:flex-start;}
+.about-cred-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);padding-top:0.15rem;min-width:90px;flex-shrink:0;}
+.about-cred-value{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.7;}
 .about-cards{display:flex;flex-direction:column;gap:1.25rem;}
 .about-card{background:var(--deep);border:1px solid var(--rule);padding:1.35rem;border-left:3px solid var(--gold);}
 .about-card-label{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
@@ -185,7 +185,7 @@ section{padding:3.25rem 4vw;}
 
 /* CTA */
 #cta{background:var(--ink);color:var(--void);text-align:center;padding:3.25rem 4vw;}
-.cta-eyebrow{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:1.5rem;}
+.cta-eyebrow{font-family:var(--ff-mono);font-size:0.80rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:1.5rem;}
 .cta-headline{font-family:var(--ff-display);font-size:clamp(2.5rem,5vw,5rem);font-weight:300;font-style:italic;line-height:1.0;color:#f0ece4;margin-bottom:0.2em;}
 .cta-headline strong{font-weight:700;font-style:normal;color:#c9843a;}
 .cta-sub{font-size:1.1rem;font-weight:300;color:rgba(240,236,228,0.6);max-width:500px;margin:1.5rem auto 3rem;line-height:2.0;}
@@ -200,7 +200,7 @@ section{padding:3.25rem 4vw;}
 footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;justify-content:space-between;}
 .footer-mark{font-family:var(--ff-display);font-size:1.04rem;color:rgba(240,236,228,0.3);text-decoration:none;}
 .footer-mark span{color:rgba(201,132,58,0.5);}
-.footer-note{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.08em;color:rgba(240,236,228,0.12);}
+.footer-note{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.08em;color:rgba(240,236,228,0.12);}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1);}
@@ -213,38 +213,51 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .hp-sep{color:var(--rule);font-size:0.8rem;}
 
 /* PROFILE MOCKUP */
-.profile-mockup{background:#0f0e0d;border-radius:8px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.18),0 4px 12px rgba(0,0,0,0.1);width:100%;font-family:var(--ff-body);}
-.pm-topbar{background:#1a1917;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid rgba(240,236,228,0.06);}
+.profile-mockup{background:#0d0c0b;border-radius:6px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,0.3),0 8px 24px rgba(0,0,0,0.15),0 0 0 1px rgba(255,255,255,0.04);width:100%;}
+.pm-topbar{background:#1b1a18;padding:0.65rem 1rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid rgba(255,255,255,0.05);}
 .pm-dots{display:flex;gap:5px;}
-.pm-dots span{width:10px;height:10px;border-radius:50%;background:rgba(240,236,228,0.08);}
+.pm-dots span{width:11px;height:11px;border-radius:50%;}
 .pm-dots span:first-child{background:#ff5f57;}
 .pm-dots span:nth-child(2){background:#febc2e;}
 .pm-dots span:last-child{background:#28c840;}
-.pm-title{font-family:var(--ff-mono);font-size:1.00rem;letter-spacing:0.1em;color:rgba(240,236,228,0.3);flex:1;text-align:center;}
-.pm-badge{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(201,132,58,0.6);border:1px solid rgba(201,132,58,0.2);padding:0.18rem 0.5rem;}
-.pm-body{padding:1.25rem 1.5rem;overflow-y:auto;max-height:calc(100vh - 180px);}
-.pm-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(240,236,228,0.07);}
-.pm-section-label{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.16em;text-transform:uppercase;color:#c9843a;}
-.pm-meta{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.08em;color:rgba(240,236,228,0.2);}
-.pm-construct{margin-bottom:1.1rem;padding:0.9rem 1rem;background:#1a1917;border:1px solid rgba(240,236,228,0.06);border-left:2px solid rgba(201,132,58,0.3);}
-.pm-construct-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;gap:0.5rem;}
-.pm-construct-name{font-family:var(--ff-display);font-size:1.04rem;font-weight:600;color:#f0ece4;line-height:1.2;}
-.pm-confidence{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;padding:0.18rem 0.5rem;border-radius:2px;}
-.pm-confidence.high{color:#1D9E75;background:rgba(29,158,117,0.1);border:1px solid rgba(29,158,117,0.2);}
-.pm-confidence.mod{color:#c9843a;background:rgba(201,132,58,0.08);border:1px solid rgba(201,132,58,0.18);}
-.pm-construct-body{font-size:1.00rem;font-weight:300;color:rgba(240,236,228,0.6);line-height:1.75;margin-bottom:0.5rem;}
-.pm-implication{font-family:var(--ff-mono);font-size:1.01rem;color:rgba(240,236,228,0.35);line-height:1.55;padding-top:0.4rem;border-top:1px solid rgba(240,236,228,0.05);}
-.pm-summary-block{background:#131211;padding:0.85rem 1rem;border-left:2px solid #c9843a;margin-top:0.35rem;}
-.pm-summary-label{font-family:var(--ff-mono);font-size:1.00rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.4rem;}
-.pm-summary-text{font-size:1.00rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.75;}
+.pm-title{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.06em;color:rgba(240,236,228,0.25);flex:1;text-align:center;}
+.pm-badge{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.05em;color:rgba(201,132,58,0.55);border:1px solid rgba(201,132,58,0.18);padding:0.2rem 0.55rem;}
+.pm-body{padding:1.35rem 1.5rem 1.5rem;overflow-y:auto;max-height:calc(100vh - 200px);}
+.pm-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+.pm-section-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#c9843a;}
+.pm-meta{font-family:var(--ff-mono);font-size:0.70rem;letter-spacing:0.06em;color:rgba(240,236,228,0.22);}
+.pm-construct{margin-bottom:0.9rem;padding:1rem 1.1rem 0.85rem;border-radius:4px;border:1px solid rgba(255,255,255,0.05);}
+.pm-construct.hi-c{background:#111a14;border-left:3px solid #1D9E75;}
+.pm-construct.mo-c{background:#1a1510;border-left:3px solid #c9843a;}
+.pm-c-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;gap:0.75rem;}
+.pm-c-left{display:flex;align-items:center;gap:0.5rem;}
+.pm-c-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:#f2ede6;line-height:1.2;}
+.pm-c-badge{font-family:var(--ff-mono);font-size:0.70rem;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;padding:0.22rem 0.6rem;border-radius:2px;}
+.pm-c-badge.hi{color:#1D9E75;background:rgba(29,158,117,0.12);border:1px solid rgba(29,158,117,0.22);}
+.pm-c-badge.mo{color:#c9843a;background:rgba(201,132,58,0.1);border:1px solid rgba(201,132,58,0.2);}
+.pm-c-body{font-size:0.9rem;font-weight:300;color:rgba(240,236,228,0.68);line-height:1.8;}
+.pm-dev-block{background:#181310;border:1px solid rgba(201,132,58,0.15);border-left:3px solid #c9843a;padding:0.9rem 1.1rem;margin-bottom:0.9rem;}
+.pm-dev-label{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:#c9843a;margin-bottom:0.45rem;}
+.pm-dev-text{font-size:0.9rem;font-weight:300;color:rgba(240,236,228,0.65);line-height:1.78;}
+.pm-dev-text em{font-style:italic;color:rgba(240,236,228,0.85);}
+.pm-gov-block{background:#111110;border:1px solid rgba(255,255,255,0.05);padding:0.9rem 1.1rem;}
+.pm-gov-label{font-family:var(--ff-mono);font-size:0.70rem;letter-spacing:0.07em;text-transform:uppercase;color:rgba(240,236,228,0.22);margin-bottom:0.4rem;}
+.pm-gov-text{font-family:var(--ff-display);font-size:1.05rem;font-style:italic;color:rgba(240,236,228,0.6);line-height:1.55;}
+.pm-caption{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.07em;color:rgba(26,22,18,0.3);text-align:center;margin-top:0.85rem;}
+.pm-cursor{display:inline-block;width:2px;height:1em;background:#c9843a;vertical-align:middle;margin-left:1px;animation:blink 1s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
 
 /* MOBILE HERO */
 @media(max-width:960px){
-  #hero{grid-template-columns:1fr;padding-top:48px;}
+  #hero{grid-template-columns:1fr;padding-top:48px;min-height:auto;}
   .hero-left{padding:3rem 1.5rem 2rem;}
   .hero-right{min-height:auto;padding:2rem 1.5rem 3rem;border-left:none;border-top:1px solid var(--rule);}
   .hero-right::before{display:none;}
-  .pm-body{max-height:480px;}
+  .pm-body{max-height:420px;}
+  .hero-outputs{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .hero-outputs{grid-template-columns:1fr;}
 }
 /* MOBILE */
 @media(max-width:768px){
@@ -264,7 +277,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 <header id="header">
   <a href="https://mikecilla.com" class="h-mark">Mike Cilla<span>.</span></a>
   <nav class="h-nav">
-    <a href="#start-here" class="hide-mobile h-nav-link">How it works</a>
+    <a href="#workflow" class="hide-mobile h-nav-link">How it works</a>
     <a href="leadership-os-model.html" class="hide-mobile h-nav-link">The model</a>
     <a href="leadership-os-sample-outputs.html" class="hide-mobile h-nav-link">Sample outputs</a>
     <a href="leadership-os-starter-kit.html" style="background:var(--ink);color:var(--void);padding:0.4rem 0.9rem;font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#b8671e'" onmouseout="this.style.background='#1a1612'">Open Starter Kit →</a>
@@ -274,7 +287,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
 <!-- HERO -->
 <!-- START HERE -->
-<section id="start-here" style="background:var(--ink);padding:3.75rem 4vw 4.5rem;scroll-margin-top:52px;">
+<section id="start-here" style="background:var(--ink);padding:4.5rem 4vw 4rem;scroll-margin-top:52px;">
   <div style="max-width:900px;">
     <div style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.65rem;">
       <span style="display:block;width:1.5rem;height:1px;background:rgba(201,132,58,0.5);"></span>
@@ -323,122 +336,102 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
 <section id="hero">
 
-  <!-- LEFT COLUMN: Headline + copy + CTAs -->
+  <!-- LEFT: Value-first copy -->
   <div class="hero-left">
     <div class="hero-inner">
       <div class="hero-eyebrow reveal" style="transition-delay:.05s">A framework by Mike Cilla · Beta</div>
-      <h1 class="hero-title reveal" style="transition-delay:.15s">
-        <span class="block">Leadership</span>
-        <span class="block"><em>Operating</em></span>
-        <span class="block">System.</span>
+      <h1 class="hero-title reveal" style="transition-delay:.1s">
+        <span class="block">Build a living</span>
+        <span class="block">profile of how</span>
+        <span class="block">you <em>actually</em> lead.</span>
       </h1>
-      <p class="hero-sub reveal" style="transition-delay:.25s">Most assessments tell you what you're like. This one tells you how you actually work.</p>
-      <p class="hero-desc reveal" style="transition-delay:.35s">Three evidence inputs. One AI synthesis. Four documents you'll actually use — a Leadership User Manual, a Working-With-Me Guide, an AI Calibration Document, and a private Development Roadmap.</p>
-      <div class="hero-cta-row reveal" style="transition-delay:.45s">
+      <p class="hero-sub reveal" style="transition-delay:.2s">Leadership OS turns assessments, AI-observed work patterns, and structured reflection into practical documents you can use with your team, your AI tools, and your own development.</p>
+
+      <!-- OUTPUT VALUE CARDS -->
+      <div class="hero-outputs reveal" style="transition-delay:.3s">
+        <div class="ho-card ho-c1">
+          <div class="ho-num">01</div>
+          <div class="ho-name">Leadership User Manual</div>
+          <div class="ho-desc">How you think, decide, and lead. Shareable.</div>
+        </div>
+        <div class="ho-card ho-c2">
+          <div class="ho-num">02</div>
+          <div class="ho-name">Working-With-Me Guide</div>
+          <div class="ho-desc">One page. For any collaborator.</div>
+        </div>
+        <div class="ho-card ho-c3">
+          <div class="ho-num">03</div>
+          <div class="ho-name">AI Calibration Document</div>
+          <div class="ho-desc">Onboards any AI to how you work.</div>
+        </div>
+        <div class="ho-card ho-c4">
+          <div class="ho-num">04</div>
+          <div class="ho-name">Development Roadmap</div>
+          <div class="ho-desc">Private. Updated every 90 days.</div>
+        </div>
+      </div>
+
+      <div class="hero-cta-row reveal" style="transition-delay:.42s">
         <a href="leadership-os-starter-kit.html" class="btn-primary">Start Leadership OS →</a>
         <a href="leadership-os-sample-outputs.html" class="btn-ghost">See sample outputs</a>
       </div>
-      <div class="hero-proof reveal" style="transition-delay:.55s">
-        <span class="hp-item">~90 min</span>
+      <div class="hero-proof reveal" style="transition-delay:.52s">
+        <span class="hp-item">~90 minutes</span>
         <span class="hp-sep">·</span>
-        <span class="hp-item">Any AI tool</span>
+        <span class="hp-item">Works with any AI tool</span>
         <span class="hp-sep">·</span>
         <span class="hp-item">Free</span>
       </div>
     </div>
   </div>
 
-  <!-- RIGHT COLUMN: High-fidelity Leadership Profile visual -->
+  <!-- RIGHT: High-fidelity AI output mockup -->
   <div class="hero-right">
-    <div class="profile-mockup reveal" style="transition-delay:.2s">
-      <!-- Browser chrome -->
+    <div class="profile-mockup reveal" style="transition-delay:.15s">
       <div class="pm-topbar">
         <div class="pm-dots"><span></span><span></span><span></span></div>
         <div class="pm-title">Leadership OS · Analysis Engine</div>
         <div class="pm-badge">claude-sonnet</div>
       </div>
-
-      <!-- Profile content -->
-      <div class="pm-body">
-
-        <div class="pm-persona-row">
-          <div class="pm-persona-info">
-            <div class="pm-persona-label">Leadership Profile</div>
-            <div class="pm-persona-name">Evidence synthesis across 3 sources</div>
-          </div>
-          <div class="pm-confidence-legend">
-            <span class="pm-leg-item hi">● High</span>
-            <span class="pm-leg-item mo">● Moderate</span>
-            <span class="pm-leg-item em">● Emerging</span>
-          </div>
+      <div class="pm-body" id="pm-body">
+        <div class="pm-label-row">
+          <span class="pm-section-label">Leadership Profile — Sample Output</span>
+          <span class="pm-meta">3 sources · 9 constructs</span>
         </div>
 
-        <!-- Construct 1 -->
         <div class="pm-construct hi-c">
           <div class="pm-c-header">
             <div class="pm-c-left">
-              <span class="pm-c-num">01</span>
               <span class="pm-c-name">Systems Orientation</span>
             </div>
-            <span class="pm-c-badge hi">High Confidence</span>
+            <span class="pm-c-badge hi">● High Confidence</span>
           </div>
-          <div class="pm-c-body">Evidence across all three sources converges on a consistent tendency to frame challenges as interconnected systems rather than isolated events. Assessment data aligns with behavioral patterns observed across 71% of strategic conversations. Reflection narratives explicitly name structural root causes rather than proximate ones.</div>
-          <div class="pm-c-sources">
-            <span class="pm-src">Assessment ✓</span>
-            <span class="pm-src">Corpus ✓</span>
-            <span class="pm-src">Reflection ✓</span>
-          </div>
+          <div class="pm-c-body">Evidence across assessment results, behavioral patterns, and structured reflection suggests this leader naturally frames challenges as interconnected systems rather than isolated events. This pattern appears consistently — not just in strategic contexts, but in how everyday problems are described and diagnosed.</div>
         </div>
 
-        <!-- Construct 2 -->
         <div class="pm-construct mo-c">
           <div class="pm-c-header">
             <div class="pm-c-left">
-              <span class="pm-c-num">02</span>
               <span class="pm-c-name">Decision Style</span>
             </div>
-            <span class="pm-c-badge mo">Moderate Confidence</span>
+            <span class="pm-c-badge mo">● Moderate Confidence</span>
           </div>
-          <div class="pm-c-body">Strong evidence of deliberate, evidence-gathering approach before commitment. Tension between sources: once a position is socialized, behavioral evidence shows resistance to revision that self-report and assessment don't fully predict. The commitment phase, not the gathering phase, is where friction lives.</div>
-          <div class="pm-c-sources">
-            <span class="pm-src">Assessment ✓</span>
-            <span class="pm-src">Corpus ✓</span>
-            <span class="pm-src-warn">Reflection ⚠ diverges</span>
-          </div>
+          <div class="pm-c-body">The pattern suggests a deliberate decision style: strong at integrating complexity, but at risk of waiting too long when the cost of delay increases. Behavioral evidence shows a consistent gap between when the evidence was clear and when commitment occurred.</div>
         </div>
 
-        <!-- Construct 3 -->
-        <div class="pm-construct mo-c">
-          <div class="pm-c-header">
-            <div class="pm-c-left">
-              <span class="pm-c-num">03</span>
-              <span class="pm-c-name">Self-Awareness</span>
-            </div>
-            <span class="pm-c-badge mo">Moderate Confidence</span>
-          </div>
-          <div class="pm-c-body">Self-model is accurate across most constructs. One notable gap: behavioral evidence shows gradual normalization of suboptimal peer dynamics over time — a pattern not named in reflection responses and likely outside current monitoring. Genuine self-awareness that stops at the edge of current attention.</div>
-          <div class="pm-c-sources">
-            <span class="pm-src">Assessment ✓</span>
-            <span class="pm-src-warn">Corpus ⚠ gap found</span>
-            <span class="pm-src">Reflection ✓</span>
-          </div>
-        </div>
-
-        <!-- Development opportunity -->
         <div class="pm-dev-block">
-          <div class="pm-dev-label">→ Primary development opportunity</div>
-          <div class="pm-dev-text">Delegation appears less constrained by trust and more constrained by personal quality standards. The mechanism: high conscientiousness combined with very high originality creates implicit output standards that others aren't calibrated to. The practice isn't lowering standards — it's making them explicit before handoff rather than correcting after.</div>
+          <div class="pm-dev-label">→ Primary development insight</div>
+          <div class="pm-dev-text" id="pm-typed-text">Delegation appears less constrained by trust and more constrained by personal quality standards. The growth edge is not "delegate more" — it is defining what good enough looks like <em>before</em> the work begins, not after.</div>
         </div>
 
-        <!-- Governing question -->
         <div class="pm-gov-block">
           <div class="pm-gov-label">Governing question (extracted from evidence)</div>
           <div class="pm-gov-text">"Does this make the system more trustworthy and capable — or does it just make it look that way?"</div>
         </div>
 
-      </div><!-- /pm-body -->
-    </div><!-- /profile-mockup -->
-    <div class="pm-caption">Sample Leadership Profile output · Generated from 3 evidence sources</div>
+      </div>
+    </div>
+    <div class="pm-caption">Sample output · Fictional persona · Generated from 3 evidence sources</div>
   </div>
 
 </section>
@@ -1261,6 +1254,54 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
     if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
   });
 });
+
+// ── Typing animation for hero mockup ──
+(function() {
+  var target = document.getElementById('pm-typed-text');
+  if (!target) return;
+  
+  // Only animate if IntersectionObserver available and not prefers-reduced-motion
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+  
+  var fullHTML = target.innerHTML;
+  var fullText = target.textContent;
+  
+  // Wait for element to be visible
+  var observer = new IntersectionObserver(function(entries) {
+    if (!entries[0].isIntersecting) return;
+    observer.disconnect();
+    
+    // Small delay then start typing
+    setTimeout(function() {
+      target.innerHTML = '<span class="pm-cursor"></span>';
+      var i = 0;
+      var speed = 22; // ms per char
+      
+      function typeNext() {
+        if (i >= fullText.length) {
+          // Done — restore full HTML (handles em tags etc)
+          target.innerHTML = fullHTML;
+          return;
+        }
+        // Handle em tags
+        if (fullText[i] === 'b' && fullText.slice(i, i+6) === 'before') {
+          target.innerHTML = fullText.slice(0, i) + '<em>before</em>' + fullText.slice(i+6, i+6) + '<span class="pm-cursor"></span>';
+        } else {
+          target.innerHTML = fullText.slice(0, i + 1) + '<span class="pm-cursor"></span>';
+        }
+        i++;
+        setTimeout(typeNext, speed + Math.random() * 12);
+      }
+      
+      // Short pause before typing begins
+      setTimeout(typeNext, 600);
+    }, 400);
+  }, { threshold: 0.5 });
+  
+  observer.observe(target);
+})();
+
 </script>
 </body>
 </html>
