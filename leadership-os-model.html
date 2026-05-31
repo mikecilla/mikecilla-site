@@ -167,12 +167,27 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
 /* MOBILE */
 @media(max-width:768px){
-  section{padding:4rem 1.25rem;}
+  section{padding:3rem 1.25rem;}
+  #hero{padding:calc(48px + 2.5rem) 1.25rem 2.5rem;}
   .evidence-model{grid-template-columns:1fr;grid-template-rows:auto;}
-  .ev-connector{padding:0.5rem;transform:rotate(90deg);}
+  .ev-connector{padding:0.4rem;transform:rotate(90deg);font-size:1.2rem;}
   .evidence-why,.fh-items{grid-template-columns:1fr;}
   .construct.open .construct-body{grid-template-columns:1fr 1fr;}
   .research-grid,.future-grid{grid-template-columns:1fr;}
+  /* Hero title */
+  .hero-title{font-size:clamp(2.2rem,8vw,4rem);}
+  /* Construct grid preview */
+  .construct-preview-grid{grid-template-columns:1fr 1fr !important;}
+  /* Research streams */
+  .rs-item{grid-template-columns:1fr;gap:0.5rem;}
+  /* Future flow */
+  .future-flow{gap:0;}
+  /* Hypotheses grid */
+  .fh-items{grid-template-columns:1fr;}
+  /* Conflict matrix table — scroll */
+  .conflict-table-wrap{overflow-x:auto;}
+  /* Header nav */
+  #header .h-nav a:not(:last-child):not(.always-show){display:none;}
 }
 @media(max-width:480px){
   .construct.open .construct-body{grid-template-columns:1fr;}

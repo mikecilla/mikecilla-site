@@ -58,9 +58,9 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .sqn-text{font-size:1.00rem;color:var(--ink-dim);line-height:1.6;}
 
 /* MAIN CONTENT */
-#main-content{overflow-y:auto;}
-.panel{display:none;padding:1.5rem 1.75rem;}
-.panel.active{display:block;max-width:none;}
+#main-content{overflow-y:auto;min-width:0;}
+.panel{display:none;padding:1.5rem 1.75rem;width:100%;}
+.panel.active{display:block;width:100%;box-sizing:border-box;}
 
 /* DOC HEADER */
 .dh{display:grid;grid-template-columns:1fr auto;align-items:start;gap:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--rule);margin-bottom:1.75rem;}
@@ -79,8 +79,8 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .dh-time{font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);}
 
 /* TWO-COLUMN CONTENT */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;}
-.col-card{background:var(--surface);padding:1.5rem 1.75rem;position:relative;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;box-sizing:border-box;}
+.col-card{background:var(--surface);padding:1.5rem 1.75rem;position:relative;overflow:hidden;min-width:0;}
 .col-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
 .col-card.b1::before{background:var(--c5);}
 .col-card.b2::before{background:var(--c1);}
@@ -95,10 +95,11 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .col-text em{font-style:italic;}
 
 /* THREE-COLUMN */
-.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.25rem;width:100%;box-sizing:border-box;}
 
 /* CONSTRUCT ROWS — landscape */
-.cr-table{width:100%;border-collapse:collapse;margin-bottom:1.25rem;font-size:1.0rem;}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:1.25rem;}
+.cr-table{width:100%;border-collapse:collapse;font-size:1.0rem;min-width:640px;}
 .cr-table th{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:0.5rem 0.85rem;border-bottom:2px solid var(--rule);text-align:left;font-weight:400;}
 .cr-table td{padding:0.9rem 1rem;border-bottom:1px solid var(--rule);vertical-align:top;}
 .cr-table tr:last-child td{border-bottom:none;}
@@ -127,7 +128,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .qnt strong{font-weight:500;color:var(--ink);}
 
 /* FULL-WIDTH CARD */
-.fw-card{background:var(--surface);border:1px solid var(--rule);padding:1.6rem 1.85rem;margin-bottom:1.25rem;position:relative;}
+.fw-card{background:var(--surface);border:1px solid var(--rule);padding:1.6rem 1.85rem;margin-bottom:1.25rem;position:relative;min-width:0;}
 .fw-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
 .fw-card.b1::before{background:var(--c5);}
 .fw-card.b2::before{background:var(--c1);}
@@ -218,13 +219,14 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
   </div>
 
   <!-- Construct table — landscape format -->
+  <div class="table-scroll">
   <table class="cr-table">
     <thead>
       <tr>
-        <th style="width:160px;">Construct</th>
-        <th style="width:110px;">Confidence</th>
+        <th style="width:140px;">Construct</th>
+        <th style="width:100px;">Confidence</th>
         <th>Evidence synthesis</th>
-        <th style="width:220px;">Developmental implication</th>
+        <th style="width:180px;">Developmental implication</th>
       </tr>
     </thead>
     <tbody>
@@ -284,6 +286,7 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
       </tr>
     </tbody>
   </table>
+  </div><!-- /table-scroll -->
 
   <div class="summary-block">
     <div class="sb-slabel">Profile Summary</div>

@@ -250,27 +250,72 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 /* MOBILE HERO */
 @media(max-width:960px){
   #hero{grid-template-columns:1fr;padding-top:48px;min-height:auto;}
-  .hero-left{padding:3rem 1.5rem 2rem;}
-  .hero-right{min-height:auto;padding:2rem 1.5rem 3rem;border-left:none;border-top:1px solid var(--rule);}
+  .hero-left{padding:3rem 2rem 2rem;}
+  .hero-right{min-height:auto;padding:2rem 2rem 3rem;border-left:none;border-top:1px solid var(--rule);}
   .hero-right::before{display:none;}
-  .pm-body{max-height:420px;}
-  .hero-outputs{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:600px){
-  .hero-outputs{grid-template-columns:1fr;}
+  .pm-body{max-height:400px;}
 }
 /* MOBILE */
 @media(max-width:768px){
-  .about-grid{grid-template-columns:1fr;gap:2rem;}
-  .about-cred{grid-template-columns:80px 1fr;}
-  section{padding:4rem 1.25rem;}
-  #explainer{padding:4rem 1.25rem;}
+  /* Section padding */
+  section{padding:3rem 1.25rem;scroll-margin-top:52px;}
+  #explainer{padding:3rem 1.25rem;}
+
+  /* Nav */
+  .h-nav .hide-mobile{display:none;}
+  #header{padding:0.6rem 1.25rem;}
+
+  /* Hero */
+  .hero-left{padding:2.5rem 1.25rem 2rem;}
+  .hero-right{padding:1.75rem 1.25rem 2.5rem;}
+  .hero-title{font-size:clamp(2.5rem,10vw,4rem);}
+  .hero-outputs-list{flex-direction:column;gap:0.25rem;}
+  .hol-sep{display:none;}
+  .hero-proof{font-size:0.7rem;}
+
+  /* Profile mockup on mobile */
+  .pm-body{max-height:360px;padding:1rem 1.1rem;}
+  .pm-c-body{font-size:0.85rem;}
+  .pm-dev-text{font-size:0.85rem;}
+  .pm-c-name{font-size:0.98rem;}
+  .pm-topbar{padding:0.5rem 0.85rem;}
+
+  /* Explainer */
   .explainer-flow{grid-template-columns:1fr;}
-  .explainer-distinction,.refl-grid,.about-grid,.gov-grid{grid-template-columns:1fr;}
-  .persist-grid{grid-template-columns:1fr;}
-  .wf-step{grid-template-columns:1fr;}
-  .wf-num{font-size:2.5rem;}
+  .explainer-distinction{grid-template-columns:1fr;}
+
+  /* Confidence visual (4-col → 2-col) */
+  .confidence-visual-grid{grid-template-columns:1fr 1fr;}
+
+  /* Evidence diagram (hide connectors on mobile) */
+  .ev-connector-mobile{display:none;}
+
+  /* Workflow steps */
+  .wf-step{grid-template-columns:1fr;gap:0.75rem;}
+  .wf-num{font-size:2.2rem;}
   .wf-cols{grid-template-columns:1fr;}
+  .wf-prompt-footer{flex-direction:column;gap:0.75rem;align-items:flex-start;}
+
+  /* Reflection */
+  .refl-grid{grid-template-columns:1fr;}
+
+  /* Governance */
+  .gov-grid{grid-template-columns:1fr;}
+
+  /* Persistence */
+  .persist-grid{grid-template-columns:1fr;}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .about-cred{grid-template-columns:80px 1fr;}
+  .about-cards{gap:1rem;}
+
+  /* Section headlines */
+  .section-headline{font-size:clamp(1.7rem,6vw,2.4rem);}
+  /* Evidence diagram inline grid */
+  .evidence-diagram-wrap .inner-grid{display:flex;flex-direction:column;}
+  /* Confidence 4-col grid */
+  .conf-4col{grid-template-columns:1fr 1fr !important;}
 }
 </style>
 </head>
@@ -301,28 +346,14 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.2s">Leadership OS turns assessments, AI-observed work patterns, and structured reflection into practical documents you can use with your team, your AI tools, and your own development.</p>
 
-      <!-- OUTPUT VALUE CARDS -->
-      <div class="hero-outputs reveal" style="transition-delay:.3s">
-        <div class="ho-card ho-c1">
-          <div class="ho-num">01</div>
-          <div class="ho-name">Leadership User Manual</div>
-          <div class="ho-desc">How you think, decide, and lead. Shareable.</div>
-        </div>
-        <div class="ho-card ho-c2">
-          <div class="ho-num">02</div>
-          <div class="ho-name">Working-With-Me Guide</div>
-          <div class="ho-desc">One page. For any collaborator.</div>
-        </div>
-        <div class="ho-card ho-c3">
-          <div class="ho-num">03</div>
-          <div class="ho-name">AI Calibration Document</div>
-          <div class="ho-desc">Onboards any AI to how you work.</div>
-        </div>
-        <div class="ho-card ho-c4">
-          <div class="ho-num">04</div>
-          <div class="ho-name">Development Roadmap</div>
-          <div class="ho-desc">Private. Updated every 90 days.</div>
-        </div>
+      <div class="hero-outputs-list reveal" style="transition-delay:.3s">
+        <span class="hol-item">Leadership User Manual</span>
+        <span class="hol-sep">·</span>
+        <span class="hol-item">Working-With-Me Guide</span>
+        <span class="hol-sep">·</span>
+        <span class="hol-item">AI Calibration Document</span>
+        <span class="hol-sep">·</span>
+        <span class="hol-item">Development Roadmap</span>
       </div>
 
       <div class="hero-cta-row reveal" style="transition-delay:.42s">
@@ -440,7 +471,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
 
     <!-- EVIDENCE SYNTHESIS DIAGRAM -->
-    <div style="margin:2rem 0;border:1px solid var(--rule);background:var(--surface);">
+    <div class="evidence-diagram-wrap" style="margin:2rem 0;border:1px solid var(--rule);background:var(--surface);">
       <div style="padding:0.75rem 1.25rem;border-bottom:1px solid var(--rule);background:var(--deep);">
         <span style="font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">How evidence becomes a profile</span>
       </div>
@@ -481,54 +512,6 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       </div>
     </div>
 
-
-<!-- START HERE -->
-<section id="start-here" style="background:var(--ink);padding:4.5rem 4vw 4rem;scroll-margin-top:52px;">
-  <div style="max-width:900px;">
-    <div style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.65rem;">
-      <span style="display:block;width:1.5rem;height:1px;background:rgba(201,132,58,0.5);"></span>
-      The complete process at a glance
-    </div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.05;color:#f0ece4;margin-bottom:0.25rem;">Six steps.<br><span style="font-style:italic;font-weight:600;color:#c9843a;">90–120 minutes.</span></h2>
-    <p style="font-size:1.05rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.9;margin:1rem 0 2.5rem;max-width:560px;">Complete all six steps in one sitting. Open the Starter Kit — it contains every prompt, every instruction, and every checkpoint in one place.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(240,236,228,0.08);border:1px solid rgba(240,236,228,0.08);margin-bottom:2rem;">
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 1 · 20 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Take PrinciplesYou</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Free personality assessment. The scientific anchor. Save your full results.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 2 · 15 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Run Corpus Audit</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Paste one prompt into your AI tool. It reflects on behavioral patterns from your conversation history.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 3 · 35 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Complete Reflection</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Six structured prompts. Writing, voice, or guided AI interview. Specific examples only — generalities produce generic outputs.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 4 · 15 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Analysis Engine</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">One initialization prompt teaches your AI the Leadership OS methodology. Then you provide all three evidence inputs.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 4b · 10 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Construct Analysis</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">The AI evaluates nine leadership constructs across all evidence sources and builds your Leadership Profile — the foundation for your output documents.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 5 · 20 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Generate Outputs</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Four documents generated from your Leadership Profile: User Manual, Working-With-Me Guide, AI Calibration Document, Development Roadmap.</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-      <a href="leadership-os-starter-kit.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:#c9843a;color:#0c0b0a;padding:0.9rem 2rem;font-family:var(--ff-body);font-size:0.92rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8b87a'" onmouseout="this.style.background='#c9843a'">Start Leadership OS →</a>
-      <a href="leadership-os-sample-outputs.html" style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,236,228,0.45);text-decoration:none;transition:color 0.2s;border:1px solid rgba(240,236,228,0.15);padding:0.9rem 1.5rem;" onmouseover="this.style.color='#c9843a';this.style.borderColor='rgba(201,132,58,0.4)'" onmouseout="this.style.color='rgba(240,236,228,0.45)';this.style.borderColor='rgba(240,236,228,0.15)'">See sample outputs</a>
-    </div>
-  </div>
-</section>
 
 
 <!-- COMPLETE WORKFLOW -->
