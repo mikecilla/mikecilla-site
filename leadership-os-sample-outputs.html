@@ -38,9 +38,9 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .synthetic-banner{background:#1a1612;color:rgba(240,236,228,0.75);font-family:var(--ff-m);font-size:0.74rem;letter-spacing:0.06em;text-align:center;padding:0.6rem 2rem;line-height:1.55;border-bottom:1px solid rgba(255,255,255,0.06);}
 .synthetic-banner strong{color:#c9843a;}
 
-#page{padding-top:calc(48px + 37px);display:grid;grid-template-columns:280px 1fr;min-height:100vh;}
+#page{padding-top:0;display:grid;grid-template-columns:280px 1fr;min-height:100vh;}
 
-#sidebar{position:sticky;top:85px;height:calc(100vh - 85px);overflow-y:auto;border-right:1px solid var(--rule);padding:1.5rem 0;background:var(--void);}
+#sidebar{position:sticky;top:calc(85px + 49px);height:calc(100vh - 134px);overflow-y:auto;border-right:1px solid var(--rule);padding:1.5rem 0;background:var(--void);}
 .sb-head{padding:0.75rem 1.25rem 0.5rem;}
 .sb-persona{background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:0.85rem 1rem;margin:0 0.75rem 1rem;}
 .sb-avatar{width:38px;height:38px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:1rem;font-weight:600;color:var(--void);margin-bottom:0.5rem;}
@@ -140,6 +140,42 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .gn-label{font-family:var(--ff-m);font-size:0.70rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
 .gn-text{font-size:0.97rem;color:var(--ink-dim);line-height:1.82;}
 
+
+/* TAB NAV — visible below header, always shown */
+#tab-nav{
+  position:sticky;
+  top:85px; /* below header (48px) + synthetic banner (37px) */
+  z-index:150;
+  background:rgba(250,248,244,0.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  display:flex;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.tn-tab{
+  font-family:var(--ff-m);
+  font-size:0.72rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  padding:0.8rem 1.35rem;
+  background:none;
+  border:none;
+  color:var(--ink-dim);
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  transition:all 0.15s;
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+}
+.tn-tab:hover{color:var(--ink);}
+.tn-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tn-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+/* Adjust main content top position to account for tab nav */
+#main-content{overflow-y:auto;min-width:0;}
+
 footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;margin-left:280px;}
 .fm{font-family:var(--ff-d);font-size:0.9rem;color:rgba(240,236,228,0.28);text-decoration:none;}
 .fm span{color:rgba(201,132,58,0.45);}
@@ -157,8 +193,8 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
   .dh{grid-template-columns:1fr;}
   .dh-aside{display:none;}
   .synthetic-banner{font-size:0.7rem;padding:0.5rem 1.25rem;}
-  #page{padding-top:calc(48px + 30px);}
-  #sidebar{top:78px;height:calc(100vh - 78px);}
+  #page{padding-top:0;}
+  /* sidebar hidden on mobile */
 }
 @media(max-width:600px){
   .panel{display:none;padding:1rem;}
@@ -185,6 +221,26 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
 <div class="synthetic-banner">
   <strong>Illustrative samples only.</strong> All outputs on this page are synthetic and generated to demonstrate format and depth. Jordan Reyes is a fictional persona. No real person's data, assessments, or reflections appear here.
 </div>
+
+
+<!-- TAB NAVIGATION — works at all viewports -->
+<nav id="tab-nav">
+  <button class="tn-tab active" onclick="switchTab('profile',this)">
+    <span class="tn-dot" style="background:#7F77DD;"></span>Leadership Profile
+  </button>
+  <button class="tn-tab" onclick="switchTab('manual',this)">
+    <span class="tn-dot" style="background:#5B5BD6;"></span>User Manual
+  </button>
+  <button class="tn-tab" onclick="switchTab('wwm',this)">
+    <span class="tn-dot" style="background:#b8671e;"></span>Working-With-Me
+  </button>
+  <button class="tn-tab" onclick="switchTab('acd',this)">
+    <span class="tn-dot" style="background:#1D9E75;"></span>AI Calibration
+  </button>
+  <button class="tn-tab" onclick="switchTab('roadmap',this)">
+    <span class="tn-dot" style="background:rgba(26,22,18,0.3);"></span>Dev Roadmap
+  </button>
+</nav>
 
 <div id="page">
 <nav id="sidebar">
@@ -544,14 +600,47 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
 </footer>
 
 <script>
-function showPanel(id, el) {
+function switchTab(id, el) {
+  // Hide all panels
   document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+  // Deactivate all tab nav buttons
+  document.querySelectorAll('.tn-tab').forEach(function(t){ t.classList.remove('active'); });
+  // Deactivate all sidebar links
   document.querySelectorAll('.sb-link').forEach(function(l){ l.classList.remove('active'); });
+
+  // Show target panel
   var panel = document.getElementById('panel-' + id);
   if (panel) panel.classList.add('active');
+
+  // Activate the clicked element (either tab or sidebar link)
   if (el) el.classList.add('active');
-  document.getElementById('main-content').scrollTop = 0;
+
+  // Also sync the OTHER nav (tab nav or sidebar) to stay in sync
+  // If clicked from sidebar, sync tab nav
+  document.querySelectorAll('.tn-tab').forEach(function(t){
+    if (t.getAttribute('onclick') && t.getAttribute('onclick').indexOf("'" + id + "'") !== -1) {
+      t.classList.add('active');
+    }
+  });
+  // If clicked from tab nav, sync sidebar
+  document.querySelectorAll('.sb-link').forEach(function(l){
+    if (l.getAttribute('onclick') && l.getAttribute('onclick').indexOf("'" + id + "'") !== -1) {
+      l.classList.add('active');
+    }
+  });
+
+  // Scroll main content to top
+  var mc = document.getElementById('main-content');
+  if (mc) mc.scrollTop = 0;
+  // Also scroll window to just below the tab nav on mobile
+  var tn = document.getElementById('tab-nav');
+  if (tn && window.innerWidth <= 900) {
+    window.scrollTo({ top: tn.offsetTop + tn.offsetHeight, behavior: 'smooth' });
+  }
 }
+
+// Keep showPanel as alias for sidebar onclick compatibility
+function showPanel(id, el) { switchTab(id, el); }
 </script>
 </body>
 </html>
