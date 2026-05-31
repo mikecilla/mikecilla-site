@@ -411,6 +411,9 @@ a:hover{text-decoration:underline;}
   <a href="#s4" class="sn-link">04 — Analysis Engine</a>
   <a href="#s4-init" class="sn-link sub">Initialization prompt</a>
   <a href="#s4-analysis" class="sn-link sub">Pattern analysis</a>
+  <a href="#s4b" class="sn-link">04b — Construct Analysis</a>
+  <a href="#s4b-prompt" class="sn-link sub">Construct analysis prompt</a>
+  <a href="#s4b-profile" class="sn-link sub">Leadership Profile artifact</a>
   <a href="#s5" class="sn-link">05 — Output Generation</a>
   <a href="#s6" class="sn-link">06 — Maintenance</a>
   <a href="#s7" class="sn-link">07 — Research</a>
@@ -1102,17 +1105,153 @@ Note any constructs where the evidence was insufficient.</div>
   </div>
 </section>
 
+
+<!-- SECTION 4B — CONSTRUCT ANALYSIS -->
+<section class="section" id="s4b">
+  <div class="section-header">
+    <div class="section-eyebrow">Section 04b · 10 minutes</div>
+    <h1 class="section-title">Construct<br><em>Analysis.</em></h1>
+    <p class="section-subtitle">The intermediate step between evidence and outputs. Before generating documents, the AI evaluates each Leadership OS construct across all three evidence sources and builds a working model of how you operate.</p>
+  </div>
+
+  <h2 class="sub-head">What construct analysis is</h2>
+  <p>A construct is a specific dimension of leadership behavior — like Decision Style or Self-Awareness — that Leadership OS is designed to surface. Construct Analysis is the process of evaluating the evidence you have provided against each of these dimensions and generating hypotheses about how you operate within each one.</p>
+  <p>This is not producing personality scores. It is not assigning you to a type. The AI is weighing evidence across three modalities — assessment, behavior, and reflection — identifying where they converge and where they conflict, and expressing appropriate confidence in each finding. The result is a working model of your leadership patterns, not a definitive description of who you are.</p>
+
+  <div class="highlight">
+    <p><strong>The nine Leadership OS constructs</strong></p>
+    <p>Reflection Orientation · Systems Orientation · Learning Orientation · Decision Style · Communication Patterns · Leadership Identity · Adaptability · Self-Awareness · Development Readiness</p>
+    <p>For each one, the AI will identify: what the evidence shows, where sources agree or conflict, and how confident it is in the finding.</p>
+  </div>
+
+  <div class="note">
+    <span class="note-icon">→</span>
+    <div class="note-text"><strong>Stay in the same conversation as Section 4.</strong> The AI already has your evidence inputs and the initialization context. Send the construct analysis prompt as the next message in that same conversation.</div>
+  </div>
+
+  <h2 class="sub-head" id="s4b-prompt">The Construct Analysis Prompt</h2>
+  <p>Send this as your next message after the pattern analysis in Section 4. The AI will evaluate all nine constructs across your three evidence sources.</p>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">Construct Analysis Prompt — send after the pattern analysis</span>
+      <button class="copy-btn" onclick="copyPrompt(this, 'ca-prompt-text')">Copy prompt</button>
+    </div>
+    <div class="prompt-body" id="ca-prompt-text">Now please conduct a Leadership OS Construct Analysis.
+
+Using all three evidence sources — assessment results, corpus audit output,
+and reflection responses — evaluate each of the nine Leadership OS constructs.
+
+For each construct, provide:
+
+CONSTRUCT NAME
+Definition (one sentence — what this construct measures)
+Evidence from assessments: what the assessment data suggests
+Evidence from behavioral corpus: what the observed patterns show
+Evidence from reflection: what the leader's own account reveals
+Convergence or conflict: do the sources agree? If not, what is the tension?
+Confidence level: HIGH / MODERATE / EMERGING / INSUFFICIENT
+Developmental implication: what this means for how this leader operates
+
+THE NINE CONSTRUCTS TO EVALUATE:
+
+1. REFLECTION ORIENTATION
+How deliberately does this leader examine their own experience
+and draw developmental insight from it?
+
+2. SYSTEMS ORIENTATION
+How naturally does this leader frame problems in terms of
+structures, interdependencies, and root causes?
+
+3. LEARNING ORIENTATION
+How readily does this leader seek new information, tolerate
+uncertainty, and treat experience as developmental material?
+
+4. DECISION STYLE
+What is this leader's characteristic approach to decisions
+under uncertainty and competing priorities?
+
+5. COMMUNICATION PATTERNS
+What are this leader's characteristic ways of structuring,
+delivering, and receiving communication?
+
+6. LEADERSHIP IDENTITY
+How does this leader understand their role and what kind
+of leader they are becoming?
+
+7. ADAPTABILITY
+How readily does this leader adjust approach, strategy,
+or behavior in response to changing conditions?
+
+8. SELF-AWARENESS
+How accurately does this leader's model of themselves
+match what the evidence shows about how they actually operate?
+
+9. DEVELOPMENT READINESS
+What is this leader's current capacity and motivation
+for deliberate development work?
+
+CONFIDENCE LEVELS:
+HIGH CONFIDENCE — three sources converge on the same pattern
+MODERATE CONFIDENCE — two sources converge
+EMERGING HYPOTHESIS — one source points toward a pattern
+INSUFFICIENT EVIDENCE — not enough evidence to form a useful hypothesis
+
+After evaluating all nine constructs, provide a brief LEADERSHIP PROFILE SUMMARY:
+A 200–300 word synthesis of the most important patterns across all constructs.
+This should read as a working model of how this leader operates —
+honest, specific, and grounded in the evidence.
+Note the two or three constructs where evidence is strongest.
+Note any constructs where the evidence was insufficient or contradictory.
+
+Frame everything as hypotheses, not facts. This profile is a starting point,
+not a finished description.</div>
+  </div>
+
+  <h2 class="sub-head" id="s4b-profile">The Leadership Profile artifact</h2>
+  <p>The construct analysis output is your Leadership Profile — the intermediate layer between your evidence inputs and your output documents. It is not a document you share externally. It is the working model your AI will use to generate the four output documents in Section 5.</p>
+
+  <div class="not-box">
+    <p><strong>The Leadership Profile is private by design.</strong> It contains the full evidence reasoning — including tension points, low-confidence hypotheses, and developmental implications — that you may not want to share in full. The output documents (User Manual, Working-With-Me Guide) are the edited, shareable versions derived from this profile.</p>
+  </div>
+
+  <div class="step-list">
+    <div class="step-item"><div class="step-num">01</div><div class="step-text">Read the full construct analysis output</div></div>
+    <div class="step-item"><div class="step-num">02</div><div class="step-text">Note any constructs rated INSUFFICIENT — these will be thin in your output documents</div></div>
+    <div class="step-item"><div class="step-num">03</div><div class="step-text">Note any tension points where sources conflict — these are worth reflecting on</div></div>
+    <div class="step-item"><div class="step-num">04</div><div class="step-text">Correct any construct finding that seems clearly wrong — tell the AI what evidence it missed</div></div>
+    <div class="step-item"><div class="step-num">05</div><div class="step-text">Save the full output labeled: <em>Leadership Profile — [Date]</em></div></div>
+  </div>
+
+  <div class="note">
+    <span class="note-icon">→</span>
+    <div class="note-text"><strong>If a construct rating surprises you:</strong> That is useful information. Tell the AI what you think it missed and why. The tension between what the evidence shows and what you believe about yourself is often the most productive development material.</div>
+  </div>
+
+  <div class="checkpoint">
+    <div class="checkpoint-label">Section 4b Checkpoint</div>
+    <ul>
+      <li>Construct analysis prompt sent in the same conversation as Section 4</li>
+      <li>All nine constructs evaluated with confidence levels</li>
+      <li>Leadership Profile summary generated</li>
+      <li>INSUFFICIENT constructs noted — these will be thin in output documents</li>
+      <li>Any clearly wrong findings corrected before moving to Section 5</li>
+      <li>Leadership Profile saved and labeled</li>
+    </ul>
+  </div>
+</section>
+
 <!-- SECTION 5 -->
 <section class="section" id="s5">
   <div class="section-header">
     <div class="section-eyebrow">Section 05 · 20 minutes</div>
     <h1 class="section-title">Output<br><em>Generation.</em></h1>
-    <p class="section-subtitle">Run each prompt in the same conversation as Section 4. The AI needs the full context. One document at a time. Read and correct each before moving to the next.</p>
+    <p class="section-subtitle">Run each prompt in the same conversation as Sections 4 and 4b. The AI will draw on your Leadership Profile to generate each document. One at a time. Read and correct each before moving to the next.</p>
   </div>
 
   <div class="note">
     <span class="note-icon">→</span>
-    <div class="note-text"><strong>Stay in the same conversation.</strong> Run all four document prompts in the same AI conversation as your Section 4 analysis. Do not start a new conversation — the AI needs all the context it has built. After each document, read it carefully and correct anything that doesn't ring true before moving to the next.</div>
+    <div class="note-text"><strong>Stay in the same conversation as Sections 4 and 4b.</strong> Run all four document prompts in the same AI conversation. The AI needs your Leadership Profile context to generate specific, evidence-grounded documents. After each document, read carefully and correct anything that doesn't ring true before moving to the next.</div>
   </div>
 
   <h2 class="sub-head">Document 1 — Leadership User Manual</h2>
@@ -1449,6 +1588,7 @@ Begin with question one when I say I am ready.</div>
     <div class="seq-item"><div class="seq-n">03</div><div class="seq-text"><strong>Leadership OS Initialization Prompt</strong> (Section 4) — in a new conversation</div></div>
     <div class="seq-item"><div class="seq-n">04</div><div class="seq-text"><strong>Evidence inputs</strong> (Section 4) — three separate messages in order</div></div>
     <div class="seq-item"><div class="seq-n">05</div><div class="seq-text"><strong>Pattern Analysis Prompt</strong> (Section 4) — after all inputs provided</div></div>
+    <div class="seq-item"><div class="seq-n">05b</div><div class="seq-text"><strong>Construct Analysis Prompt</strong> (Section 4b) — builds Leadership Profile</div></div>
     <div class="seq-item"><div class="seq-n">06</div><div class="seq-text"><strong>Leadership User Manual Prompt</strong> (Section 5)</div></div>
     <div class="seq-item"><div class="seq-n">07</div><div class="seq-text"><strong>Working-With-Me Guide Prompt</strong> (Section 5)</div></div>
     <div class="seq-item"><div class="seq-n">08</div><div class="seq-text"><strong>AI Calibration Document Prompt</strong> (Section 5)</div></div>
@@ -1465,10 +1605,11 @@ Begin with question one when I say I am ready.</div>
       <tr><td>Section 2</td><td>Corpus audit</td><td>15 min</td></tr>
       <tr><td>Section 3</td><td>Structured reflection</td><td>35–40 min</td></tr>
       <tr><td>Section 4</td><td>Analysis engine + pattern synthesis</td><td>15 min</td></tr>
+      <tr><td>Section 4b</td><td>Construct analysis + Leadership Profile</td><td>10 min</td></tr>
       <tr><td>Section 5</td><td>Output generation</td><td>20 min</td></tr>
       <tr><td>Section 5</td><td>Review and correction</td><td>15 min</td></tr>
     </tbody>
-    <tfoot><tr><td>Total</td><td></td><td>~125 min</td></tr></tfoot>
+    <tfoot><tr><td>Total</td><td></td><td>~135 min</td></tr></tfoot>
   </table>
 
   <h2 class="sub-head">AI tool quick-start</h2>

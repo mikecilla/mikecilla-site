@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership OS — Sample Outputs</title>
+<meta name="description" content="See what Leadership OS produces. Redacted excerpts from real output documents — Leadership User Manual, Working-With-Me Guide, AI Calibration Document, Development Roadmap, and Leadership Profile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q8B7D4VZ08');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --void:#faf8f4;--deep:#f2ede6;--surface:#ffffff;--lift:#ede8e1;
+  --ink:#1a1612;--ink-dim:rgba(26,22,18,0.62);--ink-ghost:rgba(26,22,18,0.12);
+  --gold:#b8671e;--gold-light:#c9843a;--gold-dim:rgba(184,103,30,0.1);
+  --rule:rgba(26,22,18,0.1);
+  --c1:#5B5BD6;--c2:#b8671e;--c3:#1D9E75;--c4:rgba(26,22,18,0.3);
+  --ff-d:'Cormorant Garamond',Georgia,serif;
+  --ff-b:'Outfit',system-ui,sans-serif;
+  --ff-m:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:18px;line-height:1.85;font-weight:300;}
+
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(250,248,244,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);}
+.h-mark{font-family:var(--ff-d);font-size:0.95rem;font-weight:400;letter-spacing:0.05em;color:var(--ink);text-decoration:none;}
+.h-mark span{color:var(--gold);}
+.h-nav{display:flex;align-items:center;gap:0.75rem;}
+.h-link{font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;padding:0.35rem 0.75rem;border:1px solid var(--rule);transition:all 0.2s;}
+.h-link:hover{border-color:var(--gold);color:var(--gold);}
+.h-link.cta{background:var(--ink);color:var(--void);border-color:var(--ink);}
+.h-link.cta:hover{background:var(--gold);border-color:var(--gold);}
+
+/* HERO */
+#hero{padding:calc(52px + 5rem) 5vw 4rem;max-width:860px;}
+.eyebrow{font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.65rem;margin-bottom:0.85rem;}
+.eyebrow::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold);}
+.hero-title{font-family:var(--ff-d);font-size:clamp(2.2rem,5vw,4.5rem);font-weight:300;line-height:0.98;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.2em;}
+.hero-title em{font-style:italic;font-weight:600;color:var(--gold);}
+.hero-sub{font-family:var(--ff-d);font-size:1.15rem;font-style:italic;font-weight:300;color:var(--ink-dim);border-left:2px solid var(--gold);padding-left:1rem;margin:1.25rem 0 1.5rem;line-height:1.55;max-width:580px;}
+.hero-desc{font-size:1.02rem;font-weight:300;color:var(--ink-dim);line-height:1.95;max-width:620px;}
+.hero-note{font-family:var(--ff-m);font-size:0.62rem;letter-spacing:0.08em;color:rgba(26,22,18,0.38);margin-top:1.5rem;padding:0.85rem 1rem;border:1px solid var(--rule);background:var(--deep);line-height:1.6;}
+
+/* OUTPUT TABS */
+#output-nav{position:sticky;top:52px;z-index:100;background:rgba(250,248,244,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);display:flex;overflow-x:auto;gap:0;}
+.on-tab{font-family:var(--ff-m);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.85rem 1.5rem;background:none;border:none;color:var(--ink-dim);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.on-tab:hover{color:var(--ink);}
+.on-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* PANELS */
+.output-panel{display:none;padding:3rem 5vw;max-width:860px;}
+.output-panel.active{display:block;}
+
+/* DOC HEADER */
+.doc-header{margin-bottom:2.5rem;padding-bottom:1.75rem;border-bottom:1px solid var(--rule);}
+.doc-badge{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.3rem 0.75rem;border:1px solid;margin-bottom:0.85rem;}
+.doc-badge.d1{color:var(--c1);border-color:rgba(91,91,214,0.3);background:rgba(91,91,214,0.06);}
+.doc-badge.d2{color:var(--gold);border-color:var(--gold-dim);background:var(--gold-dim);}
+.doc-badge.d3{color:var(--c3);border-color:rgba(29,158,117,0.3);background:rgba(29,158,117,0.06);}
+.doc-badge.d4{color:var(--ink-dim);border-color:var(--rule);background:var(--deep);}
+.doc-badge.d5{color:#7F77DD;border-color:rgba(127,119,221,0.3);background:rgba(127,119,221,0.06);}
+.doc-title{font-family:var(--ff-d);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:0.5rem;}
+.doc-subtitle{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.75;}
+.doc-meta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.85rem;}
+.doc-meta-item{font-family:var(--ff-m);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:0.35rem;}
+.doc-meta-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);}
+
+/* REDACTED SAMPLE */
+.sample-section{margin-bottom:2rem;}
+.sample-section-label{font-family:var(--ff-m);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem;}
+.sample-section-label::before{content:'';display:block;width:1rem;height:1px;background:var(--gold);opacity:0.5;}
+.sample-body{background:var(--surface);border:1px solid var(--rule);padding:1.75rem 2rem;position:relative;}
+.sample-body::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+.sample-body.d1::before{background:var(--c1);}
+.sample-body.d2::before{background:var(--gold);}
+.sample-body.d3::before{background:var(--c3);}
+.sample-body.d4::before{background:var(--c4);}
+.sample-body.d5::before{background:#7F77DD;}
+.sample-text{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
+.sample-text p{margin-bottom:1.1rem;}
+.sample-text p:last-child{margin-bottom:0;}
+.sample-text strong{font-weight:500;color:var(--ink);}
+.sample-text em{font-style:italic;}
+.redacted{display:inline-block;background:var(--lift);color:transparent;border-radius:2px;user-select:none;font-size:0.85em;padding:0 0.2rem;vertical-align:middle;letter-spacing:-0.05em;}
+
+/* CONSTRUCT ROW (for profile panel) */
+.construct-row{border-top:1px solid var(--rule);padding:1.25rem 0;display:grid;grid-template-columns:160px 1fr auto;gap:1.5rem;align-items:start;}
+.cr-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.2;}
+.cr-summary{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.75;}
+.cr-confidence{font-family:var(--ff-m);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:2px;white-space:nowrap;}
+.cr-confidence.high{background:rgba(29,158,117,0.1);color:var(--c3);border:1px solid rgba(29,158,117,0.25);}
+.cr-confidence.mod{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-dim);}
+.cr-confidence.emerging{background:rgba(91,91,214,0.08);color:var(--c1);border:1px solid rgba(91,91,214,0.2);}
+.cr-confidence.insuff{background:var(--deep);color:var(--ink-dim);border:1px solid var(--rule);}
+
+/* QUALITY CALLOUT */
+.quality-note{background:var(--deep);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin-top:2rem;display:flex;gap:0.75rem;}
+.qn-icon{font-size:1rem;flex-shrink:0;margin-top:0.1rem;}
+.qn-text{font-size:0.92rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.qn-text strong{font-weight:500;color:var(--ink);}
+
+/* FOOTER */
+footer{background:#131211;padding:2rem;display:flex;align-items:center;justify-content:space-between;margin-top:4rem;}
+.footer-mark{font-family:var(--ff-d);font-size:0.9rem;color:rgba(240,236,228,0.3);text-decoration:none;}
+.footer-mark span{color:rgba(201,132,58,0.5);}
+.footer-disc{font-family:var(--ff-m);font-size:0.58rem;color:rgba(240,236,228,0.15);max-width:480px;text-align:right;line-height:1.6;}
+
+/* MOBILE */
+@media(max-width:600px){
+  #hero{padding:calc(52px + 3rem) 1.25rem 3rem;}
+  .output-panel{padding:2rem 1.25rem;}
+  .construct-row{grid-template-columns:1fr;gap:0.5rem;}
+  .sample-body{padding:1.25rem;}
+  footer{flex-direction:column;gap:1rem;}
+  .footer-disc{text-align:center;}
+  .h-nav .hide-sm{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <a href="https://mikecilla.com" class="h-mark">Mike Cilla<span>.</span></a>
+  <nav class="h-nav">
+    <a href="leadership-os.html" class="h-link hide-sm">← Leadership OS</a>
+    <a href="leadership-os-starter-kit.html" class="h-link cta">Open Starter Kit →</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="eyebrow">Leadership OS · Sample Outputs</div>
+  <h1 class="hero-title">What success<br><em>looks like.</em></h1>
+  <p class="hero-sub">Real excerpts from a real Leadership OS session — redacted for privacy. Use these to calibrate what you're aiming for before you start.</p>
+  <p class="hero-desc">The sample below comes from the practitioner who built this methodology. Names, organizations, and identifying details have been removed. What remains is the substance — the level of specificity, the tone, and the kind of insight a complete Leadership OS process produces.</p>
+  <div class="hero-note">These outputs were generated from three evidence sources: a PrinciplesYou assessment + HEXACO, a 297-conversation corpus audit, and six structured reflection prompts. Output quality scales with input quality — more specific evidence produces more specific documents.</div>
+</div>
+
+<!-- OUTPUT TABS -->
+<nav id="output-nav">
+  <button class="on-tab active" onclick="showPanel('profile')">Leadership Profile</button>
+  <button class="on-tab" onclick="showPanel('manual')">User Manual</button>
+  <button class="on-tab" onclick="showPanel('wwm')">Working-With-Me</button>
+  <button class="on-tab" onclick="showPanel('acd')">AI Calibration</button>
+  <button class="on-tab" onclick="showPanel('roadmap')">Dev Roadmap</button>
+</nav>
+
+<!-- PANEL: LEADERSHIP PROFILE -->
+<div class="output-panel active" id="panel-profile">
+  <div class="doc-header">
+    <div class="doc-badge d5">Leadership Profile · Private</div>
+    <h2 class="doc-title">Leadership Profile</h2>
+    <p class="doc-subtitle">The construct analysis output — the intermediate layer between evidence and output documents. Not for sharing externally. This is the working model the AI uses to generate your documents.</p>
+    <div class="doc-meta">
+      <span class="doc-meta-item">Generated from 3 evidence sources</span>
+      <span class="doc-meta-item">9 constructs evaluated</span>
+      <span class="doc-meta-item">Private — do not share</span>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <div class="sample-section-label">Construct Evaluations — sample of 5 of 9</div>
+    <div class="sample-body d5">
+      <div class="sample-text">
+        <div class="construct-row">
+          <div class="cr-name">Systems Orientation</div>
+          <div class="cr-summary">All three sources converge strongly. Assessment: Systematic 95%, Logical 95%. Corpus: problem framing consistently addresses structural causes before individual behavior; infrastructure-before-intervention sequencing appears across 72 HR Technology conversations. Reflection: peak performance example (UKG implementation) explicitly names structural design as the source of the outcome, not individual effort. No contradictions across sources.</div>
+          <div class="cr-confidence high">High</div>
+        </div>
+        <div class="construct-row">
+          <div class="cr-name">Self-Awareness</div>
+          <div class="cr-summary">Assessment and reflection converge on high self-awareness. Moderate confidence rather than high because the corpus audit reveals one significant pattern the leader did not name in reflection: gradual normalization of peer dysfunction over time. The leader describes this frustration when asked directly, but does not identify the accommodation mechanism unprompted. This gap between named values and unobserved behavioral drift is itself a self-awareness signal worth noting.</div>
+          <div class="cr-confidence mod">Moderate</div>
+        </div>
+        <div class="construct-row">
+          <div class="cr-name">Adaptability</div>
+          <div class="cr-summary">Assessment shows high Adaptable (99%) but low Agile (18%) — an unusual combination suggesting macro-level openness to change with micro-level anchoring to specific plans. Corpus audit shows evidence of both: willingness to restructure major initiatives when conditions shift, but also extended commitment to specific execution approaches past the point where conditions warranted revisiting. Reflection does not directly address this tension. Emerging hypothesis: this leader is strategically adaptable but tactically anchored.</div>
+          <div class="cr-confidence mod">Moderate</div>
+        </div>
+        <div class="construct-row">
+          <div class="cr-name">Leadership Identity</div>
+          <div class="cr-summary">Assessment archetype (The Orchestrator) aligns well with corpus evidence: consistent pattern of building systems and teams designed to function independently, not through personal presence. Reflection is explicit about this — "the goal is a function that outlasts the person who built it" appears both as a stated principle and as an observed behavioral pattern. Moderate confidence because identity constructs are inherently more inferential than behavioral ones.</div>
+          <div class="cr-confidence mod">Moderate</div>
+        </div>
+        <div class="construct-row">
+          <div class="cr-name">Development Readiness</div>
+          <div class="cr-summary">High. Completing a 297-conversation corpus transfer, taking two validated assessments, and answering six structured reflection prompts is itself strong evidence of development readiness. Reflection quality is high — responses are specific, include genuine tension, and name hard things directly. The willingness to surface the peer dysfunction pattern — and to note uncertainty about whether accommodation has become too comfortable — suggests current readiness for deliberate development work.</div>
+          <div class="cr-confidence high">High</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <div class="sample-section-label">Leadership Profile Summary</div>
+    <div class="sample-body d5">
+      <div class="sample-text">
+        <p>This leader operates through systems thinking, precise communication, and genuine investment in the people they lead. The most reliable patterns across all three evidence sources: infrastructure-before-intervention sequencing in every major initiative, a governing question focused on making systems trustworthy rather than impressive, and a consistent preference for building functions that work without the builder's continued presence.</p>
+        <p>The highest-confidence developmental construct is Systems Orientation — it appears in assessment data, corpus patterns, and reflection examples simultaneously, with no contradictions across sources. Communication Patterns are equally well-evidenced: direct, structured, averse to generic or performative language, with a gap between how precision reads from the inside (clarity) and how it can land from the outside (impatience or inflexibility in less-structured contexts).</p>
+        <p>The most productive development territory is the intersection of two patterns: the normalization of peer dysfunction over time, and the low Agile score paired with high Adaptable score. Both suggest a leader who can operate well in difficult environments — which is a strength — but who may lose track of the standard they are actually holding themselves and others to when the environment is persistently suboptimal. The monitoring question worth building into the maintenance practice: <em>"Am I adjusting to this environment or improving it?"</em></p>
+        <p><strong>Constructs with insufficient evidence:</strong> Learning Orientation (not enough thin-ice examples in the reflection responses to evaluate learning under genuine failure). Communication Patterns under verbal/informal conditions (corpus captures written professional communication only).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quality-note">
+    <div class="qn-icon">→</div>
+    <div class="qn-text"><strong>What makes a strong Leadership Profile:</strong> Specific evidence citations ("Assessment: Systematic 95%... Corpus: 72 HR Technology conversations..."). Named tensions between sources rather than forced coherence. Confidence levels that vary — a profile where everything is "High" is not more accurate, it is less honest. And at least one "Insufficient Evidence" rating — this signals the AI is being truthful about the limits of what it observed.</div>
+  </div>
+</div>
+
+<!-- PANEL: USER MANUAL -->
+<div class="output-panel" id="panel-manual">
+  <div class="doc-header">
+    <div class="doc-badge d1">Document 01 · Shareable</div>
+    <h2 class="doc-title">Leadership User Manual</h2>
+    <p class="doc-subtitle">3–4 pages. First person. Designed to be shared with a new manager, team member, or trusted collaborator. This is an excerpt — roughly one-third of a full manual.</p>
+    <div class="doc-meta">
+      <span class="doc-meta-item">First person</span>
+      <span class="doc-meta-item">Shareable</span>
+      <span class="doc-meta-item">~3–4 pages full length</span>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <div class="sample-section-label">Section — How I Think</div>
+    <div class="sample-body d1">
+      <div class="sample-text">
+        <p>I think in systems. When I encounter a problem, my first instinct is to look for the structural cause rather than the proximate one. A team that isn't performing isn't usually a talent problem — it is more often a clarity problem, a process problem, or a context problem. I work backwards from the structural root before I consider the individual variables.</p>
+        <p>This produces work I'm proud of. It also produces latency. I move toward the right answer more reliably than toward the fast answer, and I am not always right about which situations require which. When time matters more than precision, I sometimes hold on to rigor past its usefulness.</p>
+        <p>I am most confident in ambiguous situations where the destination is clear but the path is not. I am less effective in situations where the right answer is obvious to everyone but producing it requires navigating process or politics I find genuinely tedious. I can do it — I just do it worse than the other kind of work.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <div class="sample-section-label">Section — Where I Create Friction</div>
+    <div class="sample-body d1">
+      <div class="sample-text">
+        <p><strong>Practical constraint underweighting.</strong> I design for ideal states. The solution I build in my head is usually correct as a long-run architecture and sometimes unworkable given the current constraints. I have learned to ask "what is the minimum viable version of this" explicitly — I do not always remember to do it naturally.</p>
+        <p><strong>Engaging unstructured thinkers.</strong> People who think out loud, who work through ideas messily, who don't have a clear thesis before they start talking — I can work with them, but I move toward structure faster than they need me to. I sometimes close down productive ambiguity in the name of progress.</p>
+        <p><strong>Environment normalization.</strong> I adapt well to difficult conditions. The risk is that I adapt too well — that I stop noticing the gap between what I'm tolerating and what I actually believe is right. This has happened to me. The signal is usually quiet: I notice I've stopped pushing back on something I used to push back on. If you see that, name it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <div class="sample-section-label">Section — My Governing Questions</div>
+    <div class="sample-body d1">
+      <div class="sample-text">
+        <p>These are the questions I run most consequential decisions through, extracted from how I've actually made decisions rather than how I'd describe my decision-making if asked:</p>
+        <p><em>"Does this make the system more trustworthy, more capable, and more connected to the mission — or does it just make it look that way?"</em> This one appears everywhere. It is the question I am really asking when I push back on something that seems like it's working.</p>
+        <p><em>"Can this function without me?"</em> I apply this to every operating model, governance structure, and team design I build. Leader-dependent infrastructure is a structural liability. I design against it.</p>
+        <p><em>"Is this person working toward their ceiling or below it?"</em> I notice this about people quickly and I make decisions based on it. I invest heavily in people working toward their ceiling. I am less patient — more patient than I should be, sometimes — with people who have settled below theirs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quality-note">
+    <div class="qn-icon">→</div>
+    <div class="qn-text"><strong>What makes a strong User Manual:</strong> First person throughout. Sections that name both strengths and friction points with equal specificity. Governing questions that feel extracted from evidence rather than invented from self-image. A "Where I Create Friction" section that is honest rather than performatively humble. The test: would a new direct report who read this know something genuinely useful about how to work with you?</div>
+  </div>
+</div>
+
+<!-- PANEL: WORKING WITH ME -->
+<div class="output-panel" id="panel-wwm">
+  <div class="doc-header">
+    <div class="doc-badge d2">Document 02 · Shareable</div>
+    <h2 class="doc-title">Working-With-Me Guide</h2>
+    <p class="doc-subtitle">One page. Five sections. Readable in under 3 minutes. This is the full document — not an excerpt.</p>
+    <div class="doc-meta">
+      <span class="doc-meta-item">One page</span>
+      <span class="doc-meta-item">Shareable</span>
+      <span class="doc-meta-item">Full document shown</span>
+    </div>
+  </div>
+
+  <div class="sample-body d2">
+    <div class="sample-text">
+      <p><strong>To bring me a problem:</strong> Come with what you know, including what you don't know. I am more useful in an ambiguous situation than a fully-defined one — you don't need to arrive with a recommendation. Bring the question. If you've already identified what you need from me (a decision, a connection, a thought partner), say that at the start. It helps.</p>
+
+      <p><strong>To challenge me effectively:</strong> Use evidence and specific examples. I will update my position if you show me something I haven't accounted for. I will not update it because the disagreement is uncomfortable, because you feel strongly, or because persistence is being used as a substitute for argument. If I seem to have stopped engaging, I've probably already heard the argument and disagree — ask me directly what's not landing for me.</p>
+
+      <p><strong>What I need from you:</strong> Honesty, especially when it's easier not to. I would rather hear something hard than have you protect me from it — I am more receptive to critical feedback than most people expect. Follow-through on what you commit to. And enough scope to figure out the path myself once the destination is clear.</p>
+
+      <p><strong>What you can expect from me:</strong> Direct feedback, delivered with care but not softened into uselessness. Genuine investment in your development — I pay attention to whether you are working toward your ceiling or below it, and I act on what I notice. A high bar for the work, applied to myself as much as to you. I will tell you what I think, including things that are hard to say.</p>
+
+      <p><strong>When I'm struggling — what to watch for:</strong> I stay calm under pressure, which means visible distress is not the signal. The signal is narrowing: I stop initiating conversations, my responses get shorter, I disengage from problems I'd normally lean into. If you notice that pattern, name it directly — I respond well to being asked what's going on rather than having it inferred around me.</p>
+    </div>
+  </div>
+
+  <div class="quality-note">
+    <div class="qn-icon">→</div>
+    <div class="qn-text"><strong>What makes a strong Working-With-Me Guide:</strong> Every sentence should be specific enough that it could not apply to any other leader. "I respond well to feedback" is not useful. "I will not update my position because you feel strongly — show me specific evidence I haven't accounted for" is. The struggling signals section is usually the most valuable part and the most commonly left vague. Name the actual behavioral signal, not the emotional state.</div>
+  </div>
+</div>
+
+<!-- PANEL: AI CALIBRATION -->
+<div class="output-panel" id="panel-acd">
+  <div class="doc-header">
+    <div class="doc-badge d3">Document 03 · Operational</div>
+    <h2 class="doc-title">AI Calibration Document</h2>
+    <p class="doc-subtitle">One page. Paste this at the start of any new AI conversation to accelerate calibration. This is the full document.</p>
+    <div class="doc-meta">
+      <span class="doc-meta-item">One page</span>
+      <span class="doc-meta-item">Paste into AI tools</span>
+      <span class="doc-meta-item">Full document shown</span>
+    </div>
+  </div>
+
+  <div class="sample-body d3">
+    <div class="sample-text">
+      <p><strong>My communication style and voice:</strong> Direct, precise, and analytically grounded. I write in complete sentences with real punctuation. I find bullet-point summaries without connective tissue frustrating — they break the logic rather than conveying it. Generic outputs read immediately as generic to me; the fastest way to calibrate is to be more specific than you think you need to be. I prefer being told something I don't want to hear over having it softened into ambiguity.</p>
+
+      <p><strong>My operating principles:</strong> Infrastructure before individual — I build systems before I rely on people to carry them. Substance before appearance — I will always choose something that works over something that looks like it works. Data honesty is non-negotiable — if the numbers don't support the conclusion, say so. Zero tolerance for sycophancy in either direction — I don't want flattery from you, and I won't ask you to produce work that flatters others.</p>
+
+      <p><strong>How to give me feedback:</strong> Say it directly. I am not fragile about this. If my framing is wrong, tell me specifically why and what I missed. If my output is weak, name the specific weakness rather than softening it. If you disagree with my approach, argue for a different one with evidence rather than hedging. I'd rather have a productive disagreement than a false agreement.</p>
+
+      <p><strong>What good output looks like to me:</strong> Specific, structured, and evidence-grounded. The argument should be traceable — I should be able to see why each conclusion follows from what preceded it. The format should match the complexity: a simple answer to a simple question, a more developed framework for a complex one. If I ask for a draft, I mean a real draft — not a template with placeholders.</p>
+
+      <p><strong>My governing question:</strong> "Does this make the system more trustworthy, more capable, and more connected to the mission — or does it just make it look that way?" Apply this when framing tradeoffs, evaluating options, or flagging risks. I would rather surface a hard truth early than discover it late.</p>
+    </div>
+  </div>
+
+  <div class="quality-note">
+    <div class="qn-icon">→</div>
+    <div class="qn-text"><strong>What makes a strong AI Calibration Document:</strong> The test is whether pasting it at the start of a conversation actually changes how the AI responds. If it could apply to any thoughtful professional, it is not specific enough. The governing question section is particularly important — it shapes how the AI frames tradeoffs in every subsequent output. Update this document whenever your communication preferences evolve.</div>
+  </div>
+</div>
+
+<!-- PANEL: DEV ROADMAP -->
+<div class="output-panel" id="panel-roadmap">
+  <div class="doc-header">
+    <div class="doc-badge d4">Document 04 · Private</div>
+    <h2 class="doc-title">Development Roadmap</h2>
+    <p class="doc-subtitle">Private. Not for sharing. This is an excerpt — the Development Priorities section. The full document also includes a 90-day focus and monitoring questions.</p>
+    <div class="doc-meta">
+      <span class="doc-meta-item">Private — do not share</span>
+      <span class="doc-meta-item">Update every 90 days</span>
+      <span class="doc-meta-item">Excerpt shown</span>
+    </div>
+  </div>
+
+  <div class="sample-section">
+    <div class="sample-section-label">Development Priorities — excerpt of 2 of 5</div>
+    <div class="sample-body d4">
+      <div class="sample-text">
+        <p><strong>Priority 1: Practical constraint underweighting</strong></p>
+        <p><em>The mechanism:</em> Very high Openness to Experience combined with very low Practical orientation means I reflexively design for ideal states. This is a genuine strength when I have the mandate and timeline to build the right thing. It creates friction when the situation requires a workable imperfect solution now and I haven't recognized that the situation has changed.</p>
+        <p><em>The trigger:</em> Early-stage problem definition, when I'm generating frameworks and architectures. This is when the pull toward the ideal is strongest and the cost of the ideal is least visible.</p>
+        <p><em>The practice:</em> Before committing to an architecture or framework, explicitly ask: "What is the minimum viable version of this that would actually solve the problem?" Sit with the answer for a beat before building toward the ideal. The question is a forcing function, not an instruction to always choose the minimum — it surfaces the choice that I otherwise make automatically.</p>
+
+        <p style="margin-top:1.5rem;"><strong>Priority 2: Peer environment normalization</strong></p>
+        <p><em>The mechanism:</em> High Forgiveness (6.50) combined with high Flexibility (6.65) and low Anxiety (4.18) means I adapt to difficult environments without visible distress — and can end up having normalized things I should be challenging. The accommodation happens beneath the surface. It doesn't show up as agitation; it shows up as quiet acceptance of a standard I'd previously refused.</p>
+        <p><em>The trigger:</em> Prolonged exposure to peer dysfunction — specifically, repeated instances where I've made the pragmatic choice to let something go rather than name it. Each individual choice seems reasonable. The pattern is the problem.</p>
+        <p><em>The practice:</em> Quarterly check-in against a single question: "Am I adjusting to this environment or improving it?" This is not a call to constant confrontation — it is a call to notice. The goal is to catch the normalization before it has been running for months.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quality-note">
+    <div class="qn-icon">→</div>
+    <div class="qn-text"><strong>What makes a strong Development Roadmap:</strong> Mechanistically specific priorities — not "work on communication" but "in situations where X happens, the pattern is Y, and the practice is Z." The trigger is as important as the mechanism — knowing what activates a pattern is what makes it actionable. Practices should be concrete enough to do, not aspirational enough to ignore. This document should be harder to read than the User Manual. If it isn't, the AI is being too gentle.</div>
+  </div>
+</div>
+
+<footer>
+  <a href="https://mikecilla.com" class="footer-mark">Mike Cilla<span>.</span></a>
+  <div class="footer-disc">Sample outputs redacted from a real Leadership OS session. Leadership OS is a reflection and development methodology — not an assessment, diagnosis, or prediction instrument. © 2026 Mike Cilla</div>
+</footer>
+
+<script>
+function showPanel(id) {
+  document.querySelectorAll('.output-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.on-tab').forEach(function(t){ t.classList.remove('active'); });
+  var panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  event.target.classList.add('active');
+  // Scroll to just below the tabs
+  document.getElementById('output-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
