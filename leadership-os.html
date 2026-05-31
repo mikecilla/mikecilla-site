@@ -171,13 +171,13 @@ section{padding:3.25rem 4vw;}
 
 /* ABOUT */
 #about{background:var(--void);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
 .about-body{font-size:1.1rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
 .about-body p+p{margin-top:1.25rem;}
 .about-creds{margin-top:2rem;display:flex;flex-direction:column;}
-.about-cred{border-top:1px solid var(--rule);padding:0.85rem 0;display:flex;gap:1rem;align-items:flex-start;}
-.about-cred-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);padding-top:0.15rem;min-width:90px;flex-shrink:0;}
-.about-cred-value{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.7;}
+.about-cred{border-top:1px solid var(--rule);padding:0.85rem 0;display:grid;grid-template-columns:100px 1fr;gap:0.75rem;align-items:baseline;}
+.about-cred-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);padding-top:0.1rem;}
+.about-cred-value{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.7;min-width:0;word-break:break-word;}
 .about-cards{display:flex;flex-direction:column;gap:1.25rem;}
 .about-card{background:var(--deep);border:1px solid var(--rule);padding:1.35rem;border-left:3px solid var(--gold);}
 .about-card-label{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
@@ -261,6 +261,8 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 }
 /* MOBILE */
 @media(max-width:768px){
+  .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .about-cred{grid-template-columns:80px 1fr;}
   section{padding:4rem 1.25rem;}
   #explainer{padding:4rem 1.25rem;}
   .explainer-flow{grid-template-columns:1fr;}
@@ -286,54 +288,6 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 </header>
 
 <!-- HERO -->
-<!-- START HERE -->
-<section id="start-here" style="background:var(--ink);padding:4.5rem 4vw 4rem;scroll-margin-top:52px;">
-  <div style="max-width:900px;">
-    <div style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.65rem;">
-      <span style="display:block;width:1.5rem;height:1px;background:rgba(201,132,58,0.5);"></span>
-      The complete process at a glance
-    </div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.05;color:#f0ece4;margin-bottom:0.25rem;">Six steps.<br><span style="font-style:italic;font-weight:600;color:#c9843a;">90–120 minutes.</span></h2>
-    <p style="font-size:1.05rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.9;margin:1rem 0 2.5rem;max-width:560px;">Complete all six steps in one sitting. Open the Starter Kit — it contains every prompt, every instruction, and every checkpoint in one place.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(240,236,228,0.08);border:1px solid rgba(240,236,228,0.08);margin-bottom:2rem;">
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 1 · 20 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Take PrinciplesYou</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Free personality assessment. The scientific anchor. Save your full results.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 2 · 15 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Run Corpus Audit</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Paste one prompt into your AI tool. It reflects on behavioral patterns from your conversation history.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 3 · 35 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Complete Reflection</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Six structured prompts. Writing, voice, or guided AI interview. Specific examples only — generalities produce generic outputs.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 4 · 15 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Analysis Engine</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">One initialization prompt teaches your AI the Leadership OS methodology. Then you provide all three evidence inputs.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 4b · 10 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Construct Analysis</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">The AI evaluates nine leadership constructs across all evidence sources and builds your Leadership Profile — the foundation for your output documents.</div>
-      </div>
-      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 5 · 20 min</div>
-        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Generate Outputs</div>
-        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Four documents generated from your Leadership Profile: User Manual, Working-With-Me Guide, AI Calibration Document, Development Roadmap.</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-      <a href="leadership-os-starter-kit.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:#c9843a;color:#0c0b0a;padding:0.9rem 2rem;font-family:var(--ff-body);font-size:0.92rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8b87a'" onmouseout="this.style.background='#c9843a'">Start Leadership OS →</a>
-      <a href="leadership-os-sample-outputs.html" style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,236,228,0.45);text-decoration:none;transition:color 0.2s;border:1px solid rgba(240,236,228,0.15);padding:0.9rem 1.5rem;" onmouseover="this.style.color='#c9843a';this.style.borderColor='rgba(201,132,58,0.4)'" onmouseout="this.style.color='rgba(240,236,228,0.45)';this.style.borderColor='rgba(240,236,228,0.15)'">See sample outputs</a>
-    </div>
-  </div>
-</section>
-
 <section id="hero">
 
   <!-- LEFT: Value-first copy -->
@@ -387,7 +341,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
   <!-- RIGHT: High-fidelity AI output mockup -->
   <div class="hero-right">
-    <div class="profile-mockup reveal" style="transition-delay:.15s">
+    <div class="profile-mockup">
       <div class="pm-topbar">
         <div class="pm-dots"><span></span><span></span><span></span></div>
         <div class="pm-title">Leadership OS · Analysis Engine</div>
@@ -526,6 +480,56 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
         <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(240,236,228,0.4);padding:0.35rem;border:1px solid rgba(240,236,228,0.1);background:#131211;">4 working documents</div>
       </div>
     </div>
+
+
+<!-- START HERE -->
+<section id="start-here" style="background:var(--ink);padding:4.5rem 4vw 4rem;scroll-margin-top:52px;">
+  <div style="max-width:900px;">
+    <div style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.65rem;">
+      <span style="display:block;width:1.5rem;height:1px;background:rgba(201,132,58,0.5);"></span>
+      The complete process at a glance
+    </div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.05;color:#f0ece4;margin-bottom:0.25rem;">Six steps.<br><span style="font-style:italic;font-weight:600;color:#c9843a;">90–120 minutes.</span></h2>
+    <p style="font-size:1.05rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.9;margin:1rem 0 2.5rem;max-width:560px;">Complete all six steps in one sitting. Open the Starter Kit — it contains every prompt, every instruction, and every checkpoint in one place.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(240,236,228,0.08);border:1px solid rgba(240,236,228,0.08);margin-bottom:2rem;">
+      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
+        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 1 · 20 min</div>
+        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Take PrinciplesYou</div>
+        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Free personality assessment. The scientific anchor. Save your full results.</div>
+      </div>
+      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
+        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 2 · 15 min</div>
+        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Run Corpus Audit</div>
+        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Paste one prompt into your AI tool. It reflects on behavioral patterns from your conversation history.</div>
+      </div>
+      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
+        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 3 · 35 min</div>
+        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Complete Reflection</div>
+        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Six structured prompts. Writing, voice, or guided AI interview. Specific examples only — generalities produce generic outputs.</div>
+      </div>
+      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
+        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 4 · 15 min</div>
+        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Analysis Engine</div>
+        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">One initialization prompt teaches your AI the Leadership OS methodology. Then you provide all three evidence inputs.</div>
+      </div>
+      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
+        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 4b · 10 min</div>
+        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Construct Analysis</div>
+        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">The AI evaluates nine leadership constructs across all evidence sources and builds your Leadership Profile — the foundation for your output documents.</div>
+      </div>
+      <div style="background:#1a1917;padding:1.5rem 1.25rem;">
+        <div style="font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Step 5 · 20 min</div>
+        <div style="font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:#f0ece4;margin-bottom:0.35rem;">Generate Outputs</div>
+        <div style="font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.7;">Four documents generated from your Leadership Profile: User Manual, Working-With-Me Guide, AI Calibration Document, Development Roadmap.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+      <a href="leadership-os-starter-kit.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:#c9843a;color:#0c0b0a;padding:0.9rem 2rem;font-family:var(--ff-body);font-size:0.92rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8b87a'" onmouseout="this.style.background='#c9843a'">Start Leadership OS →</a>
+      <a href="leadership-os-sample-outputs.html" style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,236,228,0.45);text-decoration:none;transition:color 0.2s;border:1px solid rgba(240,236,228,0.15);padding:0.9rem 1.5rem;" onmouseover="this.style.color='#c9843a';this.style.borderColor='rgba(201,132,58,0.4)'" onmouseout="this.style.color='rgba(240,236,228,0.45)';this.style.borderColor='rgba(240,236,228,0.15)'">See sample outputs</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- COMPLETE WORKFLOW -->
 <section id="workflow" style="scroll-margin-top:52px;">
@@ -1259,47 +1263,71 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 (function() {
   var target = document.getElementById('pm-typed-text');
   if (!target) return;
-  
-  // Only animate if IntersectionObserver available and not prefers-reduced-motion
+
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
+
+  // The full text segments — manually split around the <em> tag
+  var segments = [
+    { text: 'Delegation appears less constrained by trust and more constrained by personal quality standards. The growth edge is not “delegate more” — it is defining what good enough looks like ', em: false },
+    { text: 'before', em: true },
+    { text: ' the work begins, not after.', em: false }
+  ];
+
+  var fullText = segments.map(function(s){ return s.text; }).join('');
   
-  var fullHTML = target.innerHTML;
-  var fullText = target.textContent;
-  
-  // Wait for element to be visible
-  var observer = new IntersectionObserver(function(entries) {
-    if (!entries[0].isIntersecting) return;
-    observer.disconnect();
-    
-    // Small delay then start typing
-    setTimeout(function() {
-      target.innerHTML = '<span class="pm-cursor"></span>';
-      var i = 0;
-      var speed = 22; // ms per char
-      
-      function typeNext() {
-        if (i >= fullText.length) {
-          // Done — restore full HTML (handles em tags etc)
-          target.innerHTML = fullHTML;
-          return;
-        }
-        // Handle em tags
-        if (fullText[i] === 'b' && fullText.slice(i, i+6) === 'before') {
-          target.innerHTML = fullText.slice(0, i) + '<em>before</em>' + fullText.slice(i+6, i+6) + '<span class="pm-cursor"></span>';
-        } else {
-          target.innerHTML = fullText.slice(0, i + 1) + '<span class="pm-cursor"></span>';
-        }
-        i++;
-        setTimeout(typeNext, speed + Math.random() * 12);
+  // Start with empty, show cursor
+  target.innerHTML = '';
+  var cursor = document.createElement('span');
+  cursor.className = 'pm-cursor';
+  target.appendChild(cursor);
+
+  var segIdx = 0;
+  var charIdx = 0;
+  var built = ''; // plain text built so far
+  var delay = 1800; // start after 1.8s (lets hero fully animate in first)
+
+  function typeNext() {
+    if (segIdx >= segments.length) {
+      // Finished — remove cursor, done
+      target.innerHTML = renderBuilt(segments, segIdx, charIdx);
+      return;
+    }
+
+    var seg = segments[segIdx];
+    if (charIdx < seg.text.length) {
+      charIdx++;
+    } else {
+      segIdx++;
+      charIdx = 0;
+      if (segIdx >= segments.length) {
+        target.innerHTML = renderBuilt(segments, segIdx, charIdx);
+        return;
       }
-      
-      // Short pause before typing begins
-      setTimeout(typeNext, 600);
-    }, 400);
-  }, { threshold: 0.5 });
-  
-  observer.observe(target);
+    }
+
+    target.innerHTML = renderBuilt(segments, segIdx, charIdx) + '<span class="pm-cursor"></span>';
+    var speed = 18 + Math.random() * 14;
+    setTimeout(typeNext, speed);
+  }
+
+  function renderBuilt(segs, curSegIdx, curCharIdx) {
+    var html = '';
+    for (var i = 0; i < segs.length; i++) {
+      if (i < curSegIdx) {
+        html += segs[i].em ? '<em>' + segs[i].text + '</em>' : segs[i].text;
+      } else if (i === curSegIdx) {
+        var partial = segs[i].text.slice(0, curCharIdx);
+        html += segs[i].em ? '<em>' + partial + '</em>' : partial;
+        break;
+      } else {
+        break;
+      }
+    }
+    return html;
+  }
+
+  setTimeout(typeNext, delay);
 })();
 
 </script>
