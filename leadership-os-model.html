@@ -39,25 +39,25 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-body);font-siz
 .h-mark{font-family:var(--ff-display);font-size:1rem;font-weight:400;letter-spacing:0.06em;color:var(--ink);text-decoration:none;}
 .h-mark span{color:var(--gold);}
 .h-nav{display:flex;align-items:center;gap:2rem;}
-.h-nav a{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
+.h-nav a{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
 .h-nav a:hover{color:var(--gold);}
 
 /* HERO */
 #hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;padding:calc(64px + 3.5vw) 4vw 3.5vw;background:var(--void);position:relative;overflow:hidden;}
 #hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,22,18,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,18,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
 .hero-inner{max-width:860px;}
-.hero-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-eyebrow{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
 .hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);}
 .hero-title{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;line-height:0.98;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.2em;}
 .hero-title em{font-style:italic;font-weight:600;color:var(--gold);}
 .hero-title .block{display:block;}
 .hero-sub{font-family:var(--ff-display);font-size:clamp(1.15rem,1.8vw,1.5rem);font-weight:300;font-style:italic;color:var(--ink-dim);border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0 2rem;line-height:1.55;max-width:640px;}
 .hero-desc{font-size:1.12rem;font-weight:300;color:var(--ink-dim);line-height:2.0;max-width:640px;margin-bottom:1.5rem;}
-.hero-caveat{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.1em;color:rgba(26,22,18,0.35);line-height:1.7;max-width:560px;padding:1rem 1.25rem;border:1px solid var(--rule);background:var(--deep);}
+.hero-caveat{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.1em;color:rgba(26,22,18,0.35);line-height:1.7;max-width:560px;padding:1rem 1.25rem;border:1px solid var(--rule);background:var(--deep);}
 
 /* SECTION COMMONS */
 section{padding:3.25rem 4vw;}
-.s-label{font-family:var(--ff-mono);font-size:0.72rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+.s-label{font-family:var(--ff-mono);font-size:1.07rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
 .s-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
 .section-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.75rem;}
 .section-headline em{font-style:italic;font-weight:600;color:var(--gold);}
@@ -68,24 +68,24 @@ section{padding:3.25rem 4vw;}
 .evidence-model{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto;gap:0;align-items:stretch;margin-bottom:2.75rem;border:1px solid var(--rule);background:var(--rule);}
 .ev-source{background:var(--surface);padding:1.5rem 1.6rem;}
 .ev-source-icon{font-size:1.75rem;margin-bottom:0.75rem;display:block;}
-.ev-source-tag{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;}
+.ev-source-tag{font-family:var(--ff-mono);font-size:0.81rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;}
 .ev-source-tag.s1{color:var(--c1);}
 .ev-source-tag.s2{color:var(--c2);}
 .ev-source-tag.s3{color:var(--c3);}
 .ev-source-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem;}
-.ev-source-subtitle{font-family:var(--ff-display);font-size:0.95rem;font-style:italic;color:var(--ink-dim);margin-bottom:0.85rem;}
-.ev-source-desc{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.ev-source-subtitle{font-family:var(--ff-display);font-size:1.0rem;font-style:italic;color:var(--ink-dim);margin-bottom:0.85rem;}
+.ev-source-desc{font-size:1.02rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
 .ev-connector{background:var(--void);display:flex;align-items:center;justify-content:center;padding:0 1.25rem;font-size:1.5rem;color:var(--gold);opacity:0.4;font-family:var(--ff-display);}
 .ev-output{background:var(--ink);padding:1.5rem 1.6rem;display:flex;flex-direction:column;justify-content:center;}
-.ev-output-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:0.5rem;}
+.ev-output-label{font-family:var(--ff-mono);font-size:0.81rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:0.5rem;}
 .ev-output-title{font-family:var(--ff-display);font-size:1.5rem;font-weight:600;color:#f0ece4;line-height:1.2;margin-bottom:0.5rem;}
-.ev-output-desc{font-size:0.95rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.85;}
+.ev-output-desc{font-size:1.0rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.85;}
 
 .evidence-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
 .ew-card{background:var(--surface);padding:1.35rem;}
-.ew-card-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.ew-card-label{font-family:var(--ff-mono);font-size:0.81rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
 .ew-card-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;line-height:1.25;}
-.ew-card-desc{font-size:0.97rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.ew-card-desc{font-size:1.02rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
 
 /* CONSTRUCTS */
 #constructs{background:var(--void);}
@@ -95,16 +95,16 @@ section{padding:3.25rem 4vw;}
 .construct-header{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.35rem 0;cursor:pointer;transition:border-color 0.2s;}
 .construct-header:hover .construct-name{color:var(--gold);}
 .construct-meta{display:flex;align-items:center;gap:1.5rem;}
-.construct-num{font-family:var(--ff-mono);font-size:0.62rem;color:var(--gold);opacity:0.5;}
+.construct-num{font-family:var(--ff-mono);font-size:0.81rem;color:var(--gold);opacity:0.5;}
 .construct-name{font-family:var(--ff-display);font-size:1.35rem;font-weight:600;color:var(--ink);line-height:1.2;transition:color 0.2s;}
-.construct-tagline{font-family:var(--ff-display);font-size:0.95rem;font-style:italic;font-weight:300;color:var(--ink-dim);margin-top:0.2rem;}
-.construct-toggle{font-family:var(--ff-mono);font-size:0.72rem;color:var(--gold);opacity:0.5;transition:transform 0.3s;}
+.construct-tagline{font-family:var(--ff-display);font-size:1.0rem;font-style:italic;font-weight:300;color:var(--ink-dim);margin-top:0.2rem;}
+.construct-toggle{font-family:var(--ff-mono);font-size:1.07rem;color:var(--gold);opacity:0.5;transition:transform 0.3s;}
 .construct.open .construct-toggle{transform:rotate(180deg);}
 .construct-body{display:none;padding-bottom:2.25rem;}
 .construct.open .construct-body{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
 .cb-cell{background:var(--deep);padding:1.5rem;}
 .cb-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.65rem;}
-.cb-text{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.cb-text{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
 .cb-text.limitation{color:rgba(26,22,18,0.45);font-style:italic;}
 
 /* RESEARCH STREAMS */
@@ -116,7 +116,7 @@ section{padding:3.25rem 4vw;}
 .rs-item{background:var(--surface);padding:1.5rem 1.75rem;display:grid;grid-template-columns:3rem 1fr;gap:1.25rem;align-items:start;}
 .rs-icon{font-size:1.4rem;line-height:1;}
 .rs-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
-.rs-desc{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.rs-desc{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
 .rs-refs{font-family:var(--ff-mono);font-size:0.6rem;color:rgba(26,22,18,0.32);margin-top:0.35rem;line-height:1.5;}
 
 /* FUTURE ARCHITECTURE */
@@ -129,8 +129,8 @@ section{padding:3.25rem 4vw;}
 .ff-step:last-child{border-bottom:1px solid var(--rule);}
 .ff-icon{font-size:1.25rem;line-height:1;padding-top:0.1rem;}
 .ff-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
-.ff-desc{font-size:0.95rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
-.ff-arrow{text-align:center;font-family:var(--ff-mono);font-size:0.65rem;color:var(--gold);opacity:0.4;padding:0.25rem 0;letter-spacing:0.1em;}
+.ff-desc{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.ff-arrow{text-align:center;font-family:var(--ff-mono);font-size:1.07rem;color:var(--gold);opacity:0.4;padding:0.25rem 0;letter-spacing:0.1em;}
 
 .future-hypotheses{margin-top:3.5rem;}
 .fh-headline{font-family:var(--ff-display);font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:0.5rem;}
@@ -144,22 +144,22 @@ section{padding:3.25rem 4vw;}
 /* HONESTY STATEMENT */
 #honesty{background:var(--ink);padding:3.25rem 4vw;text-align:center;}
 .honesty-inner{max-width:680px;margin:0 auto;}
-.honesty-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:1.25rem;}
+.honesty-label{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:1.25rem;}
 .honesty-quote{font-family:var(--ff-display);font-size:clamp(1.3rem,2.5vw,1.9rem);font-style:italic;font-weight:300;color:#f0ece4;line-height:1.45;margin-bottom:1.5rem;}
-.honesty-body{font-size:0.97rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.9;max-width:560px;margin:0 auto;}
+.honesty-body{font-size:1.02rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.9;max-width:560px;margin:0 auto;}
 
 /* NAV LINKS */
 .page-nav{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem;}
-.nav-link{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
+.nav-link{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
 .nav-link:hover{background:var(--gold-dim);}
 .nav-link.dark{color:rgba(240,236,228,0.5);border-color:rgba(240,236,228,0.15);}
 .nav-link.dark:hover{color:#c9843a;border-color:rgba(201,132,58,0.4);}
 
 /* FOOTER */
 footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;justify-content:space-between;}
-.footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:rgba(240,236,228,0.3);text-decoration:none;}
+.footer-mark{font-family:var(--ff-display);font-size:1.0rem;color:rgba(240,236,228,0.3);text-decoration:none;}
 .footer-mark span{color:rgba(201,132,58,0.5);}
-.footer-note{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.08em;color:rgba(240,236,228,0.12);}
+.footer-note{font-family:var(--ff-mono);font-size:1.01rem;letter-spacing:0.06em;color:rgba(240,236,228,0.18);}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1);}
@@ -280,48 +280,48 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);">
         <div style="background:var(--surface);padding:0.85rem 1rem;cursor:pointer;" onclick="document.querySelector('.construct').click()">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:#5B5BD6;margin-bottom:0.2rem;">01</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Reflection Orientation</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Examining experience deliberately</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Reflection Orientation</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Examining experience deliberately</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:#5B5BD6;margin-bottom:0.2rem;">02</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Systems Orientation</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Structural vs. proximate framing</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Systems Orientation</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Structural vs. proximate framing</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:#5B5BD6;margin-bottom:0.2rem;">03</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Learning Orientation</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Treating experience as developmental material</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Learning Orientation</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Treating experience as developmental material</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;">04</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Decision Style</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Characteristic approach under uncertainty</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Decision Style</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Characteristic approach under uncertainty</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;">05</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Communication Patterns</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Structuring, delivering, receiving</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Communication Patterns</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Structuring, delivering, receiving</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;">06</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Leadership Identity</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Role understanding and becoming</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Leadership Identity</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Role understanding and becoming</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:#1D9E75;margin-bottom:0.2rem;">07</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Adaptability</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Adjusting in response to changed conditions</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Adaptability</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Adjusting in response to changed conditions</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:#1D9E75;margin-bottom:0.2rem;">08</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Self-Awareness</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Accuracy of self-model vs. observed behavior</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Self-Awareness</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Accuracy of self-model vs. observed behavior</div>
         </div>
         <div style="background:var(--surface);padding:0.85rem 1rem;">
           <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:#1D9E75;margin-bottom:0.2rem;">09</div>
-          <div style="font-family:var(--ff-d);font-size:0.95rem;font-weight:600;color:var(--ink);">Development Readiness</div>
-          <div style="font-size:0.78rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Current capacity for deliberate growth</div>
+          <div style="font-family:var(--ff-d);font-size:1.0rem;font-weight:600;color:var(--ink);">Development Readiness</div>
+          <div style="font-size:0.98rem;color:var(--ink-dim);line-height:1.5;margin-top:0.15rem;">Current capacity for deliberate growth</div>
         </div>
       </div>
       <div style="padding:0.6rem 1.25rem;border-top:1px solid var(--rule);background:var(--deep);font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.08em;color:rgba(26,22,18,0.32);">These are developmental hypotheses under exploration — not validated psychometric dimensions. Expand each below for full definition, evidence sources, and limitations.</div>
@@ -506,7 +506,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       <div style="padding:0.65rem 1.25rem;border-bottom:1px solid var(--rule);background:var(--deep);">
         <span style="font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">How the AI handles conflicting evidence</span>
       </div>
-      <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+      <table style="width:100%;border-collapse:collapse;font-size:1.0rem;">
         <thead>
           <tr style="background:var(--deep);">
             <th style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:0.6rem 1rem;border-bottom:1px solid var(--rule);text-align:left;font-weight:400;">Assessment</th>
@@ -520,31 +520,31 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">High X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">High X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">Reports High X</td>
-            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.7rem;color:#1D9E75;">High confidence — all sources converge</td>
+            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.76rem;color:#1D9E75;">High confidence — all sources converge</td>
           </tr>
           <tr>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">High X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">Low X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">Reports High X</td>
-            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.7rem;color:var(--gold);">Flag as tension — assessment/behavior diverge</td>
+            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.76rem;color:var(--gold);">Flag as tension — assessment/behavior diverge</td>
           </tr>
           <tr>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">High X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">High X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">Reports Low X</td>
-            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.7rem;color:var(--gold);">Self-awareness gap hypothesis — surface it</td>
+            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.76rem;color:var(--gold);">Self-awareness gap hypothesis — surface it</td>
           </tr>
           <tr>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">Low X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">High X</td>
             <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);color:var(--ink-dim);">Reports High X</td>
-            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.7rem;color:var(--gold);">Behavioral evidence prioritized — moderate confidence</td>
+            <td style="padding:0.6rem 1rem;border-bottom:1px solid var(--rule);font-family:var(--ff-m);font-size:0.76rem;color:var(--gold);">Behavioral evidence prioritized — moderate confidence</td>
           </tr>
           <tr>
             <td style="padding:0.6rem 1rem;color:var(--ink-dim);">All diverge</td>
             <td style="padding:0.6rem 1rem;color:var(--ink-dim);">—</td>
             <td style="padding:0.6rem 1rem;color:var(--ink-dim);">—</td>
-            <td style="padding:0.6rem 1rem;font-family:var(--ff-m);font-size:0.7rem;color:rgba(26,22,18,0.4);">Insufficient evidence — surface as open question</td>
+            <td style="padding:0.6rem 1rem;font-family:var(--ff-m);font-size:0.76rem;color:rgba(26,22,18,0.4);">Insufficient evidence — surface as open question</td>
           </tr>
         </tbody>
       </table>
