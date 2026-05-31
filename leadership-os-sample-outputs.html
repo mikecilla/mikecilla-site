@@ -41,7 +41,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 /* SIDEBAR */
 #sidebar{position:sticky;top:48px;height:calc(100vh - 48px);overflow-y:auto;border-right:1px solid var(--rule);padding:1.5rem 0;background:var(--void);}
 .sb-head{padding:0.75rem 1.25rem 0.5rem;}
-.sb-persona{background:var(--deep);border:1px solid var(--rule);padding:0.85rem 1rem;margin:0 0.75rem 1rem;}
+.sb-persona{background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:0.85rem 1rem;margin:0 0.75rem 1rem;}
 .sb-avatar{width:38px;height:38px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:1rem;font-weight:600;color:var(--void);margin-bottom:0.5rem;}
 .sb-name{font-family:var(--ff-d);font-size:1.04rem;font-weight:600;color:var(--ink);margin-bottom:0.1rem;}
 .sb-role{font-size:1.06rem;color:var(--ink-dim);line-height:1.45;}
@@ -59,11 +59,11 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 
 /* MAIN CONTENT */
 #main-content{overflow-y:auto;min-width:0;}
-.panel{display:none;padding:1.5rem 1.75rem;width:100%;}
+.panel{display:none;padding:1.25rem 1.75rem;width:100%;}
 .panel.active{display:block;width:100%;box-sizing:border-box;}
 
 /* DOC HEADER */
-.dh{display:grid;grid-template-columns:1fr auto;align-items:start;gap:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--rule);margin-bottom:1.75rem;}
+.dh{display:grid;grid-template-columns:1fr auto;align-items:start;gap:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--rule);margin-bottom:1.5rem;}
 .dbadge{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.25rem 0.65rem;border:1px solid;margin-bottom:0.5rem;display:inline-block;}
 .dbadge.d1{color:var(--c5);border-color:rgba(127,119,221,0.3);background:rgba(127,119,221,0.06);}
 .dbadge.d2{color:var(--c1);border-color:rgba(91,91,214,0.3);background:rgba(91,91,214,0.06);}
@@ -99,12 +99,12 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 
 /* CONSTRUCT ROWS — landscape */
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:1.25rem;}
-.cr-table{width:100%;border-collapse:collapse;font-size:1.0rem;min-width:640px;}
+.cr-table{width:100%;border-collapse:collapse;font-size:1.0rem;min-width:600px;table-layout:fixed;}
 .cr-table th{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:0.5rem 0.85rem;border-bottom:2px solid var(--rule);text-align:left;font-weight:400;}
 .cr-table td{padding:0.9rem 1rem;border-bottom:1px solid var(--rule);vertical-align:top;}
 .cr-table tr:last-child td{border-bottom:none;}
 .cr-table tr:hover td{background:rgba(26,22,18,0.02);}
-.cr-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:var(--ink);}
+.cr-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:var(--ink);white-space:normal;}
 .cr-conf{font-family:var(--ff-m);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.5rem;white-space:nowrap;}
 .cr-conf.hi{color:var(--c3);background:rgba(29,158,117,0.09);border:1px solid rgba(29,158,117,0.2);}
 .cr-conf.mo{color:var(--gold);background:var(--gd);border:1px solid rgba(184,103,30,0.2);}
@@ -114,7 +114,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .cr-implication{font-family:var(--ff-m);font-size:0.6rem;color:var(--ink-dim);opacity:0.65;margin-top:0.35rem;line-height:1.5;}
 
 /* SUMMARY BLOCK */
-.summary-block{background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;margin-bottom:1.25rem;}
+.summary-block{background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:1.4rem 1.6rem;margin-bottom:1.25rem;}
 .sb-slabel{font-family:var(--ff-m);font-size:0.86rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
 .sb-stext{font-size:1.07rem;color:var(--ink-dim);line-height:1.9;}
 .sb-stext p{margin-bottom:0.95rem;}
@@ -122,7 +122,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .sb-stext strong{font-weight:500;color:var(--ink);}
 
 /* QUALITY NOTE */
-.qn{background:var(--deep);border:1px solid var(--rule);padding:0.85rem 1.1rem;display:flex;gap:0.6rem;margin-top:1rem;}
+.qn{background:var(--deep);border:1px solid var(--rule);border-left:2px solid var(--gold);padding:0.85rem 1.1rem;display:flex;gap:0.6rem;margin-top:1.25rem;}
 .qni{color:var(--gold);flex-shrink:0;font-size:1.05rem;margin-top:0.1rem;}
 .qnt{font-size:1.07rem;color:var(--ink-dim);line-height:1.75;}
 .qnt strong{font-weight:500;color:var(--ink);}
@@ -223,10 +223,10 @@ footer{background:#131211;padding:1.25rem 2rem;display:flex;align-items:center;j
   <table class="cr-table">
     <thead>
       <tr>
-        <th style="width:140px;">Construct</th>
-        <th style="width:100px;">Confidence</th>
-        <th>Evidence synthesis</th>
-        <th style="width:180px;">Developmental implication</th>
+        <th style="width:130px;">Construct</th>
+        <th style="width:105px;">Confidence</th>
+        <th style="width:54%;">Evidence synthesis</th>
+        <th style="width:25%;">Developmental implication</th>
       </tr>
     </thead>
     <tbody>
