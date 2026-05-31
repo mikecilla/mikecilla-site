@@ -562,17 +562,11 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
         <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View ingestion prompt</button>
         <div class="wf-prompt-box">
           <div class="wf-prompt-label">Assessment Ingestion Prompt — paste into your AI after sharing your results</div>
-          <div class="wf-prompt-text">I'm going to share my PrinciplesYou personality assessment results with you. I'd like you to ingest this as foundational context — not as a definitive description of who I am, but as a set of validated hypotheses about my tendencies that we'll test against behavioral evidence in the next steps.
+          <div class="wf-prompt-text" id="">The Starter Kit contains the complete, governed version of this prompt.
+The assessment ingestion prompt teaches your AI how to treat assessment results as
+developmental hypotheses rather than objective facts — and what not to claim from them.
 
-As you read the results, please note:
-1. My primary archetype and what it suggests about how I organize, communicate, and lead
-2. My secondary attributes and where they complement or create tension with the primary
-3. Any facet-level scores that seem unusually high or low
-4. The archetypes I'm least like — these are often as informative as the primary
-
-Please don't interpret these results yet. Just acknowledge that you've ingested them and summarize the 3-4 most notable patterns you observed. We'll use these as anchors throughout the rest of the Leadership OS process.
-
-[Paste your PrinciplesYou results here]</div>
+Open the Starter Kit → Section 4 → Initialization Prompt</div>
           <div class="wf-prompt-footer">
             <span class="wf-prompt-note">Works with ChatGPT, Claude, Gemini, or any frontier model. Keep this conversation open — all subsequent prompts build on this context.</span>
             <button class="copy-btn" onclick="copyText(this, `I'm going to share my PrinciplesYou personality assessment results with you. I'd like you to ingest this as foundational context — not as a definitive description of who I am, but as a set of validated hypotheses about my tendencies that we'll test against behavioral evidence in the next steps.\n\nAs you read the results, please note:\n1. My primary archetype and what it suggests about how I organize, communicate, and lead\n2. My secondary attributes and where they complement or create tension with the primary\n3. Any facet-level scores that seem unusually high or low\n4. The archetypes I'm least like — these are often as informative as the primary\n\nPlease don't interpret these results yet. Just acknowledge that you've ingested them and summarize the 3-4 most notable patterns you observed. We'll use these as anchors throughout the rest of the Leadership OS process.\n\n[Paste your PrinciplesYou results here]`)">Copy prompt</button>
@@ -610,27 +604,12 @@ Please don't interpret these results yet. Just acknowledge that you've ingested 
         <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View corpus audit prompt</button>
         <div class="wf-prompt-box">
           <div class="wf-prompt-label">Corpus Audit Prompt — paste into the AI tool you use most</div>
-          <div class="wf-prompt-text">I'd like you to reflect on our conversation history together. Don't summarize specific conversations. Instead, identify behavioral patterns — things you've observed repeatedly about how I think, work, and communicate.
+          <div class="wf-prompt-text" id="">The Starter Kit contains the complete corpus audit prompt.
+It asks your AI to identify behavioral patterns — how you frame problems,
+what energizes you, how you make decisions — based on your conversation history.
+Not summaries. Patterns.
 
-Please reflect on each of the following:
-
-1. How do I tend to frame problems? What patterns do you see in how I approach complex or ambiguous situations?
-
-2. What topics or domains come up most frequently? Where does my thinking seem deepest and most developed?
-
-3. How would you describe my communication style — the way I ask questions, express disagreement, give feedback on your outputs, and make requests?
-
-4. What seems to energize me in our conversations? What do I gravitate toward?
-
-5. What frustrates me? Where do you see friction, impatience, or repeated difficulty?
-
-6. What recurring questions or challenges keep coming up across our conversations?
-
-7. What are my decision-making tendencies — how I evaluate tradeoffs, what I seem to prioritize, what I consistently avoid?
-
-8. What do you notice about my relationship to structure, ambiguity, detail, and systems?
-
-Be specific and honest. I'm not looking for flattery — I'm looking for an accurate behavioral profile based on what you've actually observed. If you're uncertain about something, say so rather than speculating.</div>
+Open the Starter Kit → Section 2 → The Corpus Audit Prompt</div>
           <div class="wf-prompt-footer">
             <span class="wf-prompt-note">Paste this into the AI tool that holds most of your professional conversations. Copy the output and bring it into your main Leadership OS session.</span>
             <button class="copy-btn" onclick="copyText(this, `I'd like you to reflect on our conversation history together. Don't summarize specific conversations. Instead, identify behavioral patterns — things you've observed repeatedly about how I think, work, and communicate.\n\nPlease reflect on each of the following:\n\n1. How do I tend to frame problems? What patterns do you see in how I approach complex or ambiguous situations?\n\n2. What topics or domains come up most frequently? Where does my thinking seem deepest and most developed?\n\n3. How would you describe my communication style — the way I ask questions, express disagreement, give feedback on your outputs, and make requests?\n\n4. What seems to energize me in our conversations? What do I gravitate toward?\n\n5. What frustrates me? Where do you see friction, impatience, or repeated difficulty?\n\n6. What recurring questions or challenges keep coming up across our conversations?\n\n7. What are my decision-making tendencies — how I evaluate tradeoffs, what I seem to prioritize, what I consistently avoid?\n\n8. What do you notice about my relationship to structure, ambiguity, detail, and systems?\n\nBe specific and honest. I'm not looking for flattery — I'm looking for an accurate behavioral profile based on what you've actually observed. If you're uncertain about something, say so rather than speculating.`)">Copy prompt</button>
@@ -671,27 +650,12 @@ Be specific and honest. I'm not looking for flattery — I'm looking for an accu
         <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View guided interview prompt</button>
         <div class="wf-prompt-box">
           <div class="wf-prompt-label">Guided Interview Prompt — let your AI conduct the reflection</div>
-          <div class="wf-prompt-text">I'd like you to conduct a structured reflection interview with me. This is part of building my Leadership Operating System.
+          <div class="wf-prompt-text" id="">The Starter Kit contains the complete guided interview prompt.
+Your AI conducts the six reflection prompts as a structured conversation —
+one question at a time, with follow-up for vague responses.
+The preferred method for most people.
 
-Your role in this conversation is interviewer and pattern identifier — not coach, advisor, or therapist. Ask one question at a time. Wait for my response. Ask one follow-up if something is vague or general. Then move to the next question.
-
-The six questions you'll cover, in order:
-
-1. Describe a specific situation where you were operating at your best as a leader. What were you doing, who were you with, what were the conditions — and what made it different from ordinary work?
-
-2. Describe a decision you made in the past year that you're genuinely proud of — not the outcome, the process. How did you get there?
-
-3. Describe a decision or situation you'd handle differently if you could. What happened, what did you do, and what does that tell you about how you operate under pressure or uncertainty?
-
-4. What's a recurring frustration in how you work — something that comes up repeatedly with people, organizations, or yourself? Be specific about what triggers it.
-
-5. When do you find work genuinely energizing? Not meaningful work in the abstract — specific contexts, activities, types of problems, kinds of people.
-
-6. What do people consistently get wrong about you as a leader or colleague? What does that misread tell you about the gap between how you operate and how you come across?
-
-After I've answered all six, summarize the key behavioral patterns you observed — organized by: decision style, energy and flow conditions, friction points, and how I come across versus how I intend to come across.
-
-Begin with question one whenever I'm ready.</div>
+Open the Starter Kit → Section 3 → Guided AI Interview Prompt</div>
           <div class="wf-prompt-footer">
             <span class="wf-prompt-note">This is the preferred method for most people. Conversational reflection surfaces more than writing alone. The AI will ask natural follow-ups.</span>
             <button class="copy-btn" onclick="copyText(this, `I'd like you to conduct a structured reflection interview with me. This is part of building my Leadership Operating System.\n\nYour role in this conversation is interviewer and pattern identifier — not coach, advisor, or therapist. Ask one question at a time. Wait for my response. Ask one follow-up if something is vague or general. Then move to the next question.\n\nThe six questions you'll cover, in order:\n\n1. Describe a specific situation where you were operating at your best as a leader. What were you doing, who were you with, what were the conditions — and what made it different from ordinary work?\n\n2. Describe a decision you made in the past year that you're genuinely proud of — not the outcome, the process. How did you get there?\n\n3. Describe a decision or situation you'd handle differently if you could. What happened, what did you do, and what does that tell you about how you operate under pressure or uncertainty?\n\n4. What's a recurring frustration in how you work — something that comes up repeatedly with people, organizations, or yourself? Be specific about what triggers it.\n\n5. When do you find work genuinely energizing? Not meaningful work in the abstract — specific contexts, activities, types of problems, kinds of people.\n\n6. What do people consistently get wrong about you as a leader or colleague? What does that misread tell you about the gap between how you operate and how you come across?\n\nAfter I've answered all six, summarize the key behavioral patterns you observed — organized by: decision style, energy and flow conditions, friction points, and how I come across versus how I intend to come across.\n\nBegin with question one whenever I'm ready.`)">Copy prompt</button>
@@ -730,24 +694,12 @@ Begin with question one whenever I'm ready.</div>
         <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View synthesis prompt</button>
         <div class="wf-prompt-box">
           <div class="wf-prompt-label">Leadership Pattern Synthesis Prompt</div>
-          <div class="wf-prompt-text">You now have three sources of data about how I operate:
-1. My PrinciplesYou personality assessment (ingested in Step 1)
-2. Your behavioral observations from my AI conversation history (Step 2 corpus audit)
-3. My structured reflection responses (Step 3)
+          <div class="wf-prompt-text" id="">The Starter Kit contains the complete synthesis and construct analysis prompts.
+These are the core engine of Leadership OS — the governed instruction set that
+produces evidence-based, confidence-labeled hypotheses across nine developmental
+constructs, including a required correction loop before document generation.
 
-Please conduct a cross-source pattern analysis. I want you to identify:
-
-CONVERGENT PATTERNS — things that show up consistently across all three sources. These are the most reliable signals about how I actually operate.
-
-TENSION POINTS — places where the sources diverge. For example, where my self-description in the reflection doesn't match what the corpus audit observed, or where my assessment results predict a tendency that my behavioral evidence contradicts. Don't resolve these tensions — name them as questions worth exploring.
-
-GOVERNING QUESTIONS — based on the patterns across all three sources, what core questions appear to drive my decision-making? Not questions I asked, but questions that seem to sit beneath my choices. State these as hypotheses.
-
-FLOW CONDITIONS — based on what I described as energizing and the conditions in my peak performance examples, what specific combination of challenge, context, and collaboration produces my best work?
-
-DEVELOPMENT EDGES — not weaknesses, but the places where my natural tendencies, under specific conditions, reliably create friction. Be specific about the mechanism, not just the label.
-
-Frame all conclusions as hypotheses, not facts. Note your confidence level where relevant. Flag anything that seems contradicted by evidence.</div>
+Open the Starter Kit → Section 4 → Analysis Engine → Section 4b → Construct Analysis</div>
           <div class="wf-prompt-footer">
             <span class="wf-prompt-note">Run this in the same AI session where you completed Steps 1–3. The AI needs all three inputs in its context window to synthesize effectively.</span>
             <button class="copy-btn" onclick="copyText(this, `You now have three sources of data about how I operate:\n1. My PrinciplesYou personality assessment (ingested in Step 1)\n2. Your behavioral observations from my AI conversation history (Step 2 corpus audit)\n3. My structured reflection responses (Step 3)\n\nPlease conduct a cross-source pattern analysis. I want you to identify:\n\nCONVERGENT PATTERNS — things that show up consistently across all three sources. These are the most reliable signals about how I actually operate.\n\nTENSION POINTS — places where the sources diverge. For example, where my self-description in the reflection doesn't match what the corpus audit observed, or where my assessment results predict a tendency that my behavioral evidence contradicts. Don't resolve these tensions — name them as questions worth exploring.\n\nGOVERNING QUESTIONS — based on the patterns across all three sources, what core questions appear to drive my decision-making? Not questions I asked, but questions that seem to sit beneath my choices. State these as hypotheses.\n\nFLOW CONDITIONS — based on what I described as energizing and the conditions in my peak performance examples, what specific combination of challenge, context, and collaboration produces my best work?\n\nDEVELOPMENT EDGES — not weaknesses, but the places where my natural tendencies, under specific conditions, reliably create friction. Be specific about the mechanism, not just the label.\n\nFrame all conclusions as hypotheses, not facts. Note your confidence level where relevant. Flag anything that seems contradicted by evidence.`)">Copy prompt</button>
@@ -825,51 +777,11 @@ Frame all conclusions as hypotheses, not facts. Note your confidence level where
         <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View document generation prompts</button>
         <div class="wf-prompt-box">
           <div class="wf-prompt-label">Document Generation Prompts — run these in sequence</div>
-          <div class="wf-prompt-text">PROMPT A — Leadership User Manual
+          <div class="wf-prompt-text" id="">The Starter Kit contains the complete document generation prompts for all four outputs.
+Each includes a QA check before writing — verifying that all claims trace to the
+Leadership Profile and that confidence levels are preserved, not inflated.
 
-Based on everything we've developed in this session — the assessment, the corpus audit, the reflection responses, and the pattern synthesis — please write my Leadership User Manual.
-
-Format: 3–4 pages. First person ("I"). Structured with clear sections.
-
-Include:
-— How I think: cognitive patterns, problem framing, decision approach
-— How I engage: with people, under pressure, in conflict, as a leader
-— What produces my best work: flow conditions, challenge level, context
-— Where I create friction: the specific conditions under which my defaults work against me
-— My governing questions: the questions that appear to drive my decisions
-— How to work with me: what I need, what I give, what to watch for
-
-Write this as a document I could share with a new manager, a new team member, or a key collaborator. Not a psychological report. A practical guide to how I operate.
-
----
-
-PROMPT B — Working-With-Me Guide
-
-Now write a one-page Working-With-Me Guide. This is the portable, shareable version — readable in under 3 minutes.
-
-Structure it as five short sections:
-1. To bring me a problem
-2. To challenge me effectively  
-3. What I need from you
-4. What you can expect from me
-5. When I'm struggling — what to watch for
-
-Keep it concrete and specific. No abstractions. Someone who has never met me should understand exactly how to work with me after reading this.
-
----
-
-PROMPT C — AI Calibration Document
-
-Finally, write a one-page AI Calibration Document — the document I'll use to onboard any AI assistant to how I work.
-
-Include:
-— My communication style and voice (how I write, what I find generic, what I find useful)
-— My operating principles (the non-negotiables in how I work)
-— How to give me feedback (what lands, what doesn't)
-— What good output looks like to me vs. what reads as generic
-— My governing question — and what it means for the work we do together
-
-This document gets pasted at the start of any new AI conversation to accelerate calibration.</div>
+Open the Starter Kit → Section 5 → Output Generation</div>
           <div class="wf-prompt-footer">
             <span class="wf-prompt-note">Review each output before moving to the next. Correct anything that doesn't feel accurate — this improves the subsequent documents.</span>
             <button class="copy-btn" onclick="copyText(this, `PROMPT A — Leadership User Manual\n\nBased on everything we've developed in this session — the assessment, the corpus audit, the reflection responses, and the pattern synthesis — please write my Leadership User Manual.\n\nFormat: 3–4 pages. First person. Structured with clear sections.\n\nInclude:\n— How I think: cognitive patterns, problem framing, decision approach\n— How I engage: with people, under pressure, in conflict, as a leader\n— What produces my best work: flow conditions, challenge level, context\n— Where I create friction: the specific conditions under which my defaults work against me\n— My governing questions: the questions that appear to drive my decisions\n— How to work with me: what I need, what I give, what to watch for\n\nWrite this as a document I could share with a new manager, a new team member, or a key collaborator. Not a psychological report. A practical guide to how I operate.`)">Copy Prompt A</button>
@@ -908,23 +820,11 @@ This document gets pasted at the start of any new AI conversation to accelerate 
         <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View development roadmap prompt</button>
         <div class="wf-prompt-box">
           <div class="wf-prompt-label">Development Roadmap Prompt</div>
-          <div class="wf-prompt-text">Based on the Leadership OS we've built in this session — specifically the development edges, flow conditions, and governing questions — please build a Development Roadmap.
+          <div class="wf-prompt-text" id="">The Starter Kit contains the complete Development Roadmap prompt.
+It produces a private document with mechanistically specific development priorities,
+each labeled with the confidence level from the construct analysis.
 
-This is a private document. It's not for sharing. Be honest.
-
-Structure it as follows:
-
-DEVELOPMENT PRIORITIES (3–5)
-For each: name the edge, describe the specific mechanism that creates friction, identify the conditions that trigger it, and suggest one concrete practice to work on it. Avoid generic advice — the practice should be specific to the pattern we identified.
-
-90-DAY FOCUS
-Given everything we've covered, what's the single most important thing to work on in the next 90 days? Not the easiest, the most important. Explain why.
-
-MONITORING QUESTIONS
-3–5 questions I should ask myself regularly to stay honest about whether I'm operating at my best or sliding into my defaults. These should be specific to my patterns — not generic self-reflection prompts.
-
-WHEN TO UPDATE THIS
-Based on what we know about how I work, when and under what conditions should I revisit and update this roadmap?</div>
+Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
           <div class="wf-prompt-footer">
             <span class="wf-prompt-note">This document is for you, not for sharing. Be as honest as possible in the reflection steps — the quality of this output depends entirely on the quality of the inputs.</span>
             <button class="copy-btn" onclick="copyText(this, `Based on the Leadership OS we've built in this session — specifically the development edges, flow conditions, and governing questions — please build a Development Roadmap.\n\nThis is a private document. It's not for sharing. Be honest.\n\nDEVELOPMENT PRIORITIES (3–5)\nFor each: name the edge, describe the specific mechanism that creates friction, identify the conditions that trigger it, and suggest one concrete practice to work on it. Avoid generic advice — the practice should be specific to the pattern we identified.\n\n90-DAY FOCUS\nGiven everything we've covered, what's the single most important thing to work on in the next 90 days? Not the easiest, the most important. Explain why.\n\nMONITORING QUESTIONS\n3–5 questions I should ask myself regularly to stay honest about whether I'm operating at my best or sliding into my defaults.\n\nWHEN TO UPDATE THIS\nBased on what we know about how I work, when and under what conditions should I revisit and update this roadmap?`)">Copy prompt</button>
