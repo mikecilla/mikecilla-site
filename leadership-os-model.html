@@ -20,8 +20,8 @@
   --ink:#1a1612;
   --ink-dim:rgba(26,22,18,0.62);
   --ink-ghost:rgba(26,22,18,0.12);
-  --gold:var(--gold);
-  --gold-light:var(--gold-light);
+  --gold:#b8671e;
+  --gold-light:#c9843a;
   --gold-dim:rgba(184,103,30,0.1);
   --rule:rgba(26,22,18,0.1);
   --c1:#5B5BD6;
@@ -88,7 +88,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-body);font-siz
 .mv-source-desc{font-size:0.88rem;color:rgba(240,236,228,0.45);line-height:1.55;}
 
 .mv-arrow-row{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:1rem;}
-.mv-arrow{font-family:var(--ff-mono);font-size:0.68rem;color:rgba(240,236,228,0.2);letter-spacing:0.05em;}
+.mv-arrow{font-family:var(--ff-mono);font-size:0.72rem;color:rgba(240,236,228,0.2);letter-spacing:0.05em;}
 .mv-arrow-label{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);padding:0.2rem 0.75rem;border:1px solid rgba(201,132,58,0.2);background:rgba(201,132,58,0.06);}
 
 /* Construct stream */
@@ -261,6 +261,21 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 @media(max-width:480px){
   .construct.open .construct-body{grid-template-columns:1fr;}
 }
+
+@media (prefers-reduced-motion: reduce){
+  .mv-construct-chip{opacity:1 !important;}
+  .mv-profile{opacity:1 !important;}
+  .reveal{opacity:1 !important;transform:none !important;}
+}
+
+footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);}
+.foot-inner{max-width:760px;margin:0 auto;text-align:center;}
+.foot-privacy{font-size:0.92rem;color:var(--ink-dim);line-height:1.7;margin-bottom:1.25rem;}
+.foot-meta-row{font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.06em;color:var(--ink-dim);display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;align-items:center;margin-bottom:0.85rem;}
+.foot-version{color:var(--gold);}
+.foot-sep{opacity:0.4;}
+.foot-disclaimer{font-size:0.82rem;color:var(--ink-dim);opacity:0.75;font-style:italic;}
+@media(max-width:600px){footer{padding:2.5rem 1.5rem;}}
 </style>
 </head>
 <body>
@@ -959,8 +974,17 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 </section>
 
 <footer>
-  <a href="https://mikecilla.com" class="footer-mark">Mike Cilla<span>.</span></a>
-  <span class="footer-note">Leadership OS Model · © 2026</span>
+  <div class="foot-inner">
+    <div class="foot-privacy">Your data stays inside the AI tool you choose to use. Leadership OS does not collect or store your assessment results, reflections, or conversation history. The methodology runs entirely within your chosen AI environment.</div>
+    <div class="foot-meta-row">
+      <span class="foot-version">Version 1.0 · Updated June 2026</span>
+      <span class="foot-sep">·</span>
+      <span>Leadership OS Model</span>
+      <span class="foot-sep">·</span>
+      <span>© 2026 Mike Cilla</span>
+    </div>
+    <div class="foot-disclaimer">A reflection and development methodology — not a validated assessment or prediction instrument.</div>
+  </div>
 </footer>
 
 <script>
@@ -1003,6 +1027,13 @@ function toggleConstruct(header){
   if (!constructs.length || !profile) return;
 
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Reduced-motion or accessibility fallback: show everything immediately
+  if (prefersReduced) {
+    constructs.forEach(function(chip) { chip.classList.add('visible'); });
+    profile.classList.add('visible');
+    return;
+  }
 
   function runAnimation() {
     // Show constructs one by one
@@ -1065,6 +1096,15 @@ function toggleConstruct(header){
         }
       }
     }, 500);
+    // Hard safety net: if nothing has triggered after 3s, reveal everything
+    setTimeout(function() {
+      if (!started) {
+        started = true;
+        obs.disconnect();
+        constructs.forEach(function(chip) { chip.classList.add('visible'); });
+        profile.classList.add('visible');
+      }
+    }, 3000);
   }
 })();
 
