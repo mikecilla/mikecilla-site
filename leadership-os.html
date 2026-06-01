@@ -20,8 +20,8 @@
   --ink:#1a1612;
   --ink-dim:rgba(26,22,18,0.62);
   --ink-ghost:rgba(26,22,18,0.12);
-  --gold:#b8671e;
-  --gold-light:#c9843a;
+  --gold:var(--gold);
+  --gold-light:var(--gold-light, #c9843a);
   --gold-dim:rgba(184,103,30,0.1);
   --rule:rgba(26,22,18,0.1);
   --ff-display:'Cormorant Garamond',Georgia,serif;
@@ -228,7 +228,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .pm-meta{font-family:var(--ff-mono);font-size:0.70rem;letter-spacing:0.06em;color:rgba(240,236,228,0.22);}
 .pm-construct{margin-bottom:0.9rem;padding:1rem 1.1rem 0.85rem;border-radius:4px;border:1px solid rgba(255,255,255,0.05);}
 .pm-construct.hi-c{background:#111a14;border-left:3px solid #1D9E75;}
-.pm-construct.mo-c{background:#1a1510;border-left:3px solid #c9843a;}
+.pm-construct.mo-c{background:#1a1510;border-left:3px solid var(--gold-light, #c9843a);}
 .pm-c-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;gap:0.75rem;}
 .pm-c-left{display:flex;align-items:center;gap:0.5rem;}
 .pm-c-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:#f2ede6;line-height:1.2;}
@@ -236,7 +236,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .pm-c-badge.hi{color:#1D9E75;background:rgba(29,158,117,0.12);border:1px solid rgba(29,158,117,0.22);}
 .pm-c-badge.mo{color:var(--gold-light);background:rgba(201,132,58,0.1);border:1px solid rgba(201,132,58,0.2);}
 .pm-c-body{font-size:0.9rem;font-weight:300;color:rgba(240,236,228,0.68);line-height:1.8;}
-.pm-dev-block{background:#181310;border:1px solid rgba(201,132,58,0.15);border-left:3px solid #c9843a;padding:0.9rem 1.1rem;margin-bottom:0.9rem;}
+.pm-dev-block{background:#181310;border:1px solid rgba(201,132,58,0.15);border-left:3px solid var(--gold-light, #c9843a);padding:0.9rem 1.1rem;margin-bottom:0.9rem;}
 .pm-dev-label{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.45rem;}
 .pm-dev-text{font-size:0.9rem;font-weight:300;color:rgba(240,236,228,0.65);line-height:1.78;}
 .pm-dev-text em{font-style:italic;color:rgba(240,236,228,0.85);}
@@ -421,7 +421,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
     <div class="ef-card">
       <span class="ef-icon">📥</span>
       <div class="ef-title">You bring three inputs</div>
-      <div class="ef-desc">A personality assessment. A structured reflection on how you work. And a behavioral audit from your existing AI conversation history — evidence of how you actually think, not how you describe yourself thinking.</div>
+      <div class="ef-desc">A personality assessment. A structured reflection on how you work. And a behavioral audit from your existing AI conversation history — evidence of patterns in how you think, not how you describe yourself thinking.</div>
     </div>
     <div class="ef-card">
       <span class="ef-icon">🧠</span>

@@ -24,8 +24,8 @@
   --ink-dim:rgba(26,22,18,0.62);
   --ink-ghost:rgba(26,22,18,0.12);
   --ink-faint:rgba(26,22,18,0.08);
-  --gold:#b8671e;
-  --gold-light:#c9843a;
+  --gold:var(--gold);
+  --gold-light:var(--gold-light, #c9843a);
   --gold-dim:rgba(184,103,30,0.1);
   --gold-border:rgba(184,103,30,0.25);
   --rule:rgba(26,22,18,0.1);
@@ -232,11 +232,11 @@ a:hover{text-decoration:underline;}
 }
 .prompt-label{
   font-family:var(--ff-m);font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;
-  color:#c9843a;
+  color:var(--gold-light, #c9843a);
 }
 .copy-btn{
   font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
-  background:none;border:1px solid rgba(201,132,58,0.3);color:#c9843a;
+  background:none;border:1px solid rgba(201,132,58,0.3);color:var(--gold-light, #c9843a);
   padding:0.3rem 0.75rem;cursor:pointer;transition:all 0.2s;white-space:nowrap;
   display:inline-flex;align-items:center;gap:0.35rem;
 }
@@ -346,13 +346,13 @@ a:hover{text-decoration:underline;}
   .copy-btn{display:none!important;}
   .checkpoint{background:#f0fff8!important;border-color:#bbb!important;}
   .checkpoint-label{color:#1D9E75!important;}
-  .section-eyebrow{color:#b8671e!important;}
-  .section-eyebrow::before{background:#b8671e!important;}
+  .section-eyebrow{color:var(--gold)!important;}
+  .section-eyebrow::before{background:var(--gold)!important;}
   .response-area{border:1pt solid #ccc;min-height:1.5cm;background:#fafafa!important;}
   .outputs-grid,.tool-grid,.maint-grid{gap:2pt;}
   .output-card,.tool-card,.maint-card{border:1pt solid #ddd;page-break-inside:avoid;}
   .highlight,.not-box,.note{border-color:#ccc;background:#f8f8f8!important;page-break-inside:avoid;}
-  a{color:#b8671e;text-decoration:none;}
+  a{color:var(--gold);text-decoration:none;}
   .checklist li{background:#f9f9f9!important;}
   @page{margin:2cm;size:A4;}
 }
@@ -447,7 +447,7 @@ a:hover{text-decoration:underline;}
   </div>
 
   <h2 class="sub-head">What this is</h2>
-  <p>Leadership OS is a structured process for understanding how you actually operate as a leader — not how you describe yourself, but how you behave, decide, and communicate in practice.</p>
+  <p>Leadership OS is a structured process for developing a working model of how you operate as a leader — grounded in assessment data, behavioral patterns, and structured reflection rather than self-description alone.</p>
   <p>It combines three inputs: a personality assessment, a behavioral audit of your AI conversation history, and six structured reflection prompts. Your AI tool synthesizes these into working documents you can use, share, and update over time.</p>
 
   <div class="highlight">
@@ -578,7 +578,7 @@ a:hover{text-decoration:underline;}
 
   <div class="highlight">
     <p><strong>Example of what to save:</strong></p>
-    <p>Primary archetype: The Strategist. Secondary attributes: Growth Seeker, Deliberate. Least like: Improviser, Individualist.<br>Notable facet scores: Curious 91st percentile, Systematic 88th percentile, Adaptable 85th percentile, Agile 44th percentile</p>
+    <p>Primary archetype: The Strategist. Secondary attributes: Growth Seeker, Deliberate. Least like: Improviser, Individualist.<br>Notable facet scores: Curious 78th percentile, Systematic 82nd percentile, Adaptable 71st percentile, Agile 55th percentile</p>
   </div>
 
   <h2 class="sub-head" id="s1-alt">Step 1B — Alternative assessments (optional)</h2>
@@ -634,12 +634,12 @@ a:hover{text-decoration:underline;}
   <div class="section-header">
     <div class="section-eyebrow">Section 02 · 15 minutes</div>
     <h1 class="section-title">Corpus<br><em>Audit.</em></h1>
-    <p class="section-subtitle">Behavioral evidence from how you actually work. Not what you say about yourself — what a system that watched you work observed about you.</p>
+    <p class="section-subtitle">Behavioral evidence from how you actually work. Not what you say about yourself — what a review of your actual work conversations suggests about you.</p>
   </div>
 
   <h2 class="sub-head">What corpus evidence is</h2>
-  <p>If you use ChatGPT, Claude, Gemini, or any AI tool regularly, you have accumulated a behavioral record. Every decision you worked through, every communication you drafted, every problem you framed — that interaction left evidence of how you actually think. The corpus audit asks your AI tool to reflect on that record and identify patterns.</p>
-  <p><strong>This is the piece that makes Leadership OS different from any assessment that came before it.</strong> Assessments ask you to describe yourself. The corpus audit asks the system that watched you work to describe what it saw.</p>
+  <p>If you use ChatGPT, Claude, Gemini, or any AI tool regularly, you have accumulated a behavioral record. Every decision you worked through, every communication you drafted, every problem you framed — that interaction left a record of how you were thinking at the time. The corpus audit asks your AI tool to identify patterns across that conversation record.</p>
+  <p><strong>This is the piece that makes Leadership OS different from any assessment that came before it.</strong> Assessments ask you to describe yourself. The corpus audit asks the system that reviewed your work conversations to describe what it saw.</p>
 
   <h2 class="sub-head">What makes a strong corpus</h2>
   <ul class="checklist">
@@ -745,7 +745,7 @@ Be specific and honest. I am not looking for flattery. I am looking for an accur
   <div class="section-header">
     <div class="section-eyebrow">Section 03 · 35–40 minutes</div>
     <h1 class="section-title">Structured<br><em>Reflection.</em></h1>
-    <p class="section-subtitle">Six prompts that surface what no assessment can reach — specific examples of how you actually operate under pressure, in decisions, and in relation to others.</p>
+    <p class="section-subtitle">Six prompts that surface what no assessment can reach — specific behavioral examples from your actual work: how you appeared to operate under pressure, in decisions, and in relation to others.</p>
   </div>
 
   <h2 class="sub-head">Three ways to complete this section</h2>
