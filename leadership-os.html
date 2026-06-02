@@ -435,6 +435,19 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   .oc-card{padding:1.4rem 1.4rem 1.2rem;}
   .oc-card-name{font-size:1.35rem;}
 }
+
+/* WHAT IT TAKES BAND */
+.oc-takes{max-width:880px;margin:0 auto 3.5rem;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.75rem 2rem;}
+.ot-label{font-family:var(--ff-mono);font-size:0.72rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;text-align:center;}
+.ot-items{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 2rem;}
+.ot-item{display:flex;gap:0.85rem;align-items:flex-start;}
+.ot-ic{font-size:1.25rem;flex-shrink:0;line-height:1.3;}
+.ot-txt{font-size:0.95rem;line-height:1.6;color:var(--ink-dim);}
+.ot-txt strong{color:var(--ink);font-weight:500;}
+@media(max-width:680px){
+  .oc-takes{padding:1.4rem 1.4rem;}
+  .ot-items{grid-template-columns:1fr;gap:0.9rem;}
+}
 </style>
 </head>
 <body>
@@ -459,11 +472,11 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
     <div class="hero-inner">
       <div class="hero-eyebrow reveal" style="transition-delay:.05s">A framework by Mike Cilla · Beta</div>
       <h1 class="hero-title reveal" style="transition-delay:.1s">
-        <span class="block">Build a living</span>
-        <span class="block">profile of how</span>
-        <span class="block">you <em>lead</em>.</span>
+        <span class="block">The leadership</span>
+        <span class="block">manual nobody</span>
+        <span class="block">ever <em>gave you</em>.</span>
       </h1>
-      <p class="hero-sub reveal" style="transition-delay:.2s">Leadership OS turns assessments, AI-observed work patterns, and structured reflection into practical documents you can use with your team, your AI tools, and your own development.</p>
+      <p class="hero-sub reveal" style="transition-delay:.2s">Leadership OS turns assessments, your AI conversation history, and structured reflection into four practical tools — for understanding yourself, working with your team, getting more from AI, and knowing where to grow next.</p>
 
 
 
@@ -472,9 +485,11 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
         <a href="leadership-os-sample-outputs.html" class="btn-ghost">See sample outputs</a>
       </div>
       <div class="hero-proof reveal" style="transition-delay:.52s">
-        <span class="hp-item">~90 minutes</span>
+        <span class="hp-item">90–120 minutes</span>
         <span class="hp-sep">·</span>
         <span class="hp-item">Works with any AI tool</span>
+        <span class="hp-sep">·</span>
+        <span class="hp-item">Free</span>
       </div>
     </div>
   </div>
@@ -534,9 +549,33 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 <section id="outcomes">
   <div class="oc-head">
     <div class="s-label reveal">What you walk away with</div>
-    <h2 class="section-headline reveal" style="transition-delay:.05s">Four documents you'll<br><em>actually use.</em></h2>
-    <p class="section-sub reveal" style="transition-delay:.1s">Not a score. Not a report you read once. Four working documents that describe how you lead, how to work with you, how to get more from AI, and where to grow next — written in plain language, grounded in your own evidence.</p>
+    <h2 class="section-headline reveal" style="transition-delay:.05s">Four tools you'll<br><em>keep using.</em></h2>
+    <p class="section-sub reveal" style="transition-delay:.1s">Not a score. Not a report you read once and forget. Four tools you'll come back to — to understand yourself, work better with your team, get sharper output from AI, and keep growing — each one written in plain language and grounded in your own evidence.</p>
   </div>
+
+  <!-- WHAT IT TAKES -->
+  <div class="oc-takes reveal" style="transition-delay:.12s">
+    <div class="ot-label">What it takes</div>
+    <div class="ot-items">
+      <div class="ot-item">
+        <div class="ot-ic">⏱</div>
+        <div class="ot-txt"><strong>90–120 minutes</strong>, once. Most of it is reflection you'd benefit from anyway.</div>
+      </div>
+      <div class="ot-item">
+        <div class="ot-ic">📋</div>
+        <div class="ot-txt"><strong>A personality assessment</strong> — free options work. We point you to one.</div>
+      </div>
+      <div class="ot-item">
+        <div class="ot-ic">💬</div>
+        <div class="ot-txt"><strong>Some existing AI chat history</strong> — and it still works if yours is thin.</div>
+      </div>
+      <div class="ot-item">
+        <div class="ot-ic">🔒</div>
+        <div class="ot-txt"><strong>The AI tool you already use.</strong> Nothing to install. Nothing leaves your account.</div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- HERO SCREENSHOT: realistic LLM conversation -->
   <div class="oc-shot reveal" style="transition-delay:.15s">
@@ -575,7 +614,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
             <div class="cs-insight">
               <div class="cs-insight-label">→ Primary development insight</div>
-              <p class="cs-insight-text">The highest-leverage growth area isn't a skill gap — it's the gap between the leadership identity you describe (developer of people) and where your behavioral investment actually goes (analytical and structural work). Closing that gap is identity work, not technique.</p>
+              <p class="cs-insight-text">Your instinct is to solve the problem in front of you — which is exactly why your team brings you problems instead of solving them. The growth edge isn't a skill you're missing. It's that stepping back feels like doing less, when for you it's the harder, higher-value work.</p>
             </div>
 
             <div class="cs-foot">Evidence-informed hypotheses for reflection — not a validated assessment. Synthetic illustrative example.</div>
@@ -591,26 +630,26 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
     <div class="oc-card reveal" style="transition-delay:.05s">
       <div class="oc-num">01</div>
       <div class="oc-card-name">Leadership Profile</div>
-      <div class="oc-card-desc">A clear picture of how you lead — your decision patterns, communication style, and where your instincts serve you well versus where they get in the way. The foundation everything else is built on.</div>
-      <div class="oc-card-use">Use it to understand your own patterns with language you didn't have before.</div>
+      <div class="oc-card-desc">Put precise language to leadership patterns you've probably felt for years but never fully articulated — where your instincts serve you, and where they quietly work against you.</div>
+      <div class="oc-card-use">The self-understanding everything else is built on.</div>
     </div>
     <div class="oc-card reveal" style="transition-delay:.1s">
       <div class="oc-num">02</div>
       <div class="oc-card-name">Working-With-Me Guide</div>
-      <div class="oc-card-desc">A short, shareable document your team can actually read — how you prefer to communicate, how you make decisions, what brings out your best work, and how to give you feedback that lands.</div>
-      <div class="oc-card-use">Share it with a new report or a new boss to skip months of figuring each other out.</div>
+      <div class="oc-card-desc">Give a new teammate, report, or boss a six-month head start on working effectively with you — how you communicate, how you decide, and how to give you feedback that actually lands.</div>
+      <div class="oc-card-use">Skip the months people usually spend figuring each other out.</div>
     </div>
     <div class="oc-card reveal" style="transition-delay:.15s">
       <div class="oc-num">03</div>
       <div class="oc-card-name">AI Calibration Document</div>
-      <div class="oc-card-desc">A reusable prompt that tells any AI tool how you think and work — so it gives you responses tuned to your style instead of generic ones, from the first message of every new conversation.</div>
-      <div class="oc-card-use">Paste it into a new chat to make your AI assistant feel like it already knows you.</div>
+      <div class="oc-card-desc">Make every AI tool you use respond like it already knows how you think — tuned to your style and standards from the first message, instead of generic from the first message every time.</div>
+      <div class="oc-card-use">Paste it into any new chat. Reuse it for years.</div>
     </div>
     <div class="oc-card reveal" style="transition-delay:.2s">
       <div class="oc-num">04</div>
       <div class="oc-card-name">Development Roadmap</div>
-      <div class="oc-card-desc">A private, honest plan for where to grow — not generic leadership advice, but specific priorities traced to your own evidence, with concrete practices and a 90-day focus.</div>
-      <div class="oc-card-use">Keep it private. Revisit it every quarter to see what's shifted.</div>
+      <div class="oc-card-desc">Stop guessing where to focus. Get specific growth priorities traced to your own evidence — not generic leadership advice — with concrete practices and a 90-day focus.</div>
+      <div class="oc-card-use">Private by design. Revisit each quarter to see what's shifted.</div>
     </div>
   </div>
 </section>
@@ -722,7 +761,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 <section id="workflow" style="scroll-margin-top:52px;">
   <div class="s-label reveal">The complete process</div>
   <h2 class="section-headline reveal" style="transition-delay:.05s">Seven steps.<br><em>One living system.</em></h2>
-  <p class="section-sub reveal" style="transition-delay:.1s">Every step has a clear objective, specific inputs, and a prompt you can copy directly into your AI tool. Steps 4 and 4b (Analysis Engine and Construct Analysis) are where your evidence becomes a Leadership Profile — the intermediate artifact that grounds all your output documents. The whole process takes about 120 minutes the first time.</p>
+  <p class="section-sub reveal" style="transition-delay:.1s">Every step has a clear objective, specific inputs, and a prompt you can copy directly into your AI tool. Steps 4 and 4b (Analysis Engine and Construct Analysis) are where your evidence becomes a Leadership Profile — the intermediate artifact that grounds all your output documents. The whole process takes about 90–120 minutes the first time.</p>
 
   
     <!-- CONFIDENCE LEVEL VISUAL -->
@@ -1240,7 +1279,7 @@ Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
         <p>I didn't set out to build a leadership methodology. I was trying to make my AI tools more useful at work.</p>
         <p>Over 2.5 years as a VP of People Operations, I accumulated hundreds of working conversations with AI — workforce analytics, HR system design, organizational design, business cases, leadership decisions. At some point I realized I'd accidentally built something: a detailed record of how I actually think.</p>
         <p>When I transferred that context to a new AI tool, I had to make my thinking explicit in ways it had never been before. What came out of that process was the most accurate leadership profile I'd ever received — more specific than any 360, more honest than most coaching engagements, and grounded in actual behavioral evidence rather than survey responses.</p>
-        <p>The Leadership OS is an attempt to make that process replicable for anyone, using whatever AI tools they already have, in about 90 minutes.</p>
+        <p>The Leadership OS is an attempt to make that process replicable for anyone, using whatever AI tools they already have, in about 90–120 minutes.</p>
       </div>
       <div class="about-creds">
         <div class="about-cred">
@@ -1277,7 +1316,7 @@ Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
 <!-- CTA -->
 <section id="cta" style="scroll-margin-top:52px;">
   <div class="cta-eyebrow reveal">Ready to begin</div>
-  <h2 class="cta-headline reveal" style="transition-delay:.1s">About<br><strong>90 minutes.</strong></h2>
+  <h2 class="cta-headline reveal" style="transition-delay:.1s">About<br><strong>90–120 minutes.</strong></h2>
   <p class="cta-sub reveal" style="transition-delay:.2s">Seven steps. Every prompt included. Works with whatever AI tool you already use.</p>
   <div class="cta-buttons reveal" style="transition-delay:.3s">
     <a href="leadership-os-starter-kit.html" class="cta-btn-p">Open the Starter Kit →</a>
