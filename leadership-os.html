@@ -352,6 +352,89 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   /* Confidence 4-col grid */
   .conf-4col{grid-template-columns:1fr 1fr !important;}
 }
+
+/* ═══════════ OUTCOMES SECTION ═══════════ */
+#outcomes{padding:6rem 4vw;background:var(--void);}
+.oc-head{max-width:760px;margin:0 auto 3.5rem;text-align:center;}
+.oc-head .section-sub{margin-left:auto;margin-right:auto;}
+
+/* Hero conversation screenshot */
+.oc-shot{max-width:780px;margin:0 auto 4rem;}
+.cs-frame{background:#0d0c0b;border-radius:10px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.32),0 10px 28px rgba(0,0,0,0.18),0 0 0 1px rgba(255,255,255,0.05);}
+.cs-bar{display:flex;align-items:center;gap:0.75rem;padding:0.7rem 1rem;background:#1b1a18;border-bottom:1px solid rgba(255,255,255,0.05);}
+.cs-dots{display:flex;gap:6px;}
+.cs-dots span{width:11px;height:11px;border-radius:50%;}
+.cs-dots span:nth-child(1){background:#ff5f57;}
+.cs-dots span:nth-child(2){background:#febc2e;}
+.cs-dots span:nth-child(3){background:#28c840;}
+.cs-bar-title{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.04em;color:rgba(240,236,228,0.4);flex:1;text-align:center;}
+.cs-model{font-family:var(--ff-mono);font-size:0.72rem;color:rgba(201,132,58,0.6);border:1px solid rgba(201,132,58,0.25);border-radius:4px;padding:0.15rem 0.5rem;}
+.cs-body{padding:1.5rem 1.5rem 1.75rem;}
+.cs-msg{display:flex;gap:0.85rem;margin-bottom:1.5rem;}
+.cs-msg:last-child{margin-bottom:0;}
+.cs-avatar{width:30px;height:30px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:0.7rem;font-weight:500;}
+.cs-au{background:rgba(240,236,228,0.1);color:rgba(240,236,228,0.6);}
+.cs-aa{background:var(--gold);color:#0d0c0b;}
+.cs-bubble{flex:1;}
+.cs-ub{font-size:0.95rem;line-height:1.65;color:rgba(240,236,228,0.78);padding-top:0.35rem;}
+.cs-ab{background:#161513;border:1px solid rgba(255,255,255,0.05);border-radius:8px;padding:1.25rem 1.35rem;}
+.cs-doc-tag{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.85rem;padding-bottom:0.65rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.cs-lead{font-size:0.95rem;line-height:1.65;color:rgba(240,236,228,0.75);margin-bottom:1.1rem;}
+.cs-construct{margin-bottom:1.1rem;padding-left:0.9rem;border-left:2px solid rgba(255,255,255,0.08);}
+.cs-con-head{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin-bottom:0.4rem;flex-wrap:wrap;}
+.cs-con-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:500;color:#f0ece4;}
+.cs-con-conf{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.03em;white-space:nowrap;}
+.cf-high{color:#5fcd7a;}
+.cf-mod{color:#d9a441;}
+.cs-con-text{font-size:0.9rem;line-height:1.6;color:rgba(240,236,228,0.62);}
+.cs-insight{background:rgba(184,103,30,0.08);border:1px solid rgba(184,103,30,0.2);border-radius:6px;padding:0.95rem 1.1rem;margin:1.1rem 0;}
+.cs-insight-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.04em;color:var(--gold-light);margin-bottom:0.4rem;}
+.cs-insight-text{font-size:0.9rem;line-height:1.6;color:rgba(240,236,228,0.72);}
+.cs-foot{font-size:0.76rem;line-height:1.5;color:rgba(240,236,228,0.35);font-style:italic;margin-top:0.85rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.05);}
+.oc-shot-cap{text-align:center;font-family:var(--ff-mono);font-size:0.76rem;letter-spacing:0.04em;color:var(--ink-dim);margin-top:1rem;}
+
+/* Four outputs grid */
+.oc-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.oc-card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.75rem 1.75rem 1.5rem;position:relative;transition:border-color 0.25s,box-shadow 0.25s;}
+.oc-card:hover{border-color:rgba(184,103,30,0.35);box-shadow:0 8px 28px rgba(0,0,0,0.06);}
+.oc-num{font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.75rem;}
+.oc-card-name{font-family:var(--ff-display);font-size:1.55rem;font-weight:500;color:var(--ink);margin-bottom:0.7rem;line-height:1.1;}
+.oc-card-desc{font-size:0.98rem;line-height:1.65;color:var(--ink-dim);margin-bottom:0.9rem;}
+.oc-card-use{font-size:0.9rem;line-height:1.55;color:var(--ink);padding-top:0.85rem;border-top:1px solid var(--rule);}
+.oc-card-use::before{content:'→ ';color:var(--gold);}
+
+/* ═══════════ HOW IT'S PRODUCED BANNER ═══════════ */
+#how-banner{padding:4rem 4vw;background:var(--deep);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.hb-inner{max-width:760px;margin:0 auto;text-align:center;}
+.hb-label{font-family:var(--ff-mono);font-size:0.78rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.75rem;}
+.hb-flow{display:flex;flex-direction:column;align-items:center;gap:0.65rem;margin-bottom:1.75rem;}
+.hb-sources{display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;}
+.hb-src{font-family:var(--ff-mono);font-size:0.84rem;letter-spacing:0.02em;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.45rem;}
+.hb-s1{border-bottom:2px solid #5B5BD6;}
+.hb-s2{border-bottom:2px solid var(--gold);}
+.hb-s3{border-bottom:2px solid #1D9E75;}
+.hb-ic{font-size:1rem;}
+.hb-arrow{font-size:1.2rem;color:var(--gold);opacity:0.55;}
+.hb-step{font-family:var(--ff-mono);font-size:0.84rem;letter-spacing:0.04em;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:0.6rem 1.4rem;}
+.hb-result{font-family:var(--ff-display);font-size:1.5rem;font-weight:500;color:var(--ink);background:var(--ink);color:#f0ece4;border-radius:6px;padding:0.7rem 1.75rem;}
+.hb-note{font-size:1rem;line-height:1.7;color:var(--ink-dim);max-width:580px;margin:0 auto;}
+.hb-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.3);transition:border-color 0.2s;white-space:nowrap;}
+.hb-link:hover{border-color:var(--gold);}
+
+@media(max-width:760px){
+  #outcomes{padding:4rem 1.5rem;}
+  .oc-grid{grid-template-columns:1fr;}
+  .cs-body{padding:1.1rem 1rem 1.25rem;}
+  .cs-con-head{flex-direction:column;align-items:flex-start;gap:0.25rem;}
+  .cs-ab{padding:1rem 1rem;}
+  #how-banner{padding:3rem 1.5rem;}
+  .hb-result{font-size:1.3rem;}
+}
+@media(max-width:480px){
+  .cs-bar-title{display:none;}
+  .oc-card{padding:1.4rem 1.4rem 1.2rem;}
+  .oc-card-name{font-size:1.35rem;}
+}
 </style>
 </head>
 <body>
@@ -359,6 +442,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 <header id="header">
   <a href="https://mikecilla.com" class="h-mark">Mike Cilla<span>.</span></a>
   <nav class="h-nav">
+    <a href="#outcomes" class="hide-mobile h-nav-link">What you get</a>
     <a href="#workflow" class="hide-mobile h-nav-link">How it works</a>
     <a href="leadership-os-model.html" class="hide-mobile h-nav-link">The model</a>
     <a href="leadership-os-sample-outputs.html" class="hide-mobile h-nav-link">Sample outputs</a>
@@ -445,6 +529,111 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   </div>
 
 </section>
+
+<!-- ═══════════ WHAT YOU WALK AWAY WITH ═══════════ -->
+<section id="outcomes">
+  <div class="oc-head">
+    <div class="s-label reveal">What you walk away with</div>
+    <h2 class="section-headline reveal" style="transition-delay:.05s">Four documents you'll<br><em>actually use.</em></h2>
+    <p class="section-sub reveal" style="transition-delay:.1s">Not a score. Not a report you read once. Four working documents that describe how you lead, how to work with you, how to get more from AI, and where to grow next — written in plain language, grounded in your own evidence.</p>
+  </div>
+
+  <!-- HERO SCREENSHOT: realistic LLM conversation -->
+  <div class="oc-shot reveal" style="transition-delay:.15s">
+    <div class="cs-frame">
+      <div class="cs-bar">
+        <div class="cs-dots"><span></span><span></span><span></span></div>
+        <div class="cs-bar-title">Leadership OS · Analysis Engine</div>
+        <div class="cs-model">claude-opus-4</div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-msg cs-user">
+          <div class="cs-avatar cs-au">You</div>
+          <div class="cs-bubble cs-ub">Here are my three evidence sources — my PrinciplesYou results, the behavioral audit from my AI history, and my six reflection responses. Please generate my Leadership Profile.</div>
+        </div>
+        <div class="cs-msg cs-ai">
+          <div class="cs-avatar cs-aa">OS</div>
+          <div class="cs-bubble cs-ab">
+            <div class="cs-doc-tag">Leadership Profile · synthesis across 3 sources · 9 constructs</div>
+            <p class="cs-lead">Here is your Leadership Profile. Each finding is labeled with a confidence level reflecting how much the evidence supports it.</p>
+
+            <div class="cs-construct">
+              <div class="cs-con-head">
+                <span class="cs-con-name">Decision Style</span>
+                <span class="cs-con-conf cf-high">● High Confidence</span>
+              </div>
+              <p class="cs-con-text">Across all three sources, a consistent pattern: you integrate complexity thoroughly before committing — a genuine strength in ambiguous decisions. The behavioral evidence also shows a recurring gap between when the evidence became clear and when you committed. Once a direction is socialized with stakeholders, revising it appears to carry a social cost that can suppress updating.</p>
+            </div>
+
+            <div class="cs-construct">
+              <div class="cs-con-head">
+                <span class="cs-con-name">Communication Patterns</span>
+                <span class="cs-con-conf cf-mod">● Moderate Confidence</span>
+              </div>
+              <p class="cs-con-text">Your written communication is structured and precise. The strongest signal comes from your reflection on being misread: the gap between what you intend and how it lands appears largest under time pressure, where concision can read as terseness.</p>
+            </div>
+
+            <div class="cs-insight">
+              <div class="cs-insight-label">→ Primary development insight</div>
+              <p class="cs-insight-text">The highest-leverage growth area isn't a skill gap — it's the gap between the leadership identity you describe (developer of people) and where your behavioral investment actually goes (analytical and structural work). Closing that gap is identity work, not technique.</p>
+            </div>
+
+            <div class="cs-foot">Evidence-informed hypotheses for reflection — not a validated assessment. Synthetic illustrative example.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="oc-shot-cap">A sample of the Leadership Profile, generated inside the AI tool you already use.</div>
+  </div>
+
+  <!-- FOUR OUTPUTS -->
+  <div class="oc-grid">
+    <div class="oc-card reveal" style="transition-delay:.05s">
+      <div class="oc-num">01</div>
+      <div class="oc-card-name">Leadership Profile</div>
+      <div class="oc-card-desc">A clear picture of how you lead — your decision patterns, communication style, and where your instincts serve you well versus where they get in the way. The foundation everything else is built on.</div>
+      <div class="oc-card-use">Use it to understand your own patterns with language you didn't have before.</div>
+    </div>
+    <div class="oc-card reveal" style="transition-delay:.1s">
+      <div class="oc-num">02</div>
+      <div class="oc-card-name">Working-With-Me Guide</div>
+      <div class="oc-card-desc">A short, shareable document your team can actually read — how you prefer to communicate, how you make decisions, what brings out your best work, and how to give you feedback that lands.</div>
+      <div class="oc-card-use">Share it with a new report or a new boss to skip months of figuring each other out.</div>
+    </div>
+    <div class="oc-card reveal" style="transition-delay:.15s">
+      <div class="oc-num">03</div>
+      <div class="oc-card-name">AI Calibration Document</div>
+      <div class="oc-card-desc">A reusable prompt that tells any AI tool how you think and work — so it gives you responses tuned to your style instead of generic ones, from the first message of every new conversation.</div>
+      <div class="oc-card-use">Paste it into a new chat to make your AI assistant feel like it already knows you.</div>
+    </div>
+    <div class="oc-card reveal" style="transition-delay:.2s">
+      <div class="oc-num">04</div>
+      <div class="oc-card-name">Development Roadmap</div>
+      <div class="oc-card-desc">A private, honest plan for where to grow — not generic leadership advice, but specific priorities traced to your own evidence, with concrete practices and a 90-day focus.</div>
+      <div class="oc-card-use">Keep it private. Revisit it every quarter to see what's shifted.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HOW IT'S PRODUCED — EVIDENCE BANNER ═══════════ -->
+<section id="how-banner">
+  <div class="hb-inner reveal">
+    <div class="hb-label">How it's produced</div>
+    <div class="hb-flow">
+      <div class="hb-sources">
+        <div class="hb-src hb-s1"><span class="hb-ic">📋</span>Assessments</div>
+        <div class="hb-src hb-s2"><span class="hb-ic">🔍</span>AI Corpus</div>
+        <div class="hb-src hb-s3"><span class="hb-ic">🪞</span>Reflection</div>
+      </div>
+      <div class="hb-arrow">↓</div>
+      <div class="hb-step">Construct Analysis</div>
+      <div class="hb-arrow">↓</div>
+      <div class="hb-result">Leadership Profile</div>
+    </div>
+    <p class="hb-note">Three kinds of evidence about how you operate, synthesized into one profile across nine leadership constructs. <a href="leadership-os-model.html" class="hb-link">See how the methodology works →</a></p>
+  </div>
+</section>
+
 
 <!-- 60-SECOND EXPLAINER -->
 <section id="explainer" style="scroll-margin-top:52px;">
