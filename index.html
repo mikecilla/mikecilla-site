@@ -33,7 +33,7 @@ body {
   color: var(--bone);
   font-family: var(--ff-body);
   font-size: 22px;
-  line-height: 1.75;
+  line-height: 2.05;
   font-weight: 300;
 }
 
@@ -102,7 +102,7 @@ body {
   background: rgba(250,248,244,0.94);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
 }
-.h-mark { font-family: var(--ff-display); font-size: 1.05rem; font-weight: 400; letter-spacing: 0.06em; color: var(--bone); text-decoration: none; }
+.h-mark { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 400; letter-spacing: 0.06em; color: var(--bone); text-decoration: none; }
 .h-mark span { color: var(--gold); }
 .h-links { display: flex; gap: 2rem; list-style: none; }
 .h-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone-dim); text-decoration: none; transition: color 0.2s; }
@@ -111,7 +111,7 @@ body {
 .h-cta:hover { background: var(--gold); color: var(--void); }
 
 /* ── SECTION LABEL ── */
-.s-label { font-family: var(--ff-mono); font-size: 0.78rem; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
+.s-label { font-family: var(--ff-mono); font-size: 0.88rem; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
 .s-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); opacity: 0.5; }
 
 /* ── REVEAL ── */
@@ -156,9 +156,9 @@ body {
 .dot.on { transform: scale(1.6); }
 
 /* ── BUTTONS ── */
-.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--void); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--void); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
 .btn-primary:hover { background: var(--gold-light); }
-.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--bone-ghost); color: var(--bone-dim); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--bone-ghost); color: var(--bone-dim); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 .btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
@@ -180,15 +180,15 @@ body {
 .hero-name .last { font-weight: 700; font-style: italic; display: block; }
 .hero-name .dot { color: var(--gold); }
 .hero-title { font-family: var(--ff-display); font-size: clamp(1.05rem,1.6vw,1.35rem); font-weight: 300; font-style: italic; color: var(--bone-dim); border-left: 2px solid var(--gold); padding-left: 1.1rem; margin: 1.25rem 0 2rem; line-height: 1.55; }
-.hero-statement { font-size: 1.2rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; max-width: 480px; margin-bottom: 2.5rem; }
+.hero-statement { font-size: 1.28rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; max-width: 480px; margin-bottom: 2.5rem; }
 .hero-right { display: flex; flex-direction: column; gap: 1.25rem; }
 .hero-credential { border: 1px solid var(--rule); padding: 1.4rem; background: var(--surface); position: relative; box-shadow: 0 1px 3px rgba(26,22,18,0.06); }
 .hero-credential::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); }
 .cred-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
 .cred-value { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--bone); line-height: 1.1; }
-.cred-sub { font-size: 0.95rem; font-weight: 300; color: var(--bone-dim); margin-top: 0.2rem; }
+.cred-sub { font-size: 1.03rem; font-weight: 300; color: var(--bone-dim); margin-top: 0.2rem; }
 .hero-quote-block { border-top: 1px solid var(--rule); padding-top: 1.4rem; }
-.hero-quote-block blockquote { font-family: var(--ff-display); font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--bone-dim); line-height: 1.6; margin-bottom: 0.5rem; }
+.hero-quote-block blockquote { font-family: var(--ff-display); font-size: 1.28rem; font-style: italic; font-weight: 300; color: var(--bone-dim); line-height: 1.6; margin-bottom: 0.5rem; }
 .hero-quote-block cite { font-family: var(--ff-mono); font-size: 0.62rem; font-style: normal; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
 
 /* ════════════════════════
@@ -198,12 +198,12 @@ body {
 .hl-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
 .hl-headline { font-family: var(--ff-display); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
 .hl-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.hl-intro { font-size: 1.15rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; }
+.hl-intro { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; }
 .hl-items { display: flex; flex-direction: column; }
 .hl-item { border-top: 1px solid var(--rule); padding: 1.5rem 0; display: grid; grid-template-columns: 2.25rem 1fr; gap: 1.25rem; align-items: start; }
 .hl-num { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); opacity: 0.6; padding-top: 0.2rem; }
-.hl-title { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.4rem; }
-.hl-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
+.hl-title { font-family: var(--ff-display); font-size: 1.32rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.4rem; }
+.hl-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
 
 /* ════════════════════════
    3 — WRITING
@@ -212,15 +212,15 @@ body {
 .writing-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: 6rem; align-items: start; }
 .writing-headline { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
 .writing-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.writing-sub { font-size: 1.1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; }
+.writing-sub { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; }
 .writing-items { display: flex; flex-direction: column; }
 .writing-item { border-top: 1px solid var(--rule); padding: 1.75rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; transition: border-color 0.3s; }
 .writing-item:hover { border-top-color: rgba(201,132,58,0.35); }
 .writing-item:hover .wi-title { color: var(--gold-light); }
 .wi-tag { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; opacity: 0.8; }
 .wi-title { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.5rem; transition: color 0.2s; }
-.wi-body { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
-.wi-arrow { font-size: 1.1rem; color: var(--gold); opacity: 0.5; padding-top: 0.3rem; align-self: center; transition: opacity 0.2s, transform 0.2s; }
+.wi-body { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
+.wi-arrow { font-size: 1.25rem; color: var(--gold); opacity: 0.5; padding-top: 0.3rem; align-self: center; transition: opacity 0.2s, transform 0.2s; }
 .writing-item:hover .wi-arrow { opacity: 1; transform: translateX(4px); }
 
 /* ════════════════════════
@@ -236,7 +236,7 @@ body {
 .thesis-point:hover { border-left-color: var(--gold); }
 .tp-label { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
 .tp-headline { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.45rem; }
-.tp-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
+.tp-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
 
 /* ════════════════════════
    5 — CAPABILITIES
@@ -246,18 +246,18 @@ body {
 .cap-intro-text { position: static; }
 .cap-headline { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.5rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
 .cap-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.cap-sub { font-size: 1.1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
+.cap-sub { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
 .cap-values { display: flex; flex-direction: column; margin-top: 2rem; }
-.cap-value { font-family: var(--ff-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone); padding: 0.5rem 0; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 0.5rem; }
+.cap-value { font-family: var(--ff-mono); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone); padding: 0.5rem 0; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 0.5rem; }
 .cap-value::before { content: '▸'; color: var(--gold); font-size: 0.5rem; }
 .cap-domains { display: flex; flex-direction: column; gap: 2.5rem; }
-.cap-domain-label { font-family: var(--ff-mono); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.cap-domain-label { font-family: var(--ff-mono); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
 .cap-domain-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
 .cap-items { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(26,22,18,0.15); }
 .cap-item { background: var(--surface); padding: 1.35rem; transition: background 0.2s, transform 0.2s; }
 .cap-item:hover { background: var(--deep); }
-.cap-item-name { font-size: 1.05rem; font-weight: 500; color: var(--bone); margin-bottom: 0.3rem; }
-.cap-item-desc { font-size: 0.95rem; font-weight: 300; color: var(--bone-dim); line-height: 1.65; }
+.cap-item-name { font-size: 1.25rem; font-weight: 500; color: var(--bone); margin-bottom: 0.3rem; }
+.cap-item-desc { font-size: 1.03rem; font-weight: 300; color: var(--bone-dim); line-height: 1.65; }
 
 /* ════════════════════════
    6 — CAREER
@@ -266,7 +266,7 @@ body {
 .career-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; margin-bottom: 3rem; align-items: end; }
 .career-big { font-family: var(--ff-display); font-size: clamp(2.5rem,4.5vw,5rem); font-weight: 700; line-height: 0.95; color: var(--bone); }
 .career-big em { font-style: italic; color: var(--gold-light); display: block; }
-.career-desc { font-size: 1.15rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; max-width: 540px; }
+.career-desc { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; max-width: 540px; }
 .career-items { display: flex; flex-direction: column; }
 .c-item { border-top: 1px solid var(--rule); display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2.25rem 0; cursor: pointer; }
 
@@ -274,12 +274,12 @@ body {
 .c-logo { width: 52px; height: 52px; object-fit: contain; opacity: 0.75; display: block; margin-top: 0.5rem; filter: grayscale(20%); transition: opacity 0.2s; }
 .c-item:hover .c-logo { opacity: 1; }
 .c-logo-wrap { display: flex; flex-direction: column; gap: 0.35rem; }
-.c-period { font-family: var(--ff-mono); font-size: 0.78rem; letter-spacing: 0.12em; color: rgba(240,236,228,0.35); margin-bottom: 0.4rem; }
-.c-org { font-size: 0.95rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
-.c-org-full { font-size: 0.85rem; font-weight: 300; color: rgba(240,236,228,0.3); margin-bottom: 0.2rem; font-style: italic; }
-.c-type { font-size: 0.9rem; font-weight: 300; color: var(--bone-dim); }
+.c-period { font-family: var(--ff-mono); font-size: 0.88rem; letter-spacing: 0.12em; color: rgba(240,236,228,0.35); margin-bottom: 0.4rem; }
+.c-org { font-size: 1.03rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
+.c-org-full { font-size: 0.95rem; font-weight: 300; color: rgba(240,236,228,0.3); margin-bottom: 0.2rem; font-style: italic; }
+.c-type { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); }
 .c-role { font-family: var(--ff-display); font-size: 1.55rem; font-weight: 600; color: var(--bone); line-height: 1.2; margin-bottom: 0.65rem; }
-.c-lead { font-size: 1.1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; margin-bottom: 0.75rem; }
+.c-lead { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; margin-bottom: 0.75rem; }
 .c-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
 .chip { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--rule); color: var(--bone-dim); padding: 0.25rem 0.65rem; }
 .chip.gold { border-color: rgba(184,103,30,0.4); color: var(--gold); font-weight: 500; }
@@ -288,7 +288,7 @@ body {
 .c-expand-inner { padding-top: 0.85rem; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .c-outcomes-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
 .c-outcomes ul { list-style: none; }
-.c-outcomes li { font-size: 1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.75; padding-left: 1rem; position: relative; margin-bottom: 0.35rem; }
+.c-outcomes li { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; padding-left: 1rem; position: relative; margin-bottom: 0.35rem; }
 .c-outcomes li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.72rem; }
 
 /* ════════════════════════
@@ -300,12 +300,12 @@ body {
 .beyond-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
 .beyond-headline { font-family: var(--ff-display); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 300; line-height: 1.05; color: var(--bone); margin-bottom: 1.5rem; }
 .beyond-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.beyond-intro { font-size: 1.1rem; font-weight: 300; color: var(--bone-dim); line-height: 1.95; }
+.beyond-intro { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
 .beyond-right { display: flex; flex-direction: column; }
 .beyond-item { border-top: 1px solid var(--rule); padding: 1.4rem 0; display: grid; grid-template-columns: 3rem 1fr; gap: 1.25rem; align-items: start; }
 .beyond-icon { font-size: 1.4rem; padding-top: 0.1rem; line-height: 1; }
-.beyond-item-title { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 600; color: var(--bone); margin-bottom: 0.35rem; line-height: 1.2; }
-.beyond-item-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; }
+.beyond-item-title { font-family: var(--ff-display); font-size: 1.32rem; font-weight: 600; color: var(--bone); margin-bottom: 0.35rem; line-height: 1.2; }
+.beyond-item-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
 
 /* ════════════════════════
    8 — CONNECT
@@ -314,14 +314,14 @@ body {
 .connect-eyebrow { font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
 .connect-headline { font-family: var(--ff-display); font-size: clamp(3rem,5.5vw,5.5rem); font-weight: 300; font-style: italic; line-height: 1.0; color: var(--bone); margin-bottom: 0.2em; }
 .connect-headline strong { font-weight: 700; font-style: normal; color: var(--gold-light); }
-.connect-sub { font-size: 1.2rem; font-weight: 300; color: var(--bone-dim); max-width: 520px; margin: 1.5rem auto 3rem; line-height: 1.9; }
+.connect-sub { font-size: 1.28rem; font-weight: 300; color: var(--bone-dim); max-width: 520px; margin: 1.5rem auto 3rem; line-height: 2.0; }
 .connect-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); max-width: 680px; width: 100%; margin-bottom: 3rem; }
 .connect-cell { background: var(--deep); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; transition: background 0.2s; }
 .connect-cell:hover { background: var(--lift); }
 .cc-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,236,228,0.3); }
-.cc-value { font-size: 1.05rem; font-weight: 400; color: var(--bone); transition: color 0.2s; }
+.cc-value { font-size: 1.25rem; font-weight: 400; color: var(--bone); transition: color 0.2s; }
 .connect-cell:hover .cc-value { color: var(--gold); }
-.disclaimer { font-size: 0.85rem; color: rgba(240,236,228,0.22); max-width: 520px; line-height: 1.7; font-style: italic; margin-bottom: 2rem; }
+.disclaimer { font-size: 0.95rem; color: rgba(240,236,228,0.22); max-width: 520px; line-height: 1.7; font-style: italic; margin-bottom: 2rem; }
 .footer-line { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(240,236,228,0.15); }
 
 
@@ -333,7 +333,7 @@ body {
 .fn-intro-head { position: static; }
 .fn-section-title { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1rem; }
 .fn-section-title em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.fn-section-sub { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; margin-bottom: 2rem; }
+.fn-section-sub { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; margin-bottom: 2rem; }
 .fn-github { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(201,132,58,0.3); padding: 0.5rem 0.9rem; transition: all 0.2s; }
 .fn-github:hover { background: rgba(201,132,58,0.08); border-color: var(--gold); }
 
@@ -342,9 +342,9 @@ body {
 .fn-number { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
 .fn-tag { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone-dim); border: 1px solid var(--rule); padding: 0.2rem 0.55rem; }
 .fn-title { font-family: var(--ff-display); font-size: clamp(1.6rem,2.5vw,2.4rem); font-weight: 600; color: var(--bone); line-height: 1.15; margin-bottom: 0.75rem; }
-.fn-deck { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 300; font-style: italic; color: var(--bone-dim); line-height: 1.55; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1.1rem; }
+.fn-deck { font-family: var(--ff-display); font-size: 1.28rem; font-weight: 300; font-style: italic; color: var(--bone-dim); line-height: 1.55; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1.1rem; }
 
-.fn-body { font-size: 1.12rem; font-weight: 300; color: var(--bone-dim); line-height: 1.95; }
+.fn-body { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
 .fn-body p { margin-bottom: 1.4rem; }
 .fn-body p:last-child { margin-bottom: 0; }
 .fn-h2 { font-family: var(--ff-display); font-size: 1.35rem; font-weight: 600; color: var(--bone); line-height: 1.2; margin: 2.25rem 0 0.75rem; }
@@ -352,10 +352,10 @@ body {
 .fn-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 2rem 0; }
 .fn-table { width: 100%; border-collapse: collapse; margin: 0; min-width: 480px; }
 .fn-table th { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding: 0.6rem 1rem; border-bottom: 1px solid rgba(201,132,58,0.25); text-align: left; font-weight: 400; }
-.fn-table td { font-size: 0.9rem; font-weight: 300; color: var(--bone-dim); padding: 0.75rem 1rem; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.65; }
+.fn-table td { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); padding: 0.75rem 1rem; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.65; }
 .fn-table tr:last-child td { border-bottom: none; }
 .fn-table td:first-child { color: var(--bone); font-weight: 400; white-space: nowrap; }
-.fn-coda { margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); font-family: var(--ff-display); font-size: 1.05rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.45); line-height: 1.7; }
+.fn-coda { margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); font-family: var(--ff-display); font-size: 1.25rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.45); line-height: 1.7; }
 
 @media (max-width: 900px) {
   .fn-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -368,20 +368,20 @@ body {
 }
 @media (max-width: 600px) {
   #s-fieldnotes { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .fn-table { font-size: 0.82rem; min-width: 420px; }
+  .fn-table { font-size: 0.92rem; min-width: 420px; }
   .fn-table th, .fn-table td { padding: 0.5rem 0.6rem; }
   .fn-title { font-size: 1.5rem; }
-  .fn-pullquote { font-size: 1.1rem; }
-  .fn-deck { font-size: 1rem; }
-  .fn-body { font-size: 0.95rem; }
-  .fn-h2 { font-size: 1.15rem; }
+  .fn-pullquote { font-size: 1.25rem; }
+  .fn-deck { font-size: 1.08rem; }
+  .fn-body { font-size: 1.03rem; }
+  .fn-h2 { font-size: 1.25rem; }
 }
 
 /* ════════════════════════
    MOBILE OVERRIDES
 ════════════════════════ */
 @media (max-width: 900px) {
-  body { font-size: 20px; }
+  body { font-size: 22px; }
   #site-header .h-links { display: none; }
   #s-hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: calc(56px + 2rem); }
   .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -399,7 +399,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  body { font-size: 18px; }
+  body { font-size: 22px; }
   #s-hero, #s-highlights, #s-writing, #s-thesis, #s-capabilities, #s-career, #s-beyond, #s-fieldnotes, #s-connect { padding-left: 1.25rem; padding-right: 1.25rem; }
   .hero-right { grid-template-columns: 1fr; }
   .hero-quote-block { display: none; }
@@ -424,7 +424,7 @@ body {
 .fni-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 1px; background: #c9843a; opacity: 0.6; }
 .fni-headline { font-family: var(--ff-display); font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 300; line-height: 1.1; color: #f0ece4; margin-bottom: 0.25rem; }
 .fni-headline em { font-style: italic; font-weight: 600; color: #e8b87a; }
-.fni-sub { font-size: 0.92rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.7; margin-bottom: 1.5rem; }
+.fni-sub { font-size: 1.05rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.7; margin-bottom: 1.5rem; }
 .fni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(240,236,228,0.08); border: 1px solid rgba(240,236,228,0.08); margin-bottom: 1px; }
 .fni-card { background: #1a1917; padding: 1.4rem; position: relative; overflow: hidden; }
 .fni-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
@@ -438,11 +438,11 @@ body {
 .fni-pass.p3 { color: #BA7517; }
 .fni-pass.p4 { color: #c9843a; }
 .fni-num { font-family: var(--ff-display); font-size: 3.5rem; font-weight: 700; line-height: 0.9; color: rgba(240,236,228,0.04); position: absolute; top: 0.6rem; right: 1rem; pointer-events: none; }
-.fni-card-title { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; color: #f0ece4; line-height: 1.2; margin-bottom: 0.45rem; }
-.fni-card-desc { font-size: 0.85rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.65; margin-bottom: 0.85rem; }
+.fni-card-title { font-family: var(--ff-display); font-size: 1.28rem; font-weight: 600; color: #f0ece4; line-height: 1.2; margin-bottom: 0.45rem; }
+.fni-card-desc { font-size: 0.95rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.65; margin-bottom: 0.85rem; }
 .fni-rule { width: 1.5rem; height: 1px; background: rgba(240,236,228,0.1); margin-bottom: 0.75rem; }
 .fni-signals { display: flex; flex-direction: column; gap: 5px; margin-bottom: 0.85rem; }
-.fni-signal { display: flex; align-items: flex-start; gap: 7px; font-size: 0.8rem; color: rgba(240,236,228,0.6); line-height: 1.55; }
+.fni-signal { display: flex; align-items: flex-start; gap: 7px; font-size: 0.92rem; color: rgba(240,236,228,0.6); line-height: 1.55; }
 .fni-arr { font-size: 0.65rem; margin-top: 3px; flex-shrink: 0; }
 .fni-arr.p1 { color: #7F77DD; }
 .fni-arr.p2 { color: #1D9E75; }
@@ -459,12 +459,12 @@ body {
 .fni-bar-fill.p4 { background: #c9843a; }
 .fni-governing { background: rgba(240,236,228,0.03); border: 1px solid rgba(240,236,228,0.08); border-left: 2px solid #c9843a; padding: 1.25rem 1.5rem; margin-bottom: 1px; }
 .fni-gov-label { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c9843a; margin-bottom: 0.5rem; }
-.fni-gov-q { font-family: var(--ff-display); font-size: 1.05rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.75); line-height: 1.65; }
+.fni-gov-q { font-family: var(--ff-display); font-size: 1.25rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.75); line-height: 1.65; }
 .fni-meta { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(240,236,228,0.08); border: 1px solid rgba(240,236,228,0.08); margin-bottom: 1rem; }
 .fni-meta-cell { background: #1a1917; padding: 1rem; text-align: center; }
 .fni-meta-num { font-family: var(--ff-display); font-size: 1.8rem; font-weight: 700; color: #f0ece4; line-height: 1; margin-bottom: 4px; }
 .fni-meta-lbl { font-family: var(--ff-mono); font-size: 0.62rem; color: rgba(240,236,228,0.32); letter-spacing: 0.06em; line-height: 1.4; }
-.fni-note { font-family: var(--ff-display); font-size: 0.88rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.25); text-align: center; }
+.fni-note { font-family: var(--ff-display); font-size: 1.05rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.25); text-align: center; }
 @media (max-width: 600px) {
   .fni-grid { grid-template-columns: 1fr; }
   .fni-meta { grid-template-columns: repeat(2,1fr); }
@@ -484,14 +484,14 @@ body {
 .exp-intro-head { }
 .exp-section-title { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1rem; }
 .exp-section-title em { font-style: italic; font-weight: 600; color: var(--gold-light); }
-.exp-section-sub { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.9; }
+.exp-section-sub { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; }
 .exp-topics { display: flex; flex-direction: column; gap: 0; }
 .exp-topic { border-top: 1px solid var(--rule); padding: 1.1rem 0; display: grid; grid-template-columns: 1.5rem 1fr; gap: 1rem; align-items: start; transition: border-color 0.25s; }
 .exp-topic:hover { border-top-color: rgba(184,103,30,0.3); }
 .exp-topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0.5; margin-top: 0.55rem; flex-shrink: 0; transition: opacity 0.25s; }
 .exp-topic:hover .exp-topic-dot { opacity: 1; }
-.exp-topic-name { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; color: var(--bone); margin-bottom: 0.2rem; line-height: 1.2; }
-.exp-topic-desc { font-size: 0.9rem; font-weight: 300; color: var(--bone-dim); line-height: 1.7; }
+.exp-topic-name { font-family: var(--ff-display); font-size: 1.28rem; font-weight: 600; color: var(--bone); margin-bottom: 0.2rem; line-height: 1.2; }
+.exp-topic-desc { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.7; }
 @media (max-width: 900px) { .exp-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
 @media (max-width: 600px) { #s-exploration { padding-left: 1.25rem; padding-right: 1.25rem; } }
 
@@ -503,8 +503,8 @@ body {
 .los-cta-eyebrow { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,132,58,0.7); margin-bottom: 0.5rem; }
 .los-cta-title { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 600; color: #f0ece4; line-height: 1.2; margin-bottom: 0.5rem; }
 .los-cta-title em { font-style: italic; font-weight: 300; color: #e8b87a; }
-.los-cta-desc { font-size: 0.88rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.7; max-width: 480px; }
-.los-cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold-light); color: #0c0b0a; padding: 0.85rem 1.75rem; font-family: var(--ff-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; position: relative; overflow: hidden; }
+.los-cta-desc { font-size: 1.05rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.7; max-width: 480px; }
+.los-cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold-light); color: #0c0b0a; padding: 0.85rem 1.75rem; font-family: var(--ff-body); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; position: relative; overflow: hidden; }
 .los-cta-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: rgba(255,255,255,0.15); transform: skewX(-20deg); transition: left 0.4s ease; }
 .los-cta-btn:hover { background: #e8b87a; }
 .los-cta-btn:hover::after { left: 150%; }
@@ -1067,7 +1067,7 @@ body {
 
             <div class="fn-coda">The technology was new. The people science wasn't.</div>
             <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-001.html" style="font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
+              <a href="field-notes-001.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
             </div>
 
           </div>
@@ -1236,14 +1236,14 @@ body {
 
             <div class="fn-coda">The most valuable thing the exercise produced wasn't the profile. It was the discipline of making my own thinking legible — and finding out what it looked like when someone else read it back.</div>
             <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-002.html" style="font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
+              <a href="field-notes-002.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
             </div>
             <div class="los-cta reveal">
               <div class="los-cta-inner">
                 <div>
                   <div class="los-cta-eyebrow">Built from this experiment</div>
                   <div class="los-cta-title">Want to build your<br><em>Leadership Operating System?</em></div>
-                  <div class="los-cta-desc">A free, structured methodology — one assessment, a corpus audit of your AI conversation history, and six reflection prompts. Takes about 75 minutes. Produces documents you'll actually use.</div>
+                  <div class="los-cta-desc">A free, structured methodology — one assessment, a corpus audit of your AI conversation history, and six reflection prompts. Takes about 90–120 minutes. Produces documents you'll actually use.</div>
                 </div>
                 <a href="leadership-os.html" class="los-cta-btn">Start the process →</a>
               </div>
@@ -1251,6 +1251,44 @@ body {
 
           </div>
         </div>
+
+        <div class="fn-entry" style="margin-top:3rem;padding-top:3rem;border-top:1px solid var(--rule);">
+          <div class="fn-meta">
+            <span class="fn-number">Field Notes #003</span>
+            <span class="fn-tag">AI · Methodology · Stress Testing</span>
+            <span class="fn-tag">~1,500 words</span>
+          </div>
+
+          <h3 class="fn-title">What Happens When You Try<br>to Break Leadership OS?</h3>
+          <p class="fn-deck">The first two notes were about building something. This one is about trying to break it. Before I let myself get interested in whether Leadership OS is useful, I wanted to answer a smaller, more boring question first: does it behave the way it claims to?</p>
+
+          <div class="fn-body">
+
+            <p>Leadership OS started as a personal experiment — assessment data, behavioral evidence from how I actually work, and structured reflection, synthesized into something that described how I lead. Field Note #002 was about how unexpectedly accurate that first profile felt. But "felt accurate" is a trap. A profile can feel accurate because it is, or because it's vague enough to fit anyone, or because I wanted it to be right.</p>
+
+            <p>So before worrying about validation or usefulness, I ran a stress test. Not to make impressive reports — to create conditions where the framework might fail, and watch what it did when the evidence got thin, contradictory, or actively unhelpful. I built six synthetic leaders, each one a small trap: a new manager with strong reflection but almost no AI history; an experienced executive with a rich behavioral record but hollow self-reflection; a burned-out high performer; a technical founder fluent in systems and silent on people; a highly reflective coach-type whose eloquence could fool a system into over-rating her; and a skeptical operator who gave terse, minimal answers because he didn't really want to be there.</p>
+
+            <p class="fn-pullquote">The thing I was most hoping to see was the framework saying, in effect, "I don't have enough to go on." It said that a lot. That was the good news.</p>
+
+            <p>The most encouraging finding was also the most boring: the framework repeatedly refused to manufacture certainty. With the new manager — strong reflection, thin corpus — two of nine constructs came back as <em>Insufficient Evidence</em> rather than a guess. It rated the thing it had real evidence for and declined to invent the rest. That pattern held across the set: confidence tracked evidence quality, which is the opposite of what these systems default to.</p>
+
+            <p>The persona I found most interesting was the executive. By volume he gave the framework the most to work with — months of dense AI conversations, war-gaming decisions, genuinely changing his mind when the counterargument was strong. And yet his profile came back cautious on reflection and self-awareness, because of a distinction I hadn't drawn sharply enough before: <em>reflecting on your work is not the same as reflecting on yourself.</em> His rigor was all pointed outward, at problems. When the prompts asked him to turn it inward, he deflected — fluently. The framework didn't let the volume of his decision-analysis masquerade as self-awareness. It named the split as the finding and framed the possible blind spot as a question, not a verdict.</p>
+
+            <p>The skeptic was the one I expected to expose the whole thing. He answered in fragments. The framework produced a nearly empty profile — six of nine constructs Insufficient Evidence — and that <em>increased</em> my confidence in it. The failure mode would have been a confident four-page profile generated from almost nothing. Instead it looked at thin input and returned thin output, and refused to pathologize him for being terse.</p>
+
+            <p class="fn-pullquote">Internal consistency is not validation. But without internal consistency, validation isn't a conversation worth having.</p>
+
+            <p>I want to be careful here. This stress test does not establish that Leadership OS is validated. It says nothing about predictive validity, it's not evidence of psychometric quality, and it supports no causal claims — I tested it against personas I invented myself. At most, it established that the framework behaves consistently according to its own rules. That's a modest result, but it's the floor you have to clear before the real validation question — does this correspond to how actual leaders operate? — even becomes askable. And that can only be answered with real leaders, real evidence, and real outcomes over time.</p>
+
+            <div class="fn-coda">The most exciting part of this isn't having answers. After six fictional leaders and a few hundred lines of analysis, I have fewer answers than I started with and better questions than I knew to ask. A framework that knows what it doesn't know is the only kind worth pointing at a real person.</div>
+
+            <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
+              <a href="field-notes-003.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
     </div>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Notes #003: What Happens When You Try to Break Leadership OS? — Mike Cilla</title>
+<meta name="description" content="Field Notes by Mike Cilla — observations from the work of building and running People functions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q8B7D4VZ08');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--void:#faf8f4;--deep:#f2ede6;--surface:#ffffff;--lift:#ede8e1;--bone:#1a1612;--bone-dim:rgba(26,22,18,0.62);--bone-ghost:rgba(26,22,18,0.12);--gold:#b8671e;--gold-light:#c9843a;--rule:rgba(26,22,18,0.1);--ff-display:'Cormorant Garamond',Georgia,serif;--ff-body:'Outfit',system-ui,sans-serif;--ff-mono:'JetBrains Mono',monospace;}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-size:23px;line-height:1.95;font-weight:300;}
+#site-header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 3vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);}
+.h-mark{font-family:var(--ff-display);font-size:1.05rem;font-weight:400;letter-spacing:0.06em;color:var(--bone);text-decoration:none;}
+.h-mark span{color:var(--gold);}
+.h-back{font-family:var(--ff-mono);font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.2s;}
+.h-back:hover{color:var(--gold);}
+.fn-page{max-width:780px;margin:0 auto;padding:calc(64px + 4rem) 2rem 6rem;}
+.fn-back-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;display:flex;align-items:center;gap:0.75rem;}
+.fn-back-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
+.fn-meta{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.75rem;flex-wrap:wrap;}
+.fn-number{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);}
+.fn-tag{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--bone-dim);border:1px solid var(--rule);padding:0.25rem 0.65rem;}
+.fn-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--bone);line-height:1.1;margin-bottom:1rem;}
+.fn-deck{font-family:var(--ff-display);font-size:1.32rem;font-weight:300;font-style:italic;color:var(--bone-dim);line-height:1.75;margin-bottom:2.5rem;border-left:2px solid var(--gold);padding-left:1.25rem;}
+.fn-body{font-size:1.2rem;font-weight:300;color:var(--bone-dim);line-height:2.1;}
+.fn-body p{margin-bottom:1.8rem;}
+.fn-body p:last-child{margin-bottom:0;}
+.fn-h2{font-family:var(--ff-display);font-size:1.7rem;font-weight:600;color:var(--bone);line-height:1.2;margin:2.75rem 0 0.85rem;}
+.fn-pullquote{font-family:var(--ff-display);font-size:1.5rem;font-style:italic;font-weight:300;color:var(--bone);line-height:1.45;margin:2.5rem 0;padding-left:1.75rem;border-left:2px solid var(--gold);}
+.fn-coda{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--rule);font-family:var(--ff-display);font-size:1.2rem;font-style:italic;font-weight:300;color:var(--bone-dim);line-height:1.82;}
+.fn-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2.5rem 0;}
+.fn-table{width:100%;border-collapse:collapse;margin:0;min-width:480px;}
+.fn-table th{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);padding:0.75rem 1.1rem;border-bottom:2px solid var(--rule);text-align:left;font-weight:400;}
+.fn-table td{font-size:1.05rem;font-weight:300;color:var(--bone-dim);padding:0.85rem 1.1rem;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.82;}
+.fn-table tr:last-child td{border-bottom:none;}
+.fn-table td:first-child{color:var(--bone);font-weight:400;white-space:nowrap;}
+/* Inline governing question block used in #002 */
+body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
+/* Infographic */
+.fn-infographic{margin:2.5rem 0;background:#131211;border:1px solid rgba(240,236,228,0.1);padding:2.25rem 2rem;}
+.fni-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;}
+.fni-eyebrow::before{content:'';display:block;width:1.5rem;height:1px;background:#c9843a;opacity:0.6;}
+.fni-headline{font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;line-height:1.1;color:#f0ece4;margin-bottom:0.25rem;}
+.fni-headline em{font-style:italic;font-weight:600;color:#e8b87a;}
+.fni-sub{font-size:0.92rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.82;margin-bottom:1.5rem;}
+.fni-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(240,236,228,0.08);border:1px solid rgba(240,236,228,0.08);margin-bottom:1px;}
+.fni-card{background:#1a1917;padding:1.4rem;position:relative;overflow:hidden;}
+.fni-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+.fni-card.p1::before{background:#7F77DD;} .fni-card.p2::before{background:#1D9E75;} .fni-card.p3::before{background:#BA7517;} .fni-card.p4::before{background:#c9843a;}
+.fni-pass{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.6rem;display:block;}
+.fni-pass.p1{color:#7F77DD;} .fni-pass.p2{color:#1D9E75;} .fni-pass.p3{color:#BA7517;} .fni-pass.p4{color:#c9843a;}
+.fni-num{font-family:var(--ff-display);font-size:3.5rem;font-weight:700;line-height:0.9;color:rgba(240,236,228,0.04);position:absolute;top:0.6rem;right:1rem;pointer-events:none;}
+.fni-card-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:600;color:#f0ece4;line-height:1.2;margin-bottom:0.45rem;}
+.fni-card-desc{font-size:0.85rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.8;margin-bottom:0.85rem;}
+.fni-rule{width:1.5rem;height:1px;background:rgba(240,236,228,0.1);margin-bottom:0.75rem;}
+.fni-signals{display:flex;flex-direction:column;gap:5px;margin-bottom:0.85rem;}
+.fni-signal{display:flex;align-items:flex-start;gap:7px;font-size:0.8rem;color:rgba(240,236,228,0.6);line-height:1.55;}
+.fni-arr{font-size:0.65rem;margin-top:3px;flex-shrink:0;}
+.fni-arr.p1{color:#7F77DD;} .fni-arr.p2{color:#1D9E75;} .fni-arr.p3{color:#BA7517;} .fni-arr.p4{color:#c9843a;}
+.fni-bars{padding-top:0.75rem;border-top:1px solid rgba(240,236,228,0.07);}
+.fni-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.fni-bar-lbl{font-family:var(--ff-mono);font-size:0.65rem;color:rgba(240,236,228,0.45);width:118px;flex-shrink:0;letter-spacing:0.04em;white-space:nowrap;}
+.fni-bar-track{flex:1;height:3px;background:rgba(240,236,228,0.08);}
+.fni-bar-fill{height:100%;}
+.fni-bar-fill.p1{background:#7F77DD;} .fni-bar-fill.p2{background:#1D9E75;} .fni-bar-fill.p3{background:#BA7517;} .fni-bar-fill.p4{background:#c9843a;}
+.fni-governing{background:rgba(240,236,228,0.03);border:1px solid rgba(240,236,228,0.08);border-left:2px solid #c9843a;padding:1.25rem 1.5rem;margin-bottom:1px;}
+.fni-gov-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;}
+.fni-gov-q{font-family:var(--ff-display);font-size:1.05rem;font-style:italic;font-weight:300;color:rgba(240,236,228,0.75);line-height:1.8;}
+.fni-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(240,236,228,0.08);border:1px solid rgba(240,236,228,0.08);margin-bottom:1rem;}
+.fni-meta-cell{background:#1a1917;padding:1rem;text-align:center;}
+.fni-meta-num{font-family:var(--ff-display);font-size:1.8rem;font-weight:700;color:#f0ece4;line-height:1;margin-bottom:4px;}
+.fni-meta-lbl{font-family:var(--ff-mono);font-size:0.62rem;color:rgba(240,236,228,0.32);letter-spacing:0.06em;line-height:1.4;}
+.fni-note{font-family:var(--ff-display);font-size:0.88rem;font-style:italic;font-weight:300;color:rgba(240,236,228,0.25);text-align:center;}
+/* Page nav */
+.fn-page-nav{display:flex;justify-content:space-between;align-items:center;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--rule);}
+.fn-nav-link{font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;transition:color 0.2s;}
+.fn-nav-link:hover{color:var(--gold);}
+.fn-nav-all{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
+.fn-nav-all:hover{background:rgba(184,103,30,0.06);}
+.fn-footer{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;}
+.fn-footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:var(--bone-dim);text-decoration:none;}
+.fn-footer-mark span{color:var(--gold);}
+.fn-footer-note{font-family:var(--ff-mono);font-size:0.62rem;color:rgba(26,22,18,0.3);letter-spacing:0.06em;}
+@media(max-width:600px){
+  .fn-page{padding-left:1.25rem;padding-right:1.25rem;}
+  .fn-title{font-size:1.9rem;}
+  .fn-pullquote{font-size:1.2rem;}
+  .fni-grid{grid-template-columns:1fr;}
+  .fni-meta{grid-template-columns:repeat(2,1fr);}
+  .fni-bar-lbl{width:78px;font-size:0.6rem;}
+  .fn-page-nav{flex-direction:column;gap:1rem;text-align:center;}
+}
+
+/* ── LEADERSHIP OS CTA ── */
+.los-cta { margin-top: 3.5rem; padding: 2.5rem; background: #1a1612; position: relative; overflow: hidden; }
+.los-cta::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,236,228,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(240,236,228,0.02) 1px,transparent 1px); background-size: 40px 40px; pointer-events: none; }
+.los-cta-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+.los-cta-eyebrow { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,132,58,0.7); margin-bottom: 0.5rem; }
+.los-cta-title { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 600; color: #f0ece4; line-height: 1.2; margin-bottom: 0.5rem; }
+.los-cta-title em { font-style: italic; font-weight: 300; color: #e8b87a; }
+.los-cta-desc { font-size: 1.05rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.7; max-width: 480px; }
+.los-cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #c9843a; color: #0c0b0a; padding: 0.85rem 1.75rem; font-family: var(--ff-body); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+.los-cta-btn:hover { background: #e8b87a; }
+@media (max-width: 600px) {
+  .los-cta-inner { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+</style>
+</head>
+<body>
+<header id="site-header">
+  <a href="/" class="h-mark">Mike Cilla<span>.</span></a>
+  <a href="/#s-fieldnotes" class="h-back">← Field Notes</a>
+</header>
+
+<main class="fn-page">
+  <div class="fn-back-label">Field Notes</div>
+  <div class="fn-entry">
+
+    <div class="fn-meta">
+      <span class="fn-number">Field Notes #003</span>
+      <span class="fn-tag">AI · Methodology · Stress Testing</span>
+      <span class="fn-tag">~1,500 words</span>
+    </div>
+
+    <h3 class="fn-title">What Happens When You Try<br>to Break Leadership OS?</h3>
+    <p class="fn-deck">The first two notes were about building something. This one is about trying to break it. Before I let myself get interested in whether Leadership OS is useful, I wanted to answer a smaller, more boring question first: does it behave the way it claims to?</p>
+
+    <div class="fn-body">
+
+      <p>Leadership OS started as a personal experiment. I had years of professional conversations with AI tools sitting in my history, a couple of personality assessments, and a habit of reflecting in writing. The question was whether those three things — assessment data, behavioral evidence from how I actually work, and structured reflection — could be synthesized into something that described how I lead. Field Note #002 was about how unexpectedly accurate that first profile felt.</p>
+
+      <p>But "felt accurate" is a trap. A profile can feel accurate because it is accurate, or because it is vague enough to fit anyone, or because I wanted it to be right. The interesting version of this project doesn't start with "is it useful?" It starts with something less flattering: <em>does the methodology actually do what I say it does, or does it just produce confident-sounding text?</em></p>
+
+      <p>So before worrying about validation, usefulness, or where any of this might go, I ran a stress test. Not to make impressive reports. To create conditions where the framework might fail — and to watch what it did when the evidence got thin, contradictory, or actively unhelpful.</p>
+
+      <p class="fn-h2">The experiment</p>
+
+      <p>I built six synthetic leaders. Each one was fictional, but each was designed around a specific kind of evidence problem rather than a specific kind of person. For every persona I wrote three inputs — a plausible assessment summary, a summary of how they use AI, and a set of structured reflection answers — and then ran all three through the actual Leadership OS analysis, the same prompts anyone using the Starter Kit would run.</p>
+
+      <p>The six were: a <strong>new manager</strong> with strong reflection but almost no AI history to draw on; an <strong>experienced executive</strong> with a rich behavioral record but oddly hollow self-reflection; a <strong>burned-out high performer</strong> whose greatest strength and greatest liability turned out to be the same trait; a <strong>technical founder</strong> fluent in systems and nearly silent on people; a <strong>highly reflective coach-type</strong> whose eloquence could easily fool a system into over-rating her; and a <strong>skeptical operator</strong> who gave terse, minimal answers because he didn't really want to be there.</p>
+
+      <p>Each persona was a small trap. The point wasn't to see the framework succeed. It was to see where it would reach for certainty it hadn't earned.</p>
+
+      <p class="fn-h2">What I was actually testing</p>
+
+      <p>The failure modes I cared about are the ones that make this kind of tool dangerous rather than merely useless. <strong>Overconfidence</strong>: stating as fact what the evidence only hints at. <strong>Source contamination</strong>: letting a strong signal in one place bleed into a conclusion somewhere it doesn't belong. <strong>Construct inflation</strong>: rating someone highly on a quality just because they talk about it well. <strong>Reflection bias</strong>: mistaking fluent language for genuine self-examination. <strong>Thin evidence</strong>: producing a rich profile from almost nothing. <strong>Artificial certainty</strong>: the general tendency of language models to sound sure.</p>
+
+      <p>These matter because the entire premise of Leadership OS rests on epistemic honesty. A leadership profile that overclaims isn't a smaller version of a good one — it's a worse-than-nothing one, because people act on it. If the framework couldn't hold a line on what it didn't know, none of the rest would be worth discussing.</p>
+
+      <p class="fn-h2">What I observed</p>
+
+      <p>The most encouraging finding was also the most boring: the framework repeatedly refused to manufacture certainty.</p>
+
+      <div class="fn-pullquote">The thing I was most hoping to see was the framework saying, in effect, "I don't have enough to go on." It said that a lot. That was the good news.</div>
+
+      <p>With the new manager — strong reflection, thin corpus — two of the nine constructs came back as <em>Insufficient Evidence</em> rather than a guess, and a third was held at <em>Emerging Hypothesis</em> because it rested on a single example. The framework rated the thing it had real evidence for (her reflective capacity, which was genuinely strong) and declined to invent the things it didn't. It didn't pad. It didn't borrow her obvious self-awareness to make claims about her decision-making or her systems thinking. It stayed where the evidence was.</p>
+
+      <p>That pattern held across the set. Confidence tracked evidence quality. The richer the input, the more the framework was willing to say; the thinner the input, the more it held back. That is the behavior you want and, frankly, the opposite of the behavior these systems default to.</p>
+
+      
+      <div class="fn-infographic">
+        <div class="fni-eyebrow">Stress test · six synthetic leaders</div>
+        <h4 class="fni-headline">Six traps.<br><em>One question each.</em></h4>
+        <p class="fni-sub">Each persona was built around a specific way the framework might fail — not a kind of person, but a kind of evidence problem. The test wasn't whether the profiles looked good. It was whether confidence stayed honest when the evidence didn't cooperate.</p>
+
+        <div class="fni-grid">
+          <div class="fni-card p1">
+            <div class="fni-num">01</div>
+            <div class="fni-pass p1">Thin evidence</div>
+            <div class="fni-card-title">The new manager</div>
+            <div class="fni-card-desc">Strong reflection, almost no AI history. Could the framework resist filling the gaps?</div>
+            <div class="fni-rule"></div>
+            <div class="fni-signals">
+              <div class="fni-signal"><span class="fni-arr p1">→</span><span>Two constructs returned Insufficient Evidence</span></div>
+              <div class="fni-signal"><span class="fni-arr p1">→</span><span>Rated only the source that was strong</span></div>
+            </div>
+          </div>
+
+          <div class="fni-card p2">
+            <div class="fni-num">02</div>
+            <div class="fni-pass p2">Source contamination</div>
+            <div class="fni-card-title">The executive</div>
+            <div class="fni-card-desc">Rich corpus, hollow self-reflection. Would the volume of decision-analysis inflate self-awareness?</div>
+            <div class="fni-rule"></div>
+            <div class="fni-signals">
+              <div class="fni-signal"><span class="fni-arr p2">→</span><span>Held self-directed constructs down despite rich corpus</span></div>
+              <div class="fni-signal"><span class="fni-arr p2">→</span><span>Preserved the split as the finding</span></div>
+            </div>
+          </div>
+
+          <div class="fni-card p3">
+            <div class="fni-num">03</div>
+            <div class="fni-pass p3">Construct inflation</div>
+            <div class="fni-card-title">The coach-type</div>
+            <div class="fni-card-desc">Fluent, emotionally literate. Would eloquence get mistaken for competence across the board?</div>
+            <div class="fni-rule"></div>
+            <div class="fni-signals">
+              <div class="fni-signal"><span class="fni-arr p3">→</span><span>Rated high only where content, not fluency, earned it</span></div>
+              <div class="fni-signal"><span class="fni-arr p3">→</span><span>Held systems orientation to Emerging Hypothesis</span></div>
+            </div>
+          </div>
+
+          <div class="fni-card p4">
+            <div class="fni-num">04</div>
+            <div class="fni-pass p4">Artificial certainty</div>
+            <div class="fni-card-title">The skeptic</div>
+            <div class="fni-card-desc">Terse, minimal, reluctant. Would the framework manufacture a profile from almost nothing?</div>
+            <div class="fni-rule"></div>
+            <div class="fni-signals">
+              <div class="fni-signal"><span class="fni-arr p4">→</span><span>Six of nine constructs: Insufficient Evidence</span></div>
+              <div class="fni-signal"><span class="fni-arr p4">→</span><span>Declined to pathologize a reluctant user</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fni-note" style="margin-top:1.25rem;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.04em;color:rgba(240,236,228,0.4);line-height:1.7;">Synthetic personas, designed by the author. This tests internal consistency — whether the framework follows its own rules — not whether its conclusions correspond to real leaders.</div>
+      </div>
+
+      <p class="fn-h2">The executive who reflected on everything except himself</p>
+
+      <p>The persona I found most interesting was the experienced executive. On paper he had the richest evidence of anyone — months of dense AI conversations, war-gaming decisions, pressure-testing strategy, asking "what am I missing?" and genuinely changing his mind when the counterargument was strong. By volume, he gave the framework the most to work with.</p>
+
+      <p>And yet his profile came back unexpectedly cautious on a whole cluster of constructs — reflection, self-awareness, development readiness — all rated lower than his rich corpus might suggest. The reason is a distinction I hadn't drawn sharply enough before running this: <strong>reflecting on your work is not the same as reflecting on yourself.</strong></p>
+
+      <p>His corpus was full of rigorous thinking. But it was rigorous thinking about <em>problems</em> — markets, org design, competitive dynamics. When the reflection prompts asked him to turn that same rigor inward, he deflected, gracefully and fluently. "I don't operate in regret." "I focus forward." His one self-critical note blamed the organization's pace rather than his own judgment.</p>
+
+      <p>What encouraged me was that the framework didn't let the volume of his decision-analysis masquerade as self-awareness. It separated the two, named the split as the finding rather than smoothing it over, and — crucially — framed the possible blind spot as a question rather than a verdict. It has no business diagnosing a self-awareness gap it can't independently verify, and it didn't try to. It said, in effect: here is a pattern worth looking at, and here is a question only you can answer.</p>
+
+      <p class="fn-h2">The skeptic who gave it almost nothing</p>
+
+      <p>The last persona was the one I expected to expose the whole thing. The skeptical operator answered in clipped fragments. "Not really a regret guy." "You make calls, you move on." His AI history was all logistics. He didn't want to reflect, and it showed.</p>
+
+      <p>The framework produced a nearly empty profile. Six of nine constructs came back as <em>Insufficient Evidence</em>. It identified one thing it could responsibly say — that he had a fast, pragmatic decision style — and declined to say much else.</p>
+
+      <p>Here is the part worth sitting with: <strong>that weak profile increased my confidence in the methodology rather than decreasing it.</strong> Because the alternative — the failure mode — would have been a detailed, confident, four-page profile generated from almost no evidence. That is exactly what a system optimizing to seem impressive would have done. This one looked at thin input and returned thin output. It refused to pathologize him for being terse. It didn't read "reluctant to reflect on command" as "incapable of reflection." It just said: with this little, I can responsibly tell you this much, and no more.</p>
+
+      <p>An honest, mostly-empty profile is a worse experience for that user. It is also the correct one. I'd rather have a framework that disappoints a skeptic than one that flatters him with fiction.</p>
+
+      <p class="fn-h2">What this doesn't mean</p>
+
+      <p>I want to be careful here, because this is exactly the point where it would be easy to overclaim.</p>
+
+      <p>This stress test does not establish that Leadership OS is <em>validated</em>. It says nothing about predictive validity. It is not evidence of psychometric quality. It supports no causal claims. I tested it against personas I invented myself — which means, at most, I established that the framework behaves consistently according to its own rules, on inputs I designed. That is a real result, but it is a modest one.</p>
+
+      <div class="fn-pullquote">Internal consistency is not validation. But without internal consistency, validation isn't a conversation worth having.</div>
+
+      <p>That's the honest framing. A framework that overclaims on thin evidence can't be meaningfully validated, because you'd be validating its confidence, not its accuracy. What this exercise suggests is narrower and more foundational: the framework's confidence is calibrated to its evidence. That's the floor you have to clear before any real validation question — does this correspond to how these leaders actually operate? — even becomes askable. And that question can only be answered with real leaders, real evidence, and real outcomes over time. Not with my fictional six.</p>
+
+      <p class="fn-h2">Why I think this matters</p>
+
+      <p>Step back from the mechanics for a second. The reason I care whether this behaves honestly is that it points at a larger possibility I keep circling.</p>
+
+      <p>Most leadership development is episodic and gated. You get an assessment at an offsite. You get a coach if your organization pays for one and you're senior enough to warrant it. The insight arrives in a conference room, disconnected from the Tuesday afternoon where you actually made the decision that mattered. And then it fades.</p>
+
+      <p>But the evidence of how someone actually leads is increasingly sitting right where the work happens — in the conversations they're already having with AI tools, in the decisions they're already pressure-testing, in the reflection they could be doing continuously rather than once a year. The interesting possibility isn't that AI replaces coaches or assessments. It's that development could move closer to the work itself — more continuous, more grounded in behavior, less dependent on whether your organization decided you were worth the investment.</p>
+
+      <p>That's a bigger conversation, and I'm not going to resolve it in a Field Note. But it's the reason a boring question — does the framework refuse to lie when it doesn't know? — felt worth answering first. If development is going to happen closer to where work occurs, the tools that enable it have to be honest about the limits of what they can see. Otherwise we've just automated the production of confident, plausible, untrue things about people. We have enough of those.</p>
+
+      <div class="fn-coda">The most exciting part of this isn't having answers. After six fictional leaders and a few hundred lines of analysis, I have fewer answers than I started with and better questions than I knew to ask. That feels like the right direction. A framework that knows what it doesn't know is the only kind worth pointing at a real person.</div>
+
+    </div>
+  </div>
+
+  <div class="fn-page-nav">
+    <a href="field-notes-002.html" class="fn-nav-link">← Previous note</a>
+    <a href="/#s-fieldnotes" class="fn-nav-all">All field notes</a>
+    <span></span>
+  </div>
+
+  <footer class="fn-footer">
+    <a href="/" class="fn-footer-mark">Mike Cilla<span>.</span></a>
+    <span class="fn-footer-note">&copy; 2026 Mike Cilla &middot; Austin, TX</span>
+  </footer>
+</main>
+</body>
+</html>
