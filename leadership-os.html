@@ -448,6 +448,42 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   .oc-takes{padding:1.4rem 1.4rem;}
   .ot-items{grid-template-columns:1fr;gap:0.9rem;}
 }
+
+/* ═══════════ HOW IT'S EVOLVING ═══════════ */
+#evolving{padding:6rem 4vw;background:var(--void);border-top:1px solid var(--rule);}
+.ev-wrap{max-width:1040px;margin:0 auto;}
+.ev-wrap .section-sub{max-width:640px;}
+.evo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;}
+.evo-card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.6rem 1.6rem 1.5rem;}
+.evo-card-label{font-family:var(--ff-mono);font-size:0.72rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.evo-card-body{font-size:0.95rem;line-height:1.65;color:var(--ink-dim);}
+.evo-card-body p{margin-bottom:0.6rem;}
+.evo-card-body p strong{color:var(--ink);font-weight:500;}
+.evo-list{list-style:none;padding:0;margin:0;}
+.evo-list li{position:relative;padding-left:1.1rem;margin-bottom:0.7rem;font-size:0.92rem;line-height:1.55;color:var(--ink-dim);}
+.evo-list li::before{content:'·';position:absolute;left:0.2rem;color:var(--gold);font-weight:700;}
+
+/* ═══════════ STAY CONNECTED ═══════════ */
+#connect{padding:6rem 4vw;background:var(--deep);border-top:1px solid var(--rule);}
+.cn-wrap{max-width:1040px;margin:0 auto;}
+.cn-wrap .section-sub{max-width:660px;}
+.cn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;}
+.cn-card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.75rem 1.6rem 1.6rem;display:flex;flex-direction:column;}
+.cn-num{font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.85rem;}
+.cn-card-name{font-family:var(--ff-display);font-size:1.4rem;font-weight:500;color:var(--ink);line-height:1.15;margin-bottom:0.75rem;}
+.cn-card-desc{font-size:0.95rem;line-height:1.65;color:var(--ink-dim);margin-bottom:1.4rem;flex:1;}
+.cn-btn{display:inline-block;align-self:flex-start;font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.06em;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);border-radius:5px;padding:0.55rem 1rem;transition:all 0.2s;}
+.cn-btn:hover{background:rgba(184,103,30,0.08);border-color:var(--gold);}
+.cn-foot{text-align:center;font-size:0.88rem;line-height:1.6;color:var(--ink-dim);margin-top:2rem;font-style:italic;}
+
+@media(max-width:860px){
+  .evo-grid,.cn-grid{grid-template-columns:1fr;}
+  #evolving,#connect{padding:4rem 1.5rem;}
+}
+
+.footer-links{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin:1.25rem 0;}
+.footer-links a{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.06em;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
 </style>
 </head>
 <body>
@@ -1314,6 +1350,81 @@ Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
 </section>
 
 <!-- CTA -->
+<!-- ═══════════ HOW IT'S EVOLVING ═══════════ -->
+<section id="evolving" style="scroll-margin-top:52px;">
+  <div class="ev-wrap">
+    <div class="s-label reveal">How it's evolving</div>
+    <h2 class="section-headline reveal" style="transition-delay:.05s">A living methodology,<br><em>not a finished product.</em></h2>
+    <p class="section-sub reveal" style="transition-delay:.1s">Leadership OS is in active development. Here's where it stands, what's changed, and the questions still open. Think of it as release notes crossed with research notes.</p>
+
+    <div class="evo-grid">
+      <div class="evo-card reveal" style="transition-delay:.05s">
+        <div class="evo-card-label">Current version</div>
+        <div class="evo-card-body">
+          <p><strong>Version 1.0</strong> · June 2026</p>
+          <p>Three evidence sources, nine constructs, four output tools, full confidence-labeling and construct traceability. End-to-end tested in clean AI sessions.</p>
+        </div>
+      </div>
+      <div class="evo-card reveal" style="transition-delay:.1s">
+        <div class="evo-card-label">What's recent</div>
+        <div class="evo-card-body">
+          <ul class="evo-list">
+            <li>Theoretical grounding made operational inside the analysis prompts — not just cited.</li>
+            <li>Every development priority now traces to its originating construct, evidence, and confidence level.</li>
+            <li>Plain-language framing of what you walk away with.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="evo-card reveal" style="transition-delay:.15s">
+        <div class="evo-card-label">Open questions</div>
+        <div class="evo-card-body">
+          <ul class="evo-list">
+            <li>Does the behavioral corpus add signal beyond what assessments alone reveal?</li>
+            <li>Which of the four tools do people actually return to?</li>
+            <li>How consistent is the analysis across different AI models and runs?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STAY CONNECTED ═══════════ -->
+<section id="connect" style="scroll-margin-top:52px;">
+  <div class="cn-wrap">
+    <div class="s-label reveal">Stay connected</div>
+    <h2 class="section-headline reveal" style="transition-delay:.05s">Three ways to<br><em>follow along.</em></h2>
+    <p class="section-sub reveal" style="transition-delay:.1s">No newsletter, no funnel, no signup wall. Leadership OS doesn't collect or store your assessment results, reflections, or outputs — and that won't change. These are simply open doors if you want to keep in touch.</p>
+
+    <div class="cn-grid">
+      <!-- Updates -->
+      <div class="cn-card reveal" style="transition-delay:.05s">
+        <div class="cn-num">01</div>
+        <div class="cn-card-name">Future experiments &amp; updates</div>
+        <div class="cn-card-desc">Interested in future Leadership OS experiments, methodology updates, and new tools as they're released? Send a note with your role and what you're curious about — entirely optional.</div>
+        <a href="mailto:mikejcilla@gmail.com?subject=Leadership%20OS%20%E2%80%94%20stay%20updated&body=Hi%2C%20I%27d%20like%20to%20hear%20about%20future%20Leadership%20OS%20experiments%20and%20updates.%0A%0A(Optional)%20My%20role%2Ftitle%3A%20%0A(Optional)%20What%20I%27m%20most%20curious%20about%3A%20" class="cn-btn">Send a note →</a>
+      </div>
+
+      <!-- Feedback -->
+      <div class="cn-card reveal" style="transition-delay:.1s">
+        <div class="cn-num">02</div>
+        <div class="cn-card-name">Help improve Leadership OS</div>
+        <div class="cn-card-desc">Completed the process, or reviewed the methodology? Your honest reaction is the single most valuable input right now — what was useful, what was unclear, what surprised you. Not a testimonial request. A learning one.</div>
+        <a href="mailto:mikejcilla@gmail.com?subject=Leadership%20OS%20%E2%80%94%20feedback&body=Sharing%20feedback%20to%20help%20improve%20Leadership%20OS.%0A%0ARole%3A%20%0AIndustry%3A%20%0AYears%20leading%3A%20%0ADid%20you%20complete%20the%20process%3F%20%0AMost%20useful%20output%3A%20%0ALeast%20useful%20output%3A%20%0AMost%20surprising%20insight%3A%20%0AWhat%20felt%20unclear%3A%20%0AWould%20you%20use%20it%20again%3F%20%0AAnything%20else%3A%20" class="cn-btn">Share feedback →</a>
+      </div>
+
+      <!-- Research -->
+      <div class="cn-card reveal" style="transition-delay:.15s">
+        <div class="cn-num">03</div>
+        <div class="cn-card-name">Future research</div>
+        <div class="cn-card-desc">Leadership OS raises questions worth studying properly. No data is being collected yet and no validation is claimed — but if you'd want to hear about future research efforts or participation opportunities, the door is open.</div>
+        <a href="mailto:mikejcilla@gmail.com?subject=Leadership%20OS%20%E2%80%94%20research%20interest&body=I%27d%20be%20interested%20in%20future%20Leadership%20OS%20research%20efforts.%0A%0A(Optional)%20My%20background%2Frole%3A%20%0A(Optional)%20My%20research%20interest%3A%20" class="cn-btn">Express interest →</a>
+      </div>
+    </div>
+    <p class="cn-foot">Every link above opens your own email client. You decide what to send. Nothing is tracked or stored by this site.</p>
+  </div>
+</section>
+
 <section id="cta" style="scroll-margin-top:52px;">
   <div class="cta-eyebrow reveal">Ready to begin</div>
   <h2 class="cta-headline reveal" style="transition-delay:.1s">About<br><strong>90–120 minutes.</strong></h2>
@@ -1327,6 +1438,12 @@ Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
 
 <footer>
   <a href="https://mikecilla.com" class="footer-mark">Mike Cilla<span>.</span></a>
+  <div class="footer-links">
+    <a href="#connect">Stay connected</a>
+    <a href="#evolving">How it's evolving</a>
+    <a href="leadership-os-model.html">The model</a>
+    <a href="leadership-os-starter-kit.html">Starter Kit</a>
+  </div>
   <span class="footer-note" style="display:block;margin-bottom:0.6rem;">Your data stays inside the AI tool you choose. Leadership OS does not collect or store your results, reflections, or conversation history.</span><span class="footer-note">Leadership OS · Version 1.0 · Reflection &amp; development methodology · Not a validated assessment · © 2026 Mike Cilla</span>
 </footer>
 
