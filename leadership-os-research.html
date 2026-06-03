@@ -361,6 +361,50 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
   .rp-section{padding:3rem 1.5rem;}
   .rp-pull{font-size:1.4rem;}
 }
+
+/* ── FRAMEWORK DOC ADDITIONS ── */
+.rp-banner{background:var(--ink);padding:2.5rem 4vw;}
+.rp-banner-inner{max-width:880px;margin:0 auto;}
+.rp-banner-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1rem;}
+.rp-banner-text{font-size:1.1rem;line-height:1.7;color:#f0ece4;margin:0;}
+
+.rp-hierarchy{background:var(--deep);border:1px solid var(--rule);border-radius:10px;padding:1.75rem 2rem;margin:2rem 0;}
+.rp-hier-row{display:grid;grid-template-columns:140px 24px 1fr;gap:0.5rem 1rem;align-items:baseline;padding:0.6rem 0;border-bottom:1px solid var(--rule);}
+.rp-hier-row:last-child{border-bottom:none;}
+.rp-hier-term{font-family:var(--ff-mono);font-size:0.88rem;font-weight:500;color:var(--ink);letter-spacing:0.02em;}
+.rp-hier-eq{font-family:var(--ff-mono);color:var(--gold);text-align:center;}
+.rp-hier-def{font-size:0.98rem;line-height:1.55;color:var(--ink-dim);}
+.rp-hier-result .rp-hier-term{color:var(--gold);}
+.rp-hier-result .rp-hier-def{color:var(--ink);}
+
+.rp-table-wrap{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--rule);border-radius:8px;}
+.rp-trace-table{width:100%;border-collapse:collapse;font-size:0.92rem;min-width:680px;}
+.rp-trace-table th{text-align:left;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);padding:0.9rem 1rem;border-bottom:1px solid var(--rule);background:var(--deep);vertical-align:bottom;}
+.rp-trace-table td{padding:0.9rem 1rem;border-bottom:1px solid var(--rule);line-height:1.55;color:var(--ink-dim);vertical-align:top;}
+.rp-trace-table tr:last-child td{border-bottom:none;}
+.tt-construct{font-family:var(--ff-display);font-size:1.05rem;font-weight:500;color:var(--ink);white-space:nowrap;}
+.tt-not{color:var(--ink);background:rgba(192,57,43,0.04);}
+.rp-table-note{font-size:0.92rem;font-style:italic;color:var(--ink-dim);margin-top:0.5rem;}
+
+.rp-coverage{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.75rem 0;}
+.rp-cov-col{border-radius:8px;padding:1.4rem 1.6rem;}
+.rp-cov-strong{background:rgba(29,158,117,0.07);border:1px solid rgba(29,158,117,0.2);}
+.rp-cov-weak{background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.18);}
+.rp-cov-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.9rem;}
+.rp-cov-strong .rp-cov-label{color:#1D9E75;}
+.rp-cov-weak .rp-cov-label{color:#c0392b;}
+.rp-coverage ul{margin:0;padding:0;list-style:none;}
+.rp-coverage li{position:relative;padding-left:1.2rem;margin-bottom:0.6rem;font-size:0.95rem;line-height:1.55;color:var(--ink-dim);}
+.rp-cov-strong li::before{content:'+';position:absolute;left:0;color:#1D9E75;font-weight:600;}
+.rp-cov-weak li::before{content:'–';position:absolute;left:0;color:#c0392b;font-weight:600;}
+
+@media(max-width:720px){
+  .rp-hier-row{grid-template-columns:1fr;gap:0.15rem;padding:0.7rem 0;}
+  .rp-hier-eq{display:none;}
+  .rp-coverage{grid-template-columns:1fr;}
+  .rp-banner{padding:2rem 1.5rem;}
+  .rp-banner-text{font-size:1rem;}
+}
 </style></head>
 <body>
 <header>
@@ -371,6 +415,15 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
     <a href="leadership-os-starter-kit.html">Starter Kit</a>
     <a href="leadership-os.html">← Back</a>
   </nav>
+
+<!-- PROMINENT DESIGN-DECISION STATEMENT -->
+<div class="rp-banner">
+  <div class="rp-banner-inner">
+    <div class="rp-banner-label">A design decision, stated plainly</div>
+    <p class="rp-banner-text">Leadership OS is not intended to represent a complete theory of leadership. The current framework focuses on a set of developmental dimensions that emerged through corpus analysis, leadership-development literature, and practical experimentation. Some aspects of leadership — particularly social-relational and interpersonal dimensions — are less directly represented and remain areas for future exploration. This document explains both what the framework knows and what it does not.</p>
+  </div>
+</div>
+
 </header>
 
 <!-- HERO -->
@@ -457,6 +510,14 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
     <div class="rp-flow-box result">Four output tools</div>
   </div>
 
+  <div class="rp-hierarchy">
+    <div class="rp-hier-row"><span class="rp-hier-term">Assessment</span><span class="rp-hier-eq">=</span><span class="rp-hier-def">how you describe yourself</span></div>
+    <div class="rp-hier-row"><span class="rp-hier-term">Reflection</span><span class="rp-hier-eq">=</span><span class="rp-hier-def">how you interpret your own experience</span></div>
+    <div class="rp-hier-row"><span class="rp-hier-term">Corpus</span><span class="rp-hier-eq">=</span><span class="rp-hier-def">patterns observed in how you actually worked</span></div>
+    <div class="rp-hier-row rp-hier-result"><span class="rp-hier-term">Leadership OS</span><span class="rp-hier-eq">=</span><span class="rp-hier-def">triangulation across all three — strongest where they converge, most interesting where they diverge</span></div>
+  </div>
+  <p>This framing captures what may be the methodology's most novel move. Two of the three sources — assessment and reflection — are forms of self-report. The corpus is the only one produced without self-description in mind. So the framework does not treat three opinions as equal votes; it treats the corpus as a partial check on the two self-reports, and treats agreement <em>between</em> the corpus and a self-report as worth more than agreement between the two self-reports alone.</p>
+
   <h3>Assessment data</h3>
   <p><strong>Role:</strong> Establishes baseline trait tendencies grounded in validated self-report traditions (typically a Big Five or Big Five-adjacent instrument). <strong>Strength:</strong> Decades of psychometric research stand behind the underlying trait dimensions; the data is structured and comparable. <strong>Limitation:</strong> It is self-report, subject to self-presentation effects, and describes general tendencies rather than situated behavior. <strong>Tradeoff:</strong> High reliability for what it measures, but it measures disposition, not leadership conduct.</p>
 
@@ -483,6 +544,28 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
     <p>The current framework is noticeably stronger on cognitive and developmental dimensions — reflection, systems thinking, learning, decision-making, self-awareness, development readiness — than on interpersonal and social-relational dimensions. Constructs like empathy, relational repair, conflict navigation, influence, and team dynamics are underrepresented or absent.</p>
     <p>This is not an accident of emphasis to be corrected with a coat of paint. It reflects the framework's origins (a corpus of individual problem-solving work, which surfaces cognition far more readily than relational conduct) and a genuine measurement difficulty (relational behavior is hard to observe in an AI conversation history). The framework is, today, better at describing how a leader <em>thinks</em> than how they <em>relate</em>. Any reader should weight its conclusions accordingly.</p>
   </div>
+  <div class="rp-coverage">
+    <div class="rp-cov-col rp-cov-strong">
+      <div class="rp-cov-label">Where the framework is stronger</div>
+      <ul>
+        <li>Cognitive dimensions — how a leader frames and reasons</li>
+        <li>Developmental dimensions — readiness and orientation to grow</li>
+        <li>Reflective dimensions — self-examination and meaning-making</li>
+        <li>Decision patterns — how commitment and revision happen</li>
+      </ul>
+    </div>
+    <div class="rp-cov-col rp-cov-weak">
+      <div class="rp-cov-label">Where the framework is weaker or silent</div>
+      <ul>
+        <li>Social intelligence — reading and responding to people in the moment</li>
+        <li>Relationship management — building and repairing trust over time</li>
+        <li>Political skill — navigating influence and organizational dynamics</li>
+        <li>Team dynamics — how a leader shapes a group, not just individuals</li>
+        <li>Live interpersonal behavior — conduct that never enters a written record</li>
+      </ul>
+    </div>
+  </div>
+
 
   <div class="rp-construct">
     <div class="rp-construct-name">01 · Reflection Orientation</div>
@@ -586,6 +669,73 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
   <p>Several existing models were considered as scaffolding and set aside. Competency frameworks (lists of leadership skills) were rejected as too prescriptive and too tied to specific organizational contexts. Pure trait models were rejected as too static — they describe disposition, not development. Stage-based developmental models were influential but too rigid to map onto the messy, non-linear evidence the methodology actually produces. The nine constructs are best understood as a pragmatic working set, not a claim that leadership reduces to exactly nine dimensions.</p>
   <h3>Open questions about the constructs</h3>
   <p>Are nine the right number? Are any of them redundant — does Self-Awareness meaningfully separate from Reflection Orientation in practice, or do they collapse? Are the boundaries stable across different people and contexts? Should the interpersonal gap be closed by adding constructs, or does the methodology's evidence model simply not support relational measurement, in which case the honest move is to narrow the claimed scope rather than add constructs the evidence can't support? These are unresolved.</p>
+
+  <h3>Construct-by-construct lineage</h3>
+  <p>For researchers who want the lineage rather than the definitions, the table below maps each construct to the research traditions that inform it, what it is designed to capture, and — equally important — what it explicitly does not capture. The final column is where the framework's boundaries become visible.</p>
+  <div class="rp-table-wrap">
+    <table class="rp-trace-table">
+      <thead>
+        <tr><th>Construct</th><th>Research traditions</th><th>What it captures</th><th>What it doesn't capture</th></tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="tt-construct">Reflection Orientation</td>
+        <td>Reflective practice (Schön, Argyris); self-awareness research (Eurich)</td>
+        <td>Deliberately examining experience to extract developmental insight</td>
+        <td class="tt-not">Emotional regulation; whether the insight is acted upon</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Systems Orientation</td>
+        <td>Systems thinking (Senge); complexity &amp; structural reasoning</td>
+        <td>Framing problems in terms of structure, interdependency, and root cause</td>
+        <td class="tt-not">Interpersonal influence; relational skill</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Learning Orientation</td>
+        <td>Adult learning (Kolb, Mezirow); growth orientation; deliberate practice</td>
+        <td>Treating experience as developmental material and tolerating productive uncertainty</td>
+        <td class="tt-not">Technical competence; domain expertise</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Decision Style</td>
+        <td>Judgment &amp; decision-making; metacognition (Flavell)</td>
+        <td>Characteristic approach to commitment and revision under uncertainty</td>
+        <td class="tt-not">Decision quality or outcomes; ethics of the call</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Communication Patterns</td>
+        <td>Behavioral observation; intent-impact / espoused vs. enacted (Argyris)</td>
+        <td>Characteristic ways of structuring, delivering, and receiving communication</td>
+        <td class="tt-not">Verbal / live / emotionally-charged communication</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Leadership Identity</td>
+        <td>Identity development (Ibarra); leadership development (Day)</td>
+        <td>How a leader understands their role, relationship to authority, and developmental direction</td>
+        <td class="tt-not">How others actually perceive the leader (external view)</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Adaptability</td>
+        <td>Adaptive performance; openness traditions; experiential learning</td>
+        <td>Adjusting approach in response to changed conditions — distinct from accommodation</td>
+        <td class="tt-not">Social accommodation; relational flexibility specifically</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Self-Awareness</td>
+        <td>Self-awareness research (Eurich); metacognition (Flavell); self-concept literature</td>
+        <td>Accuracy of the leader&#x27;s self-model relative to available evidence</td>
+        <td class="tt-not">External self-awareness; emotional regulation</td>
+      </tr>
+      <tr>
+        <td class="tt-construct">Development Readiness</td>
+        <td>Adult development (Kegan); self-determination &amp; motivation (Deci &amp; Ryan)</td>
+        <td>Current capacity and motivation for deliberate development work</td>
+        <td class="tt-not">Capacity for relational vs. cognitive growth equally</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="rp-table-note">The "what it doesn't capture" column is not a list of future features. Several of these — emotional regulation, live interpersonal behavior, how others perceive the leader — may be genuinely outside what an AI corpus and self-report can responsibly assess. Documenting the boundary is more honest than promising to eventually cross it.</p>
 </section>
 
 <!-- SECTION 6 — THEORETICAL FOUNDATIONS -->
