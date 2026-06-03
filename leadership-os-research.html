@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research &amp; Methodology — Leadership OS</title>
+<title>Technical Manual &amp; Methodology Reference — Leadership OS</title>
 <meta name="description" content="Leadership OS research and methodology reference. How the framework works, why its constructs exist, what it claims, and what it does not. A transparency document for researchers and practitioners.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -405,6 +405,16 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
   .rp-banner{padding:2rem 1.5rem;}
   .rp-banner-text{font-size:1rem;}
 }
+
+/* TECHNICAL MANUAL FRONT MATTER */
+.rp-usebox{display:grid;gap:1rem;margin:1.5rem 0;}
+.rp-use{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.4rem 1.6rem;border-left:3px solid var(--ink-dim);}
+.rp-use-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:0.6rem;}
+.rp-use p{margin:0;font-size:1rem;line-height:1.7;color:var(--ink-dim);}
+.rp-use-yes{border-left-color:#1D9E75;}
+.rp-use-yes .rp-use-label{color:#1D9E75;}
+.rp-use-no{border-left-color:#c0392b;}
+.rp-use-no .rp-use-label{color:#c0392b;}
 </style></head>
 <body>
 <header>
@@ -424,11 +434,32 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
   </div>
 </div>
 
+<!-- TECHNICAL MANUAL FRONT MATTER -->
+<section class="rp-section" id="purpose">
+  <div class="rp-sec-num">00 · Purpose, use &amp; scope</div>
+  <h2>Before anything else</h2>
+  <div class="rp-usebox">
+    <div class="rp-use">
+      <div class="rp-use-label">Purpose</div>
+      <p>Leadership OS is a structured developmental methodology. It combines three evidence sources — a validated personality assessment, structured self-reflection, and behavioral patterns from a person's AI conversation history — to generate confidence-labeled, traceable hypotheses about how an individual appears to think, learn, reflect, communicate, decide, and adapt as a leader.</p>
+    </div>
+    <div class="rp-use rp-use-yes">
+      <div class="rp-use-label">Intended use</div>
+      <p>Personal reflection and development. Use it to surface patterns worth examining, to inform a coaching conversation, to brief a new team on how you work, or to make an AI tool respond in a way that fits how you think. It is a starting point for reflection — a generator of good questions, not final answers.</p>
+    </div>
+    <div class="rp-use rp-use-no">
+      <div class="rp-use-label">Not intended use</div>
+      <p>Selection, hiring, promotion, ranking, performance evaluation, or any decision about a person made by someone other than that person. It is not validated for high-stakes or comparative use, produces no scores or norms, and must not be used to evaluate or compare leaders.</p>
+    </div>
+  </div>
+</section>
+
+
 </header>
 
 <!-- HERO -->
 <div class="rp-hero">
-  <div class="rp-eyebrow">Research &amp; Methodology · Reference Document</div>
+  <div class="rp-eyebrow">Technical Manual · Methodology Reference</div>
   <h1>How Leadership OS<br><em>actually works.</em></h1>
   <p class="rp-lede">This is the technical reference for Leadership OS — written for researchers, psychologists, coaches, and practitioners who want to understand exactly how the methodology is intended to work, why its constructs exist, and what it does and does not claim. The goal here is transparency, not persuasion. Where the framework is uncertain or incomplete, this document says so.</p>
   <div class="rp-status">
@@ -442,6 +473,7 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
 <nav class="rp-toc">
   <div class="rp-toc-label">Contents</div>
   <div class="rp-toc-grid">
+    <a href="#purpose"><span class="rp-toc-num">00</span> Purpose &amp; use</a>
     <a href="#origin"><span class="rp-toc-num">01</span> Origin</a>
     <a href="#hypothesis"><span class="rp-toc-num">02</span> Core hypothesis</a>
     <a href="#measuring"><span class="rp-toc-num">03</span> What it is measuring</a>
