@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research &amp; Methodology — Leadership OS</title>
+<meta name="description" content="Leadership OS research and methodology reference. How the framework works, why its constructs exist, what it claims, and what it does not. A transparency document for researchers and practitioners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q8B7D4VZ08');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --void:#faf8f4;
+  --deep:#f2ede6;
+  --surface:#ffffff;
+  --lift:#ede8e1;
+  --ink:#1a1612;
+  --ink-dim:rgba(26,22,18,0.62);
+  --ink-ghost:rgba(26,22,18,0.12);
+  --gold:#b8671e;
+  --gold-light:#c9843a;
+  --gold-dim:rgba(184,103,30,0.1);
+  --rule:rgba(26,22,18,0.1);
+  --c1:#5B5BD6;
+  --c2:var(--gold);
+  --c3:#1D9E75;
+  --ff-display:'Cormorant Garamond',Georgia,serif;
+  --ff-body:'Outfit',system-ui,sans-serif;
+  --ff-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--ink);font-family:var(--ff-body);font-size:20px;line-height:1.9;font-weight:300;}
+
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);}
+.h-mark{font-family:var(--ff-display);font-size:1rem;font-weight:400;letter-spacing:0.06em;color:var(--ink);text-decoration:none;}
+.h-mark span{color:var(--gold);}
+.h-nav{display:flex;align-items:center;gap:2rem;}
+.h-nav a{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
+.h-nav a:hover{color:var(--gold);}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:0;padding:0;padding-top:48px;background:var(--void);position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,22,18,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,18,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{max-width:860px;}
+.hero-eyebrow{font-family:var(--ff-mono);font-size:1.06rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);}
+.hero-title{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;line-height:0.98;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.2em;}
+.hero-title em{font-style:italic;font-weight:600;color:var(--gold);}
+.hero-title .block{display:block;}
+.hero-sub{font-family:var(--ff-display);font-size:clamp(1.15rem,1.8vw,1.5rem);font-weight:300;font-style:italic;color:var(--ink-dim);border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0 2rem;line-height:1.55;max-width:640px;}
+.hero-desc{font-size:1.12rem;font-weight:300;color:var(--ink-dim);line-height:2.0;max-width:640px;margin-bottom:1.5rem;}
+.hero-caveat{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.1em;color:rgba(26,22,18,0.35);line-height:1.7;max-width:560px;padding:1rem 1.25rem;border:1px solid var(--rule);background:var(--deep);}
+
+
+/* MODEL PAGE HERO — two column */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:0;padding:0;padding-top:48px;}
+.hero-left{padding:4vw 3vw 4vw 5vw;display:flex;flex-direction:column;justify-content:center;}
+.hero-right{background:var(--deep);min-height:100vh;padding:3vw 3.5vw 3vw 3vw;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--rule);position:relative;overflow:hidden;}
+.hero-right::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent);}
+
+/* MODEL VISUAL */
+.model-visual{background:#0d0c0b;border-radius:6px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,0.26),0 8px 24px rgba(0,0,0,0.12),0 0 0 1px rgba(255,255,255,0.04);width:100%;}
+.mv-topbar{background:#1b1a18;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+.mv-dots{display:flex;gap:5px;}
+.mv-dots span{width:11px;height:11px;border-radius:50%;}
+.mv-dots span:first-child{background:#ff5f57;}
+.mv-dots span:nth-child(2){background:#febc2e;}
+.mv-dots span:last-child{background:#28c840;}
+.mv-title{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.06em;color:rgba(240,236,228,0.25);flex:1;text-align:center;}
+.mv-body{padding:1.35rem 1.5rem 1.5rem;overflow-y:auto;max-height:calc(100vh - 200px);}
+
+/* Evidence flow inside model visual */
+.mv-section-label{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+.mv-sources{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:1rem;}
+.mv-source{padding:0.75rem 0.8rem;border-radius:4px;border:1px solid rgba(255,255,255,0.06);}
+.mv-source.s1{background:#131820;border-left:2px solid #5B5BD6;}
+.mv-source.s2{background:#1a1510;border-left:2px solid var(--gold-light);}
+.mv-source.s3{background:#111a14;border-left:2px solid #1D9E75;}
+.mv-source-icon{font-size:1.1rem;margin-bottom:0.35rem;display:block;}
+.mv-source-label{font-family:var(--ff-mono);font-size:0.71rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;}
+.mv-source.s1 .mv-source-label{color:#5B5BD6;}
+.mv-source.s2 .mv-source-label{color:var(--gold-light);}
+.mv-source.s3 .mv-source-label{color:#1D9E75;}
+.mv-source-desc{font-size:0.88rem;color:rgba(240,236,228,0.45);line-height:1.55;}
+
+.mv-arrow-row{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:1rem;}
+.mv-arrow{font-family:var(--ff-mono);font-size:0.72rem;color:rgba(240,236,228,0.2);letter-spacing:0.05em;}
+.mv-arrow-label{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);padding:0.2rem 0.75rem;border:1px solid rgba(201,132,58,0.2);background:rgba(201,132,58,0.06);}
+
+/* Construct stream */
+.mv-constructs{display:flex;flex-direction:column;gap:6px;margin-bottom:1rem;}
+.mv-construct-row{display:flex;gap:6px;}
+.mv-construct-chip{font-size:0.82rem;font-weight:300;color:rgba(240,236,228,0.55);padding:0.35rem 0.65rem;background:#1a1917;border:1px solid rgba(255,255,255,0.05);border-radius:3px;white-space:nowrap;opacity:0;}
+.mv-construct-chip.visible{opacity:1;transition:opacity 0.4s ease;}
+
+/* Profile output */
+.mv-profile{background:#131211;border:1px solid rgba(201,132,58,0.18);border-left:3px solid var(--gold-light);padding:0.85rem 1rem;opacity:0;transition:opacity 0.5s ease;}
+.mv-profile.visible{opacity:1;}
+.mv-profile-label{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.45rem;}
+.mv-profile-text{font-size:0.92rem;font-weight:300;color:rgba(240,236,228,0.6);line-height:1.75;}
+.mv-profile-text em{font-style:italic;color:rgba(240,236,228,0.8);}
+
+.mv-caption{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.07em;color:rgba(26,22,18,0.3);text-align:center;margin-top:0.85rem;}
+
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;padding-top:48px;min-height:auto;}
+  .hero-left{padding:3rem 1.5rem 2rem;}
+  .hero-right{min-height:auto;padding:2rem 1.5rem 3rem;border-left:none;border-top:1px solid var(--rule);}
+  .hero-right::before{display:none;}
+  .mv-body{max-height:min(420px, calc(100vh - 250px));}
+  .mv-sources{grid-template-columns:1fr 1fr 1fr;}
+}
+@media(max-width:600px){
+  .mv-sources{grid-template-columns:1fr;}
+  .mv-construct-row{flex-wrap:wrap;}
+}
+
+/* SECTION COMMONS */
+section{padding:3.25rem 4vw;}
+.s-label{font-family:var(--ff-mono);font-size:0.78rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+.s-label::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.5;}
+.section-headline{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.75rem;}
+.section-headline em{font-style:italic;font-weight:600;color:var(--gold);}
+.section-sub{font-size:1.1rem;font-weight:300;color:var(--ink-dim);line-height:2.0;max-width:660px;margin-bottom:2.25rem;}
+
+/* EVIDENCE MODEL */
+#evidence{background:var(--deep);}
+.evidence-model{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto;gap:0;align-items:stretch;margin-bottom:2.75rem;border:1px solid var(--rule);background:var(--rule);}
+.ev-source{background:var(--surface);padding:1.5rem 1.6rem;}
+.ev-source-icon{font-size:1.75rem;margin-bottom:0.75rem;display:block;}
+.ev-source-tag{font-family:var(--ff-mono);font-size:0.81rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;}
+.ev-source-tag.s1{color:var(--c1);}
+.ev-source-tag.s2{color:var(--c2);}
+.ev-source-tag.s3{color:var(--c3);}
+.ev-source-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem;}
+.ev-source-subtitle{font-family:var(--ff-display);font-size:1.0rem;font-style:italic;color:var(--ink-dim);margin-bottom:0.85rem;}
+.ev-source-desc{font-size:1.02rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.ev-connector{background:var(--void);display:flex;align-items:center;justify-content:center;padding:0 1.25rem;font-size:1.5rem;color:var(--gold);opacity:0.4;font-family:var(--ff-display);}
+.ev-output{background:var(--ink);padding:1.5rem 1.6rem;display:flex;flex-direction:column;justify-content:center;}
+.ev-output-label{font-family:var(--ff-mono);font-size:0.81rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:0.5rem;}
+.ev-output-title{font-family:var(--ff-display);font-size:1.5rem;font-weight:600;color:#f0ece4;line-height:1.2;margin-bottom:0.5rem;}
+.ev-output-desc{font-size:1.0rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.85;}
+
+.evidence-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.ew-card{background:var(--surface);padding:1.35rem;}
+.ew-card-label{font-family:var(--ff-mono);font-size:0.81rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.ew-card-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;line-height:1.25;}
+.ew-card-desc{font-size:1.02rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+
+/* CONSTRUCTS */
+#constructs{background:var(--void);}
+.constructs-intro{max-width:700px;margin-bottom:2.75rem;}
+.construct-grid{display:flex;flex-direction:column;gap:0;}
+.construct{border-top:1px solid var(--rule);padding:0;overflow:hidden;}
+.construct-header{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.35rem 0;cursor:pointer;transition:border-color 0.2s;}
+.construct-header:hover .construct-name{color:var(--gold);}
+.construct-meta{display:flex;align-items:center;gap:1.5rem;}
+.construct-num{font-family:var(--ff-mono);font-size:0.72rem;color:var(--gold);opacity:0.5;}
+.construct-name{font-family:var(--ff-display);font-size:1.35rem;font-weight:600;color:var(--ink);line-height:1.2;transition:color 0.2s;}
+.construct-tagline{font-family:var(--ff-display);font-size:1.0rem;font-style:italic;font-weight:300;color:var(--ink-dim);margin-top:0.2rem;}
+.construct-toggle{font-family:var(--ff-mono);font-size:1.07rem;color:var(--gold);opacity:0.5;transition:transform 0.3s;}
+.construct.open .construct-toggle{transform:rotate(180deg);}
+.construct-body{display:none;padding-bottom:2.25rem;}
+.construct.open .construct-body{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.cb-cell{background:var(--deep);padding:1.5rem;}
+.cb-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.65rem;}
+.cb-text{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.85;}
+.cb-text.limitation{color:rgba(26,22,18,0.45);font-style:italic;}
+
+/* RESEARCH STREAMS */
+#research{background:var(--deep);}
+.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:2.75rem;}
+.research-body{font-size:1.08rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
+.research-body p+p{margin-top:1.1rem;}
+.research-streams{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.rs-item{background:var(--surface);padding:1.5rem 1.75rem;display:grid;grid-template-columns:3rem 1fr;gap:1.25rem;align-items:start;}
+.rs-icon{font-size:1.4rem;line-height:1;}
+.rs-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
+.rs-desc{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.rs-refs{font-family:var(--ff-mono);font-size:0.72rem;color:rgba(26,22,18,0.45);margin-top:0.35rem;line-height:1.5;}
+
+/* FUTURE ARCHITECTURE */
+#future{background:var(--void);}
+.future-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start;}
+.future-body{font-size:1.08rem;font-weight:300;color:var(--ink-dim);line-height:2.0;}
+.future-body p+p{margin-top:1.1rem;}
+.future-flow{display:flex;flex-direction:column;gap:0;}
+.ff-step{display:grid;grid-template-columns:2.5rem 1fr;gap:1.25rem;padding:1.25rem 0;border-top:1px solid var(--rule);align-items:start;}
+.ff-step:last-child{border-bottom:1px solid var(--rule);}
+.ff-icon{font-size:1.25rem;line-height:1;padding-top:0.1rem;}
+.ff-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
+.ff-desc{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.8;}
+.ff-arrow{text-align:center;font-family:var(--ff-mono);font-size:0.72rem;color:var(--gold);opacity:0.4;padding:0.25rem 0;letter-spacing:0.1em;}
+
+.future-hypotheses{margin-top:3.5rem;}
+.fh-headline{font-family:var(--ff-display);font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:0.5rem;}
+.fh-headline em{font-style:italic;font-weight:600;color:var(--gold);}
+.fh-sub{font-size:1.0rem;font-weight:300;color:var(--ink-dim);line-height:1.9;margin-bottom:2rem;max-width:600px;}
+.fh-items{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.fh-item{background:var(--deep);padding:1.5rem;}
+.fh-item-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.fh-item-q{font-family:var(--ff-display);font-size:1.05rem;font-style:italic;font-weight:300;color:var(--ink-dim);line-height:1.65;}
+
+/* HONESTY STATEMENT */
+#honesty{background:var(--ink);padding:3.25rem 4vw;text-align:center;}
+.honesty-inner{max-width:680px;margin:0 auto;}
+.honesty-label{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,132,58,0.6);margin-bottom:1.25rem;}
+.honesty-quote{font-family:var(--ff-display);font-size:clamp(1.3rem,2.5vw,1.9rem);font-style:italic;font-weight:300;color:#f0ece4;line-height:1.45;margin-bottom:1.5rem;}
+.honesty-body{font-size:1.02rem;font-weight:300;color:rgba(240,236,228,0.5);line-height:1.9;max-width:560px;margin:0 auto;}
+
+/* NAV LINKS */
+.page-nav{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem;}
+.nav-link{font-family:var(--ff-mono);font-size:1.07rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
+.nav-link:hover{background:var(--gold-dim);}
+.nav-link.dark{color:rgba(240,236,228,0.5);border-color:rgba(240,236,228,0.15);}
+.nav-link.dark:hover{color:var(--gold-light);border-color:rgba(201,132,58,0.4);}
+
+/* FOOTER */
+footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;justify-content:space-between;}
+.footer-mark{font-family:var(--ff-display);font-size:1.0rem;color:rgba(240,236,228,0.3);text-decoration:none;}
+.footer-mark span{color:rgba(201,132,58,0.5);}
+.footer-note{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.06em;color:rgba(240,236,228,0.18);}
+
+
+/* RESEARCH CITATION LINKS */
+.rs-refs a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.25);transition:color 0.15s,border-color 0.15s;white-space:nowrap;}
+.rs-refs a:hover{color:var(--ink);border-bottom-color:rgba(26,22,18,0.3);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1);}
+.reveal.up{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:768px){
+  section{padding:3rem 1.25rem;}
+  #hero{padding:calc(48px + 2.5rem) 1.25rem 2.5rem;}
+  .evidence-model{grid-template-columns:1fr;grid-template-rows:auto;}
+  .ev-connector{padding:0.4rem;transform:rotate(90deg);font-size:1.2rem;}
+  .evidence-why,.fh-items{grid-template-columns:1fr;}
+  .construct.open .construct-body{grid-template-columns:1fr 1fr;}
+  .research-grid,.future-grid{grid-template-columns:1fr;}
+  /* Hero title */
+  .hero-title{font-size:clamp(2.2rem,8vw,4rem);}
+  /* Construct grid preview */
+  .construct-preview-grid{grid-template-columns:1fr 1fr !important;}
+  /* Research streams */
+  .rs-item{grid-template-columns:1fr;gap:0.5rem;}
+  /* Future flow */
+  .future-flow{gap:0;}
+  /* Hypotheses grid */
+  .fh-items{grid-template-columns:1fr;}
+  /* Conflict matrix table — scroll */
+  .conflict-table-wrap{overflow-x:auto;}
+  /* Header nav */
+  #header .h-nav a:not(:last-child):not(.always-show){display:none;}
+}
+@media(max-width:480px){
+  .construct.open .construct-body{grid-template-columns:1fr;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .mv-construct-chip{opacity:1 !important;}
+  .mv-profile{opacity:1 !important;}
+  .reveal{opacity:1 !important;transform:none !important;}
+}
+
+footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);}
+.foot-inner{max-width:760px;margin:0 auto;text-align:center;}
+.foot-privacy{font-size:0.92rem;color:var(--ink-dim);line-height:1.7;margin-bottom:1.25rem;}
+.foot-meta-row{font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.06em;color:var(--ink-dim);display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;align-items:center;margin-bottom:0.85rem;}
+.foot-version{color:var(--gold);}
+.foot-sep{opacity:0.4;}
+.foot-disclaimer{font-size:0.82rem;color:var(--ink-dim);opacity:0.75;font-style:italic;}
+@media(max-width:600px){footer{padding:2.5rem 1.5rem;}}
+</style>
+
+<style>
+/* ── RESEARCH PAGE SPECIFIC ── */
+.rp-hero{padding:7rem 4vw 4rem;max-width:880px;margin:0 auto;border-bottom:1px solid var(--rule);}
+.rp-eyebrow{font-family:var(--ff-mono);font-size:0.74rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.rp-hero h1{font-family:var(--ff-display);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:500;line-height:1.05;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-0.01em;}
+.rp-hero h1 em{font-style:italic;color:var(--gold);}
+.rp-lede{font-size:1.15rem;line-height:1.7;color:var(--ink-dim);max-width:680px;}
+.rp-status{margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.6rem;}
+.rp-chip{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.05em;color:var(--ink-dim);border:1px solid var(--rule);border-radius:5px;padding:0.4rem 0.8rem;}
+
+/* TOC */
+.rp-toc{max-width:880px;margin:0 auto;padding:2.5rem 4vw;border-bottom:1px solid var(--rule);}
+.rp-toc-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;}
+.rp-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 2rem;}
+.rp-toc-grid a{font-size:0.95rem;color:var(--ink-dim);text-decoration:none;padding:0.35rem 0;border-bottom:1px solid transparent;transition:color 0.2s;display:flex;gap:0.6rem;}
+.rp-toc-grid a:hover{color:var(--gold);}
+.rp-toc-num{font-family:var(--ff-mono);font-size:0.8rem;color:var(--gold);opacity:0.7;flex-shrink:0;}
+
+/* Sections */
+.rp-section{max-width:880px;margin:0 auto;padding:4rem 4vw;border-bottom:1px solid var(--rule);}
+.rp-sec-num{font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.14em;color:var(--gold);margin-bottom:0.85rem;}
+.rp-section h2{font-family:var(--ff-display);font-size:clamp(1.9rem,4vw,2.7rem);font-weight:500;line-height:1.12;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-0.01em;}
+.rp-section h3{font-family:var(--ff-display);font-size:1.5rem;font-weight:500;color:var(--ink);margin:2rem 0 0.85rem;}
+.rp-section p{font-size:1.02rem;line-height:1.75;color:var(--ink-dim);margin-bottom:1.1rem;}
+.rp-section p strong{color:var(--ink);font-weight:600;}
+.rp-section em{color:var(--ink);font-style:italic;}
+.rp-section ul{margin:0 0 1.3rem;padding-left:0;list-style:none;}
+.rp-section ul li{position:relative;padding-left:1.4rem;margin-bottom:0.7rem;font-size:1.02rem;line-height:1.7;color:var(--ink-dim);}
+.rp-section ul li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+
+/* Pull quote */
+.rp-pull{font-family:var(--ff-display);font-size:1.7rem;line-height:1.35;color:var(--ink);font-style:italic;border-left:3px solid var(--gold);padding:0.5rem 0 0.5rem 1.75rem;margin:2.5rem 0;}
+
+/* Flow diagram */
+.rp-flow{background:var(--deep);border:1px solid var(--rule);border-radius:10px;padding:2rem;margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
+.rp-flow-row{display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;}
+.rp-flow-box{font-family:var(--ff-mono);font-size:0.82rem;letter-spacing:0.02em;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:0.65rem 1.1rem;}
+.rp-flow-box.src1{border-bottom:2px solid var(--c1);}
+.rp-flow-box.src2{border-bottom:2px solid var(--gold);}
+.rp-flow-box.src3{border-bottom:2px solid var(--c3);}
+.rp-flow-box.result{background:var(--ink);color:#f0ece4;}
+.rp-flow-arrow{font-size:1.15rem;color:var(--gold);opacity:0.6;}
+
+/* Callout / note box */
+.rp-note{background:var(--lift);border:1px solid var(--rule);border-radius:8px;padding:1.5rem 1.75rem;margin:2rem 0;}
+.rp-note-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+.rp-note p{margin-bottom:0.6rem;font-size:0.98rem;}
+.rp-note p:last-child{margin-bottom:0;}
+
+/* Construct cards in research page */
+.rp-construct{border:1px solid var(--rule);border-radius:8px;padding:1.6rem 1.75rem;margin-bottom:1.1rem;background:var(--surface);}
+.rp-construct-name{font-family:var(--ff-display);font-size:1.45rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;}
+.rp-construct-tag{font-size:0.95rem;color:var(--ink-dim);font-style:italic;margin-bottom:1rem;}
+.rp-cfield{margin-bottom:0.8rem;}
+.rp-cfield-label{font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.25rem;}
+.rp-cfield-text{font-size:0.96rem;line-height:1.65;color:var(--ink-dim);}
+
+/* Confidence levels */
+.rp-conf{display:grid;grid-template-columns:auto 1fr;gap:1rem 1.5rem;margin:1.5rem 0;align-items:start;}
+.rp-conf-level{font-family:var(--ff-mono);font-size:0.82rem;font-weight:500;letter-spacing:0.03em;padding:0.4rem 0.85rem;border-radius:5px;white-space:nowrap;text-align:center;}
+.cl-high{background:rgba(29,158,117,0.12);color:#1D9E75;}
+.cl-mod{background:rgba(184,103,30,0.12);color:var(--gold);}
+.cl-emerg{background:rgba(91,91,214,0.12);color:var(--c1);}
+.cl-insuf{background:rgba(26,22,18,0.08);color:var(--ink-dim);}
+.rp-conf-desc{font-size:0.98rem;line-height:1.65;color:var(--ink-dim);}
+
+/* Not-this list */
+.rp-notlist{display:grid;gap:0.6rem;margin:1.5rem 0;}
+.rp-notlist-item{display:flex;gap:0.75rem;align-items:flex-start;font-size:1.02rem;line-height:1.6;color:var(--ink-dim);}
+.rp-notlist-x{color:#c0392b;flex-shrink:0;font-weight:600;}
+
+/* References */
+.rp-refs{font-size:0.92rem;line-height:1.8;color:var(--ink-dim);}
+.rp-refs p{font-size:0.92rem;margin-bottom:0.5rem;padding-left:1.5rem;text-indent:-1.5rem;}
+
+@media(max-width:720px){
+  .rp-toc-grid{grid-template-columns:1fr;}
+  .rp-conf{grid-template-columns:1fr;gap:0.5rem 0;}
+  .rp-conf-level{justify-self:start;margin-top:1rem;}
+  .rp-hero{padding:5rem 1.5rem 3rem;}
+  .rp-section{padding:3rem 1.5rem;}
+  .rp-pull{font-size:1.4rem;}
+}
+</style></head>
+<body>
+<header>
+  <a href="https://mikecilla.com" class="h-mark">Mike Cilla<span>.</span></a>
+  <nav class="h-nav">
+    <a href="leadership-os.html">Leadership OS</a>
+    <a href="leadership-os-model.html">The model</a>
+    <a href="leadership-os-starter-kit.html">Starter Kit</a>
+    <a href="leadership-os.html">← Back</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="rp-hero">
+  <div class="rp-eyebrow">Research &amp; Methodology · Reference Document</div>
+  <h1>How Leadership OS<br><em>actually works.</em></h1>
+  <p class="rp-lede">This is the technical reference for Leadership OS — written for researchers, psychologists, coaches, and practitioners who want to understand exactly how the methodology is intended to work, why its constructs exist, and what it does and does not claim. The goal here is transparency, not persuasion. Where the framework is uncertain or incomplete, this document says so.</p>
+  <div class="rp-status">
+    <span class="rp-chip">Version 1.0 · June 2026</span>
+    <span class="rp-chip">Exploratory methodology</span>
+    <span class="rp-chip">Not a validated instrument</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<nav class="rp-toc">
+  <div class="rp-toc-label">Contents</div>
+  <div class="rp-toc-grid">
+    <a href="#origin"><span class="rp-toc-num">01</span> Origin</a>
+    <a href="#hypothesis"><span class="rp-toc-num">02</span> Core hypothesis</a>
+    <a href="#evidence"><span class="rp-toc-num">03</span> Evidence model</a>
+    <a href="#constructs"><span class="rp-toc-num">04</span> Construct framework</a>
+    <a href="#derivation"><span class="rp-toc-num">05</span> Construct derivation</a>
+    <a href="#theory"><span class="rp-toc-num">06</span> Theoretical foundations</a>
+    <a href="#process"><span class="rp-toc-num">07</span> Analysis process</a>
+    <a href="#traceability"><span class="rp-toc-num">08</span> Traceability model</a>
+    <a href="#confidence"><span class="rp-toc-num">09</span> Confidence framework</a>
+    <a href="#not"><span class="rp-toc-num">10</span> What it is not</a>
+    <a href="#limitations"><span class="rp-toc-num">11</span> Current limitations</a>
+    <a href="#questions"><span class="rp-toc-num">12</span> Open questions</a>
+    <a href="#future"><span class="rp-toc-num">13</span> Future evolution</a>
+    <a href="#references"><span class="rp-toc-num">—</span> References</a>
+  </div>
+</nav>
+<!-- SECTION 1 — ORIGIN -->
+<section class="rp-section" id="origin">
+  <div class="rp-sec-num">01 · Origin</div>
+  <h2>Where the methodology came from</h2>
+  <p>Leadership OS did not begin as a methodology. It began as a context-transfer problem. The author had accumulated several years of professional conversations with AI tools — used for pressure-testing decisions, drafting communications, structuring strategy, and working through organizational problems — and wanted to move that accumulated context from one AI tool to another without starting over.</p>
+  <p>Doing that well required making implicit thinking explicit: not "here are my priorities" but a legible account of how a particular tradeoff gets reasoned through, what has been tried before, and why certain approaches are preferred. In the course of producing that account, several patterns surfaced that were more interesting than the original task.</p>
+  <p>Four observations drove the eventual framework:</p>
+  <ul>
+    <li><strong>Communication pattern analysis.</strong> The corpus of outbound drafting and revision revealed consistent tendencies in how messages were structured, where directness was high, and where intent and likely impact diverged.</li>
+    <li><strong>Decision framework analysis.</strong> Recurring structure appeared in how decisions were approached — thorough information-gathering, then a characteristic pattern around commitment and revision once a direction had been socialized.</li>
+    <li><strong>Strategic domain analysis.</strong> Problems were consistently framed at a structural level — root causes and system design rather than individual actors — even when the presenting problem was interpersonal.</li>
+    <li><strong>Leadership philosophy analysis.</strong> A small number of recurring governing questions appeared across otherwise unrelated decisions, suggesting an implicit philosophy that had never been stated outright.</li>
+  </ul>
+  <p>None of these were self-reported. They were observed in the behavioral record — in what the author actually did across hundreds of working conversations, not in how the author described themselves. That distinction — between described behavior and observed behavior — became the central idea. If behavioral evidence could be combined with self-report assessment data and structured reflection, the result might be a more useful developmental picture than any single source produced alone. Leadership OS is the attempt to make that combination systematic and repeatable for anyone, not just its author.</p>
+</section>
+
+<!-- SECTION 2 — CORE HYPOTHESIS -->
+<section class="rp-section" id="hypothesis">
+  <div class="rp-sec-num">02 · Core hypothesis</div>
+  <h2>The central hypothesis</h2>
+  <p>Leadership OS rests on a single hypothesis. It is stated here as a hypothesis, not a finding, because it has not been validated and may be wrong.</p>
+  <p>Three evidence sources each capture something the others cannot:</p>
+  <ul>
+    <li><strong>Assessment data</strong> captures <em>how people describe themselves</em> — trait tendencies as measured by validated self-report instruments.</li>
+    <li><strong>Structured reflection</strong> captures <em>how people make meaning of their own experience</em> — the narratives, tensions, and self-understanding a person can articulate when prompted.</li>
+    <li><strong>AI corpus analysis</strong> captures <em>patterns in how people appear to think, communicate, and solve problems over time</em> — behavioral evidence drawn from a record the person produced while working, not while describing themselves.</li>
+  </ul>
+  <div class="rp-pull">The hypothesis is that combining these three sources produces more useful developmental insight than any one of them produces independently — and that the most valuable signal often lives in the places where they diverge.</div>
+  <p>The divergence point matters. When assessment, reflection, and behavior all agree, the finding is well-supported but rarely surprising. When they disagree — when someone describes themselves one way and the behavioral record suggests another — the gap is frequently where the most useful developmental conversation begins. A methodology that only confirmed self-report would add little. The hypothesis is that triangulation across independent sources, including one (the corpus) the person did not generate self-consciously, can surface patterns that self-report alone would miss.</p>
+  <p>Whether this hypothesis holds is an open empirical question. This document describes how the framework operationalizes the hypothesis; it does not claim the hypothesis has been confirmed.</p>
+</section>
+
+<!-- SECTION 3 — EVIDENCE MODEL -->
+<section class="rp-section" id="evidence">
+  <div class="rp-sec-num">03 · Evidence model</div>
+  <h2>The three evidence sources</h2>
+  <p>Each source is gathered and evaluated separately before any synthesis occurs. This separation is deliberate: it allows the analysis to identify agreement and disagreement across sources rather than blending them into an undifferentiated impression.</p>
+
+  <div class="rp-flow">
+    <div class="rp-flow-row">
+      <div class="rp-flow-box src1">Assessment data</div>
+      <div class="rp-flow-box src2">Corpus evidence</div>
+      <div class="rp-flow-box src3">Structured reflection</div>
+    </div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Construct analysis</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Leadership Profile</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box result">Four output tools</div>
+  </div>
+
+  <h3>Assessment data</h3>
+  <p><strong>Role:</strong> Establishes baseline trait tendencies grounded in validated self-report traditions (typically a Big Five or Big Five-adjacent instrument). <strong>Strength:</strong> Decades of psychometric research stand behind the underlying trait dimensions; the data is structured and comparable. <strong>Limitation:</strong> It is self-report, subject to self-presentation effects, and describes general tendencies rather than situated behavior. <strong>Tradeoff:</strong> High reliability for what it measures, but it measures disposition, not leadership conduct.</p>
+
+  <h3>Corpus evidence</h3>
+  <p><strong>Role:</strong> Supplies behavioral evidence — patterns observed in how the person actually worked across their AI conversation history. <strong>Strength:</strong> It is the only source the person did not generate self-consciously as a self-description, which makes it structurally more independent from self-report than the other two. <strong>Limitation:</strong> It reflects professional, written, AI-mediated behavior only — a specific and partial behavioral sample. It may also reflect the AI's framing as much as the leader's cognition in some exchanges. <strong>Tradeoff:</strong> Genuine independence at the cost of a narrow behavioral window.</p>
+
+  <h3>Structured reflection</h3>
+  <p><strong>Role:</strong> Captures meaning-making — how the person understands their own patterns, tensions, and development. Six prompts target peak performance, a decision they would remake, a regret, a frustration, sources of energy, and a time they were misread. <strong>Strength:</strong> Accesses the internal narrative no behavioral record can show, and the "misread" prompt directly surfaces intent-impact gaps. <strong>Limitation:</strong> Reflection quality varies enormously between people, and fluent self-description is not the same as accurate self-knowledge. <strong>Tradeoff:</strong> Rich and personal, but the least independent of the three sources.</p>
+
+  <div class="rp-note">
+    <div class="rp-note-label">A note on independence</div>
+    <p>Assessment and reflection are both forms of self-report, and so they share method variance — when they agree, that agreement is partly an artifact of both being self-generated. The corpus is the only source produced without self-description in mind. For this reason, convergence between the corpus and either self-report source carries more interpretive weight than agreement between assessment and reflection alone. The framework treats the corpus as the pivot of triangulation, not as a co-equal third opinion.</p>
+  </div>
+</section>
+
+<!-- SECTION 4 — CONSTRUCT FRAMEWORK -->
+<section class="rp-section" id="constructs">
+  <div class="rp-sec-num">04 · Construct framework</div>
+  <h2>The nine constructs</h2>
+  <p>Leadership OS organizes evidence around nine constructs. Each is a lens for examining a dimension of how someone leads — not a score, not a category, and not a complete account of the person. For each construct below: what it attempts to capture, why it matters, which evidence sources typically inform it, its primary limitation, and guidance on how to interpret it responsibly.</p>
+
+  <div class="rp-note">
+    <div class="rp-note-label">An important admission about coverage</div>
+    <p>The current framework is noticeably stronger on cognitive and developmental dimensions — reflection, systems thinking, learning, decision-making, self-awareness, development readiness — than on interpersonal and social-relational dimensions. Constructs like empathy, relational repair, conflict navigation, influence, and team dynamics are underrepresented or absent.</p>
+    <p>This is not an accident of emphasis to be corrected with a coat of paint. It reflects the framework's origins (a corpus of individual problem-solving work, which surfaces cognition far more readily than relational conduct) and a genuine measurement difficulty (relational behavior is hard to observe in an AI conversation history). The framework is, today, better at describing how a leader <em>thinks</em> than how they <em>relate</em>. Any reader should weight its conclusions accordingly.</p>
+  </div>
+
+  <div class="rp-construct">
+    <div class="rp-construct-name">01 · Reflection Orientation</div>
+    <div class="rp-construct-tag">Deliberately examining experience to extract developmental insight</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">The degree to which a leader actively examines their own behavior, decisions, and patterns and uses that examination to inform development. Distinct from rumination (repetitive negative focus) or self-criticism. Closer to Schön&#x27;s &quot;reflection-in-action&quot; and &quot;reflection-on-action&quot; — the capacity to examine experience as it unfolds and after it completes. A leader high in Reflection Orientation doesn&#x27;t just learn from experience; they interrogate it.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Research consistently links reflective capacity to leadership effectiveness and long-term development (Day, 2000; Schön, 1983). Kegan and Lahey&#x27;s work on immunity to change positions reflective capacity as prerequisite to meaningful developmental growth — leaders who cannot examine their own patterns are limited in how much they can change them. Argyris and Schön&#x27;s distinction between espoused theory and theory-in-use is only accessible through genuine reflection.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Openness/Intellect facets; Growth-Seeking or Curious indicators where available · Corpus: Frequency and quality of self-questioning; evidence of position revision; metacognitive language · Reflection: Response specificity; willingness to name tension; non-defensive analysis of past difficulty</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Reflection quality can be performative or context-dependent; skilled communicators may score higher than actual reflective depth warrants</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">High verbal fluency can mimic reflection without constituting it. A leader who produces sophisticated self-descriptions is not necessarily more reflective than one who produces simpler but genuinely examined ones. When evaluating this construct, weight the quality of tension-naming over the sophistication of language. A response that says &quot;I don&#x27;t know why I made that choice&quot; and then examines it honestly is stronger evidence than a polished account of the same decision. Distinguish between reflection that serves system improvement (this leader&#x27;s natural mode) and reflection that serves personal introspection — both are valid but they look different in practice.</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">02 · Systems Orientation</div>
+    <div class="rp-construct-tag">Framing problems in terms of structure, interdependency, and root cause</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">The tendency to interpret leadership challenges through structural and systemic frames rather than attributing outcomes to individual actors or isolated events. A leader with high Systems Orientation asks &quot;what design produced this outcome?&quot; before asking &quot;who is responsible?&quot; This is related to but distinct from analytical intelligence — it is specifically about the default level of abstraction at which problems are framed.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Senge&#x27;s work on systems thinking in organizational contexts argues that most persistent problems have structural causes that individual-level interventions cannot resolve. Leaders who diagnose at the structural level tend to design more durable solutions and are less likely to repeatedly solve the same problems at the individual level. In complex organizations, Systems Orientation is associated with whether interventions address root causes or symptoms.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Conceptual reasoning, structure-seeking, and Systematic indicators where available · Corpus: Root-cause language; dependency mapping; structural problem framing before individual attribution · Reflection: Examples where leader diagnoses context or structure before intervening at the individual level</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Strong systems language may reflect role demands rather than stable cognitive tendency; hard to distinguish disposition from learned professional vocabulary</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">Role demands can produce systems language without reflecting a stable cognitive tendency. A leader who has worked in strategy, organizational design, or systems architecture for years may use structural vocabulary as professional habit rather than as a genuine default lens. To distinguish disposition from vocabulary: look for structural framing in contexts where it is not professionally expected — interpersonal conflicts, team dynamics, personal development — not only in strategic or design contexts.</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">03 · Learning Orientation</div>
+    <div class="rp-construct-tag">Treating experience as developmental material and tolerating productive uncertainty</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">The degree to which a leader actively seeks new information, tolerates not-knowing, and frames experience — including failure and difficulty — as developmental material rather than evidence of fixed capability. Related to Dweck&#x27;s growth mindset but more behaviorally specific: Learning Orientation is visible in how a leader responds to contradictory evidence, not just in how they describe their relationship to learning.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Edmondson&#x27;s work on learning behavior in organizations shows that Learning Orientation is associated with adaptive performance across novel challenges. It is particularly relevant in environments of rapid change where the skills that produced past success are insufficient for future challenges. Learning Orientation is also the strongest predictor of how much a leader benefits from any development intervention — including Leadership OS itself.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Openness, Curious, and Growth-Seeking indicators; low Need for Closure where available · Corpus: Evidence of position revision in response to new information; engagement with unfamiliar frameworks; questions that acknowledge uncertainty · Reflection: How the leader describes prior mistakes; whether they attribute difficulty to self-correctable patterns vs. external factors</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Strong self-selection bias — leaders who complete Leadership OS voluntarily are likely already learning-oriented; methodology is poorly suited to assessing low learning orientation</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">This construct has the most significant self-selection bias of the nine. Leaders who voluntarily complete Leadership OS are already demonstrating learning-oriented behavior. This makes it nearly impossible to assess low Learning Orientation through this methodology, and it means the baseline for this construct is likely elevated across all Leadership OS participants. Weight behavioral evidence over self-report for this construct — specifically, look for evidence of position revision and openness to contradictory information in the corpus, not just self-description of curiosity.</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">04 · Decision Style</div>
+    <div class="rp-construct-tag">Characteristic approach to commitment and revision under uncertainty</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">A leader&#x27;s characteristic pattern for making decisions under conditions of incomplete information and competing priorities. Decision Style is distinct from decision quality — a consistent style can produce excellent outcomes in some contexts and poor outcomes in others. The most diagnostically useful dimension is not how a leader gathers information (most thoughtful leaders gather broadly) but how they behave after a hypothesis has been formed and socialized with stakeholders.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Decision style is one of the highest-leverage constructs because it is context-dependent in ways that personality traits are not, and because the specific mechanism — not just the tendency — can be made explicit and practiced against. Understanding whether a leader&#x27;s post-commitment behavior reflects genuine evidence assessment or social cost management is directly actionable development work that no trait-level assessment can reach.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Conscientiousness, Prudence, Deliberative, and risk-tolerance indicators; Need for Cognition where available · Corpus: Decision sequencing in conversations; ambiguity tolerance; evidence thresholds before commitment; revision patterns after commitment · Reflection: Decision pride and regret examples; speed-versus-rigor tradeoffs described; attribution of past decision difficulty</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Decision style is highly situational; retrospective accounts subject to hindsight bias; corpus captures professional context only</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">Retrospective decision accounts are subject to hindsight bias. Leaders consistently reconstruct past decisions as more deliberate and evidence-based than they were in the moment. To minimize this effect, weight the &quot;decision I&#x27;d make differently&quot; prompt more heavily than the &quot;decision I&#x27;m proud of&quot; prompt — post-mortems with acknowledged mistakes are more diagnostic than success stories. Also look for asymmetry in the corpus: does the leader&#x27;s commitment threshold vary by who else is in the room?</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">05 · Communication Patterns</div>
+    <div class="rp-construct-tag">Characteristic ways of structuring, delivering, and receiving communication</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">The relatively stable patterns in how a leader organizes and delivers information, engages in disagreement, signals warmth or distance, and receives feedback. Communication Patterns are distinct from communication skills — patterns are defaults, not capabilities. A leader can be highly capable of direct communication while defaulting to diplomatic indirectness under pressure. The most diagnostically useful evidence is the gap between intended and received communication, not the intended communication alone.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Communication patterns are among the most observable and consequential of all leadership constructs. They are also among the most difficult for leaders to assess in themselves — we experience our communication from the inside while others receive it from the outside. The intent-impact gap in communication is where many leadership development interventions are focused, and Leadership OS&#x27;s &quot;misread&quot; prompt is specifically designed to surface that gap directly.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Extraversion, Agreeableness, Social Boldness, Directness, and Engaging indicators where available · Corpus: Tone, argument structure, directness, revision patterns in drafts, audience adaptation, formality calibration · Reflection: Misread examples; feedback the leader has received about communication impact; intent-impact gap descriptions</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Written corpus may substantially differ from verbal, informal, and high-stakes communication; no mechanism for capturing communication under conflict or stress</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">The corpus reflects written professional communication with an AI — a context that likely elicits more careful, structured communication than most interpersonal exchanges. Do not generalize corpus communication patterns directly to verbal, informal, or emotionally charged communication without noting this limitation. The &quot;misread&quot; reflection prompt is often the highest-quality evidence for this construct precisely because it asks directly about the intent-impact gap rather than relying on observation of communication that the leader has already shaped.</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">06 · Leadership Identity</div>
+    <div class="rp-construct-tag">How a leader understands their role, relationship to authority, and developmental direction</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">The internalized sense of self as a leader — which shapes motivation, behavior, and how the leader makes sense of their own development. Following Ibarra&#x27;s work on leader identity transitions, this construct captures not only what kind of leader someone currently is but what kind of leader they are actively becoming. Leadership Identity is more dynamic than traits and more specific than general self-concept, and it is often most visible at the edge of transitions — when old identities no longer fit and new ones haven&#x27;t solidified.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Ibarra&#x27;s research demonstrates that identity transitions, not skill gaps, are often the real bottleneck in leadership development. Leaders with a strong, coherent leadership identity are more likely to proactively seek challenge, recover from setbacks, and invest in development — not because they are more capable, but because development is congruent with who they understand themselves to be. The gap between stated and enacted identity is frequently where the most productive development work lives.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: PrinciplesYou archetype as a starting vocabulary; Extraversion and Dominance indicators; values-alignment items where available · Corpus: How the leader positions themselves in organizational narratives; language around authority and role; investment in people development vs. task completion · Reflection: How the leader describes themselves in role; the gap between stated leadership identity and described behavior</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Leadership identity is most visible at transition points; the methodology likely captures only the stable articulated layer, missing the developmental edge where identity work occurs</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">This construct is among the most difficult to assess through self-report and corpus analysis alone. Leaders tend to describe aspirational identity rather than operating identity, particularly in contexts that feel evaluative. The most diagnostic evidence is not how the leader describes their leadership philosophy but where their behavioral investment actually goes — time, attention, energy, and emotional engagement in the corpus. A leader who describes themselves as a developer of people but whose corpus shows predominantly analytical and strategic investment is showing you something important about where their identity is actually located.</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">07 · Adaptability</div>
+    <div class="rp-construct-tag">Adjusting approach in response to changed conditions — distinct from accommodation</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">The capacity to revise behavior, strategy, and approach in response to genuinely changed conditions. Adaptability is explicitly distinct from agreeableness (social accommodation), conflict avoidance, or plan abandonment. Following Pulakos et al.&#x27;s taxonomy of adaptive performance, Leadership OS distinguishes between strategic adaptability (changing direction when the evidence warrants) and tactical adaptability (revising execution approach mid-course) — these are different capacities that frequently diverge.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Adaptability is increasingly identified as a core leadership competency in volatile, uncertain, complex, and ambiguous environments. The strategic/tactical distinction matters practically: a leader who pivots strategy readily but anchors tactically will show a different leadership profile than one who is rigid strategically but flexible in execution. Leadership OS&#x27;s evidence model is well-suited to surface this distinction in a way that trait-level assessment cannot.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Adaptable, Agile, Openness to Change, and Flexibility indicators; low Need for Closure where available · Corpus: Strategic direction changes and their initiator; mid-execution plan revisions; response patterns when new information contradicts current direction · Reflection: How the leader describes responding to changed conditions; examples of adjusting approach</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Strategic and tactical adaptability are distinct and may diverge significantly within the same leader; the methodology cannot separate them without structured scenarios</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">Assessment instruments typically measure trait-level openness to change, which predicts strategic adaptability reasonably well but tactical adaptability poorly. For this construct, the corpus and reflection evidence carry more weight than assessment alone. Look specifically for asymmetry between stated adaptability and behavioral revision patterns — the leader who describes themselves as highly adaptable but whose corpus shows extended commitment to execution approaches after conditions have changed is showing you the tactical anchoring pattern that is most often the development edge.</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">08 · Self-Awareness</div>
+    <div class="rp-construct-tag">Accuracy of the leader&#x27;s self-model relative to available evidence</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">Following Eurich&#x27;s distinction, Leadership OS addresses primarily internal self-awareness — clarity about one&#x27;s own patterns, values, and tendencies — while offering limited access to external self-awareness (understanding how others perceive you). The most diagnostically useful evidence is not self-reported self-awareness but the convergence and divergence between what the leader reports about themselves and what the behavioral evidence suggests about how they operate.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Eurich&#x27;s research found that self-awareness is one of the strongest predictors of leadership effectiveness, yet most leaders significantly overestimate their self-awareness. The gap between self-perception and behavioral evidence is often where the most important development work lives — not because the leader is wrong about their values or intentions, but because the behavioral expression of those values may diverge from the self-model in ways that only multi-source evidence can surface.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Openness, Receptive-to-Criticism, and Emotional Stability indicators; Honest-Humble facets in HEXACO · Corpus: Convergence and divergence between assessment self-report and observed behavioral patterns; gaps in what the leader monitors vs. what the corpus observes · Reflection: The &quot;misread&quot; prompt response; whether identified tension points were anticipated or came as surprises; calibration of the leader&#x27;s confidence in their self-knowledge</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Leaders with low self-awareness often rate themselves as highly self-aware; the corpus provides some triangulation but cannot replicate multi-rater evidence</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">This construct is the most methodologically limited of the nine because Leadership OS cannot replicate the multi-rater evidence that produces the most reliable self-awareness assessments. The corpus-assessment divergence provides partial triangulation, but significant blind spots may remain invisible. Rate this construct conservatively — when in doubt between Moderate and High, prefer Moderate. A leader&#x27;s agreement with the self-awareness finding is weak confirmation; their identification of specific instances where the finding applies is stronger confirmation.</div></div>
+  </div>
+  <div class="rp-construct">
+    <div class="rp-construct-name">09 · Development Readiness</div>
+    <div class="rp-construct-tag">Current capacity and motivation for deliberate development work</div>
+    <div class="rp-cfield"><div class="rp-cfield-label">What it attempts to capture</div><div class="rp-cfield-text">A leader&#x27;s present capacity and motivation to engage in deliberate development — distinct from motivation to perform, general intelligence, or professional ambition. Drawing on Kegan&#x27;s subject-object theory, Development Readiness requires the capacity to hold one&#x27;s own patterns at arm&#x27;s length for examination rather than being run by them. It is inferred from behavioral signals in the evidence, not from participation in Leadership OS itself.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Why it matters</div><div class="rp-cfield-text">Development Readiness is the strongest predictor of whether leadership development interventions produce lasting change. High readiness amplifies every other developmental input; low readiness renders even excellent development programs ineffective. Understanding a leader&#x27;s current readiness — and whether it is stronger for cognitive versus relational development — is more useful than identifying the right content to develop.</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Typical evidence sources</div><div class="rp-cfield-text">Assessment: Growth-Seeking, Openness, and low Defensive indicators; developmental orientation items where available · Corpus: Evidence of prior behavioral change in response to feedback; willingness to examine rather than explain away difficulty; engagement quality with ambiguous problems · Reflection: Reflection specificity and non-defensiveness; evidence that prior feedback has changed behavior; ability to distinguish intent from impact; willingness to revise self-understanding</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Primary limitation</div><div class="rp-cfield-text">Development Readiness fluctuates with life circumstances and context; a single session cannot assess readiness stably; completing the process is a weak signal, not primary evidence</div></div>
+    <div class="rp-cfield"><div class="rp-cfield-label">Interpretation guidance</div><div class="rp-cfield-text">Do not use completion of Leadership OS as primary evidence for Development Readiness. Participation is a weak supporting signal at best. Primary evidence comes from: specificity and non-defensiveness of reflection responses, evidence that prior feedback has changed behavior, willingness to name tension rather than resolve it prematurely, and ability to distinguish intent from impact. Readiness also varies by domain — a leader may be highly ready for cognitive or strategic development while being significantly less ready for relational or identity development work. Where this asymmetry exists, name it rather than averaging it.</div></div>
+  </div>
+</section>
+
+
+<!-- SECTION 5 — CONSTRUCT DERIVATION -->
+<section class="rp-section" id="derivation">
+  <div class="rp-sec-num">05 · Construct derivation</div>
+  <h2>Why these constructs?</h2>
+  <p>The honest answer is that the nine constructs were not derived from a single existing model. They emerged from the intersection of several inputs, refined iteratively:</p>
+  <ul>
+    <li><strong>Iterative corpus work.</strong> Recurring patterns in the original behavioral analysis — how problems were framed, how decisions were made, how communication was structured — suggested dimensions worth tracking.</li>
+    <li><strong>Recurring leadership patterns.</strong> Themes that appeared consistently across the development conversations the author had observed and participated in over years of People Operations work.</li>
+    <li><strong>Leadership development literature.</strong> Established work on how leaders grow — particularly experience-based and identity-based development.</li>
+    <li><strong>Personality science.</strong> The validated trait traditions that anchor the assessment inputs and inform several construct definitions.</li>
+    <li><strong>Coaching literature.</strong> Practitioner frameworks for reflection, self-awareness, and developmental readiness.</li>
+    <li><strong>Practical experimentation.</strong> Testing which constructs produced useful, differentiated, traceable output and which collapsed into each other or generated noise.</li>
+  </ul>
+  <p>This derivation method is a strength and a weakness at once. The strength is that the constructs were selected for practical developmental usefulness rather than to fit a pre-existing theory. The weakness is that a bottom-up, practice-driven framework has no external theoretical guarantee of completeness, orthogonality, or coverage — which is precisely why this document is explicit about what the framework misses.</p>
+  <h3>Alternatives considered</h3>
+  <p>Several existing models were considered as scaffolding and set aside. Competency frameworks (lists of leadership skills) were rejected as too prescriptive and too tied to specific organizational contexts. Pure trait models were rejected as too static — they describe disposition, not development. Stage-based developmental models were influential but too rigid to map onto the messy, non-linear evidence the methodology actually produces. The nine constructs are best understood as a pragmatic working set, not a claim that leadership reduces to exactly nine dimensions.</p>
+  <h3>Open questions about the constructs</h3>
+  <p>Are nine the right number? Are any of them redundant — does Self-Awareness meaningfully separate from Reflection Orientation in practice, or do they collapse? Are the boundaries stable across different people and contexts? Should the interpersonal gap be closed by adding constructs, or does the methodology's evidence model simply not support relational measurement, in which case the honest move is to narrow the claimed scope rather than add constructs the evidence can't support? These are unresolved.</p>
+</section>
+
+<!-- SECTION 6 — THEORETICAL FOUNDATIONS -->
+<section class="rp-section" id="theory">
+  <div class="rp-sec-num">06 · Theoretical foundations</div>
+  <h2>What informs the reasoning</h2>
+  <p>Leadership OS draws on several research traditions. These are not decorative citations — each one operationally shapes how the analysis engine reasons. What follows is how each tradition is actually used, not merely that it is referenced.</p>
+
+  <h3>Personality assessment traditions (Big Five, HEXACO)</h3>
+  <p>Operational relevance: trait evidence is treated as probabilistic, not deterministic. A high Conscientiousness score raises a hypothesis about follow-through; it does not confirm a behavior. Big Five provides the validated anchor for the assessment inputs; HEXACO's Honesty-Humility factor specifically informs how the framework reasons about self-awareness and authentic conduct.</p>
+
+  <h3>Reflective practice (Schön, Argyris)</h3>
+  <p>Operational relevance: the analysis actively looks for the gap between <em>espoused theory</em> (what a leader says they believe) and <em>theory-in-use</em> (what their behavior reveals). Schön's distinction between reflection-in-action and reflection-on-action shapes how reflection answers are weighted. This tradition is the engine behind several construct interpretations, not background reading.</p>
+
+  <h3>Metacognition and self-awareness research (Eurich, Flavell)</h3>
+  <p>Operational relevance: the framework distinguishes internal self-awareness (clarity about one's own patterns) from external self-awareness (accuracy about how others perceive you) and is explicit that it can only directly assess the former. Critically, it encodes Eurich's finding that articulate self-description is <em>not</em> evidence of self-awareness — which is why fluency alone never raises a confidence rating.</p>
+
+  <h3>Adult learning and development (Kegan, Mezirow, Kolb)</h3>
+  <p>Operational relevance: Kegan's subject-object theory frames the entire purpose of the Leadership Profile — making visible what was previously invisible, so a leader can examine a pattern rather than be run by it. Mezirow's transformative learning shapes how development priorities are framed: name the assumption beneath the behavior, not just the behavior.</p>
+
+  <h3>Deliberate practice and motivation (Ericsson, Deci &amp; Ryan)</h3>
+  <p>Operational relevance: development recommendations must name a specific mechanism precise enough to practice against — generic advice is disallowed. Self-determination theory shapes the requirement to connect development priorities to intrinsic motivation where the evidence supports it, because intrinsically motivated development is more durable.</p>
+
+  <h3>Flow and engagement (Csíkszentmihályi)</h3>
+  <p>Operational relevance: the peak-performance reflection prompt is designed to surface flow conditions — challenge-skill balance, clear goals, autonomous engagement. These conditions inform how development is framed: in terms of the conditions under which a leader does their best work, not just behaviors to add.</p>
+
+  <h3>Leadership development and identity (Day, Ibarra, Avolio)</h3>
+  <p>Operational relevance: the framework treats identity work as often the real bottleneck in development, not skill gaps. Ibarra's work on identity transition — that new identities require behavioral experimentation before they solidify — shapes how the Development Roadmap frames growth as experiments to run rather than traits to acquire.</p>
+
+  <h3>Behavioral observation traditions</h3>
+  <p>Operational relevance: the corpus audit rests on the principle that behavior is context-bound and that consistency across contexts is stronger evidence than frequency within one. This is why the methodology weights cross-source convergence and treats the corpus as a specific behavioral sample rather than a complete behavioral record.</p>
+
+  <h3>AI-assisted reflection</h3>
+  <p>Operational relevance: the corpus audit exploits a specific phenomenon — that AI-mediated professional work requires externalizing one's reasoning, which makes cognition unusually legible. The framework treats this as its most novel evidence source while explicitly noting the risk that corpus content may reflect the AI's framing as much as the leader's cognition.</p>
+</section>
+
+<!-- SECTION 7 — ANALYSIS PROCESS -->
+<section class="rp-section" id="process">
+  <div class="rp-sec-num">07 · Analysis process</div>
+  <h2>The complete workflow</h2>
+  <div class="rp-flow">
+    <div class="rp-flow-box src1">Assessment</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box src2">Corpus audit</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box src3">Reflection</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Initialization</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Construct analysis</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Leadership Profile</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box result">Four output tools</div>
+  </div>
+  <h3>Why evidence is gathered before initialization</h3>
+  <p>The analysis engine is initialized — given its instructions, constraints, and theoretical grounding — <em>after</em> the evidence has been collected, not before. This sequencing is deliberate. It prevents the framework's expectations from shaping how the evidence is gathered. The person assembles their assessment results, corpus audit, and reflection answers independently; only then is the engine told how to reason about them. This reduces the risk that someone unconsciously curates their inputs to match what they think the framework wants.</p>
+  <h3>Why evidence sources are evaluated separately</h3>
+  <p>Each source is assessed on its own before synthesis so that agreement and disagreement become visible. If the three sources were blended at the outset, a strong signal in one could silently overwrite a weak or contradictory signal in another, and the most valuable information — divergence — would be lost. Separate evaluation is what makes the "described self vs. observed self" comparison possible.</p>
+  <h3>Why confidence ratings exist</h3>
+  <p>Every construct conclusion carries an explicit confidence level. This is the mechanism that prevents the framework from doing what these systems do by default: producing fluent, confident-sounding text regardless of evidence. Confidence ratings force the analysis to state how much support a conclusion actually has, and to say "insufficient evidence" when that is the honest answer. The confidence framework is detailed in Section 09.</p>
+</section>
+
+<!-- SECTION 8 — TRACEABILITY -->
+<section class="rp-section" id="traceability">
+  <div class="rp-sec-num">08 · Traceability model</div>
+  <h2>Every conclusion traces to evidence</h2>
+  <div class="rp-flow">
+    <div class="rp-flow-box">Evidence</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Construct</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Confidence</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box">Interpretation</div>
+    <div class="rp-flow-arrow">↓</div>
+    <div class="rp-flow-box result">Recommendation</div>
+  </div>
+  <p>Traceability is a first-class design requirement, not a reporting nicety. Every developmental recommendation the framework produces must be followable backward: which recommendation, addressing which mechanism, supported by which evidence, in which source, at what confidence level, informed by which research tradition. The Development Roadmap output enforces this with a fixed format that names the originating construct, the evidence basis broken out by source, the theoretical framing, the mechanism, and a reflection question for every priority.</p>
+  <div class="rp-pull">A recommendation you cannot trace back to evidence is indistinguishable from an opinion. The traceability requirement is what keeps the framework honest about the difference.</div>
+  <p>Why this matters specifically for a developmental tool: people act on developmental feedback. They change how they lead, what they work on, how they understand themselves. Feedback that sounds authoritative but rests on thin or absent evidence is not a smaller version of good feedback — it is actively harmful, because it directs real effort and self-concept on the basis of fiction. Requiring traceability means a reader can always audit the chain and decide for themselves whether a conclusion is earned.</p>
+</section>
+
+<!-- SECTION 9 — CONFIDENCE FRAMEWORK -->
+<section class="rp-section" id="confidence">
+  <div class="rp-sec-num">09 · Confidence framework</div>
+  <h2>Four levels of certainty</h2>
+  <p>Every construct conclusion is assigned one of four confidence levels. The levels are applied strictly, and preserving uncertainty is treated as a feature, not a deficiency.</p>
+
+  <div class="rp-conf">
+    <div class="rp-conf-level cl-high">High Confidence</div>
+    <div class="rp-conf-desc"><strong>Means:</strong> convergence across all three evidence sources, or exceptionally strong behavioral evidence plus at least one corroborating source, with no major contradictions and at least one specific behavioral example. <strong>Does not mean:</strong> proven, validated, or certain — only that the available evidence consistently points the same direction.</div>
+
+    <div class="rp-conf-level cl-mod">Moderate</div>
+    <div class="rp-conf-desc"><strong>Means:</strong> convergence across two sources, or strong evidence from one with partial support from another, with minor limitations acknowledged. <strong>Does not mean:</strong> weak — Moderate is a legitimate, well-supported conclusion that simply lacks full triangulation.</div>
+
+    <div class="rp-conf-level cl-emerg">Emerging Hypothesis</div>
+    <div class="rp-conf-desc"><strong>Means:</strong> one source points toward a pattern but the others do not yet confirm it. Framed as a question for reflection, not a finding. <strong>Does not mean:</strong> false — only unconfirmed. Many true things about a person will show up here first.</div>
+
+    <div class="rp-conf-level cl-insuf">Insufficient Evidence</div>
+    <div class="rp-conf-desc"><strong>Means:</strong> there is no responsible basis for any conclusion about this construct. <strong>Does not mean:</strong> the construct is absent or low in the person — only that the evidence provided cannot speak to it. Declining a reflective prompt is not evidence of lacking the underlying capacity.</div>
+  </div>
+
+  <div class="rp-note">
+    <div class="rp-note-label">Why uncertainty is preserved rather than resolved</div>
+    <p>The default behavior of a language model is to produce confident, fluent prose. Left unconstrained, it would generate a complete, authoritative-sounding profile from any input, however thin. The confidence framework exists specifically to override that tendency — to force the analysis to say "I don't have enough to go on" when that is true, and to mark a single suggestive data point as a hypothesis rather than a fact. A profile full of honest "Insufficient Evidence" ratings on thin input is the framework working correctly, even though it is a less satisfying experience than a confident fabrication would be.</p>
+  </div>
+</section>
+
+<!-- SECTION 10 — WHAT IT IS NOT -->
+<section class="rp-section" id="not">
+  <div class="rp-sec-num">10 · What Leadership OS is not</div>
+  <h2>Explicit non-claims</h2>
+  <p>This section is as important as any other in this document. Stating clearly what the framework does not claim is the precondition for stating what it does.</p>
+  <div class="rp-notlist">
+    <div class="rp-notlist-item"><span class="rp-notlist-x">✕</span><span><strong>Not a psychometric assessment.</strong> It produces no validated scores, no norms, and no standardized scales. The underlying assessment input may be psychometric; the Leadership OS analysis built on top of it is not.</span></div>
+    <div class="rp-notlist-item"><span class="rp-notlist-x">✕</span><span><strong>Not a validated diagnostic tool.</strong> No validation studies have been conducted. It diagnoses nothing — clinically or otherwise.</span></div>
+    <div class="rp-notlist-item"><span class="rp-notlist-x">✕</span><span><strong>Not a measure of leadership effectiveness.</strong> It describes patterns; it does not rank, grade, or predict how good a leader someone is.</span></div>
+    <div class="rp-notlist-item"><span class="rp-notlist-x">✕</span><span><strong>Not a replacement for coaching.</strong> It cannot read a room, hold a relationship over time, challenge in real time, or exercise the judgment a skilled human coach brings. At most it is a structured input a coach or individual might use.</span></div>
+    <div class="rp-notlist-item"><span class="rp-notlist-x">✕</span><span><strong>Not a prediction engine.</strong> It makes no claims about future behavior, performance, or outcomes. It describes what the evidence suggests about patterns, in the present tense, as hypotheses.</span></div>
+    <div class="rp-notlist-item"><span class="rp-notlist-x">✕</span><span><strong>Not a comprehensive theory of leadership.</strong> Nine constructs are a working set, not a complete account. The interpersonal dimension in particular is underdeveloped, as Section 04 states plainly.</span></div>
+  </div>
+  <p>Everything Leadership OS does produce should be read in light of these boundaries: it is an exploratory, developmental framework that organizes evidence into confidence-labeled hypotheses for personal reflection. Nothing more, and it tries hard not to imply more.</p>
+</section>
+
+<!-- SECTION 11 — CURRENT LIMITATIONS -->
+<section class="rp-section" id="limitations">
+  <div class="rp-sec-num">11 · Current limitations</div>
+  <h2>Known limitations</h2>
+  <p>Every limitation below is structural — inherent to how the methodology currently works, not a bug to be patched.</p>
+  <ul>
+    <li><strong>Dependence on reflection quality.</strong> The methodology is only as good as the reflection a person provides. Shallow, defensive, or rushed reflection produces thin output. The framework cannot manufacture insight from input that contains none, and it cannot make a reluctant participant reflective.</li>
+    <li><strong>Dependence on corpus quality.</strong> A thin, narrow, or unrepresentative AI conversation history limits how much the behavioral source can contribute. People who delegate their AI use, or who use it only for narrow tasks, produce corpora that cannot support pattern inference.</li>
+    <li><strong>AI model variability.</strong> The analysis runs inside a third-party AI tool. Different models — and different versions of the same model — may produce different analyses from identical inputs. The framework's reliability across models has not been measured.</li>
+    <li><strong>Construct evolution.</strong> The nine constructs are a working set that has changed before and may change again. A profile generated today reflects the framework as it currently stands, not a fixed standard.</li>
+    <li><strong>Interpersonal dimension coverage.</strong> As stated throughout, the framework is materially weaker on relational and social dimensions of leadership than on cognitive and developmental ones.</li>
+    <li><strong>Absence of validation studies.</strong> No study has tested whether the framework's conclusions correspond to how leaders actually operate, whether its outputs produce developmental change, or whether different raters reach consistent results. Internal consistency has been stress-tested; external validity has not been established.</li>
+  </ul>
+</section>
+
+<!-- SECTION 12 — OPEN QUESTIONS -->
+<section class="rp-section" id="questions">
+  <div class="rp-sec-num">12 · Open questions</div>
+  <h2>What remains unresolved</h2>
+  <p>These are the questions that would most advance the methodology if answered. They are offered in the spirit of a research agenda, not a roadmap of intended features.</p>
+  <ul>
+    <li><strong>Corpus evidence validity.</strong> Does behavioral evidence drawn from AI conversation history actually correspond to how a person leads in non-AI-mediated contexts? Or does it only describe how they work with an AI? This is the most important open question, because the corpus is the framework's most novel and most load-bearing source.</li>
+    <li><strong>Longitudinal stability.</strong> If the same person ran the process six months apart, how much of the profile would be stable versus drift? Stability would suggest the framework captures something durable; high drift would suggest it captures something situational or noisy.</li>
+    <li><strong>Developmental impact.</strong> Does engaging with a Leadership OS profile actually change how someone leads, or does it produce a moment of recognition that fades? Do people return to the outputs?</li>
+    <li><strong>Inter-rater consistency.</strong> If two people ran the same evidence through the analysis independently, how similar would the resulting confidence ratings be? Low consistency would undermine the confidence framework's meaning.</li>
+    <li><strong>Future construct refinement.</strong> Are the nine constructs the right ones? Which are redundant, which are missing, and where are the boundaries unstable?</li>
+    <li><strong>Interpersonal leadership dimensions.</strong> Can the evidence model be extended to support relational measurement, or is that genuinely beyond what an AI corpus and self-report can responsibly assess?</li>
+    <li><strong>AI-assisted development effectiveness.</strong> The broader question the whole project gestures at: can development that happens closer to where work occurs, mediated by AI, meaningfully supplement traditional, episodic, organization-gated development?</li>
+  </ul>
+</section>
+
+<!-- SECTION 13 — FUTURE EVOLUTION -->
+<section class="rp-section" id="future">
+  <div class="rp-sec-num">13 · Future evolution</div>
+  <h2>How this may change</h2>
+  <p>The directions below are possibilities, not commitments. None is promised, and several may never happen. They are listed so a reader can see how the methodology might develop without mistaking that for a plan.</p>
+  <ul>
+    <li><strong>Construct refinement.</strong> The most likely near-term evolution: tightening, merging, or adding constructs as evidence accumulates about which produce useful, differentiated output — and being honest if the interpersonal gap cannot be responsibly closed within the current evidence model.</li>
+    <li><strong>Longitudinal models.</strong> If people return to the process over time, the framework could evolve to track change rather than produce a single snapshot — comparing profiles across runs rather than treating each as standalone.</li>
+    <li><strong>Agent-assisted development.</strong> A reflective companion that helps a person revisit their profile in the flow of work, rather than as a one-time exercise — contingent entirely on evidence that people actually want and benefit from ongoing engagement.</li>
+    <li><strong>Team-level applications.</strong> Aggregating individual Working-With-Me outputs to help teams understand how their members operate together — a substantial extension with its own measurement and privacy challenges.</li>
+    <li><strong>Research participation.</strong> The most aligned next step: collaborating with researchers to study the open questions in Section 12 properly, with real participants and real methodology, rather than the designer's own synthetic tests.</li>
+  </ul>
+  <div class="rp-pull">The most valuable evolution is not a new feature. It is the first piece of genuine external evidence about whether any of this is true.</div>
+</section>
+
+<!-- REFERENCES -->
+<section class="rp-section" id="references">
+  <div class="rp-sec-num">References</div>
+  <h2>Research traditions cited</h2>
+  <p>These works inform the framework's reasoning as described in Section 06. They are listed to support transparency and further reading. Their inclusion indicates influence on the methodology's design — not endorsement of Leadership OS by these authors, and not a claim that Leadership OS has been validated against their work.</p>
+  <div class="rp-refs">
+    <p>Argyris, C., &amp; Schön, D. (1974). <em>Theory in Practice: Increasing Professional Effectiveness.</em> Jossey-Bass.</p>
+    <p>Avolio, B. J. (2007). Promoting more integrative strategies for leadership theory-building. <em>American Psychologist, 62</em>(1).</p>
+    <p>Csíkszentmihályi, M. (1990). <em>Flow: The Psychology of Optimal Experience.</em> Harper &amp; Row.</p>
+    <p>Day, D. V. (2000). Leadership development: A review in context. <em>The Leadership Quarterly, 11</em>(4).</p>
+    <p>Deci, E. L., &amp; Ryan, R. M. (2000). The "what" and "why" of goal pursuits: Human needs and the self-determination of behavior. <em>Psychological Inquiry, 11</em>(4).</p>
+    <p>Ericsson, K. A., Krampe, R. T., &amp; Tesch-Römer, C. (1993). The role of deliberate practice in the acquisition of expert performance. <em>Psychological Review, 100</em>(3).</p>
+    <p>Eurich, T. (2017). <em>Insight: The Surprising Truth About How Others See Us.</em> Crown Business.</p>
+    <p>Flavell, J. H. (1979). Metacognition and cognitive monitoring. <em>American Psychologist, 34</em>(10).</p>
+    <p>Goldberg, L. R. (1993). The structure of phenotypic personality traits. <em>American Psychologist, 48</em>(1). [Big Five]</p>
+    <p>Ibarra, H. (1999). Provisional selves: Experimenting with image and identity in professional adaptation. <em>Administrative Science Quarterly, 44</em>(4).</p>
+    <p>Kegan, R. (1982). <em>The Evolving Self: Problem and Process in Human Development.</em> Harvard University Press.</p>
+    <p>Kolb, D. A. (1984). <em>Experiential Learning: Experience as the Source of Learning and Development.</em> Prentice Hall.</p>
+    <p>Lee, K., &amp; Ashton, M. C. (2004). Psychometric properties of the HEXACO personality inventory. <em>Multivariate Behavioral Research, 39</em>(2).</p>
+    <p>Mezirow, J. (1991). <em>Transformative Dimensions of Adult Learning.</em> Jossey-Bass.</p>
+    <p>Schön, D. (1983). <em>The Reflective Practitioner: How Professionals Think in Action.</em> Basic Books.</p>
+    <p>Senge, P. M. (1990). <em>The Fifth Discipline: The Art and Practice of the Learning Organization.</em> Doubleday.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-privacy">Your data stays inside the AI tool you choose to use. Leadership OS does not collect or store your assessment results, reflections, or conversation history. The methodology runs entirely within your chosen AI environment.</div>
+    <div class="foot-meta-row">
+      <span class="foot-version">Version 1.0 · Updated June 2026</span>
+      <span class="foot-sep">·</span>
+      <span>Research &amp; Methodology</span>
+      <span class="foot-sep">·</span>
+      <span>© 2026 Mike Cilla</span>
+    </div>
+    <div class="foot-disclaimer">A reflection and development methodology — not a validated assessment or prediction instrument.</div>
+  </div>
+</footer>
+</body>
+</html>
