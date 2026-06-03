@@ -485,6 +485,36 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .footer-links a{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.06em;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
 </style>
+<style>
+/* THE JOURNEY */
+#journey{max-width:1000px;margin:0 auto;padding:5rem 4vw;}
+.jy-wrap .section-sub{max-width:660px;}
+.jy-figure{margin:3rem 0 2.5rem;text-align:center;}
+.journey-svg{max-width:760px;width:100%;height:auto;}
+.jy-model{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:1rem;align-items:start;margin-top:2rem;}
+.jy-stage{}
+.jy-stage-label{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.jy-stage p{font-size:0.92rem;line-height:1.6;color:var(--ink-dim);margin:0;}
+.jy-stage-arrow{font-size:1.3rem;color:var(--gold);opacity:0.5;padding-top:0.4rem;}
+
+/* TRACEABILITY */
+#trace{background:var(--deep);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:5rem 4vw;}
+.tr-wrap{max-width:680px;margin:0 auto;text-align:center;}
+.tr-wrap .section-sub{max-width:560px;margin-left:auto;margin-right:auto;}
+.tr-chain{display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin:2.5rem 0 1.5rem;}
+.tr-link{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:0.9rem 1.5rem;min-width:280px;}
+.tr-link-end{border-color:rgba(184,103,30,0.4);background:rgba(184,103,30,0.05);}
+.tr-link-label{font-family:var(--ff-display);font-size:1.25rem;font-weight:500;color:var(--ink);}
+.tr-link-sub{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.03em;color:var(--ink-dim);margin-top:0.2rem;}
+.tr-arrow{font-size:1.2rem;color:var(--gold);opacity:0.55;}
+.tr-note{font-size:0.95rem;line-height:1.65;color:var(--ink-dim);max-width:520px;margin:0 auto;}
+.tr-deeplink{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.3);white-space:nowrap;}
+
+@media(max-width:820px){
+  .jy-model{grid-template-columns:1fr;gap:1.25rem;}
+  .jy-stage-arrow{display:none;}
+}
+</style>
 </head>
 <body>
 <header>
@@ -501,390 +531,143 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 <!-- HERO INTRO -->
 <div class="how-hero">
   <div class="how-eyebrow reveal">How it works</div>
-  <h1 class="reveal" style="transition-delay:.05s">The complete<br><em>process.</em></h1>
-  <p class="how-hero-sub reveal" style="transition-delay:.1s">Seven steps, three ways to reflect, and a system designed to stay useful as you change. This is everything that happens between your evidence and your four tools — start to finish.</p>
+  <h1 class="reveal" style="transition-delay:.05s">What Leadership OS<br><em>does to you.</em></h1>
+  <p class="how-hero-sub reveal" style="transition-delay:.1s">This is what actually happens to you when you go through Leadership OS — how evidence you already have becomes self-understanding you can keep developing. The step-by-step prompts live in the Starter Kit; this is the bigger picture.</p>
 </div>
 
-<section id="workflow" style="scroll-margin-top:52px;">
-  <div class="s-label reveal">The complete process</div>
-  <h2 class="section-headline reveal" style="transition-delay:.05s">Seven steps.<br><em>One living system.</em></h2>
-  <p class="section-sub reveal" style="transition-delay:.1s">Every step has a clear objective, specific inputs, and a prompt you can copy directly into your AI tool. Steps 4 and 4b (Analysis Engine and Construct Analysis) are where your evidence becomes a Leadership Profile — the intermediate artifact that grounds all your output documents. The whole process takes about 90–120 minutes the first time.</p>
 
-  
-    <!-- CONFIDENCE LEVEL VISUAL -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:1.5rem;margin-bottom:2.5rem;">
-      <div style="background:var(--surface);padding:1rem 1.1rem;border-top:3px solid #1D9E75;">
-        <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:#1D9E75;margin-bottom:0.35rem;">High</div>
-        <div style="font-size:0.95rem;color:var(--ink-dim);line-height:1.65;">3 sources converge. "The evidence consistently shows..."</div>
+
+<!-- THE JOURNEY (flagship visual) -->
+<section id="journey" style="scroll-margin-top:52px;">
+  <div class="jy-wrap">
+    <div class="s-label reveal">The transformation</div>
+    <h2 class="section-headline reveal" style="transition-delay:.05s">What happens to you,<br><em>start to finish.</em></h2>
+    <p class="section-sub reveal" style="transition-delay:.1s">Leadership OS isn't a quiz or a report. It's a process that turns evidence you already have into self-understanding you can keep developing. Here's the whole arc — three inputs become one profile, which becomes four tools, which feed an ongoing practice.</p>
+
+    <figure class="jy-figure reveal" style="transition-delay:.15s">
+      <svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Leadership OS journey: three inputs synthesize into a leadership profile, which produces four tools, which feed ongoing development" class="journey-svg">
+  <defs>
+    <marker id="jarrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M1,1 L6,4 L1,7" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.7"/>
+    </marker>
+  </defs>
+
+  <!-- STAGE LABELS (left rail) -->
+  <text x="40" y="70" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">01 — INPUTS</text>
+  <text x="40" y="300" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">02 — SYNTHESIS</text>
+  <text x="40" y="430" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">03 — OUTPUTS</text>
+  <text x="40" y="650" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">04 — DEVELOPMENT</text>
+
+  <!-- INPUTS: three source cards -->
+  <g class="j-node">
+    <rect x="40" y="90" width="250" height="90" rx="8" fill="var(--surface)" stroke="#5B5BD6" stroke-width="1.5"/>
+    <text x="60" y="122" font-family="var(--ff-display)" font-size="20" fill="var(--ink)">Assessment</text>
+    <text x="60" y="148" font-family="var(--ff-body)" font-size="13" fill="var(--ink-dim)">Who you believe you are</text>
+  </g>
+  <g class="j-node">
+    <rect x="325" y="90" width="250" height="90" rx="8" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.5"/>
+    <text x="345" y="122" font-family="var(--ff-display)" font-size="20" fill="var(--ink)">Corpus</text>
+    <text x="345" y="148" font-family="var(--ff-body)" font-size="13" fill="var(--ink-dim)">How you appear to operate</text>
+  </g>
+  <g class="j-node">
+    <rect x="610" y="90" width="250" height="90" rx="8" fill="var(--surface)" stroke="#1D9E75" stroke-width="1.5"/>
+    <text x="630" y="122" font-family="var(--ff-display)" font-size="20" fill="var(--ink)">Reflection</text>
+    <text x="630" y="148" font-family="var(--ff-body)" font-size="13" fill="var(--ink-dim)">How you make meaning</text>
+  </g>
+
+  <!-- converging lines to synthesis -->
+  <path d="M165,180 C165,220 450,210 450,250" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
+  <path d="M450,180 L450,250" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
+  <path d="M735,180 C735,220 450,210 450,250" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
+
+  <!-- SYNTHESIS: leadership profile -->
+  <g class="j-node">
+    <rect x="300" y="258" width="300" height="74" rx="8" fill="var(--ink)"/>
+    <text x="450" y="290" text-anchor="middle" font-family="var(--ff-display)" font-size="22" fill="#f0ece4">Leadership Profile</text>
+    <text x="450" y="313" text-anchor="middle" font-family="var(--ff-mono)" font-size="11" letter-spacing="1" fill="rgba(240,236,228,0.5)">the synthesis — what grounds everything</text>
+  </g>
+  <path d="M450,332 L450,375" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
+
+  <!-- OUTPUTS: four tools -->
+  <g class="j-node"><rect x="40" y="385" width="195" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
+    <text x="60" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">Leadership Profile</text>
+    <text x="60" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">understand yourself</text></g>
+  <g class="j-node"><rect x="248" y="385" width="195" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
+    <text x="268" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">Working-With-Me</text>
+    <text x="268" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">work with your team</text></g>
+  <g class="j-node"><rect x="456" y="385" width="195" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
+    <text x="476" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">Development</text>
+    <text x="476" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">know where to grow</text></g>
+  <g class="j-node"><rect x="664" y="385" width="196" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
+    <text x="684" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">AI Calibration</text>
+    <text x="684" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">get more from AI</text></g>
+
+  <!-- lines to development -->
+  <path d="M450,459 L450,500" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
+
+  <!-- DEVELOPMENT: ongoing cycle -->
+  <g class="j-node">
+    <rect x="225" y="508" width="450" height="150" rx="10" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.55"/>
+    <text x="450" y="540" text-anchor="middle" font-family="var(--ff-mono)" font-size="11" letter-spacing="2" fill="var(--gold)">ONGOING — IT DOESN'T END HERE</text>
+    <text x="320" y="582" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Reflection</text>
+    <text x="580" y="582" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Learning</text>
+    <text x="320" y="620" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Growth</text>
+    <text x="580" y="620" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Iteration</text>
+    <text x="450" y="602" text-anchor="middle" font-family="var(--ff-mono)" font-size="20" fill="var(--gold)">↻</text>
+  </g>
+</svg>
+    </figure>
+
+    <div class="jy-model reveal">
+      <div class="jy-stage">
+        <div class="jy-stage-label">Inputs</div>
+        <p>Three kinds of evidence about how you operate: what you say about yourself, how you actually work, and how you make sense of your own experience.</p>
       </div>
-      <div style="background:var(--surface);padding:1rem 1.1rem;border-top:3px solid var(--gold);">
-        <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem;">Moderate</div>
-        <div style="font-size:0.95rem;color:var(--ink-dim);line-height:1.65;">2 sources converge. "The evidence suggests..."</div>
+      <div class="jy-stage-arrow">→</div>
+      <div class="jy-stage">
+        <div class="jy-stage-label">Analysis</div>
+        <p>The three sources are weighed against each other — not blended. Where they agree builds confidence; where they diverge is often where the real insight lives.</p>
       </div>
-      <div style="background:var(--surface);padding:1rem 1.1rem;border-top:3px solid #5B5BD6;">
-        <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:#5B5BD6;margin-bottom:0.35rem;">Emerging</div>
-        <div style="font-size:0.95rem;color:var(--ink-dim);line-height:1.65;">1 source points toward. "Worth exploring whether..."</div>
+      <div class="jy-stage-arrow">→</div>
+      <div class="jy-stage">
+        <div class="jy-stage-label">Outputs</div>
+        <p>Four practical tools you keep using — to understand yourself, work with your team, get more from AI, and know where to grow.</p>
       </div>
-      <div style="background:var(--surface);padding:1rem 1.1rem;border-top:3px solid var(--rule);">
-        <div style="font-family:var(--ff-m);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:0.35rem;">Insufficient</div>
-        <div style="font-size:0.95rem;color:var(--ink-dim);line-height:1.65;">Not enough evidence to form a useful hypothesis.</div>
-      </div>
-    </div>
-
-    <div class="workflow-steps">
-
-    <!-- STEP 1 -->
-    <div class="wf-step reveal">
-      <div class="wf-num">01</div>
-      <div class="wf-body">
-        <div class="wf-tag">Assessment Inputs · 20 min</div>
-        <div class="wf-title">Take PrinciplesYou</div>
-        <div class="wf-desc">The scientific anchor for everything that follows. PrinciplesYou is grounded in Big Five personality science — the same empirical foundation used in decades of leadership research. It produces an archetype profile and facet-level data that your AI will use to calibrate its pattern analysis.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">What you need</div>
-            <ul class="wf-col-items">
-              <li>20 minutes of uninterrupted focus</li>
-              <li>Free account at principlesyou.com</li>
-              <li>Your full results — screenshot or PDF</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">What you get</div>
-            <ul class="wf-col-items">
-              <li>Primary archetype + secondary attributes</li>
-              <li>Facet-level scores across 4 dimensions</li>
-              <li>Behavioral context for each dimension</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">Free · principlesyou.com · 20 min</div>
-        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View ingestion prompt</button>
-        <div class="wf-prompt-box">
-          <div class="wf-prompt-label">Assessment Ingestion Prompt — paste into your AI after sharing your results</div>
-          <div class="wf-prompt-text" id="">The Starter Kit contains the complete, governed version of this prompt.
-The assessment ingestion prompt teaches your AI how to treat assessment results as
-developmental hypotheses rather than objective facts — and what not to claim from them.
-
-Open the Starter Kit → Section 4 → Initialization Prompt</div>
-          <div class="wf-prompt-footer">
-            <span class="wf-prompt-note">Works with ChatGPT, Claude, Gemini, or any frontier model. Keep this conversation open — all subsequent prompts build on this context.</span>
-            <button class="copy-btn" onclick="copyText(this, `I'm going to share my PrinciplesYou personality assessment results with you. I'd like you to ingest this as foundational context — not as a definitive description of who I am, but as a set of validated hypotheses about my tendencies that we'll test against behavioral evidence in the next steps.\n\nAs you read the results, please note:\n1. My primary archetype and what it suggests about how I organize, communicate, and lead\n2. My secondary attributes and where they complement or create tension with the primary\n3. Any facet-level scores that seem unusually high or low\n4. The archetypes I'm least like — these are often as informative as the primary\n\nPlease don't interpret these results yet. Just acknowledge that you've ingested them and summarize the 3-4 most notable patterns you observed. We'll use these as anchors throughout the rest of the Leadership OS process.\n\n[Paste your PrinciplesYou results here]`)">Copy prompt</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="wf-step reveal">
-      <div class="wf-num">02</div>
-      <div class="wf-body">
-        <div class="wf-tag">Behavioral Evidence · 15 min</div>
-        <div class="wf-title">Run the Corpus Audit</div>
-        <div class="wf-desc">This is the piece that makes Leadership OS genuinely different. If you use ChatGPT, Claude, Gemini, or any AI tool regularly, you've accumulated a behavioral record — thousands of decisions, communications, and challenges documented in a way no other medium captures. The Corpus Audit Prompt asks your AI to reflect on patterns it has observed across your conversations.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">Works best with</div>
-            <ul class="wf-col-items">
-              <li>3+ months of regular AI use</li>
-              <li>Strategic or professional conversations</li>
-              <li>Decision-making, writing, analysis work</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">What you get</div>
-            <ul class="wf-col-items">
-              <li>Observed behavioral patterns</li>
-              <li>Recurring themes and priorities</li>
-              <li>Communication and decision tendencies</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">15 min · any AI tool with conversation history</div>
-        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View corpus audit prompt</button>
-        <div class="wf-prompt-box">
-          <div class="wf-prompt-label">Corpus Audit Prompt — paste into the AI tool you use most</div>
-          <div class="wf-prompt-text" id="">The Starter Kit contains the complete corpus audit prompt.
-It asks your AI to identify behavioral patterns — how you frame problems,
-what energizes you, how you make decisions — based on your conversation history.
-Not summaries. Patterns.
-
-Open the Starter Kit → Section 2 → The Corpus Audit Prompt</div>
-          <div class="wf-prompt-footer">
-            <span class="wf-prompt-note">Paste this into the AI tool that holds most of your professional conversations. Copy the output and bring it into your main Leadership OS session.</span>
-            <button class="copy-btn" onclick="copyText(this, `I'd like you to reflect on our conversation history together. Don't summarize specific conversations. Instead, identify behavioral patterns — things you've observed repeatedly about how I think, work, and communicate.\n\nPlease reflect on each of the following:\n\n1. How do I tend to frame problems? What patterns do you see in how I approach complex or ambiguous situations?\n\n2. What topics or domains come up most frequently? Where does my thinking seem deepest and most developed?\n\n3. How would you describe my communication style — the way I ask questions, express disagreement, give feedback on your outputs, and make requests?\n\n4. What seems to energize me in our conversations? What do I gravitate toward?\n\n5. What frustrates me? Where do you see friction, impatience, or repeated difficulty?\n\n6. What recurring questions or challenges keep coming up across our conversations?\n\n7. What are my decision-making tendencies — how I evaluate tradeoffs, what I seem to prioritize, what I consistently avoid?\n\n8. What do you notice about my relationship to structure, ambiguity, detail, and systems?\n\nBe specific and honest. I'm not looking for flattery — I'm looking for an accurate behavioral profile based on what you've actually observed. If you're uncertain about something, say so rather than speculating.`)">Copy prompt</button>
-          </div>
-        </div>
+      <div class="jy-stage-arrow">→</div>
+      <div class="jy-stage">
+        <div class="jy-stage-label">Development</div>
+        <p>Not a one-time result. Something you return to as your thinking shifts and your situation changes.</p>
       </div>
     </div>
-
-    <!-- STEP 3 -->
-    <div class="wf-step reveal">
-      <div class="wf-num">03</div>
-      <div class="wf-body">
-        <div class="wf-tag">Structured Reflection · 30–40 min</div>
-        <div class="wf-title">Answer the Six Reflection Prompts</div>
-        <div class="wf-desc">Structured behavioral prompts — the same methodology as a behavioral interview, applied as a self-reflection instrument. These surface the specific stories and patterns that no assessment can reach. Answer them in writing, as a voice memo, or directly in conversation with your AI. Be specific. Real situations. Actual decisions. The more concrete, the more useful.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">The six prompts</div>
-            <ul class="wf-col-items">
-              <li>Peak performance — when were you at your best?</li>
-              <li>Decision process — how did you get there?</li>
-              <li>A decision you'd make differently</li>
-              <li>Recurring frustration — what keeps coming up?</li>
-              <li>Energy sources — what makes you lose track of time?</li>
-              <li>The misread — what do people get wrong about you?</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">Three ways to complete</div>
-            <ul class="wf-col-items">
-              <li>Write responses directly in your AI tool</li>
-              <li>Dictate via voice memo, paste transcript</li>
-              <li>Have your AI interview you — use the guided interview prompt below</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">30–40 min · any format works</div>
-        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View guided interview prompt</button>
-        <div class="wf-prompt-box">
-          <div class="wf-prompt-label">Guided Interview Prompt — let your AI conduct the reflection</div>
-          <div class="wf-prompt-text" id="">The Starter Kit contains the complete guided interview prompt.
-Your AI conducts the six reflection prompts as a structured conversation —
-one question at a time, with follow-up for vague responses.
-The preferred method for most people.
-
-Open the Starter Kit → Section 3 → Guided AI Interview Prompt</div>
-          <div class="wf-prompt-footer">
-            <span class="wf-prompt-note">This is the preferred method for most people. Conversational reflection surfaces more than writing alone. The AI will ask natural follow-ups.</span>
-            <button class="copy-btn" onclick="copyText(this, `I'd like you to conduct a structured reflection interview with me. This is part of building my Leadership Operating System.\n\nYour role in this conversation is interviewer and pattern identifier — not coach, advisor, or therapist. Ask one question at a time. Wait for my response. Ask one follow-up if something is vague or general. Then move to the next question.\n\nThe six questions you'll cover, in order:\n\n1. Describe a specific situation where you were operating at your best as a leader. What were you doing, who were you with, what were the conditions — and what made it different from ordinary work?\n\n2. Describe a decision you made in the past year that you're genuinely proud of — not the outcome, the process. How did you get there?\n\n3. Describe a decision or situation you'd handle differently if you could. What happened, what did you do, and what does that tell you about how you operate under pressure or uncertainty?\n\n4. What's a recurring frustration in how you work — something that comes up repeatedly with people, organizations, or yourself? Be specific about what triggers it.\n\n5. When do you find work genuinely energizing? Not meaningful work in the abstract — specific contexts, activities, types of problems, kinds of people.\n\n6. What do people consistently get wrong about you as a leader or colleague? What does that misread tell you about the gap between how you operate and how you come across?\n\nAfter I've answered all six, summarize the key behavioral patterns you observed — organized by: decision style, energy and flow conditions, friction points, and how I come across versus how I intend to come across.\n\nBegin with question one whenever I'm ready.`)">Copy prompt</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="wf-step reveal">
-      <div class="wf-num">04</div>
-      <div class="wf-body">
-        <div class="wf-tag">Pattern Analysis · 10 min</div>
-        <div class="wf-title">Run the Leadership Pattern Synthesis</div>
-        <div class="wf-desc">With all three inputs gathered — assessment results, corpus audit output, and reflection responses — you run a single synthesis prompt. Your AI analyzes across all three simultaneously, identifying where the sources converge, where they diverge, and what patterns are strong enough to anchor your Leadership OS.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">What goes in</div>
-            <ul class="wf-col-items">
-              <li>PrinciplesYou results (Step 1)</li>
-              <li>Corpus audit output (Step 2)</li>
-              <li>Reflection responses (Step 3)</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">What comes out</div>
-            <ul class="wf-col-items">
-              <li>Convergent patterns — consistent across all sources</li>
-              <li>Tension points — where sources diverge</li>
-              <li>Governing questions extracted from evidence</li>
-              <li>Development edges identified</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">10 min · run in same session as Steps 1–3</div>
-        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View synthesis prompt</button>
-        <div class="wf-prompt-box">
-          <div class="wf-prompt-label">Leadership Pattern Synthesis Prompt</div>
-          <div class="wf-prompt-text" id="">The Starter Kit contains the complete synthesis and construct analysis prompts.
-These are the core engine of Leadership OS — the governed instruction set that
-produces evidence-based, confidence-labeled hypotheses across nine developmental
-constructs, including a required correction loop before document generation.
-
-Open the Starter Kit → Section 4 → Analysis Engine → Section 4b → Construct Analysis</div>
-          <div class="wf-prompt-footer">
-            <span class="wf-prompt-note">Run this in the same AI session where you completed Steps 1–3. The AI needs all three inputs in its context window to synthesize effectively.</span>
-            <button class="copy-btn" onclick="copyText(this, `You now have three sources of data about how I operate:\n1. My PrinciplesYou personality assessment (ingested in Step 1)\n2. Your behavioral observations from my AI conversation history (Step 2 corpus audit)\n3. My structured reflection responses (Step 3)\n\nPlease conduct a cross-source pattern analysis. I want you to identify:\n\nCONVERGENT PATTERNS — things that show up consistently across all three sources. These are the most reliable signals about how I actually operate.\n\nTENSION POINTS — places where the sources diverge. For example, where my self-description in the reflection doesn't match what the corpus audit observed, or where my assessment results predict a tendency that my behavioral evidence contradicts. Don't resolve these tensions — name them as questions worth exploring.\n\nGOVERNING QUESTIONS — based on the patterns across all three sources, what core questions appear to drive my decision-making? Not questions I asked, but questions that seem to sit beneath my choices. State these as hypotheses.\n\nFLOW CONDITIONS — based on what I described as energizing and the conditions in my peak performance examples, what specific combination of challenge, context, and collaboration produces my best work?\n\nDEVELOPMENT EDGES — not weaknesses, but the places where my natural tendencies, under specific conditions, reliably create friction. Be specific about the mechanism, not just the label.\n\nFrame all conclusions as hypotheses, not facts. Note your confidence level where relevant. Flag anything that seems contradicted by evidence.`)">Copy prompt</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- STEP 4B -->
-    <div class="wf-step reveal">
-      <div class="wf-num">4b</div>
-      <div class="wf-body">
-        <div class="wf-tag">Construct Analysis · 10 min</div>
-        <div class="wf-title">Build Your Leadership Profile</div>
-        <div class="wf-desc">After the pattern analysis, a single construct analysis prompt asks your AI to evaluate all nine Leadership OS constructs across your three evidence sources. For each construct — like Decision Style or Self-Awareness — the AI identifies what each evidence source shows, where they agree or conflict, and what confidence level the evidence supports. The result is your Leadership Profile: the intermediate artifact that grounds all your output documents.</div>
-        <div class="wf-desc">The Leadership Profile is private. It contains the full evidence reasoning — including tensions, low-confidence hypotheses, and constructs where the evidence was insufficient. The output documents (User Manual, Working-With-Me Guide) are the edited, shareable versions derived from this profile.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">Nine constructs evaluated</div>
-            <ul class="wf-col-items">
-              <li>Reflection Orientation</li>
-              <li>Systems Orientation</li>
-              <li>Learning Orientation</li>
-              <li>Decision Style</li>
-              <li>Communication Patterns</li>
-              <li>Leadership Identity</li>
-              <li>Adaptability</li>
-              <li>Self-Awareness</li>
-              <li>Development Readiness</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">What the profile contains</div>
-            <ul class="wf-col-items">
-              <li>Evidence assessment per construct across all three sources</li>
-              <li>Confidence level: High / Moderate / Emerging / Insufficient</li>
-              <li>Tension points where sources contradict</li>
-              <li>Leadership Profile summary — 200–300 words</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">10 min · same conversation as Step 4 · Starter Kit has the full prompt</div>
-      </div>
-    </div>
-
-    <!-- STEP 5 -->
-    <div class="wf-step reveal">
-      <div class="wf-num">05</div>
-      <div class="wf-body">
-        <div class="wf-tag">Document Generation · 15 min</div>
-        <div class="wf-title">Generate Your Three Documents</div>
-        <div class="wf-desc">Three separate prompts — one per document. Run them sequentially in the same session. Review each output carefully. Correct anything that doesn't ring true. The AI is producing a first draft, not a finished profile — your job is to recognize what's accurate and push back on what isn't.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">Document 1</div>
-            <ul class="wf-col-items">
-              <li>Leadership User Manual (3–4 pages)</li>
-              <li>How you think, decide, and lead</li>
-              <li>Written in first person</li>
-              <li>Designed to be shared</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">Documents 2 + 3</div>
-            <ul class="wf-col-items">
-              <li>Working-With-Me Guide (1 page)</li>
-              <li>Practical, shareable, under 3-min read</li>
-              <li>AI Calibration Document (1 page)</li>
-              <li>Onboards your AI to how you work</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">15 min · three separate prompts in sequence</div>
-        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View document generation prompts</button>
-        <div class="wf-prompt-box">
-          <div class="wf-prompt-label">Document Generation Prompts — run these in sequence</div>
-          <div class="wf-prompt-text" id="">The Starter Kit contains the complete document generation prompts for all four outputs.
-Each includes a QA check before writing — verifying that all claims trace to the
-Leadership Profile and that confidence levels are preserved, not inflated.
-
-Open the Starter Kit → Section 5 → Output Generation</div>
-          <div class="wf-prompt-footer">
-            <span class="wf-prompt-note">Review each output before moving to the next. Correct anything that doesn't feel accurate — this improves the subsequent documents.</span>
-            <button class="copy-btn" onclick="copyText(this, `PROMPT A — Leadership User Manual\n\nBased on everything we've developed in this session — the assessment, the corpus audit, the reflection responses, and the pattern synthesis — please write my Leadership User Manual.\n\nFormat: 3–4 pages. First person. Structured with clear sections.\n\nInclude:\n— How I think: cognitive patterns, problem framing, decision approach\n— How I engage: with people, under pressure, in conflict, as a leader\n— What produces my best work: flow conditions, challenge level, context\n— Where I create friction: the specific conditions under which my defaults work against me\n— My governing questions: the questions that appear to drive my decisions\n— How to work with me: what I need, what I give, what to watch for\n\nWrite this as a document I could share with a new manager, a new team member, or a key collaborator. Not a psychological report. A practical guide to how I operate.`)">Copy Prompt A</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 6 -->
-    <div class="wf-step reveal">
-      <div class="wf-num">06</div>
-      <div class="wf-body">
-        <div class="wf-tag">Development Planning · 10 min</div>
-        <div class="wf-title">Build Your Development Roadmap</div>
-        <div class="wf-desc">Not a list of things to fix. A structured view of where intentional practice would produce the highest return — given who you already are and what you're working toward. This document is private. It's for you, not for sharing.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">What goes in</div>
-            <ul class="wf-col-items">
-              <li>Development edges from Step 4</li>
-              <li>Your stated goals and context</li>
-              <li>Your flow conditions</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">What comes out</div>
-            <ul class="wf-col-items">
-              <li>3–5 development priorities</li>
-              <li>Specific practices for each</li>
-              <li>Triggers to watch for</li>
-              <li>A 90-day focus</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">10 min · private document</div>
-        <button class="wf-prompt-toggle" onclick="togglePrompt(this)">↓ View development roadmap prompt</button>
-        <div class="wf-prompt-box">
-          <div class="wf-prompt-label">Development Roadmap Prompt</div>
-          <div class="wf-prompt-text" id="">The Starter Kit contains the complete Development Roadmap prompt.
-It produces a private document with mechanistically specific development priorities,
-each labeled with the confidence level from the construct analysis.
-
-Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
-          <div class="wf-prompt-footer">
-            <span class="wf-prompt-note">This document is for you, not for sharing. Be as honest as possible in the reflection steps — the quality of this output depends entirely on the quality of the inputs.</span>
-            <button class="copy-btn" onclick="copyText(this, `Based on the Leadership OS we've built in this session — specifically the development edges, flow conditions, and governing questions — please build a Development Roadmap.\n\nThis is a private document. It's not for sharing. Be honest.\n\nDEVELOPMENT PRIORITIES (3–5)\nFor each: name the edge, describe the specific mechanism that creates friction, identify the conditions that trigger it, and suggest one concrete practice to work on it. Avoid generic advice — the practice should be specific to the pattern we identified.\n\n90-DAY FOCUS\nGiven everything we've covered, what's the single most important thing to work on in the next 90 days? Not the easiest, the most important. Explain why.\n\nMONITORING QUESTIONS\n3–5 questions I should ask myself regularly to stay honest about whether I'm operating at my best or sliding into my defaults.\n\nWHEN TO UPDATE THIS\nBased on what we know about how I work, when and under what conditions should I revisit and update this roadmap?`)">Copy prompt</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 7 -->
-    <div class="wf-step reveal">
-      <div class="wf-num">07</div>
-      <div class="wf-body">
-        <div class="wf-tag">Ongoing · Your AI Companion</div>
-        <div class="wf-title">Keep It Alive</div>
-        <div class="wf-desc">The Leadership OS is only as good as the evidence it's built on. The AI Calibration Document from Step 5 is the starting point — paste it at the beginning of any new AI conversation to establish context. Beyond that, the system gets better the more you use it. Return to it when something significant happens. Update the documents when something no longer rings true. Add new examples when they're fresh.</div>
-        <div class="wf-cols">
-          <div>
-            <div class="wf-col-label">What persists long-term</div>
-            <ul class="wf-col-items">
-              <li>Leadership User Manual — update annually</li>
-              <li>Working-With-Me Guide — update when role changes</li>
-              <li>Development Roadmap — update every 90 days</li>
-              <li>AI Calibration Document — update as you evolve</li>
-              <li>Governing questions — rarely change; worth noting when they do</li>
-            </ul>
-          </div>
-          <div>
-            <div class="wf-col-label">What to discard</div>
-            <ul class="wf-col-items">
-              <li>Raw reflection transcripts after synthesis</li>
-              <li>Corpus audit output once integrated</li>
-              <li>Earlier versions once superseded</li>
-              <li>Anything that no longer rings true</li>
-            </ul>
-          </div>
-        </div>
-        <div class="wf-time">Ongoing · 30 min every 90 days to review and update</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<section style="background:var(--ink);padding:3rem 4vw;">
-  <div style="max-width:900px;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;">
-    <div>
-      <div style="font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(201,132,58,0.7);margin-bottom:0.5rem;">Ready to begin?</div>
-      <div style="font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:#f0ece4;line-height:1.2;margin-bottom:0.5rem;">Open the Starter Kit.</div>
-      <div style="font-size:0.97rem;font-weight:300;color:rgba(240,236,228,0.55);line-height:1.85;max-width:520px;">Every prompt. Every instruction. All seven steps in one place. Complete Leadership OS without leaving the page — then save as PDF when you're done.</div>
+<!-- TRACEABILITY VISUAL -->
+<section id="trace" style="scroll-margin-top:52px;">
+  <div class="tr-wrap reveal">
+    <div class="s-label">Why you can trust it</div>
+    <h2 class="section-headline">Every recommendation traces<br><em>back to evidence.</em></h2>
+    <p class="section-sub">Nothing it tells you is an opinion pulled from the air. Each insight follows a chain you can audit — from something observed in your evidence, through how it was interpreted, to what it suggests you do.</p>
+    <div class="tr-chain">
+      <div class="tr-link"><div class="tr-link-label">Observation</div><div class="tr-link-sub">something in your evidence</div></div>
+      <div class="tr-arrow">↓</div>
+      <div class="tr-link"><div class="tr-link-label">Interpretation</div><div class="tr-link-sub">what the pattern may mean</div></div>
+      <div class="tr-arrow">↓</div>
+      <div class="tr-link"><div class="tr-link-label">Development insight</div><div class="tr-link-sub">why it matters for you</div></div>
+      <div class="tr-arrow">↓</div>
+      <div class="tr-link tr-link-end"><div class="tr-link-label">Action</div><div class="tr-link-sub">something specific to try</div></div>
     </div>
-    <a href="leadership-os-starter-kit.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold-light);color:#0c0b0a;padding:0.9rem 1.75rem;font-family:var(--ff-body);font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background 0.2s;flex-shrink:0;" onmouseover="this.style.background='#e8b87a'" onmouseout="this.style.background='var(--gold-light)'">Open Starter Kit →</a>
+    <p class="tr-note">Each finding also carries an honest confidence level — and when the evidence isn't there, it says so rather than guessing. <a href="leadership-os-research.html#traceability" class="tr-deeplink">See the full traceability model →</a></p>
   </div>
 </section>
+
 
 <section id="reflection" style="scroll-margin-top:52px;">
   <div class="s-label reveal">How reflection works</div>
   <div class="refl-grid">
     <div class="reveal" style="transition-delay:.1s">
       <h2 class="section-headline">Three ways to<br><em>reflect.</em></h2>
-      <p class="section-sub" style="margin-bottom:2rem;">The reflection step is the most underrated part of the process. Most people rush it. The people who get the most out of Leadership OS are the ones who slow down here — the quality of the synthesis in Steps 4 and 5 is almost entirely determined by the quality of the reflection in Step 3.</p>
+      <p class="section-sub" style="margin-bottom:2rem;">The reflection step is the most underrated part of the process. Most people rush it. The people who get the most out of Leadership OS are the ones who slow down here — the quality of everything that follows is almost entirely determined by the quality of your reflection here.</p>
       <div class="refl-principles">
         <div class="refl-principle">
           <div class="rp-num">01</div>
@@ -900,7 +683,7 @@ Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
         </div>
         <div class="refl-principle">
           <div class="rp-num">04</div>
-          <div class="rp-text"><strong>Return to it.  </strong> The reflection prompts work better the second time. Come back six months later with new examples. The delta between versions is itself informative.</div>
+          <div class="rp-text"><strong>Return to it.  </strong> The reflection questions work better the second time. Come back six months later with new examples. The delta between versions is itself informative.</div>
         </div>
       </div>
     </div>
@@ -908,17 +691,17 @@ Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
       <div class="refl-mode">
         <span class="refl-mode-icon">✍️</span>
         <div class="refl-mode-title">Written reflection</div>
-        <div class="refl-mode-desc">Type your answers directly into your AI tool, one prompt at a time. Works well for people who think clearly in writing. The AI can ask follow-up questions after each response. Best for detailed, precise thinkers.</div>
+        <div class="refl-mode-desc">Type your your answers directly, working through the questions at your own pace. Works well for people who think clearly in writing. The AI can ask follow-up questions after each response. Best for detailed, precise thinkers.</div>
       </div>
       <div class="refl-mode">
         <span class="refl-mode-icon">🎙️</span>
         <div class="refl-mode-title">Voice-to-text</div>
-        <div class="refl-mode-desc">Record a voice memo answering each prompt, use your phone's transcription, then paste into your AI session. Works well for people who think better out loud. Often produces richer, less edited responses than writing.</div>
+        <div class="refl-mode-desc">Record a voice memo answering each question, use your phone's transcription, then paste into your AI session. Works well for people who think better out loud. Often produces richer, less edited responses than writing.</div>
       </div>
       <div class="refl-mode">
         <span class="refl-mode-icon">💬</span>
         <div class="refl-mode-title">Guided AI interview</div>
-        <div class="refl-mode-desc">Use the guided interview prompt from Step 3 to let your AI conduct the reflection as a conversation. Ask one question, wait for your answer, ask a follow-up, move on. The preferred method for most people — conversational reflection surfaces more than writing alone.</div>
+        <div class="refl-mode-desc">Let your AI conduct the reflection as a conversation. Ask one question, wait for your answer, ask a follow-up, move on. The preferred method for most people — conversational reflection surfaces more than writing alone.</div>
       </div>
     </div>
   </div>
@@ -961,7 +744,6 @@ Open the Starter Kit → Section 5 → Document 4 → Development Roadmap</div>
   </div>
 </section>
 
-<!-- CLOSING -->
 <section id="how-close" style="scroll-margin-top:52px;">
   <div class="hc-wrap reveal">
     <div class="s-label">Where to go next</div>

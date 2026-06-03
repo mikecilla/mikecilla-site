@@ -484,6 +484,13 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .footer-links{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin:1.25rem 0;}
 .footer-links a{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.06em;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
+
+/* FOUR DOCS PREVIEW STRIP */
+.oc-fourdocs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:780px;margin:1.5rem auto 0;}
+.ocd{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.1rem 1.25rem;border-top:2px solid var(--gold);}
+.ocd-tag{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);margin-bottom:0.55rem;}
+.ocd-snippet{font-size:0.92rem;line-height:1.6;color:var(--ink-dim);font-style:italic;}
+@media(max-width:640px){.oc-fourdocs{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -507,6 +514,25 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   <div class="hero-left">
     <div class="hero-inner">
       <div class="hero-eyebrow reveal" style="transition-delay:.05s">A framework by Mike Cilla · Beta</div>
+    <div class="oc-fourdocs reveal">
+      <div class="ocd">
+        <div class="ocd-tag">Leadership Profile</div>
+        <div class="ocd-snippet">"You sit with complexity longer than most people can stand to — and when the situation is genuinely murky, that patience is one of your real strengths…"</div>
+      </div>
+      <div class="ocd">
+        <div class="ocd-tag">Working-With-Me Guide</div>
+        <div class="ocd-snippet">"If I go quiet in a meeting, I'm processing, not disengaging. Bring me the hard version of the problem — I'd rather have it early than tidy…"</div>
+      </div>
+      <div class="ocd">
+        <div class="ocd-tag">Development Roadmap</div>
+        <div class="ocd-snippet">"This quarter: notice the moment you reach to solve something a report could own. That hesitation is the rep. Hand it back, and ask one question instead…"</div>
+      </div>
+      <div class="ocd">
+        <div class="ocd-tag">AI Calibration</div>
+        <div class="ocd-snippet">"Work with me like a sharp colleague who knows I think in systems. Lead with the structure, challenge my framing, skip the flattery…"</div>
+      </div>
+    </div>
+
       <h1 class="hero-title reveal" style="transition-delay:.1s">
         <span class="block">The leadership</span>
         <span class="block">manual nobody</span>
