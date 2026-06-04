@@ -212,6 +212,94 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 
 .sb-pathway{display:block;margin-top:1rem;padding:0.7rem 0.9rem;font-family:var(--ff-m,monospace);font-size:0.78rem;letter-spacing:0.04em;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.25);border-radius:4px;transition:all 0.2s;text-align:center;}
 .sb-pathway:hover{background:rgba(184,103,30,0.08);border-color:var(--gold);}
+
+/* ── UNIFIED NEXT-STEP CTA ── */
+.next-step{max-width:720px;margin:0 auto;padding:5rem 4vw 6.5rem;text-align:center;}
+.ns-wrap{max-width:580px;margin:0 auto;}
+.ns-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.ns-headline{font-family:var(--ff-display);font-size:clamp(2rem,4.5vw,2.9rem);font-weight:500;line-height:1.1;color:var(--ink);letter-spacing:-0.01em;margin-bottom:1.25rem;}
+.ns-headline em{font-style:italic;color:var(--gold);}
+.ns-sub{font-size:1.08rem;line-height:1.7;color:var(--ink-dim);max-width:520px;margin:0 auto 2.25rem;}
+.ns-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.ns-btn-primary{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;background:var(--ink);color:var(--void);transition:all 0.2s;}
+.ns-btn-primary:hover{background:var(--gold);}
+.ns-btn-ghost{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;color:var(--ink);border:1px solid rgba(26,22,18,0.25);transition:all 0.2s;}
+.ns-btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+@media(max-width:680px){.next-step{padding:4rem 1.5rem 5rem;}}
+
+
+/* HEADER RESTYLE TO MATCH CANONICAL */
+#hdr .hnav{display:flex;align-items:center;gap:2rem;}
+#hdr .hbtn{font-family:var(--ff-mono);font-size:0.7rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;background:none;border:none;padding:0;transition:color 0.2s;}
+#hdr .hbtn:hover{color:var(--gold);}
+#hdr .hbtn.p{color:var(--ink-dim);}
+#hdr .hm{font-family:var(--ff-display);font-size:1rem;font-weight:400;color:var(--ink);text-decoration:none;}
+#hdr .hm span{color:var(--gold);}
+@media(max-width:600px){#hdr .hnav{display:none;}}
+
+/* INPUTS PANEL */
+.input-block{margin:2rem 0;padding:1.6rem 1.75rem;background:var(--surface);border:1px solid var(--rule);border-radius:10px;}
+.input-label{font-family:var(--ff-display);font-size:1.4rem;font-weight:500;color:var(--ink);margin-bottom:0.4rem;display:flex;align-items:baseline;gap:0.7rem;}
+.input-num{font-family:var(--ff-m);font-size:0.8rem;letter-spacing:0.1em;color:var(--gold);}
+.input-desc{font-size:0.95rem;line-height:1.6;color:var(--ink-dim);margin:0 0 1.2rem;}
+.input-traits{display:flex;flex-direction:column;gap:0.55rem;}
+.trait{display:grid;grid-template-columns:200px 1fr 90px;align-items:center;gap:1rem;font-size:0.9rem;}
+.trait-name{color:var(--ink);}
+.trait-bar{height:6px;background:var(--lift);border-radius:3px;overflow:hidden;}
+.trait-bar span{display:block;height:100%;background:#b8671e;border-radius:3px;}
+.trait-val{font-family:var(--ff-m);font-size:0.72rem;color:var(--ink-dim);text-align:right;}
+.input-signals{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:0.7rem;}
+.input-signals li{font-size:0.95rem;line-height:1.6;color:var(--ink-dim);}
+.input-signals strong{color:var(--ink);font-weight:600;}
+.input-reflection{display:flex;flex-direction:column;gap:0.4rem;}
+.refl-q{font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--gold);margin:0.8rem 0 0.1rem;}
+.refl-a{font-size:1rem;line-height:1.65;color:var(--ink);font-style:italic;margin:0;padding-left:1rem;border-left:2px solid var(--rule);}
+.input-converge{margin:2rem 0 0;padding:1.5rem 1.75rem;background:var(--deep);border-radius:10px;border-left:3px solid var(--gold);}
+.ic-label{font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.input-converge p{font-size:1rem;line-height:1.7;color:var(--ink-dim);margin:0;}
+.ic-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.3);}
+@media(max-width:680px){
+  .trait{grid-template-columns:130px 1fr 70px;gap:0.6rem;font-size:0.82rem;}
+  .input-block{padding:1.25rem 1.25rem;}
+}
+
+/* CORPUS QUOTES */
+.corpus-quotes{display:flex;flex-direction:column;gap:0.9rem;}
+.cq{padding-left:1rem;border-left:2px solid var(--rule);}
+.cq-text{font-size:1rem;line-height:1.6;color:var(--ink);font-style:italic;margin:0 0 0.3rem;}
+.cq-tag{font-family:var(--ff-m);font-size:0.74rem;letter-spacing:0.02em;color:var(--gold);margin:0;}
+
+/* SIGNAL TENSIONS TABLE */
+.tn-table{min-width:760px;}
+.tn-table th{font-family:var(--ff-m);font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);padding:0.7rem 0.9rem;border-bottom:1px solid var(--rule);text-align:left;font-weight:400;vertical-align:bottom;}
+.tn-table td{padding:0.9rem 0.9rem;border-bottom:1px solid var(--rule);font-size:0.9rem;line-height:1.55;color:var(--ink-dim);vertical-align:top;}
+.tn-area{font-family:var(--ff-display);font-size:1.05rem;color:var(--ink);font-weight:500;}
+.tn-interp{color:var(--ink);background:rgba(184,103,30,0.04);}
+
+/* ANALYST WORKSPACE */
+.aw-block{margin:2rem 0;padding:1.6rem 1.75rem;background:var(--surface);border:1px solid var(--rule);border-radius:10px;}
+.aw-h{font-family:var(--ff-display);font-size:1.4rem;font-weight:500;color:var(--ink);margin-bottom:0.6rem;}
+.aw-p{font-size:0.97rem;line-height:1.65;color:var(--ink-dim);margin:0 0 1.2rem;}
+.aw-p em,.aw-conf p em,.aw-step p strong{color:var(--ink);font-style:italic;}
+.aw-conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+.aw-conf{display:flex;gap:0.8rem;align-items:flex-start;}
+.aw-conf-lvl{flex-shrink:0;font-family:var(--ff-m);font-size:0.68rem;letter-spacing:0.04em;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:4px;margin-top:0.1rem;}
+.aw-high{background:rgba(29,158,117,0.12);color:#1D9E75;}
+.aw-mod{background:rgba(184,103,30,0.12);color:var(--gold);}
+.aw-emerg{background:rgba(91,91,214,0.12);color:#5B5BD6;}
+.aw-insuf{background:rgba(26,22,18,0.07);color:var(--ink-dim);}
+.aw-conf p{font-size:0.88rem;line-height:1.5;color:var(--ink-dim);margin:0;}
+.aw-trace{display:flex;flex-direction:column;gap:0.5rem;}
+.aw-step{background:var(--deep);border-radius:8px;padding:0.9rem 1.1rem;}
+.aw-step-mid{border-left:3px solid var(--gold);}
+.aw-step-out{border-left:3px solid #1D9E75;background:rgba(29,158,117,0.05);}
+.aw-step-label{font-family:var(--ff-m);font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+.aw-step p{font-size:0.92rem;line-height:1.55;color:var(--ink-dim);margin:0;}
+.aw-arrow{text-align:center;color:var(--gold);opacity:0.5;font-size:1rem;}
+.aw-restraint{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:0.7rem;}
+.aw-restraint li{font-size:0.94rem;line-height:1.6;color:var(--ink-dim);}
+.aw-restraint strong{color:var(--ink);font-weight:600;}
+@media(max-width:680px){.aw-conf-grid{grid-template-columns:1fr;}.aw-block{padding:1.25rem;}}
 </style>
 </head>
 <body>
@@ -220,9 +308,12 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 <header id="hdr">
   <a href="https://mikecilla.com" class="hm">Mike Cilla<span>.</span></a>
   <nav class="hnav">
-    <a href="leadership-os.html" class="hbtn">← Leadership OS</a>
+    <a href="leadership-os.html" class="hbtn">What it is</a>
+    <a href="leadership-os-why.html" class="hbtn">Why it exists</a>
+    <a href="leadership-os-how.html" class="hbtn">How it works</a>
     <a href="leadership-os-model.html" class="hbtn">The model</a>
-    <a href="leadership-os-starter-kit.html" class="hbtn p">Open Starter Kit →</a>
+    <a href="leadership-os-research.html" class="hbtn">Methodology</a>
+    <a href="leadership-os-starter-kit.html" class="hbtn">Starter Kit</a>
   </nav>
 </header>
 
@@ -233,7 +324,10 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 
 <!-- FIXED TAB BAR -->
 <nav id="tabs">
-  <button class="tab active" onclick="go('profile',this)">
+  <button class="tab active" onclick="go('inputs',this)"> <span class="tab-dot" style="background:#b8671e;"></span>The Inputs </button>
+        <button class="tab" onclick="go('tensions',this)"> <span class="tab-dot" style="background:#c0392b;"></span>Signal Tensions </button>
+        <button class="tab" onclick="go('workspace',this)"> <span class="tab-dot" style="background:#8d6e3a;"></span>Analyst Workspace </button>
+        <button class="tab" onclick="go('profile',this)">
     <span class="tab-dot" style="background:#7F77DD;"></span>Leadership Profile
   </button>
   <button class="tab" onclick="go('manual',this)">
@@ -268,7 +362,10 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
     </div>
     <div class="sb-divider"></div>
     <div class="sb-section-label">Output documents</div>
-    <div class="sb-link active" onclick="go('profile',this)"><span class="sb-dot" style="background:#7F77DD;"></span>Leadership Profile</div>
+    <div class="sb-link active" onclick="go('inputs',this)"><span class="sb-dot" style="background:#b8671e;"></span>The Inputs</div>
+    <div class="sb-link" onclick="go('tensions',this)"><span class="sb-dot" style="background:#c0392b;"></span>Signal Tensions</div>
+    <div class="sb-link" onclick="go('workspace',this)"><span class="sb-dot" style="background:#8d6e3a;"></span>Analyst Workspace</div>
+    <div class="sb-link" onclick="go('profile',this)"><span class="sb-dot" style="background:#7F77DD;"></span>Leadership Profile</div>
     <div class="sb-link" onclick="go('manual',this)"><span class="sb-dot" style="background:#5B5BD6;"></span>User Manual</div>
     <div class="sb-link" onclick="go('wwm',this)"><span class="sb-dot" style="background:var(--gold);"></span>Working-With-Me</div>
     <div class="sb-link" onclick="go('acd',this)"><span class="sb-dot" style="background:#1D9E75;"></span>AI Calibration</div>
@@ -276,7 +373,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
     <div class="sb-divider"></div>
     <div class="sb-note">
       <div class="sb-note-label">About these samples</div>
-      <div class="sb-note-text">Output quality scales with input specificity. These examples represent strong output from a complete synthetic input set.</div>
+      <div class="sb-note-text">Output quality scales with input specificity. Start with The Inputs tab to see Jordan's raw material — then trace it forward through the profile and the four documents.</div>
     </div>
     <a href="leadership-os-model.html" class="sb-pathway">How the methodology works →</a>
   </nav>
@@ -285,7 +382,185 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
   <div id="content">
 
     <!-- LEADERSHIP PROFILE -->
-    <div class="panel active" id="panel-profile">
+    <div class="panel active" id="panel-inputs">
+  <div class="methodology-note">Synthetic illustrative example. These are the three inputs Jordan provided before any analysis ran. Everything in the other tabs traces back to what you see here — this is the raw material, not the output.</div>
+  <div class="doc-head">
+    <div class="doc-kicker">The three inputs · what Jordan actually provided</div>
+    <h2>The Inputs — Jordan Reyes</h2>
+    <p class="doc-sub">Synthetic illustrative example. A VP of Product, ~12 years' experience, two companies. Provided one assessment, a corpus drawn from ~9 months of AI working sessions, and a structured reflection. Deliberately imperfect — the tensions between these three are where the analysis gets interesting.</p>
+  </div>
+
+  <div class="input-block">
+    <div class="input-label"><span class="input-num">01</span> Assessment &mdash; how Jordan describes himself</div>
+    <p class="input-desc">A validated trait inventory. Shown as relative standing, not a score to optimize.</p>
+    <div class="input-traits">
+      <div class="trait"><span class="trait-name">Deliberative</span><span class="trait-bar"><span style="width:88%"></span></span><span class="trait-val">high</span></div>
+      <div class="trait"><span class="trait-name">Conceptual / structure-seeking</span><span class="trait-bar"><span style="width:85%"></span></span><span class="trait-val">high</span></div>
+      <div class="trait"><span class="trait-name">Persistent</span><span class="trait-bar"><span style="width:82%"></span></span><span class="trait-val">high</span></div>
+      <div class="trait"><span class="trait-name">Openness / Curious</span><span class="trait-bar"><span style="width:74%"></span></span><span class="trait-val">elevated</span></div>
+      <div class="trait"><span class="trait-name">Adaptable</span><span class="trait-bar"><span style="width:68%"></span></span><span class="trait-val">moderate-high</span></div>
+      <div class="trait"><span class="trait-name">Agile (fast-pivot)</span><span class="trait-bar"><span style="width:44%"></span></span><span class="trait-val">moderate-low</span></div>
+      <div class="trait"><span class="trait-name">Sociability / small talk</span><span class="trait-bar"><span style="width:38%"></span></span><span class="trait-val">lower</span></div>
+    </div>
+  </div>
+
+  <div class="input-block">
+    <div class="input-label"><span class="input-num">02</span> Corpus &mdash; how Jordan appears to operate</div>
+    <p class="input-desc">Patterns drawn from ~9 months of real working sessions with an AI — not self-report, but observed behavior in how he actually reasons, writes, and decides.</p>
+    <p class="input-desc" style="margin-top:-0.4rem;">A few representative moments, in Jordan's own words from the working sessions:</p>
+    <div class="corpus-quotes">
+      <div class="cq"><p class="cq-text">"Before we touch the roadmap, I want to know who actually owns this decision. Half our churn is because Product and Eng think they're each waiting on the other."</p><p class="cq-tag">→ Frames problems as operating-model failures before feature gaps</p></div>
+      <div class="cq"><p class="cq-text">"Don't give me the bullet summary. I want to see why each conclusion follows from the last — if I can't trace the reasoning I don't trust the recommendation."</p><p class="cq-tag">→ Argument-driven; low tolerance for unsupported conclusions</p></div>
+      <div class="cq"><p class="cq-text">"I think we should hold the current direction one more cycle. I know the data's pointing the other way, but I already told the leadership team we were committed."</p><p class="cq-tag">→ A gap between when the reasoning resolves and when he commits — twice, after socializing</p></div>
+      <div class="cq"><p class="cq-text">"I'll just rewrite this part myself, it's faster. The structure isn't quite where it needs to be."</p><p class="cq-tag">→ Reclaims delegated work; edits cluster on quality standards, not trust</p></div>
+      <div class="cq"><p class="cq-text">"Okay — that customer interview actually changes my read. Let me redo the prioritization."</p><p class="cq-tag">→ Genuinely updates when shown specifics, though it tends to take a concrete trigger</p></div>
+    </div>
+  </div>
+
+  <div class="input-block">
+    <div class="input-label"><span class="input-num">03</span> Reflection &mdash; how Jordan makes meaning of it</div>
+    <p class="input-desc">Structured written responses to the reflection prompts. This is where Jordan interprets his own experience.</p>
+    <div class="input-reflection">
+      <p class="refl-q">On a decision he'd revisit:</p>
+      <p class="refl-a">"I delayed sunsetting a feature for a quarter because I'd told three stakeholders we were committed. I knew earlier. I just didn't want to be the person who reversed course in public."</p>
+      <p class="refl-q">On being misunderstood:</p>
+      <p class="refl-a">"People sometimes read my directness as disapproval. Under time pressure especially — I get terse and skip the warmth, and it lands worse than I mean it to."</p>
+      <p class="refl-q">On how he works with his team:</p>
+      <p class="refl-a">"I'd describe myself as pretty collaborative. I bring the team into most decisions and I'm genuinely open to being wrong — I don't think people experience me as controlling."</p>
+      <p class="refl-q">On what he wants to build:</p>
+      <p class="refl-a">"I want a team that makes good independent decisions without me in the room. But honestly, I'm not sure I've built the conditions for that — I think I'm still the bottleneck."</p>
+    </div>
+  </div>
+
+  <div class="input-converge">
+    <div class="ic-label">Where these three disagree is the signal</div>
+    <p>The assessment says "Curious"; the corpus shows openness arrives slowly. The reflection names a desire to build independent decision-makers; the corpus shows him holding work close. Those gaps — not the agreements — are what the analysis pays attention to. <a href="#" onclick="go('profile',document.querySelectorAll('.tab')[1]);return false;" class="ic-link">See how they synthesize into a profile →</a></p>
+  </div>
+</div>
+
+<div class="panel" id="panel-tensions">
+  <div class="methodology-note">Synthetic illustrative example. This is where Leadership OS does its most useful work — not where the three inputs agree, but where they pull against each other. Agreement confirms; disagreement reveals.</div>
+  <div class="doc-head">
+    <div class="doc-kicker">Where the inputs disagree · the productive friction</div>
+    <h2>Signal Tensions — Jordan Reyes</h2>
+    <p class="doc-sub">Synthetic illustrative example. Leadership OS isn't looking for a clean, consistent picture. The gaps between how Jordan describes himself, how he appears to operate, and how he interprets his own experience are the most developmentally interesting part of the whole analysis.</p>
+  </div>
+
+  <div class="table-scroll">
+    <table class="cr-table tn-table">
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Assessment says</th>
+          <th>Corpus shows</th>
+          <th>Reflection says</th>
+          <th>What the tension means</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tn-area">Delegation &amp; control</td>
+          <td>Doesn't measure directly; high Persistent + Conceptual</td>
+          <td>Reclaims delegated work — "I'll just rewrite this part myself"</td>
+          <td>"I'm pretty collaborative… I don't think people experience me as controlling"</td>
+          <td class="tn-interp">The sharpest gap. Jordan's self-story (collaborative, hands-off) doesn't match the observed pattern (holds work close). He half-sees it — he names the "bottleneck" worry himself — which makes this workable, not a blind spot.</td>
+        </tr>
+        <tr>
+          <td class="tn-area">Learning &amp; openness</td>
+          <td>Elevated Curious / Openness</td>
+          <td>Updates genuinely, but usually needs a concrete trigger; three slow revisions</td>
+          <td>Frames himself as open to being wrong</td>
+          <td class="tn-interp">Not a contradiction so much as a texture: the openness is real but reactive. He revises when shown specific evidence, less so from open-ended challenge. Useful to know how to actually move him.</td>
+        </tr>
+        <tr>
+          <td class="tn-area">Decision-making</td>
+          <td>High Deliberative + Persistent</td>
+          <td>Reasoning resolves days before he commits — twice, after socializing a direction</td>
+          <td>Names it directly: held a call because he'd "already told the leadership team"</td>
+          <td class="tn-interp">All three converge here, which raises confidence: the delay isn't analysis, it's the social cost of visibly reversing. The clearest, best-supported developmental thread.</td>
+        </tr>
+        <tr>
+          <td class="tn-area">Communication</td>
+          <td>Lower Sociability</td>
+          <td>Precise, argument-driven, low small talk</td>
+          <td>"People read my directness as disapproval… under time pressure I skip the warmth"</td>
+          <td class="tn-interp">Assessment and corpus agree on the style; the reflection adds the missing piece — Jordan knows the cost and when it spikes. Awareness is present, so this is a calibration issue, not a discovery.</td>
+        </tr>
+        <tr>
+          <td class="tn-area">Adaptability</td>
+          <td>High Adaptable, notably lower Agile</td>
+          <td>Adjusts thoughtfully but not quickly; two slow product pivots</td>
+          <td>Doesn't address directly</td>
+          <td class="tn-interp">Assessment and corpus align, reflection is silent — so this is held as a quieter hypothesis. Jordan adapts well given time; speed under ambiguity is the open question worth watching.</td>
+        </tr>
+        <tr>
+          <td class="tn-area">Influence &amp; identity</td>
+          <td>Doesn't measure</td>
+          <td>Builds authority through structure and traceable reasoning</td>
+          <td>Aspires to develop independent decision-makers</td>
+          <td class="tn-interp">An aspiration ahead of the evidence. Jordan wants to build independent operators, but the corpus doesn't yet show him creating the room for it. Held as "Emerging" — a direction, not a finding.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="input-converge">
+    <div class="ic-label">Why this matters</div>
+    <p>A personality test would flatten these into scores. Leadership OS keeps the disagreements visible on purpose — they're where a coach would actually start. The strongest developmental priority (post-commitment anchoring) is the one where all three inputs converge; the most human one (delegation) is where they pull apart. <a href="#" onclick="go('roadmap',document.querySelectorAll('.tab')[5]);return false;" class="ic-link">See how these become a development plan →</a></p>
+  </div>
+</div>
+
+<div class="panel" id="panel-workspace">
+  <div class="methodology-note">Synthetic illustrative example. This tab is not something a participant receives — it's a look under the hood for coaches, researchers, and the curious. It shows the reasoning structure between raw inputs and finished documents, so you can judge whether the conclusions are earned.</div>
+  <div class="doc-head">
+    <div class="doc-kicker">The reasoning layer · how inputs became conclusions</div>
+    <h2>Analyst Workspace — Jordan Reyes</h2>
+    <p class="doc-sub">Synthetic illustrative example. A demonstration artifact showing how the analysis weighs, converges, and holds back — not the prompts that produce it, but the logic they enforce.</p>
+  </div>
+
+  <div class="aw-block">
+    <div class="aw-h">How confidence gets assigned</div>
+    <p class="aw-p">Confidence tracks how many of the three inputs point the same way — never how strong any single one is. One vivid corpus moment doesn't earn "High." Convergence does.</p>
+    <div class="aw-conf-grid">
+      <div class="aw-conf"><span class="aw-conf-lvl aw-high">High</span><p>All three inputs converge. <em>Decision Style</em> — assessment (Deliberative), corpus (delayed commitment), and reflection (names it outright) all agree.</p></div>
+      <div class="aw-conf"><span class="aw-conf-lvl aw-mod">Moderate</span><p>Two inputs align, one is silent or mixed. <em>Communication</em> — assessment and corpus agree on style; reflection adds nuance but doesn't contradict.</p></div>
+      <div class="aw-conf"><span class="aw-conf-lvl aw-emerg">Emerging</span><p>Mostly one input, usually an aspiration. <em>Leadership Identity</em> — reflection states a goal the corpus doesn't yet show. Held as a direction.</p></div>
+      <div class="aw-conf"><span class="aw-conf-lvl aw-insuf">Insufficient</span><p>Inputs can't speak to it. Reported as a gap, not guessed. The analysis is allowed — required — to say "not enough here."</p></div>
+    </div>
+  </div>
+
+  <div class="aw-block">
+    <div class="aw-h">A worked example — how one construct formed</div>
+    <p class="aw-p">Tracing <em>Decision Style</em> from raw input to the conclusion that became the #1 development priority:</p>
+    <div class="aw-trace">
+      <div class="aw-step"><div class="aw-step-label">Assessment input</div><p>Deliberative 88th, Persistent 82nd — thorough, and resistant to revising once set.</p></div>
+      <div class="aw-arrow">↓</div>
+      <div class="aw-step"><div class="aw-step-label">Corpus input</div><p>"I know the data's pointing the other way, but I already told the leadership team we were committed." Pattern recurs across two decisions.</p></div>
+      <div class="aw-arrow">↓</div>
+      <div class="aw-step"><div class="aw-step-label">Reflection input</div><p>"I delayed sunsetting a feature… I knew earlier. I just didn't want to be the person who reversed course in public."</p></div>
+      <div class="aw-arrow">↓</div>
+      <div class="aw-step aw-step-mid"><div class="aw-step-label">Convergence check</div><p>All three point the same way. The mechanism isn't slow analysis — it's the <strong>social cost of visibly reversing</strong> after socializing. Confidence: High.</p></div>
+      <div class="aw-arrow">↓</div>
+      <div class="aw-step aw-step-out"><div class="aw-step-label">What it became</div><p>Development Roadmap, Priority 1: "Post-commitment anchoring." Recommendation targets the mechanism (separate the decision from the audience), not the symptom ("decide faster").</p></div>
+    </div>
+  </div>
+
+  <div class="aw-block">
+    <div class="aw-h">Where the analysis deliberately held back</div>
+    <p class="aw-p">Two examples of restraint — places a less disciplined read would have overclaimed:</p>
+    <ul class="aw-restraint">
+      <li><strong>Self-Awareness stayed Moderate, not High.</strong> Jordan is articulate and reflective, which is easy to mistake for deep self-knowledge. But articulateness isn't self-awareness — and the delegation gap shows a real blind spot. The fluency was explicitly not allowed to inflate the rating.</li>
+      <li><strong>Adaptability was held as a quiet hypothesis.</strong> Assessment and corpus agreed, but the reflection never addressed it. Rather than infer, the analysis flagged it as worth watching and moved on.</li>
+    </ul>
+  </div>
+
+  <div class="input-converge">
+    <div class="ic-label">The point of showing this</div>
+    <p>Every conclusion in the participant-facing documents traces back through a chain like the one above. Nothing is asserted that can't be walked back to a specific input. <a href="leadership-os-research.html#traceability" class="ic-link">See the full traceability methodology →</a></p>
+  </div>
+</div>
+
+<div class="panel" id="panel-profile">
       <div class="gov-bar">
         <div class="gov-bar-label">Methodology note</div>
         <div class="gov-bar-text">Leadership OS is a reflection and development methodology — not a validated assessment, diagnostic tool, or prediction instrument. All construct ratings are input-informed hypotheses. Jordan Reyes is a fictional persona and all outputs here are synthetic.</div>
@@ -439,7 +714,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
         </div>
         <div class="col-card b3">
           <div class="col-label">To challenge me effectively</div>
-          <div class="col-text">Show me what I missed, not just that you disagree. Specific contradictory signals is far more effective than persistent general pushback. I'm genuinely open to revising a direction — but I need to see what the the input shows, not just that you feel differently.</div>
+          <div class="col-text">Show me what I missed, not just that you disagree. Specific contradictory signals is far more effective than persistent general pushback. I'm genuinely open to revising a direction — but I need to see what the input actually shows, not just that you feel differently.</div>
         </div>
         <div class="col-card b3">
           <div class="col-label">What I need from you</div>
@@ -449,7 +724,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
       <div class="two-col">
         <div class="col-card b3">
           <div class="col-label">What you can expect from me</div>
-          <div class="col-text">A structured position on almost any question you bring. Direct feedback that names the specific thing. Investment in understanding how you got to your conclusion, not just what it is. High expectations applied to my own work as much as to yours.</div>
+          <div class="col-text">A structured position on almost any question you bring. Direct feedback that names the specific thing. Investment in understanding how you got to your conclusion, not just what it is. High expectations applied to my own work as much as to yours. One thing worth knowing up front: when I'm under time pressure I get terse and skip the warmth — if a message from me reads as curt or disapproving, that's pressure talking, not what I think of you. Tell me if it lands wrong and I'll recalibrate.</div>
         </div>
         <div class="col-card b3">
           <div class="col-label">When I'm struggling — what to watch for</div>
@@ -488,7 +763,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
         </div>
         <div class="col-card b4">
           <div class="col-label">What good output looks like</div>
-          <div class="col-text">The logic is traceable — premise to conclusion without inferring missing steps. Format matches complexity. Draft means a real draft — not a template with placeholders. If the question involves a product decision, start with what the the input shows.</div>
+          <div class="col-text">The logic is traceable — premise to conclusion without inferring missing steps. Format matches complexity. Draft means a real draft — not a template with placeholders. If the question involves a product decision, start with what the input shows.</div>
         </div>
       </div>
       <div class="fw-card b4">
@@ -582,5 +857,17 @@ function go(id, el) {
   if (content) content.scrollTop = 0;
 }
 </script>
+<!-- NEXT-STEP CTA -->
+<section class="next-step" style="scroll-margin-top:52px;">
+  <div class="ns-wrap reveal">
+    <div class="ns-eyebrow">Next — your turn</div>
+    <h2 class="ns-headline">Ready to see<br><em>your own?</em></h2>
+    <p class="ns-sub">These came from synthetic inputs. Yours would come from your assessment, your reflection, and your own record of how you think. Everything you need is in the Starter Kit.</p>
+    <div class="ns-row">
+      <a href="leadership-os-starter-kit.html" class="ns-btn-primary">Open the Starter Kit →</a>
+      <a href="leadership-os-why.html" class="ns-btn-ghost">Or revisit why it exists</a>
+    </div>
+  </div>
+</section>
 </body>
 </html>

@@ -276,6 +276,21 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
 .foot-sep{opacity:0.4;}
 .foot-disclaimer{font-size:0.82rem;color:var(--ink-dim);opacity:0.75;font-style:italic;}
 @media(max-width:600px){footer{padding:2.5rem 1.5rem;}}
+
+/* ── UNIFIED NEXT-STEP CTA ── */
+.next-step{max-width:720px;margin:0 auto;padding:5rem 4vw 6.5rem;text-align:center;}
+.ns-wrap{max-width:580px;margin:0 auto;}
+.ns-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.ns-headline{font-family:var(--ff-display);font-size:clamp(2rem,4.5vw,2.9rem);font-weight:500;line-height:1.1;color:var(--ink);letter-spacing:-0.01em;margin-bottom:1.25rem;}
+.ns-headline em{font-style:italic;color:var(--gold);}
+.ns-sub{font-size:1.08rem;line-height:1.7;color:var(--ink-dim);max-width:520px;margin:0 auto 2.25rem;}
+.ns-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.ns-btn-primary{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;background:var(--ink);color:var(--void);transition:all 0.2s;}
+.ns-btn-primary:hover{background:var(--gold);}
+.ns-btn-ghost{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;color:var(--ink);border:1px solid rgba(26,22,18,0.25);transition:all 0.2s;}
+.ns-btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+@media(max-width:680px){.next-step{padding:4rem 1.5rem 5rem;}}
+@media(max-width:600px){.h-nav{display:none;}}
 </style>
 </head>
 <body>
@@ -971,6 +986,19 @@ footer{padding:3rem 4vw;border-top:1px solid var(--rule);background:var(--deep);
         <a href="https://mikecilla.com/#s-fieldnotes" class="nav-link dark">Read the Field Notes</a>
         <a href="https://mikecilla.com" class="nav-link dark">mikecilla.com</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT-STEP CTA -->
+<section class="next-step" style="scroll-margin-top:52px;">
+  <div class="ns-wrap reveal">
+    <div class="ns-eyebrow">Next — the methodology</div>
+    <h2 class="ns-headline">Want the rigor<br><em>underneath?</em></h2>
+    <p class="ns-sub">You've seen the model. If you want to evaluate it seriously — the construct origins, the confidence rules, the honest limitations — the technical manual lays it all out.</p>
+    <div class="ns-row">
+      <a href="leadership-os-research.html" class="ns-btn-primary">Read the methodology →</a>
+      <a href="leadership-os-sample-outputs.html" class="ns-btn-ghost">Or see real outputs</a>
     </div>
   </div>
 </section>

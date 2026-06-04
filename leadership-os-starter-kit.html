@@ -372,6 +372,18 @@ a:hover{text-decoration:underline;}
   .copy-btn{width:fit-content;}
   .checklist li{font-size:0.92rem;}
 }
+
+/* FEEDBACK LOOP */
+#feedback{max-width:680px;margin:0 auto;padding:1rem 4vw 5rem;text-align:center;}
+.fb-rule{width:40px;height:2px;background:var(--gold);margin:0 auto 2rem;}
+.fb-eyebrow{font-family:var(--ff-m);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;}
+.fb-headline{font-family:var(--ff-display);font-size:clamp(1.7rem,4vw,2.4rem);font-weight:500;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;}
+.fb-headline em{font-style:italic;color:var(--gold);}
+.fb-body{font-size:1.05rem;line-height:1.75;color:var(--ink-dim);max-width:540px;margin:0 auto 1.25rem;}
+.fb-btn{display:inline-block;font-family:var(--ff-m);font-size:0.8rem;letter-spacing:0.04em;text-decoration:none;color:var(--ink);border:1px solid rgba(26,22,18,0.25);border-radius:6px;padding:0.8rem 1.5rem;margin-top:1rem;transition:all 0.2s;}
+.fb-btn:hover{border-color:var(--gold);color:var(--gold);}
+.fb-sig{font-family:var(--ff-display);font-size:1.15rem;font-style:italic;color:var(--ink-dim);margin-top:1.5rem;}
+@media(max-width:680px){#feedback{padding:1rem 1.5rem 4rem;}}
 </style>
 </head>
 <body>
@@ -1123,7 +1135,7 @@ Language: "The input consistently suggests..." / "Across all three sources, a pa
 
 MODERATE CONFIDENCE
 Requires: convergence across two inputs, OR strong input from one source with partial support from another. Acknowledge minor limitations or context-dependence.
-Language: "The the input suggests..." / "A pattern appears of..."
+Language: "The input suggests..." / "A pattern appears of..."
 
 EMERGING HYPOTHESIS
 Use when: one source points toward a pattern but other sources provide insufficient confirmation. Frame as a question for reflection, not a finding.
@@ -1146,7 +1158,7 @@ Never say:
 - "You always..." or "You never..."
 
 Use instead:
-- "The the input suggests..."
+- "The input suggests..."
 - "A working hypothesis is..."
 - "Across the input provided..."
 - "This pattern may show up as..."
@@ -1303,7 +1315,7 @@ Note any constructs where the input was insufficient.</div>
   <div class="highlight">
     <p><strong>The nine Leadership OS constructs</strong></p>
     <p>Reflection Orientation · Systems Orientation · Learning Orientation · Decision Style · Communication Patterns · Leadership Identity · Adaptability · Self-Awareness · Development Readiness</p>
-    <p>For each one, the AI will identify: what the the input shows, where sources agree or conflict, and how confident it is in the finding.</p>
+    <p>For each one, the AI will identify: what the input shows, where sources agree or conflict, and how confident it is in the finding.</p>
   </div>
 
   <div class="note">
@@ -1459,7 +1471,7 @@ Wait for the user's response before proceeding to document generation.</div>
 
   <div class="note">
     <span class="note-icon">→</span>
-    <div class="note-text"><strong>If a construct rating surprises you:</strong> That is useful information. Tell the AI what you think it missed and why. The tension between what the the input shows and what you believe about yourself is often the most productive development material.</div>
+    <div class="note-text"><strong>If a construct rating surprises you:</strong> That is useful information. Tell the AI what you think it missed and why. The tension between what the input shows and what you believe about yourself is often the most productive development material.</div>
   </div>
 
   <div class="checkpoint">
@@ -1942,6 +1954,21 @@ Begin with question one when I say I am ready.</div>
 </div><!-- /layout -->
 
 <!-- FOOTER -->
+
+<!-- FEEDBACK LOOP (personal, not lead-gen) -->
+<section id="feedback" style="scroll-margin-top:52px;">
+  <div class="fb-wrap">
+    <div class="fb-rule"></div>
+    <div class="fb-eyebrow">One genuine ask</div>
+    <h2 class="fb-headline">If you actually do this,<br><em>I'd love to hear how it went.</em></h2>
+    <p class="fb-body">Leadership OS is something I built and I'm still learning what it does in other people's hands. If you complete it, I'd genuinely like to know: what was useful, what wasn't, and what surprised you. Good or bad — the unflattering version is the more useful one.</p>
+    <p class="fb-body">No form, no list, no follow-up sequence. Just an email to a real person who will read it.</p>
+    <a href="mailto:mikejcilla@gmail.com?subject=Leadership%20OS%20feedback" class="fb-btn">mikejcilla@gmail.com</a>
+    <p class="fb-sig">— Mike</p>
+  </div>
+</section>
+
+
 <footer id="footer">
   <a href="https://mikecilla.com" class="footer-mark">Mike Cilla<span>.</span></a>
   <div class="footer-disc">Leadership OS is a reflection and development methodology — not an assessment, diagnosis, or prediction instrument. All outputs are developmental hypotheses, not validated psychological findings. Leadership OS Starter Kit v1.0 · © 2026 Mike Cilla</div>

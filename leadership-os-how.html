@@ -498,6 +498,21 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .dis-honest em{color:var(--ink);font-style:italic;}
 .dis-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.3);white-space:nowrap;}
 @media(max-width:760px){#discipline{padding:4rem 1.5rem;}.dis-grid{grid-template-columns:1fr;}}
+
+/* ── UNIFIED NEXT-STEP CTA ── */
+.next-step{max-width:720px;margin:0 auto;padding:5rem 4vw 6.5rem;text-align:center;}
+.ns-wrap{max-width:580px;margin:0 auto;}
+.ns-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.ns-headline{font-family:var(--ff-display);font-size:clamp(2rem,4.5vw,2.9rem);font-weight:500;line-height:1.1;color:var(--ink);letter-spacing:-0.01em;margin-bottom:1.25rem;}
+.ns-headline em{font-style:italic;color:var(--gold);}
+.ns-sub{font-size:1.08rem;line-height:1.7;color:var(--ink-dim);max-width:520px;margin:0 auto 2.25rem;}
+.ns-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.ns-btn-primary{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;background:var(--ink);color:var(--void);transition:all 0.2s;}
+.ns-btn-primary:hover{background:var(--gold);}
+.ns-btn-ghost{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;color:var(--ink);border:1px solid rgba(26,22,18,0.25);transition:all 0.2s;}
+.ns-btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+@media(max-width:680px){.next-step{padding:4rem 1.5rem 5rem;}}
+@media(max-width:600px){.h-nav{display:none;}}
 </style>
 <style>
 /* TRACEABILITY */
@@ -677,15 +692,15 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   </div>
 </section>
 
-<section id="how-close" style="scroll-margin-top:52px;">
-  <div class="hc-wrap reveal">
-    <div class="s-label">Where to go next</div>
-    <h2 class="section-headline">Trustworthy, and<br><em>built to last.</em></h2>
-    <p class="section-sub">You've seen how the output stays traceable, how the analysis stays disciplined, and how the whole thing is built to keep working as you change. If that earns your trust, the next step is to run it — or to look closer at the methodology underneath.</p>
-    <div class="hc-row">
-      <a href="leadership-os-starter-kit.html" class="hc-btn hc-btn-primary">Open the Starter Kit</a>
-      <a href="leadership-os-research.html" class="hc-btn hc-btn-ghost">Read the methodology</a>
-      <a href="leadership-os-sample-outputs.html" class="hc-btn hc-btn-ghost">See sample outputs</a>
+<!-- NEXT-STEP CTA -->
+<section class="next-step" style="scroll-margin-top:52px;">
+  <div class="ns-wrap reveal">
+    <div class="ns-eyebrow">Next — the model</div>
+    <h2 class="ns-headline">See the framework<br><em>behind all this.</em></h2>
+    <p class="ns-sub">You've seen why you can trust the output. If you want to understand the model itself — the inputs, the constructs, how it all fits — that's next.</p>
+    <div class="ns-row">
+      <a href="leadership-os-model.html" class="ns-btn-primary">Explore the model →</a>
+      <a href="leadership-os-starter-kit.html" class="ns-btn-ghost">Or open the Starter Kit</a>
     </div>
   </div>
 </section>
