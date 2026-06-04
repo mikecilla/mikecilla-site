@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How Leadership OS Works</title>
+<title>Why You Can Trust the Output — Leadership OS</title>
 <meta name="description" content="The complete Leadership OS process — seven steps, the three modes of reflection, and how the system stays useful over time.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -484,19 +484,22 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .footer-links{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin:1.25rem 0;}
 .footer-links a{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.06em;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
+
+/* DISCIPLINE / LLM ADHERENCE */
+#discipline{background:var(--deep);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:5rem 4vw;}
+.dis-wrap{max-width:900px;margin:0 auto;}
+.dis-wrap .section-sub{max-width:640px;}
+.dis-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin:2.5rem 0 2rem;}
+.dis-card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.5rem 1.6rem;}
+.dis-num{font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.5rem;}
+.dis-h{font-family:var(--ff-display);font-size:1.35rem;font-weight:500;color:var(--ink);margin-bottom:0.6rem;}
+.dis-card p{font-size:0.94rem;line-height:1.6;color:var(--ink-dim);margin:0;}
+.dis-honest{font-size:0.98rem;line-height:1.7;color:var(--ink-dim);max-width:660px;margin:0 auto;background:var(--lift);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;}
+.dis-honest em{color:var(--ink);font-style:italic;}
+.dis-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.3);white-space:nowrap;}
+@media(max-width:760px){#discipline{padding:4rem 1.5rem;}.dis-grid{grid-template-columns:1fr;}}
 </style>
 <style>
-/* THE JOURNEY */
-#journey{max-width:1000px;margin:0 auto;padding:5rem 4vw;}
-.jy-wrap .section-sub{max-width:660px;}
-.jy-figure{margin:3rem 0 2.5rem;text-align:center;}
-.journey-svg{max-width:760px;width:100%;height:auto;}
-.jy-model{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:1rem;align-items:start;margin-top:2rem;}
-.jy-stage{}
-.jy-stage-label{font-family:var(--ff-mono);font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
-.jy-stage p{font-size:0.92rem;line-height:1.6;color:var(--ink-dim);margin:0;}
-.jy-stage-arrow{font-size:1.3rem;color:var(--gold);opacity:0.5;padding-top:0.4rem;}
-
 /* TRACEABILITY */
 #trace{background:var(--deep);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:5rem 4vw;}
 .tr-wrap{max-width:680px;margin:0 auto;text-align:center;}
@@ -530,126 +533,22 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
 <!-- HERO INTRO -->
 <div class="how-hero">
-  <div class="how-eyebrow reveal">How it works</div>
-  <h1 class="reveal" style="transition-delay:.05s">What Leadership OS<br><em>does to you.</em></h1>
-  <p class="how-hero-sub reveal" style="transition-delay:.1s">This is what actually happens to you when you go through Leadership OS — how evidence you already have becomes self-understanding you can keep developing. The step-by-step prompts live in the Starter Kit; this is the bigger picture.</p>
+  <div class="how-eyebrow reveal">Traceability · Quality · Durability</div>
+  <h1 class="reveal" style="transition-delay:.05s">Why you can trust<br>what it <em>tells you.</em></h1>
+  <p class="how-hero-sub reveal" style="transition-delay:.1s">An analysis is only worth as much as you can trust it. This is the part most tools skip: how every conclusion stays traceable to your own inputs, how the quality of what you put in shapes what you get out, and why the result is built to stay useful over time rather than expire.</p>
 </div>
 
 
 
 <!-- THE JOURNEY (flagship visual) -->
-<section id="journey" style="scroll-margin-top:52px;">
-  <div class="jy-wrap">
-    <div class="s-label reveal">The transformation</div>
-    <h2 class="section-headline reveal" style="transition-delay:.05s">What happens to you,<br><em>start to finish.</em></h2>
-    <p class="section-sub reveal" style="transition-delay:.1s">Leadership OS isn't a quiz or a report. It's a process that turns evidence you already have into self-understanding you can keep developing. Here's the whole arc — three inputs become one profile, which becomes four tools, which feed an ongoing practice.</p>
-
-    <figure class="jy-figure reveal" style="transition-delay:.15s">
-      <svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Leadership OS journey: three inputs synthesize into a leadership profile, which produces four tools, which feed ongoing development" class="journey-svg">
-  <defs>
-    <marker id="jarrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-      <path d="M1,1 L6,4 L1,7" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.7"/>
-    </marker>
-  </defs>
-
-  <!-- STAGE LABELS (left rail) -->
-  <text x="40" y="70" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">01 — INPUTS</text>
-  <text x="40" y="300" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">02 — SYNTHESIS</text>
-  <text x="40" y="430" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">03 — OUTPUTS</text>
-  <text x="40" y="650" font-family="var(--ff-mono)" font-size="12" letter-spacing="3" fill="var(--gold)">04 — DEVELOPMENT</text>
-
-  <!-- INPUTS: three source cards -->
-  <g class="j-node">
-    <rect x="40" y="90" width="250" height="90" rx="8" fill="var(--surface)" stroke="#5B5BD6" stroke-width="1.5"/>
-    <text x="60" y="122" font-family="var(--ff-display)" font-size="20" fill="var(--ink)">Assessment</text>
-    <text x="60" y="148" font-family="var(--ff-body)" font-size="13" fill="var(--ink-dim)">Who you believe you are</text>
-  </g>
-  <g class="j-node">
-    <rect x="325" y="90" width="250" height="90" rx="8" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.5"/>
-    <text x="345" y="122" font-family="var(--ff-display)" font-size="20" fill="var(--ink)">Corpus</text>
-    <text x="345" y="148" font-family="var(--ff-body)" font-size="13" fill="var(--ink-dim)">How you appear to operate</text>
-  </g>
-  <g class="j-node">
-    <rect x="610" y="90" width="250" height="90" rx="8" fill="var(--surface)" stroke="#1D9E75" stroke-width="1.5"/>
-    <text x="630" y="122" font-family="var(--ff-display)" font-size="20" fill="var(--ink)">Reflection</text>
-    <text x="630" y="148" font-family="var(--ff-body)" font-size="13" fill="var(--ink-dim)">How you make meaning</text>
-  </g>
-
-  <!-- converging lines to synthesis -->
-  <path d="M165,180 C165,220 450,210 450,250" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
-  <path d="M450,180 L450,250" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
-  <path d="M735,180 C735,220 450,210 450,250" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
-
-  <!-- SYNTHESIS: leadership profile -->
-  <g class="j-node">
-    <rect x="300" y="258" width="300" height="74" rx="8" fill="var(--ink)"/>
-    <text x="450" y="290" text-anchor="middle" font-family="var(--ff-display)" font-size="22" fill="#f0ece4">Leadership Profile</text>
-    <text x="450" y="313" text-anchor="middle" font-family="var(--ff-mono)" font-size="11" letter-spacing="1" fill="rgba(240,236,228,0.5)">the synthesis — what grounds everything</text>
-  </g>
-  <path d="M450,332 L450,375" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
-
-  <!-- OUTPUTS: four tools -->
-  <g class="j-node"><rect x="40" y="385" width="195" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
-    <text x="60" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">Leadership Profile</text>
-    <text x="60" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">understand yourself</text></g>
-  <g class="j-node"><rect x="248" y="385" width="195" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
-    <text x="268" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">Working-With-Me</text>
-    <text x="268" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">work with your team</text></g>
-  <g class="j-node"><rect x="456" y="385" width="195" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
-    <text x="476" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">Development</text>
-    <text x="476" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">know where to grow</text></g>
-  <g class="j-node"><rect x="664" y="385" width="196" height="74" rx="8" fill="var(--deep)" stroke="var(--rule)" stroke-width="1"/>
-    <text x="684" y="416" font-family="var(--ff-display)" font-size="17" fill="var(--ink)">AI Calibration</text>
-    <text x="684" y="438" font-family="var(--ff-body)" font-size="12" fill="var(--ink-dim)">get more from AI</text></g>
-
-  <!-- lines to development -->
-  <path d="M450,459 L450,500" fill="none" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#jarrow)"/>
-
-  <!-- DEVELOPMENT: ongoing cycle -->
-  <g class="j-node">
-    <rect x="225" y="508" width="450" height="150" rx="10" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.55"/>
-    <text x="450" y="540" text-anchor="middle" font-family="var(--ff-mono)" font-size="11" letter-spacing="2" fill="var(--gold)">ONGOING — IT DOESN'T END HERE</text>
-    <text x="320" y="582" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Reflection</text>
-    <text x="580" y="582" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Learning</text>
-    <text x="320" y="620" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Growth</text>
-    <text x="580" y="620" text-anchor="middle" font-family="var(--ff-display)" font-size="18" fill="var(--ink)">Iteration</text>
-    <text x="450" y="602" text-anchor="middle" font-family="var(--ff-mono)" font-size="20" fill="var(--gold)">↻</text>
-  </g>
-</svg>
-    </figure>
-
-    <div class="jy-model reveal">
-      <div class="jy-stage">
-        <div class="jy-stage-label">Inputs</div>
-        <p>Three kinds of evidence about how you operate: what you say about yourself, how you actually work, and how you make sense of your own experience.</p>
-      </div>
-      <div class="jy-stage-arrow">→</div>
-      <div class="jy-stage">
-        <div class="jy-stage-label">Analysis</div>
-        <p>The three sources are weighed against each other — not blended. Where they agree builds confidence; where they diverge is often where the real insight lives.</p>
-      </div>
-      <div class="jy-stage-arrow">→</div>
-      <div class="jy-stage">
-        <div class="jy-stage-label">Outputs</div>
-        <p>Four practical tools you keep using — to understand yourself, work with your team, get more from AI, and know where to grow.</p>
-      </div>
-      <div class="jy-stage-arrow">→</div>
-      <div class="jy-stage">
-        <div class="jy-stage-label">Development</div>
-        <p>Not a one-time result. Something you return to as your thinking shifts and your situation changes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TRACEABILITY VISUAL -->
 <section id="trace" style="scroll-margin-top:52px;">
   <div class="tr-wrap reveal">
-    <div class="s-label">Why you can trust it</div>
-    <h2 class="section-headline">Every recommendation traces<br><em>back to evidence.</em></h2>
-    <p class="section-sub">Nothing it tells you is an opinion pulled from the air. Each insight follows a chain you can audit — from something observed in your evidence, through how it was interpreted, to what it suggests you do.</p>
+    <div class="s-label">Traceability</div>
+    <h2 class="section-headline">Every recommendation traces<br>back to <em>your inputs.</em></h2>
+    <p class="section-sub">Nothing it tells you is an opinion pulled from the air. Each insight follows a chain you can audit — from something it noticed in your inputs, through how it was interpreted, to what it suggests you do. If you can't trace it, it shouldn't be there.</p>
     <div class="tr-chain">
-      <div class="tr-link"><div class="tr-link-label">Observation</div><div class="tr-link-sub">something in your evidence</div></div>
+      <div class="tr-link"><div class="tr-link-label">Observation</div><div class="tr-link-sub">something in your inputs</div></div>
       <div class="tr-arrow">↓</div>
       <div class="tr-link"><div class="tr-link-label">Interpretation</div><div class="tr-link-sub">what the pattern may mean</div></div>
       <div class="tr-arrow">↓</div>
@@ -657,7 +556,41 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       <div class="tr-arrow">↓</div>
       <div class="tr-link tr-link-end"><div class="tr-link-label">Action</div><div class="tr-link-sub">something specific to try</div></div>
     </div>
-    <p class="tr-note">Each finding also carries an honest confidence level — and when the evidence isn't there, it says so rather than guessing. <a href="leadership-os-research.html#traceability" class="tr-deeplink">See the full traceability model →</a></p>
+    <p class="tr-note">Each finding also carries an honest confidence level — and when the input isn't there, it says so rather than guessing. <a href="leadership-os-research.html#traceability" class="tr-deeplink">See the full traceability model →</a></p>
+  </div>
+</section>
+
+<!-- HOW THE ANALYSIS STAYS DISCIPLINED -->
+<section id="discipline" style="scroll-margin-top:52px;">
+  <div class="dis-wrap">
+    <div class="s-label reveal">Why a general AI can do this reliably</div>
+    <h2 class="section-headline reveal" style="transition-delay:.05s">Sequenced directives,<br>not <em>improvisation.</em></h2>
+    <p class="section-sub reveal" style="transition-delay:.1s">A reasonable question: if this runs on a general-purpose AI rather than a scored instrument, why trust it to be consistent? The answer is in how the instruction is built — as an ordered sequence the model follows step by step, not an open-ended request.</p>
+
+    <div class="dis-grid">
+      <div class="dis-card reveal" style="transition-delay:.05s">
+        <div class="dis-num">01</div>
+        <div class="dis-h">One step at a time</div>
+        <p>The analysis is broken into discrete, ordered stages — gather, then weigh each input separately, then synthesize, then label confidence. Modern models follow a structured sequence far more reliably than they handle a single sprawling request, because each step constrains the next.</p>
+      </div>
+      <div class="dis-card reveal" style="transition-delay:.1s">
+        <div class="dis-h">Separate before combine</div>
+        <div class="dis-num">02</div>
+        <p>Each input is assessed on its own before anything is merged. This is deliberate: it stops a strong signal in one place from quietly overwriting a weaker or conflicting one elsewhere — and it's what makes disagreement between inputs visible instead of lost.</p>
+      </div>
+      <div class="dis-card reveal" style="transition-delay:.15s">
+        <div class="dis-num">03</div>
+        <div class="dis-h">Forced to show its work</div>
+        <p>Every conclusion must name what it rests on and how confident it is. A requirement to cite its own basis is one of the most effective ways to keep a model honest — it can't assert what it can't ground, and the confidence label has to match the input.</p>
+      </div>
+      <div class="dis-card reveal" style="transition-delay:.2s">
+        <div class="dis-h">Permission to say "not enough"</div>
+        <div class="dis-num">04</div>
+        <p>The instruction explicitly allows — and requires — the model to return "insufficient signal" when the inputs don't support a conclusion. Removing the pressure to produce an answer is what stops the confident-sounding fabrication these tools default to.</p>
+      </div>
+    </div>
+
+    <p class="dis-honest">None of this makes the result identical run to run — it runs on a general model, so it won't be. What the sequence buys is consistency of <em>method</em>: the same questions, in the same order, held to the same discipline about what the inputs can support. That's the difference between a structured analysis and a chat that happens to be about you. <a href="leadership-os-research.html#process" class="dis-link">See the full analysis process →</a></p>
   </div>
 </section>
 
@@ -747,8 +680,8 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 <section id="how-close" style="scroll-margin-top:52px;">
   <div class="hc-wrap reveal">
     <div class="s-label">Where to go next</div>
-    <h2 class="section-headline">That's the whole<br><em>process.</em></h2>
-    <p class="section-sub">You've seen what it produces, why it exists, and now how it runs. The only thing left is to do it — or to look closer at the methodology underneath, if you're the kind of person who wants to see the engine before you turn the key.</p>
+    <h2 class="section-headline">Trustworthy, and<br><em>built to last.</em></h2>
+    <p class="section-sub">You've seen how the output stays traceable, how the analysis stays disciplined, and how the whole thing is built to keep working as you change. If that earns your trust, the next step is to run it — or to look closer at the methodology underneath.</p>
     <div class="hc-row">
       <a href="leadership-os-starter-kit.html" class="hc-btn hc-btn-primary">Open the Starter Kit</a>
       <a href="leadership-os-research.html" class="hc-btn hc-btn-ghost">Read the methodology</a>

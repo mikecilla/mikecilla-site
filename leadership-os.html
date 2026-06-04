@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leadership OS — A Framework by Mike Cilla</title>
-<meta name="description" content="A structured methodology for building your Leadership Operating System — grounded in personality science, behavioral evidence, and AI-assisted reflection.">
+<meta name="description" content="A structured methodology for building your Leadership Operating System — grounded in personality science, behavioral signals, and AI-assisted reflection.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -485,12 +485,38 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 .footer-links a{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.06em;color:var(--ink-dim);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
 
-/* FOUR DOCS PREVIEW STRIP */
-.oc-fourdocs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:780px;margin:1.5rem auto 0;}
-.ocd{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.1rem 1.25rem;border-top:2px solid var(--gold);}
-.ocd-tag{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);margin-bottom:0.55rem;}
-.ocd-snippet{font-size:0.92rem;line-height:1.6;color:var(--ink-dim);font-style:italic;}
-@media(max-width:640px){.oc-fourdocs{grid-template-columns:1fr;}}
+
+/* CTA (revised) */
+#cta{max-width:720px;margin:0 auto;padding:5.5rem 4vw 7rem;text-align:center;}
+.cta-inner .cta-headline{font-family:var(--ff-display);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:500;line-height:1.08;color:var(--ink);margin-bottom:1.5rem;}
+.cta-inner .cta-headline strong{color:var(--gold);font-weight:500;}
+.cta-sub{font-size:1.12rem;line-height:1.7;color:var(--ink-dim);max-width:560px;margin:0 auto 2.5rem;}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;}
+.cta-btn-primary{font-family:var(--ff-mono);font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;background:var(--ink);color:var(--void);transition:all 0.2s;}
+.cta-btn-primary:hover{background:var(--gold);}
+.cta-btn-ghost{font-family:var(--ff-mono);font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.6rem;border-radius:6px;color:var(--ink);border:1px solid rgba(26,22,18,0.25);transition:all 0.2s;}
+.cta-btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.cta-foot{font-size:0.9rem;color:var(--ink-dim);margin-top:0.5rem;}
+@media(max-width:680px){#cta{padding:4rem 1.5rem 5rem;}}
+
+/* ENGINE / LLM + INSTRUCTION COMPONENT */
+#engine{max-width:900px;margin:0 auto;padding:5rem 4vw;}
+.eng-wrap .section-sub{max-width:620px;}
+.eng-equation{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1.25rem;align-items:center;margin:2.5rem 0 2rem;}
+.eng-part{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.4rem 1.5rem;align-self:stretch;}
+.eng-result{border-top:2px solid var(--gold);background:var(--deep);}
+.eng-part-label{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;}
+.eng-part p{font-size:0.92rem;line-height:1.6;color:var(--ink-dim);margin:0;}
+.eng-result p em{color:var(--ink);font-style:italic;font-weight:500;}
+.eng-plus,.eng-equals{font-family:var(--ff-display);font-size:2rem;color:var(--gold);opacity:0.6;text-align:center;}
+.eng-honest{font-size:0.98rem;line-height:1.7;color:var(--ink-dim);max-width:660px;background:var(--lift);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;}
+.eng-honest em{color:var(--ink);font-style:italic;}
+.eng-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.3);white-space:nowrap;}
+@media(max-width:760px){
+  #engine{padding:4rem 1.5rem;}
+  .eng-equation{grid-template-columns:1fr;gap:0.75rem;}
+  .eng-plus,.eng-equals{font-size:1.5rem;}
+}
 </style>
 </head>
 <body>
@@ -514,26 +540,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   <div class="hero-left">
     <div class="hero-inner">
       <div class="hero-eyebrow reveal" style="transition-delay:.05s">A framework by Mike Cilla · Beta</div>
-    <div class="oc-fourdocs reveal">
-      <div class="ocd">
-        <div class="ocd-tag">Leadership Profile</div>
-        <div class="ocd-snippet">"You sit with complexity longer than most people can stand to — and when the situation is genuinely murky, that patience is one of your real strengths…"</div>
-      </div>
-      <div class="ocd">
-        <div class="ocd-tag">Working-With-Me Guide</div>
-        <div class="ocd-snippet">"If I go quiet in a meeting, I'm processing, not disengaging. Bring me the hard version of the problem — I'd rather have it early than tidy…"</div>
-      </div>
-      <div class="ocd">
-        <div class="ocd-tag">Development Roadmap</div>
-        <div class="ocd-snippet">"This quarter: notice the moment you reach to solve something a report could own. That hesitation is the rep. Hand it back, and ask one question instead…"</div>
-      </div>
-      <div class="ocd">
-        <div class="ocd-tag">AI Calibration</div>
-        <div class="ocd-snippet">"Work with me like a sharp colleague who knows I think in systems. Lead with the structure, challenge my framing, skip the flattery…"</div>
-      </div>
-    </div>
-
-      <h1 class="hero-title reveal" style="transition-delay:.1s">
+    <h1 class="hero-title reveal" style="transition-delay:.1s">
         <span class="block">The leadership</span>
         <span class="block">manual nobody</span>
         <span class="block">ever <em>gave you</em>.</span>
@@ -587,7 +594,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
             </div>
             <span class="pm-c-badge mo">● a likely pattern</span>
           </div>
-          <div class="pm-c-body">You take your time and weigh everything — a real strength when the call is genuinely hard. The watch-out: sometimes you wait past the point where waiting helps. Your own history shows the evidence was often clear well before you let yourself commit.</div>
+          <div class="pm-c-body">You take your time and weigh everything — a real strength when the call is genuinely hard. The watch-out: sometimes you wait past the point where waiting helps. Your own history shows the signs were often clear well before you let yourself commit.</div>
         </div>
 
         <div class="pm-dev-block">
@@ -596,13 +603,13 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
         </div>
 
         <div class="pm-gov-block">
-          <div class="pm-gov-label">Governing question (extracted from evidence)</div>
+          <div class="pm-gov-label">Governing question (extracted from your inputs)</div>
           <div class="pm-gov-text">"Is this actually sound — or does it just look right?"</div>
         </div>
 
       </div>
     </div>
-    <div class="pm-caption">Sample output · Fictional persona · Generated from 3 evidence sources</div>
+    <div class="pm-caption">Sample output · Fictional persona · Generated from 3 inputs</div>
   </div>
 
 </section>
@@ -612,7 +619,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   <div class="oc-head">
     <div class="s-label reveal">What you walk away with</div>
     <h2 class="section-headline reveal" style="transition-delay:.05s">Four tools you'll<br><em>keep using.</em></h2>
-    <p class="section-sub reveal" style="transition-delay:.1s">Not a score. Not a report you read once and forget. Four tools you'll come back to — to understand yourself, work better with your team, get sharper output from AI, and keep growing — each one written in plain language and grounded in your own evidence.</p>
+    <p class="section-sub reveal" style="transition-delay:.1s">Not a score. Not a report you read once and forget. Four tools you'll come back to — to understand yourself, work better with your team, get sharper output from AI, and keep growing — each one written in plain language and grounded in your own inputs.</p>
   </div>
 
   <!-- WHAT IT TAKES -->
@@ -650,7 +657,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       <div class="cs-body">
         <div class="cs-msg cs-user">
           <div class="cs-avatar cs-au">You</div>
-          <div class="cs-bubble cs-ub">Here are my three evidence sources — my PrinciplesYou results, the behavioral audit from my AI history, and my six reflection responses. Please generate my Leadership Profile.</div>
+          <div class="cs-bubble cs-ub">Here are my three inputs — my PrinciplesYou results, the behavioral audit from my AI history, and my six reflection responses. Please generate my Leadership Profile.</div>
         </div>
         <div class="cs-msg cs-ai">
           <div class="cs-avatar cs-aa">OS</div>
@@ -663,7 +670,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
                 <span class="cs-con-name">How you make the call</span>
                 <span class="cs-con-conf cf-high">● fairly sure of this</span>
               </div>
-              <p class="cs-con-text">You sit with complexity longer than most people can stand to — and when the situation is genuinely murky, that patience is one of your real strengths. But there's a flip side I kept noticing: once you've said a direction out loud to people, changing your mind starts to feel like a cost you don't want to pay. The evidence was often clear well before you let yourself move. <span style="opacity:0.55">(Leadership OS calls this your decision style.)</span></p>
+              <p class="cs-con-text">You sit with complexity longer than most people can stand to — and when the situation is genuinely murky, that patience is one of your real strengths. But there's a flip side I kept noticing: once you've said a direction out loud to people, changing your mind starts to feel like a cost you don't want to pay. The signs were often clear well before you let yourself move. <span style="opacity:0.55">(Leadership OS calls this your decision style.)</span></p>
             </div>
 
             <div class="cs-construct">
@@ -679,7 +686,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
               <p class="cs-insight-text">Your instinct is to solve the problem in front of you — which is exactly why your team brings you problems instead of solving them. The growth edge isn't a skill you're missing. It's that stepping back feels like doing less, when for you it's the harder, higher-value work.</p>
             </div>
 
-            <div class="cs-foot">Evidence-informed hypotheses for reflection — not a validated assessment. Synthetic illustrative example.</div>
+            <div class="cs-foot">Input-informed hypotheses for reflection — not a validated assessment. Synthetic illustrative example.</div>
           </div>
         </div>
       </div>
@@ -710,31 +717,13 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
     <div class="oc-card reveal" style="transition-delay:.2s">
       <div class="oc-num">04</div>
       <div class="oc-card-name">Development Roadmap</div>
-      <div class="oc-card-desc">Stop guessing where to focus. Get specific growth priorities traced to your own evidence — not generic leadership advice — with concrete practices and a 90-day focus.</div>
+      <div class="oc-card-desc">Stop guessing where to focus. Get specific growth priorities traced to your own inputs — not generic leadership advice — with concrete practices and a 90-day focus.</div>
       <div class="oc-card-use">Private by design. Revisit each quarter to see what's shifted.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ HOW IT'S PRODUCED — EVIDENCE BANNER ═══════════ -->
-<section id="how-banner">
-  <div class="hb-inner reveal">
-    <div class="hb-label">How it's produced</div>
-    <div class="hb-flow">
-      <div class="hb-sources">
-        <div class="hb-src hb-s1"><span class="hb-ic">📋</span>Assessments</div>
-        <div class="hb-src hb-s2"><span class="hb-ic">🔍</span>AI Corpus</div>
-        <div class="hb-src hb-s3"><span class="hb-ic">🪞</span>Reflection</div>
-      </div>
-      <div class="hb-arrow">↓</div>
-      <div class="hb-step">Construct Analysis</div>
-      <div class="hb-arrow">↓</div>
-      <div class="hb-result">Leadership Profile</div>
-    </div>
-    <p class="hb-note">Three kinds of evidence about how you operate, synthesized into one profile across nine leadership constructs. <a href="leadership-os-model.html" class="hb-link">See how the methodology works →</a></p>
-  </div>
-</section>
-
+<!-- ═══════════ HOW IT'S PRODUCED — INPUTS BANNER ═══════════ -->
 <section id="explainer" style="scroll-margin-top:52px;">
   <div class="s-label reveal">Understand it in 60 seconds</div>
   <h2 class="explainer-headline reveal" style="transition-delay:.05s">What it is.<br><em>Why it's different.</em></h2>
@@ -744,7 +733,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
     <div class="ef-card">
       <span class="ef-icon">📥</span>
       <div class="ef-title">You bring three inputs</div>
-      <div class="ef-desc">A personality assessment. A structured reflection on how you work. And a behavioral audit from your existing AI conversation history — evidence of patterns in how you think, not how you describe yourself thinking.</div>
+      <div class="ef-desc">A personality assessment. A structured reflection on how you work. And a behavioral audit from your existing AI conversation history — a record of patterns in how you think, not how you describe yourself thinking.</div>
     </div>
     <div class="ef-card">
       <span class="ef-icon">🧠</span>
@@ -772,15 +761,62 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
     <div class="ed-cell">
       <div class="ed-label new">Leadership OS</div>
       <div class="ed-items">
-        <div class="ed-item"><span class="ed-icon">→</span>Combines self-report with behavioral evidence</div>
+        <div class="ed-item"><span class="ed-icon">→</span>Combines self-report with behavioral signals</div>
         <div class="ed-item"><span class="ed-icon">→</span>Produces documents you use and update</div>
         <div class="ed-item"><span class="ed-icon">→</span>Living — gets more accurate over time</div>
-        <div class="ed-item"><span class="ed-icon">→</span>Grounded in patterns across the evidence you provide</div>
+        <div class="ed-item"><span class="ed-icon">→</span>Grounded in patterns across the input you provide</div>
         <div class="ed-item"><span class="ed-icon">→</span>Built to persist and compound</div>
       </div>
     </div>
   </div>
 </section>
+
+<section id="how-banner">
+  <div class="hb-inner reveal">
+    <div class="hb-label">How it's produced</div>
+    <div class="hb-flow">
+      <div class="hb-sources">
+        <div class="hb-src hb-s1"><span class="hb-ic">📋</span>Assessments</div>
+        <div class="hb-src hb-s2"><span class="hb-ic">🔍</span>AI Corpus</div>
+        <div class="hb-src hb-s3"><span class="hb-ic">🪞</span>Reflection</div>
+      </div>
+      <div class="hb-arrow">↓</div>
+      <div class="hb-step">Construct Analysis</div>
+      <div class="hb-arrow">↓</div>
+      <div class="hb-result">Leadership Profile</div>
+    </div>
+    <p class="hb-note">Three kinds of input about how you operate, synthesized into one profile across nine leadership constructs. <a href="leadership-os-model.html" class="hb-link">See how the methodology works →</a></p>
+  </div>
+</section>
+
+<!-- HOW THE LLM PRODUCES A STANDARDIZED-ISH ANALYSIS -->
+<section id="engine" style="scroll-margin-top:52px;">
+  <div class="eng-wrap reveal">
+    <div class="s-label">What's actually doing the work</div>
+    <h2 class="section-headline">Your AI does the thinking.<br>The method keeps it <em>consistent.</em></h2>
+    <p class="section-sub">Leadership OS doesn't contain a scoring algorithm. It runs inside whatever capable AI tool you already use — and its job is to make that AI reason about you the same careful way every time, instead of improvising.</p>
+
+    <div class="eng-equation">
+      <div class="eng-part">
+        <div class="eng-part-label">Your AI's ability</div>
+        <p>Reading patterns across a lot of text, holding nuance, weighing one thing against another, writing in plain language.</p>
+      </div>
+      <div class="eng-plus">+</div>
+      <div class="eng-part">
+        <div class="eng-part-label">Our guided instruction</div>
+        <p>A fixed sequence of directives — what to look at, in what order, how to weigh agreement and disagreement, when to hold back, and how to label confidence.</p>
+      </div>
+      <div class="eng-equals">=</div>
+      <div class="eng-part eng-result">
+        <div class="eng-part-label">A repeatable analysis</div>
+        <p>The same structured reasoning applied to your inputs — a <em>somewhat</em> standardized read, run by a general-purpose model rather than a clinical instrument.</p>
+      </div>
+    </div>
+
+    <p class="eng-honest">The word doing real work there is <em>somewhat</em>. Because the analysis runs on a general AI model, two runs won't be identical the way a scored test would be — and we say so plainly. What the guided instruction buys is consistency of <em>method</em>: the same questions asked in the same order, the same discipline about what the inputs can and can't support, every time. <a href="leadership-os-research.html#confidence" class="eng-link">How consistency and confidence are handled →</a></p>
+  </div>
+</section>
+
 
 <section style="background:var(--deep);padding:3.5rem 4vw;border-top:1px solid var(--rule);">
   <div style="max-width:900px;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;">
@@ -800,10 +836,10 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 
 
 <!-- 60-SECOND EXPLAINER -->
-<!-- EVIDENCE SYNTHESIS DIAGRAM -->
+<!-- INPUTS SYNTHESIS DIAGRAM -->
     <div class="evidence-diagram-wrap">
       <div class="ev-header">
-        <span class="ev-header-label">How evidence becomes a profile</span>
+        <span class="ev-header-label">How your inputs become a profile</span>
       </div>
       <div class="ev-flow">
         <div class="ev-source ev-s1">
@@ -850,7 +886,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
         <li>Surfacing hypotheses about how you operate</li>
         <li>Grounding insights in validated personality science as one input</li>
         <li>Producing documents that reflect your own stated experience</li>
-        <li>Getting more accurate as evidence accumulates</li>
+        <li>Getting more accurate as input accumulates</li>
         <li>Being a structured way to make implicit patterns explicit</li>
       </ul>
     </div>
@@ -868,7 +904,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
   </div>
   <div class="gov-statement reveal" style="transition-delay:.2s">
     <div class="gov-statement-label">The honest framing</div>
-    <div class="gov-statement-text">"This is a structured way to make your own patterns visible — using the best available inputs. The outputs are hypotheses, not facts. They're only as good as the evidence you bring. And they're most useful when you treat them as a starting point for reflection, not a finished description of who you are."</div>
+    <div class="gov-statement-text">"This is a structured way to make your own patterns visible — using the best available inputs. The outputs are hypotheses, not facts. They're only as good as the input you bring. And they're most useful when you treat them as a starting point for reflection, not a finished description of who you are."</div>
   </div>
 </section>
 
@@ -883,7 +919,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       <div class="about-body">
         <p>I didn't set out to build a leadership methodology. I was trying to make my AI tools more useful at work.</p>
         <p>Over 2.5 years as a VP of People Operations, I accumulated hundreds of working conversations with AI — workforce analytics, HR system design, organizational design, business cases, leadership decisions. At some point I realized I'd accidentally built something: a detailed record of how I actually think.</p>
-        <p>When I transferred that context to a new AI tool, I had to make my thinking explicit in ways it had never been before. What came out of that process was the most accurate leadership profile I'd ever received — more specific than any 360, more honest than most coaching engagements, and grounded in actual behavioral evidence rather than survey responses.</p>
+        <p>When I transferred that context to a new AI tool, I had to make my thinking explicit in ways it had never been before. What came out of that process was the most accurate leadership profile I'd ever received — more specific than any 360, more honest than most coaching engagements, and grounded in actual behavioral signals rather than survey responses.</p>
         <p>The Leadership OS is an attempt to make that process replicable for anyone, using whatever AI tools they already have, in about 90–120 minutes.</p>
       </div>
       <div class="about-creds">
@@ -908,7 +944,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
       </div>
       <div class="about-card">
         <div class="about-card-label">The methodological difference</div>
-        <div class="about-card-quote">"Every existing leadership assessment asks you to describe yourself. The corpus audit asks the system that has watched you work to describe what it saw. That's a different kind of evidence — and a different kind of profile."</div>
+        <div class="about-card-quote">"Every existing leadership assessment asks you to describe yourself. The corpus audit asks the system that has watched you work to describe what it saw. That's a different kind of input — and a different kind of profile."</div>
       </div>
       <div class="about-card">
         <div class="about-card-label">On what this is and isn't</div>
@@ -931,7 +967,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
         <div class="evo-card-label">Current version</div>
         <div class="evo-card-body">
           <p><strong>Version 1.0</strong> · June 2026</p>
-          <p>Three evidence sources, nine constructs, four output tools, full confidence-labeling and construct traceability. End-to-end tested in clean AI sessions.</p>
+          <p>Three inputs, nine constructs, four output tools, full confidence-labeling and construct traceability. End-to-end tested in clean AI sessions.</p>
         </div>
       </div>
       <div class="evo-card reveal" style="transition-delay:.1s">
@@ -939,7 +975,7 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
         <div class="evo-card-body">
           <ul class="evo-list">
             <li>Theoretical grounding made operational inside the analysis prompts — not just cited.</li>
-            <li>Every development priority now traces to its originating construct, evidence, and confidence level.</li>
+            <li>Every development priority now traces to its originating construct, input, and confidence level.</li>
             <li>Plain-language framing of what you walk away with.</li>
           </ul>
         </div>
@@ -995,14 +1031,16 @@ footer{background:#131211;padding:1.5rem 4vw;display:flex;align-items:center;jus
 </section>
 
 <section id="cta" style="scroll-margin-top:52px;">
-  <div class="cta-eyebrow reveal">Ready to begin</div>
-  <h2 class="cta-headline reveal" style="transition-delay:.1s">About<br><strong>90–120 minutes.</strong></h2>
-  <p class="cta-sub reveal" style="transition-delay:.2s">Seven steps. Every prompt included. Works with whatever AI tool you already use.</p>
-  <div class="cta-buttons reveal" style="transition-delay:.3s">
-    <a href="leadership-os-starter-kit.html" class="cta-btn-p">Open the Starter Kit →</a>
-    <a href="leadership-os-sample-outputs.html" class="cta-btn-g">See sample outputs</a>
+  <div class="cta-inner reveal">
+    <div class="s-label">Start here</div>
+    <h2 class="cta-headline">Before the how,<br><strong>the why.</strong></h2>
+    <p class="cta-sub">If you've read this far, the next thing worth your time isn't the instructions — it's the reason this exists at all. Most leadership development is expensive, infrequent, and gated. This is an attempt at something more accessible. That's the part worth understanding first.</p>
+    <div class="cta-row">
+      <a href="leadership-os-why.html" class="cta-btn-primary">Why Leadership OS exists →</a>
+      <a href="leadership-os-starter-kit.html" class="cta-btn-ghost">Or jump straight to the Starter Kit</a>
+    </div>
+    <p class="cta-foot">This framework is in beta. Feedback is genuinely welcome — <a href="mailto:mikejcilla@gmail.com" style="color:var(--gold);text-decoration:none;">mikejcilla@gmail.com</a></p>
   </div>
-  <p class="cta-note reveal" style="transition-delay:.4s">This framework is in beta. Feedback is genuinely welcome — <a href="mailto:mikejcilla@gmail.com" style="color:rgba(201,132,58,0.6);text-decoration:none;">mikejcilla@gmail.com</a></p>
 </section>
 
 <footer>
