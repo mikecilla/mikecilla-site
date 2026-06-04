@@ -300,6 +300,19 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
 .aw-restraint li{font-size:0.94rem;line-height:1.6;color:var(--ink-dim);}
 .aw-restraint strong{color:var(--ink);font-weight:600;}
 @media(max-width:680px){.aw-conf-grid{grid-template-columns:1fr;}.aw-block{padding:1.25rem;}}
+
+/* SIGNAL TENSIONS — MOBILE CARD LAYOUT */
+@media(max-width:680px){
+  .tn-table{min-width:0;width:100%;}
+  .tn-table thead{position:absolute;left:-9999px;}
+  .tn-table tr{display:block;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:0.5rem 0.25rem;margin-bottom:1rem;}
+  .tn-table td{display:block;border:none;padding:0.55rem 1rem;}
+  .tn-table td::before{content:attr(data-label);display:block;font-family:var(--ff-m);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.25rem;}
+  .tn-table td.tn-area{font-size:1.2rem;padding-top:0.75rem;}
+  .tn-table td.tn-area::before{content:"";display:none;}
+  .tn-table td.tn-interp{background:rgba(184,103,30,0.05);border-radius:6px;margin:0.35rem 0.5rem 0.25rem;}
+  .table-scroll:has(.tn-table){overflow-x:visible;border:none;}
+}
 </style>
 </head>
 <body>
@@ -459,46 +472,46 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
       </thead>
       <tbody>
         <tr>
-          <td class="tn-area">Delegation &amp; control</td>
-          <td>Doesn't measure directly; high Persistent + Conceptual</td>
-          <td>Reclaims delegated work — "I'll just rewrite this part myself"</td>
-          <td>"I'm pretty collaborative… I don't think people experience me as controlling"</td>
-          <td class="tn-interp">The sharpest gap. Jordan's self-story (collaborative, hands-off) doesn't match the observed pattern (holds work close). He half-sees it — he names the "bottleneck" worry himself — which makes this workable, not a blind spot.</td>
+          <td class="tn-area" data-label="Area">Delegation &amp; control</td>
+          <td data-label="Assessment says">Doesn't measure directly; high Persistent + Conceptual</td>
+          <td data-label="Corpus shows">Reclaims delegated work — "I'll just rewrite this part myself"</td>
+          <td data-label="Reflection says">"I'm pretty collaborative… I don't think people experience me as controlling"</td>
+          <td class="tn-interp" data-label="What the tension means">The sharpest gap. Jordan's self-story (collaborative, hands-off) doesn't match the observed pattern (holds work close). He half-sees it — he names the "bottleneck" worry himself — which makes this workable, not a blind spot.</td>
         </tr>
         <tr>
-          <td class="tn-area">Learning &amp; openness</td>
-          <td>Elevated Curious / Openness</td>
-          <td>Updates genuinely, but usually needs a concrete trigger; three slow revisions</td>
-          <td>Frames himself as open to being wrong</td>
-          <td class="tn-interp">Not a contradiction so much as a texture: the openness is real but reactive. He revises when shown specific evidence, less so from open-ended challenge. Useful to know how to actually move him.</td>
+          <td class="tn-area" data-label="Area">Learning &amp; openness</td>
+          <td data-label="Assessment says">Elevated Curious / Openness</td>
+          <td data-label="Corpus shows">Updates genuinely, but usually needs a concrete trigger; three slow revisions</td>
+          <td data-label="Reflection says">Frames himself as open to being wrong</td>
+          <td class="tn-interp" data-label="What the tension means">Not a contradiction so much as a texture: the openness is real but reactive. He revises when shown specific evidence, less so from open-ended challenge. Useful to know how to actually move him.</td>
         </tr>
         <tr>
-          <td class="tn-area">Decision-making</td>
-          <td>High Deliberative + Persistent</td>
-          <td>Reasoning resolves days before he commits — twice, after socializing a direction</td>
-          <td>Names it directly: held a call because he'd "already told the leadership team"</td>
-          <td class="tn-interp">All three converge here, which raises confidence: the delay isn't analysis, it's the social cost of visibly reversing. The clearest, best-supported developmental thread.</td>
+          <td class="tn-area" data-label="Area">Decision-making</td>
+          <td data-label="Assessment says">High Deliberative + Persistent</td>
+          <td data-label="Corpus shows">Reasoning resolves days before he commits — twice, after socializing a direction</td>
+          <td data-label="Reflection says">Names it directly: held a call because he'd "already told the leadership team"</td>
+          <td class="tn-interp" data-label="What the tension means">All three converge here, which raises confidence: the delay isn't analysis, it's the social cost of visibly reversing. The clearest, best-supported developmental thread.</td>
         </tr>
         <tr>
-          <td class="tn-area">Communication</td>
-          <td>Lower Sociability</td>
-          <td>Precise, argument-driven, low small talk</td>
-          <td>"People read my directness as disapproval… under time pressure I skip the warmth"</td>
-          <td class="tn-interp">Assessment and corpus agree on the style; the reflection adds the missing piece — Jordan knows the cost and when it spikes. Awareness is present, so this is a calibration issue, not a discovery.</td>
+          <td class="tn-area" data-label="Area">Communication</td>
+          <td data-label="Assessment says">Lower Sociability</td>
+          <td data-label="Corpus shows">Precise, argument-driven, low small talk</td>
+          <td data-label="Reflection says">"People read my directness as disapproval… under time pressure I skip the warmth"</td>
+          <td class="tn-interp" data-label="What the tension means">Assessment and corpus agree on the style; the reflection adds the missing piece — Jordan knows the cost and when it spikes. Awareness is present, so this is a calibration issue, not a discovery.</td>
         </tr>
         <tr>
-          <td class="tn-area">Adaptability</td>
-          <td>High Adaptable, notably lower Agile</td>
-          <td>Adjusts thoughtfully but not quickly; two slow product pivots</td>
-          <td>Doesn't address directly</td>
-          <td class="tn-interp">Assessment and corpus align, reflection is silent — so this is held as a quieter hypothesis. Jordan adapts well given time; speed under ambiguity is the open question worth watching.</td>
+          <td class="tn-area" data-label="Area">Adaptability</td>
+          <td data-label="Assessment says">High Adaptable, notably lower Agile</td>
+          <td data-label="Corpus shows">Adjusts thoughtfully but not quickly; two slow product pivots</td>
+          <td data-label="Reflection says">Doesn't address directly</td>
+          <td class="tn-interp" data-label="What the tension means">Assessment and corpus align, reflection is silent — so this is held as a quieter hypothesis. Jordan adapts well given time; speed under ambiguity is the open question worth watching.</td>
         </tr>
         <tr>
-          <td class="tn-area">Influence &amp; identity</td>
-          <td>Doesn't measure</td>
-          <td>Builds authority through structure and traceable reasoning</td>
-          <td>Aspires to develop independent decision-makers</td>
-          <td class="tn-interp">An aspiration ahead of the evidence. Jordan wants to build independent operators, but the corpus doesn't yet show him creating the room for it. Held as "Emerging" — a direction, not a finding.</td>
+          <td class="tn-area" data-label="Area">Influence &amp; identity</td>
+          <td data-label="Assessment says">Doesn't measure</td>
+          <td data-label="Corpus shows">Builds authority through structure and traceable reasoning</td>
+          <td data-label="Reflection says">Aspires to develop independent decision-makers</td>
+          <td class="tn-interp" data-label="What the tension means">An aspiration ahead of the evidence. Jordan wants to build independent operators, but the corpus doesn't yet show him creating the room for it. Held as "Emerging" — a direction, not a finding.</td>
         </tr>
       </tbody>
     </table>

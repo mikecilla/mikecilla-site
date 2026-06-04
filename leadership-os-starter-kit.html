@@ -384,6 +384,23 @@ a:hover{text-decoration:underline;}
 .fb-btn:hover{border-color:var(--gold);color:var(--gold);}
 .fb-sig{font-family:var(--ff-display);font-size:1.15rem;font-style:italic;color:var(--ink-dim);margin-top:1.5rem;}
 @media(max-width:680px){#feedback{padding:1rem 1.5rem 4rem;}}
+
+/* SAMPLE EXAMPLE CALLOUT */
+.sk-example-callout{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;background:var(--deep);border:1px solid var(--rule);border-left:3px solid var(--gold);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0 2rem;}
+.sk-ec-text{font-size:0.95rem;line-height:1.6;color:var(--ink-dim);max-width:540px;}
+.sk-ec-text strong{display:block;color:var(--ink);font-size:1.02rem;margin-bottom:0.2rem;}
+.sk-ec-btn{flex-shrink:0;font-family:var(--ff-m);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:var(--void);background:var(--ink);padding:0.7rem 1.3rem;border-radius:6px;transition:background 0.2s;}
+.sk-ec-btn:hover{background:var(--gold);}
+@media(max-width:600px){.sk-example-callout{flex-direction:column;align-items:flex-start;}}
+
+/* TOPBAR MOBILE — prevent overflow */
+@media(max-width:760px){
+  #topbar .tb-title,#topbar .tb-sep{display:none;}
+  #topbar .tb-btn:not(.primary){display:none;}
+}
+@media(max-width:760px){
+  #topbar .tb-btn.primary{font-size:0.58rem;padding:0.5rem 0.8rem;}
+}
 </style>
 </head>
 <body>
@@ -399,6 +416,7 @@ a:hover{text-decoration:underline;}
     <a href="leadership-os.html" class="tb-btn">What it is</a>
     <a href="leadership-os-why.html" class="tb-btn">Why it exists</a>
     <a href="leadership-os-how.html" class="tb-btn">How it works</a>
+    <a href="leadership-os-sample-outputs.html" class="tb-btn">Examples</a>
     <a href="leadership-os-research.html" class="tb-btn">Methodology</a>
     <button class="tb-btn primary" onclick="window.print()">⎙ Print / Save as PDF</button>
   </div>
@@ -455,6 +473,14 @@ a:hover{text-decoration:underline;}
     <span class="time-badge"><span>Total time</span> 90–120 minutes</span>
     <span class="time-badge"><span>Sessions</span> One sitting recommended</span>
     <span class="time-badge"><span>Outputs</span> 4 working documents</span>
+  </div>
+
+  <div class="sk-example-callout">
+    <div class="sk-ec-text">
+      <strong>Want to see what you'll produce before you start?</strong>
+      Walk through a complete worked example — every input and all four finished documents for one synthetic leader.
+    </div>
+    <a href="leadership-os-sample-outputs.html" class="sk-ec-btn">See a full example →</a>
   </div>
 
   <h2 class="sub-head">What this is</h2>
@@ -1455,7 +1481,7 @@ Wait for the user's response before proceeding to document generation.</div>
   </div>
 
   <h2 class="sub-head" id="s4b-profile">The Leadership Profile artifact</h2>
-  <p>The construct analysis output is your Leadership Profile — the intermediate layer between your inputs and your output documents. It is not a document you share externally. It is the working model your AI will use to generate the four output documents in Section 5.</p>
+  <p>The construct analysis output is your Leadership Profile — the intermediate layer between your inputs and your output documents. <a href="leadership-os-sample-outputs.html#" onclick="window.open('leadership-os-sample-outputs.html');return false;" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,103,30,0.3);">(See a worked example of all of these →)</a> It is not a document you share externally. It is the working model your AI will use to generate the four output documents in Section 5.</p>
 
   <div class="not-box">
     <p><strong>The Leadership Profile is private by design.</strong> It contains the full reasoning — including tension points, low-confidence hypotheses, and developmental implications — that you may not want to share in full. The output documents (User Manual, Working-With-Me Guide) are the edited, shareable versions derived from this profile.</p>
