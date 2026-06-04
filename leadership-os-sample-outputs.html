@@ -313,6 +313,31 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
   .tn-table td.tn-interp{background:rgba(184,103,30,0.05);border-radius:6px;margin:0.35rem 0.5rem 0.25rem;}
   .table-scroll:has(.tn-table){overflow-x:visible;border:none;}
 }
+
+/* LEADERSHIP PROFILE — CONSTRUCT BLOCKS (actual prompt output format) */
+.construct-list{display:flex;flex-direction:column;gap:1.1rem;margin:1.5rem 0;}
+.cpr{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:1.5rem 1.6rem;}
+.cpr-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:0.5rem;}
+.cpr-name{font-family:var(--ff-display);font-size:1.45rem;font-weight:500;color:var(--ink);margin:0;}
+.cpr-conf{flex-shrink:0;font-family:var(--ff-m);font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.28rem 0.65rem;border-radius:4px;}
+.cf-high{background:rgba(29,158,117,0.12);color:#1D9E75;}
+.cf-mod{background:rgba(184,103,30,0.12);color:var(--gold);}
+.cf-emerg{background:rgba(91,91,214,0.12);color:#5B5BD6;}
+.cf-insuf{background:rgba(26,22,18,0.08);color:var(--ink-dim);}
+.cpr-def{font-size:0.92rem;line-height:1.55;color:var(--ink-dim);font-style:italic;margin:0 0 1rem;}
+.cpr-inputs{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;}
+.cpr-row{display:grid;grid-template-columns:110px 1fr;gap:0.9rem;align-items:baseline;}
+.cpr-k{font-family:var(--ff-m);font-size:0.64rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);padding-top:0.15rem;}
+.cpr-v{font-size:0.94rem;line-height:1.6;color:var(--ink);}
+.cpr-impl{font-size:0.94rem;line-height:1.6;color:var(--ink-dim);background:var(--deep);border-radius:8px;padding:0.85rem 1.1rem;margin-bottom:0.7rem;}
+.cpr-impl-label{display:block;font-family:var(--ff-m);font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+.cpr-q{display:flex;gap:0.7rem;align-items:flex-start;font-size:0.94rem;line-height:1.55;color:var(--ink);font-style:italic;padding-left:0.2rem;}
+.cpr-q-mark{flex-shrink:0;font-family:var(--ff-display);font-style:normal;font-size:1.3rem;color:var(--gold);line-height:1;}
+@media(max-width:680px){
+  .cpr{padding:1.25rem 1.25rem;}
+  .cpr-row{grid-template-columns:1fr;gap:0.15rem;}
+  .cpr-k{padding-top:0;}
+}
 </style>
 </head>
 <body>
@@ -589,74 +614,143 @@ body{background:var(--void);color:var(--ink);font-family:var(--ff-b);font-size:1
         </div>
       </div>
 
-      <div class="table-scroll">
-      <table class="cr-table">
-        <thead>
-          <tr>
-            <th style="width:125px;">Construct</th>
-            <th style="width:100px;">Confidence</th>
-            <th style="width:52%;">Input synthesis</th>
-            <th>Developmental implication</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><div class="cr-name">Reflection Orientation</div></td>
-            <td><span class="cr-conf hi">High</span></td>
-            <td><div class="cr-summary">All three synthetic sources suggest convergence. Assessment: elevated Curious and Growth-Seeking. Corpus: a high proportion of product strategy conversations involve Jordan examining their own reasoning — metacognitive language appears frequently. Reflection responses are specific, include acknowledged tension, and name mechanisms over outcomes.</div></td>
-            <td><div class="cr-implication">Reflective capacity appears available. Development work in other constructs is likely to compound here.</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Systems Orientation</div></td>
-            <td><span class="cr-conf hi">High</span></td>
-            <td><div class="cr-summary">Assessment: elevated conceptual structure-seeking. Corpus: Jordan consistently frames problems in terms of upstream dependencies, decision rights, and operating model constraints before feature-level questions. Reflection: peak performance example describes a turnaround by diagnosing the cross-functional operating model before changing the roadmap.</div></td>
-            <td><div class="cr-implication">Reliable cognitive default. The development question is whether Jordan can translate structural analysis into simpler guidance for cross-functional partners who don't share this frame.</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Learning Orientation</div></td>
-            <td><span class="cr-conf mo">Moderate</span></td>
-            <td><div class="cr-summary">Assessment: elevated Curious and Openness. Tension in corpus: three instances where Jordan maintained a product hypothesis after contradictory customer feedback emerged. Self-report diverges from behavioral patterns specifically at the post-commitment phase.</div></td>
-            <td><div class="cr-implication">Strong in the information-gathering phase. A hypothesis worth exploring: once a direction has been socialized, revision costs may suppress the learning orientation that was present earlier.</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Decision Style</div></td>
-            <td><span class="cr-conf hi">High</span></td>
-            <td><div class="cr-summary">Assessment: elevated Deliberative and Persistent. Corpus: broad input-gathering before commitment, resistance to revision after. Reflection: the "decision I'd make differently" response names the mechanism directly — holding a roadmap prioritization after engineers flagged structural risks, attributing it to sunk-cost reasoning.</div></td>
-            <td><div class="cr-implication">The mechanism is the development edge: socializing a direction before the input is complete may convert a hypothesis into a social commitment prematurely.</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Communication Patterns</div></td>
-            <td><span class="cr-conf mo">Moderate</span></td>
-            <td><div class="cr-summary">Corpus: precise, argument-driven, low small talk. Reflection "misread": cross-functional partners interpret Jordan's directness as impatience. Jordan experiences it as efficiency. The gap between intent and impact is consistent across multiple described situations. Corpus captures written communication only.</div></td>
-            <td><div class="cr-implication">The adjustment is likely not "communicate less directly" but "signal more explicitly that ambiguity and partial thinking are welcome before the argument is formed."</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Leadership Identity</div></td>
-            <td><span class="cr-conf em">Emerging</span></td>
-            <td><div class="cr-summary">Reflection states aspiration: develop independent decision-makers. Corpus shows high analytical investment but thin relational and coaching investment. Gap between stated identity and observed behavior is the central hypothesis — not a judgment, but a question requiring more behavioral data.</div></td>
-            <td><div class="cr-implication">Worth holding as a question: are the behaviors that would reflect the stated identity actually present in Jordan's day-to-day practice?</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Adaptability</div></td>
-            <td><span class="cr-conf mo">Moderate</span></td>
-            <td><div class="cr-summary">Assessment: high Adaptable, lower Agile. Corpus: two significant product pivots in 8 months — Jordan-initiated, suggesting genuine strategic adaptability. Tactical plan revision mid-execution appears rarer and harder.</div></td>
-            <td><div class="cr-implication">Strategic adaptability appears present. Tactical adaptability — revising a specific execution path after commitment — appears more constrained and consistent with the Decision Style pattern.</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Self-Awareness</div></td>
-            <td><span class="cr-conf mo">Moderate</span></td>
-            <td><div class="cr-summary">Assessment and reflection broadly aligned. One hypothesis from corpus: a pattern of reduced pushback on recurring cross-functional friction over time — possible accommodation dynamic not named in reflection. Self-awareness appears genuine within domains Jordan monitors.</div></td>
-            <td><div class="cr-implication">Monitoring question worth building in: "Am I adjusting to this environment or improving it?" — applied to friction that has gone quiet rather than been resolved.</div></td>
-          </tr>
-          <tr>
-            <td><div class="cr-name">Development Readiness</div></td>
-            <td><span class="cr-conf mo">Moderate</span></td>
-            <td><div class="cr-summary">Inferred from reflection quality, not from completing this process alone. Supporting signals: specific responses that name mechanisms over outcomes; "decision I'd make differently" doesn't attribute difficulty to external factors; signal that prior feedback changed how Jordan operates in 1:1 conversations.</div></td>
-            <td><div class="cr-implication">Readiness appears present for cognitive development. Less input for relational or identity development work — moderate rather than high for that reason.</div></td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+      <div class="construct-list">
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Reflection Orientation</h3>
+      <span class="cpr-conf cf-high">High</span>
+    </div>
+    <p class="cpr-def">How deliberately a leader examines their own experience and draws developmental insight from it.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Elevated Curious and Growth-Seeking facets.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">A high proportion of product-strategy sessions involve Jordan examining his own reasoning; metacognitive language appears frequently ("let me check my assumption here").</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">Responses are specific, name tension openly, and describe mechanisms rather than outcomes — a marker of genuine reflective practice rather than performed insight.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">None significant. All three inputs converge.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>Reflective capacity appears genuinely available — which means development work in other constructs is likely to compound here rather than stall.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>When was the last time reflection changed a decision you'd already made, not just one you were still forming?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Systems Orientation</h3>
+      <span class="cpr-conf cf-high">High</span>
+    </div>
+    <p class="cpr-def">The tendency to frame problems as structures and root causes rather than isolated events.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Elevated conceptual, structure-seeking reasoning.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">Consistently frames problems in terms of upstream dependencies, decision rights, and operating-model constraints before feature-level questions — "who actually owns this decision" precedes "what should we build."</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">His peak-performance example describes a turnaround achieved by diagnosing the cross-functional operating model before touching the roadmap.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">None between sources. The watch-out is internal: the strength can outrun his partners.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>A reliable cognitive default. The open development question is whether Jordan can translate structural analysis into simpler guidance for partners who don't share the frame — otherwise the insight stays his alone.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>Where has your instinct to find the underlying structure helped a partner — and where has it left them behind?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Learning Orientation</h3>
+      <span class="cpr-conf cf-mod">Moderate</span>
+    </div>
+    <p class="cpr-def">Openness to revising a position when new information arrives.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Elevated Curious and Openness.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">Genuine updating when shown specifics ("that customer interview actually changes my read") — but three documented instances where he held a product hypothesis after contradictory feedback had already surfaced.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">Describes himself as open to being wrong.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">Self-report and behavior diverge specifically at the post-commitment phase. The openness is real early; it narrows once a direction is set.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>Strong in the information-gathering phase. A hypothesis worth testing: once a direction has been socialized, the cost of revising may quietly suppress the learning orientation that was clearly present earlier.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>Think of the last time you changed your mind late. What made it possible — and what usually stops you?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Decision Style</h3>
+      <span class="cpr-conf cf-high">High</span>
+    </div>
+    <p class="cpr-def">How a leader gathers input, weighs it, and commits.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Elevated Deliberative and Persistent.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">Broad input-gathering before commitment, then marked resistance to revision after — "I know the data's pointing the other way, but I already told the leadership team." The pattern recurs across two decisions.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">His "decision I'd make differently" names the mechanism directly: held a roadmap call past the point of clarity because he'd publicly committed, and attributes it to not wanting to reverse course in front of stakeholders.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">All three inputs converge — which is why confidence is High. The delay isn't slow analysis; it's the social cost of visibly reversing.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>The mechanism is the development edge: socializing a direction before the input is complete converts a working hypothesis into a social commitment prematurely, and the commitment then resists the evidence.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>What would change if you separated the moment you form a view from the moment you announce it?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Communication Patterns</h3>
+      <span class="cpr-conf cf-mod">Moderate</span>
+    </div>
+    <p class="cpr-def">How a leader's intent translates into how others actually experience them.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Lower Sociability.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">Precise, argument-driven, low small talk; visible impatience with summaries that skip the connective logic. (Corpus captures written communication only.)</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">His "misread" response is direct: partners read his directness as disapproval, and it spikes under time pressure when he skips the warmth. He experiences the same exchanges as efficiency.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">Assessment and corpus agree on the style; the reflection supplies the cost and the trigger. No conflict — a complete, consistent picture.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>The adjustment is probably not "be less direct" but "signal more explicitly that half-formed thinking is welcome before the argument is built" — and to name the time-pressure tell so partners don't misread it.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>When your message landed worse than you meant it to, what was happening in the ten minutes before you sent it?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Leadership Identity</h3>
+      <span class="cpr-conf cf-emerg">Emerging Hypothesis</span>
+    </div>
+    <p class="cpr-def">The leader a person is actively trying to become, and whether their behavior is moving toward it.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Not directly measured.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">High analytical investment; comparatively thin relational and coaching investment. Builds authority through structure and traceable reasoning.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">States the aspiration plainly: develop a team that makes good independent decisions without him in the room — while suspecting he's "still the bottleneck."</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">The central tension of the whole profile: a stated identity the corpus doesn't yet show him building the conditions for. Held as a question, not a verdict — there isn't enough behavioral input to call it.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>Worth holding open: are the behaviors that would actually produce independent decision-makers present in Jordan's week — or is the aspiration ahead of the practice?</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>If your team became more independent next quarter, what would you have to stop doing — and could you?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Adaptability</h3>
+      <span class="cpr-conf cf-mod">Moderate</span>
+    </div>
+    <p class="cpr-def">How readily a leader adjusts course as conditions change.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">High Adaptable, notably lower Agile.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">Two significant, self-initiated product pivots in eight months — real strategic adaptability. Mid-execution tactical revision appears rarer and harder.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">Doesn't address adaptability directly.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">Assessment and corpus align; the reflection is silent — so this is held as a quieter hypothesis rather than a firm read.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>Strategic adaptability appears present. Tactical adaptability — changing a specific path mid-execution — looks more constrained, consistent with the Decision Style pattern. Speed under ambiguity is the open question.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>When you've adapted well, did you have time to think — and what happens to the quality of your pivots when you don't?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Self-Awareness</h3>
+      <span class="cpr-conf cf-mod">Moderate</span>
+    </div>
+    <p class="cpr-def">The accuracy of a leader's read on their own impact — not how articulate they are about it.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Broadly aligned with reflection.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">One hypothesis worth noting: reduced pushback on a recurring cross-functional friction over time — a possible accommodation dynamic he doesn't name.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">Self-aware and non-defensive within the domains he monitors; names his own bottleneck worry unprompted.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">The delegation gap is the limit case: he describes himself as "not controlling" while the corpus shows him reclaiming delegated work. Articulateness was deliberately not allowed to inflate this rating — fluency isn't the same as accuracy.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>Genuine self-awareness within the areas he watches; a real blind spot at delegation. Moderate, not High, precisely because the fluency could otherwise mask the gap.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>Where might you be adapting to a friction you have the standing to actually fix?</div>
+  </div>
+  <div class="cpr">
+    <div class="cpr-top">
+      <h3 class="cpr-name">Development Readiness</h3>
+      <span class="cpr-conf cf-mod">Moderate</span>
+    </div>
+    <p class="cpr-def">How prepared a leader is to act on developmental insight — inferred, not assumed from participation.</p>
+    <div class="cpr-inputs">
+      <div class="cpr-row"><span class="cpr-k">Assessment</span><span class="cpr-v">Not directly measured.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Corpus</span><span class="cpr-v">Signal that prior feedback changed how he runs 1:1s — evidence that input does translate to behavior change.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Reflection</span><span class="cpr-v">Names mechanisms over outcomes; the "decision I'd make differently" doesn't outsource the difficulty to external factors — he owns it.</span></div>
+      <div class="cpr-row"><span class="cpr-k">Tension / limits</span><span class="cpr-v">Inferred from reflection quality, not from completing the process. Stronger input for cognitive development than for relational or identity work.</span></div>
+    </div>
+    <div class="cpr-impl"><span class="cpr-impl-label">Developmental implication</span>Readiness appears present for cognitive development. There's less input for relational or identity development — which is why this is Moderate rather than High, and why the roadmap sequences cognitive work first.</div>
+    <div class="cpr-q"><span class="cpr-q-mark">?</span>Which of these patterns are you ready to work on this quarter — and which are you only ready to read about?</div>
+  </div>
+  </div>
 
       <div class="summary-block">
         <div class="sb-slabel">Profile Summary — input-informed hypotheses</div>
