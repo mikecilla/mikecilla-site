@@ -494,6 +494,11 @@ body {
 .exp-topic-desc { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.7; }
 @media (max-width: 900px) { .exp-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
 @media (max-width: 600px) { #s-exploration { padding-left: 1.25rem; padding-right: 1.25rem; } }
+.exp-bridge { margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); }
+.exp-bridge-eyebrow { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bone-dim); margin-bottom: 0.65rem; }
+.exp-bridge-body { font-size: 1.15rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; margin-bottom: 0.85rem; max-width: 560px; }
+.exp-bridge-link { font-family: var(--ff-mono); font-size: 0.88rem; letter-spacing: 0.1em; color: var(--gold); text-decoration: none; transition: opacity 0.2s; }
+.exp-bridge-link:hover { opacity: 0.75; }
 
 
 /* ── LEADERSHIP OS CTA ── */
@@ -973,6 +978,13 @@ body {
       </div>
 
     </div>
+
+    <div class="exp-bridge reveal" style="transition-delay:.3s">
+      <div class="exp-bridge-eyebrow">Where this led</div>
+      <p class="exp-bridge-body">Some of these questions stopped being abstract. Leadership OS is the one I built something around — an attempt to put the AI-augmented development question in front of other people, not just keep running it on myself.</p>
+      <a href="https://leadershipos.org/" class="exp-bridge-link">Explore Leadership OS →</a>
+    </div>
+
   </div>
 </section>
 
