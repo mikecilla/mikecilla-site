@@ -107,8 +107,11 @@ body {
 .h-links { display: flex; gap: 2rem; list-style: none; }
 .h-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone-dim); text-decoration: none; transition: color 0.2s; }
 .h-links a:hover { color: var(--gold); }
-.h-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--gold); color: var(--gold); padding: 0.45rem 1.1rem; text-decoration: none; transition: all 0.2s; }
+.h-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--gold); color: var(--gold); padding: 0.45rem 1.1rem; text-decoration: none; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .h-cta:hover { background: var(--gold); color: var(--void); }
+.h-cta-los { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--gold); color: var(--void); padding: 0.45rem 1.1rem; text-decoration: none; transition: background 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+.h-cta-los:hover { background: var(--gold-light); }
+@media (max-width: 600px) { .h-cta-los { display: none; } }
 
 /* ── SECTION LABEL ── */
 .s-label { font-family: var(--ff-mono); font-size: 0.88rem; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
@@ -179,6 +182,14 @@ body {
 .cred-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
 .cred-value { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--bone); line-height: 1.1; }
 .cred-sub { font-size: 1.03rem; font-weight: 300; color: var(--bone-dim); margin-top: 0.2rem; }
+/* Linked credential tile (Leadership OS) — explicit link affordance, distinct from static tiles */
+.hero-credential-link { display: block; text-decoration: none; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+.hero-credential-link:hover { border-color: rgba(184,103,30,0.45); box-shadow: 0 4px 18px rgba(184,103,30,0.12); }
+.hero-credential-link .cred-value { transition: color 0.2s; }
+.hero-credential-link:hover .cred-value { color: var(--gold); }
+.cred-arrow { color: var(--gold); margin-left: 0.15rem; }
+.cred-link-cue { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); white-space: nowrap; transition: opacity 0.2s; }
+.hero-credential-link:hover .cred-link-cue { opacity: 0.7; }
 .hero-quote-block { border-top: 1px solid var(--rule); padding-top: 1.4rem; }
 .hero-quote-block blockquote { font-family: var(--ff-display); font-size: 1.28rem; font-style: italic; font-weight: 300; color: var(--bone-dim); line-height: 1.6; margin-bottom: 0.5rem; }
 .hero-quote-block cite { font-family: var(--ff-mono); font-size: 0.62rem; font-style: normal; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
@@ -326,7 +337,7 @@ body {
 .fn-section-title { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1rem; }
 .fn-section-title em { font-style: italic; font-weight: 700; color: var(--gold-light); }
 .fn-section-sub { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; margin-bottom: 2rem; }
-.fn-github { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(201,132,58,0.3); padding: 0.5rem 0.9rem; transition: all 0.2s; }
+.fn-github { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(201,132,58,0.3); padding: 0.5rem 0.9rem; transition: color 0.2s, border-color 0.2s; }
 .fn-github:hover { background: rgba(201,132,58,0.08); border-color: var(--gold); }
 
 .fn-entry { border-top: 1px solid var(--rule); padding-top: 2.5rem; }
@@ -520,6 +531,28 @@ body {
   .c-item:hover .c-expand { max-height: 600px; opacity: 1; }
   .c-item:hover .c-role { color: var(--gold); }
 }
+
+/* ── A11Y: focus states ── */
+a:focus-visible, button:focus-visible, .c-item:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* ── A11Y: reduced motion — disable transitions/animations, force reveal visible ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-snap-type: none !important; }
+  .reveal, .reveal-scale, .reveal-left {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
@@ -544,7 +577,10 @@ body {
     <li><a href="#s-fieldnotes">Field Notes</a></li>
     <li><a href="#s-connect">Connect</a></li>
   </ul>
-  <a href="#s-connect" class="h-cta">Let's talk</a>
+  <div style="display:flex;align-items:center;gap:0.6rem;">
+    <a href="https://leadershipos.org/" class="h-cta-los" target="_blank" rel="noopener">Leadership OS ↗</a>
+    <a href="#s-connect" class="h-cta">Let's talk</a>
+  </div>
 </header>
 
 <nav id="dot-nav" aria-label="Page sections"></nav>
@@ -572,11 +608,11 @@ body {
       <div class="cred-value">15+ years</div>
       <div class="cred-sub">People Operations, analytics, and HR technology leadership</div>
     </div>
-    <div class="hero-credential">
-      <div class="cred-label">Current exploration</div>
-      <div class="cred-value">Leadership &amp; AI</div>
-      <div class="cred-sub">Leadership reflection, AI-augmented development, and organizational design</div>
-    </div>
+    <a href="https://leadershipos.org/" class="hero-credential hero-credential-link" target="_blank" rel="noopener">
+      <div class="cred-label">Current exploration <span class="cred-arrow">↗</span></div>
+      <div class="cred-value">Leadership OS</div>
+      <div class="cred-sub">A free methodology for leaders working with AI. The project these questions led to. <span class="cred-link-cue">Explore →</span></div>
+    </a>
     <div class="hero-quote-block reveal" style="transition-delay:.5s">
       <blockquote>&ldquo;Human resources are like natural resources; they&rsquo;re often buried deep. You have to go looking for them.&rdquo;</blockquote>
       <cite>&mdash; Sir Ken Robinson</cite>
@@ -1036,7 +1072,7 @@ body {
 
             <div class="fn-coda">The technology was new. The people science wasn't.</div>
             <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-001.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
+              <a href="field-notes-001.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:background 0.2s,border-color 0.2s;">Read full entry →</a>
             </div>
 
           </div>
@@ -1195,7 +1231,7 @@ body {
 
             <div class="fn-coda">The most valuable thing the exercise produced wasn't the profile. It was the discipline of making my own thinking legible — and finding out what it looked like when someone else read it back.</div>
             <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-002.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
+              <a href="field-notes-002.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:background 0.2s,border-color 0.2s;">Read full entry →</a>
             </div>
             <div class="los-cta reveal">
               <div class="los-cta-inner">
@@ -1204,7 +1240,7 @@ body {
                   <div class="los-cta-title">Want to build your<br><em>Leadership Operating System?</em></div>
                   <div class="los-cta-desc">A free, structured methodology — one assessment, a corpus audit of your AI conversation history, and six reflection prompts. Takes about 90–120 minutes. Produces documents you'll actually use.</div>
                 </div>
-                <a href="https://leadershipos.org" class="los-cta-btn">Start the process →</a>
+                <a href="https://leadershipos.org/" class="los-cta-btn">Start the process →</a>
               </div>
             </div>
 
@@ -1242,7 +1278,7 @@ body {
             <div class="fn-coda">The most exciting part of this isn't having answers. After six fictional leaders and a few hundred lines of analysis, I have fewer answers than I started with and better questions than I knew to ask. A framework that knows what it doesn't know is the only kind worth pointing at a real person.</div>
 
             <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-003.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:all 0.2s;">Read full entry →</a>
+              <a href="field-notes-003.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:background 0.2s,border-color 0.2s;">Read full entry →</a>
             </div>
 
           </div>
@@ -1296,10 +1332,25 @@ body {
   }, { threshold: 0.05 });
   sections.forEach(function(s) { io.observe(s); });
 
-  // ── Career tap/click to expand ──
+  // ── Reveal safety net: if observers haven't fired within 3s, force everything visible ──
+  setTimeout(function() {
+    document.querySelectorAll('.reveal, .reveal-scale, .reveal-left').forEach(function(el) {
+      el.classList.add('up');
+    });
+  }, 3000);
+
+  // ── Career tap/click + keyboard to expand ──
   document.querySelectorAll('.c-item').forEach(function(item) {
-    item.addEventListener('click', function() {
-      item.classList.toggle('open');
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('role', 'button');
+    item.setAttribute('aria-expanded', 'false');
+    function toggle() {
+      var open = item.classList.toggle('open');
+      item.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    item.addEventListener('click', toggle);
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
     });
   });
 
@@ -1324,17 +1375,6 @@ body {
     });
     if (dots[0]) dots[0].classList.add('on');
   }, 80);
-
-  // ── Animated section label lines ──
-  var labelObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.style.width = '2rem';
-        labelObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.s-label::before').forEach(function(el) { labelObs.observe(el); });
 
   // ── Parallax subtle movement on hero grid background ──
   if (window.innerWidth > 900) {

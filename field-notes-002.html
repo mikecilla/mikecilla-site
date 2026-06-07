@@ -14,7 +14,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--void:#faf8f4;--deep:#f2ede6;--surface:#ffffff;--lift:#ede8e1;--bone:#1a1612;--bone-dim:rgba(26,22,18,0.62);--bone-ghost:rgba(26,22,18,0.12);--gold:#b8671e;--gold-light:#c9843a;--rule:rgba(26,22,18,0.1);--ff-display:'Cormorant Garamond',Georgia,serif;--ff-body:'Outfit',system-ui,sans-serif;--ff-mono:'JetBrains Mono',monospace;}
 html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-size:23px;line-height:1.95;font-weight:300;}
+body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-size:22px;line-height:1.95;font-weight:300;}
 #site-header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 3vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);}
 .h-mark{font-family:var(--ff-display);font-size:1.05rem;font-weight:400;letter-spacing:0.06em;color:var(--bone);text-decoration:none;}
 .h-mark span{color:var(--gold);}
@@ -81,7 +81,7 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
 .fn-page-nav{display:flex;justify-content:space-between;align-items:center;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--rule);}
 .fn-nav-link{font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;transition:color 0.2s;}
 .fn-nav-link:hover{color:var(--gold);}
-.fn-nav-all{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
+.fn-nav-all{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:background 0.2s,border-color 0.2s;}
 .fn-nav-all:hover{background:rgba(184,103,30,0.06);}
 .fn-footer{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;}
 .fn-footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:var(--bone-dim);text-decoration:none;}
@@ -111,6 +111,9 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
   .los-cta-inner { grid-template-columns: 1fr; gap: 1.25rem; }
 }
 
+/* ── A11Y: focus + reduced motion ── */
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1px;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}
 </style>
 </head>
 <body>
@@ -127,28 +130,26 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
             <span class="fn-tag">~1,100 words</span>
           </div>
 
-          <h3 class="fn-title">The Most Accurate Leadership Profile<br>I Have Ever Received.</h3>
-          <p class="fn-deck">I was trying to train an AI system to understand how I work. What came out of it was a more detailed picture of how I actually think than I'd gotten from any formal assessment process. That wasn't the point, but it was the interesting part.</p>
+          <h3 class="fn-title">The Most Accurate Leadership Profile<br>I Have Ever Received</h3>
+          <p class="fn-deck">I was trying to transfer context to an AI. What came back was a more detailed picture of how I actually think than I'd gotten from any formal assessment process.</p>
 
           <div class="fn-body">
 
-            <p>The first Field Note described how I onboarded Claude to an existing body of organizational context — treating it less like a tool and more like a new team member who needed to understand how I think before they could be genuinely useful. What I didn't fully describe was what happened in that process that I didn't plan for.</p>
-
-            <p>To transfer context effectively, I needed to make my thinking explicit. Not summarized — explicit. Not "here are my priorities" but here is how I reason through a tradeoff, here is what I've tried that didn't work, here is what quality looks like to me versus what merely adequate looks like, here is the question I run every major decision through before I commit to it.</p>
+            <p>To transfer context effectively, I needed to make my thinking explicit — not summarized, explicit. Not "here are my priorities" but here is how I reason through a tradeoff, here is what I've tried that didn't work, here is what quality looks like to me versus what adequate looks like.</p>
 
             <p>That exercise produced something I've been thinking about since.</p>
 
             <p class="fn-h2">The methodology</p>
 
-            <p>The knowledge transfer used a structured four-pass analysis of a corpus of 297 professional conversations spanning roughly three and a half years — December 2022 through early 2026. The corpus covered workforce analytics, HRIS architecture, organizational design, governance modeling, business cases, executive communications, and leadership decisions I was working through in real time.</p>
+            <p>The knowledge transfer used a structured four-pass analysis of 297 professional conversations spanning three and a half years. Strategic analysis, outbound drafting, org design, executive communications, leadership decisions worked through in real time.</p>
 
-            <p>Pass 0 was a calibration pass: classify every conversation by type, signal strength, and analytical value. 51% came back high-signal. 79% fell into strategic analysis or outbound drafting — an unusually clean corpus for behavioral extraction, because most of the low-signal noise had been filtered out by how I use AI in the first place.</p>
+            <p>Pass 0 classified every conversation by type and signal strength — 51% high-signal, 79% strategic analysis or outbound drafting. An unusually clean corpus because most noise had been filtered out by how I use AI in the first place.</p>
 
-            <p>Pass 1 extracted voice and communication architecture from 89 outbound drafting conversations — emails, leadership memos, LinkedIn writing, executive messaging. The goal was a replication guide: not a description of how I write, but a model precise enough to produce output I wouldn't need to substantially rewrite.</p>
+            <p>Pass 1 extracted voice and communication patterns from 89 outbound drafting conversations. Not a description of how I write — a model precise enough to produce output I wouldn't need to substantially rewrite.</p>
 
-            <p>Pass 2 mapped cognitive and decision frameworks. Not what I decided, but how I decided — the sequencing logic, the tradeoff patterns, the things I consistently prioritized and the things I consistently refused. Adversarial reasoning turned out to be undercounted by keyword detection; it appeared embedded throughout strategic threads, not just in the conversations explicitly framed as pressure-testing.</p>
+            <p>Pass 2 mapped cognitive and decision frameworks. Not what I decided, but how — the sequencing logic, the tradeoff patterns, what I consistently prioritized and what I consistently refused.</p>
 
-            <p>Pass 3 built the strategic domain map. HR Technology dominated at 72 conversations. Organizational design and governance followed at 29. Workforce analytics at 24. Financial modeling at 22. The concentration wasn't surprising — but seeing it enumerated made the shape of where I actually spend my thinking visible in a way that felt new.</p>
+            <p>Pass 3 built the strategic domain map. HR Technology dominated at 72 conversations. Org design and governance at 29. Workforce analytics at 24. Seeing it enumerated made the shape of where I actually spend my thinking visible in a way that felt new.</p>
 
 
             <div class="fn-infographic">
@@ -264,23 +265,15 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
 
             <p>The synthesis document that came out of the four passes was the most detailed and accurate leadership profile I have ever received. More specific than any 360 feedback I've been through. More behaviorally grounded than any coaching engagement. More honest — because it wasn't filtered through social desirability, hierarchy anxiety, or the natural tendency people have to soften what they observe about you when they know you'll read it.</p>
 
-            <p>It named things I recognized immediately: the infrastructure-before-intelligence sequencing, the compounding credibility principle, the Orchestrator identity, the six non-negotiables. But it also named things I hadn't consciously articulated — the specific rhetorical structures I use to build arguments, the precise tradeoffs I make under pressure, the places where my restraint is an active choice and the places where it might be a blind spot.</p>
-
-            <p>One finding I found genuinely clarifying: data honesty appeared as a non-negotiable across six distinct refusal patterns in the corpus. Not as a stated value — as an observed behavioral pattern. I had always thought of data honesty as a working principle. Seeing it documented as something I had actually enacted repeatedly, under different pressures, in different contexts, was different from believing it about myself.</p>
+            <p>It named things I recognized immediately: the infrastructure-before-intelligence sequencing, the compounding credibility principle. But it also named things I hadn't consciously articulated — the specific rhetorical structures I use to build arguments, the places where my restraint is an active choice and the places where it might be a blind spot.</p>
 
             <p class="fn-h2">The I/O psychology observation</p>
 
-            <p>I've spent most of my career adjacent to talent assessment — pre-employment testing, behavioral interviewing, 360 methodologies, engagement surveys. The fundamental challenge in all of it is the same: how do you get an accurate signal about how someone actually thinks and behaves, rather than how they present themselves or how observers perceive them through their own filters?</p>
+            <p>What the four-pass analysis did differently was use behavioral evidence directly. Not self-report. Not observer ratings. The actual decisions, the actual writing, the actual reasoning patterns — extracted from the work itself over a sustained period.</p>
 
-            <p>The traditional answer involves validated instruments, normed samples, structured rater training, and statistical controls for bias. All of that matters. None of it fully solves the problem.</p>
+            <p>That's not a validated assessment methodology. There's no normative sample, no inter-rater reliability. I want to be honest about what it isn't.</p>
 
-            <p>What the four-pass analysis did differently was use behavioral evidence directly. Not self-report. Not observer ratings. The actual decisions, the actual writing, the actual reasoning patterns — extracted from the work itself over a sustained period of time.</p>
-
-            <p>That's not a validated assessment methodology. There's no normative sample. There's no inter-rater reliability. You can't replicate it with a 20-minute survey. I want to be honest about what it isn't.</p>
-
-            <p>But as a way of generating self-knowledge — of making the implicit explicit, of seeing patterns in your own behavior that you don't notice from inside the day-to-day — it produced something I haven't gotten from any formal process. The closest analog in the I/O literature might be structured behavioral interviewing, where the premise is that past behavior under specific conditions is the best predictor of future behavior. This was that, applied to a longitudinal record of real conditions rather than recalled examples.</p>
-
-            <p>I don't know what to do with that observation yet. But I suspect the most interesting question it opens up isn't about AI at all — it's about what it means to have a durable, longitudinal record of how you actually think, rather than a periodic snapshot of how you describe yourself thinking.</p>
+            <p>But as a way of generating self-knowledge — making the implicit explicit, seeing patterns in your own behavior that you don't notice from inside the day-to-day — it produced something I haven't gotten from any formal process. The interesting question it opens isn't really about AI. It's about what it means to have a longitudinal record of how you actually think, rather than a periodic snapshot of how you describe yourself thinking.</p>
 
             <div class="fn-coda">The most valuable thing the exercise produced wasn't the profile. It was the discipline of making my own thinking legible — and finding out what it looked like when someone else read it back.</div>
 
@@ -293,7 +286,7 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
         <div class="los-cta-title">Want to build your<br><em>Leadership Operating System?</em></div>
         <div class="los-cta-desc">A free, structured methodology — one assessment, a corpus audit of your AI conversation history, and six reflection prompts. About 90–120 minutes. Produces documents you'll actually use.</div>
       </div>
-      <a href="https://leadershipos.org" class="los-cta-btn">Start the process →</a>
+      <a href="https://leadershipos.org/" class="los-cta-btn">Start the process →</a>
     </div>
   </div>
 

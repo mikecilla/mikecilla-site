@@ -14,7 +14,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--void:#faf8f4;--deep:#f2ede6;--surface:#ffffff;--lift:#ede8e1;--bone:#1a1612;--bone-dim:rgba(26,22,18,0.62);--bone-ghost:rgba(26,22,18,0.12);--gold:#b8671e;--gold-light:#c9843a;--rule:rgba(26,22,18,0.1);--ff-display:'Cormorant Garamond',Georgia,serif;--ff-body:'Outfit',system-ui,sans-serif;--ff-mono:'JetBrains Mono',monospace;}
 html{scroll-behavior:smooth;}
-body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-size:23px;line-height:1.95;font-weight:300;}
+body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-size:22px;line-height:1.95;font-weight:300;}
 #site-header{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 3vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);}
 .h-mark{font-family:var(--ff-display);font-size:1.05rem;font-weight:400;letter-spacing:0.06em;color:var(--bone);text-decoration:none;}
 .h-mark span{color:var(--gold);}
@@ -40,8 +40,6 @@ body{background:var(--void);color:var(--bone);font-family:var(--ff-body);font-si
 .fn-table td{font-size:1.05rem;font-weight:300;color:var(--bone-dim);padding:0.85rem 1.1rem;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.82;}
 .fn-table tr:last-child td{border-bottom:none;}
 .fn-table td:first-child{color:var(--bone);font-weight:400;white-space:nowrap;}
-/* Inline governing question block used in #002 */
-body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
 /* Infographic */
 .fn-infographic{margin:2.5rem 0;background:#131211;border:1px solid rgba(240,236,228,0.1);padding:2.25rem 2rem;}
 .fni-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;}
@@ -81,7 +79,7 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
 .fn-page-nav{display:flex;justify-content:space-between;align-items:center;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--rule);}
 .fn-nav-link{font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;transition:color 0.2s;}
 .fn-nav-link:hover{color:var(--gold);}
-.fn-nav-all{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:all 0.2s;}
+.fn-nav-all{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(184,103,30,0.3);padding:0.5rem 1rem;transition:background 0.2s,border-color 0.2s;}
 .fn-nav-all:hover{background:rgba(184,103,30,0.06);}
 .fn-footer{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;}
 .fn-footer-mark{font-family:var(--ff-display);font-size:0.95rem;color:var(--bone-dim);text-decoration:none;}
@@ -111,6 +109,9 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
   .los-cta-inner { grid-template-columns: 1fr; gap: 1.25rem; }
 }
 
+/* ── A11Y: focus + reduced motion ── */
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1px;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}
 </style>
 </head>
 <body>
@@ -130,15 +131,13 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
     </div>
 
     <h3 class="fn-title">What Happens When You Try<br>to Break Leadership OS?</h3>
-    <p class="fn-deck">The first two notes were about building something. This one is about trying to break it. Before I let myself get interested in whether Leadership OS is useful, I wanted to answer a smaller, more boring question first: does it behave the way it claims to?</p>
+    <p class="fn-deck">The first two notes were about building something. This one is about trying to break it — before getting interested in whether Leadership OS is useful, I wanted to answer a smaller question: does it behave the way it claims to?</p>
 
     <div class="fn-body">
 
-      <p>Leadership OS started as a personal experiment. I had years of professional conversations with AI tools sitting in my history, a couple of personality assessments, and a habit of reflecting in writing. The question was whether those three things — assessment data, behavioral evidence from how I actually work, and structured reflection — could be synthesized into something that described how I lead. Field Note #002 was about how unexpectedly accurate that first profile felt.</p>
+      <p>Leadership OS started as a personal experiment. Field Note #002 was about how unexpectedly accurate that first profile felt. But "felt accurate" is a trap — a profile can feel accurate because it is, or because it's vague enough to fit anyone, or because I wanted it to be right.</p>
 
-      <p>But "felt accurate" is a trap. A profile can feel accurate because it is accurate, or because it is vague enough to fit anyone, or because I wanted it to be right. The interesting version of this project doesn't start with "is it useful?" It starts with something less flattering: <em>does the methodology actually do what I say it does, or does it just produce confident-sounding text?</em></p>
-
-      <p>So before worrying about validation, usefulness, or where any of this might go, I ran a stress test. Not to make impressive reports. To create conditions where the framework might fail — and to watch what it did when the evidence got thin, contradictory, or actively unhelpful.</p>
+      <p>So I ran a stress test. Not to make impressive reports — to create conditions where the framework might fail, and watch what it did when the evidence got thin, contradictory, or actively unhelpful.</p>
 
       <p class="fn-h2">The experiment</p>
 
@@ -245,13 +244,11 @@ body .fn-body div[style*="background:#1a1917"]{background:#1a1917 !important;}
 
       <p class="fn-h2">What this doesn't mean</p>
 
-      <p>I want to be careful here, because this is exactly the point where it would be easy to overclaim.</p>
-
-      <p>This stress test does not establish that Leadership OS is <em>validated</em>. It says nothing about predictive validity. It is not evidence of psychometric quality. It supports no causal claims. I tested it against personas I invented myself — which means, at most, I established that the framework behaves consistently according to its own rules, on inputs I designed. That is a real result, but it is a modest one.</p>
+      <p>This stress test does not establish that Leadership OS is <em>validated</em>. It says nothing about predictive validity, psychometric quality, or causal claims — I tested it against personas I invented myself. At most, it established that the framework behaves consistently according to its own rules. A real result, but a modest one.</p>
 
       <div class="fn-pullquote">Internal consistency is not validation. But without internal consistency, validation isn't a conversation worth having.</div>
 
-      <p>That's the honest framing. A framework that overclaims on thin evidence can't be meaningfully validated, because you'd be validating its confidence, not its accuracy. What this exercise suggests is narrower and more foundational: the framework's confidence is calibrated to its evidence. That's the floor you have to clear before any real validation question — does this correspond to how these leaders actually operate? — even becomes askable. And that question can only be answered with real leaders, real evidence, and real outcomes over time. Not with my fictional six.</p>
+      <p>That's the floor you have to clear before the real validation question — does this correspond to how actual leaders operate? — even becomes askable. And that can only be answered with real leaders, real evidence, and real outcomes over time. Not with my fictional six.</p>
 
       <p class="fn-h2">Why I think this matters</p>
 
