@@ -122,17 +122,10 @@ body {
 .reveal-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
 .reveal-left.up { opacity: 1; transform: translateX(0); }
 /* Hover lift on cards */
-.hl-item { transition: transform 0.25s ease, border-color 0.25s ease; }
-.hl-item:hover { transform: translateX(6px); }
 .writing-item { transition: border-color 0.3s, transform 0.25s ease; }
 .writing-item:hover { transform: translateX(4px); }
-.thesis-point { transition: border-color 0.3s, transform 0.25s ease; padding-left: 1.5rem; }
-.thesis-point:hover { transform: translateX(5px); }
-.beyond-item { transition: transform 0.25s ease; }
-.beyond-item:hover { transform: translateX(5px); }
-/* Credential tile pulse on hover */
-.hero-credential { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-.hero-credential:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(26,22,18,0.1); }
+.thesis-point { padding-left: 1.5rem; }
+.thesis-point:hover { border-left-color: var(--gold); }
 /* Section label line grows in */
 .s-label::before { transition: width 0.6s cubic-bezier(.16,1,.3,1); }
 /* Gold underline sweep on nav links */
@@ -143,9 +136,8 @@ body {
 .btn-primary { position: relative; overflow: hidden; }
 .btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: rgba(255,255,255,0.15); transform: skewX(-20deg); transition: left 0.4s ease; }
 .btn-primary:hover::after { left: 150%; }
-/* Capability card border reveal */
-.cap-item { transition: background 0.2s, transform 0.2s, border-color 0.2s; }
-.cap-item:hover { transform: translateY(-2px); }
+/* Capability card */
+.cap-item { transition: background 0.2s; }
 /* Career item expand indicator */
 .c-item { transition: background 0.2s; }
 .c-item:hover .c-role { color: var(--gold); transition: color 0.2s; }
@@ -518,8 +510,8 @@ body {
   .los-cta-btn { width: fit-content; }
 }
 
-/* Field Notes: never clip on any screen size */
-#s-fieldnotes { overflow: visible !important; height: auto !important; }
+/* Field Notes and Exploration: never clip on any screen size */
+#s-fieldnotes, #s-exploration { overflow: visible !important; height: auto !important; }
 
 /* ── Desktop sticky sidebar for capabilities ── */
 @media (min-width: 901px) {
@@ -915,7 +907,7 @@ body {
 
       <div class="reveal" style="transition-delay:.1s">
         <h2 class="exp-section-title">Questions I keep<br>returning<br><em>to.</em></h2>
-        <p class="exp-section-sub">These aren't frameworks or offerings. They're the areas where I find myself doing the most thinking right now — some well-developed, some barely formed. The Field Notes section is where these ideas get worked out in public.</p>
+        <p class="exp-section-sub">These aren't frameworks or offerings. They're the areas where I've been doing the most sustained thinking — the ones that eventually led somewhere.</p>
       </div>
 
       <div class="exp-topics reveal" style="transition-delay:.2s">
@@ -923,48 +915,27 @@ body {
           <div class="exp-topic-dot"></div>
           <div>
             <div class="exp-topic-name">Leadership Reflection</div>
-            <div class="exp-topic-desc">How do leaders actually develop self-awareness over time — not from assessments, but from sustained attention to their own patterns? And what conditions make that kind of reflection possible?</div>
+            <div class="exp-topic-desc">How leaders develop self-awareness over time — not from assessments, but from sustained attention to their own patterns. What conditions make that kind of reflection possible, and what makes it stick.</div>
           </div>
         </div>
         <div class="exp-topic">
           <div class="exp-topic-dot"></div>
           <div>
             <div class="exp-topic-name">Leadership Operating Systems</div>
-            <div class="exp-topic-desc">The idea that each leader has a kind of operating model — a set of principles, tendencies, defaults, and blind spots that govern how they function. Most people have one. Very few have ever made it explicit.</div>
+            <div class="exp-topic-desc">Each leader has an operating model — a set of principles, tendencies, defaults, and blind spots that govern how they function. Most people have one. Very few have made it explicit.</div>
           </div>
         </div>
         <div class="exp-topic">
           <div class="exp-topic-dot"></div>
           <div>
             <div class="exp-topic-name">AI-Augmented Development</div>
-            <div class="exp-topic-desc">What happens when an AI system accumulates longitudinal context about how someone thinks and decides — not as a surveillance tool, but as a reflection partner? I've been running this experiment on myself for three years.</div>
+            <div class="exp-topic-desc">What happens when an AI system accumulates longitudinal context about how someone thinks and decides — not as a surveillance tool, but as a reflection partner. I've been running this experiment on myself for three years.</div>
           </div>
         </div>
         <div class="exp-topic">
           <div class="exp-topic-dot"></div>
           <div>
-            <div class="exp-topic-name">Knowledge Management &amp; Self-Knowledge</div>
-            <div class="exp-topic-desc">The gap between what leaders know about themselves formally (assessments, 360s) and what they actually know experientially (decisions under pressure, patterns over time) seems significant and underexplored.</div>
-          </div>
-        </div>
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">Organizational Design</div>
-            <div class="exp-topic-desc">How organizations structure themselves for decision-making, accountability, and execution. The intersection of individual leadership patterns and organizational systems — how each shapes the other.</div>
-          </div>
-        </div>
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">Human-Centered Technology</div>
-            <div class="exp-topic-desc">As AI becomes more embedded in how work gets done, the organizational and human questions become more important — not less. What does it mean to design for the person, not just the workflow?</div>
-          </div>
-        </div>
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">Static vs. Dynamic Development</div>
+            <div class="exp-topic-name">Continuous vs. Episodic Development</div>
             <div class="exp-topic-desc">Most leadership development is episodic — a workshop, an assessment, a coaching engagement. The interesting question is what continuous development looks like, and whether AI changes the answer.</div>
           </div>
         </div>
@@ -972,7 +943,7 @@ body {
           <div class="exp-topic-dot"></div>
           <div>
             <div class="exp-topic-name">Decision Making Under Ambiguity</div>
-            <div class="exp-topic-desc">Not decision frameworks — those are everywhere. The actual experience of making consequential decisions without enough information, and what separates people who do it well from people who don't.</div>
+            <div class="exp-topic-desc">Not frameworks — those are everywhere. The actual experience of making consequential decisions without enough information, and what separates the people who do it well.</div>
           </div>
         </div>
       </div>
@@ -1009,13 +980,11 @@ body {
           </div>
 
           <h3 class="fn-title">I Didn't Adopt an AI Tool.<br>I Accidentally Built an AI Team.</h3>
-          <p class="fn-deck">Something I didn't plan for happened while trying to transfer context between AI tools. Turned out to be more interesting than the original task.</p>
+          <p class="fn-deck">Something I didn't plan for happened while trying to transfer context between AI tools. It turned out to be more interesting than the original task.</p>
 
           <div class="fn-body">
 
-            <p>It started the way most useful things do: without a plan.</p>
-
-            <p>About two and a half years into my role as VP of People Operations, I realized I had been having a running conversation with an AI — ChatGPT, at the time — about nearly every significant work challenge I was navigating. Workforce analytics. HRIS architecture. Org design. Business cases. Executive communications. Leadership decisions I wasn't ready to talk through with anyone inside the organization.</p>
+            <p>About two and a half years into my role as VP of People Operations, I realized I had been having a running conversation with an AI — ChatGPT, at the time — about nearly every significant work challenge I was navigating. Org design. Business cases. Executive communications. Leadership decisions I wasn't ready to talk through with anyone inside the organization.</p>
 
             <p>Somewhere in all of that, I had accumulated something I hadn't set out to build: a living record of how I think.</p>
 
@@ -1025,17 +994,13 @@ body {
 
             <p>When I started working with Claude — which has genuinely different strengths — I hit the same wall every organization hits when a key employee leaves: the new person is capable, but they don't have the context. They don't know the history. They don't know how you think, what you've already tried, or what matters.</p>
 
-            <p>So I did what I would have done with a new director joining my team. I onboarded Claude.</p>
-
-            <p>Not by uploading files. By transferring knowledge the way knowledge actually transfers — with documentation, examples of quality work, communication preferences, recurring priorities, historical context, and calibration over time. I shared how I make decisions. What I care about. Where I've been burned. What kinds of outputs I find useful and what reads as generic to me.</p>
+            <p>So I did what I would have done with a new director joining my team. I onboarded Claude — not by uploading files, but by transferring knowledge the way knowledge actually transfers. How I make decisions. What I care about. Where I've been burned. What reads as generic to me.</p>
 
             <p>It worked. But what happened in the process was more interesting than I expected.</p>
 
             <p class="fn-h2">AI Job-Skill Fit: A Classic I/O Problem</p>
 
-            <p>One of the foundational concepts in Industrial-Organizational Psychology is person-job fit — the idea that performance improves when an individual's capabilities align well with what the role actually requires. Hire for the wrong fit and you get friction, underperformance, and frustration regardless of raw capability.</p>
-
-            <p>What I noticed, gradually, was that the same principle applied to AI systems.</p>
+            <p>One of the foundational concepts in I/O Psychology is person-job fit — the idea that performance improves when an individual's capabilities align well with what the role actually requires. What I noticed, gradually, was that the same principle applied to AI systems.</p>
 
             <div class="fn-table-wrap"><table class="fn-table">
               <thead>
@@ -1053,29 +1018,21 @@ body {
 
             <p>Different tools. Different fit profiles. Different jobs. The right response wasn't to pick one — it was to understand what each was actually good at, assign accordingly, and manage the handoffs between them. Which is, again, exactly what you'd do with a team of people.</p>
 
-            <p class="fn-h2">The Unexpected Output: A Leadership User Manual</p>
+            <p class="fn-h2">The Unexpected Output</p>
 
-            <p>Here's the part I didn't anticipate.</p>
+            <p>To transfer context effectively, Claude had to analyze and articulate how I think. Communication patterns. Decision preferences. Leadership tendencies. What I find motivating. Where I tend to overcomplicate.</p>
 
-            <p>To transfer context effectively, Claude had to do something unusual: it had to analyze and articulate how I think. Communication patterns. Decision preferences. Leadership tendencies. What I find motivating. Where I tend to overcomplicate. How I process ambiguity. What quality looks like to me versus what adequate looks like.</p>
-
-            <p>What emerged from that process was the most detailed and accurate leadership profile I have ever received. More nuanced than any 360 feedback I've been through. More honest than most coaching conversations. Grounded in actual behavioral evidence rather than survey responses.</p>
+            <p>What emerged was the most detailed and accurate leadership profile I have ever received — more nuanced than any 360 I've been through, grounded in actual behavioral evidence rather than survey responses.</p>
 
             <div class="fn-pullquote">I was attempting to train an AI. The AI ended up training me.</div>
 
-            <p>Not in a mystical sense. In a very practical one: the act of making my thinking legible to a system that needed explicit context forced a level of self-reflection that implicit, accumulated organizational knowledge never demands.</p>
+            <p>Not in a mystical sense. The act of making my thinking legible to a system that needed explicit context forced a level of self-reflection that implicit organizational knowledge never demands.</p>
 
             <p class="fn-h2">What I Took From It</p>
 
-            <p>The biggest surprise wasn't how much work AI could absorb. It was how much organizational psychology still mattered.</p>
+            <p>The biggest surprise wasn't how much work AI could absorb. It was how much organizational psychology still mattered. Onboarding. Role clarity. Knowledge transfer. Job-skill fit. Every concept that governs how humans integrate into organizations turned out to apply — with remarkable fidelity — to how AI systems integrate into a leadership operating model.</p>
 
-            <p>Onboarding. Role clarity. Capability development. Knowledge transfer. Performance enablement. Job-skill fit. Every concept that governs how humans integrate into organizations turned out to apply — with remarkable fidelity — to how AI systems integrate into a leadership operating model.</p>
-
-            <p>That probably shouldn't be surprising. The underlying challenge in both cases is the same: you have a capable system, and the question is whether the context, structure, and role definition around it are good enough for that capability to actually show up.</p>
-
-            <p>Most organizations that struggle with AI adoption aren't struggling because the technology is insufficient. They're struggling because they've skipped the organizational work that would make the technology useful. They've bought the hire before building the job.</p>
-
-            <p>I've spent fifteen years arguing that HR should function more like an engineering discipline. It turns out the inverse is also true: AI adoption, done well, looks a lot like good people management.</p>
+            <p>Most organizations struggling with AI adoption aren't struggling because the technology is insufficient. They've skipped the organizational work that would make the technology useful. They've bought the hire before building the job.</p>
 
             <div class="fn-coda">The technology was new. The people science wasn't.</div>
             <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
@@ -1091,28 +1048,26 @@ body {
             <span class="fn-tag">~1,100 words</span>
           </div>
 
-          <h3 class="fn-title">The Most Accurate Leadership Profile<br>I Have Ever Received.</h3>
-          <p class="fn-deck">I was trying to train an AI system to understand how I work. What came out of it was a more detailed picture of how I actually think than I'd gotten from any formal assessment process. That wasn't the point, but it was the interesting part.</p>
+          <h3 class="fn-title">The Most Accurate Leadership Profile<br>I Have Ever Received</h3>
+          <p class="fn-deck">I was trying to transfer context to an AI. What came back was a more detailed picture of how I actually think than I'd gotten from any formal assessment process.</p>
 
           <div class="fn-body">
 
-            <p>The first Field Note described how I onboarded Claude to an existing body of organizational context — treating it less like a tool and more like a new team member who needed to understand how I think before they could be genuinely useful. What I didn't fully describe was what happened in that process that I didn't plan for.</p>
-
-            <p>To transfer context effectively, I needed to make my thinking explicit. Not summarized — explicit. Not "here are my priorities" but here is how I reason through a tradeoff, here is what I've tried that didn't work, here is what quality looks like to me versus what merely adequate looks like, here is the question I run every major decision through before I commit to it.</p>
+            <p>To transfer context effectively, I needed to make my thinking explicit — not summarized, explicit. Not "here are my priorities" but here is how I reason through a tradeoff, here is what I've tried that didn't work, here is what quality looks like to me versus what adequate looks like.</p>
 
             <p>That exercise produced something I've been thinking about since.</p>
 
             <p class="fn-h2">The methodology</p>
 
-            <p>The knowledge transfer used a structured four-pass analysis of a corpus of 297 professional conversations spanning roughly three and a half years — December 2022 through early 2026. The corpus covered workforce analytics, HRIS architecture, organizational design, governance modeling, business cases, executive communications, and leadership decisions I was working through in real time.</p>
+            <p>The knowledge transfer used a structured four-pass analysis of 297 professional conversations spanning three and a half years. Strategic analysis, outbound drafting, org design, executive communications, leadership decisions worked through in real time.</p>
 
-            <p>Pass 0 was a calibration pass: classify every conversation by type, signal strength, and analytical value. 51% came back high-signal. 79% fell into strategic analysis or outbound drafting — an unusually clean corpus for behavioral extraction, because most of the low-signal noise had been filtered out by how I use AI in the first place.</p>
+            <p>Pass 0 classified every conversation by type and signal strength — 51% high-signal, 79% strategic analysis or outbound drafting. An unusually clean corpus because most noise had been filtered out by how I use AI in the first place.</p>
 
-            <p>Pass 1 extracted voice and communication architecture from 89 outbound drafting conversations — emails, leadership memos, LinkedIn writing, executive messaging. The goal was a replication guide: not a description of how I write, but a model precise enough to produce output I wouldn't need to substantially rewrite.</p>
+            <p>Pass 1 extracted voice and communication patterns from 89 outbound drafting conversations. Not a description of how I write — a model precise enough to produce output I wouldn't need to substantially rewrite.</p>
 
-            <p>Pass 2 mapped cognitive and decision frameworks. Not what I decided, but how I decided — the sequencing logic, the tradeoff patterns, the things I consistently prioritized and the things I consistently refused. Adversarial reasoning turned out to be undercounted by keyword detection; it appeared embedded throughout strategic threads, not just in the conversations explicitly framed as pressure-testing.</p>
+            <p>Pass 2 mapped cognitive and decision frameworks. Not what I decided, but how — the sequencing logic, the tradeoff patterns, what I consistently prioritized and what I consistently refused.</p>
 
-            <p>Pass 3 built the strategic domain map. HR Technology dominated at 72 conversations. Organizational design and governance followed at 29. Workforce analytics at 24. Financial modeling at 22. The concentration wasn't surprising — but seeing it enumerated made the shape of where I actually spend my thinking visible in a way that felt new.</p>
+            <p>Pass 3 built the strategic domain map. HR Technology dominated at 72 conversations. Org design and governance at 29. Workforce analytics at 24. Seeing it enumerated made the shape of where I actually spend my thinking visible in a way that felt new.</p>
 
 
             <div class="fn-infographic">
@@ -1228,23 +1183,15 @@ body {
 
             <p>The synthesis document that came out of the four passes was the most detailed and accurate leadership profile I have ever received. More specific than any 360 feedback I've been through. More behaviorally grounded than any coaching engagement. More honest — because it wasn't filtered through social desirability, hierarchy anxiety, or the natural tendency people have to soften what they observe about you when they know you'll read it.</p>
 
-            <p>It named things I recognized immediately: the infrastructure-before-intelligence sequencing, the compounding credibility principle, the Orchestrator identity, the six non-negotiables. But it also named things I hadn't consciously articulated — the specific rhetorical structures I use to build arguments, the precise tradeoffs I make under pressure, the places where my restraint is an active choice and the places where it might be a blind spot.</p>
-
-            <p>One finding I found genuinely clarifying: data honesty appeared as a non-negotiable across six distinct refusal patterns in the corpus. Not as a stated value — as an observed behavioral pattern. I had always thought of data honesty as a working principle. Seeing it documented as something I had actually enacted repeatedly, under different pressures, in different contexts, was different from believing it about myself.</p>
+            <p>It named things I recognized immediately: the infrastructure-before-intelligence sequencing, the compounding credibility principle. But it also named things I hadn't consciously articulated — the specific rhetorical structures I use to build arguments, the places where my restraint is an active choice and the places where it might be a blind spot.</p>
 
             <p class="fn-h2">The I/O psychology observation</p>
 
-            <p>I've spent most of my career adjacent to talent assessment — pre-employment testing, behavioral interviewing, 360 methodologies, engagement surveys. The fundamental challenge in all of it is the same: how do you get an accurate signal about how someone actually thinks and behaves, rather than how they present themselves or how observers perceive them through their own filters?</p>
+            <p>What the four-pass analysis did differently was use behavioral evidence directly. Not self-report. Not observer ratings. The actual decisions, the actual writing, the actual reasoning patterns — extracted from the work itself over a sustained period.</p>
 
-            <p>The traditional answer involves validated instruments, normed samples, structured rater training, and statistical controls for bias. All of that matters. None of it fully solves the problem.</p>
+            <p>That's not a validated assessment methodology. There's no normative sample, no inter-rater reliability. I want to be honest about what it isn't.</p>
 
-            <p>What the four-pass analysis did differently was use behavioral evidence directly. Not self-report. Not observer ratings. The actual decisions, the actual writing, the actual reasoning patterns — extracted from the work itself over a sustained period of time.</p>
-
-            <p>That's not a validated assessment methodology. There's no normative sample. There's no inter-rater reliability. You can't replicate it with a 20-minute survey. I want to be honest about what it isn't.</p>
-
-            <p>But as a way of generating self-knowledge — of making the implicit explicit, of seeing patterns in your own behavior that you don't notice from inside the day-to-day — it produced something I haven't gotten from any formal process. The closest analog in the I/O literature might be structured behavioral interviewing, where the premise is that past behavior under specific conditions is the best predictor of future behavior. This was that, applied to a longitudinal record of real conditions rather than recalled examples.</p>
-
-            <p>I don't know what to do with that observation yet. But I suspect the most interesting question it opens up isn't about AI at all — it's about what it means to have a durable, longitudinal record of how you actually think, rather than a periodic snapshot of how you describe yourself thinking.</p>
+            <p>But as a way of generating self-knowledge — making the implicit explicit, seeing patterns in your own behavior that you don't notice from inside the day-to-day — it produced something I haven't gotten from any formal process. The interesting question it opens isn't really about AI. It's about what it means to have a longitudinal record of how you actually think, rather than a periodic snapshot of how you describe yourself thinking.</p>
 
             <div class="fn-coda">The most valuable thing the exercise produced wasn't the profile. It was the discipline of making my own thinking legible — and finding out what it looked like when someone else read it back.</div>
             <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
@@ -1272,13 +1219,13 @@ body {
           </div>
 
           <h3 class="fn-title">What Happens When You Try<br>to Break Leadership OS?</h3>
-          <p class="fn-deck">The first two notes were about building something. This one is about trying to break it. Before I let myself get interested in whether Leadership OS is useful, I wanted to answer a smaller, more boring question first: does it behave the way it claims to?</p>
+          <p class="fn-deck">The first two notes were about building something. This one is about trying to break it — before getting interested in whether Leadership OS is useful, I wanted to answer a smaller question: does it behave the way it claims to?</p>
 
           <div class="fn-body">
 
-            <p>Leadership OS started as a personal experiment — assessment data, behavioral evidence from how I actually work, and structured reflection, synthesized into something that described how I lead. Field Note #002 was about how unexpectedly accurate that first profile felt. But "felt accurate" is a trap. A profile can feel accurate because it is, or because it's vague enough to fit anyone, or because I wanted it to be right.</p>
+            <p>Leadership OS started as a personal experiment. Field Note #002 was about how unexpectedly accurate that first profile felt. But "felt accurate" is a trap — a profile can feel accurate because it is, or because it's vague enough to fit anyone, or because I wanted it to be right.</p>
 
-            <p>So before worrying about validation or usefulness, I ran a stress test. Not to make impressive reports — to create conditions where the framework might fail, and watch what it did when the evidence got thin, contradictory, or actively unhelpful. I built six synthetic leaders, each one a small trap: a new manager with strong reflection but almost no AI history; an experienced executive with a rich behavioral record but hollow self-reflection; a burned-out high performer; a technical founder fluent in systems and silent on people; a highly reflective coach-type whose eloquence could fool a system into over-rating her; and a skeptical operator who gave terse, minimal answers because he didn't really want to be there.</p>
+            <p>So I ran a stress test. Not to make impressive reports — to create conditions where the framework might fail, and watch what it did when the evidence got thin, contradictory, or actively unhelpful. I built six synthetic leaders, each one a small trap: a new manager with strong reflection but almost no AI history; an experienced executive with a rich behavioral record but hollow self-reflection; a burned-out high performer; a technical founder fluent in systems and silent on people; a highly reflective coach-type whose eloquence could fool a system into over-rating her; and a skeptical operator who gave terse, minimal answers because he didn't really want to be there.</p>
 
             <p class="fn-pullquote">The thing I was most hoping to see was the framework saying, in effect, "I don't have enough to go on." It said that a lot. That was the good news.</p>
 
@@ -1290,7 +1237,7 @@ body {
 
             <p class="fn-pullquote">Internal consistency is not validation. But without internal consistency, validation isn't a conversation worth having.</p>
 
-            <p>I want to be careful here. This stress test does not establish that Leadership OS is validated. It says nothing about predictive validity, it's not evidence of psychometric quality, and it supports no causal claims — I tested it against personas I invented myself. At most, it established that the framework behaves consistently according to its own rules. That's a modest result, but it's the floor you have to clear before the real validation question — does this correspond to how actual leaders operate? — even becomes askable. And that can only be answered with real leaders, real evidence, and real outcomes over time.</p>
+            <p>This stress test does not establish that Leadership OS is validated. It says nothing about predictive validity, psychometric quality, or causal claims — I tested it against personas I invented myself. At most, it established that the framework behaves consistently according to its own rules. That's a modest result, but it's the floor you have to clear before the real question — does this correspond to how actual leaders operate? — even becomes askable.</p>
 
             <div class="fn-coda">The most exciting part of this isn't having answers. After six fictional leaders and a few hundred lines of analysis, I have fewer answers than I started with and better questions than I knew to ask. A framework that knows what it doesn't know is the only kind worth pointing at a real person.</div>
 
