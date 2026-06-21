@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -4 316 64" role="img" aria-label="Leadership OS">
+  <title>Leadership OS</title>
+  <g transform="translate(6,28)">
+    <line x1="-14" y1="-11" x2="0" y2="0" stroke="#cfc7ba" stroke-width="1.3"/>
+    <line x1="14" y1="-11" x2="0" y2="0" stroke="#cfc7ba" stroke-width="1.3"/>
+    <line x1="0" y1="16" x2="0" y2="0" stroke="#cfc7ba" stroke-width="1.3"/>
+    <circle cx="0" cy="0" r="6.5" fill="none" stroke="#b8671e" stroke-width="1.2" stroke-dasharray="2.3 2.7"/>
+    <circle cx="-14" cy="-11" r="2.9" fill="#6b5bd1"/>
+    <circle cx="14" cy="-11" r="2.9" fill="#2e9e7e"/>
+    <circle cx="0" cy="16" r="2.9" fill="#b8671e"/>
+  </g>
+  <text x="42" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="34" font-weight="300" fill="#1a1612">Leadership <tspan font-weight="700" font-style="italic" fill="#b8671e">OS</tspan></text>
+</svg>
