@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mike Cilla — Resume 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #141917;
+    --ink-mid: #3a3d47;
+    --ink-light: #6b6f7a;
+    --ink-faint: #9ea3af;
+    --accent: #085041;
+    --accent-mid: #0f6e56;
+    --accent-light: #e9f2ee;
+    --accent-rule: #1d9e75;
+    --warm: #0f6e56;
+    --warm-light: #e9f2ee;
+    --page: #f4f5f2;
+    --sidebar: #141917;
+    --sidebar-text: #d9dcd6;
+    --sidebar-muted: #8a8d96;
+    --sidebar-accent: #1d9e75;
+    --rule: #d9dcd6;
+  }
+
+  html { font-size: 15px; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--page);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 1020px;
+    min-height: 1320px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    background: white;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {
+    background: var(--sidebar);
+    color: var(--sidebar-text);
+    padding: 2.5rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar-name {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 2.1rem;
+    line-height: 1.15;
+    color: white;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.5px;
+  }
+
+  .sidebar-cred {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--sidebar-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+  }
+
+  .sidebar-contact {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .sidebar-contact a, .sidebar-contact span {
+    font-size: 0.8rem;
+    color: var(--sidebar-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.15s;
+  }
+
+  .sidebar-contact a:hover { color: var(--sidebar-accent); }
+
+  .contact-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .sidebar-section {
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--sidebar-accent);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(58,154,184,0.3);
+  }
+
+  .skill-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--sidebar-muted);
+    padding: 0.25rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    width: 100%;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .tech-item {
+    margin-bottom: 0.7rem;
+  }
+  .tech-label {
+    font-size: 0.68rem;
+    color: var(--sidebar-accent);
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+  }
+  .tech-value {
+    font-size: 0.76rem;
+    color: var(--sidebar-muted);
+    line-height: 1.5;
+  }
+
+  .cert-item {
+    font-size: 0.76rem;
+    color: var(--sidebar-muted);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    line-height: 1.4;
+  }
+  .cert-item:last-child { border-bottom: none; }
+  .cert-item strong {
+    display: block;
+    color: var(--sidebar-text);
+    font-weight: 500;
+    font-size: 0.77rem;
+  }
+
+  .pub-item {
+    font-size: 0.74rem;
+    color: var(--sidebar-muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .pub-item:last-child { border-bottom: none; }
+
+  /* ─── MAIN ─── */
+  .main {
+    padding: 2.5rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .headline-bar {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .headline-title {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1.15rem;
+    color: var(--accent);
+    letter-spacing: 0.3px;
+    margin-bottom: 0.7rem;
+    font-style: italic;
+  }
+
+  .headline-summary {
+    font-size: 0.87rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .headline-summary strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .section { margin-bottom: 1.8rem; }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.63rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .job { margin-bottom: 1.5rem; }
+
+  .job-header {
+    margin-bottom: 0.3rem;
+  }
+
+  .job-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .job-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.2px;
+  }
+
+  .job-dates {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+
+  .job-company-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.15rem;
+  }
+
+  .job-company {
+    font-size: 0.83rem;
+    color: var(--accent-mid);
+    font-weight: 500;
+  }
+
+  .job-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+  }
+
+  .job-location {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  .job-context {
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .job-promo {
+    font-size: 0.77rem;
+    color: var(--warm);
+    background: var(--warm-light);
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+  }
+
+  .job-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .job-bullets li {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    padding-left: 1.1rem;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .job-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent-rule);
+    font-size: 0.75rem;
+  }
+
+  .job-bullets li strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .earlier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .earlier-item {
+    padding: 0.7rem 0.8rem;
+    background: var(--accent-light);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-rule);
+  }
+
+  .earlier-item-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+
+  .earlier-item-sub {
+    font-size: 0.74rem;
+    color: var(--ink-light);
+    line-height: 1.4;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; width: 100%; }
+  }
+</style>
+<style>::selection{background:#0f6e56;color:#f4f5f2}</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-name">Mike<br>Cilla</div>
+    <div class="sidebar-cred">M.S. &nbsp;·&nbsp; SHRM-CP</div>
+
+    <div class="sidebar-contact">
+      <a href="tel:2398485791">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        (239) 848-5791
+      </a>
+      <a href="mailto:mikejcilla@gmail.com">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        mikejcilla@gmail.com
+      </a>
+      <a href="https://mikecilla.com">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+        mikecilla.com
+      </a>
+      <a href="https://linkedin.com/in/michaelcilla">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/michaelcilla
+      </a>
+      <span>
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Austin, TX
+      </span>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Core Skills</div>
+      <span class="skill-tag">HR Strategy &amp; Org Design</span>
+      <span class="skill-tag">HRIS Implementation &amp; Architecture</span>
+      <span class="skill-tag">People Analytics &amp; Data Governance</span>
+      <span class="skill-tag">CoE Design &amp; Team Scaling</span>
+      <span class="skill-tag">Workforce Planning &amp; PMO</span>
+      <span class="skill-tag">HR Operations &amp; Shared Services</span>
+      <span class="skill-tag">Performance Management Design</span>
+      <span class="skill-tag">HRBP &amp; Executive Partnership</span>
+      <span class="skill-tag">Change Management</span>
+      <span class="skill-tag">HR Tech Advisory &amp; Evaluation</span>
+      <span class="skill-tag">I-O Psychology &amp; Behavioral Science</span>
+      <span class="skill-tag">Job Architecture &amp; Compensation</span>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Technology</div>
+      <div class="tech-item">
+        <div class="tech-label">HRIS / ATS</div>
+        <div class="tech-value">UKG Ready · Workday · Namely · iCIMS · Greenhouse</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">Analytics</div>
+        <div class="tech-value">Praisidio · One Model · Tableau · BigQuery · Power BI</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">Project &amp; Ops</div>
+        <div class="tech-value">Asana · Smartsheet · M365 · Google Workspace</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">Research</div>
+        <div class="tech-value">Qualtrics · Google Forms</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Education</div>
+      <div class="cert-item">
+        <strong>M.S. Industrial-Organizational Psychology</strong>
+        San Jose State University, 2011
+      </div>
+      <div class="cert-item">
+        <strong>B.A. Psychology</strong>
+        Florida Gulf Coast University · Magna Cum Laude
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Credentials</div>
+      <div class="cert-item">
+        <strong>SHRM-CP</strong>
+        Society for Human Resource Management
+      </div>
+      <div class="cert-item">
+        <strong>HR Management Certificate</strong>
+        University of Texas at Austin
+      </div>
+      <div class="cert-item">
+        <strong>Organizational Leadership</strong>
+        Northwestern University
+      </div>
+      <div class="cert-item">
+        <strong>Gamification Certification</strong>
+        University of Pennsylvania
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Publications</div>
+      <div class="pub-item">Exploring the Relationship Between Organizational Citizenship Behavior and Organizational Climates for Creativity</div>
+      <div class="pub-item">What Makes a Great Pre-Employment Assessment?</div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="headline-bar">
+      <div class="headline-title">VP People Operations &amp; Strategy &nbsp;·&nbsp; HR Systems &amp; Analytics &nbsp;·&nbsp; People Function Builder</div>
+      <p class="headline-summary">
+        I build people functions that actually work — <strong>operationally, analytically, and strategically.</strong> Thirteen years across startups, multinationals, CPG, and public sector: standing up teams from scratch, leading enterprise HRIS implementations, designing analytics infrastructure, and translating people data into decisions leadership acts on. Grounded in <strong>I-O Psychology</strong>, effective as an internal CoE architect, an <strong>HR technology advisor</strong> who's lived on both sides of the product, or a <strong>first Head of People</strong> for a company ready to invest in the function seriously.
+      </p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="section-label">Experience</div>
+
+      <!-- Central Health -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-row">
+            <span class="job-title">Vice President, People Operations, Planning &amp; Systems</span>
+            <span class="job-dates">Jul 2023 – Present</span>
+          </div>
+          <div class="job-company-row">
+            <span class="job-company">Central Health</span>
+            <span class="job-dot"></span>
+            <span class="job-location">Austin, TX &nbsp;·&nbsp; Travis County Healthcare District, ~2,200 employees</span>
+          </div>
+          <div class="job-context">Public safety-net health system, multi-entity structure (CH, CUC, SHP/Sendero)</div>
+          <div class="job-promo">↑ Promoted: Enterprise Sr. Director, HR Strategy &amp; Analytics (Jul 2023) → VP (Dec 2024)</div>
+        </div>
+        <ul class="job-bullets">
+          <li>Designed and scaled a <strong>four-pillar People Operations Center of Excellence</strong> — Shared Services, Systems &amp; Data, Analytics, and Strategy &amp; Planning — modeled on <strong>Gartner's HR Operating Model of the Future</strong>; grew the function from 3 to 13 FTEs over three years through a structured, board-defensible business case process.</li>
+          <li>Led enterprise <strong>HRIS implementation of UKG Ready</strong> across three legal entities, navigating a complex multi-entity go-live and driving post-implementation stabilization including position-job architecture remediation and a data governance SOP achieving 99% system accuracy.</li>
+          <li>Architected the <strong>people data and analytics infrastructure</strong> — Praisidio, iCIMS, UKG Ready — and launched the organization's first self-service analytics program, enabling data-driven talent decisions at scale for HRBPs and operational leaders.</li>
+          <li>Built and operationalized a multi-year <strong>HR Strategic Plan</strong> including workforce planning frameworks, PMO governance, and a performance management redesign using RAPID decision-rights methodology to eliminate systemic failure modes.</li>
+          <li>Developed progressive <strong>business cases to Finance and executive leadership</strong> using tiered ROI frameworks and capacity modeling — successfully securing headcount, reclassifications, and systems investment across three consecutive budget cycles.</li>
+        </ul>
+      </div>
+
+      <!-- Juul -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-row">
+            <span class="job-title">Director, HR Strategy &amp; Insights</span>
+            <span class="job-dates">Feb 2019 – Jan 2023</span>
+          </div>
+          <div class="job-company-row">
+            <span class="job-company">Juul Labs</span>
+            <span class="job-dot"></span>
+            <span class="job-location">Austin, TX &nbsp;·&nbsp; ~1,550 employees, $1B+ revenue</span>
+          </div>
+          <div class="job-context">Global CPG / consumer products — navigated both hypergrowth and significant organizational contraction</div>
+          <div class="job-promo">↑ HR Business Partner → Sr. HRBP → Sr. Manager, HR Strategy &amp; Insights → Director</div>
+        </div>
+        <ul class="job-bullets">
+          <li>Built and led the <strong>HR Strategy &amp; Insights CoE</strong> as internal consultant to the SVP, Head of HR — primary SME for all people data and analytics across the full employee lifecycle.</li>
+          <li>Implemented <strong>One Model</strong> as enterprise HR analytics platform; led Workday optimization roadmap and Workday–Greenhouse two-way integration; partnered with data engineering to establish real-time people analytics via Google BigQuery and Tableau.</li>
+          <li>Served as Sr. HRBP for <strong>Global Commercial (~600 employees, 15+ VP-level clients)</strong> through regulatory pressure, leadership transitions, and multiple restructures.</li>
+          <li>Rare experience maintaining <strong>HR operational continuity and data integrity through both hypergrowth and contraction</strong> — a navigational range few practitioners have at the same organization.</li>
+        </ul>
+      </div>
+
+      <!-- Namely -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-row">
+            <span class="job-title">HR Consultant, Managed Services</span>
+            <span class="job-dates">Jun 2017 – Feb 2019</span>
+          </div>
+          <div class="job-company-row">
+            <span class="job-company">Namely</span>
+            <span class="job-dot"></span>
+            <span class="job-location">Austin, TX &nbsp;·&nbsp; SaaS HR Technology, ~$7M ARR book of business</span>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>One of first consultants hired to <strong>define and build the Managed Services practice</strong> — developed SOPs, case management systems, SLAs, and knowledge-base content from scratch.</li>
+          <li>Consulted executives across <strong>10–700 employee organizations</strong> on HR compliance, operations, and technology — building deep practitioner credibility in HR tech adoption from the vendor side.</li>
+        </ul>
+      </div>
+
+      <!-- Victory -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-row">
+            <span class="job-title">HR Director</span>
+            <span class="job-dates">Feb 2014 – Mar 2016</span>
+          </div>
+          <div class="job-company-row">
+            <span class="job-company">Victory Marketing Agency</span>
+            <span class="job-dot"></span>
+            <span class="job-location">Fort Myers, FL &nbsp;·&nbsp; ~50 employees, $10M revenue</span>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li><strong>Built the entire people function from scratch</strong> — took company off PEO, selected and implemented HRIS, secured benefits, audited compliance, and designed a competency-based performance management system.</li>
+        </ul>
+      </div>
+
+      <!-- Global HR Research -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title-row">
+            <span class="job-title">Talent Acquisition &amp; Assessment Manager</span>
+            <span class="job-dates">Sep 2012 – Feb 2014</span>
+          </div>
+          <div class="job-company-row">
+            <span class="job-company">Global HR Research</span>
+            <span class="job-dot"></span>
+            <span class="job-location">Fort Myers, FL &nbsp;·&nbsp; Pre-employment screening BPO</span>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Built a new <strong>pre-employment assessment division</strong> from feasibility study to Board presentation to market launch — owned full commercial lifecycle from demo through account management.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- EARLIER -->
+    <div class="section">
+      <div class="section-label">Earlier Experience</div>
+      <div class="earlier-grid">
+        <div class="earlier-item">
+          <div class="earlier-item-title">L&amp;D Consultant — Electronic Arts</div>
+          <div class="earlier-item-sub">2011–2012 · Corporate university, 8,000 employees, 19 global locations · MBA-style learning design for high-potential senior managers</div>
+        </div>
+        <div class="earlier-item">
+          <div class="earlier-item-title">Co-Founder — Talentology</div>
+          <div class="earlier-item-sub">2013–2014 · Game-based personality assessment HR tech startup · VC-backed through Plug &amp; Play accelerator, San Jose</div>
+        </div>
+        <div class="earlier-item">
+          <div class="earlier-item-title">HR Advisor — Multiple Startups</div>
+          <div class="earlier-item-sub">2016–2017 · GasPedal, Javelin Networks, Interviewed (acq. by Indeed) · Strategic and operational HR advisory</div>
+        </div>
+        <div class="earlier-item">
+          <div class="earlier-item-title">Adjunct Instructor — FGCU / Heritage</div>
+          <div class="earlier-item-sub">2012–2016 · Upper-level psychology electives · Applied Psychology in Healthcare Settings capstone course</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

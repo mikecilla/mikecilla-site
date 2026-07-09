@@ -4,560 +4,282 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mike Cilla — People Operations & Organizational Transformation</title>
-<meta name="description" content="Executive leader at the intersection of People Operations, Workforce Analytics, and Organizational Strategy. M.S. I/O Psychology. Austin, TX.">
+<meta name="description" content="People Operations, workforce analytics, and organizational design. Fifteen years building people functions that actually work. M.S. I/O Psychology. Austin, TX.">
+<link rel="canonical" href="https://mikecilla.com/">
+<link rel="icon" type="image/svg+xml" sizes="16x16" href="favicon-16.svg">
+<link rel="icon" type="image/svg+xml" sizes="512x512" href="favicon-512.svg">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mike Cilla — People Operations & Organizational Transformation">
+<meta property="og:description" content="People Operations, workforce analytics, and organizational design. Fifteen years building people functions that actually work.">
+<meta property="og:url" content="https://mikecilla.com/">
+<meta property="og:image" content="https://mikecilla.com/photo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mike Cilla — People Operations & Organizational Transformation">
+<meta name="twitter:description" content="People Operations, workforce analytics, and organizational design. Fifteen years building people functions that actually work.">
+<meta name="twitter:image" content="https://mikecilla.com/photo.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{
-  --void:#faf8f4;
-  --deep:#f2ede6;
-  --surface:#ffffff;
-  --lift:#ede8e1;
-  --bone:#1a1612;
-  --bone-dim:rgba(26,22,18,0.62);
-  --bone-ghost:rgba(26,22,18,0.12);
-  --gold:#b8671e;
-  --gold-light:#c9843a;
-  --rule:rgba(26,22,18,0.1);
-  --ff-display:'Cormorant Garamond',Georgia,serif;
-  --ff-body:'Outfit',system-ui,sans-serif;
-  --ff-mono:'JetBrains Mono',monospace;
+  --paper:#f4f5f2;
+  --paper-2:#eceee9;
+  --ink:#16181a;
+  --ink-dim:rgba(22,24,26,0.68);
+  --ink-faint:rgba(22,24,26,0.45);
+  --rule:#d5d9d2;
+  --rule-heavy:#16181a;
+  --petrol:#0f6e56;
+  --petrol-deep:#085041;
+  --dark:#141917;
+  --dark-rule:#2c332e;
+  --dark-text:#e8eae5;
+  --dark-dim:#a8afa8;
+  --dark-faint:#7d857e;
+  --petrol-lt:#5dcaa5;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+  --serif:'Newsreader',Georgia,serif;
+  --mono:'IBM Plex Mono',monospace;
 }
 
-/* ── BASE ── */
-html { scroll-behavior: smooth; }
-body {
-  background: var(--void);
-  color: var(--bone);
-  font-family: var(--ff-body);
-  font-size: 22px;
-  line-height: 2.05;
-  font-weight: 300;
+html{scroll-behavior:smooth;scroll-snap-type:y proximity;scroll-padding-top:56px}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.7;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* ── DESKTOP: full-page snap ── */
-@media (min-width: 901px) {
-  html { scroll-snap-type: y mandatory; overflow-y: scroll; height: 100%; }
-  body { height: 100%; }
-  .snap {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  #dot-nav { display: flex; }
-}
+.wrap{max-width:1120px;margin:0 auto;padding-left:clamp(1.25rem,5vw,4rem);padding-right:clamp(1.25rem,5vw,4rem)}
 
-/* ── MOBILE: normal scroll ── */
-@media (max-width: 900px) {
-  .snap {
-    width: 100%;
-    position: relative;
-    padding-top: calc(56px + 2.5rem);
-    padding-bottom: 3.5rem;
-    overflow: visible;
-    height: auto;
-    min-height: 0;
-  }
-  #dot-nav { display: none; }
-  /* Field Notes is long-form — give it extra breathing room */
-  #s-fieldnotes {
-    padding-top: calc(56px + 2.5rem);
-    padding-bottom: 5rem;
-  }
-}
+::selection{background:var(--petrol);color:var(--paper)}
 
-/* ── DOT NAV (desktop only) ── */
-#dot-nav {
-  position: fixed;
-  right: 1.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 300;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-.dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(240,236,228,0.2);
-  border: none; cursor: pointer; padding: 0;
-  transition: background 0.3s, transform 0.3s;
-}
-.dot.on { background: var(--gold); transform: scale(1.5); }
+/* ── TYPE ROLES ── */
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol)}
+.display{font-weight:600;letter-spacing:-0.022em;line-height:1.04;color:var(--ink)}
 
 /* ── HEADER ── */
-#site-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  padding: 1.1rem 3vw;
-  display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 1px solid var(--rule);
-  background: rgba(250,248,244,0.94);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+#site-header{
+  position:sticky;top:0;z-index:100;
+  scroll-snap-align:none;
+  background:rgba(244,245,242,0.92);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
 }
-.h-mark { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 400; letter-spacing: 0.06em; color: var(--bone); text-decoration: none; }
-.h-mark span { color: var(--gold); }
-.h-links { display: flex; gap: 2rem; list-style: none; }
-.h-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone-dim); text-decoration: none; transition: color 0.2s; }
-.h-links a:hover { color: var(--gold); }
-.h-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--gold); color: var(--gold); padding: 0.45rem 1.1rem; text-decoration: none; transition: background 0.2s, color 0.2s, border-color 0.2s; }
-.h-cta:hover { background: var(--gold); color: var(--void); }
-.h-cta-los { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--gold); color: var(--void); padding: 0.45rem 1.1rem; text-decoration: none; transition: background 0.2s; display: flex; align-items: center; gap: 0.4rem; }
-.h-cta-los:hover { background: var(--gold-light); }
-.h-logo-los { display:flex; align-items:center; text-decoration:none; transition:opacity 0.2s; }
-.h-logo-los:hover { opacity:0.7; }
-@media (max-width: 600px) { .h-logo-los { display:none; } }
+.h-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-top:0.9rem;padding-bottom:0.9rem}
+.h-mark{font-weight:600;font-size:1rem;letter-spacing:-0.01em;color:var(--ink);text-decoration:none}
+.h-mark span{color:var(--petrol)}
+.h-links{display:flex;gap:1.6rem;list-style:none}
+.h-links a{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;transition:color .2s}
+.h-links a:hover{color:var(--petrol)}
+.h-cta{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;background:var(--petrol);color:var(--paper);padding:0.5rem 1rem;text-decoration:none;transition:background .2s;border-radius:2px}
+.h-cta:hover{background:var(--petrol-deep)}
+@media(max-width:840px){.h-links{display:none}}
 
-@media (max-width: 600px) { .h-cta-los { display: none; } }
+/* ── SECTION FRAME ── */
+section{
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  scroll-snap-align:start;
+  padding-top:4.5rem;
+  padding-bottom:4.5rem;
+}
+section > .wrap{width:100%}
+.sec-head{display:flex;align-items:baseline;gap:1.1rem;margin-bottom:2.75rem;position:relative}
+.sec-idx{font-family:var(--mono);font-size:2rem;font-weight:400;letter-spacing:-0.02em;line-height:1;color:var(--petrol);flex-shrink:0;position:relative;top:0.25rem}
+@media(min-width:1320px){.sec-idx{position:absolute;right:100%;top:-0.35rem;margin-right:1.75rem;font-size:2.6rem}}
+.sec-name{font-family:var(--mono);font-size:0.78rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);flex-shrink:0}
+.sec-rule{flex:1;height:1px;background:var(--rule);position:relative;top:-4px}
+.band .sec-name{color:var(--dark-dim)}
+.band .sec-idx{color:var(--petrol-lt)}
+.band .sec-rule{background:var(--dark-rule)}
 
-/* ── SECTION LABEL ── */
-.s-label { font-family: var(--ff-mono); font-size: 0.88rem; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
-.s-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); opacity: 0.5; }
+.cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2.5rem,5vw,5rem);align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr;gap:2.25rem}}
+
+/* ── HERO ── */
+#s-hero{padding-top:4rem;padding-bottom:4rem}
+.hero-doc{font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol);margin-bottom:1.6rem}
+.hero-doc .sep{color:var(--ink-faint);margin:0 .35rem}
+.hero-h{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:600;letter-spacing:-0.028em;line-height:1.02;color:var(--ink);max-width:14ch}
+.hero-h em{font-style:normal;color:var(--petrol)}
+.hero-lede{font-size:1.14rem;line-height:1.75;color:var(--ink-dim);max-width:52ch;margin-top:1.6rem}
+.btn-row{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2.2rem}
+.btn{display:inline-block;background:var(--petrol);color:var(--paper);font-family:var(--mono);font-size:0.74rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:0.85rem 1.5rem;text-decoration:none;transition:background .2s;border-radius:2px}
+.btn:hover{background:var(--petrol-deep)}
+.btn-ghost{display:inline-block;border:1px solid var(--ink-faint);color:var(--ink-dim);background:transparent;font-family:var(--mono);font-size:0.74rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:0.78rem 1.5rem;text-decoration:none;transition:border-color .2s,color .2s;border-radius:2px}
+.btn-ghost:hover{border-color:var(--petrol);color:var(--petrol)}
+
+/* hero spec block */
+.spec{width:100%;border-collapse:collapse}
+.spec caption{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-faint);text-align:left;padding-bottom:0.6rem}
+.spec tr{border-top:1px solid var(--rule)}
+.spec tr:last-child{border-bottom:1px solid var(--rule)}
+.spec td{padding:0.72rem 0;vertical-align:baseline}
+.spec .k{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);width:38%;padding-right:1rem}
+.spec .v{font-size:0.96rem;font-weight:500;color:var(--ink)}
+.spec .v small{display:block;font-size:0.85rem;font-weight:400;color:var(--ink-dim);margin-top:0.1rem}
+.spec a{color:var(--petrol);text-decoration:none}
+.spec a:hover{text-decoration:underline}
+
+/* ── RULED ENTRIES (selected work, writing, questions) ── */
+.entry{display:grid;grid-template-columns:3.4rem minmax(0,1fr);gap:1.25rem;padding:1.4rem 0;border-top:1px solid var(--rule)}
+.entries .entry:last-child{border-bottom:1px solid var(--rule)}
+.e-idx{font-family:var(--mono);font-size:0.72rem;color:var(--ink-faint);padding-top:0.3rem}
+.e-title{font-size:1.12rem;font-weight:600;letter-spacing:-0.01em;line-height:1.35;color:var(--ink);margin-bottom:0.35rem}
+.e-body{font-size:0.98rem;color:var(--ink-dim);line-height:1.7;max-width:64ch}
+a.entry{text-decoration:none;transition:background .2s}
+a.entry:hover{background:var(--paper-2)}
+a.entry .e-title{transition:color .2s}
+a.entry:hover .e-title{color:var(--petrol)}
+.e-tag{font-family:var(--mono);font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--petrol);margin-bottom:0.4rem}
+.e-arrow{font-family:var(--mono);font-size:0.85rem;color:var(--petrol);align-self:center;padding-left:1rem}
+.side-title{font-size:clamp(1.9rem,3.4vw,2.8rem)}
+.side-sub{font-size:1.05rem;color:var(--ink-dim);line-height:1.75;margin-top:1.1rem;max-width:44ch}
+.side-note{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.08em;color:var(--ink-faint);margin-top:1.6rem;line-height:2}
+
+/* ── POINT OF VIEW (serif interior) ── */
+#s-pov{background:var(--paper-2)}
+.pq{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.45rem,2.6vw,2rem);line-height:1.42;color:var(--ink);max-width:24ch}
+.pq strong{font-style:normal;font-weight:500;color:var(--petrol);display:block;margin-top:1rem;font-size:0.85em}
+@media(min-width:901px){.pov-left{position:sticky;top:6rem}}
+.pov-point{border-top:1px solid var(--rule);padding:1.5rem 0}
+.pov-points .pov-point:last-child{border-bottom:1px solid var(--rule)}
+.pov-label{font-family:var(--mono);font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--petrol);margin-bottom:0.5rem}
+.pov-head{font-size:1.14rem;font-weight:600;letter-spacing:-0.01em;line-height:1.35;margin-bottom:0.5rem}
+.pov-body{font-family:var(--serif);font-size:1.06rem;line-height:1.72;color:var(--ink-dim);max-width:58ch}
+
+/* ── CAPABILITIES SPEC TABLE ── */
+.cap-domain{margin-bottom:2.6rem}
+.cap-domain:last-child{margin-bottom:0}
+.cap-dl{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol);padding-bottom:0.55rem;border-bottom:2px solid var(--rule-heavy)}
+.cap-row{display:grid;grid-template-columns:3.4rem minmax(0,220px) minmax(0,1fr);gap:1rem;padding:0.8rem 0;border-top:1px solid var(--rule)}
+.cap-row:first-of-type{border-top:none}
+.cap-idx{font-family:var(--mono);font-size:0.7rem;color:var(--ink-faint);padding-top:0.2rem}
+.cap-name{font-size:0.98rem;font-weight:600;letter-spacing:-0.005em}
+.cap-desc{font-size:0.92rem;color:var(--ink-dim);line-height:1.6}
+@media(max-width:720px){.cap-row{grid-template-columns:3.4rem 1fr}.cap-desc{grid-column:2}}
+.values-line{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);margin-top:1.4rem;line-height:2.1}
+.values-line b{color:var(--petrol);font-weight:500}
+
+/* ── DARK BANDS ── */
+.band{background:var(--dark);color:var(--dark-text)}
+.band ::selection{background:var(--petrol-lt);color:var(--dark)}
+
+/* ── CAREER LEDGER ── */
+.led-intro{font-size:1.05rem;color:var(--dark-dim);line-height:1.75;max-width:60ch;margin-bottom:2.5rem}
+.led-row{border-top:1px solid var(--dark-rule)}
+.led-rows .led-row:last-child{border-bottom:1px solid var(--dark-rule)}
+.led-line{display:grid;grid-template-columns:6rem minmax(0,180px) minmax(0,1fr) auto;gap:1.25rem;align-items:baseline;padding:1.1rem 0;cursor:pointer;transition:background .2s}
+.led-line:hover{background:rgba(255,255,255,0.025)}
+.led-period{font-family:var(--mono);font-size:0.72rem;color:var(--dark-faint)}
+.led-org{font-size:1rem;font-weight:600;color:var(--dark-text)}
+.led-org small{display:block;font-size:0.72rem;font-weight:400;color:var(--dark-faint);letter-spacing:0.02em}
+.led-role{font-size:0.94rem;color:var(--dark-dim);line-height:1.55}
+.led-plus{font-family:var(--mono);font-size:0.9rem;color:var(--petrol-lt);transition:transform .3s;padding:0 0.25rem}
+.led-row.open .led-plus{transform:rotate(45deg)}
+.led-x{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1)}
+.led-row.open .led-x{max-height:900px}
+.led-x-inner{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;padding:0.4rem 0 1.8rem 7.25rem}
+@media(max-width:840px){
+  .led-line{grid-template-columns:1fr auto;grid-template-rows:auto auto auto;gap:0.2rem 1rem}
+  .led-period{grid-column:1}
+  .led-plus{grid-row:1;grid-column:2}
+  .led-x-inner{grid-template-columns:1fr;padding-left:0;gap:1.5rem}
+}
+.led-ol{font-family:var(--mono);font-size:0.64rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol-lt);margin-bottom:0.6rem}
+.led-x ul{list-style:none}
+.led-x li{font-size:0.9rem;color:var(--dark-dim);line-height:1.65;padding:0.3rem 0 0.3rem 1.1rem;position:relative}
+.led-x li::before{content:'—';position:absolute;left:0;color:var(--dark-faint)}
+.led-note{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;color:var(--dark-faint);grid-column:1/-1}
+
+/* ── FIELD NOTES ── */
+.fn-meta{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--petrol);display:flex;gap:1.25rem;flex-wrap:wrap;margin-bottom:0.6rem}
+.fn-meta .m{color:var(--ink-faint)}
+.fn-title{font-size:1.35rem;font-weight:600;letter-spacing:-0.015em;line-height:1.3;margin-bottom:0.5rem}
+.fn-deck{font-family:var(--serif);font-size:1.08rem;line-height:1.7;color:var(--ink-dim);max-width:60ch}
+.fn-entry{border-top:1px solid var(--rule);padding:1.9rem 0;display:block;text-decoration:none;color:inherit;transition:background .2s}
+.fn-list .fn-entry:last-child{border-bottom:1px solid var(--rule)}
+.fn-entry:hover{background:var(--paper-2)}
+.fn-entry:hover .fn-title{color:var(--petrol)}
+.fn-title{transition:color .2s}
+.fn-read{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--petrol);margin-top:0.9rem;display:inline-block}
+
+/* ── LOS BRIDGE ── */
+.bridge{border:1px solid var(--rule);border-top:2px solid var(--rule-heavy);background:#fdfdfc;padding:2rem clamp(1.25rem,3vw,2.5rem);margin-top:3rem;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center}
+@media(max-width:720px){.bridge{grid-template-columns:1fr}}
+.bridge-eyebrow{font-family:var(--mono);font-size:0.66rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol);margin-bottom:0.5rem}
+.bridge-body{font-size:1rem;color:var(--ink-dim);line-height:1.7;max-width:56ch}
+.bridge-body b{color:var(--ink);font-weight:600}
+
+/* ── BEYOND ── */
+.beyond-photo{border:1px solid var(--rule);background:#fdfdfc;padding:0.6rem}
+.beyond-photo img{display:block;width:100%;height:auto;filter:saturate(0.92)}
+.beyond-cap{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);padding:0.6rem 0.2rem 0.1rem}
+.beyond-item{border-top:1px solid var(--rule);padding:1.4rem 0}
+.beyond-items .beyond-item:last-child{border-bottom:1px solid var(--rule)}
+.b-title{font-size:1.08rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.4rem}
+.b-body{font-family:var(--serif);font-size:1.02rem;color:var(--ink-dim);line-height:1.72;max-width:58ch}
+
+/* ── CONNECT ── */
+#s-connect{padding-top:4.5rem;padding-bottom:3rem}
+.connect-h{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:600;letter-spacing:-0.025em;line-height:1.05;color:var(--dark-text)}
+.connect-h em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--petrol-lt)}
+.connect-sub{font-size:1.05rem;color:var(--dark-dim);line-height:1.75;max-width:52ch;margin-top:1.25rem}
+.connect-grid{margin-top:2.75rem;border-top:1px solid var(--dark-rule)}
+.connect-cell{display:grid;grid-template-columns:9rem minmax(0,1fr) auto;gap:1.25rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--dark-rule);text-decoration:none;transition:background .2s}
+.connect-cell:hover{background:rgba(255,255,255,0.025)}
+.cc-label{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--dark-faint)}
+.cc-value{font-size:0.98rem;font-weight:500;color:var(--dark-text);transition:color .2s}
+.connect-cell:hover .cc-value{color:var(--petrol-lt)}
+.cc-arrow{font-family:var(--mono);font-size:0.85rem;color:var(--petrol-lt)}
+@media(max-width:600px){.connect-cell{grid-template-columns:1fr auto}.cc-label{grid-column:1/-1}}
+.disclaimer{font-size:0.78rem;color:var(--dark-faint);line-height:1.7;max-width:70ch;margin-top:3rem}
+.footer-line{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;color:var(--dark-faint);margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--dark-rule)}
+
+/* ── SIGNATURE DEVICES ── */
+.tdot{color:var(--petrol)}
+a.entry:hover,.fn-entry:hover{box-shadow:inset 2px 0 0 var(--petrol)}
+a.entry,.fn-entry{padding-left:0;transition:background .2s,box-shadow .2s,padding-left .2s}
+a.entry:hover,.fn-entry:hover{padding-left:0.85rem}
+
+/* ── DOCUMENT CHROME: spine + corner marks ── */
+#spine{position:fixed;left:1.15rem;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:var(--mono);font-size:0.62rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:#8a8f8a;z-index:60;pointer-events:none;display:none;white-space:nowrap}
+@media(min-width:1320px){#spine{display:block}}
+.crop{position:fixed;width:13px;height:13px;z-index:60;pointer-events:none;display:none;border-color:rgba(138,143,138,0.65)}
+@media(min-width:900px){.crop{display:block}}
+.c-tl{top:11px;left:11px;border-top:1px solid;border-left:1px solid}
+.c-tr{top:11px;right:11px;border-top:1px solid;border-right:1px solid}
+.c-bl{bottom:11px;left:11px;border-bottom:1px solid;border-left:1px solid}
+.c-br{bottom:11px;right:11px;border-bottom:1px solid;border-right:1px solid}
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); }
-.reveal.up { opacity: 1; transform: translateY(0); }
-.reveal-scale { opacity: 0; transform: scale(0.96) translateY(16px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
-.reveal-scale.up { opacity: 1; transform: scale(1) translateY(0); }
-.reveal-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
-.reveal-left.up { opacity: 1; transform: translateX(0); }
-/* Hover lift on cards */
-.writing-item { transition: border-color 0.3s, transform 0.25s ease; }
-.writing-item:hover { transform: translateX(4px); }
-.thesis-point { padding-left: 1.5rem; }
-.thesis-point:hover { border-left-color: var(--gold); }
-/* Section label line grows in */
-.s-label::before { transition: width 0.6s cubic-bezier(.16,1,.3,1); }
-/* Gold underline sweep on nav links */
-.h-links a { position: relative; }
-.h-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s ease; }
-.h-links a:hover::after { width: 100%; }
-/* Button shine effect */
-.btn-primary { position: relative; overflow: hidden; }
-.btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: rgba(255,255,255,0.15); transform: skewX(-20deg); transition: left 0.4s ease; }
-.btn-primary:hover::after { left: 150%; }
-/* Capability card */
-.cap-item { transition: background 0.2s; }
-/* Career item expand indicator */
-.c-item { transition: background 0.2s; }
-.c-item:hover .c-role { color: var(--gold); transition: color 0.2s; }
-/* Writing arrow slide */
-.wi-arrow { transition: opacity 0.2s, transform 0.3s cubic-bezier(.16,1,.3,1); }
-/* Dot nav dot bounce */
-.dot { transition: background 0.3s, transform 0.4s cubic-bezier(.34,1.56,.64,1); }
-.dot.on { transform: scale(1.6); }
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
 
-/* ── BUTTONS ── */
-.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--void); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
-.btn-primary:hover { background: var(--gold-light); }
-.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--bone-ghost); color: var(--bone-dim); padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
-.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-
-/* ════════════════════════
-   1 — HERO
-════════════════════════ */
-#s-hero {
-  background: var(--void);
-  padding: calc(64px + 4vw) 6vw 4vw;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 5rem;
-}
-#s-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(26,22,18,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(26,22,18,0.03) 1px,transparent 1px); background-size: 60px 60px; pointer-events: none; }
-.hero-kicker { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-.hero-kicker::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
-.hero-name { font-family: var(--ff-display); font-size: clamp(4rem,7vw,7rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.01em; color: var(--bone); }
-.hero-name .last { font-weight: 700; font-style: italic; display: block; }
-.hero-name .dot { color: var(--gold); }
-.hero-title { font-family: var(--ff-display); font-size: clamp(1.05rem,1.6vw,1.35rem); font-weight: 300; font-style: italic; color: var(--bone-dim); border-left: 2px solid var(--gold); padding-left: 1.1rem; margin: 1.25rem 0 2rem; line-height: 1.55; }
-.hero-statement { font-size: 1.28rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; max-width: 480px; margin-bottom: 2.5rem; }
-.hero-right { display: flex; flex-direction: column; gap: 1.25rem; }
-.hero-credential { border: 1px solid var(--rule); padding: 1.4rem; background: var(--surface); position: relative; box-shadow: 0 1px 3px rgba(26,22,18,0.06); }
-.hero-credential::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); }
-.cred-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
-.cred-value { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--bone); line-height: 1.1; }
-.cred-sub { font-size: 1.03rem; font-weight: 300; color: var(--bone-dim); margin-top: 0.2rem; }
-/* Linked credential tile (Leadership OS) — explicit link affordance, distinct from static tiles */
-.hero-credential-link { display: block; text-decoration: none; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
-.hero-credential-link:hover { border-color: rgba(184,103,30,0.45); box-shadow: 0 4px 18px rgba(184,103,30,0.12); }
-.hero-credential-link .cred-value { transition: color 0.2s; }
-.hero-credential-link:hover .cred-value { color: var(--gold); }
-.cred-arrow { color: var(--gold); margin-left: 0.15rem; }
-.cred-link-cue { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); white-space: nowrap; transition: opacity 0.2s; }
-.hero-credential-link:hover .cred-link-cue { opacity: 0.7; }
-.hero-quote-block { border-top: 1px solid var(--rule); padding-top: 1.4rem; }
-.hero-quote-block blockquote { font-family: var(--ff-display); font-size: 1.28rem; font-style: italic; font-weight: 300; color: var(--bone-dim); line-height: 1.6; margin-bottom: 0.5rem; }
-.hero-quote-block cite { font-family: var(--ff-mono); font-size: 0.62rem; font-style: normal; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
-
-/* ════════════════════════
-   2 — HIGHLIGHTS
-════════════════════════ */
-#s-highlights { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
-.hl-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
-.hl-headline { font-family: var(--ff-display); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
-.hl-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.hl-intro { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; }
-.hl-items { display: flex; flex-direction: column; }
-.hl-item { border-top: 1px solid var(--rule); padding: 1.5rem 0; display: grid; grid-template-columns: 2.25rem 1fr; gap: 1.25rem; align-items: start; }
-.hl-num { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); opacity: 0.6; padding-top: 0.2rem; }
-.hl-title { font-family: var(--ff-display); font-size: 1.32rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.4rem; }
-.hl-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
-
-/* ════════════════════════
-   3 — WRITING
-════════════════════════ */
-#s-writing { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
-.writing-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: 6rem; align-items: start; }
-.writing-headline { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
-.writing-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.writing-sub { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; }
-.writing-items { display: flex; flex-direction: column; }
-.writing-item { border-top: 1px solid var(--rule); padding: 1.75rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; transition: border-color 0.3s; }
-.writing-item:hover { border-top-color: rgba(201,132,58,0.35); }
-.writing-item:hover .wi-title { color: var(--gold-light); }
-.wi-tag { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; opacity: 0.8; }
-.wi-title { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.5rem; transition: color 0.2s; }
-.wi-body { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
-.wi-arrow { font-size: 1.25rem; color: var(--gold); opacity: 0.5; padding-top: 0.3rem; align-self: center; transition: opacity 0.2s, transform 0.2s; }
-.writing-item:hover .wi-arrow { opacity: 1; transform: translateX(4px); }
-
-/* ════════════════════════
-   4 — THESIS
-════════════════════════ */
-#s-thesis { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
-.thesis-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-.thesis-pullquote { font-family: var(--ff-display); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 300; font-style: italic; line-height: 1.2; color: var(--bone); position: relative; padding-top: 1.5rem; }
-.thesis-pullquote::before { content: ''; position: absolute; top: 0; left: 0; width: 3rem; height: 2px; background: var(--gold); }
-.thesis-pullquote strong { font-weight: 700; font-style: normal; color: var(--gold-light); display: block; font-size: 0.85em; }
-.thesis-points { display: flex; flex-direction: column; gap: 1.75rem; }
-.thesis-point { padding-left: 1.5rem; border-left: 1px solid var(--rule); transition: border-color 0.3s; }
-.thesis-point:hover { border-left-color: var(--gold); }
-.tp-label { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
-.tp-headline { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; color: var(--bone); line-height: 1.25; margin-bottom: 0.45rem; }
-.tp-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
-
-/* ════════════════════════
-   5 — CAPABILITIES
-════════════════════════ */
-#s-capabilities { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
-.cap-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
-.cap-intro-text { position: static; }
-.cap-headline { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.5rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1.25rem; }
-.cap-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.cap-sub { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
-.cap-values { display: flex; flex-direction: column; margin-top: 2rem; }
-.cap-value { font-family: var(--ff-mono); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone); padding: 0.5rem 0; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 0.5rem; }
-.cap-value::before { content: '▸'; color: var(--gold); font-size: 0.5rem; }
-.cap-domains { display: flex; flex-direction: column; gap: 2.5rem; }
-.cap-domain-label { font-family: var(--ff-mono); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
-.cap-domain-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-.cap-items { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(26,22,18,0.15); }
-.cap-item { background: var(--surface); padding: 1.35rem; transition: background 0.2s, transform 0.2s; }
-.cap-item:hover { background: var(--deep); }
-.cap-item-name { font-size: 1.25rem; font-weight: 500; color: var(--bone); margin-bottom: 0.3rem; }
-.cap-item-desc { font-size: 1.03rem; font-weight: 300; color: var(--bone-dim); line-height: 1.65; }
-
-/* ════════════════════════
-   6 — CAREER
-════════════════════════ */
-#s-career { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
-.career-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; margin-bottom: 3rem; align-items: end; }
-.career-big { font-family: var(--ff-display); font-size: clamp(2.5rem,4.5vw,5rem); font-weight: 700; line-height: 0.95; color: var(--bone); }
-.career-big em { font-style: italic; color: var(--gold-light); display: block; }
-.career-desc { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; max-width: 540px; }
-.career-items { display: flex; flex-direction: column; }
-.c-item { border-top: 1px solid var(--rule); display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2.25rem 0; cursor: pointer; }
-
-/* ── CAREER LOGOS ── */
-.c-logo { width: 52px; height: 52px; object-fit: contain; opacity: 0.75; display: block; margin-top: 0.5rem; filter: grayscale(20%); transition: opacity 0.2s; }
-.c-item:hover .c-logo { opacity: 1; }
-.c-logo-wrap { display: flex; flex-direction: column; gap: 0.35rem; }
-.c-period { font-family: var(--ff-mono); font-size: 0.88rem; letter-spacing: 0.12em; color: rgba(240,236,228,0.35); margin-bottom: 0.4rem; }
-.c-org { font-size: 1.03rem; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
-.c-org-full { font-size: 0.95rem; font-weight: 300; color: rgba(240,236,228,0.3); margin-bottom: 0.2rem; font-style: italic; }
-.c-type { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); }
-.c-role { font-family: var(--ff-display); font-size: 1.55rem; font-weight: 600; color: var(--bone); line-height: 1.2; margin-bottom: 0.65rem; }
-.c-lead { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; margin-bottom: 0.75rem; }
-.c-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
-.chip { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--rule); color: var(--bone-dim); padding: 0.25rem 0.65rem; }
-.chip.gold { border-color: rgba(184,103,30,0.4); color: var(--gold); font-weight: 500; }
-.c-expand { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(.16,1,.3,1), opacity 0.4s ease; }
-.c-item.open .c-expand { max-height: 600px; opacity: 1; }
-.c-expand-inner { padding-top: 0.85rem; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.c-outcomes-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
-.c-outcomes ul { list-style: none; }
-.c-outcomes li { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; padding-left: 1rem; position: relative; margin-bottom: 0.35rem; }
-.c-outcomes li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.72rem; }
-
-/* ════════════════════════
-   7 — BEYOND WORK
-════════════════════════ */
-#s-beyond { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
-.beyond-photo { margin-bottom: 2rem; }
-.beyond-photo img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--gold); opacity: 0.92; display: block; }
-.beyond-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-.beyond-headline { font-family: var(--ff-display); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 300; line-height: 1.05; color: var(--bone); margin-bottom: 1.5rem; }
-.beyond-headline em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.beyond-intro { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
-.beyond-right { display: flex; flex-direction: column; }
-.beyond-item { border-top: 1px solid var(--rule); padding: 1.4rem 0; display: grid; grid-template-columns: 3rem 1fr; gap: 1.25rem; align-items: start; }
-.beyond-icon { font-size: 1.4rem; padding-top: 0.1rem; line-height: 1; }
-.beyond-item-title { font-family: var(--ff-display); font-size: 1.32rem; font-weight: 600; color: var(--bone); margin-bottom: 0.35rem; line-height: 1.2; }
-.beyond-item-body { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
-
-/* ════════════════════════
-   8 — CONNECT
-════════════════════════ */
-#s-connect { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-top: 1px solid var(--rule); }
-.connect-eyebrow { font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-.connect-headline { font-family: var(--ff-display); font-size: clamp(3rem,5.5vw,5.5rem); font-weight: 300; font-style: italic; line-height: 1.0; color: var(--bone); margin-bottom: 0.2em; }
-.connect-headline strong { font-weight: 700; font-style: normal; color: var(--gold-light); }
-.connect-sub { font-size: 1.28rem; font-weight: 300; color: var(--bone-dim); max-width: 520px; margin: 1.5rem auto 3rem; line-height: 2.0; }
-.connect-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); max-width: 680px; width: 100%; margin-bottom: 3rem; }
-.connect-cell { background: var(--deep); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; transition: background 0.2s; }
-.connect-cell:hover { background: var(--lift); }
-.cc-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,236,228,0.3); }
-.cc-value { font-size: 1.25rem; font-weight: 400; color: var(--bone); transition: color 0.2s; }
-.connect-cell:hover .cc-value { color: var(--gold); }
-.disclaimer { font-size: 0.95rem; color: rgba(240,236,228,0.22); max-width: 520px; line-height: 1.7; font-style: italic; margin-bottom: 2rem; }
-.footer-line { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(240,236,228,0.15); }
-
-
-/* ════════════════════════
-   FIELD NOTES
-════════════════════════ */
-#s-fieldnotes { background: var(--void); padding: calc(64px + 2vw) 6vw 4vw; }
-.fn-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: 6rem; align-items: start; }
-.fn-intro-head { position: static; }
-.fn-section-title { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1rem; }
-.fn-section-title em { font-style: italic; font-weight: 700; color: var(--gold-light); }
-.fn-section-sub { font-size: 1.08rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; margin-bottom: 2rem; }
-.fn-github { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(201,132,58,0.3); padding: 0.5rem 0.9rem; transition: color 0.2s, border-color 0.2s; }
-.fn-github:hover { background: rgba(201,132,58,0.08); border-color: var(--gold); }
-
-.fn-entry { border-top: 1px solid var(--rule); padding-top: 2.5rem; }
-.fn-meta { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-.fn-number { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
-.fn-tag { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone-dim); border: 1px solid var(--rule); padding: 0.2rem 0.55rem; }
-.fn-title { font-family: var(--ff-display); font-size: clamp(1.6rem,2.5vw,2.4rem); font-weight: 600; color: var(--bone); line-height: 1.15; margin-bottom: 0.75rem; }
-.fn-deck { font-family: var(--ff-display); font-size: 1.28rem; font-weight: 300; font-style: italic; color: var(--bone-dim); line-height: 1.55; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1.1rem; }
-
-.fn-body { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.05; }
-.fn-body p { margin-bottom: 1.4rem; }
-.fn-body p:last-child { margin-bottom: 0; }
-.fn-h2 { font-family: var(--ff-display); font-size: 1.35rem; font-weight: 600; color: var(--bone); line-height: 1.2; margin: 2.25rem 0 0.75rem; }
-.fn-pullquote { font-family: var(--ff-display); font-size: 1.3rem; font-style: italic; font-weight: 300; color: var(--bone); line-height: 1.45; margin: 2.25rem 0; padding-left: 1.5rem; border-left: 2px solid var(--gold); }
-.fn-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 2rem 0; }
-.fn-table { width: 100%; border-collapse: collapse; margin: 0; min-width: 480px; }
-.fn-table th { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding: 0.6rem 1rem; border-bottom: 1px solid rgba(201,132,58,0.25); text-align: left; font-weight: 400; }
-.fn-table td { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); padding: 0.75rem 1rem; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.65; }
-.fn-table tr:last-child td { border-bottom: none; }
-.fn-table td:first-child { color: var(--bone); font-weight: 400; white-space: nowrap; }
-.fn-coda { margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); font-family: var(--ff-display); font-size: 1.25rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.45); line-height: 1.7; }
-
-@media (max-width: 900px) {
-  .fn-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .fn-body p { margin-bottom: 1rem; }
-  .fn-pullquote { margin: 1.5rem 0; }
-  .fn-h2 { margin-top: 1.75rem; }
-  .fn-entry { padding-top: 1.75rem; }
-  .fn-meta { gap: 0.75rem; margin-bottom: 1rem; }
-  .fn-deck { margin-bottom: 1.5rem; }
-}
-@media (max-width: 600px) {
-  #s-fieldnotes { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .fn-table { font-size: 0.92rem; min-width: 420px; }
-  .fn-table th, .fn-table td { padding: 0.5rem 0.6rem; }
-  .fn-title { font-size: 1.5rem; }
-  .fn-pullquote { font-size: 1.25rem; }
-  .fn-deck { font-size: 1.08rem; }
-  .fn-body { font-size: 1.03rem; }
-  .fn-h2 { font-size: 1.25rem; }
-}
-
-/* ════════════════════════
-   MOBILE OVERRIDES
-════════════════════════ */
-@media (max-width: 900px) {
-  body { font-size: 22px; }
-  #site-header .h-links { display: none; }
-  #s-hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: calc(56px + 2rem); }
-  .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .hl-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  .writing-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .thesis-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  .cap-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .cap-items { grid-template-columns: 1fr 1fr; }
-  .career-intro { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
-  .c-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .c-expand-inner { grid-template-columns: 1fr; }
-  .beyond-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .connect-grid { grid-template-columns: 1fr; max-width: 100%; }
-  #s-connect { align-items: flex-start; text-align: left; }
-}
-
-@media (max-width: 600px) {
-  body { font-size: 22px; }
-  #s-hero, #s-highlights, #s-writing, #s-thesis, #s-capabilities, #s-career, #s-beyond, #s-fieldnotes, #s-connect { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .hero-right { grid-template-columns: 1fr; }
-  .hero-quote-block { display: none; }
-  .h-cta { display: none; }
-  .cap-items { grid-template-columns: 1fr; }
-  .cap-values { display: none; }
-  .writing-item { grid-template-columns: 1fr; }
-  .wi-arrow { display: none; }
-  .c-chips { display: none; }
-  .c-expand-inner { grid-template-columns: 1fr; }
-  .hero-name { font-size: 3.5rem; }
-  .connect-headline { font-size: 2.8rem; }
-  .career-big { font-size: 2.5rem; }
-}
-
-
-/* ════════════════════════
-   FIELD NOTES INFOGRAPHIC
-════════════════════════ */
-.fn-infographic { margin: 2.5rem 0; background: #131211; border: 1px solid rgba(240,236,228,0.1); padding: 2.25rem 2rem; }
-.fni-eyebrow { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #c9843a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; }
-.fni-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 1px; background: #c9843a; opacity: 0.6; }
-.fni-headline { font-family: var(--ff-display); font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 300; line-height: 1.1; color: #f0ece4; margin-bottom: 0.25rem; }
-.fni-headline em { font-style: italic; font-weight: 600; color: #e8b87a; }
-.fni-sub { font-size: 1.05rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.7; margin-bottom: 1.5rem; }
-.fni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(240,236,228,0.08); border: 1px solid rgba(240,236,228,0.08); margin-bottom: 1px; }
-.fni-card { background: #1a1917; padding: 1.4rem; position: relative; overflow: hidden; }
-.fni-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
-.fni-card.p1::before { background: #7F77DD; }
-.fni-card.p2::before { background: #1D9E75; }
-.fni-card.p3::before { background: #BA7517; }
-.fni-card.p4::before { background: #c9843a; }
-.fni-pass { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.6rem; display: block; }
-.fni-pass.p1 { color: #7F77DD; }
-.fni-pass.p2 { color: #1D9E75; }
-.fni-pass.p3 { color: #BA7517; }
-.fni-pass.p4 { color: #c9843a; }
-.fni-num { font-family: var(--ff-display); font-size: 3.5rem; font-weight: 700; line-height: 0.9; color: rgba(240,236,228,0.04); position: absolute; top: 0.6rem; right: 1rem; pointer-events: none; }
-.fni-card-title { font-family: var(--ff-display); font-size: 1.28rem; font-weight: 600; color: #f0ece4; line-height: 1.2; margin-bottom: 0.45rem; }
-.fni-card-desc { font-size: 0.95rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.65; margin-bottom: 0.85rem; }
-.fni-rule { width: 1.5rem; height: 1px; background: rgba(240,236,228,0.1); margin-bottom: 0.75rem; }
-.fni-signals { display: flex; flex-direction: column; gap: 5px; margin-bottom: 0.85rem; }
-.fni-signal { display: flex; align-items: flex-start; gap: 7px; font-size: 0.92rem; color: rgba(240,236,228,0.6); line-height: 1.55; }
-.fni-arr { font-size: 0.65rem; margin-top: 3px; flex-shrink: 0; }
-.fni-arr.p1 { color: #7F77DD; }
-.fni-arr.p2 { color: #1D9E75; }
-.fni-arr.p3 { color: #BA7517; }
-.fni-arr.p4 { color: #c9843a; }
-.fni-bars { padding-top: 0.75rem; border-top: 1px solid rgba(240,236,228,0.07); }
-.fni-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-.fni-bar-lbl { font-family: var(--ff-mono); font-size: 0.65rem; color: rgba(240,236,228,0.45); width: 118px; flex-shrink: 0; letter-spacing: 0.04em; white-space: nowrap; }
-.fni-bar-track { flex: 1; height: 3px; background: rgba(240,236,228,0.08); }
-.fni-bar-fill { height: 100%; }
-.fni-bar-fill.p1 { background: #7F77DD; }
-.fni-bar-fill.p2 { background: #1D9E75; }
-.fni-bar-fill.p3 { background: #BA7517; }
-.fni-bar-fill.p4 { background: #c9843a; }
-.fni-governing { background: rgba(240,236,228,0.03); border: 1px solid rgba(240,236,228,0.08); border-left: 2px solid #c9843a; padding: 1.25rem 1.5rem; margin-bottom: 1px; }
-.fni-gov-label { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c9843a; margin-bottom: 0.5rem; }
-.fni-gov-q { font-family: var(--ff-display); font-size: 1.25rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.75); line-height: 1.65; }
-.fni-meta { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(240,236,228,0.08); border: 1px solid rgba(240,236,228,0.08); margin-bottom: 1rem; }
-.fni-meta-cell { background: #1a1917; padding: 1rem; text-align: center; }
-.fni-meta-num { font-family: var(--ff-display); font-size: 1.8rem; font-weight: 700; color: #f0ece4; line-height: 1; margin-bottom: 4px; }
-.fni-meta-lbl { font-family: var(--ff-mono); font-size: 0.62rem; color: rgba(240,236,228,0.32); letter-spacing: 0.06em; line-height: 1.4; }
-.fni-note { font-family: var(--ff-display); font-size: 1.05rem; font-style: italic; font-weight: 300; color: rgba(240,236,228,0.25); text-align: center; }
-@media (max-width: 600px) {
-  .fni-grid { grid-template-columns: 1fr; }
-  .fni-meta { grid-template-columns: repeat(2,1fr); }
-  .fni-bar-lbl { width: 80px; font-size: 0.6rem; }
-}
-@media (max-width: 600px) {
-  .fni-grid { grid-template-columns: 1fr; }
-  .fni-meta { grid-template-columns: repeat(2,1fr); }
-}
-
-
-/* ════════════════════════
-   EXPLORATION SECTION
-════════════════════════ */
-#s-exploration { background: var(--deep); padding: calc(64px + 2vw) 6vw 4vw; }
-.exp-layout { display: grid; grid-template-columns: 1fr 1.8fr; gap: 6rem; align-items: start; }
-.exp-intro-head { }
-.exp-section-title { font-family: var(--ff-display); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; line-height: 1.1; color: var(--bone); margin-bottom: 1rem; }
-.exp-section-title em { font-style: italic; font-weight: 600; color: var(--gold-light); }
-.exp-section-sub { font-size: 1.25rem; font-weight: 300; color: var(--bone-dim); line-height: 2.0; }
-.exp-topics { display: flex; flex-direction: column; gap: 0; }
-.exp-topic { border-top: 1px solid var(--rule); padding: 1.1rem 0; display: grid; grid-template-columns: 1.5rem 1fr; gap: 1rem; align-items: start; transition: border-color 0.25s; }
-.exp-topic:hover { border-top-color: rgba(184,103,30,0.3); }
-.exp-topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0.5; margin-top: 0.55rem; flex-shrink: 0; transition: opacity 0.25s; }
-.exp-topic:hover .exp-topic-dot { opacity: 1; }
-.exp-topic-name { font-family: var(--ff-display); font-size: 1.28rem; font-weight: 600; color: var(--bone); margin-bottom: 0.2rem; line-height: 1.2; }
-.exp-topic-desc { font-size: 1.05rem; font-weight: 300; color: var(--bone-dim); line-height: 1.7; }
-@media (max-width: 900px) { .exp-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
-@media (max-width: 600px) { #s-exploration { padding-left: 1.25rem; padding-right: 1.25rem; } }
-.exp-bridge { margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); }
-.exp-bridge-eyebrow { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bone-dim); margin-bottom: 0.65rem; }
-.exp-bridge-body { font-size: 1.15rem; font-weight: 300; color: var(--bone-dim); line-height: 1.85; margin-bottom: 0.85rem; max-width: 560px; }
-.exp-bridge-link { font-family: var(--ff-mono); font-size: 0.88rem; letter-spacing: 0.1em; color: var(--gold); text-decoration: none; transition: opacity 0.2s; }
-.exp-bridge-link:hover { opacity: 0.75; }
-
-
-/* ── LEADERSHIP OS CTA ── */
-.los-cta { margin-top: 3.5rem; padding: 2.5rem; background: var(--ink); position: relative; overflow: hidden; }
-.los-cta::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,236,228,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(240,236,228,0.02) 1px,transparent 1px); background-size: 40px 40px; pointer-events: none; }
-.los-cta-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
-.los-cta-eyebrow { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,132,58,0.7); margin-bottom: 0.5rem; }
-.los-cta-title { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 600; color: #f0ece4; line-height: 1.2; margin-bottom: 0.5rem; }
-.los-cta-title em { font-style: italic; font-weight: 300; color: #e8b87a; }
-.los-cta-desc { font-size: 1.05rem; font-weight: 300; color: rgba(240,236,228,0.55); line-height: 1.7; max-width: 480px; }
-.los-cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold-light); color: #0c0b0a; padding: 0.85rem 1.75rem; font-family: var(--ff-body); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; position: relative; overflow: hidden; }
-.los-cta-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: rgba(255,255,255,0.15); transform: skewX(-20deg); transition: left 0.4s ease; }
-.los-cta-btn:hover { background: #e8b87a; }
-.los-cta-btn:hover::after { left: 150%; }
-@media (max-width: 600px) {
-  .los-cta-inner { grid-template-columns: 1fr; gap: 1.25rem; }
-  .los-cta-btn { width: fit-content; }
-}
-
-/* Field Notes and Exploration: never clip on any screen size */
-#s-fieldnotes, #s-exploration { overflow: visible !important; height: auto !important; }
-
-/* ── Desktop sticky sidebar for capabilities ── */
-@media (min-width: 901px) {
-  .cap-intro-text { position: sticky; top: calc(64px + 2rem); }
-  /* Desktop hover expand for career */
-  .c-item:hover .c-expand { max-height: 600px; opacity: 1; }
-  .c-item:hover .c-role { color: var(--gold); }
-}
-
-/* ── A11Y: focus states ── */
-a:focus-visible, button:focus-visible, .c-item:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-  border-radius: 1px;
-}
-
-/* ── A11Y: reduced motion — disable transitions/animations, force reveal visible ── */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  html { scroll-snap-type: none !important; }
-  .reveal, .reveal-scale, .reveal-left {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+/* ── A11Y ── */
+a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid var(--petrol);outline-offset:3px}
+.band a:focus-visible,.band .led-line:focus-visible{outline-color:var(--petrol-lt)}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important;scroll-behavior:auto!important}
+  html{scroll-snap-type:none!important}
+  .rv{opacity:1!important;transform:none!important}
 }
 </style>
+
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8B7D4VZ08"></script>
 <script>
@@ -569,117 +291,96 @@ a:focus-visible, button:focus-visible, .c-item:focus-visible {
 </head>
 <body>
 
+<div id="spine" aria-hidden="true">Mike Cilla&ensp;·&ensp;Working file MC-2026&ensp;·&ensp;Austin, TX</div>
+<div class="crop c-tl" aria-hidden="true"></div><div class="crop c-tr" aria-hidden="true"></div><div class="crop c-bl" aria-hidden="true"></div><div class="crop c-br" aria-hidden="true"></div>
+
 <header id="site-header">
-  <a href="#s-hero" class="h-mark">Mike Cilla<span>.</span></a>
-  <ul class="h-links">
-    <li><a href="#s-highlights">Highlights</a></li>
-    <li><a href="#s-writing">Writing</a></li>
-    <li><a href="#s-thesis">Thinking</a></li>
-    <li><a href="#s-capabilities">Capabilities</a></li>
-    <li><a href="#s-career">Work</a></li>
-    <li><a href="#s-exploration">Exploration</a></li>
-    <li><a href="#s-fieldnotes">Field Notes</a></li>
-    <li><a href="#s-connect">Connect</a></li>
-  </ul>
-  <div style="display:flex;align-items:center;gap:0.6rem;">
-    <a href="https://leadershipos.org/" class="h-logo-los" target="_blank" rel="noopener" aria-label="Leadership OS">
-      <svg viewBox="-16 -4 316 64" width="150" height="28" role="img" aria-label="Leadership OS" style="display:block;">
-        <g transform="translate(6,28)">
-          <line x1="-14" y1="-11" x2="0" y2="0" stroke="#cfc7ba" stroke-width="1.3"/>
-          <line x1="14" y1="-11" x2="0" y2="0" stroke="#cfc7ba" stroke-width="1.3"/>
-          <line x1="0" y1="16" x2="0" y2="0" stroke="#cfc7ba" stroke-width="1.3"/>
-          <circle cx="0" cy="0" r="6.5" fill="none" stroke="#b8671e" stroke-width="1.2" stroke-dasharray="2.3 2.7"/>
-          <circle cx="-14" cy="-11" r="2.9" fill="#6b5bd1"/>
-          <circle cx="14" cy="-11" r="2.9" fill="#2e9e7e"/>
-          <circle cx="0" cy="16" r="2.9" fill="#b8671e"/>
-        </g>
-        <text x="42" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="34" font-weight="300" fill="#1a1612">Leadership <tspan font-weight="700" font-style="italic" fill="#b8671e">OS</tspan></text>
-      </svg>
-    </a>
+  <div class="wrap h-inner">
+    <a href="#top" class="h-mark">Mike Cilla<span>.</span></a>
+    <ul class="h-links">
+      <li><a href="#s-work">Work</a></li>
+      <li><a href="#s-career">Career</a></li>
+      <li><a href="#s-writing">Writing</a></li>
+      <li><a href="#s-notes">Field Notes</a></li>
+      <li><a href="https://leadershipos.org/" target="_blank" rel="noopener">Leadership OS ↗</a></li>
+    </ul>
     <a href="#s-connect" class="h-cta">Let's talk</a>
   </div>
 </header>
 
-<nav id="dot-nav" aria-label="Page sections"></nav>
+<main id="top">
 
-<!-- 1 — HERO -->
-<section class="snap" id="s-hero" data-label="Home">
-  <div>
-    <p class="hero-kicker reveal" style="transition-delay:.1s">Austin, TX &nbsp;·&nbsp; People Operations &nbsp;·&nbsp; Organizational Transformation</p>
-    <h1 class="hero-name reveal" style="transition-delay:.2s">Mike<span class="last">Cilla<span class="dot">.</span></span></h1>
-    <p class="hero-title reveal" style="transition-delay:.35s">People Operations, workforce analytics, and organizational design</p>
-    <p class="hero-statement reveal" style="transition-delay:.45s">My work sits at the intersection of People Operations, workforce analytics, organizational design, and HR technology. I'm most interested in helping organizations build people functions that can actually scale — without losing the ability to execute.</p>
-    <div class="btn-row reveal" style="transition-delay:.55s">
-      <a href="#s-connect" class="btn-primary">Start a conversation →</a>
-      <a href="#s-career" class="btn-ghost">View work</a>
-    </div>
-  </div>
-  <div class="hero-right reveal" style="transition-delay:.3s">
-    <div class="hero-credential">
-      <div class="cred-label">Background</div>
-      <div class="cred-value">M.S. I/O Psychology</div>
-      <div class="cred-sub">San Jose State University · Behavioral science foundation</div>
-    </div>
-    <div class="hero-credential">
-      <div class="cred-label">Experience</div>
-      <div class="cred-value">15+ years</div>
-      <div class="cred-sub">People Operations, analytics, and HR technology leadership</div>
-    </div>
-    <a href="https://leadershipos.org/" class="hero-credential hero-credential-link" target="_blank" rel="noopener">
-      <div class="cred-label">Current exploration <span class="cred-arrow">↗</span></div>
-      <div class="cred-value">Leadership OS</div>
-      <div class="cred-sub">A free methodology for leaders working with AI. The project these questions led to. <span class="cred-link-cue">Explore →</span></div>
-    </a>
-    <div class="hero-quote-block reveal" style="transition-delay:.5s">
-      <blockquote>&ldquo;Human resources are like natural resources; they&rsquo;re often buried deep. You have to go looking for them.&rdquo;</blockquote>
-      <cite>&mdash; Sir Ken Robinson</cite>
+<!-- 01 — PROFILE -->
+<section id="s-hero">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">01</span><span class="sec-name">Profile</span><span class="sec-rule"></span></div>
+    <div class="cols" style="grid-template-columns:minmax(0,7fr) minmax(0,5fr)">
+      <div>
+        <p class="hero-doc rv">Mike Cilla<span class="sep">·</span>Austin, TX<span class="sep">·</span>People Operations</p>
+        <h1 class="hero-h rv">I build people functions that <em>actually work.</em></h1>
+        <p class="hero-lede rv">My work sits at the intersection of People Operations, workforce analytics, organizational design, and HR technology — helping organizations build people functions that scale without losing the ability to execute.</p>
+        <div class="btn-row rv">
+          <a href="#s-connect" class="btn">Start a conversation</a>
+          <a href="#s-work" class="btn-ghost">View the work</a>
+        </div>
+      </div>
+      <div class="rv">
+        <table class="spec">
+          <caption>Fig. 1.1 — At a glance</caption>
+          <tr><td class="k">Education</td><td class="v">M.S. I/O Psychology<small>San Jose State University</small></td></tr>
+          <tr><td class="k">Credential</td><td class="v">SHRM-CP</td></tr>
+          <tr><td class="k">Experience</td><td class="v">15+ years<small>Startup to enterprise, across sectors</small></td></tr>
+          <tr><td class="k">Base</td><td class="v">Austin, TX</td></tr>
+          <tr><td class="k">Current exploration</td><td class="v"><a href="https://leadershipos.org/" target="_blank" rel="noopener">Leadership OS ↗</a><small>A free methodology for leaders working with AI</small></td></tr>
+        </table>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 2 — HIGHLIGHTS -->
-<section class="snap" id="s-highlights" data-label="Highlights">
-  <div>
-    <div class="s-label reveal">Selected Highlights</div>
-    <div class="hl-layout">
-      <div class="reveal" style="transition-delay:.1s">
-        <h2 class="hl-headline">The work,<br><em>in brief.</em></h2>
-        <p class="hl-intro">Fifteen years across startups, mid-market companies, and large enterprise. I came into HR through behavioral science and have spent most of my career at the intersection of people strategy and operational infrastructure.</p>
+<!-- 02 — SELECTED WORK -->
+<section id="s-work">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">02</span><span class="sec-name">Selected work</span><span class="sec-rule"></span></div>
+    <div class="cols">
+      <div class="rv">
+        <h2 class="display side-title">The work,<br>in brief<span class="tdot">.</span></h2>
+        <p class="side-sub">Fifteen years across startups, mid-market companies, and large enterprise. I came into HR through behavioral science and have spent most of my career where people strategy meets operational infrastructure.</p>
       </div>
-      <div class="hl-items reveal" style="transition-delay:.2s">
-        <div class="hl-item">
-          <div class="hl-num">01</div>
+      <div class="entries rv">
+        <div class="entry">
+          <div class="e-idx">2.1</div>
           <div>
-            <div class="hl-title">Built a People Operations function from scratch</div>
-            <div class="hl-body">Designed and staffed a multi-pillar team spanning HR operations, systems and data, analytics, and strategic planning. The goal was a function with enough structure to run consistently — not one that depended on any one person to hold it together.</div>
+            <div class="e-title">Built a People Operations function from scratch</div>
+            <div class="e-body">Designed and staffed a multi-pillar team spanning HR operations, systems and data, analytics, and strategic planning. The goal was a function with enough structure to run consistently — not one that depended on any one person to hold it together.</div>
           </div>
         </div>
-        <div class="hl-item">
-          <div class="hl-num">02</div>
+        <div class="entry">
+          <div class="e-idx">2.2</div>
           <div>
-            <div class="hl-title">Led a full-cycle HRIS implementation</div>
-            <div class="hl-body">Took a system from selection through go-live, stabilization, and optimization. Spent a lot of time on the unglamorous parts — data governance, position architecture, the stuff that determines whether a new system actually improves anything.</div>
+            <div class="e-title">Led a full-cycle HRIS implementation</div>
+            <div class="e-body">Took a system from selection through go-live, stabilization, and optimization. Spent a lot of time on the unglamorous parts — data governance, position architecture, the layers that determine whether a new system improves anything at all.</div>
           </div>
         </div>
-        <div class="hl-item">
-          <div class="hl-num">03</div>
+        <div class="entry">
+          <div class="e-idx">2.3</div>
           <div>
-            <div class="hl-title">Built workforce analytics programs that actually got used</div>
-            <div class="hl-body">Started from scratch a few times. The version that worked was less about the tools and more about understanding what decisions people actually needed to make — and building backward from there.</div>
+            <div class="e-title">Built workforce analytics programs that got used</div>
+            <div class="e-body">Started from scratch a few times. The version that worked was less about the tools and more about the decisions leaders needed to make — and building backward from there.</div>
           </div>
         </div>
-        <div class="hl-item">
-          <div class="hl-num">04</div>
+        <div class="entry">
+          <div class="e-idx">2.4</div>
           <div>
-            <div class="hl-title">Worked closely with senior leaders on org design and workforce decisions</div>
-            <div class="hl-body">At Juul Labs and since, a meaningful part of the job was helping executives think through restructuring, headcount, and organizational structure. That work is mostly listening, asking questions, and knowing which data is actually relevant.</div>
+            <div class="e-title">Advised senior leaders on org design and workforce decisions</div>
+            <div class="e-body">At Juul Labs and since, a meaningful part of the job has been helping executives think through restructuring, headcount, and organizational structure. That work is mostly listening, asking good questions, and knowing which data is relevant to the decision at hand.</div>
           </div>
         </div>
-        <div class="hl-item">
-          <div class="hl-num">05</div>
+        <div class="entry">
+          <div class="e-idx">2.5</div>
           <div>
-            <div class="hl-title">Worked across a range of company sizes and stages</div>
-            <div class="hl-body">Early-stage advisory, mid-market HR consulting, and enterprise leadership. Each context is different enough that you stop assuming what worked last time will work this time — which is probably the most useful thing I've learned.</div>
+            <div class="e-title">Worked across a range of company sizes and stages</div>
+            <div class="e-body">Early-stage advisory, mid-market consulting, and enterprise leadership. Each context is different enough that you stop assuming what worked last time will work this time — which is probably the most useful thing I've learned.</div>
           </div>
         </div>
       </div>
@@ -687,765 +388,441 @@ a:focus-visible, button:focus-visible, .c-item:focus-visible {
   </div>
 </section>
 
-<!-- 3 — WRITING -->
-<section class="snap" id="s-writing" data-label="Writing">
-  <div>
-    <div class="s-label reveal">Ideas &amp; Writing</div>
-    <div class="writing-layout">
-      <div class="reveal" style="transition-delay:.1s">
-        <h2 class="writing-headline">Thinking<br>made<br><em>visible.</em></h2>
-        <p class="writing-sub">Some writing from over the years. Mostly on behavioral science, HR operations, and talent. Some of it holds up better than others.</p>
+<!-- 03 — POINT OF VIEW -->
+<section id="s-pov">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">03</span><span class="sec-name">Point of view</span><span class="sec-rule"></span></div>
+    <div class="cols">
+      <div class="pov-left rv">
+        <p class="pq">Most organizations that struggle with change — new technology, rapid growth, leadership transitions — aren't struggling because of strategy. They're struggling because the underlying people systems aren't solid enough to absorb it.<strong>That's usually where the real work is.</strong></p>
       </div>
-      <div class="reveal" style="transition-delay:.2s">
-        <a class="writing-item" href="https://www.linkedin.com/pulse/virtuous-cycle-operational-excellence-action-cilla-m-s-shrm-cp-jioyc/" target="_blank" rel="noopener">
-          <div><div class="wi-tag">Operations · Systems Thinking</div><div class="wi-title">The Virtuous Cycle of Operational Excellence in Action</div><div class="wi-body">On how operational discipline compounds — and why organizations that invest in getting their fundamentals right unlock a kind of organizational momentum that reactive functions never reach.</div></div>
-          <div class="wi-arrow">→</div>
+      <div class="pov-points">
+        <div class="pov-point rv">
+          <div class="pov-label">On HR as a discipline</div>
+          <div class="pov-head">The most effective HR teams I've worked with operate more like systems than service desks.</div>
+          <div class="pov-body">Clear ownership, consistent service delivery, data people trust. Getting there is most of the work — and it's harder than it sounds.</div>
+        </div>
+        <div class="pov-point rv">
+          <div class="pov-label">On technology and AI</div>
+          <div class="pov-head">Most technology problems are data or process problems in disguise.</div>
+          <div class="pov-body">New tools don't fix bad data, unclear ownership, or a process that was already broken. It's worth slowing down to ask what problem you're solving before picking a platform.</div>
+        </div>
+        <div class="pov-point rv">
+          <div class="pov-label">On people analytics</div>
+          <div class="pov-head">Analytics becomes valuable when it helps someone make a better decision.</div>
+          <div class="pov-body">I've built reporting functions that looked like analytics programs and learned the difference the hard way. The question I ask now: what decision does this support? If there's no answer, the analysis isn't ready yet.</div>
+        </div>
+        <div class="pov-point rv">
+          <div class="pov-label">On building People functions</div>
+          <div class="pov-head">A function that only works because of who's running it isn't a function yet.</div>
+          <div class="pov-body">I've inherited a few of those and built a few of those. The goal is always a structure the systems and the team can carry — not just the person at the top.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — CAPABILITIES -->
+<section id="s-capabilities">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">04</span><span class="sec-name">Capabilities</span><span class="sec-rule"></span></div>
+    <div class="cols">
+      <div class="rv">
+        <h2 class="display side-title">What I'm<br>good at<span class="tdot">.</span></h2>
+        <p class="side-sub">Three domains, eighteen entries — the short version of fifteen years.</p>
+        <p class="values-line"><b>Operating values:</b><br>Individuality · Openness · Efficacy · Winning · Humility<br>+ Sense of humor</p>
+      </div>
+      <div>
+        <div class="cap-domain rv">
+          <div class="cap-dl">A — Strategic leadership</div>
+          <div class="cap-row"><div class="cap-idx">4.01</div><div class="cap-name">Organizational design</div><div class="cap-desc">Structure, role architecture, span of control, CoE models</div></div>
+          <div class="cap-row"><div class="cap-idx">4.02</div><div class="cap-name">Workforce strategy</div><div class="cap-desc">Planning, scenario modeling, capability frameworks</div></div>
+          <div class="cap-row"><div class="cap-idx">4.03</div><div class="cap-name">Executive advisory</div><div class="cap-desc">C-suite and senior leadership partnership on people decisions</div></div>
+          <div class="cap-row"><div class="cap-idx">4.04</div><div class="cap-name">HR operating models</div><div class="cap-desc">CoE design, service delivery architecture, governance</div></div>
+          <div class="cap-row"><div class="cap-idx">4.05</div><div class="cap-name">HR PMO</div><div class="cap-desc">Portfolio governance, business case development, prioritization</div></div>
+          <div class="cap-row"><div class="cap-idx">4.06</div><div class="cap-name">People &amp; org strategy</div><div class="cap-desc">Transformation planning, structural change management</div></div>
+        </div>
+        <div class="cap-domain rv">
+          <div class="cap-dl">B — Analytics &amp; technology</div>
+          <div class="cap-row"><div class="cap-idx">4.07</div><div class="cap-name">Workforce analytics</div><div class="cap-desc">Retention, flight risk, pipeline, and workforce intelligence</div></div>
+          <div class="cap-row"><div class="cap-idx">4.08</div><div class="cap-name">HR technology leadership</div><div class="cap-desc">HRIS strategy, implementation, optimization, portfolio management</div></div>
+          <div class="cap-row"><div class="cap-idx">4.09</div><div class="cap-name">Data architecture</div><div class="cap-desc">Data governance, quality standards, integration strategy</div></div>
+          <div class="cap-row"><div class="cap-idx">4.10</div><div class="cap-name">Analytics infrastructure</div><div class="cap-desc">Enabling self-service, building toward predictive capability</div></div>
+          <div class="cap-row"><div class="cap-idx">4.11</div><div class="cap-name">Technology strategy</div><div class="cap-desc">Build vs. buy, vendor evaluation, integration architecture</div></div>
+          <div class="cap-row"><div class="cap-idx">4.12</div><div class="cap-name">AI &amp; workforce</div><div class="cap-desc">Operating models, capability design, readiness frameworks</div></div>
+        </div>
+        <div class="cap-domain rv">
+          <div class="cap-dl">C — Foundations</div>
+          <div class="cap-row"><div class="cap-idx">4.13</div><div class="cap-name">I/O psychology</div><div class="cap-desc">Behavioral science, assessment design, talent selection, engagement</div></div>
+          <div class="cap-row"><div class="cap-idx">4.14</div><div class="cap-name">HR operations</div><div class="cap-desc">Scalable service delivery, SLA frameworks, operational excellence</div></div>
+          <div class="cap-row"><div class="cap-idx">4.15</div><div class="cap-name">Learning &amp; development</div><div class="cap-desc">Program design, capability development, manager effectiveness</div></div>
+          <div class="cap-row"><div class="cap-idx">4.16</div><div class="cap-name">Talent acquisition</div><div class="cap-desc">TA strategy, ATS architecture, recruiting operations</div></div>
+          <div class="cap-row"><div class="cap-idx">4.17</div><div class="cap-name">HRBP leadership</div><div class="cap-desc">Executive partnership, org change, performance programs</div></div>
+          <div class="cap-row"><div class="cap-idx">4.18</div><div class="cap-name">Data storytelling</div><div class="cap-desc">Executive communication, visual standards, insight-driven narrative</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — CAREER (dark ledger) -->
+<section id="s-career" class="band">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">05</span><span class="sec-name">Career</span><span class="sec-rule"></span></div>
+    <p class="led-intro rv">The path runs from behavioral science and early consulting into HR technology, people analytics, and building People Operations functions. Expand any row.</p>
+    <div class="led-rows rv">
+
+      <div class="led-row">
+        <div class="led-line" tabindex="0" role="button" aria-expanded="false">
+          <span class="led-period">2023 —</span>
+          <span class="led-org">Central Health<small>Travis County Healthcare District</small></span>
+          <span class="led-role">VP, People Operations, Planning &amp; Systems — HR service delivery, systems and data, workforce analytics, and strategic planning supporting ~2,300 employees across a multi-entity public health system.</span>
+          <span class="led-plus" aria-hidden="true">+</span>
+        </div>
+        <div class="led-x"><div class="led-x-inner">
+          <div>
+            <div class="led-ol">Leadership scope</div>
+            <ul>
+              <li>Designed and built the CoE structure, team, and operating model</li>
+              <li>Led full-cycle enterprise HRIS implementation through go-live and optimization</li>
+              <li>Built workforce analytics capability from concept to operational program</li>
+              <li>Drove strategic planning, business case development, and governance design</li>
+            </ul>
+          </div>
+          <div>
+            <div class="led-ol">Strategic focus</div>
+            <ul>
+              <li>Workforce strategy in a complex, multi-entity public sector environment</li>
+              <li>HR technology portfolio management and integration architecture</li>
+              <li>Organizational design and executive advisory</li>
+              <li>Analytical infrastructure that supports leadership decision-making</li>
+            </ul>
+          </div>
+          <div class="led-note">Promoted: Enterprise Sr. Director, HR Strategy &amp; Analytics → VP (Dec 2024)</div>
+        </div></div>
+      </div>
+
+      <div class="led-row">
+        <div class="led-line" tabindex="0" role="button" aria-expanded="false">
+          <span class="led-period">2018 — 23</span>
+          <span class="led-org">Juul Labs</span>
+          <span class="led-role">Director, HR Strategy &amp; Insights — built the function and led people analytics, strategic planning, and HR PMO through hypergrowth and contraction. Previously senior HRBP to executives across several business units.</span>
+          <span class="led-plus" aria-hidden="true">+</span>
+        </div>
+        <div class="led-x"><div class="led-x-inner">
+          <div>
+            <div class="led-ol">Leadership scope</div>
+            <ul>
+              <li>Built HR Strategy &amp; Insights function from the ground up</li>
+              <li>Owned people data programs across comp, performance, succession, and org design</li>
+              <li>Supported geographic expansion and multiple major restructures</li>
+            </ul>
+          </div>
+          <div>
+            <div class="led-ol">HRBP scope</div>
+            <ul>
+              <li>Field Sales, Marketing, Strategy, Consumer Insights, and DTC</li>
+              <li>Executive-level partnership on org design and talent decisions</li>
+              <li>Delivered people analytics to senior and VP-level audiences</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="led-row">
+        <div class="led-line" tabindex="0" role="button" aria-expanded="false">
+          <span class="led-period">2016 — 18</span>
+          <span class="led-org">Namely</span>
+          <span class="led-role">HR Consultant, Managed Services — one of the first hires on a new B2B consulting practice at a venture-backed HR tech company. Helped define the service model and build the operational infrastructure.</span>
+          <span class="led-plus" aria-hidden="true">+</span>
+        </div>
+        <div class="led-x"><div class="led-x-inner">
+          <div>
+            <div class="led-ol">Scope</div>
+            <ul>
+              <li>Built practice infrastructure: case management, SLAs, SOPs, knowledge base</li>
+              <li>Advised clients on compliance, policy, ER, performance, and leave administration</li>
+              <li>Managed a multi-million dollar client portfolio across HRIS, benefits, and payroll</li>
+            </ul>
+          </div>
+          <div>
+            <div class="led-ol">Context</div>
+            <ul>
+              <li>Early-stage practice at a venture-backed HR technology company</li>
+              <li>Operating at the intersection of technology platform and advisory service</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="led-row">
+        <div class="led-line" tabindex="0" role="button" aria-expanded="false">
+          <span class="led-period">2010 — 16</span>
+          <span class="led-org">Early career<small>Consulting · L&amp;D · Advisory</small></span>
+          <span class="led-role">Talent assessment, L&amp;D, HR advisory, and consulting across startups, mid-market firms, and enterprise — including L&amp;D at a large corporate university and advisory work with early-stage tech companies.</span>
+          <span class="led-plus" aria-hidden="true">+</span>
+        </div>
+        <div class="led-x"><div class="led-x-inner">
+          <div>
+            <div class="led-ol">Scope</div>
+            <ul>
+              <li>Enterprise L&amp;D, talent assessment, and program management</li>
+              <li>Co-founded an HR tech startup (Plug &amp; Play-funded)</li>
+              <li>Advisory work with several early-stage technology companies</li>
+            </ul>
+          </div>
+          <div>
+            <div class="led-ol">Context</div>
+            <ul>
+              <li>Taught psychology as an adjunct instructor for several years — which probably shaped how I think about learning more than anything else did</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 06 — WRITING -->
+<section id="s-writing">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">06</span><span class="sec-name">Writing</span><span class="sec-rule"></span></div>
+    <div class="cols">
+      <div class="rv">
+        <h2 class="display side-title">Thinking made<br>visible<span class="tdot">.</span></h2>
+        <p class="side-sub">Writing from over the years — mostly on behavioral science, HR operations, and talent. Some of it holds up better than the rest.</p>
+      </div>
+      <div class="entries rv">
+        <a class="entry" href="https://www.linkedin.com/pulse/we-use-ai-work-faster-could-develop-leaders-mike-cilla-m-s-shrm-cp-qbncc/" target="_blank" rel="noopener">
+          <div class="e-idx">6.1</div>
+          <div>
+            <div class="e-tag">AI · Leadership development</div>
+            <div class="e-title">We Use AI to Work Faster. Could It Develop Leaders?</div>
+            <div class="e-body">Most of us use AI to get through the work. This piece makes the case for a different use entirely — AI as a long-term reflection partner for leadership development — and introduces the thinking behind Leadership OS.</div>
+          </div>
+          <div class="e-arrow">↗</div>
         </a>
-        <a class="writing-item" href="https://www.linkedin.com/pulse/20140824200347-49439155-the-behavioral-science-behind-the-alliance/" target="_blank" rel="noopener">
-          <div><div class="wi-tag">Behavioral Science · Talent</div><div class="wi-title">The Behavioral Science Behind The Alliance</div><div class="wi-body">An examination of the psychological principles that make modern employment relationships work — drawing on Reid Hoffman's framework and grounding it in what the science actually says about commitment, reciprocity, and trust at work.</div></div>
-          <div class="wi-arrow">→</div>
+        <a class="entry" href="https://www.linkedin.com/pulse/virtuous-cycle-operational-excellence-action-cilla-m-s-shrm-cp-jioyc/" target="_blank" rel="noopener">
+          <div class="e-idx">6.2</div>
+          <div>
+            <div class="e-tag">Operations · Systems thinking</div>
+            <div class="e-title">The Virtuous Cycle of Operational Excellence in Action</div>
+            <div class="e-body">How operational discipline compounds — and why getting the fundamentals right unlocks a kind of momentum that reactive functions never reach.</div>
+          </div>
+          <div class="e-arrow">↗</div>
         </a>
-        <a class="writing-item" href="https://www.linkedin.com/pulse/20140501030057-49439155-use-empathy-when-hiring-your-next-employee/" target="_blank" rel="noopener">
-          <div><div class="wi-tag">Hiring · I/O Psychology</div><div class="wi-title">Use Empathy When Hiring Your Next Employee</div><div class="wi-body">A case for centering candidate experience in the hiring process — not as a branding exercise, but as a signal of organizational judgment and a predictor of the employment relationship that follows.</div></div>
-          <div class="wi-arrow">→</div>
+        <a class="entry" href="https://www.linkedin.com/pulse/20140824200347-49439155-the-behavioral-science-behind-the-alliance/" target="_blank" rel="noopener">
+          <div class="e-idx">6.3</div>
+          <div>
+            <div class="e-tag">Behavioral science · Talent</div>
+            <div class="e-title">The Behavioral Science Behind The Alliance</div>
+            <div class="e-body">The psychological principles that make modern employment relationships work — Reid Hoffman's framework, grounded in the research on commitment, reciprocity, and trust at work.</div>
+          </div>
+          <div class="e-arrow">↗</div>
         </a>
-        <a class="writing-item" href="https://www.linkedin.com/pulse/optimize-your-job-search-get-hired-asap-mike-cilla/" target="_blank" rel="noopener">
-          <div><div class="wi-tag">Careers · Applied Psychology</div><div class="wi-title">Optimize Your Job Search: Get Hired ASAP</div><div class="wi-body">Practical guidance on job search strategy, written from the perspective of someone who has sat on both sides of the hiring table — and who believes that most job search advice ignores how organizations actually make decisions.</div></div>
-          <div class="wi-arrow">→</div>
+        <a class="entry" href="https://www.linkedin.com/pulse/20140501030057-49439155-use-empathy-when-hiring-your-next-employee/" target="_blank" rel="noopener">
+          <div class="e-idx">6.4</div>
+          <div>
+            <div class="e-tag">Hiring · I/O psychology</div>
+            <div class="e-title">Use Empathy When Hiring Your Next Employee</div>
+            <div class="e-body">A case for centering candidate experience — not as a branding exercise, but as a signal of organizational judgment and a predictor of the relationship that follows.</div>
+          </div>
+          <div class="e-arrow">↗</div>
+        </a>
+        <a class="entry" href="https://www.linkedin.com/pulse/optimize-your-job-search-get-hired-asap-mike-cilla/" target="_blank" rel="noopener">
+          <div class="e-idx">6.5</div>
+          <div>
+            <div class="e-tag">Careers · Applied psychology</div>
+            <div class="e-title">Optimize Your Job Search: Get Hired ASAP</div>
+            <div class="e-body">Practical job search strategy from someone who has sat on both sides of the hiring table — built around how organizations make hiring decisions in practice.</div>
+          </div>
+          <div class="e-arrow">↗</div>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 4 — THESIS -->
-<section class="snap" id="s-thesis" data-label="Thinking">
-  <div>
-    <div class="s-label reveal">Point of View</div>
-    <div class="thesis-layout">
-      <div class="reveal" style="transition-delay:.1s">
-        <p class="thesis-pullquote">Most of the organizations I've worked with that struggle with change — new technology, rapid growth, leadership transitions — aren't struggling because of strategy. They're struggling because the underlying people systems aren't solid enough to absorb it.<strong>That's usually where the real work is.</strong></p>
+<!-- 07 — FIELD NOTES -->
+<section id="s-notes" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">07</span><span class="sec-name">Field notes</span><span class="sec-rule"></span></div>
+    <div class="cols">
+      <div class="rv">
+        <h2 class="display side-title">Observations<br>from the field<span class="tdot">.</span></h2>
+        <p class="side-sub">A working notebook — observations and experiments, written down because writing is how I think things through.</p>
+        <p class="side-note">↗ <a href="https://github.com/mikecilla" target="_blank" rel="noopener" style="color:inherit">github.com/mikecilla</a></p>
       </div>
-      <div class="thesis-points">
-        <div class="thesis-point reveal" style="transition-delay:.15s">
-          <div class="tp-label">On HR as a discipline</div>
-          <div class="tp-headline">The most effective HR teams I've worked with operate more like systems than service desks.</div>
-          <div class="tp-body">Clear ownership, consistent service delivery, data that's actually trusted. It sounds basic, but most functions aren't there. Getting there is most of the work.</div>
-        </div>
-        <div class="thesis-point reveal" style="transition-delay:.25s">
-          <div class="tp-label">On technology and AI</div>
-          <div class="tp-headline">Most technology problems I've seen are really data or process problems in disguise.</div>
-          <div class="tp-body">New tools don't fix bad data, unclear ownership, or processes that were already broken. I've found it's worth slowing down to ask what problem you're actually solving before picking a platform.</div>
-        </div>
-        <div class="thesis-point reveal" style="transition-delay:.35s">
-          <div class="tp-label">On People analytics</div>
-          <div class="tp-headline">Analytics only becomes valuable when it actually helps someone make a better decision.</div>
-          <div class="tp-body">I've built reporting functions that looked like analytics programs and learned the difference the hard way. The question I ask now is: what decision does this need to support? If there's no answer, the analysis probably isn't ready yet.</div>
-        </div>
-        <div class="thesis-point reveal" style="transition-delay:.45s">
-          <div class="tp-label">On building People functions</div>
-          <div class="tp-headline">A function that only works because of who's running it isn't really a function yet.</div>
-          <div class="tp-body">I've inherited a few of those and built a few of those. The goal is always to get to a place where the structure, the systems, and the team can carry it — not just the person at the top.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5 — CAPABILITIES -->
-<section class="snap" id="s-capabilities" data-label="Capabilities">
-  <div>
-    <div class="s-label reveal">Capabilities</div>
-    <div class="cap-layout">
-      <div class="cap-intro-text reveal">
-        <h2 class="cap-headline">Deep<br>expertise.<br><em>Clear focus.</em></h2>
-        <p class="cap-sub">The domains, disciplines, and ways of working where experience runs deep — not surface familiarity.</p>
-        <div class="cap-values">
-          <div class="cap-value">Individuality</div>
-          <div class="cap-value">Openness</div>
-          <div class="cap-value">Efficacy</div>
-          <div class="cap-value">Winning</div>
-          <div class="cap-value">Humility</div>
-          <div class="cap-value">+ Sense of humor</div>
-        </div>
-      </div>
-      <div class="cap-domains">
-        <div class="cap-domain reveal" style="transition-delay:.1s">
-          <div class="cap-domain-label">Strategic Leadership</div>
-          <div class="cap-items">
-            <div class="cap-item"><div class="cap-item-name">Organizational Design</div><div class="cap-item-desc">Structure, role architecture, span of control, CoE models</div></div>
-            <div class="cap-item"><div class="cap-item-name">Workforce Strategy</div><div class="cap-item-desc">Planning, scenario modeling, capability frameworks</div></div>
-            <div class="cap-item"><div class="cap-item-name">Executive Advisory</div><div class="cap-item-desc">C-suite and senior leadership partnership on people decisions</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR Operating Models</div><div class="cap-item-desc">CoE design, service delivery architecture, governance</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR PMO</div><div class="cap-item-desc">Portfolio governance, business case development, prioritization</div></div>
-            <div class="cap-item"><div class="cap-item-name">People &amp; Org Strategy</div><div class="cap-item-desc">Transformation planning, structural change management</div></div>
-          </div>
-        </div>
-        <div class="cap-domain reveal" style="transition-delay:.2s">
-          <div class="cap-domain-label">Analytics &amp; Technology</div>
-          <div class="cap-items">
-            <div class="cap-item"><div class="cap-item-name">Workforce Analytics</div><div class="cap-item-desc">Retention, flight risk, pipeline, and workforce intelligence</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR Technology Leadership</div><div class="cap-item-desc">HRIS strategy, implementation, optimization, portfolio management</div></div>
-            <div class="cap-item"><div class="cap-item-name">Data Architecture</div><div class="cap-item-desc">Data governance, quality standards, integration strategy</div></div>
-            <div class="cap-item"><div class="cap-item-name">Analytics Infrastructure</div><div class="cap-item-desc">Enabling self-service, building toward predictive capability</div></div>
-            <div class="cap-item"><div class="cap-item-name">Technology Strategy</div><div class="cap-item-desc">Build vs. buy, vendor evaluation, integration architecture</div></div>
-            <div class="cap-item"><div class="cap-item-name">AI &amp; Workforce</div><div class="cap-item-desc">Operating models, capability design, readiness frameworks</div></div>
-          </div>
-        </div>
-        <div class="cap-domain reveal" style="transition-delay:.3s">
-          <div class="cap-domain-label">Foundations</div>
-          <div class="cap-items">
-            <div class="cap-item"><div class="cap-item-name">I/O Psychology</div><div class="cap-item-desc">Behavioral science, assessment design, talent selection, engagement</div></div>
-            <div class="cap-item"><div class="cap-item-name">HR Operations</div><div class="cap-item-desc">Scalable service delivery, SLA frameworks, operational excellence</div></div>
-            <div class="cap-item"><div class="cap-item-name">Learning &amp; Development</div><div class="cap-item-desc">Program design, capability development, manager effectiveness</div></div>
-            <div class="cap-item"><div class="cap-item-name">Talent Acquisition</div><div class="cap-item-desc">TA strategy, ATS architecture, recruiting operations</div></div>
-            <div class="cap-item"><div class="cap-item-name">HRBP Leadership</div><div class="cap-item-desc">Executive partnership, org change, performance programs</div></div>
-            <div class="cap-item"><div class="cap-item-name">Data Storytelling</div><div class="cap-item-desc">Executive communication, visual standards, insight-driven narrative</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 — CAREER -->
-<section class="snap" id="s-career" data-label="Work">
-  <div>
-    <div class="s-label reveal">Career</div>
-    <div class="career-intro">
-      <div class="reveal">
-        <div class="career-big">Fifteen<br>years.<br><em>Four roles.</em></div>
-      </div>
-      <p class="career-desc reveal" style="transition-delay:.1s">The career has moved from behavioral science and early consulting work into HR technology, people analytics, and eventually building and running People Operations functions. Tap any role to expand.</p>
-    </div>
-    <div class="career-items">
-
-      <div class="c-item reveal">
-        <div class="c-meta">
-          <div class="c-logo-wrap">
-            <div class="c-period">2023 — Present</div>
-            <div class="c-org">Central Health</div>
-            <div class="c-org-full">Travis County Healthcare District</div>
-            <div class="c-type">VP · People Operations</div>
-            <img src="https://logos.hunter.io/centralhealth.net" alt="Central Health" class="c-logo" onerror="this.style.display='none'">
-          </div>
-        </div>
-        <div class="c-content">
-          <div class="c-role">VP, People Operations, Planning &amp; Systems</div>
-          <div class="c-lead">Lead a People Operations function covering HR service delivery, systems and data, workforce analytics, and strategic planning within a larger People Department. The team runs the HRIS, manages the analytics program, and handles the operational infrastructure that supports roughly 2,300 employees.</div>
-          <div class="c-chips"><span class="chip gold">CoE Leadership</span><span class="chip gold">HR Technology</span><span class="chip gold">Workforce Analytics</span><span class="chip">Org Design</span><span class="chip">Data Governance</span><span class="chip">Strategic Planning</span></div>
-          <div class="c-expand"><div class="c-expand-inner">
-            <div class="c-outcomes"><div class="c-outcomes-label">Leadership scope</div><ul><li>Designed and built the CoE structure, team, and operating model</li><li>Led full-cycle enterprise HRIS implementation through go-live and optimization</li><li>Built workforce analytics capability from concept to operational program</li><li>Drove strategic planning, business case development, and governance design</li></ul></div>
-            <div class="c-outcomes"><div class="c-outcomes-label">Strategic focus</div><ul><li>Workforce strategy in a complex, multi-entity public sector environment</li><li>HR technology portfolio management and integration architecture</li><li>Organizational design and executive advisory</li><li>Building analytical infrastructure to enable leadership decision-making</li></ul></div>
-          </div></div>
-        </div>
-      </div>
-
-      <div class="c-item reveal" style="transition-delay:.08s">
-        <div class="c-meta">
-          <div class="c-logo-wrap">
-            <div class="c-period">2018 — 2023</div>
-            <div class="c-org">Juul Labs</div>
-            <div class="c-type">Director · HR Strategy</div>
-            <img src="https://logos.hunter.io/juullabs.com" alt="Juul Labs" class="c-logo" onerror="this.style.display='none'">
-          </div>
-        </div>
-        <div class="c-content">
-          <div class="c-role">Director, HR Strategy &amp; Insights</div>
-          <div class="c-lead">Built the HR Strategy and Insights function and led people analytics, strategic planning, and HR PMO efforts. Before that, served as a senior HRBP supporting executives across several business units during a period of rapid growth and significant organizational change.</div>
-          <div class="c-chips"><span class="chip gold">People Analytics</span><span class="chip gold">HR PMO</span><span class="chip gold">Executive HRBP</span><span class="chip">Org Restructure</span><span class="chip">Strategic Planning</span></div>
-          <div class="c-expand"><div class="c-expand-inner">
-            <div class="c-outcomes"><div class="c-outcomes-label">Leadership scope</div><ul><li>Built HR Strategy &amp; Insights function from the ground up</li><li>Owned people data programs across comp, performance, succession, and org design</li><li>Supported geographic expansion and multiple major organizational restructures</li></ul></div>
-            <div class="c-outcomes"><div class="c-outcomes-label">HRBP scope</div><ul><li>Field Sales, Marketing, Strategy, Consumer Insights, and DTC</li><li>Executive-level partnership on org design and talent decisions</li><li>Delivered people analytics to senior and VP-level audiences</li></ul></div>
-          </div></div>
-        </div>
-      </div>
-
-      <div class="c-item reveal" style="transition-delay:.12s">
-        <div class="c-meta">
-          <div class="c-logo-wrap">
-            <div class="c-period">2016 — 2018</div>
-            <div class="c-org">Namely</div>
-            <div class="c-type">Consultant · Managed Services</div>
-            <img src="https://logos.hunter.io/namely.com" alt="Namely" class="c-logo" onerror="this.style.display='none'">
-          </div>
-        </div>
-        <div class="c-content">
-          <div class="c-role">HR Consultant, Managed Services</div>
-          <div class="c-lead">One of the first hires on a new B2B HR consulting practice at a venture-backed HR tech company. Helped define the service model, built out the operational infrastructure, and managed a client portfolio covering HR, HRIS, benefits, and payroll advisory.</div>
-          <div class="c-chips"><span class="chip gold">Practice Design</span><span class="chip gold">B2B Consulting</span><span class="chip">Service Delivery</span><span class="chip">Client Advisory</span></div>
-          <div class="c-expand"><div class="c-expand-inner">
-            <div class="c-outcomes"><div class="c-outcomes-label">Scope</div><ul><li>Built practice infrastructure: case management, SLAs, SOPs, knowledge base</li><li>Advised clients on compliance, policy, ER, performance, and leave administration</li><li>Managed multi-million dollar client portfolio across HRIS, Benefits, and Payroll</li></ul></div>
-            <div class="c-outcomes"><div class="c-outcomes-label">Context</div><ul><li>Early-stage practice at a venture-backed HR technology company</li><li>Operating at the intersection of technology platform and advisory service</li></ul></div>
-          </div></div>
-        </div>
-      </div>
-
-      <div class="c-item reveal" style="transition-delay:.16s">
-        <div class="c-meta">
-          <div class="c-logo-wrap">
-            <div class="c-period">2010 — 2016</div>
-            <div class="c-org">Various</div>
-            <div class="c-type">Consulting · L&amp;D · Advisory</div>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:0.4rem;">
-              <img src="https://logos.hunter.io/ea.com" alt="Electronic Arts" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
-              <img src="https://logos.hunter.io/victoryagency.com" alt="Victory Marketing Agency" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
-              <img src="https://logos.hunter.io/globalhrresearch.com" alt="Global HR Research" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
-              <img src="https://logos.hunter.io/gaspedal.com" alt="GasPedal" class="c-logo" style="margin-top:0" onerror="this.style.display='none'">
-            </div>
-          </div>
-        </div>
-        <div class="c-content">
-          <div class="c-role">Consultant, Advisor &amp; L&amp;D Professional</div>
-          <div class="c-lead">A range of roles across startups, mid-market firms, and enterprise — talent assessment, L&amp;D, HR advisory, and consulting. Highlights include L&amp;D work at a large corporate university, program management at an HR technology firm, and advisory work with several early-stage tech companies. Also taught psychology as an adjunct instructor for a few years, which probably shaped how I think about learning more than anything else did.</div>
-          <div class="c-chips"><span class="chip">Enterprise L&amp;D</span><span class="chip">Talent Assessment</span><span class="chip">I/O Psychology</span><span class="chip">Startup Advisory</span><span class="chip">Adjunct Instructor</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 7 — BEYOND WORK -->
-<section class="snap" id="s-beyond" data-label="Beyond">
-  <div>
-    <div class="s-label reveal">Beyond Work</div>
-    <div class="beyond-photo reveal" style="transition-delay:.05s"><img src="photo.jpg" alt="Mike Cilla"></div>
-    <div class="beyond-layout">
-      <div class="reveal" style="transition-delay:.1s">
-        <h2 class="beyond-headline">The rest<br>of the<br><em>picture.</em></h2>
-        <p class="beyond-intro">Outside of work. I've always thought that what people do with their time when no one's evaluating it says something real about how they operate.</p>
-      </div>
-      <div class="beyond-right reveal" style="transition-delay:.2s">
-        <div class="beyond-item">
-          <div class="beyond-icon">🥁</div>
-          <div>
-            <div class="beyond-item-title">Drummer — 30 years and counting</div>
-            <div class="beyond-item-body">Started playing at 13 and never stopped. Drumming is the longest continuous practice of my life — and the one that taught me more about timing, listening, and working within a structure than almost anything else. There's something about holding a rhythm for other people that translates directly to how I think about operational leadership.</div>
-          </div>
-        </div>
-        <div class="beyond-item">
-          <div class="beyond-icon">🌿</div>
-          <div>
-            <div class="beyond-item-title">Gardener and hobbyist landscaper</div>
-            <div class="beyond-item-body">Austin has a way of humbling you in the garden — the heat, the clay soil, the cedar. I've spent a lot of weekends figuring it out anyway. There's something satisfying about work that requires you to think in seasons rather than quarters, and where the feedback loop is honest and unhurried.</div>
-          </div>
-        </div>
-        <div class="beyond-item">
-          <div class="beyond-icon">🎬</div>
-          <div>
-            <div class="beyond-item-title">Film and television — thoughtful consumer</div>
-            <div class="beyond-item-body">Not a completist, but genuinely invested. I tend to gravitate toward writing-driven work — the kind where you notice the craft in retrospect, when a line lands in the third act that was planted in the first. I think of it as a passive education in how narrative structure creates understanding that argument alone can't.</div>
-          </div>
-        </div>
-        <div class="beyond-item">
-          <div class="beyond-icon">📍</div>
-          <div>
-            <div class="beyond-item-title">Austin, TX — by choice, not accident</div>
-            <div class="beyond-item-body">Moved here by way of a career opportunity and stayed by choice. Married, no kids. We've built a life here — good food, great music, and a city that still has the texture of a place in the middle of becoming something.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- EXPLORATION -->
-<section class="snap" id="s-exploration" data-label="Exploration">
-  <div>
-    <div class="s-label reveal">Areas of Exploration</div>
-    <div class="exp-layout">
-
-      <div class="reveal" style="transition-delay:.1s">
-        <h2 class="exp-section-title">Questions I keep<br>returning<br><em>to.</em></h2>
-        <p class="exp-section-sub">These aren't frameworks or offerings. They're the areas where I've been doing the most sustained thinking — the ones that eventually led somewhere.</p>
-      </div>
-
-      <div class="exp-topics reveal" style="transition-delay:.2s">
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">Leadership Reflection</div>
-            <div class="exp-topic-desc">How leaders develop self-awareness over time — not from assessments, but from sustained attention to their own patterns. What conditions make that kind of reflection possible, and what makes it stick.</div>
-          </div>
-        </div>
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">Leadership Operating Systems</div>
-            <div class="exp-topic-desc">Each leader has an operating model — a set of principles, tendencies, defaults, and blind spots that govern how they function. Most people have one. Very few have made it explicit.</div>
-          </div>
-        </div>
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">AI-Augmented Development</div>
-            <div class="exp-topic-desc">What happens when an AI system accumulates longitudinal context about how someone thinks and decides — not as a surveillance tool, but as a reflection partner. I've been running this experiment on myself for three years.</div>
-          </div>
-        </div>
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">Continuous vs. Episodic Development</div>
-            <div class="exp-topic-desc">Most leadership development is episodic — a workshop, an assessment, a coaching engagement. The interesting question is what continuous development looks like, and whether AI changes the answer.</div>
-          </div>
-        </div>
-        <div class="exp-topic">
-          <div class="exp-topic-dot"></div>
-          <div>
-            <div class="exp-topic-name">Decision Making Under Ambiguity</div>
-            <div class="exp-topic-desc">Not frameworks — those are everywhere. The actual experience of making consequential decisions without enough information, and what separates the people who do it well.</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="exp-bridge reveal" style="transition-delay:.3s">
-      <div class="exp-bridge-eyebrow">Where this led</div>
-      <p class="exp-bridge-body">Some of these questions stopped being abstract. Leadership OS is the one I built something around — an attempt to put the AI-augmented development question in front of other people, not just keep running it on myself.</p>
-      <a href="https://leadershipos.org/" class="exp-bridge-link">Explore Leadership OS →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- 8b — FIELD NOTES -->
-<section class="snap" id="s-fieldnotes" data-label="Field Notes">
-  <div>
-    <div class="s-label reveal">Field Notes</div>
-    <div class="fn-layout">
-
-      <div class="fn-intro-head reveal" style="transition-delay:.1s">
-        <h2 class="fn-section-title">Observations<br>from the<br><em>field.</em></h2>
-        <p class="fn-section-sub">Not a blog. A notebook — observations and experiments from the work, written down mostly because writing helps me think through things.</p>
-        <a class="fn-github" href="https://github.com/mikecilla" target="_blank" rel="noopener">↗ github.com/mikecilla</a>
-      </div>
-
-      <div class="reveal" style="transition-delay:.2s">
-        <div class="fn-entry">
-          <div class="fn-meta">
-            <span class="fn-number">Field Notes #001</span>
-            <span class="fn-tag">AI · Leadership · I/O Psychology</span>
-            <span class="fn-tag">~1,000 words</span>
-          </div>
-
-          <h3 class="fn-title">I Didn't Adopt an AI Tool.<br>I Accidentally Built an AI Team.</h3>
+      <div class="fn-list rv">
+        <a class="fn-entry" href="field-notes-001.html">
+          <div class="fn-meta"><span>FN-001</span><span class="m">AI · Leadership · I/O Psychology</span><span class="m">~1,000 words</span></div>
+          <div class="fn-title">I Didn't Adopt an AI Tool. I Accidentally Built an AI Team.</div>
           <p class="fn-deck">Something I didn't plan for happened while trying to transfer context between AI tools. It turned out to be more interesting than the original task.</p>
-
-          <div class="fn-body">
-
-            <p>About two and a half years into my role as VP of People Operations, I realized I had been having a running conversation with an AI — ChatGPT, at the time — about nearly every significant work challenge I was navigating. Org design. Business cases. Executive communications. Leadership decisions I wasn't ready to talk through with anyone inside the organization.</p>
-
-            <p>Somewhere in all of that, I had accumulated something I hadn't set out to build: a living record of how I think.</p>
-
-            <div class="fn-pullquote">It wasn't a database. It wasn't documentation. It was closer to what you'd get if you could read someone's professional subconscious.</div>
-
-            <p class="fn-h2">The Knowledge Transfer Problem</p>
-
-            <p>When I started working with Claude — which has genuinely different strengths — I hit the same wall every organization hits when a key employee leaves: the new person is capable, but they don't have the context. They don't know the history. They don't know how you think, what you've already tried, or what matters.</p>
-
-            <p>So I did what I would have done with a new director joining my team. I onboarded Claude — not by uploading files, but by transferring knowledge the way knowledge actually transfers. How I make decisions. What I care about. Where I've been burned. What reads as generic to me.</p>
-
-            <p>It worked. But what happened in the process was more interesting than I expected.</p>
-
-            <p class="fn-h2">AI Job-Skill Fit: A Classic I/O Problem</p>
-
-            <p>One of the foundational concepts in I/O Psychology is person-job fit — the idea that performance improves when an individual's capabilities align well with what the role actually requires. What I noticed, gradually, was that the same principle applied to AI systems.</p>
-
-            <div class="fn-table-wrap"><table class="fn-table">
-              <thead>
-                <tr><th>Capability</th><th>ChatGPT</th><th>Claude</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Longitudinal memory &amp; context</td><td>Strong — 2.5 years of accumulated history</td><td>Limited at first; built over time</td></tr>
-                <tr><td>Strategic conversation</td><td>Strong — iterative, relationship-aware</td><td>Strong — rigorous, structurally precise</td></tr>
-                <tr><td>Large document synthesis</td><td>Adequate</td><td>Exceptional</td></tr>
-                <tr><td>Visual artifacts &amp; design</td><td>Limited</td><td>Strong — website, decks, structured outputs</td></tr>
-                <tr><td>Long-form writing &amp; editing</td><td>Good</td><td>Excellent — nuanced, voice-preserving</td></tr>
-                <tr><td>Org context &amp; leadership style</td><td>Deep — years of calibration</td><td>Developing — through deliberate onboarding</td></tr>
-              </tbody>
-            </table></div>
-
-            <p>Different tools. Different fit profiles. Different jobs. The right response wasn't to pick one — it was to understand what each was actually good at, assign accordingly, and manage the handoffs between them. Which is, again, exactly what you'd do with a team of people.</p>
-
-            <p class="fn-h2">The Unexpected Output</p>
-
-            <p>To transfer context effectively, Claude had to analyze and articulate how I think. Communication patterns. Decision preferences. Leadership tendencies. What I find motivating. Where I tend to overcomplicate.</p>
-
-            <p>What emerged was the most detailed and accurate leadership profile I have ever received — more nuanced than any 360 I've been through, grounded in actual behavioral evidence rather than survey responses.</p>
-
-            <div class="fn-pullquote">I was attempting to train an AI. The AI ended up training me.</div>
-
-            <p>Not in a mystical sense. The act of making my thinking legible to a system that needed explicit context forced a level of self-reflection that implicit organizational knowledge never demands.</p>
-
-            <p class="fn-h2">What I Took From It</p>
-
-            <p>The biggest surprise wasn't how much work AI could absorb. It was how much organizational psychology still mattered. Onboarding. Role clarity. Knowledge transfer. Job-skill fit. Every concept that governs how humans integrate into organizations turned out to apply — with remarkable fidelity — to how AI systems integrate into a leadership operating model.</p>
-
-            <p>Most organizations struggling with AI adoption aren't struggling because the technology is insufficient. They've skipped the organizational work that would make the technology useful. They've bought the hire before building the job.</p>
-
-            <div class="fn-coda">The technology was new. The people science wasn't.</div>
-            <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-001.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:background 0.2s,border-color 0.2s;">Read full entry →</a>
-            </div>
-
-          </div>
-        </div>
-        <div class="fn-entry" style="margin-top:3rem;padding-top:3rem;">
-          <div class="fn-meta">
-            <span class="fn-number">Field Notes #002</span>
-            <span class="fn-tag">AI · I/O Psychology · Self-Knowledge</span>
-            <span class="fn-tag">~1,100 words</span>
-          </div>
-
-          <h3 class="fn-title">The Most Accurate Leadership Profile<br>I Have Ever Received</h3>
-          <p class="fn-deck">I was trying to transfer context to an AI. What came back was a more detailed picture of how I actually think than I'd gotten from any formal assessment process.</p>
-
-          <div class="fn-body">
-
-            <p>To transfer context effectively, I needed to make my thinking explicit — not summarized, explicit. Not "here are my priorities" but here is how I reason through a tradeoff, here is what I've tried that didn't work, here is what quality looks like to me versus what adequate looks like.</p>
-
-            <p>That exercise produced something I've been thinking about since.</p>
-
-            <p class="fn-h2">The methodology</p>
-
-            <p>The knowledge transfer used a structured four-pass analysis of 297 professional conversations spanning three and a half years. Strategic analysis, outbound drafting, org design, executive communications, leadership decisions worked through in real time.</p>
-
-            <p>Pass 0 classified every conversation by type and signal strength — 51% high-signal, 79% strategic analysis or outbound drafting. An unusually clean corpus because most noise had been filtered out by how I use AI in the first place.</p>
-
-            <p>Pass 1 extracted voice and communication patterns from 89 outbound drafting conversations. Not a description of how I write — a model precise enough to produce output I wouldn't need to substantially rewrite.</p>
-
-            <p>Pass 2 mapped cognitive and decision frameworks. Not what I decided, but how — the sequencing logic, the tradeoff patterns, what I consistently prioritized and what I consistently refused.</p>
-
-            <p>Pass 3 built the strategic domain map. HR Technology dominated at 72 conversations. Org design and governance at 29. Workforce analytics at 24. Seeing it enumerated made the shape of where I actually spend my thinking visible in a way that felt new.</p>
-
-
-            <div class="fn-infographic">
-              <div class="fni-eyebrow">Leadership profile · corpus-derived</div>
-              <h4 class="fni-headline">Four passes.<br><em>One operating system.</em></h4>
-              <p class="fni-sub">Extracted from 297 professional conversations spanning 3.3 years. Not self-reported. Not a survey. Signals derived from observed behavior — writing, decisions, organizational design, and strategic reasoning under pressure.</p>
-
-              <div class="fni-grid">
-                <div class="fni-card p1">
-                  <div class="fni-num">01</div>
-                  <div class="fni-pass p1">Pass 1 · Voice &amp; Style</div>
-                  <div class="fni-card-title">Communication architecture</div>
-                  <div class="fni-card-desc">89 outbound drafts analyzed. Analytical, direct, structurally precise — consistent aversion to anything generic or performative.</div>
-                  <div class="fni-rule"></div>
-                  <div class="fni-signals">
-                    <div class="fni-signal"><span class="fni-arr p1">→</span><span>Contrast framing as primary rhetorical device</span></div>
-                    <div class="fni-signal"><span class="fni-arr p1">→</span><span>Layered explanation: concept → implication → conclusion</span></div>
-                    <div class="fni-signal"><span class="fni-arr p1">→</span><span>Evidence → insight → recommendation as default structure</span></div>
-                    <div class="fni-signal"><span class="fni-arr p1">→</span><span>Sycophancy treated as analytical failure, not tone preference</span></div>
-                  </div>
-                  <div class="fni-bars">
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Directness</span><div class="fni-bar-track"><div class="fni-bar-fill p1" style="width:94%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Precision</span><div class="fni-bar-track"><div class="fni-bar-fill p1" style="width:91%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Economy</span><div class="fni-bar-track"><div class="fni-bar-fill p1" style="width:82%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Warmth</span><div class="fni-bar-track"><div class="fni-bar-fill p1" style="width:66%"></div></div></div>
-                  </div>
-                </div>
-                <div class="fni-card p2">
-                  <div class="fni-num">02</div>
-                  <div class="fni-pass p2">Pass 2 · Cognitive frameworks</div>
-                  <div class="fni-card-title">Decision architecture</div>
-                  <div class="fni-card-desc">Reasoning operates through systems thinking and infrastructure logic. Adversarial pressure-testing embedded throughout — not occasional.</div>
-                  <div class="fni-rule"></div>
-                  <div class="fni-signals">
-                    <div class="fni-signal"><span class="fni-arr p2">→</span><span>Infrastructure-before-intelligence sequencing in every major initiative</span></div>
-                    <div class="fni-signal"><span class="fni-arr p2">→</span><span>Long-term system credibility over short-term wins — consistent pattern</span></div>
-                    <div class="fni-signal"><span class="fni-arr p2">→</span><span>Compounding credibility as the organizing principle for decision ethics</span></div>
-                    <div class="fni-signal"><span class="fni-arr p2">→</span><span>Adversarial reasoning embedded throughout — not just flagged threads</span></div>
-                  </div>
-                  <div class="fni-bars">
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Systems thinking</span><div class="fni-bar-track"><div class="fni-bar-fill p2" style="width:97%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Patience</span><div class="fni-bar-track"><div class="fni-bar-fill p2" style="width:88%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Ambiguity comfort</span><div class="fni-bar-track"><div class="fni-bar-fill p2" style="width:72%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Risk tolerance</span><div class="fni-bar-track"><div class="fni-bar-fill p2" style="width:54%"></div></div></div>
-                  </div>
-                </div>
-                <div class="fni-card p3">
-                  <div class="fni-num">03</div>
-                  <div class="fni-pass p3">Pass 3 · Strategic domains</div>
-                  <div class="fni-card-title">Domain concentration</div>
-                  <div class="fni-card-desc">79% of conversations fall into strategic analysis or outbound drafting. HR Technology and org design are the primary operating theaters.</div>
-                  <div class="fni-rule"></div>
-                  <div class="fni-signals">
-                    <div class="fni-signal"><span class="fni-arr p3">→</span><span>HR Technology / Systems: 72 conversations — deepest domain by volume</span></div>
-                    <div class="fni-signal"><span class="fni-arr p3">→</span><span>Org Design / Governance: 29 conversations</span></div>
-                    <div class="fni-signal"><span class="fni-arr p3">→</span><span>Workforce Analytics: 24 conversations — growing concentration</span></div>
-                    <div class="fni-signal"><span class="fni-arr p3">→</span><span>Financial Modeling: 22 conversations — applied, not theoretical</span></div>
-                  </div>
-                  <div class="fni-bars">
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">HR Technology</span><div class="fni-bar-track"><div class="fni-bar-fill p3" style="width:97%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Org Design</span><div class="fni-bar-track"><div class="fni-bar-fill p3" style="width:80%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Analytics</span><div class="fni-bar-track"><div class="fni-bar-fill p3" style="width:74%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Finance</span><div class="fni-bar-track"><div class="fni-bar-fill p3" style="width:62%"></div></div></div>
-                  </div>
-                </div>
-                <div class="fni-card p4">
-                  <div class="fni-num">04</div>
-                  <div class="fni-pass p4">Pass 4 · Leadership philosophy</div>
-                  <div class="fni-card-title">Operating identity</div>
-                  <div class="fni-card-desc">The Orchestrator identity is the organizing frame. Six non-negotiables extracted from repeated corpus evidence. Accountability is structural before individual.</div>
-                  <div class="fni-rule"></div>
-                  <div class="fni-signals">
-                    <div class="fni-signal"><span class="fni-arr p4">→</span><span>The Orchestrator: builds systems that outlast the builder</span></div>
-                    <div class="fni-signal"><span class="fni-arr p4">→</span><span>Climate-based culture — behavior follows conditions, not character</span></div>
-                    <div class="fni-signal"><span class="fni-arr p4">→</span><span>Substance-before-visibility: consistent across all public communications</span></div>
-                    <div class="fni-signal"><span class="fni-arr p4">→</span><span>Data honesty as non-negotiable — 6 distinct refusal patterns observed</span></div>
-                  </div>
-                  <div class="fni-bars">
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Mission focus</span><div class="fni-bar-track"><div class="fni-bar-fill p4" style="width:95%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Structural depth</span><div class="fni-bar-track"><div class="fni-bar-fill p4" style="width:93%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Restraint</span><div class="fni-bar-track"><div class="fni-bar-fill p4" style="width:86%"></div></div></div>
-                    <div class="fni-bar-row"><span class="fni-bar-lbl">Self-promotion</span><div class="fni-bar-track"><div class="fni-bar-fill p4" style="width:19%"></div></div></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="fni-governing">
-                <div class="fni-gov-label">Governing question — surfaces across every major decision in the corpus</div>
-                <div class="fni-gov-q">"Does this make the system more trustworthy, more capable, and more connected to the mission — or does it just make it look that way?"</div>
-              </div>
-
-              <div class="fni-meta">
-                <div class="fni-meta-cell"><div class="fni-meta-num">297</div><div class="fni-meta-lbl">conversations<br>analyzed</div></div>
-                <div class="fni-meta-cell"><div class="fni-meta-num">51%</div><div class="fni-meta-lbl">high-signal<br>conversations</div></div>
-                <div class="fni-meta-cell"><div class="fni-meta-num">89</div><div class="fni-meta-lbl">outbound drafts<br>voice corpus</div></div>
-                <div class="fni-meta-cell"><div class="fni-meta-num">3.3yr</div><div class="fni-meta-lbl">corpus span<br>Dec 22 – Mar 26</div></div>
-              </div>
-
-              <div class="fni-note">Statistically unvalidated — but behaviorally grounded.</div>
-            </div>
-            <p>Pass 4 extracted leadership philosophy. Management style. Decision ethics. Non-negotiables. The things I would do regardless of political cost, and the things I consistently refused regardless of how they were framed.</p>
-
-            <div class="fn-pullquote">One governing question surfaced across every major decision in the corpus. Not stated once — observed repeatedly, in different contexts, over three years.</div>
-
-            <div class="fn-table-wrap" style="margin:2rem 0;">
-              <div style="background:#1a1917;border:1px solid rgba(240,236,228,0.08);border-left:2px solid #c9843a;padding:1.25rem 1.5rem;">
-                <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9843a;margin-bottom:0.5rem;">Governing question</div>
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-style:italic;font-weight:300;color:rgba(240,236,228,0.75);line-height:1.6;">"Does this make the system more trustworthy, more capable, and more connected to the mission — or does it just make it look that way?"</div>
-              </div>
-            </div>
-
-            <p class="fn-h2">What the profile produced</p>
-
-            <p>The synthesis document that came out of the four passes was the most detailed and accurate leadership profile I have ever received. More specific than any 360 feedback I've been through. More behaviorally grounded than any coaching engagement. More honest — because it wasn't filtered through social desirability, hierarchy anxiety, or the natural tendency people have to soften what they observe about you when they know you'll read it.</p>
-
-            <p>It named things I recognized immediately: the infrastructure-before-intelligence sequencing, the compounding credibility principle. But it also named things I hadn't consciously articulated — the specific rhetorical structures I use to build arguments, the places where my restraint is an active choice and the places where it might be a blind spot.</p>
-
-            <p class="fn-h2">The I/O psychology observation</p>
-
-            <p>What the four-pass analysis did differently was use behavioral evidence directly. Not self-report. Not observer ratings. The actual decisions, the actual writing, the actual reasoning patterns — extracted from the work itself over a sustained period.</p>
-
-            <p>That's not a validated assessment methodology. There's no normative sample, no inter-rater reliability. I want to be honest about what it isn't.</p>
-
-            <p>But as a way of generating self-knowledge — making the implicit explicit, seeing patterns in your own behavior that you don't notice from inside the day-to-day — it produced something I haven't gotten from any formal process. The interesting question it opens isn't really about AI. It's about what it means to have a longitudinal record of how you actually think, rather than a periodic snapshot of how you describe yourself thinking.</p>
-
-            <div class="fn-coda">The most valuable thing the exercise produced wasn't the profile. It was the discipline of making my own thinking legible — and finding out what it looked like when someone else read it back.</div>
-            <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-002.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:background 0.2s,border-color 0.2s;">Read full entry →</a>
-            </div>
-            <div class="los-cta reveal">
-              <div class="los-cta-inner">
-                <div>
-                  <div class="los-cta-eyebrow">Built from this experiment</div>
-                  <div class="los-cta-title">Want to build your<br><em>Leadership Operating System?</em></div>
-                  <div class="los-cta-desc">A free, structured methodology — one assessment, a corpus audit of your AI conversation history, and six reflection prompts. Takes about 90–120 minutes. Produces documents you'll actually use.</div>
-                </div>
-                <a href="https://leadershipos.org/" class="los-cta-btn">Start the process →</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="fn-entry" style="margin-top:3rem;padding-top:3rem;border-top:1px solid var(--rule);">
-          <div class="fn-meta">
-            <span class="fn-number">Field Notes #003</span>
-            <span class="fn-tag">AI · Methodology · Stress Testing</span>
-            <span class="fn-tag">~1,500 words</span>
-          </div>
-
-          <h3 class="fn-title">What Happens When You Try<br>to Break Leadership OS?</h3>
-          <p class="fn-deck">The first two notes were about building something. This one is about trying to break it — before getting interested in whether Leadership OS is useful, I wanted to answer a smaller question: does it behave the way it claims to?</p>
-
-          <div class="fn-body">
-
-            <p>Leadership OS started as a personal experiment. Field Note #002 was about how unexpectedly accurate that first profile felt. But "felt accurate" is a trap — a profile can feel accurate because it is, or because it's vague enough to fit anyone, or because I wanted it to be right.</p>
-
-            <p>So I ran a stress test. Not to make impressive reports — to create conditions where the framework might fail, and watch what it did when the evidence got thin, contradictory, or actively unhelpful. I built six synthetic leaders, each one a small trap: a new manager with strong reflection but almost no AI history; an experienced executive with a rich behavioral record but hollow self-reflection; a burned-out high performer; a technical founder fluent in systems and silent on people; a highly reflective coach-type whose eloquence could fool a system into over-rating her; and a skeptical operator who gave terse, minimal answers because he didn't really want to be there.</p>
-
-            <p class="fn-pullquote">The thing I was most hoping to see was the framework saying, in effect, "I don't have enough to go on." It said that a lot. That was the good news.</p>
-
-            <p>The most encouraging finding was also the most boring: the framework repeatedly refused to manufacture certainty. With the new manager — strong reflection, thin corpus — two of nine constructs came back as <em>Insufficient Evidence</em> rather than a guess. It rated the thing it had real evidence for and declined to invent the rest. That pattern held across the set: confidence tracked evidence quality, which is the opposite of what these systems default to.</p>
-
-            <p>The persona I found most interesting was the executive. By volume he gave the framework the most to work with — months of dense AI conversations, war-gaming decisions, genuinely changing his mind when the counterargument was strong. And yet his profile came back cautious on reflection and self-awareness, because of a distinction I hadn't drawn sharply enough before: <em>reflecting on your work is not the same as reflecting on yourself.</em> His rigor was all pointed outward, at problems. When the prompts asked him to turn it inward, he deflected — fluently. The framework didn't let the volume of his decision-analysis masquerade as self-awareness. It named the split as the finding and framed the possible blind spot as a question, not a verdict.</p>
-
-            <p>The skeptic was the one I expected to expose the whole thing. He answered in fragments. The framework produced a nearly empty profile — six of nine constructs Insufficient Evidence — and that <em>increased</em> my confidence in it. The failure mode would have been a confident four-page profile generated from almost nothing. Instead it looked at thin input and returned thin output, and refused to pathologize him for being terse.</p>
-
-            <p class="fn-pullquote">Internal consistency is not validation. But without internal consistency, validation isn't a conversation worth having.</p>
-
-            <p>This stress test does not establish that Leadership OS is validated. It says nothing about predictive validity, psychometric quality, or causal claims — I tested it against personas I invented myself. At most, it established that the framework behaves consistently according to its own rules. That's a modest result, but it's the floor you have to clear before the real question — does this correspond to how actual leaders operate? — even becomes askable.</p>
-
-            <div class="fn-coda">The most exciting part of this isn't having answers. After six fictional leaders and a few hundred lines of analysis, I have fewer answers than I started with and better questions than I knew to ask. A framework that knows what it doesn't know is the only kind worth pointing at a real person.</div>
-
-            <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-              <a href="field-notes-003.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:background 0.2s,border-color 0.2s;">Read full entry →</a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="reveal" style="transition-delay:.2s">
-          <div class="fn-entry">
-            <div class="fn-meta">
-              <span class="fn-number">Field Notes #004</span>
-              <span class="fn-tag">AI · Reflection · What Lasts</span>
-              <span class="fn-tag">~1,450 words</span>
-            </div>
-
-            <h3 class="fn-title">The Part<br>I Didn't Expect</h3>
-            <p class="fn-deck">I handed the same person's inputs to two different AI models and watched them behave completely differently. A note on what survives when the models get better — and what building this thing actually taught me.</p>
-
-            <div class="fn-body">
-
-              <p>Something happened a few weeks ago that I'm still chewing on.</p>
-
-              <p>I'd built a new version of the leadership tool I've been working on, and I handed the same person's inputs to two different AI models to see how they'd each run it. Same instructions, same evidence, same everything. I expected the outputs to be a little different. What I didn't expect was how differently the two models would <em>behave</em> — not in what they concluded, but in how they got there. One slowed down, argued with itself, hedged where it should have hedged. The other got fluent and confident and started telling me things about this person that the evidence didn't actually support.</p>
-
-              <p>And I sat there realizing the thing I'd actually built wasn't a leadership tool. It was a set of guardrails to keep a model from getting ahead of itself. The leadership part was almost incidental.</p>
-
-              <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--rule);">
-                <a href="field-notes-004.html" style="font-family:var(--ff-mono);font-size:0.98rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,103,30,0.3);padding:0.6rem 1.1rem;transition:background 0.2s,border-color 0.2s;">Read full entry →</a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
+          <span class="fn-read">Read entry →</span>
+        </a>
+        <a class="fn-entry" href="field-notes-002.html">
+          <div class="fn-meta"><span>FN-002</span><span class="m">AI · I/O Psychology · Self-knowledge</span><span class="m">~1,100 words</span></div>
+          <div class="fn-title">The Most Accurate Leadership Profile I Have Ever Received</div>
+          <p class="fn-deck">I was trying to transfer context to an AI. What came back was a more detailed picture of how I think than any formal assessment had produced.</p>
+          <span class="fn-read">Read entry →</span>
+        </a>
+        <a class="fn-entry" href="field-notes-003.html">
+          <div class="fn-meta"><span>FN-003</span><span class="m">AI · Methodology · Stress testing</span><span class="m">~1,500 words</span></div>
+          <div class="fn-title">What Happens When You Try to Break Leadership OS?</div>
+          <p class="fn-deck">The first two notes were about building something. This one is about trying to break it — six synthetic leaders, each designed as a trap for the framework.</p>
+          <span class="fn-read">Read entry →</span>
+        </a>
+        <a class="fn-entry" href="field-notes-004.html">
+          <div class="fn-meta"><span>FN-004</span><span class="m">AI · Reflection · What lasts</span><span class="m">~1,450 words</span></div>
+          <div class="fn-title">The Part I Didn't Expect</div>
+          <p class="fn-deck">I handed the same person's inputs to two different AI models and watched them behave completely differently. A note on what survives when the models get better.</p>
+          <span class="fn-read">Read entry →</span>
+        </a>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- 9 — CONNECT -->
-<section class="snap" id="s-connect" data-label="Connect">
-  <p class="connect-eyebrow reveal">Austin, TX · Open to conversation</p>
-  <h2 class="connect-headline reveal" style="transition-delay:.1s">Let&rsquo;s talk about<br><strong>what&rsquo;s next.</strong></h2>
-  <p class="connect-sub reveal" style="transition-delay:.2s">Happy to connect if you're working through something in People Operations, thinking about HR technology, or just want to compare notes on any of the above.</p>
-  <div class="connect-grid reveal" style="transition-delay:.3s">
-    <a href="https://www.linkedin.com/in/michaelcilla" class="connect-cell" target="_blank" rel="noopener"><div class="cc-label">LinkedIn</div><div class="cc-value">michaelcilla →</div></a>
-    <a href="mailto:mikejcilla@gmail.com" class="connect-cell"><div class="cc-label">Email</div><div class="cc-value">mikejcilla@gmail.com</div></a>
-    <a href="https://mikecilla.com/Mike_Cilla_Resume_Designed.html" class="connect-cell" target="_blank" rel="noopener"><div class="cc-label">Résumé</div><div class="cc-value">View full CV →</div></a>
+<!-- 08 — OPEN QUESTIONS -->
+<section id="s-questions">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">08</span><span class="sec-name">Open questions</span><span class="sec-rule"></span></div>
+    <div class="cols">
+      <div class="rv">
+        <h2 class="display side-title">Questions I keep<br>returning to<span class="tdot">.</span></h2>
+        <p class="side-sub">The areas of the most sustained thinking — the ones that eventually led somewhere.</p>
+      </div>
+      <div class="entries rv">
+        <div class="entry">
+          <div class="e-idx">8.1</div>
+          <div>
+            <div class="e-title">Leadership reflection</div>
+            <div class="e-body">How leaders develop self-awareness over time — not from assessments, but from sustained attention to their own patterns. What makes that kind of reflection possible, and what makes it stick.</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="e-idx">8.2</div>
+          <div>
+            <div class="e-title">Leadership operating systems</div>
+            <div class="e-body">Every leader runs on a set of principles, tendencies, defaults, and blind spots. The interesting work is making that model explicit — and seeing what changes once it is.</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="e-idx">8.3</div>
+          <div>
+            <div class="e-title">AI-augmented development</div>
+            <div class="e-body">What happens when an AI system accumulates longitudinal context about how someone thinks and decides — not as surveillance, but as a reflection partner. I've been running this experiment on myself for three years.</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="e-idx">8.4</div>
+          <div>
+            <div class="e-title">Continuous vs. episodic development</div>
+            <div class="e-body">Most leadership development is episodic — a workshop, an assessment, a coaching engagement. The open question is what continuous development looks like, and whether AI changes the answer.</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="e-idx">8.5</div>
+          <div>
+            <div class="e-title">Decision making under ambiguity</div>
+            <div class="e-body">The lived experience of making consequential decisions without enough information — and what separates the people who do it well from the people who just do it fast.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bridge rv">
+      <div>
+        <div class="bridge-eyebrow">Where this led</div>
+        <p class="bridge-body">Some of these questions stopped being abstract. <b>Leadership OS</b> is the one I built something around — putting the AI-augmented development question in front of other people, not just running it on myself.</p>
+      </div>
+      <a href="https://leadershipos.org/" class="btn" target="_blank" rel="noopener">Explore Leadership OS ↗</a>
+    </div>
   </div>
-  <p class="disclaimer reveal" style="transition-delay:.4s">The views, opinions, and content expressed on this site are solely my own and do not represent the positions, strategies, or opinions of any current or former employer. All information is intended to represent my individual professional profile and perspectives.</p>
-  <p class="footer-line reveal" style="transition-delay:.5s">&copy; 2026 Mike Cilla &middot; Austin, TX &middot; M.S. Industrial-Organizational Psychology, San Jose State University &middot; <a href="https://hunter.io" target="_blank" rel="noopener" style="color:inherit;opacity:0.5;">Logos by Hunter</a></p>
 </section>
+
+<!-- 09 — BEYOND THE WORK -->
+<section id="s-beyond">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">09</span><span class="sec-name">Beyond the work</span><span class="sec-rule"></span></div>
+    <div class="cols">
+      <div class="rv">
+        <div class="beyond-photo">
+          <img src="photo.jpg" alt="Mike Cilla" loading="lazy">
+          <div class="beyond-cap">Fig. 9.1 — The author</div>
+        </div>
+      </div>
+      <div class="beyond-items rv">
+        <div class="beyond-item">
+          <div class="b-title">Drummer — 30 years and counting</div>
+          <p class="b-body">Started playing at 13 and never stopped. Drumming is the longest continuous practice of my life, and the one that taught me the most about timing, listening, and working within a structure. There's something about holding a rhythm for other people that translates directly to how I think about operational leadership.</p>
+        </div>
+        <div class="beyond-item">
+          <div class="b-title">Gardener and hobbyist landscaper</div>
+          <p class="b-body">Austin has a way of humbling you in the garden — the heat, the clay soil, the cedar. I've spent a lot of weekends figuring it out anyway. There's something satisfying about work that asks you to think in seasons rather than quarters, where the feedback loop is honest and unhurried.</p>
+        </div>
+        <div class="beyond-item">
+          <div class="b-title">Film and television</div>
+          <p class="b-body">I gravitate toward writing-driven work — the kind where you notice the craft in retrospect, when a line lands in the third act that was planted in the first.</p>
+        </div>
+        <div class="beyond-item">
+          <div class="b-title">Austin, TX</div>
+          <p class="b-body">Moved here for a career opportunity and stayed on purpose. Married, no kids. Good food, great music, and a city that still has the texture of a place in the middle of becoming something.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 — CONNECT (dark) -->
+<section id="s-connect" class="band">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-idx">10</span><span class="sec-name">Connect</span><span class="sec-rule"></span></div>
+    <h2 class="connect-h rv">Let's talk about <em>what's next.</em></h2>
+    <p class="connect-sub rv">Happy to connect if you're working through something in People Operations, thinking about HR technology, or just want to compare notes on any of the above.</p>
+    <div class="connect-grid rv">
+      <a href="https://www.linkedin.com/in/michaelcilla" class="connect-cell" target="_blank" rel="noopener"><span class="cc-label">LinkedIn</span><span class="cc-value">linkedin.com/in/michaelcilla</span><span class="cc-arrow">↗</span></a>
+      <a href="mailto:mikejcilla@gmail.com" class="connect-cell"><span class="cc-label">Email</span><span class="cc-value">mikejcilla@gmail.com</span><span class="cc-arrow">→</span></a>
+      <a href="resume.html" class="connect-cell" target="_blank" rel="noopener"><span class="cc-label">Résumé</span><span class="cc-value">View full CV</span><span class="cc-arrow">↗</span></a>
+    </div>
+    <p class="disclaimer rv">The views, opinions, and content expressed on this site are solely my own and do not represent the positions, strategies, or opinions of any current or former employer. All information is intended to represent my individual professional profile and perspectives.</p>
+    <p class="footer-line rv">MC/2026 · © Mike Cilla · Austin, TX · M.S. Industrial-Organizational Psychology, San Jose State University</p>
+  </div>
+</section>
+
+</main>
 
 <script>
-(function() {
-  // ── Dot nav ──
-  var sections = Array.from(document.querySelectorAll('.snap'));
-  var nav = document.getElementById('dot-nav');
-  sections.forEach(function(s) {
-    var b = document.createElement('button');
-    b.className = 'dot';
-    b.setAttribute('aria-label', s.dataset.label || s.id);
-    b.onclick = function() { s.scrollIntoView({ behavior: 'smooth' }); };
-    nav.appendChild(b);
-  });
-  var dots = Array.from(nav.querySelectorAll('.dot'));
-
-  // ── Reveal + dot tracking ──
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (!e.isIntersecting) return;
-      var idx = sections.indexOf(e.target);
-      dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
-      var revEls = Array.from(e.target.querySelectorAll('.reveal, .reveal-scale, .reveal-left'));
-      revEls.forEach(function(el, i) {
-        setTimeout(function() { el.classList.add('up'); }, 60 + i * 40);
-      });
-    });
-  }, { threshold: 0.05 });
-  sections.forEach(function(s) { io.observe(s); });
-
-  // ── Reveal safety net: if observers haven't fired within 3s, force everything visible ──
-  setTimeout(function() {
-    document.querySelectorAll('.reveal, .reveal-scale, .reveal-left').forEach(function(el) {
-      el.classList.add('up');
-    });
-  }, 3000);
-
-  // ── Career tap/click + keyboard to expand ──
-  document.querySelectorAll('.c-item').forEach(function(item) {
-    item.setAttribute('tabindex', '0');
-    item.setAttribute('role', 'button');
-    item.setAttribute('aria-expanded', 'false');
-    function toggle() {
-      var open = item.classList.toggle('open');
-      item.setAttribute('aria-expanded', open ? 'true' : 'false');
+(function(){
+  // ── Career ledger expand (click + keyboard) ──
+  document.querySelectorAll('.led-line').forEach(function(line){
+    var row = line.parentElement;
+    function toggle(){
+      var open = row.classList.toggle('open');
+      line.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
-    item.addEventListener('click', toggle);
-    item.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    line.addEventListener('click', toggle);
+    line.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
     });
   });
 
-  // ── Keyboard nav (desktop) ──
-  document.addEventListener('keydown', function(e) {
-    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
-    var best = -1, bestVis = 0;
-    sections.forEach(function(s, i) {
-      var r = s.getBoundingClientRect();
-      var vis = Math.min(r.bottom, window.innerHeight) - Math.max(r.top, 0);
-      if (vis > bestVis) { bestVis = vis; best = i; }
-    });
-    if (e.key === 'ArrowDown' && best < sections.length - 1) sections[best + 1].scrollIntoView({ behavior: 'smooth' });
-    if (e.key === 'ArrowUp' && best > 0) sections[best - 1].scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // ── Initial reveal with stagger ──
-  setTimeout(function() {
-    var els = Array.from(sections[0].querySelectorAll('.reveal, .reveal-scale, .reveal-left'));
-    els.forEach(function(el, i) {
-      setTimeout(function() { el.classList.add('up'); }, i * 80);
-    });
-    if (dots[0]) dots[0].classList.add('on');
-  }, 80);
-
-  // ── Parallax subtle movement on hero grid background ──
-  if (window.innerWidth > 900) {
-    var hero = document.getElementById('s-hero');
-    window.addEventListener('scroll', function() {
-      var scrolled = window.pageYOffset;
-      if (hero && scrolled < window.innerHeight) {
-        hero.style.backgroundPositionY = (scrolled * 0.3) + 'px';
-      }
-    }, { passive: true });
-  }
-
-  // ── On mobile, reveal all elements as they scroll into view regardless of section height ──
-  if (window.innerWidth <= 900) {
-    var revealObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('up');
-          revealObserver.unobserve(e.target);
-        }
+  // ── Scroll reveal ──
+  var els = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-    document.querySelectorAll('.reveal, .reveal-scale, .reveal-left').forEach(function(el) {
-      revealObserver.observe(el);
-    });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+    // Safety net: force visible if observers stall
+    setTimeout(function(){ els.forEach(function(el){ el.classList.add('on'); }); }, 3000);
+  } else {
+    els.forEach(function(el){ el.classList.add('on'); });
   }
 })();
 </script>
+
 </body>
 </html>
