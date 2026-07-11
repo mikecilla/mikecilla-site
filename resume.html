@@ -363,6 +363,30 @@
   }
 </style>
 <style>::selection{background:#0f6e56;color:#f4f5f2}</style>
+<style>
+/* ── Responsive ── */
+.page{width:min(1020px,100%)}
+@media(max-width:880px){
+  .page{grid-template-columns:1fr;min-height:0;margin:0;box-shadow:none}
+  .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:0 2.2rem;padding:1.9rem 1.4rem;align-content:start}
+  .sidebar-name,.sidebar-cred,.sidebar-contact{grid-column:1/-1}
+  .sidebar-name br{display:none}
+  .main{padding:1.9rem 1.4rem}
+}
+@media(max-width:560px){
+  .sidebar{grid-template-columns:1fr}
+  body{font-size:15px}
+  .job-title-row,.job-company-row{flex-wrap:wrap;gap:0.15rem 0.75rem}
+}
+/* ── Print: light sidebar ── */
+@media print{
+  :root{--sidebar:#ffffff;--sidebar-text:#16181a;--sidebar-muted:#4a4f49}
+  .page{grid-template-columns:240px 1fr}
+  .sidebar{border-right:1.5px solid #d5d9d2}
+  .sidebar-section-label{color:#0f6e56!important}
+  .skill-tag{background:transparent!important;border:1px solid #c9cec7!important;color:#16181a!important}
+}
+</style>
 </head>
 <body>
 <div class="page">
@@ -403,12 +427,8 @@
       <span class="skill-tag">CoE Design &amp; Team Scaling</span>
       <span class="skill-tag">Workforce Planning &amp; PMO</span>
       <span class="skill-tag">HR Operations &amp; Shared Services</span>
-      <span class="skill-tag">Performance Management Design</span>
-      <span class="skill-tag">HRBP &amp; Executive Partnership</span>
-      <span class="skill-tag">Change Management</span>
       <span class="skill-tag">HR Tech Advisory &amp; Evaluation</span>
       <span class="skill-tag">I-O Psychology &amp; Behavioral Science</span>
-      <span class="skill-tag">Job Architecture &amp; Compensation</span>
     </div>
 
     <div class="sidebar-section">

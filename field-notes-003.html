@@ -277,5 +277,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <span class="fn-footer-note">&copy; 2026 Mike Cilla &middot; Austin, TX</span>
   </footer>
 </main>
+<div id="rprog" aria-hidden="true"></div>
+<style>#rprog{position:fixed;left:0;top:0;height:2px;width:0;background:#0f6e56;z-index:999}</style>
+<script>(function(){var b=document.getElementById('rprog'),h=document.getElementById('site-header');
+function top(){b.style.top=(h?h.getBoundingClientRect().bottom:0)+'px';}
+function upd(){var d=document.documentElement,m=d.scrollHeight-d.clientHeight;b.style.width=(m>0?((d.scrollTop||document.body.scrollTop)/m*100):0)+'%';}
+top();upd();window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',function(){top();upd();},{passive:true});})();</script>
 </body>
 </html>

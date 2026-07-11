@@ -48,7 +48,8 @@
   --mono:'IBM Plex Mono',monospace;
 }
 
-html{scroll-behavior:smooth;scroll-snap-type:y proximity;scroll-padding-top:56px}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media(min-width:1000px){html{scroll-snap-type:y proximity}}
 body{
   background:var(--paper);
   color:var(--ink);
@@ -84,19 +85,17 @@ body{
 .h-links a:hover{color:var(--petrol)}
 .h-cta{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;background:var(--petrol);color:var(--paper);padding:0.5rem 1rem;text-decoration:none;transition:background .2s;border-radius:2px}
 .h-cta:hover{background:var(--petrol-deep)}
-@media(max-width:840px){.h-links{display:none}}
+.h-menu-btn{display:none;font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;background:none;border:1px solid var(--ink-faint);color:var(--ink-dim);padding:0.45rem 0.9rem;border-radius:2px;cursor:pointer}
+@media(max-width:840px){.h-links{display:none}.h-menu-btn{display:inline-block;margin-left:auto}}
+#mobile-menu{border-top:1px solid var(--rule);background:var(--paper)}
+#mobile-menu a{display:block;padding:0.85rem clamp(1.25rem,5vw,4rem);font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;border-bottom:1px solid var(--rule)}
+#mobile-menu a:last-child{border-bottom:none}
+#mobile-menu a:hover{color:var(--petrol)}
 
 /* ── SECTION FRAME ── */
-section{
-  min-height:100vh;
-  min-height:100svh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  scroll-snap-align:start;
-  padding-top:4.5rem;
-  padding-bottom:4.5rem;
-}
+section{padding-top:5rem;padding-bottom:5rem}
+section.screen{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+@media(min-width:1000px){section.screen{scroll-snap-align:start}}
 section > .wrap{width:100%}
 .sec-head{display:flex;align-items:baseline;gap:1.1rem;margin-bottom:2.75rem;position:relative}
 .sec-idx{font-family:var(--mono);font-size:2rem;font-weight:400;letter-spacing:-0.02em;line-height:1;color:var(--petrol);flex-shrink:0;position:relative;top:0.25rem}
@@ -147,9 +146,16 @@ a.entry .e-title{transition:color .2s}
 a.entry:hover .e-title{color:var(--petrol)}
 .e-tag{font-family:var(--mono);font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--petrol);margin-bottom:0.4rem}
 .e-arrow{font-family:var(--mono);font-size:0.85rem;color:var(--petrol);align-self:center;padding-left:1rem}
+.entry.featured{border-top:2px solid var(--rule-heavy);padding:1.7rem 0}
+.entry.featured .e-title{font-size:1.32rem;letter-spacing:-0.015em}
+.e-flag{font-family:var(--mono);font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--petrol);margin-bottom:0.35rem}
 .side-title{font-size:clamp(1.9rem,3.4vw,2.8rem)}
 .side-sub{font-size:1.05rem;color:var(--ink-dim);line-height:1.75;margin-top:1.1rem;max-width:44ch}
 .side-note{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.08em;color:var(--ink-faint);margin-top:1.6rem;line-height:2}
+.biblio .entry{padding:0.95rem 0;grid-template-columns:3.4rem minmax(0,1fr) auto}
+.biblio .entry > div:nth-child(2){display:flex;flex-direction:column;gap:0.15rem}
+.biblio .e-title{font-size:1.02rem;order:1;margin:0}
+.biblio .e-tag{order:2;margin:0;color:var(--ink-faint)}
 
 /* ── POINT OF VIEW (serif interior) ── */
 #s-pov{background:var(--paper-2)}
@@ -165,7 +171,13 @@ a.entry:hover .e-title{color:var(--petrol)}
 /* ── CAPABILITIES SPEC TABLE ── */
 .cap-domain{margin-bottom:2.6rem}
 .cap-domain:last-child{margin-bottom:0}
-.cap-dl{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol);padding-bottom:0.55rem;border-bottom:2px solid var(--rule-heavy)}
+.cap-dl{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol);padding:0.55rem 0;border-bottom:2px solid var(--rule-heavy);display:grid;grid-template-columns:auto 1fr auto;gap:1.1rem;align-items:baseline;cursor:pointer;list-style:none}
+.cap-dl::-webkit-details-marker{display:none}
+.cap-dl::marker{content:""}
+.cap-sum{font-family:var(--sans);font-size:0.85rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink-dim)}
+.cap-tgl{font-family:var(--mono);font-size:0.9rem;color:var(--petrol);transition:transform .3s}
+details[open] .cap-tgl{transform:rotate(45deg)}
+@media(max-width:640px){.cap-sum{display:none}}
 .cap-row{display:grid;grid-template-columns:3.4rem minmax(0,220px) minmax(0,1fr);gap:1rem;padding:0.8rem 0;border-top:1px solid var(--rule)}
 .cap-row:first-of-type{border-top:none}
 .cap-idx{font-family:var(--mono);font-size:0.7rem;color:var(--ink-faint);padding-top:0.2rem}
@@ -209,12 +221,11 @@ a.entry:hover .e-title{color:var(--petrol)}
 /* ── CAREER MODES ── */
 .band .tdot{color:var(--petrol-lt)}
 .modes-h{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:600;letter-spacing:-0.015em;color:var(--dark-text);margin-bottom:0.5rem}
-.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:0 2.75rem;margin:1.9rem 0 2.9rem}
-@media(max-width:900px){.modes{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.modes{grid-template-columns:1fr}}
-.mode{border-top:1px solid var(--dark-rule);padding:0.95rem 0 1.25rem}
-.mode-l{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol-lt);margin-bottom:0.45rem}
-.mode-b{font-size:0.9rem;color:var(--dark-dim);line-height:1.65}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem;margin:1.8rem 0 2.7rem}
+@media(max-width:760px){.modes{grid-template-columns:1fr}}
+.mode{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;align-items:baseline;border-top:1px solid var(--dark-rule);padding:0.72rem 0}
+.mode-l{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--petrol-lt)}
+.mode-b{font-size:0.88rem;color:var(--dark-dim);line-height:1.55}
 .chron{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--dark-faint);margin-bottom:1rem}
 .led-line.static{cursor:default}
 .led-line.static:hover{background:transparent}
@@ -266,13 +277,12 @@ a.entry:hover .e-title{color:var(--petrol)}
 /* ── SIGNATURE DEVICES ── */
 .tdot{color:var(--petrol)}
 a.entry:hover,.fn-entry:hover{box-shadow:inset 2px 0 0 var(--petrol)}
-a.entry,.fn-entry{padding-left:0;transition:background .2s,box-shadow .2s,padding-left .2s}
-a.entry:hover,.fn-entry:hover{padding-left:0.85rem}
+a.entry,.fn-entry{transition:background .2s,box-shadow .2s}
 
 /* ── DOCUMENT CHROME: spine + corner marks ── */
 #spine{position:fixed;left:1.15rem;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:var(--mono);font-size:0.62rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:#8a8f8a;z-index:60;pointer-events:none;display:none;white-space:nowrap}
 @media(min-width:1320px){#spine{display:block}}
-.crop{position:fixed;width:13px;height:13px;z-index:60;pointer-events:none;display:none;border-color:rgba(138,143,138,0.65)}
+.crop{position:fixed;width:9px;height:9px;z-index:60;pointer-events:none;display:none;border-color:rgba(138,143,138,0.3)}
 @media(min-width:900px){.crop{display:block}}
 .c-tl{top:11px;left:11px;border-top:1px solid;border-left:1px solid}
 .c-tr{top:11px;right:11px;border-top:1px solid;border-right:1px solid}
@@ -284,7 +294,7 @@ a.entry:hover,.fn-entry:hover{padding-left:0.85rem}
 .rv.on{opacity:1;transform:none}
 
 /* ── A11Y ── */
-a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid var(--petrol);outline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible,.led-line:focus-visible{outline:2px solid var(--petrol);outline-offset:3px}
 .band a:focus-visible,.band .led-line:focus-visible{outline-color:var(--petrol-lt)}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important;scroll-behavior:auto!important}
@@ -317,14 +327,22 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
       <li><a href="#s-notes">Field Notes</a></li>
       <li><a href="https://leadershipos.org/" target="_blank" rel="noopener">Leadership OS ↗</a></li>
     </ul>
+    <button class="h-menu-btn" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
     <a href="#s-connect" class="h-cta">Let's talk</a>
   </div>
+  <nav id="mobile-menu" hidden aria-label="Site menu">
+    <a href="#s-work">Work</a>
+    <a href="#s-career">Career</a>
+    <a href="#s-writing">Writing</a>
+    <a href="#s-notes">Field Notes</a>
+    <a href="https://leadershipos.org/" target="_blank" rel="noopener">Leadership OS ↗</a>
+  </nav>
 </header>
 
 <main id="top">
 
 <!-- 01 — PROFILE -->
-<section id="s-hero">
+<section id="s-hero" class="screen">
   <div class="wrap">
     <div class="sec-head rv"><span class="sec-idx">01</span><span class="sec-name">Profile</span><span class="sec-rule"></span></div>
     <div class="cols" style="grid-template-columns:minmax(0,7fr) minmax(0,5fr)">
@@ -361,9 +379,10 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
         <p class="side-sub">Startups, mid-market companies, and large enterprise — I came into HR through behavioral science and have spent most of my career where people strategy meets operational infrastructure.</p>
       </div>
       <div class="entries rv">
-        <div class="entry">
+        <div class="entry featured">
           <div class="e-idx">2.1</div>
           <div>
+            <div class="e-flag">Signature</div>
             <div class="e-title">Built a People Operations function from scratch</div>
             <div class="e-body">Designed and staffed a multi-pillar team spanning HR operations, systems and data, analytics, and strategic planning. The goal was a function with enough structure to run consistently — not one that depended on any one person to hold it together.</div>
           </div>
@@ -389,9 +408,10 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
             <div class="e-body">At Juul Labs and since, a meaningful part of the job has been helping executives think through restructuring, headcount, and organizational structure. That work is mostly listening, asking good questions, and knowing which data is relevant to the decision at hand.</div>
           </div>
         </div>
-        <div class="entry">
+        <div class="entry featured">
           <div class="e-idx">2.5</div>
           <div>
+            <div class="e-flag">Signature</div>
             <div class="e-title">Worked both sides of the HR technology table</div>
             <div class="e-body">Built and sold assessment products and managed services on the vendor side — Global HR Research, Namely, a startup of my own — then bought, implemented, and governed the same category of systems as the customer. Knowing how the product gets made changes how you buy it. And vice versa.</div>
           </div>
@@ -402,7 +422,7 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
 </section>
 
 <!-- 03 — POINT OF VIEW -->
-<section id="s-pov">
+<section id="s-pov" class="screen">
   <div class="wrap">
     <div class="sec-head rv"><span class="sec-idx">03</span><span class="sec-name">Point of view</span><span class="sec-rule"></span></div>
     <div class="cols">
@@ -446,26 +466,26 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
         <p class="values-line"><b>Operating values:</b><br>Individuality · Openness · Efficacy · Winning · Humility<br>+ Sense of humor</p>
       </div>
       <div>
-        <div class="cap-domain rv">
-          <div class="cap-dl">A — Strategic leadership</div>
+        <details class="cap-domain rv" open>
+          <summary class="cap-dl"><span>A — Strategic leadership</span><span class="cap-sum">Operating models, org design, workforce planning, executive advisory</span><span class="cap-tgl" aria-hidden="true">+</span></summary>
           <div class="cap-row"><div class="cap-idx">4.01</div><div class="cap-name">Organizational design</div><div class="cap-desc">Structure, role architecture, span of control, CoE models</div></div>
           <div class="cap-row"><div class="cap-idx">4.02</div><div class="cap-name">Workforce strategy</div><div class="cap-desc">Planning, scenario modeling, capability frameworks</div></div>
           <div class="cap-row"><div class="cap-idx">4.03</div><div class="cap-name">Executive advisory</div><div class="cap-desc">C-suite and senior leadership partnership on people decisions</div></div>
           <div class="cap-row"><div class="cap-idx">4.04</div><div class="cap-name">HR operating models</div><div class="cap-desc">CoE design, service delivery architecture, governance</div></div>
           <div class="cap-row"><div class="cap-idx">4.05</div><div class="cap-name">HR PMO</div><div class="cap-desc">Portfolio governance, business case development, prioritization</div></div>
           <div class="cap-row"><div class="cap-idx">4.06</div><div class="cap-name">People &amp; org strategy</div><div class="cap-desc">Transformation planning, structural change management</div></div>
-        </div>
-        <div class="cap-domain rv">
-          <div class="cap-dl">B — Analytics &amp; technology</div>
+        </details>
+        <details class="cap-domain rv">
+          <summary class="cap-dl"><span>B — Analytics &amp; technology</span><span class="cap-sum">Analytics, HRIS, data architecture, AI and workforce systems</span><span class="cap-tgl" aria-hidden="true">+</span></summary>
           <div class="cap-row"><div class="cap-idx">4.07</div><div class="cap-name">Workforce analytics</div><div class="cap-desc">Retention, flight risk, pipeline, and workforce intelligence</div></div>
           <div class="cap-row"><div class="cap-idx">4.08</div><div class="cap-name">HR technology leadership</div><div class="cap-desc">HRIS strategy, implementation, optimization, portfolio management</div></div>
           <div class="cap-row"><div class="cap-idx">4.09</div><div class="cap-name">Data architecture</div><div class="cap-desc">Data governance, quality standards, integration strategy</div></div>
           <div class="cap-row"><div class="cap-idx">4.10</div><div class="cap-name">Analytics infrastructure</div><div class="cap-desc">Enabling self-service, building toward predictive capability</div></div>
           <div class="cap-row"><div class="cap-idx">4.11</div><div class="cap-name">Technology strategy</div><div class="cap-desc">Build vs. buy, vendor evaluation, integration architecture</div></div>
           <div class="cap-row"><div class="cap-idx">4.12</div><div class="cap-name">AI &amp; workforce</div><div class="cap-desc">Operating models, capability design, readiness frameworks</div></div>
-        </div>
-        <div class="cap-domain rv">
-          <div class="cap-dl">C — Foundations &amp; perspective</div>
+        </details>
+        <details class="cap-domain rv">
+          <summary class="cap-dl"><span>C — Foundations &amp; perspective</span><span class="cap-sum">Behavioral science, operations, teaching, and the vendor-side view</span><span class="cap-tgl" aria-hidden="true">+</span></summary>
           <div class="cap-row"><div class="cap-idx">4.13</div><div class="cap-name">I/O psychology</div><div class="cap-desc">Behavioral science, assessment design, talent selection, engagement</div></div>
           <div class="cap-row"><div class="cap-idx">4.14</div><div class="cap-name">HR operations</div><div class="cap-desc">Scalable service delivery, SLA frameworks, operational excellence</div></div>
           <div class="cap-row"><div class="cap-idx">4.15</div><div class="cap-name">Learning &amp; development</div><div class="cap-desc">Program design, capability development, manager effectiveness</div></div>
@@ -474,7 +494,7 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
           <div class="cap-row"><div class="cap-idx">4.18</div><div class="cap-name">Data storytelling</div><div class="cap-desc">Executive communication, visual standards, insight-driven narrative</div></div>
           <div class="cap-row"><div class="cap-idx">4.19</div><div class="cap-name">Assessment design</div><div class="cap-desc">Pre-employment and personality assessment — built, validated, brought to market</div></div>
           <div class="cap-row"><div class="cap-idx">4.20</div><div class="cap-name">Vendor &amp; commercial perspective</div><div class="cap-desc">Both sides of HR technology — product, service delivery, sales, and the buying decision</div></div>
-        </div>
+        </details>
       </div>
     </div>
   </div>
@@ -489,18 +509,18 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
       <p class="led-intro">Not a straight line — a repeated movement between vantage points. Each mode added another way of seeing how organizations work.</p>
     </div>
     <div class="modes rv">
-      <div class="mode"><div class="mode-l">Operated</div><div class="mode-b">Built and ran people functions inside companies — from a 50-person agency to a 2,200-employee public health system.</div></div>
-      <div class="mode"><div class="mode-l">Studied</div><div class="mode-b">I/O Psychology — research, assessment, and behavioral science. Published, then applied ever since.</div></div>
-      <div class="mode"><div class="mode-l">Built</div><div class="mode-b">A game-based assessment startup, a new assessment division, a managed-services practice, and two Centers of Excellence.</div></div>
-      <div class="mode"><div class="mode-l">Advised</div><div class="mode-b">Executives through growth and restructures, startups as an independent advisor, and client organizations from the vendor side.</div></div>
-      <div class="mode"><div class="mode-l">Taught</div><div class="mode-b">Four years as an adjunct psychology instructor, plus MBA-style leadership development at Electronic Arts' corporate university.</div></div>
-      <div class="mode"><div class="mode-l">Scaled</div><div class="mode-b">Through Juul's hypergrowth and contraction, and Central Health's build from three to thirteen people across four pillars.</div></div>
+      <div class="mode"><span class="mode-l">Operated</span><span class="mode-b">People functions inside companies — a 50-person agency to a 2,200-employee health system</span></div>
+      <div class="mode"><span class="mode-l">Studied</span><span class="mode-b">I/O Psychology — research, assessment, behavioral science; published, then applied</span></div>
+      <div class="mode"><span class="mode-l">Built</span><span class="mode-b">An assessment startup, an assessment division, a managed-services practice, two CoEs</span></div>
+      <div class="mode"><span class="mode-l">Advised</span><span class="mode-b">Executives, startups, and client organizations — from inside, outside, and the vendor side</span></div>
+      <div class="mode"><span class="mode-l">Taught</span><span class="mode-b">Four years of adjunct psychology instruction; leadership development at Electronic Arts</span></div>
+      <div class="mode"><span class="mode-l">Scaled</span><span class="mode-b">Juul's hypergrowth and contraction; Central Health's build from 3 to 13 across four pillars</span></div>
     </div>
     <p class="chron rv">The chronology — expand any row</p>
     <div class="led-rows rv">
 
-      <div class="led-row">
-        <div class="led-line" tabindex="0" role="button" aria-expanded="false">
+      <div class="led-row open">
+        <div class="led-line" tabindex="0" role="button" aria-expanded="true">
           <span class="led-period">2023 —</span>
           <span class="led-org">Central Health<small>Travis County Healthcare District</small></span>
           <span class="led-role">VP, People Operations, Planning &amp; Systems — HR service delivery, systems and data, workforce analytics, and strategic planning supporting ~2,200 employees across a multi-entity public health system.</span>
@@ -636,49 +656,44 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
         <h2 class="display side-title">Thinking made<br>visible<span class="tdot">.</span></h2>
         <p class="side-sub">Writing from over the years — mostly on behavioral science, HR operations, and talent. Some of it holds up better than the rest.</p>
       </div>
-      <div class="entries rv">
+      <div class="entries rv biblio">
         <a class="entry" href="https://www.linkedin.com/pulse/we-use-ai-work-faster-could-develop-leaders-mike-cilla-m-s-shrm-cp-qbncc/" target="_blank" rel="noopener">
           <div class="e-idx">6.1</div>
           <div>
-            <div class="e-tag">AI · Leadership development</div>
+            <div class="e-tag">LinkedIn · 2026 · AI · Leadership development</div>
             <div class="e-title">We Use AI to Work Faster. Could It Develop Leaders?</div>
-            <div class="e-body">Most of us use AI to get through the work. This piece makes the case for a different use entirely — AI as a long-term reflection partner for leadership development — and introduces the thinking behind Leadership OS.</div>
           </div>
           <div class="e-arrow">↗</div>
         </a>
         <a class="entry" href="https://www.linkedin.com/pulse/virtuous-cycle-operational-excellence-action-cilla-m-s-shrm-cp-jioyc/" target="_blank" rel="noopener">
           <div class="e-idx">6.2</div>
           <div>
-            <div class="e-tag">Operations · Systems thinking</div>
+            <div class="e-tag">LinkedIn · Operations · Systems thinking</div>
             <div class="e-title">The Virtuous Cycle of Operational Excellence in Action</div>
-            <div class="e-body">How operational discipline compounds — and why getting the fundamentals right unlocks a kind of momentum that reactive functions never reach.</div>
           </div>
           <div class="e-arrow">↗</div>
         </a>
         <a class="entry" href="https://www.linkedin.com/pulse/20140824200347-49439155-the-behavioral-science-behind-the-alliance/" target="_blank" rel="noopener">
           <div class="e-idx">6.3</div>
           <div>
-            <div class="e-tag">Behavioral science · Talent</div>
+            <div class="e-tag">LinkedIn · 2014 · Behavioral science · Talent</div>
             <div class="e-title">The Behavioral Science Behind The Alliance</div>
-            <div class="e-body">The psychological principles that make modern employment relationships work — Reid Hoffman's framework, grounded in the research on commitment, reciprocity, and trust at work.</div>
           </div>
           <div class="e-arrow">↗</div>
         </a>
         <a class="entry" href="https://www.linkedin.com/pulse/20140501030057-49439155-use-empathy-when-hiring-your-next-employee/" target="_blank" rel="noopener">
           <div class="e-idx">6.4</div>
           <div>
-            <div class="e-tag">Hiring · I/O psychology</div>
+            <div class="e-tag">LinkedIn · 2014 · Hiring · I/O psychology</div>
             <div class="e-title">Use Empathy When Hiring Your Next Employee</div>
-            <div class="e-body">A case for centering candidate experience — not as a branding exercise, but as a signal of organizational judgment and a predictor of the relationship that follows.</div>
           </div>
           <div class="e-arrow">↗</div>
         </a>
         <a class="entry" href="https://www.linkedin.com/pulse/optimize-your-job-search-get-hired-asap-mike-cilla/" target="_blank" rel="noopener">
           <div class="e-idx">6.5</div>
           <div>
-            <div class="e-tag">Careers · Applied psychology</div>
+            <div class="e-tag">LinkedIn · Careers · Applied psychology</div>
             <div class="e-title">Optimize Your Job Search: Get Hired ASAP</div>
-            <div class="e-body">Practical job search strategy from someone who has sat on both sides of the hiring table — built around how organizations make hiring decisions in practice.</div>
           </div>
           <div class="e-arrow">↗</div>
         </a>
@@ -818,7 +833,7 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
 </section>
 
 <!-- 10 — CONNECT (dark) -->
-<section id="s-connect" class="band">
+<section id="s-connect" class="band screen">
   <div class="wrap">
     <div class="sec-head rv"><span class="sec-idx">10</span><span class="sec-name">Connect</span><span class="sec-rule"></span></div>
     <h2 class="connect-h rv">Let's talk about <em>what's next.</em></h2>
@@ -849,6 +864,20 @@ a:focus-visible,button:focus-visible,.led-line:focus-visible{outline:2px solid v
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
     });
   });
+
+  // ── Mobile menu ──
+  var mb = document.querySelector('.h-menu-btn'), mm = document.getElementById('mobile-menu');
+  if(mb && mm){
+    function setMenu(open){
+      if(open){ mm.removeAttribute('hidden'); mb.setAttribute('aria-expanded','true'); }
+      else { mm.setAttribute('hidden',''); mb.setAttribute('aria-expanded','false'); }
+    }
+    mb.addEventListener('click', function(){ setMenu(mm.hasAttribute('hidden')); });
+    mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && !mm.hasAttribute('hidden')){ setMenu(false); mb.focus(); }
+    });
+  }
 
   // ── Scroll reveal ──
   var els = Array.prototype.slice.call(document.querySelectorAll('.rv'));
